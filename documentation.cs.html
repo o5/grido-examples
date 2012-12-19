@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Grido : DataGrid for Nette Framework" />
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/gh-fork-ribbon.css">
+    <!--[if IE]>
+    <link rel="stylesheet" href="css/gh-fork-ribbon.ie.css">
+    <![endif]-->
+    <title>Grido</title>
+</head>
+
+<body>
+    <div class="github-fork-ribbon-wrapper left">
+        <div class="github-fork-ribbon">
+            <a class="no-ajax" target="_blank" href="https://github.com/o5/grido">Fork me on GitHub</a>
+        </div>
+    </div>
+
+    <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+            <ul class="nav">
+                <li><a href="index.html">Home</a></li>
+                <li class="active"><a href="documentation.cs.html">Documentation</a></li>
+                <li><a target="_blank" href="http://grido.bugyik.cz/example/">Live demo</a></li>
+                <li><a target="_blank" href="http://grido.bugyik.cz/api/">API</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+    <header class="inner">
+        <h1 id="project_title">Grido</h1>
+        <h2 id="project_tagline">DataGrid for Nette Framework!</h2>
+
+        <section id="downloads">
+            <a class="zip_download_link" href="https://github.com/o5/grido/zipball/master">Download this project as a .zip file</a>
+            <a class="tar_download_link" href="https://github.com/o5/grido/tarball/master">Download this project as a tar.gz file</a>
+        </section>
+    </header>
+    </div>
+
+    <!-- <div class="sidebar span3 bs-docs-sidebar">
+        <ul class="nav nav-list affix">
+            <li class="nav-header">Obsah</li>
+            <li class="active"><a href="#">Úvod</a></li>
+            <li><a href="#instalace">Instalace</a></li>
+            <li><a href="#pouziti">Použití</a></li>
+            <li><a href="#settery-gridu">Settery gridu</a></li>
+            <li><a href="#gettery-gridu">Gettery gridu</a></li>
+            <li>
+                <a href="#sloupce">Sloupce</a>
+                <ul>
+                    <li><a href="#sloupce-typy">Typy</a></li>
+                    <li><a href="#sloupce-settery">Settery</a></li>
+                    <li><a href="#sloupce-gettery">Gettery</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#filtry">Filtry</a>
+                <ul>
+                    <li><a href="#filtry-typy">Typy</a></li>
+                    <li><a href="#filtry-settery">Settery</a></li>
+                    <li><a href="#filtry-gettery">Gettery</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#akce">Akce</a>
+                <ul>
+                    <li><a href="#akce-settery">Settery</a></li>
+                    <li><a href="#akce-gettery">Gettery</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#operace">Operace</a>
+                <ul>
+                    <li><a href="#operace-settery">Settery</a></li>
+                </ul>
+            </li>
+            <li><a href="#operace">Export</a></li>
+            <li><a href="#client-side-features">Client-side features</a></li>
+        </ul>
+    </div> -->
+
+    <div id="main_content_wrap" class="outer">
+    <section id="main_content" class="inner">
+
+    <table style="width:auto">
+        <tbody>
+        <tr>
+            <th>Verze</th>
+            <td>1.0 beta</td>
+        </tr>
+
+        <tr>
+            <th>Autor</th>
+            <td>Petr Bugyík</td>
+        </tr>
+
+        <tr>
+            <th>Licence</th>
+            <td>New BSD License</td>
+        </tr>
+
+        <tr>
+            <th>Demo</th>
+            <td><a href="http://grido.bugyik.cz/example/">http://grido.bugyik.cz/example/</a></td>
+        </tr>
+
+        <tr>
+            <th>GitHub</th>
+            <td><a href="https://github.com/o5/grido/">https://github.com/o5/grido/</a></td>
+        </tr>
+
+        <tr>
+            <th>API</th>
+            <td><a href="http://grido.bugyik.cz/api/">http://grido.bugyik.cz/api/</a></td>
+        </tr>
+
+        <tr>
+            <th>Fórum</th>
+            <td><a href="http://forum.nette.org/cs/">http://forum.nette.org/cs/</a></td>
+        </tr>
+
+        <tr>
+            <th>Závislosti</th>
+            <td>Nette 2.0 (PHP 5.3)</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p class="perex">Grido (dále jen grid) je komponenta usnadňující
+        <strong>výpis dat</strong>, jejich <strong>formátování</strong>,
+        <strong>řazení</strong>, <strong>stránkování</strong>,
+        <strong>filtrování</strong>, <strong>hromadné akce</strong> a <strong>export
+            dat</strong>. Při návrhu byl kladen důraz na <strong>jednoduché použití a
+            přizpůsobení</strong>.
+    </p>
+
+    <p class="caution">Samotný grid má závislost pouze na Nette, ovšem
+        odkazované demo obsahuje klientský skript
+        <a href="https://raw.github.com/o5/grido-sandbox/master/example/js/jquery.grido.js">jquery.grido­.js</a>,
+        který je spravován mimo hlavní repozitář. Veškeré jeho závislosti jsou
+        uvedené v tomto souboru. Demo také využívá části frameworku <a
+                href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.
+    </p>
+
+    <h3 id="instalace">Instalace</h3>
+
+    <p>Komponentu si stáhněte a rozbalte do projektu, nebo nainstalujte pomocí <a href="http://doc.nette.org/cs/composer">Composeru</a>.</p>
+
+<pre>{
+    "require":
+    {
+        "php" : ">=5.3.2",
+        "nette/nette": "2.0.*",
+        "o5/grido": "dev-master"
+    }
+}</pre>
+
+    <h3 id="pouziti">Použití</h3>
+
+    <p>Grid vytvoříme továrničkou na komponenty, nastavíme model…</p>
+
+<pre>protected function createComponentGrid($name)
+{
+    $grid = new Grido\Grid($this, $name);
+    $grid->setModel($this->context->database->table('user'));
+}</pre>
+
+    <h3 id="settery-gridu">Settery gridu</h3>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Metoda</th>
+
+            <th>Popis</th>
+
+            <th>Příklad parametru / Výchozí</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>setModel</td>
+
+            <td>model implementující rozhraní IDataSource nebo datasource objekt
+                <a href="http://api.dibiphp.com/2.0/DibiFluent.html">DibiFluent</a>, <br>
+                <a href="http://api.nette.org/2.0/Nette.Database.Table.Selection.html">Nette\Da­tabase\Table\Se­lection</a></td>
+
+            <td> </td>
+        </tr>
+
+        <tr>
+            <td>setDefaultFilter</td>
+
+            <td>výchozí filtrování</td>
+
+            <td> </td>
+        </tr>
+
+        <tr>
+            <td>setDefaultSort</td>
+
+            <td>výchozí řazení</td>
+
+            <td>př.: array('name' ⇒ Column::ASC)</td>
+        </tr>
+
+        <tr>
+            <td>setDefaultPerPage</td>
+
+            <td>počet vykreslených položek na stranu</td>
+
+            <td>20</td>
+        </tr>
+
+        <tr>
+            <td>setPerPageList</td>
+
+            <td>položky selectu "počet řádků na stranu"</td>
+
+            <td>10, 20, 30, 50, 100</td>
+        </tr>
+
+        <tr>
+            <td>setTranslator</td>
+
+            <td>vlastní translátor</td>
+
+            <td>FileTranslator</td>
+        </tr>
+
+        <tr>
+            <td>setFilterRenderType</td>
+
+            <td>nastaví vnitřní (Filter::RENDER_IN­NER) nebo vnější
+                (Filter::RENDER_O­UTER) vykreslení filtrů</td>
+
+            <td>vniřní, ale pokud grid obsahuje filtr, který nemá svůj sloupec,
+                použije se vnejší vykreslení</td>
+        </tr>
+
+        <tr>
+            <td>setPaginator</td>
+
+            <td>vlastní stránkovač</td>
+
+            <td> </td>
+        </tr>
+
+        <tr>
+            <td>setPrimaryKey</td>
+
+            <td>primární klíč, který identifikuje řádek</td>
+
+            <td>"id"</td>
+        </tr>
+
+        <tr>
+            <td>setTemplateFile</td>
+
+            <td>název šablony</td>
+
+            <td>Grid.latte</td>
+        </tr>
+
+        <tr>
+            <td>setRememberState</td>
+
+            <td>ukládání stavu gridu do session</td>
+
+            <td>FALSE</td>
+        </tr>
+
+        <tr>
+            <td>setRowCallback</td>
+
+            <td>callback volaný při vykreslení řádku tabulky. Callback vrací tr Html
+                element</td>
+
+            <td>př.: function($row, Html $tr) {return $tr}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h3 id="gettery-gridu">Gettery gridu</h3>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Metoda</th>
+
+            <th>Popis</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>getCount</td>
+
+            <td>vrátí celkový počet výsledků</td>
+        </tr>
+
+        <tr>
+            <td>getColumn</td>
+
+            <td>vrátí sloupec</td>
+        </tr>
+
+        <tr>
+            <td>getFilter</td>
+
+            <td>vrátí filtr</td>
+        </tr>
+
+        <tr>
+            <td>getAction</td>
+
+            <td>vrátí akci</td>
+        </tr>
+
+        <tr>
+            <td>getOperations</td>
+
+            <td>vrátí operace</td>
+        </tr>
+
+        <tr>
+            <td>getFilterValue</td>
+
+            <td>aktuální hodnota filtru</td>
+        </tr>
+
+        <tr>
+            <td>getTranslator</td>
+
+            <td>vrátí translátor (výchozí FileTranslator, př.:
+                $grid->translator->setLang('cs');)</td>
+        </tr>
+
+        <tr>
+            <td>getRememberSession</td>
+
+            <td>vhodné např.: pro nastavení expirace session</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h3 id="udalosti-gridu">Události gridu</h3>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Událost</th>
+
+            <th>Popis</th>
+
+            <th>Příklad</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>onRender</td>
+
+            <td>událost volající se při vykreslování gridu</td>
+
+            <td>function (Grid $grid)</td>
+        </tr>
+
+        <tr>
+            <td>onAfterFetchData</td>
+
+            <td>událost, díky které můžeme modifikovat data těsně před předání
+                šabloně</td>
+
+            <td>function (Grid $grid) { return $grid->data}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h3 id="sloupce">Sloupce</h3>
+
+    <pre>$grid->addColumn('email', 'E-mail', Column::TYPE_MAIL);</pre>
+
+    <p>První parametr reprezentuje název sloupce v datasource, následuje popisek
+        a typ vykreslení. Typ je název třídy, který se má použít (lze uvést
+        vlastní typ sloupce).</p>
+
+    <h4 id="sloupce-typy">Typy</h4>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Typ</th>
+
+            <th>Popis</th>
+
+            <th>Výchozí</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>TYPE_TEXT</td>
+
+            <td>výchozí typ, surový text</td>
+
+            <td> </td>
+        </tr>
+
+        <tr>
+            <td>TYPE_MAIL</td>
+
+            <td>naformátuje výstup na klikací mail</td>
+
+            <td> </td>
+        </tr>
+
+        <tr>
+            <td>TYPE_HREF</td>
+
+            <td>naformátuje výstup na klikací odkaz</td>
+
+            <td> </td>
+        </tr>
+
+        <tr>
+            <td>TYPE_DATE</td>
+
+            <td>naformátuje výstup na datum</td>
+
+            <td>formát lze měnit pomocí setDateFormat(). Existující formáty:<br>
+                Date::FORMAT_DATE, Date::FORMAT_DA­TETIME, Date::FORMAT_TEXT
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h4 id="sloupce-settery">Settery</h4>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Metoda</th>
+
+            <th>Popis</th>
+
+            <th>Příklad parametru</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>setSortable</td>
+
+            <td>povolí řazení sloupce</td>
+
+            <td> </td>
+        </tr>
+
+        <tr>
+            <td>setReplacement</td>
+
+            <td>nastaví masku pro nahrazování</td>
+
+            <td>array('published' ⇒ 'ok')</td>
+        </tr>
+
+        <tr>
+            <td>setColumn</td>
+
+            <td>namapuje na sloupec v db</td>
+
+            <td> </td>
+        </tr>
+
+        <tr>
+            <td>setFilter</td>
+
+            <td>zkratka pro vytvoření filtru stejného názvu</td>
+
+            <td> </td>
+        </tr>
+
+        <tr>
+            <td>setDefaultSorting</td>
+
+            <td>výchozí řazení</td>
+
+            <td> </td>
+        </tr>
+
+        <tr>
+            <td>setCustomRender</td>
+
+            <td>callback pro vlastní vykreslení</td>
+
+            <td>function($item) {…return $item->mail}</td>
+        </tr>
+
+        <tr>
+            <td>setTruncate</td>
+
+            <td>ořízne výstup, parametry jako pro <a href="http://api.nette.org/2.0/Nette.Utils.Strings.html#_truncate">Strings::trun­cate()</a></td>
+
+            <td> </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h4 id="sloupce-gettery">Gettery</h4>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Metoda</th>
+
+            <th>Popis</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>getCellPrototype</td>
+
+            <td>umožní nastavit např. vlastní css třídu buňce</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h3 id="filtry">Filtry</h3>
+
+    <pre>$grid->addFilter('bir­thday', 'Birthday', Column::TYPE_DA­TE);</pre>
+
+    <p>První parametr reprezentuje název sloupce v datasource, následuje popisek
+        a typ filtru. Typ je název třídy, který se má použít (lze uvést vlastní
+        typ filtru).</p>
+
+    <h4 id="filtry-typy">Typy</h4>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Typ</th>
+
+            <th>Popis</th>
+
+            <th>Info</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>TYPE_TEXT</td>
+
+            <td>výchozí typ</td>
+
+            <td>metoda setSuggestion() – povolí našeptávání zohleďnující
+                aktuální filtr</td>
+        </tr>
+
+        <tr>
+            <td>TYPE_DATE</td>
+
+            <td>hledání dle data</td>
+
+            <td> </td>
+        </tr>
+
+        <tr>
+            <td>TYPE_CHECK</td>
+
+            <td>checkbox filtr</td>
+
+            <td> </td>
+        </tr>
+
+        <tr>
+            <td>TYPE_SELECT</td>
+
+            <td>selectbox filtr</td>
+
+            <td>položky výběru se nastavují parametrem č.4</td>
+        </tr>
+
+        <tr>
+            <td>TYPE_NUMBER</td>
+
+            <td>číselný typ</td>
+
+            <td> </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h4 id="filtry-settery">Settery</h4>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Metoda</th>
+
+            <th>Popis</th>
+
+            <th>Příklad parametru</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>setColumn</td>
+
+            <td>namapuje na sloupec v db, lze filtrovat pomocí více sloupců</td>
+
+            <td>setColumn('date', Filter::OPERA­TOR_OR)</td>
+        </tr>
+
+        <tr>
+            <td>setCondition</td>
+
+            <td>vlastní sql podmínka, příklady níže</td>
+
+            <td> </td>
+        </tr>
+
+        <tr>
+            <td>setFormatValue</td>
+
+            <td>formátování hodnoty při sestavování sql podmínky</td>
+
+            <td>setFormatValu­e('%value%')</td>
+        </tr>
+
+        <tr>
+            <td>setDefaultValue</td>
+
+            <td>výchozí hodnota</td>
+
+            <td> </td>
+        </tr>
+        </tbody>
+    </table>
+
+<pre>//Filter::CON­DITION_CUSTOM
+$list = array('' ⇒ '', 'publihed' ⇒ 'Published', 'deleted' ⇒ 'Deleted');
+$grid->addFilter('sta­tus', 'Status', Filter::TYPE_SE­LECT, $list)
+    ->setCondition(Fil­ter::CONDITION_CUS­TOM, array(
+        '' ⇒ '1=1',
+        'publihed' ⇒ '[status] <> "deleted"',
+        'deleted' ⇒ '[status] = "deleted"'
+));
+
+//Filter::CON­DITION_CALLBACK
+$grid->addFilter('type', 'Type')
+    ->setCondition(Fil­ter::CONDITION_CAL­LBACK, function($value){
+        return array('[status] =%s' ⇒ $value);
+});
+
+//filtrování lze vyloučit
+$grid->addFilter('type', 'Type')
+    ->setCondition(Fil­ter::CONDITION_NOT_AP­PLY);</pre>
+
+
+    <h4 id="filtry-gettery">Gettery</h4>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Metoda</th>
+
+            <th>Popis</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>getWrapperPrototype</td>
+
+            <td>umožní nastavit např. vlastní css třídu elementu</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h3 id="akce">Akce</h3>
+
+    <pre>$grid->addAction('edit', 'Edit');</pre>
+
+    <p>První parametr je název akce, následuje popisek a typ akce. Poslední
+        parametry jsou $destination a $args které se předají metodě
+        <a href="http://api.nette.org/2.0/Nette.Application.UI.PresenterComponent.html#_link">$presenter->link()</a>,
+        pokud se nenastaví, jako $destination se použije první parametr.
+    </p>
+
+    <h4 id="akce-settery">Settery</h4>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Metoda</th>
+
+            <th>Popis</th>
+
+            <th>Příklad parametru</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>setCustomRender</td>
+
+            <td>vlastní vykreslení</td>
+
+            <td>function($row) { return
+                Html::el('button')->setText('Edit') }</td>
+        </tr>
+
+        <tr>
+            <td>setPrimaryKey</td>
+
+            <td>nastaví "primární" klíč, který identifikuje řádek</td>
+
+            <td> </td>
+        </tr>
+
+        <tr>
+            <td>setElementPrototype</td>
+
+            <td>vlastní html element</td>
+
+            <td> </td>
+        </tr>
+
+        <tr>
+            <td>setCustomHref</td>
+
+            <td>callback pro vlastní vytvoření odkazu</td>
+
+            <td> </td>
+        </tr>
+
+        <tr>
+            <td>setIcon</td>
+
+            <td>nastaví twitter bootstrap ikonu</td>
+
+            <td>'pencil'</td>
+        </tr>
+
+        <tr>
+            <td>setConfirm</td>
+
+            <td>nastaví javascriptový confirm</td>
+
+            <td> </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h4 id="akce-gettery">Gettery</h4>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Metoda</th>
+
+            <th>Popis</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>getElementPrototype</td>
+
+            <td>umožní nastavit např. vlastní css třídu</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h3 id="operace">Operace</h3>
+
+    <pre>$grid->setOperation­s(array('dele­te' ⇒ 'Delete'), function($ope­ration, $id) { … } );</pre>
+
+    <p>První parametr je pole podporovaných akcí, druhý je handler volající se po vybrání akce.</p>
+
+    <h4 id="operace-settery">Settery</h4>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Metoda</th>
+
+            <th>Popis</th>
+
+            <th>Příklad parametru</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>setConfirm</td>
+
+            <td>nastaví javascriptový confirm pro operaci</td>
+
+            <td>"delete", "Opravdu chcete mazat?"</td>
+        </tr>
+
+        <tr>
+            <td>setPrimaryKey</td>
+
+            <td>nastaví "primární" klíč, který identifikuje řádek</td>
+
+            <td> </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h3 id="export">Export</h3>
+
+    <pre>$grid->setExporting('u­ser_export');</pre>
+
+    <p>První parametr je název exportovného souboru, pokud není nastaven použije se název gridu. Formáty exportu jsou XLS a
+        CSV. Export zohleďňuje aktuální filtr. Formát XLS byl otestován na OpenOffice 3.4.0 (OS X), Microsoft Excel
+        2003, 2007 (Win 7). Formát CSV na OpenOffice 3 (OS X, Win 7).</p>
+
+    <p class="warning">CSV export nefunguje na Microsoft Excel!</p>
+
+    <hr>
+
+    <h3 id="client-side-features">Client-side features</h3>
+
+    <ul>
+        <li>ajaxová podpora</li>
+
+        <li>hromadné označování řádků s podporou shiftu</li>
+
+        <li>invertování výběru řádků</li>
+
+        <li>prompt pro rychlé přeskočení na stranu</li>
+
+        <li>napovídání založené na <a href="http://twitter.github.com/bootstrap/javascript.html#typeahead">Twitter Bootstrap Typeahead</a></li>
+
+        <li><a href="https://github.com/Aymkdn/Datepicker-for-Bootstrap">Datepicker</a> pro Twitter Bootstrap</li>
+
+        <li>zadávání datumu založené na <a href="http://digitalbush.com/projects/masked-input-plugin/">Masked input plugin</a></li>
+
+        <li>kontrola numerického vstupu</li>
+
+        <li>potvrzování nastavených akcí a operací</li>
+
+        <li>odscrolování po změně</li>
+
+        <li>cool url parametry</li>
+
+        <li>odeslání filtru po změně hodnoty</li>
+    </ul>
+
+    <hr>
+
+    <img src="http://img.bugyik.cz/Grido.png" alt="Screenshot">
+    </section>
+    </div>
+
+    <div id="footer_wrap" class="outer">
+    <footer class="inner">
+        <p class="copyright">Copyright © 2012 Petr Bugyík</p>
+    </footer>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap-dropdown.js"></script>
+</body>
+</html>
