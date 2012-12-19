@@ -1,0 +1,29 @@
+common:
+    php:
+        date.timezone: Europe/Prague
+        default_charset: UTF-8
+
+    parameters:
+        db:
+            driver: sqlite3
+            file: %appDir%/models/users.s3db
+            profiler: true
+
+    nette:
+        database:
+            default:
+                dsn: "sqlite:%appDir%/models/users.s3db"
+        session:
+            autoStart: yes
+
+    services:
+        db: @nette.database.default
+
+
+production < common:
+    parameters:
+        baseUri: /example
+
+
+development < common:
+console < development:

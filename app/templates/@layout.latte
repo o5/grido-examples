@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Grido - DataGrid for Nette Framework</title>
+
+        <meta name="description" content="DataGrid for Nette Framework">
+        <meta name="author" content="Petr Bugyík">
+        <meta name="robots" content="{$robots}" n:ifset="$robots">
+        <link rel="shortcut icon" href="{$baseUri}/favicon.ico">
+        <link rel="stylesheet" href="{$baseUri}/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{$baseUri}/css/datepicker.css">
+        <link rel="stylesheet" href="{$baseUri}/css/gh-fork-ribbon.css">
+        <!--[if IE]>
+        <link rel="stylesheet" href="{$baseUri}/css/gh-fork-ribbon.ie.css">
+        <![endif]-->
+        <link rel="stylesheet" href="{$baseUri}/css/style.css">
+        <link rel="stylesheet" href="{$baseUri}/css/grido.css">
+    </head>
+    <body>
+        <div id="content">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle no-ajax" data-toggle="dropdown">
+                                Filter type
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="no-ajax" n:href="this filterRenderType => inner">Inner</a></li>
+                                <li><a class="no-ajax" n:href="this filterRenderType => outer">Outer</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle no-ajax" data-toggle="dropdown">
+                                Ajax state
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="no-ajax" n:href="default">ON</a></li>
+                                <li><a class="no-ajax" n:href="ajaxOff">OFF</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav pull-right">
+                        <li><span id="ajax-spinner" class="hide">&nbsp;</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            {snippet flash}
+                <div n:foreach="$flashes as $flash" class="alert alert-{$flash->type} fade in">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <p>
+                        <strong>{$flash->type|strtoupper}:</strong>
+                        {$flash->message}
+                    </p>
+                </div>
+            {/snippet}
+
+            {block content}{/block}
+            <div class="github-fork-ribbon-wrapper left">
+                <div class="github-fork-ribbon">
+                    <a class="no-ajax" target="_blank" href="https://github.com/o5/grido-sandbox/blob/master/app/presenters/ExamplePresenter.php#L1">Source on GitHub</a>
+                </div>
+            </div>
+        </div>
+
+        <script src="{$baseUri}/js/jquery.min.js"></script>
+        <script src="{$baseUri}/js/netteForms.min.js"></script>
+        <script src="{$baseUri}/js/jquery.grido.js"></script>
+        <script src="{$baseUri}/js/utils.js"></script>
+        <script src="{$baseUri}/js/jquery.hashchange.min.js"></script>
+        <script src="{$baseUri}/js/jquery.nette.js"></script>
+        <script src="{$baseUri}/js/jquery.ajaxform.js"></script>
+        <script src="{$baseUri}/js/jquery.maskedinput.min.js"></script>
+        <script src="{$baseUri}/js/bootstrap-dropdown.js"></script>
+        <script src="{$baseUri}/js/bootstrap-alert.js"></script>
+        <script src="{$baseUri}/js/bootstrap-typeahead.js"></script>
+        <script src="{$baseUri}/js/bootstrap-datepicker.js"></script>
+        {block js}{/block}
+    </body>
+</html>

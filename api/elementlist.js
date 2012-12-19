@@ -1,0 +1,3 @@
+
+var ApiGen = ApiGen || {};
+ApiGen.elements = [["c","Exception"],["c","Grido\\Actions\\Action"],["c","Grido\\Actions\\Href"],["c","Grido\\Base"],["c","Grido\\Columns\\Column"],["c","Grido\\Columns\\Date"],["c","Grido\\Columns\\Href"],["c","Grido\\Columns\\Mail"],["c","Grido\\Columns\\Text"],["c","Grido\\DibiFluent"],["c","Grido\\Export"],["c","Grido\\FileTranslator"],["c","Grido\\Filters\\Check"],["c","Grido\\Filters\\Date"],["c","Grido\\Filters\\Filter"],["c","Grido\\Filters\\Number"],["c","Grido\\Filters\\Select"],["c","Grido\\Filters\\Text"],["c","Grido\\Grid"],["c","Grido\\IDataSource"],["c","Grido\\IExport"],["c","Grido\\NetteDatabase"],["c","Grido\\Operation"],["c","Grido\\Paginator"],["c","InvalidArgumentException"],["c","LogicException"],["f","pluralIndex()"]];
