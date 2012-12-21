@@ -19,16 +19,17 @@
         /** Name of grid **/
         name: '',
 
+        /** Allowing ajax **/
+        ajax: true,
+
         /** jQuery object element of grid **/
         $element: $([]),
 
-        allowAjax: true,
-
         /** INIT **/
-        init: function($element, name)
+        init: function(name, $element)
         {
-            this.$element = $element;
             this.name = name;
+            this.$element = $element;
 
             this.initHash();
             this.initFilters();
@@ -69,7 +70,7 @@
         /******************** URI HASH ********************/
         initHash: function()
         {
-            if (!this.allowAjax) {
+            if (!this.ajax) {
                 return;
             }
 
@@ -77,13 +78,14 @@
             $.grido.hash.refresh();
         },
 
+        /******************** JUMP TO PAGE ********************/
         initPagePromt: function()
         {
-            $.grido.$element.on('click', '.paginator .promt', function() {
+            this.$element.on('click', '.paginator .promt', function() {
                 var page = prompt($(this).attr('data-grido-promt'));
                 if (page && page > 0 && page <= $('.paginator a.btn:last', $.grido.element).prev().text()) {
                     var location = $(this).attr('data-grido-link').replace('page=0', 'page=' + page);
-                    window.location = $.grido.allowAjax ? location.replace('?', '#') : location;
+                    window.location = $.grido.ajax ? location.replace('?', '#') : location;
                 }
             });
         },
@@ -249,7 +251,7 @@
             }
         },
 
-        /******************** SUGGESTION WITH TWITTER BOOTSTRAP TYPEAHEAD ********************/
+        /******************** SUGGESTION ********************/
         suggest: function()
         {
             this.$element.on('focus', 'input.suggest', function() {
@@ -282,6 +284,7 @@
             });
         },
 
+        /******************** CHECKING NUMERIC INPUT ********************/
         checkNumeric: function()
         {
             this.$element.on('keyup', 'input.number', function() {
@@ -309,8 +312,8 @@
         return this.each(function() {
             var $this = $(this);
             $.grido.init(
-                $this.parent().parent(),
-                $this.prop('id')
+                $this.prop('id'),
+                $this.parent().parent()
             );
         });
     };
