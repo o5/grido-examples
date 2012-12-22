@@ -33,7 +33,7 @@
   text-align: center;
 
   /* Set the geometry. If you fiddle with these you'll also need to tweak the top and right values in #github-fork-ribbon. */
-  width: 200px;
+  width: 229px;
   line-height: 20px;
 
   /* Set the layout properties */
@@ -47,8 +47,8 @@
 }
 
 .github-fork-ribbon-wrapper {
-  width: 150px;
-  height: 150px;
+  width: 159px;
+  height: 159px;
   position: absolute;
   overflow: hidden;
   top: 0;
@@ -76,8 +76,8 @@
 
 .github-fork-ribbon-wrapper.left .github-fork-ribbon {
   /* Attach to the left of the page */
-  top: 42px;
-  left: -43px;
+  top: 53px;
+  left: -44px;
 
   /* Rotate the banner -45 degrees */
   -webkit-transform: rotate(-45deg);

@@ -276,12 +276,8 @@ Full-Width Styles
     background: #202020 url(../img/bg.gif) 0 0 repeat;
 }
 
-#header_wrap .inner {
-  padding: 20px 10px 10px 10px;
-}
-
 #project_title {
-  margin: 0;
+  margin: 8px 0;
   color: #fff;
   font-size: 50px;
   font-weight: 700;
@@ -294,6 +290,7 @@ Full-Width Styles
   font-weight: 300;
   background: none;
   text-shadow: #111 0px 0px 10px;
+  margin: 0;
 }
 
 #downloads {
@@ -419,6 +416,6 @@ Small Device Styles
   border-radius: 0!important;
 }
 .navbar-inner ul {
-  margin-left: 380px!important;
+  margin-left: 492px!important;
 }
 
