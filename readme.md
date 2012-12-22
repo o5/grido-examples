@@ -4,4 +4,4 @@ Inspired by [Slate Theme](https://github.com/jsncostello/slate/) for GitHub Page
 
 API
 =======
-Used [ApiGen](http://apigen.org/)
+Used [ApiGen](http://apigen.org/).
