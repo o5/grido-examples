@@ -1,2 +1,2 @@
-[Project pages](http://o5.github.com/grido-sandbox/)
+[Project Pages](http://o5.github.com/grido-sandbox/)
 =============
