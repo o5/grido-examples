@@ -56,13 +56,7 @@ Theme Styles
 *******************************************************************************/
 
 body {
-  box-sizing: border-box;
-  color:#373737;
-
-  font-size: 16px;
-  font-family: 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
+  font-size: 17px!important;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -144,11 +138,6 @@ strong {
 }
 
 img {
-  position: relative;
-  margin: 0 auto;
-  max-width: 739px;
-  padding: 5px;
-  margin: 10px 0 0 0;
   max-width: none!important;
 }
 
@@ -260,10 +249,12 @@ Full-Width Styles
 
 .inner {
   position: relative;
-  max-width: 850px;
-  padding: 10px;
+  width: 855px;
+  padding: 10px 50px;
   margin: 0 auto;
 }
+
+#main_content_wrap .inner {box-shadow: 0 0 10px rgba(0, 0, 0, .1);}
 
 #header_wrap {
     background: #212121;

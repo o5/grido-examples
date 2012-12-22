@@ -7,9 +7,11 @@
     <meta name="description" content="Grido : DataGrid for Nette Framework" />
     <link rel="shortcut icon" href="favicon.ico">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/gh-fork-ribbon.css">
+    <link rel="stylesheet" href="css/highlight.github.edit.css">
+
     <!--[if IE]>
     <link rel="stylesheet" href="css/gh-fork-ribbon.ie.css">
     <![endif]-->
@@ -19,7 +21,7 @@
 <body>
     <div class="github-fork-ribbon-wrapper left">
         <div class="github-fork-ribbon">
-            <a class="no-ajax" target="_blank" href="https://github.com/o5/grido">Fork me on GitHub</a>
+            <a class="no-ajax" href="https://github.com/o5/grido">Fork me on GitHub</a>
         </div>
     </div>
 
@@ -114,24 +116,24 @@
 
     <p>Komponentu si stáhněte a rozbalte do projektu, nebo nainstalujte pomocí <a href="http://doc.nette.org/cs/composer">Composeru</a>.</p>
 
-<pre>{
+<pre><code>{
     "require":
     {
         "php" : ">=5.3.2",
         "nette/nette": "2.0.*",
         "o5/grido": "dev-master"
     }
-}</pre>
+}</code></pre>
 
     <h3 id="pouziti">Použití</h3>
 
     <p>Grid vytvoříme továrničkou na komponenty, nastavíme model…</p>
 
-<pre>protected function createComponentGrid($name)
+<pre><code>protected function createComponentGrid($name)
 {
     $grid = new Grido\Grid($this, $name);
     $grid->setModel($this->context->database->table('user'));
-}</pre>
+}</code></pre>
 
     <h3 id="settery-gridu">Settery gridu</h3>
 
@@ -350,7 +352,7 @@
 
     <h3 id="sloupce">Sloupce</h3>
 
-    <pre>$grid->addColumn('email', 'E-mail', Column::TYPE_MAIL);</pre>
+    <pre><code>$grid->addColumn('email', 'E-mail', Column::TYPE_MAIL);</code></pre>
 
     <p>První parametr reprezentuje název sloupce v datasource, následuje popisek
         a typ vykreslení. Typ je název třídy, který se má použít (lze uvést
@@ -502,7 +504,7 @@
 
     <h3 id="filtry">Filtry</h3>
 
-    <pre>$grid->addFilter('bir­thday', 'Birthday', Column::TYPE_DA­TE);</pre>
+    <pre><code>$grid->addFilter('bir­thday', 'Birthday', Column::TYPE_DA­TE);</code></pre>
 
     <p>První parametr reprezentuje název sloupce v datasource, následuje popisek
         a typ filtru. Typ je název třídy, který se má použít (lze uvést vlastní
@@ -613,7 +615,7 @@
         </tbody>
     </table>
 
-<pre>//Filter::CON­DITION_CUSTOM
+<pre><code>//Filter::CON­DITION_CUSTOM
 $list = array('' ⇒ '', 'publihed' ⇒ 'Published', 'deleted' ⇒ 'Deleted');
 $grid->addFilter('sta­tus', 'Status', Filter::TYPE_SE­LECT, $list)
     ->setCondition(Fil­ter::CONDITION_CUS­TOM, array(
@@ -630,7 +632,7 @@ $grid->addFilter('type', 'Type')
 
 //filtrování lze vyloučit
 $grid->addFilter('type', 'Type')
-    ->setCondition(Fil­ter::CONDITION_NOT_AP­PLY);</pre>
+    ->setCondition(Fil­ter::CONDITION_NOT_AP­PLY);</code></pre>
 
 
     <h4 id="filtry-gettery">Gettery</h4>
@@ -657,7 +659,7 @@ $grid->addFilter('type', 'Type')
 
     <h3 id="akce">Akce</h3>
 
-    <pre>$grid->addAction('edit', 'Edit');</pre>
+    <pre><code>$grid->addAction('edit', 'Edit');</code></pre>
 
     <p>První parametr je název akce, následuje popisek a typ akce. Poslední
         parametry jsou $destination a $args které se předají metodě
@@ -754,7 +756,7 @@ $grid->addFilter('type', 'Type')
 
     <h3 id="operace">Operace</h3>
 
-    <pre>$grid->setOperation­s(array('dele­te' ⇒ 'Delete'), function($ope­ration, $id) { … } );</pre>
+    <pre><code>$grid->setOperation­s(array('dele­te' ⇒ 'Delete'), function($ope­ration, $id) { … } );</code></pre>
 
     <p>První parametr je pole podporovaných akcí, druhý je handler volající se po vybrání akce.</p>
 
@@ -794,7 +796,7 @@ $grid->addFilter('type', 'Type')
 
     <h3 id="export">Export</h3>
 
-    <pre>$grid->setExporting('u­ser_export');</pre>
+    <pre><code>$grid->setExporting('u­ser_export');</code></pre>
 
     <p>První parametr je název exportovného souboru, pokud není nastaven použije se název gridu. Formáty exportu jsou XLS a
         CSV. Export zohleďňuje aktuální filtr. Formát XLS byl otestován na OpenOffice 3.4.0 (OS X), Microsoft Excel
@@ -840,10 +842,11 @@ $grid->addFilter('type', 'Type')
 
     <div id="footer_wrap" class="outer">
     <footer class="inner">
-        <p class="copyright">Copyright © 2012 Petr Bugyík</p>
+        <p class="copyright">Copyright © 2012 <a target="_blank" href="http://petr.bugyik.cz">Petr Bugyík</a></p>
     </footer>
     </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap-dropdown.js"></script>
+    <script src="js/highlight.pack.js"></script>
 </body>
 </html>
