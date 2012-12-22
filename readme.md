@@ -1,2 +1,2 @@
-[Grido](http://o5.github.com/grido/) sandbox.
+[Project pages](http://o5.github.com/grido-sandbox/)
 =============
