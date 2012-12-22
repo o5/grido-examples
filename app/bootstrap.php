@@ -28,10 +28,10 @@ $container = $configurator->createContainer();
 
 
 // Database connect
-dibi::connect($container->params['db']);
+dibi::connect($container->parameters['db']);
 
 // Setup router
-$uri = $container->params['productionMode'] ? 'example/' : '';
+$uri = $container->parameters['productionMode'] ? 'example/' : '';
 $container->router[] = new Route("$uri<filterRenderType>/<action>/", array(
     'presenter' => 'Example',
     'action' => 'default',
