@@ -62,7 +62,7 @@
         initActions: function()
         {
             this.$element.on('click', '.actions a', function() {
-               var hasConfirm = $(this).attr('data-grid-confirm');
+               var hasConfirm = $(this).attr('data-grido-confirm');
                return hasConfirm ? confirm(hasConfirm) : true;
             });
         },
@@ -192,7 +192,7 @@
             {
                 var itemsCount = $($.grido.operations.selector + ':checked', $.grido.$element).length,
                     hasConfirm = $.grido.operations.getSelect().attr(
-                        'data-grid-' + $.grido.operations.getSelect().val()
+                        'data-grido-' + $.grido.operations.getSelect().val()
                     );
 
                 return hasConfirm
