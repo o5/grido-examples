@@ -2,11 +2,12 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Grido - DataGrid for Nette Framework</title>
-
         <meta name="description" content="DataGrid for Nette Framework">
         <meta name="author" content="Petr Bugyík">
         <meta name="robots" content="{$robots}" n:ifset="$robots">
+        <meta name="viewport" content="width=device-width">
         <link rel="shortcut icon" href="{$baseUri}/favicon.ico">
         <link rel="stylesheet" href="{$baseUri}/css/bootstrap.min.css">
         <link rel="stylesheet" href="{$baseUri}/css/datepicker.css">
@@ -59,7 +60,7 @@
                 </div>
             {/snippet}
 
-            {block content}{/block}
+            {include #content}
             <div class="github-fork-ribbon-wrapper left">
                 <div class="github-fork-ribbon">
                     <a class="no-ajax" target="_blank" href="https://github.com/o5/grido-sandbox/blob/master/app/presenters/ExamplePresenter.php#L1">Source on GitHub</a>

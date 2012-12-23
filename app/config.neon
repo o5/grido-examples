@@ -8,6 +8,7 @@ common:
             driver: sqlite3
             file: %appDir%/models/users.s3db
             profiler: true
+        baseUri:
 
     nette:
         database:

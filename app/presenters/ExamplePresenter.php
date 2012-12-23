@@ -45,12 +45,12 @@ final class ExamplePresenter extends BasePresenter
                 ->setCondition(Filter::CONDITION_CALLBACK, callback($this, 'gridBirthdayFilterCondition'));
         $grid->getColumn('birthday')->cellPrototype->class[] = 'center';
 
-        $that = $this;
+        $baseUri = $this->template->baseUri;
         $grid->addColumn('country', 'Country')
             ->setSortable()
-            ->setCustomRender(function($item) use($that) {
-                $imgSrc = $that->baseUri . "/img/flags/$item->country_code.gif";
-                return Html::el('img')->src($imgSrc) . ' ' . $item->country;
+            ->setCustomRender(function($item) use($baseUri) {
+                $img = Html::el('img')->src("$baseUri/img/flags/$item->country_code.gif");
+                return "$img $item->country";
             })
             ->setFilter()
                 ->setSuggestion();

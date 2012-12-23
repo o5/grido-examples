@@ -3,7 +3,7 @@
 use \Nette\Application\Routers\Route;
 
 // Load Nette Framework
-require LIBS_DIR . '/nette/loader.php';
+require LIBS_DIR . '/Nette/loader.php';
 
 
 // Configure application
@@ -12,10 +12,13 @@ $configurator->setTempDirectory(__DIR__ . '/../temp');
 
 
 // Enable Nette Debugger for error visualisation & logging
+//$configurator->setDebugMode();
+//$configurator->setProductionMode();
 $configurator->enableDebugger(__DIR__ . '/../log');
 
 
 // Enable RobotLoader - this will load all classes automatically
+$configurator->setTempDirectory(__DIR__ . '/../temp');
 $configurator->createRobotLoader()
     ->addDirectory(__DIR__)
     ->addDirectory(LIBS_DIR)
