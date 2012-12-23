@@ -246,7 +246,7 @@
                         gridParams[key] = val;
                     }
                 });
-                window.location.hash = $.grido.hash.query = urldecode(http_build_query(gridParams));
+                window.location.hash = $.grido.hash.query = decodeURI(http_build_query(gridParams));
                 $.grido.operations.setSelectState();
             }
         },
