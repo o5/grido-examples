@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Grido - DataGrid for Nette Framework</title>
-        <meta name="description" content="DataGrid for Nette Framework">
+        <meta name="description" content="Grido - DataGrid for Nette Framework">
         <meta name="author" content="Petr Bugyík">
         <meta name="robots" content="{$robots}" n:ifset="$robots">
         <meta name="viewport" content="width=device-width">
@@ -13,10 +13,10 @@
         <link rel="stylesheet" href="{$baseUri}/css/datepicker.css">
         <link rel="stylesheet" href="{$baseUri}/css/gh-fork-ribbon.css">
         <!--[if IE]>
-        <link rel="stylesheet" href="{$baseUri}/css/gh-fork-ribbon.ie.css">
+        <link rel="stylesheet" href="{$baseUri}/css/gh-fork-ribbon.ie.css{scache}">
         <![endif]-->
-        <link rel="stylesheet" href="{$baseUri}/css/style.css">
-        <link rel="stylesheet" href="{$baseUri}/css/grido.css">
+        <link rel="stylesheet" href="{$baseUri}/css/style.css{scache}">
+        <link rel="stylesheet" href="{$baseUri}/css/grido.css{scache}">
     </head>
     <body>
         <div id="content">
@@ -25,8 +25,7 @@
                     <ul class="nav">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle no-ajax" data-toggle="dropdown">
-                                Filter type
-                                <b class="caret"></b>
+                                Filter type <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="no-ajax" n:href="this filterRenderType => inner">Inner</a></li>
@@ -35,8 +34,7 @@
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle no-ajax" data-toggle="dropdown">
-                                Ajax state
-                                <b class="caret"></b>
+                                Ajax state <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="no-ajax" n:href="default">ON</a></li>
@@ -63,23 +61,25 @@
             {include #content}
             <div class="github-fork-ribbon-wrapper left">
                 <div class="github-fork-ribbon">
-                    <a class="no-ajax" target="_blank" href="https://github.com/o5/grido-sandbox/blob/master/app/presenters/ExamplePresenter.php#L1">Source on GitHub</a>
+                    <a class="no-ajax" target="_blank" href="https://github.com/o5/grido-sandbox/blob/master/app/presenters/ExamplePresenter.php#L1">
+                        Source on GitHub
+                    </a>
                 </div>
             </div>
         </div>
 
         <script src="{$baseUri}/js/jquery.min.js"></script>
-        <script src="{$baseUri}/js/netteForms.min.js"></script>
-        <script src="{$baseUri}/js/jquery.grido.js"></script>
-        <script src="{$baseUri}/js/utils.js"></script>
         <script src="{$baseUri}/js/jquery.hashchange.min.js"></script>
-        <script src="{$baseUri}/js/jquery.nette.js"></script>
-        <script src="{$baseUri}/js/jquery.ajaxform.js"></script>
         <script src="{$baseUri}/js/jquery.maskedinput.min.js"></script>
         <script src="{$baseUri}/js/bootstrap-dropdown.js"></script>
         <script src="{$baseUri}/js/bootstrap-alert.js"></script>
         <script src="{$baseUri}/js/bootstrap-typeahead.js"></script>
         <script src="{$baseUri}/js/bootstrap-datepicker.js"></script>
+        <script src="{$baseUri}/js/netteForms.min.js"></script>
+        <script src="{$baseUri}/js/jquery.nette.js"></script>
+        <script src="{$baseUri}/js/jquery.ajaxform.js"></script>
+        <script src="{$baseUri}/js/jquery.grido.js{scache}"></script>
+        <script src="{$baseUri}/js/utils.js{scache}"></script>
         {block js}{/block}
     </body>
 </html>
