@@ -112,8 +112,8 @@
 </span><span id="11" class="l"><a class="l" href="#11"> 11: </a>
 </span><span id="12" class="l"><a class="l" href="#12"> 12: </a><span class="php-keyword1">namespace</span> Grido;
 </span><span id="13" class="l"><a class="l" href="#13"> 13: </a>
-</span><span id="14" class="l"><a class="l" href="#14"> 14: </a><span class="php-keyword1">use</span> Grido\Filters\Filter,
-</span><span id="15" class="l"><a class="l" href="#15"> 15: </a>    Grido\Columns\Column,
+</span><span id="14" class="l"><a class="l" href="#14"> 14: </a><span class="php-keyword1">use</span> Grido\Columns\Column,
+</span><span id="15" class="l"><a class="l" href="#15"> 15: </a>    Grido\Filters\Filter,
 </span><span id="16" class="l"><a class="l" href="#16"> 16: </a>    Grido\Actions\Action;
 </span><span id="17" class="l"><a class="l" href="#17"> 17: </a>
 </span><span id="18" class="l"><a class="l" href="#18"> 18: </a><span class="php-comment">/**
@@ -302,7 +302,7 @@
 </span><span id="201" class="l"><a class="l" href="#201">201: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setFilterRenderType" href="#_setFilterRenderType">setFilterRenderType</a>(<span class="php-var">$type</span>)
 </span><span id="202" class="l"><a class="l" href="#202">202: </a>    {
 </span><span id="203" class="l"><a class="l" href="#203">203: </a>        <span class="php-keyword1">if</span> (!<span class="php-keyword2">in_array</span>(<span class="php-var">$type</span>, <span class="php-keyword1">array</span>(Filter::RENDER_INNER, Filter::RENDER_OUTER))) {
-</span><span id="204" class="l"><a class="l" href="#204">204: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \Exception(<span class="php-quote">'Type must be Filter::RENDER_INNER or Filter::RENDER_OUTER.'</span>);
+</span><span id="204" class="l"><a class="l" href="#204">204: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \InvalidArgumentException(<span class="php-quote">'Type must be Filter::RENDER_INNER or Filter::RENDER_OUTER.'</span>);
 </span><span id="205" class="l"><a class="l" href="#205">205: </a>        }
 </span><span id="206" class="l"><a class="l" href="#206">206: </a>
 </span><span id="207" class="l"><a class="l" href="#207">207: </a>        <span class="php-var">$this</span>-&gt;filterRenderType = <span class="php-var">$type</span>;
@@ -310,7 +310,7 @@
 </span><span id="209" class="l"><a class="l" href="#209">209: </a>    }
 </span><span id="210" class="l"><a class="l" href="#210">210: </a>
 </span><span id="211" class="l"><a class="l" href="#211">211: </a>    <span class="php-comment">/**
-</span></span><span id="212" class="l"><a class="l" href="#212">212: </a><span class="php-comment">     * Sets paginator.
+</span></span><span id="212" class="l"><a class="l" href="#212">212: </a><span class="php-comment">     * Sets custom paginator.
 </span></span><span id="213" class="l"><a class="l" href="#213">213: </a><span class="php-comment">     * @param Paginator $paginator
 </span></span><span id="214" class="l"><a class="l" href="#214">214: </a><span class="php-comment">     * @return Grid
 </span></span><span id="215" class="l"><a class="l" href="#215">215: </a><span class="php-comment">     */</span>
@@ -332,7 +332,7 @@
 </span><span id="231" class="l"><a class="l" href="#231">231: </a>    }
 </span><span id="232" class="l"><a class="l" href="#232">232: </a>
 </span><span id="233" class="l"><a class="l" href="#233">233: </a>    <span class="php-comment">/**
-</span></span><span id="234" class="l"><a class="l" href="#234">234: </a><span class="php-comment">     * Sets name of template file.
+</span></span><span id="234" class="l"><a class="l" href="#234">234: </a><span class="php-comment">     * Sets file name of custom template.
 </span></span><span id="235" class="l"><a class="l" href="#235">235: </a><span class="php-comment">     * @param string $file
 </span></span><span id="236" class="l"><a class="l" href="#236">236: </a><span class="php-comment">     * @return Grid
 </span></span><span id="237" class="l"><a class="l" href="#237">237: </a><span class="php-comment">     */</span>
@@ -710,7 +710,7 @@
 </span></span><span id="609" class="l"><a class="l" href="#609">609: </a><span class="php-comment">     * @internal
 </span></span><span id="610" class="l"><a class="l" href="#610">610: </a><span class="php-comment">     * @param string $name - filter name
 </span></span><span id="611" class="l"><a class="l" href="#611">611: </a><span class="php-comment">     * @param string $query - value from input
-</span></span><span id="612" class="l"><a class="l" href="#612">612: </a><span class="php-comment">     * @throws \Nette\InvalidArgumentException
+</span></span><span id="612" class="l"><a class="l" href="#612">612: </a><span class="php-comment">     * @throws \InvalidArgumentException
 </span></span><span id="613" class="l"><a class="l" href="#613">613: </a><span class="php-comment">     */</span>
 </span><span id="614" class="l"><a class="l" href="#614">614: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_handleSuggest" href="#_handleSuggest">handleSuggest</a>(<span class="php-var">$name</span>, <span class="php-var">$query</span>)
 </span><span id="615" class="l"><a class="l" href="#615">615: </a>    {
@@ -733,7 +733,7 @@
 </span><span id="632" class="l"><a class="l" href="#632">632: </a>            <span class="php-var">$items</span> = <span class="php-var">$this</span>-&gt;model-&gt;suggest(<span class="php-keyword2">key</span>(<span class="php-var">$filter</span>-&gt;getColumns()), <span class="php-var">$conditions</span>);
 </span><span id="633" class="l"><a class="l" href="#633">633: </a>
 </span><span id="634" class="l"><a class="l" href="#634">634: </a>        } <span class="php-keyword1">else</span> {
-</span><span id="635" class="l"><a class="l" href="#635">635: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \Nette\InvalidArgumentException(<span class="php-quote">'Set suggest callback or implement method in model.'</span>);
+</span><span id="635" class="l"><a class="l" href="#635">635: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \InvalidArgumentException(<span class="php-quote">'Set suggest callback or implement method in model.'</span>);
 </span><span id="636" class="l"><a class="l" href="#636">636: </a>        }
 </span><span id="637" class="l"><a class="l" href="#637">637: </a>
 </span><span id="638" class="l"><a class="l" href="#638">638: </a>        <span class="php-keyword1">print</span> \Nette\Utils\Json::encode(<span class="php-var">$items</span>);
@@ -923,115 +923,129 @@
 </span><span id="822" class="l"><a class="l" href="#822">822: </a>
 </span><span id="823" class="l"><a class="l" href="#823">823: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_applyPaging" href="#_applyPaging">applyPaging</a>()
 </span><span id="824" class="l"><a class="l" href="#824">824: </a>    {
-</span><span id="825" class="l"><a class="l" href="#825">825: </a>        <span class="php-keyword1">if</span> (!<span class="php-var">$this</span>-&gt;paginator) {
-</span><span id="826" class="l"><a class="l" href="#826">826: </a>            <span class="php-var">$paginator</span> = <span class="php-var">$this</span>-&gt;getPaginator()
-</span><span id="827" class="l"><a class="l" href="#827">827: </a>                -&gt;setItemCount(<span class="php-var">$this</span>-&gt;getCount())
-</span><span id="828" class="l"><a class="l" href="#828">828: </a>                -&gt;setPage(<span class="php-var">$this</span>-&gt;page);
-</span><span id="829" class="l"><a class="l" href="#829">829: </a>
-</span><span id="830" class="l"><a class="l" href="#830">830: </a>            <span class="php-var">$this</span>[<span class="php-quote">'form'</span>][<span class="php-quote">'count'</span>]-&gt;setValue(<span class="php-var">$this</span>-&gt;getPerPage());
-</span><span id="831" class="l"><a class="l" href="#831">831: </a>            <span class="php-var">$this</span>-&gt;model-&gt;limit(<span class="php-var">$paginator</span>-&gt;getOffset(), <span class="php-var">$paginator</span>-&gt;getLength());
-</span><span id="832" class="l"><a class="l" href="#832">832: </a>        }
-</span><span id="833" class="l"><a class="l" href="#833">833: </a>    }
-</span><span id="834" class="l"><a class="l" href="#834">834: </a>
-</span><span id="835" class="l"><a class="l" href="#835">835: </a>    <span class="php-comment">/**
-</span></span><span id="836" class="l"><a class="l" href="#836">836: </a><span class="php-comment">     * @param array $data
-</span></span><span id="837" class="l"><a class="l" href="#837">837: </a><span class="php-comment">     */</span>
-</span><span id="838" class="l"><a class="l" href="#838">838: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_addCheckers" href="#_addCheckers">addCheckers</a>(<span class="php-var">$data</span>)
-</span><span id="839" class="l"><a class="l" href="#839">839: </a>    {
-</span><span id="840" class="l"><a class="l" href="#840">840: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;hasOperations()) {
-</span><span id="841" class="l"><a class="l" href="#841">841: </a>            <span class="php-var">$operation</span> = <span class="php-var">$this</span>[<span class="php-quote">'form'</span>][Operation::ID];
-</span><span id="842" class="l"><a class="l" href="#842">842: </a>            <span class="php-keyword1">if</span> (<span class="php-keyword2">count</span>(<span class="php-var">$operation</span>-&gt;getComponents()) == <span class="php-num">1</span>) {
-</span><span id="843" class="l"><a class="l" href="#843">843: </a>                <span class="php-var">$pk</span> = <span class="php-var">$this</span>[Operation::ID]-&gt;getPrimaryKey();
-</span><span id="844" class="l"><a class="l" href="#844">844: </a>                <span class="php-keyword1">foreach</span> (<span class="php-var">$data</span> <span class="php-keyword1">as</span> <span class="php-var">$item</span>) {
-</span><span id="845" class="l"><a class="l" href="#845">845: </a>                    <span class="php-var">$operation</span>-&gt;addCheckbox(<span class="php-var">$item</span>[<span class="php-var">$pk</span>]);
-</span><span id="846" class="l"><a class="l" href="#846">846: </a>                }
-</span><span id="847" class="l"><a class="l" href="#847">847: </a>            }
-</span><span id="848" class="l"><a class="l" href="#848">848: </a>        }
-</span><span id="849" class="l"><a class="l" href="#849">849: </a>    }
+</span><span id="825" class="l"><a class="l" href="#825">825: </a>        <span class="php-var">$paginator</span> = <span class="php-var">$this</span>-&gt;getPaginator()
+</span><span id="826" class="l"><a class="l" href="#826">826: </a>            -&gt;setItemCount(<span class="php-var">$this</span>-&gt;getCount())
+</span><span id="827" class="l"><a class="l" href="#827">827: </a>            -&gt;setPage(<span class="php-var">$this</span>-&gt;page);
+</span><span id="828" class="l"><a class="l" href="#828">828: </a>
+</span><span id="829" class="l"><a class="l" href="#829">829: </a>        <span class="php-var">$this</span>[<span class="php-quote">'form'</span>][<span class="php-quote">'count'</span>]-&gt;setValue(<span class="php-var">$this</span>-&gt;getPerPage());
+</span><span id="830" class="l"><a class="l" href="#830">830: </a>        <span class="php-var">$this</span>-&gt;model-&gt;limit(<span class="php-var">$paginator</span>-&gt;getOffset(), <span class="php-var">$paginator</span>-&gt;getLength());
+</span><span id="831" class="l"><a class="l" href="#831">831: </a>    }
+</span><span id="832" class="l"><a class="l" href="#832">832: </a>
+</span><span id="833" class="l"><a class="l" href="#833">833: </a>    <span class="php-comment">/**
+</span></span><span id="834" class="l"><a class="l" href="#834">834: </a><span class="php-comment">     * @param array $data
+</span></span><span id="835" class="l"><a class="l" href="#835">835: </a><span class="php-comment">     */</span>
+</span><span id="836" class="l"><a class="l" href="#836">836: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_addCheckers" href="#_addCheckers">addCheckers</a>(<span class="php-var">$data</span>)
+</span><span id="837" class="l"><a class="l" href="#837">837: </a>    {
+</span><span id="838" class="l"><a class="l" href="#838">838: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;hasOperations()) {
+</span><span id="839" class="l"><a class="l" href="#839">839: </a>            <span class="php-var">$operation</span> = <span class="php-var">$this</span>[<span class="php-quote">'form'</span>][Operation::ID];
+</span><span id="840" class="l"><a class="l" href="#840">840: </a>            <span class="php-keyword1">if</span> (<span class="php-keyword2">count</span>(<span class="php-var">$operation</span>-&gt;getComponents()) == <span class="php-num">1</span>) {
+</span><span id="841" class="l"><a class="l" href="#841">841: </a>                <span class="php-var">$pk</span> = <span class="php-var">$this</span>[Operation::ID]-&gt;getPrimaryKey();
+</span><span id="842" class="l"><a class="l" href="#842">842: </a>                <span class="php-keyword1">foreach</span> (<span class="php-var">$data</span> <span class="php-keyword1">as</span> <span class="php-var">$item</span>) {
+</span><span id="843" class="l"><a class="l" href="#843">843: </a>                    <span class="php-var">$operation</span>-&gt;addCheckbox(<span class="php-var">$item</span>[<span class="php-var">$pk</span>]);
+</span><span id="844" class="l"><a class="l" href="#844">844: </a>                }
+</span><span id="845" class="l"><a class="l" href="#845">845: </a>            }
+</span><span id="846" class="l"><a class="l" href="#846">846: </a>        }
+</span><span id="847" class="l"><a class="l" href="#847">847: </a>    }
+</span><span id="848" class="l"><a class="l" href="#848">848: </a>
+</span><span id="849" class="l"><a class="l" href="#849">849: </a>    <span class="php-comment">/**********************************************************************************************/</span>
 </span><span id="850" class="l"><a class="l" href="#850">850: </a>
-</span><span id="851" class="l"><a class="l" href="#851">851: </a>    <span class="php-comment">/**********************************************************************************************/</span>
-</span><span id="852" class="l"><a class="l" href="#852">852: </a>
-</span><span id="853" class="l"><a class="l" href="#853">853: </a>    <span class="php-comment">/**
-</span></span><span id="854" class="l"><a class="l" href="#854">854: </a><span class="php-comment">     * @param string $name
-</span></span><span id="855" class="l"><a class="l" href="#855">855: </a><span class="php-comment">     * @param string $label
-</span></span><span id="856" class="l"><a class="l" href="#856">856: </a><span class="php-comment">     * @param string $type starting constants with Column::TYPE_
-</span></span><span id="857" class="l"><a class="l" href="#857">857: </a><span class="php-comment">     * @return Column
-</span></span><span id="858" class="l"><a class="l" href="#858">858: </a><span class="php-comment">     */</span>
-</span><span id="859" class="l"><a class="l" href="#859">859: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_addColumn" href="#_addColumn">addColumn</a>(<span class="php-var">$name</span>, <span class="php-var">$label</span>, <span class="php-var">$type</span> = Column::TYPE_TEXT)
-</span><span id="860" class="l"><a class="l" href="#860">860: </a>    {
-</span><span id="861" class="l"><a class="l" href="#861">861: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> <span class="php-var">$type</span>(<span class="php-var">$this</span>, <span class="php-var">$name</span>, <span class="php-var">$label</span>);
-</span><span id="862" class="l"><a class="l" href="#862">862: </a>    }
-</span><span id="863" class="l"><a class="l" href="#863">863: </a>
-</span><span id="864" class="l"><a class="l" href="#864">864: </a>    <span class="php-comment">/**
-</span></span><span id="865" class="l"><a class="l" href="#865">865: </a><span class="php-comment">     * @param string $name
-</span></span><span id="866" class="l"><a class="l" href="#866">866: </a><span class="php-comment">     * @param string $label
-</span></span><span id="867" class="l"><a class="l" href="#867">867: </a><span class="php-comment">     * @param string $type starting constants with Filter::TYPE_
-</span></span><span id="868" class="l"><a class="l" href="#868">868: </a><span class="php-comment">     * @param mixed $optional if type is select, then this it items for select
-</span></span><span id="869" class="l"><a class="l" href="#869">869: </a><span class="php-comment">     * @return Filter
-</span></span><span id="870" class="l"><a class="l" href="#870">870: </a><span class="php-comment">     */</span>
-</span><span id="871" class="l"><a class="l" href="#871">871: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_addFilter" href="#_addFilter">addFilter</a>(<span class="php-var">$name</span>, <span class="php-var">$label</span>, <span class="php-var">$type</span> = Filter::TYPE_TEXT, <span class="php-var">$optional</span> = <span class="php-keyword1">array</span>())
-</span><span id="872" class="l"><a class="l" href="#872">872: </a>    {
-</span><span id="873" class="l"><a class="l" href="#873">873: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> <span class="php-var">$type</span>(<span class="php-var">$this</span>, <span class="php-var">$name</span>, <span class="php-var">$label</span>, <span class="php-var">$optional</span>);
-</span><span id="874" class="l"><a class="l" href="#874">874: </a>    }
-</span><span id="875" class="l"><a class="l" href="#875">875: </a>
-</span><span id="876" class="l"><a class="l" href="#876">876: </a>    <span class="php-comment">/**
-</span></span><span id="877" class="l"><a class="l" href="#877">877: </a><span class="php-comment">     * @param string $name
-</span></span><span id="878" class="l"><a class="l" href="#878">878: </a><span class="php-comment">     * @param string $label
-</span></span><span id="879" class="l"><a class="l" href="#879">879: </a><span class="php-comment">     * @param string $type starting constants with Action::TYPE_
-</span></span><span id="880" class="l"><a class="l" href="#880">880: </a><span class="php-comment">     * @param string $destination - first param for method $presenter-&gt;link()
-</span></span><span id="881" class="l"><a class="l" href="#881">881: </a><span class="php-comment">     * @param array $args - second param for method $presenter-&gt;link()
-</span></span><span id="882" class="l"><a class="l" href="#882">882: </a><span class="php-comment">     * @return Action
-</span></span><span id="883" class="l"><a class="l" href="#883">883: </a><span class="php-comment">     */</span>
-</span><span id="884" class="l"><a class="l" href="#884">884: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_addAction" href="#_addAction">addAction</a>(<span class="php-var">$name</span>, <span class="php-var">$label</span>, <span class="php-var">$type</span> = Action::TYPE_HREF, <span class="php-var">$destination</span> = <span class="php-keyword1">NULL</span>, <span class="php-var">$args</span> = <span class="php-keyword1">array</span>())
-</span><span id="885" class="l"><a class="l" href="#885">885: </a>    {
-</span><span id="886" class="l"><a class="l" href="#886">886: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> <span class="php-var">$type</span>(<span class="php-var">$this</span>, <span class="php-var">$name</span>, <span class="php-var">$label</span>, <span class="php-var">$destination</span>, <span class="php-var">$args</span>);
-</span><span id="887" class="l"><a class="l" href="#887">887: </a>    }
-</span><span id="888" class="l"><a class="l" href="#888">888: </a>
-</span><span id="889" class="l"><a class="l" href="#889">889: </a>    <span class="php-comment">/**
-</span></span><span id="890" class="l"><a class="l" href="#890">890: </a><span class="php-comment">     * @param array $operations
-</span></span><span id="891" class="l"><a class="l" href="#891">891: </a><span class="php-comment">     * @param callback $onSubmit - callback after operation submit
-</span></span><span id="892" class="l"><a class="l" href="#892">892: </a><span class="php-comment">     * @param string $type operation class
-</span></span><span id="893" class="l"><a class="l" href="#893">893: </a><span class="php-comment">     * @return Operation
-</span></span><span id="894" class="l"><a class="l" href="#894">894: </a><span class="php-comment">     */</span>
-</span><span id="895" class="l"><a class="l" href="#895">895: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setOperations" href="#_setOperations">setOperations</a>(<span class="php-var">$operations</span>, <span class="php-var">$onSubmit</span>, <span class="php-var">$type</span> = <span class="php-quote">'Grido\Operation'</span>)
-</span><span id="896" class="l"><a class="l" href="#896">896: </a>    {
-</span><span id="897" class="l"><a class="l" href="#897">897: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> <span class="php-var">$type</span>(<span class="php-var">$this</span>, <span class="php-var">$operations</span>, <span class="php-var">$onSubmit</span>);
-</span><span id="898" class="l"><a class="l" href="#898">898: </a>    }
-</span><span id="899" class="l"><a class="l" href="#899">899: </a>
-</span><span id="900" class="l"><a class="l" href="#900">900: </a>    <span class="php-comment">/**
-</span></span><span id="901" class="l"><a class="l" href="#901">901: </a><span class="php-comment">     * @param string $name of exporting file
-</span></span><span id="902" class="l"><a class="l" href="#902">902: </a><span class="php-comment">     * @param string $type export class
-</span></span><span id="903" class="l"><a class="l" href="#903">903: </a><span class="php-comment">     * @return Export
-</span></span><span id="904" class="l"><a class="l" href="#904">904: </a><span class="php-comment">     * @throws \Exception
-</span></span><span id="905" class="l"><a class="l" href="#905">905: </a><span class="php-comment">     */</span>
-</span><span id="906" class="l"><a class="l" href="#906">906: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setExporting" href="#_setExporting">setExporting</a>(<span class="php-var">$name</span> = <span class="php-keyword1">NULL</span>, <span class="php-var">$type</span> = <span class="php-quote">'Grido\Export'</span>)
-</span><span id="907" class="l"><a class="l" href="#907">907: </a>    {
-</span><span id="908" class="l"><a class="l" href="#908">908: </a>        <span class="php-var">$export</span> = <span class="php-keyword1">new</span> <span class="php-var">$type</span>(<span class="php-var">$this</span>, <span class="php-var">$name</span> ? <span class="php-var">$name</span> : <span class="php-var">$this</span>-&gt;name);
-</span><span id="909" class="l"><a class="l" href="#909">909: </a>        <span class="php-keyword1">if</span> (!<span class="php-var">$export</span> <span class="php-keyword1">instanceof</span> IExport) {
-</span><span id="910" class="l"><a class="l" href="#910">910: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \Exception(<span class="php-quote">'Export must be implemented Grido\IExport.'</span>);
-</span><span id="911" class="l"><a class="l" href="#911">911: </a>        }
-</span><span id="912" class="l"><a class="l" href="#912">912: </a>
-</span><span id="913" class="l"><a class="l" href="#913">913: </a>        <span class="php-keyword1">return</span> <span class="php-var">$export</span>;
-</span><span id="914" class="l"><a class="l" href="#914">914: </a>    }
-</span><span id="915" class="l"><a class="l" href="#915">915: </a>
-</span><span id="916" class="l"><a class="l" href="#916">916: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_createComponentForm" href="#_createComponentForm">createComponentForm</a>()
-</span><span id="917" class="l"><a class="l" href="#917">917: </a>    {
-</span><span id="918" class="l"><a class="l" href="#918">918: </a>        <span class="php-var">$form</span> = <span class="php-keyword1">new</span> \Nette\Application\UI\Form;
-</span><span id="919" class="l"><a class="l" href="#919">919: </a>        <span class="php-var">$form</span>-&gt;setTranslator(<span class="php-var">$this</span>-&gt;getTranslator());
-</span><span id="920" class="l"><a class="l" href="#920">920: </a>        <span class="php-var">$form</span>-&gt;setMethod(\Nette\Application\UI\Form::GET);
-</span><span id="921" class="l"><a class="l" href="#921">921: </a>
-</span><span id="922" class="l"><a class="l" href="#922">922: </a>        <span class="php-var">$buttons</span> = <span class="php-var">$form</span>-&gt;addContainer(self::BUTTONS);
-</span><span id="923" class="l"><a class="l" href="#923">923: </a>        <span class="php-var">$buttons</span>-&gt;addSubmit(<span class="php-quote">'search'</span>, <span class="php-quote">'Search'</span>);
-</span><span id="924" class="l"><a class="l" href="#924">924: </a>        <span class="php-var">$buttons</span>-&gt;addSubmit(<span class="php-quote">'reset'</span>, <span class="php-quote">'Reset'</span>);
-</span><span id="925" class="l"><a class="l" href="#925">925: </a>        <span class="php-var">$buttons</span>-&gt;addSubmit(<span class="php-quote">'perPage'</span>, <span class="php-quote">'Items per page'</span>);
+</span><span id="851" class="l"><a class="l" href="#851">851: </a>    <span class="php-comment">/**
+</span></span><span id="852" class="l"><a class="l" href="#852">852: </a><span class="php-comment">     * @param string $name
+</span></span><span id="853" class="l"><a class="l" href="#853">853: </a><span class="php-comment">     * @param string $label
+</span></span><span id="854" class="l"><a class="l" href="#854">854: </a><span class="php-comment">     * @param string $type starting constants with Column::TYPE_
+</span></span><span id="855" class="l"><a class="l" href="#855">855: </a><span class="php-comment">     * @return Column
+</span></span><span id="856" class="l"><a class="l" href="#856">856: </a><span class="php-comment">     */</span>
+</span><span id="857" class="l"><a class="l" href="#857">857: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_addColumn" href="#_addColumn">addColumn</a>(<span class="php-var">$name</span>, <span class="php-var">$label</span>, <span class="php-var">$type</span> = Column::TYPE_TEXT)
+</span><span id="858" class="l"><a class="l" href="#858">858: </a>    {
+</span><span id="859" class="l"><a class="l" href="#859">859: </a>        <span class="php-var">$column</span> = <span class="php-keyword1">new</span> <span class="php-var">$type</span>(<span class="php-var">$this</span>, <span class="php-var">$name</span>, <span class="php-var">$label</span>);
+</span><span id="860" class="l"><a class="l" href="#860">860: </a>        <span class="php-keyword1">if</span> (!<span class="php-var">$column</span> <span class="php-keyword1">instanceof</span> Column) {
+</span><span id="861" class="l"><a class="l" href="#861">861: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \InvalidArgumentException(<span class="php-quote">'Column must be inherited from Grido\Columns\Column.'</span>);
+</span><span id="862" class="l"><a class="l" href="#862">862: </a>        }
+</span><span id="863" class="l"><a class="l" href="#863">863: </a>        <span class="php-keyword1">return</span> <span class="php-var">$column</span>;
+</span><span id="864" class="l"><a class="l" href="#864">864: </a>    }
+</span><span id="865" class="l"><a class="l" href="#865">865: </a>
+</span><span id="866" class="l"><a class="l" href="#866">866: </a>    <span class="php-comment">/**
+</span></span><span id="867" class="l"><a class="l" href="#867">867: </a><span class="php-comment">     * @param string $name
+</span></span><span id="868" class="l"><a class="l" href="#868">868: </a><span class="php-comment">     * @param string $label
+</span></span><span id="869" class="l"><a class="l" href="#869">869: </a><span class="php-comment">     * @param string $type starting constants with Filter::TYPE_
+</span></span><span id="870" class="l"><a class="l" href="#870">870: </a><span class="php-comment">     * @param mixed $optional if type is select, then this it items for select
+</span></span><span id="871" class="l"><a class="l" href="#871">871: </a><span class="php-comment">     * @return Filter
+</span></span><span id="872" class="l"><a class="l" href="#872">872: </a><span class="php-comment">     */</span>
+</span><span id="873" class="l"><a class="l" href="#873">873: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_addFilter" href="#_addFilter">addFilter</a>(<span class="php-var">$name</span>, <span class="php-var">$label</span>, <span class="php-var">$type</span> = Filter::TYPE_TEXT, <span class="php-var">$optional</span> = <span class="php-keyword1">array</span>())
+</span><span id="874" class="l"><a class="l" href="#874">874: </a>    {
+</span><span id="875" class="l"><a class="l" href="#875">875: </a>        <span class="php-var">$filter</span> = <span class="php-keyword1">new</span> <span class="php-var">$type</span>(<span class="php-var">$this</span>, <span class="php-var">$name</span>, <span class="php-var">$label</span>, <span class="php-var">$optional</span>);
+</span><span id="876" class="l"><a class="l" href="#876">876: </a>        <span class="php-keyword1">if</span> (!<span class="php-var">$filter</span> <span class="php-keyword1">instanceof</span> Filter) {
+</span><span id="877" class="l"><a class="l" href="#877">877: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \InvalidArgumentException(<span class="php-quote">'Filter must be inherited from Grido\Filters\Filter.'</span>);
+</span><span id="878" class="l"><a class="l" href="#878">878: </a>        }
+</span><span id="879" class="l"><a class="l" href="#879">879: </a>        <span class="php-keyword1">return</span> <span class="php-var">$filter</span>;
+</span><span id="880" class="l"><a class="l" href="#880">880: </a>    }
+</span><span id="881" class="l"><a class="l" href="#881">881: </a>
+</span><span id="882" class="l"><a class="l" href="#882">882: </a>    <span class="php-comment">/**
+</span></span><span id="883" class="l"><a class="l" href="#883">883: </a><span class="php-comment">     * @param string $name
+</span></span><span id="884" class="l"><a class="l" href="#884">884: </a><span class="php-comment">     * @param string $label
+</span></span><span id="885" class="l"><a class="l" href="#885">885: </a><span class="php-comment">     * @param string $type starting constants with Action::TYPE_
+</span></span><span id="886" class="l"><a class="l" href="#886">886: </a><span class="php-comment">     * @param string $destination - first param for method $presenter-&gt;link()
+</span></span><span id="887" class="l"><a class="l" href="#887">887: </a><span class="php-comment">     * @param array $args - second param for method $presenter-&gt;link()
+</span></span><span id="888" class="l"><a class="l" href="#888">888: </a><span class="php-comment">     * @return Action
+</span></span><span id="889" class="l"><a class="l" href="#889">889: </a><span class="php-comment">     */</span>
+</span><span id="890" class="l"><a class="l" href="#890">890: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_addAction" href="#_addAction">addAction</a>(<span class="php-var">$name</span>, <span class="php-var">$label</span>, <span class="php-var">$type</span> = Action::TYPE_HREF, <span class="php-var">$destination</span> = <span class="php-keyword1">NULL</span>, <span class="php-var">$args</span> = <span class="php-keyword1">array</span>())
+</span><span id="891" class="l"><a class="l" href="#891">891: </a>    {
+</span><span id="892" class="l"><a class="l" href="#892">892: </a>        <span class="php-var">$action</span> = <span class="php-keyword1">new</span> <span class="php-var">$type</span>(<span class="php-var">$this</span>, <span class="php-var">$name</span>, <span class="php-var">$label</span>, <span class="php-var">$destination</span>, <span class="php-var">$args</span>);
+</span><span id="893" class="l"><a class="l" href="#893">893: </a>        <span class="php-keyword1">if</span> (!<span class="php-var">$action</span> <span class="php-keyword1">instanceof</span> Action) {
+</span><span id="894" class="l"><a class="l" href="#894">894: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \InvalidArgumentException(<span class="php-quote">'Action must be inherited from Grido\Actions\Action.'</span>);
+</span><span id="895" class="l"><a class="l" href="#895">895: </a>        }
+</span><span id="896" class="l"><a class="l" href="#896">896: </a>        <span class="php-keyword1">return</span> <span class="php-var">$action</span>;
+</span><span id="897" class="l"><a class="l" href="#897">897: </a>    }
+</span><span id="898" class="l"><a class="l" href="#898">898: </a>
+</span><span id="899" class="l"><a class="l" href="#899">899: </a>    <span class="php-comment">/**
+</span></span><span id="900" class="l"><a class="l" href="#900">900: </a><span class="php-comment">     * @param array $operations
+</span></span><span id="901" class="l"><a class="l" href="#901">901: </a><span class="php-comment">     * @param callback $onSubmit - callback after operation submit
+</span></span><span id="902" class="l"><a class="l" href="#902">902: </a><span class="php-comment">     * @param string $type operation class
+</span></span><span id="903" class="l"><a class="l" href="#903">903: </a><span class="php-comment">     * @return Operation
+</span></span><span id="904" class="l"><a class="l" href="#904">904: </a><span class="php-comment">     */</span>
+</span><span id="905" class="l"><a class="l" href="#905">905: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setOperations" href="#_setOperations">setOperations</a>(<span class="php-var">$operations</span>, <span class="php-var">$onSubmit</span>, <span class="php-var">$type</span> = <span class="php-quote">'Grido\Operation'</span>)
+</span><span id="906" class="l"><a class="l" href="#906">906: </a>    {
+</span><span id="907" class="l"><a class="l" href="#907">907: </a>        <span class="php-var">$operation</span> = <span class="php-keyword1">new</span> <span class="php-var">$type</span>(<span class="php-var">$this</span>, <span class="php-var">$operations</span>, <span class="php-var">$onSubmit</span>);
+</span><span id="908" class="l"><a class="l" href="#908">908: </a>        <span class="php-keyword1">if</span> (!<span class="php-var">$operation</span> <span class="php-keyword1">instanceof</span> Operation) {
+</span><span id="909" class="l"><a class="l" href="#909">909: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \InvalidArgumentException(<span class="php-quote">'Operation must be inherited from Grido\Operation.'</span>);
+</span><span id="910" class="l"><a class="l" href="#910">910: </a>        }
+</span><span id="911" class="l"><a class="l" href="#911">911: </a>        <span class="php-keyword1">return</span> <span class="php-var">$operation</span>;
+</span><span id="912" class="l"><a class="l" href="#912">912: </a>    }
+</span><span id="913" class="l"><a class="l" href="#913">913: </a>
+</span><span id="914" class="l"><a class="l" href="#914">914: </a>    <span class="php-comment">/**
+</span></span><span id="915" class="l"><a class="l" href="#915">915: </a><span class="php-comment">     * @param string $name of exporting file
+</span></span><span id="916" class="l"><a class="l" href="#916">916: </a><span class="php-comment">     * @param string $type export class
+</span></span><span id="917" class="l"><a class="l" href="#917">917: </a><span class="php-comment">     * @return Export
+</span></span><span id="918" class="l"><a class="l" href="#918">918: </a><span class="php-comment">     * @throws \Exception
+</span></span><span id="919" class="l"><a class="l" href="#919">919: </a><span class="php-comment">     */</span>
+</span><span id="920" class="l"><a class="l" href="#920">920: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setExporting" href="#_setExporting">setExporting</a>(<span class="php-var">$name</span> = <span class="php-keyword1">NULL</span>, <span class="php-var">$type</span> = <span class="php-quote">'Grido\Export'</span>)
+</span><span id="921" class="l"><a class="l" href="#921">921: </a>    {
+</span><span id="922" class="l"><a class="l" href="#922">922: </a>        <span class="php-var">$export</span> = <span class="php-keyword1">new</span> <span class="php-var">$type</span>(<span class="php-var">$this</span>, <span class="php-var">$name</span> ? <span class="php-var">$name</span> : <span class="php-var">$this</span>-&gt;name);
+</span><span id="923" class="l"><a class="l" href="#923">923: </a>        <span class="php-keyword1">if</span> (!<span class="php-var">$export</span> <span class="php-keyword1">instanceof</span> IExport) {
+</span><span id="924" class="l"><a class="l" href="#924">924: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \InvalidArgumentException(<span class="php-quote">'Export must be implemented Grido\IExport.'</span>);
+</span><span id="925" class="l"><a class="l" href="#925">925: </a>        }
 </span><span id="926" class="l"><a class="l" href="#926">926: </a>
-</span><span id="927" class="l"><a class="l" href="#927">927: </a>        <span class="php-var">$form</span>-&gt;addSelect(<span class="php-quote">'count'</span>, <span class="php-quote">'Count'</span>, <span class="php-keyword2">array_combine</span>(<span class="php-var">$this</span>-&gt;perPageList, <span class="php-var">$this</span>-&gt;perPageList))
-</span><span id="928" class="l"><a class="l" href="#928">928: </a>            -&gt;controlPrototype-&gt;attrs[<span class="php-quote">'title'</span>] = <span class="php-var">$this</span>-&gt;getTranslator()-&gt;translate(<span class="php-quote">'Items per page'</span>);
-</span><span id="929" class="l"><a class="l" href="#929">929: </a>        <span class="php-var">$form</span>-&gt;onSuccess[] = callback(<span class="php-var">$this</span>, <span class="php-quote">'handleForm'</span>);
-</span><span id="930" class="l"><a class="l" href="#930">930: </a>        <span class="php-keyword1">return</span> <span class="php-var">$form</span>;
-</span><span id="931" class="l"><a class="l" href="#931">931: </a>    }
-</span><span id="932" class="l"><a class="l" href="#932">932: </a>}
-</span><span id="933" class="l"><a class="l" href="#933">933: </a></span></code></pre>
+</span><span id="927" class="l"><a class="l" href="#927">927: </a>        <span class="php-keyword1">return</span> <span class="php-var">$export</span>;
+</span><span id="928" class="l"><a class="l" href="#928">928: </a>    }
+</span><span id="929" class="l"><a class="l" href="#929">929: </a>
+</span><span id="930" class="l"><a class="l" href="#930">930: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_createComponentForm" href="#_createComponentForm">createComponentForm</a>()
+</span><span id="931" class="l"><a class="l" href="#931">931: </a>    {
+</span><span id="932" class="l"><a class="l" href="#932">932: </a>        <span class="php-var">$form</span> = <span class="php-keyword1">new</span> \Nette\Application\UI\Form;
+</span><span id="933" class="l"><a class="l" href="#933">933: </a>        <span class="php-var">$form</span>-&gt;setTranslator(<span class="php-var">$this</span>-&gt;getTranslator());
+</span><span id="934" class="l"><a class="l" href="#934">934: </a>        <span class="php-var">$form</span>-&gt;setMethod(\Nette\Application\UI\Form::GET);
+</span><span id="935" class="l"><a class="l" href="#935">935: </a>
+</span><span id="936" class="l"><a class="l" href="#936">936: </a>        <span class="php-var">$buttons</span> = <span class="php-var">$form</span>-&gt;addContainer(self::BUTTONS);
+</span><span id="937" class="l"><a class="l" href="#937">937: </a>        <span class="php-var">$buttons</span>-&gt;addSubmit(<span class="php-quote">'search'</span>, <span class="php-quote">'Search'</span>);
+</span><span id="938" class="l"><a class="l" href="#938">938: </a>        <span class="php-var">$buttons</span>-&gt;addSubmit(<span class="php-quote">'reset'</span>, <span class="php-quote">'Reset'</span>);
+</span><span id="939" class="l"><a class="l" href="#939">939: </a>        <span class="php-var">$buttons</span>-&gt;addSubmit(<span class="php-quote">'perPage'</span>, <span class="php-quote">'Items per page'</span>);
+</span><span id="940" class="l"><a class="l" href="#940">940: </a>
+</span><span id="941" class="l"><a class="l" href="#941">941: </a>        <span class="php-var">$form</span>-&gt;addSelect(<span class="php-quote">'count'</span>, <span class="php-quote">'Count'</span>, <span class="php-keyword2">array_combine</span>(<span class="php-var">$this</span>-&gt;perPageList, <span class="php-var">$this</span>-&gt;perPageList))
+</span><span id="942" class="l"><a class="l" href="#942">942: </a>            -&gt;controlPrototype-&gt;attrs[<span class="php-quote">'title'</span>] = <span class="php-var">$this</span>-&gt;getTranslator()-&gt;translate(<span class="php-quote">'Items per page'</span>);
+</span><span id="943" class="l"><a class="l" href="#943">943: </a>        <span class="php-var">$form</span>-&gt;onSuccess[] = callback(<span class="php-var">$this</span>, <span class="php-quote">'handleForm'</span>);
+</span><span id="944" class="l"><a class="l" href="#944">944: </a>        <span class="php-keyword1">return</span> <span class="php-var">$form</span>;
+</span><span id="945" class="l"><a class="l" href="#945">945: </a>    }
+</span><span id="946" class="l"><a class="l" href="#946">946: </a>}
+</span><span id="947" class="l"><a class="l" href="#947">947: </a></span></code></pre>
 
 	<div id="footer">
 		Grido - DataGrid for Nette Framework API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
