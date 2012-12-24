@@ -231,10 +231,9 @@
                     noAjax = $('a.no-ajax[href="' + hash + '"]', $.grido.$element).length;
 
                 if (!noAjax && $.grido.hash.query != urlencode(hash.replace('#', ''))) {
-                    $.get(
-                        window.location.toString().replace('#', '?')+
-                        '&do='+$.grido.name+'-refresh'
-                    );
+                    var url = window.location.toString();
+                    url = url.indexOf('?') >= 0 ? url.replace('#', '&') : url.replace('#', '?');
+                    $.get(url + '&do=' + $.grido.name + '-refresh');
                 }
             },
 
