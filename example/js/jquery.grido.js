@@ -46,7 +46,7 @@
         initFilters: function()
         {
             this.$element.on('change', '.filter select, .filter [type=checkbox]', function() {
-                $('[name="buttons[search]"]', $.grido.$element).click();
+                $.grido.sendFilterForm();
             });
         },
 
@@ -88,6 +88,10 @@
                     window.location = $.grido.ajax ? location.replace('?', '#') : location;
                 }
             });
+        },
+
+        sendFilterForm: function() {
+            $('[name="buttons[search]"]', $.grido.$element).click();
         },
 
         /******************** OPERATIONS ********************/
@@ -253,22 +257,37 @@
         /******************** SUGGESTION ********************/
         suggest: function()
         {
-            this.$element.on('focus', 'input.suggest', function() {
-                $(this).typeahead({
-                    source: function (query, process) {
-                        if (!/\S/.test(query)) {
-                            return false;
-                        }
-                        var params = {};
-                        params[$.grido.name + '-query'] = query;
+            this.$element
+                .on('keyup', 'input.suggest', function(event) {
+                    if (event.keyCode == 13) { //enter
+                        event.stopPropagation();
+                        event.preventDefault();
 
-                        return $.get(this.$element.attr('data-grido-source'), params, function (items) {
-                            //TODO local cache??
-                            process(items);
-                        }, "json");
-                    },
-                    autoSelect: false
-                });
+                        $.grido.sendFilterForm();
+                    }
+                })
+                .on('focus', 'input.suggest', function() {
+                    $(this).typeahead({
+                        source: function (query, process) {
+                            if (!/\S/.test(query)) {
+                                return false;
+                            }
+                            var params = {};
+                            params[$.grido.name + '-query'] = query;
+
+                            return $.get(this.$element.attr('data-grido-source'), params, function (items) {
+                                //TODO local cache??
+                                process(items);
+                            }, "json");
+                        },
+
+                        updater: function (item) {
+                            this.$element.val(item);
+                            $.grido.sendFilterForm();
+                        },
+
+                        autoSelect: false
+                    });
             });
         },
 
