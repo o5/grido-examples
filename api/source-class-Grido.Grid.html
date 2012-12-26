@@ -159,7 +159,7 @@
 </span><span id="58" class="l"><a class="l" href="#58"> 58: </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$onRender" href="#$onRender">$onRender</a></span>;
 </span><span id="59" class="l"><a class="l" href="#59"> 59: </a>
 </span><span id="60" class="l"><a class="l" href="#60"> 60: </a>    <span class="php-comment">/** @var array event for modifying data */</span>
-</span><span id="61" class="l"><a class="l" href="#61"> 61: </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$onAfterFetchData" href="#$onAfterFetchData">$onAfterFetchData</a></span>;
+</span><span id="61" class="l"><a class="l" href="#61"> 61: </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$onFetchData" href="#$onFetchData">$onFetchData</a></span>;
 </span><span id="62" class="l"><a class="l" href="#62"> 62: </a>
 </span><span id="63" class="l"><a class="l" href="#63"> 63: </a>    <span class="php-comment">/** @var callback $rowCallback - callback returns tr html element; function($row, Html $tr) */</span>
 </span><span id="64" class="l"><a class="l" href="#64"> 64: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$rowCallback" href="#$rowCallback">$rowCallback</a></span>;
@@ -499,8 +499,8 @@
 </span><span id="398" class="l"><a class="l" href="#398">398: </a>
 </span><span id="399" class="l"><a class="l" href="#399">399: </a>            <span class="php-var">$this</span>-&gt;data = <span class="php-var">$this</span>-&gt;model-&gt;data;
 </span><span id="400" class="l"><a class="l" href="#400">400: </a>
-</span><span id="401" class="l"><a class="l" href="#401">401: </a>            <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;onAfterFetchData) {
-</span><span id="402" class="l"><a class="l" href="#402">402: </a>                <span class="php-var">$this</span>-&gt;onAfterFetchData(<span class="php-var">$this</span>);
+</span><span id="401" class="l"><a class="l" href="#401">401: </a>            <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;onFetchData) {
+</span><span id="402" class="l"><a class="l" href="#402">402: </a>                <span class="php-var">$this</span>-&gt;onFetchData(<span class="php-var">$this</span>);
 </span><span id="403" class="l"><a class="l" href="#403">403: </a>            }
 </span><span id="404" class="l"><a class="l" href="#404">404: </a>        }
 </span><span id="405" class="l"><a class="l" href="#405">405: </a>
@@ -971,7 +971,7 @@
 </span></span><span id="870" class="l"><a class="l" href="#870">870: </a><span class="php-comment">     * @param mixed $optional if type is select, then this it items for select
 </span></span><span id="871" class="l"><a class="l" href="#871">871: </a><span class="php-comment">     * @return Filter
 </span></span><span id="872" class="l"><a class="l" href="#872">872: </a><span class="php-comment">     */</span>
-</span><span id="873" class="l"><a class="l" href="#873">873: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_addFilter" href="#_addFilter">addFilter</a>(<span class="php-var">$name</span>, <span class="php-var">$label</span>, <span class="php-var">$type</span> = Filter::TYPE_TEXT, <span class="php-var">$optional</span> = <span class="php-keyword1">array</span>())
+</span><span id="873" class="l"><a class="l" href="#873">873: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_addFilter" href="#_addFilter">addFilter</a>(<span class="php-var">$name</span>, <span class="php-var">$label</span>, <span class="php-var">$type</span> = Filter::TYPE_TEXT, <span class="php-var">$optional</span> = <span class="php-keyword1">NULL</span>)
 </span><span id="874" class="l"><a class="l" href="#874">874: </a>    {
 </span><span id="875" class="l"><a class="l" href="#875">875: </a>        <span class="php-var">$filter</span> = <span class="php-keyword1">new</span> <span class="php-var">$type</span>(<span class="php-var">$this</span>, <span class="php-var">$name</span>, <span class="php-var">$label</span>, <span class="php-var">$optional</span>);
 </span><span id="876" class="l"><a class="l" href="#876">876: </a>        <span class="php-keyword1">if</span> (!<span class="php-var">$filter</span> <span class="php-keyword1">instanceof</span> Filter) {
