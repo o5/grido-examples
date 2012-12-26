@@ -74,14 +74,15 @@ final class ExamplePresenter extends BasePresenter
             '' => '',
             'female' => 'female',
             'male' => 'male'
-        ));
+        ))->removeEmptyItems();
 
         $grid->addFilter('card', 'Card', Filter::TYPE_SELECT, array(
                 '' => '',
                 'MasterCard' => 'MasterCard',
                 'Visa' => 'Visa'
             ))
-            ->setColumn('cctype');
+            ->setColumn('cctype')
+            ->removeEmptyItems();
 
         $grid->addFilter('preferred', 'Only preferred girls :)', Filter::TYPE_CHECK)
             ->setCondition(Filter::CONDITION_CUSTOM, array(
