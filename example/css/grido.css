@@ -98,7 +98,8 @@
     padding: 7px;
 }
 
-.grido.filter.outer .items span *,
+.filter.outer select,
+.filter.outer input.text,
 .filter.inner select,
 .filter.inner input.text {width: 100%}
 
