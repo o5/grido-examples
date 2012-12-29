@@ -264,7 +264,7 @@
 </span><span id="163" class="l"><a class="l" href="#163">163: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setDefaultSort" href="#_setDefaultSort">setDefaultSort</a>(<span class="php-keyword1">array</span> <span class="php-var">$sort</span>)
 </span><span id="164" class="l"><a class="l" href="#164">164: </a>    {
 </span><span id="165" class="l"><a class="l" href="#165">165: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$sort</span> <span class="php-keyword1">as</span> <span class="php-var">$column</span> =&gt; <span class="php-var">$dir</span>) {
-</span><span id="166" class="l"><a class="l" href="#166">166: </a>            <span class="php-var">$this</span>-&gt;defaultSort[<span class="php-var">$column</span>] = <span class="php-keyword2">strtolower</span>(<span class="php-var">$dir</span>);
+</span><span id="166" class="l"><a class="l" href="#166">166: </a>            <span class="php-var">$this</span>-&gt;defaultSort[<span class="php-var">$column</span>] = <span class="php-var">$dir</span>;
 </span><span id="167" class="l"><a class="l" href="#167">167: </a>        }
 </span><span id="168" class="l"><a class="l" href="#168">168: </a>
 </span><span id="169" class="l"><a class="l" href="#169">169: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>;
