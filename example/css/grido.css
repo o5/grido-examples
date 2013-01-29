@@ -89,6 +89,7 @@
 .grido.filter.outer .items {
     width: 84%;
     float: left;
+    height: 59px
 }
 
 .grido.filter.outer .items span {
@@ -187,3 +188,4 @@
 .grido.filter.outer label {font-size: 12px}
 
 .grido .btn-mini {font-size: 14px}
+.grido .dropdown-menu {min-width: auto;}
