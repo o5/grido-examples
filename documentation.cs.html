@@ -60,7 +60,7 @@
             přizpůsobení</strong>.
     </p>
 
-    <p class="caution">Samotný grid má závislost pouze na Nette, ovšem
+    <p class="caution">Samotný grid má závislost pouze na Nette, ale
         odkazované demo obsahuje klientský skript
         <a href="https://raw.github.com/o5/grido-sandbox/master/example/js/jquery.grido.js">jquery.grido­.js</a>,
         který je spravován mimo hlavní repozitář. Veškeré jeho závislosti jsou
@@ -162,7 +162,7 @@
                 (Filter::RENDER_O­UTER) vykreslení filtrů</td>
 
             <td>vniřní, ale pokud grid obsahuje filtr, který nemá svůj sloupec,
-                použije se vnejší vykreslení</td>
+                použije se vnejší vykreslení (stejně tak, když filtr nemá definovanou akci)</td>
         </tr>
 
         <tr>
@@ -490,7 +490,7 @@
 
             <td>výchozí typ</td>
 
-            <td>metoda setSuggestion() povolí našeptávání zohleďnující
+            <td>metoda <a href="http://o5.github.com/grido-sandbox/api/class-Grido.Filters.Text.html#_setSuggestion">setSuggestion()</a> povolí našeptávání zohleďnující
                 aktuální filtr</td>
         </tr>
 
