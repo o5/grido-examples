@@ -7,7 +7,7 @@
 	<title>Class Grido\Export | Grido - DataGrid for Nette Framework</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?1792316347"></script>
+	<script type="text/javascript" src="elementlist.js?4112044442"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido - DataGrid for Nette Framework" href="/opensearch.xml" />
 
@@ -57,7 +57,6 @@
 			<h3>Interfaces</h3>
 			<ul>
 				<li><a href="class-Grido.IDataSource.html">IDataSource</a></li>
-				<li><a href="class-Grido.IExport.html">IExport</a></li>
 			</ul>
 
 
@@ -104,7 +103,7 @@
 
 	<div class="description">
 	
-<p>Data exporting.</p>
+<p>Exporting data to CSV.</p>
 
 	</div>
 
@@ -125,7 +124,7 @@ Nette\Application\UI\PresenterComponent
 			<img src="resources/inherit.png" alt="Extended by" />
 <b><span>Grido\Export</span></b>			
 			 implements 
-				<a href="class-Grido.IExport.html"><span>Grido\IExport</span></a>
+<span>Nette\Application\IResponse</span>
 			
 			
 		</dd>
@@ -146,7 +145,7 @@ Nette\Application\UI\PresenterComponent
 
 				<b>Author:</b>
 				Petr Bugyík<br />
-		<b>Located at</b> <a href="source-class-Grido.Export.html#14-148" title="Go to source code">Grido/Components/Export/Export.php</a><br />
+		<b>Located at</b> <a href="source-class-Grido.Export.html#14-102" title="Go to source code">Grido/Components/Export/Export.php</a><br />
 	</div>
 
 
@@ -164,7 +163,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Grido.Export.html#45-55" title="Go to source code">__construct</a>( <span><code><a href="class-Grido.Grid.html">Grido\Grid</a></code> <var>$grid</var></span>, <span>string <var>$name</var></span> )</code>
+		<code><a href="source-class-Grido.Export.html#31-41" title="Go to source code">__construct</a>( <span><code><a href="class-Grido.Grid.html">Grido\Grid</a></code> <var>$grid</var></span>, <span>string <var>$name</var></span> )</code>
 
 		<div class="description short">
 			
@@ -189,40 +188,7 @@ Nette\Application\UI\PresenterComponent
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="getTypes" id="_getTypes">
-
-		<td class="attributes"><code>
-			 public 
-			array
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getTypes">#</a>
-		<code><a href="source-class-Grido.Export.html#57-63" title="Go to source code">getTypes</a>( )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code>array</code><br />
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getSource" id="_getSource">
+	<tr data-order="getResponse" id="_getResponse">
 
 		<td class="attributes"><code>
 			 protected 
@@ -232,8 +198,8 @@ Nette\Application\UI\PresenterComponent
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_getSource">#</a>
-		<code><a href="source-class-Grido.Export.html#78-97" title="Go to source code">getSource</a>( )</code>
+		<a class="anchor" href="#_getResponse">#</a>
+		<code><a href="source-class-Grido.Export.html#45-62" title="Go to source code">getResponse</a>( )</code>
 
 		<div class="description short">
 			
@@ -251,7 +217,7 @@ Nette\Application\UI\PresenterComponent
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="getSourceXls" id="_getSourceXls">
+	<tr data-order="generateCsv" id="_generateCsv">
 
 		<td class="attributes"><code>
 			 protected 
@@ -261,37 +227,8 @@ Nette\Application\UI\PresenterComponent
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_getSourceXls">#</a>
-		<code><a href="source-class-Grido.Export.html#99-107" title="Go to source code">getSourceXls</a>( <span>mixed <var>$data</var></span>, <span>mixed <var>$columns</var></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getSourceCsv" id="_getSourceCsv">
-
-		<td class="attributes"><code>
-			 protected 
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getSourceCsv">#</a>
-		<code><a href="source-class-Grido.Export.html#109-133" title="Go to source code">getSourceCsv</a>( <span>mixed <var>$data</var></span>, <span>mixed <var>$columns</var></span> )</code>
+		<a class="anchor" href="#_generateCsv">#</a>
+		<code><a href="source-class-Grido.Export.html#64-91" title="Go to source code">generateCsv</a>( <span>mixed <var>$data</var></span>, <span>mixed <var>$columns</var></span> )</code>
 
 		<div class="description short">
 			
@@ -320,7 +257,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_send">#</a>
-		<code><a href="source-class-Grido.Export.html#135-147" title="Go to source code">send</a>( <span>Nette\Http\IRequest <var>$httpRequest</var></span>, <span>Nette\Http\IResponse <var>$httpResponse</var></span> )</code>
+		<code><a href="source-class-Grido.Export.html#93-101" title="Go to source code">send</a>( <span>Nette\Http\IRequest <var>$httpRequest</var></span>, <span>Nette\Http\IResponse <var>$httpResponse</var></span> )</code>
 
 		<div class="description short">
 			
@@ -355,14 +292,6 @@ Nette\Application\UI\PresenterComponent
 		</code></td>
 	</tr>
 	</table>
-	<table class="summary inherited">
-	<caption>Methods inherited from <a href="class-Grido.IExport.html#methods">Grido\IExport</a></caption>
-	<tr>
-		<td><code>
-			<a href="class-Grido.IExport.html#_hasType">hasType()</a>
-		</code></td>
-	</tr>
-	</table>
 
 
 
@@ -376,51 +305,11 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="attributes"><code>string</code></td>
 		<td class="name"><code>
-				<a href="source-class-Grido.Export.html#25" title="Go to source code"><b>ID</b></a>
+				<a href="source-class-Grido.Export.html#23" title="Go to source code"><b>ID</b></a>
 		</code></td>
 		<td class="value"><code><span class="php-quote">'export'</span></code></td>
 		<td class="description"><div>
 			<a href="#ID" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="CSV_DELIMITER" id="CSV_DELIMITER">
-
-		<td class="attributes"><code>string</code></td>
-		<td class="name"><code>
-				<a href="source-class-Grido.Export.html#27" title="Go to source code"><b>CSV_DELIMITER</b></a>
-		</code></td>
-		<td class="value"><code><span class="php-quote">';'</span></code></td>
-		<td class="description"><div>
-			<a href="#CSV_DELIMITER" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="CSV_NEW_LINE" id="CSV_NEW_LINE">
-
-		<td class="attributes"><code>string</code></td>
-		<td class="name"><code>
-				<a href="source-class-Grido.Export.html#28" title="Go to source code"><b>CSV_NEW_LINE</b></a>
-		</code></td>
-		<td class="value"><code><span class="php-quote">&quot;\n&quot;</span></code></td>
-		<td class="description"><div>
-			<a href="#CSV_NEW_LINE" class="anchor">#</a>
 
 			<div class="description short">
 				
@@ -446,7 +335,7 @@ Nette\Application\UI\PresenterComponent
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Export.html#30-31" title="Go to source code"><var>$grid</var></a>
+				<a href="source-class-Grido.Export.html#25-26" title="Go to source code"><var>$grid</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -469,60 +358,11 @@ Nette\Application\UI\PresenterComponent
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Export.html#33-34" title="Go to source code"><var>$name</var></a>
+				<a href="source-class-Grido.Export.html#28-29" title="Go to source code"><var>$name</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
 			<a href="#$name" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="type" id="$type">
-		<td class="attributes"><code>
-			protected  
-			string
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Grido.Export.html#36-37" title="Go to source code"><var>$type</var></a>
-		</td>
-		<td class="value"><code></code></td>
-		<td class="description"><div>
-			<a href="#$type" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="types" id="$types">
-		<td class="attributes"><code>
-			protected  
-			array
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Grido.Export.html#39-43" title="Go to source code"><var>$types</var></a>
-		</td>
-		<td class="value"><code><span class="php-keyword1">array</span>(
-    <span class="php-quote">'xls'</span> =&gt; <span class="php-quote">'Export to XLS'</span>,
-    <span class="php-quote">'csv'</span> =&gt; <span class="php-quote">'Export to CSV'</span>
-)</code></td>
-		<td class="description"><div>
-			<a href="#$types" class="anchor">#</a>
 
 			<div class="description short">
 				
@@ -541,37 +381,13 @@ Nette\Application\UI\PresenterComponent
 	<tr>
 		<td><code>
 			<a href="class-Grido.Base.html#$form"><var>$form</var></a>, 
-			<a href="class-Grido.Base.html#$label"><var>$label</var></a>
+			<a href="class-Grido.Base.html#$label"><var>$label</var></a>, 
+			<a href="class-Grido.Base.html#$type"><var>$type</var></a>
 		</code></td>
 	</tr>
 	</table>
 
 
-	<table class="summary" id="magicProperties">
-	<caption>Magic properties summary</caption>
-	<tr data-order="types" id="m$types">
-		<td class="attributes"><code>
-			public  read-only
-			mixed
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Grido.Export.html#21" title="Go to source code"><var>$types</var></a>
-		</td>
-		<td class="description"><div>
-			<a href="#m$types" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	</table>
 
 	<table class="summary inherited">
 	<caption>Magic properties inherited from <a href="class-Grido.Base.html#properties">Grido\Base</a></caption>
