@@ -8,7 +8,9 @@
     text-align: left;
     border-collapse: inherit;
     width: 100%;
+    box-shadow: 1px 1px 12px -1px rgba(0,0,0,.2);
 }
+
 .grido thead th,
 .grido tfoot td,
 .grido.filter.outer,
