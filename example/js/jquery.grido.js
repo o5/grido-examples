@@ -70,12 +70,10 @@
         /******************** URI HASH ********************/
         initHash: function()
         {
-            if (!this.ajax) {
-                return;
+            if (this.ajax) {
+                $(window).hashchange($.grido.hash.refresh);
+                $.grido.hash.refresh();
             }
-
-            $(window).hashchange($.grido.hash.refresh);
-            $.grido.hash.refresh();
         },
 
         /******************** JUMP TO PAGE ********************/
@@ -90,7 +88,8 @@
             });
         },
 
-        sendFilterForm: function() {
+        sendFilterForm: function()
+        {
             $('[name="buttons[search]"]', $.grido.$element).click();
         },
 
@@ -259,7 +258,8 @@
         {
             this.$element
                 .on('keyup', 'input.suggest', function(event) {
-                    if (event.keyCode == 13) { //enter
+                    var key = event.keyCode || event.which;
+                    if (key == 13) { //enter
                         event.stopPropagation();
                         event.preventDefault();
 
