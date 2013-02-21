@@ -80,8 +80,8 @@
         initPagePromt: function()
         {
             this.$element.on('click', '.paginator .promt', function() {
-                var page = prompt($(this).attr('data-grido-promt'));
-                if (page && page > 0 && page <= $('.paginator a.btn:last', $.grido.element).prev().text()) {
+                var page = parseInt(prompt($(this).attr('data-grido-promt')));
+                if (page && page > 0 && page <= parseInt($('.paginator a.btn:last', $.grido.element).prev().text())) {
                     var location = $(this).attr('data-grido-link').replace('page=0', 'page=' + page);
                     window.location = $.grido.ajax ? location.replace('?', '#') : location;
                 }
