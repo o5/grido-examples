@@ -7,7 +7,7 @@
 	<title>Class Grido\Grid | Grido - DataGrid for Nette Framework</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?4112044442"></script>
+	<script type="text/javascript" src="elementlist.js?1263969789"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido - DataGrid for Nette Framework" href="/opensearch.xml" />
 
@@ -24,11 +24,18 @@
 			<ul>
 				<li class="active"><a href="namespace-Grido.html">Grido<span></span></a>
 						<ul>
-				<li><a href="namespace-Grido.Actions.html">Actions</a>
+				<li><a href="namespace-Grido.Components.html">Components<span></span></a>
+						<ul>
+				<li><a href="namespace-Grido.Components.Actions.html">Actions</a>
 						</li>
-				<li><a href="namespace-Grido.Columns.html">Columns</a>
+				<li><a href="namespace-Grido.Components.Columns.html">Columns</a>
 						</li>
-				<li><a href="namespace-Grido.Filters.html">Filters</a>
+				<li><a href="namespace-Grido.Components.Filters.html">Filters</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Grido.DataSources.html">DataSources</a>
+						</li>
+				<li><a href="namespace-Grido.Translations.html">Translations</a>
 						</li>
 							</ul></li>
 				<li><a href="namespace-None.html">None</a>
@@ -44,20 +51,9 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li><a href="class-Grido.Base.html">Base</a></li>
-				<li><a href="class-Grido.DibiFluent.html">DibiFluent</a></li>
-				<li><a href="class-Grido.Export.html">Export</a></li>
-				<li><a href="class-Grido.FileTranslator.html">FileTranslator</a></li>
 				<li class="active"><a href="class-Grido.Grid.html">Grid</a></li>
-				<li><a href="class-Grido.NetteDatabase.html">NetteDatabase</a></li>
-				<li><a href="class-Grido.Operation.html">Operation</a></li>
-				<li><a href="class-Grido.Paginator.html">Paginator</a></li>
 			</ul>
 
-			<h3>Interfaces</h3>
-			<ul>
-				<li><a href="class-Grido.IDataSource.html">IDataSource</a></li>
-			</ul>
 
 
 
@@ -136,7 +132,7 @@ Nette\Application\UI\Control
 
 				<b>Author:</b>
 				Petr Bugyík<br />
-		<b>Located at</b> <a href="source-class-Grido.Grid.html#18-951" title="Go to source code">Grido/Grid.php</a><br />
+		<b>Located at</b> <a href="source-class-Grido.Grid.html#21-953" title="Go to source code">Grido/Grid.php</a><br />
 	</div>
 
 
@@ -154,7 +150,7 @@ Nette\Application\UI\Control
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setModel">#</a>
-		<code><a href="source-class-Grido.Grid.html#105-125" title="Go to source code">setModel</a>( <span>mixed <var>$model</var></span> )</code>
+		<code><a href="source-class-Grido.Grid.html#107-127" title="Go to source code">setModel</a>( <span>mixed <var>$model</var></span> )</code>
 
 		<div class="description short">
 			
@@ -198,7 +194,7 @@ object DibiFluent, Nette\Database\Table\Selection</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setDefaultPerPage">#</a>
-		<code><a href="source-class-Grido.Grid.html#127-142" title="Go to source code">setDefaultPerPage</a>( <span>integer <var>$perPage</var></span> )</code>
+		<code><a href="source-class-Grido.Grid.html#129-144" title="Go to source code">setDefaultPerPage</a>( <span>integer <var>$perPage</var></span> )</code>
 
 		<div class="description short">
 			
@@ -240,7 +236,7 @@ object DibiFluent, Nette\Database\Table\Selection</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setDefaultFilter">#</a>
-		<code><a href="source-class-Grido.Grid.html#144-156" title="Go to source code">setDefaultFilter</a>( <span>array <var>$filter</var></span> )</code>
+		<code><a href="source-class-Grido.Grid.html#146-158" title="Go to source code">setDefaultFilter</a>( <span>array <var>$filter</var></span> )</code>
 
 		<div class="description short">
 			
@@ -282,7 +278,7 @@ object DibiFluent, Nette\Database\Table\Selection</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setDefaultSort">#</a>
-		<code><a href="source-class-Grido.Grid.html#158-170" title="Go to source code">setDefaultSort</a>( <span>array <var>$sort</var></span> )</code>
+		<code><a href="source-class-Grido.Grid.html#160-172" title="Go to source code">setDefaultSort</a>( <span>array <var>$sort</var></span> )</code>
 
 		<div class="description short">
 			
@@ -324,7 +320,7 @@ object DibiFluent, Nette\Database\Table\Selection</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setPerPageList">#</a>
-		<code><a href="source-class-Grido.Grid.html#172-181" title="Go to source code">setPerPageList</a>( <span>array <var>$perPageList</var></span> )</code>
+		<code><a href="source-class-Grido.Grid.html#174-183" title="Go to source code">setPerPageList</a>( <span>array <var>$perPageList</var></span> )</code>
 
 		<div class="description short">
 			
@@ -366,7 +362,7 @@ object DibiFluent, Nette\Database\Table\Selection</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setTranslator">#</a>
-		<code><a href="source-class-Grido.Grid.html#183-192" title="Go to source code">setTranslator</a>( <span>Nette\Localization\ITranslator <var>$translator</var></span> )</code>
+		<code><a href="source-class-Grido.Grid.html#185-194" title="Go to source code">setTranslator</a>( <span>Nette\Localization\ITranslator <var>$translator</var></span> )</code>
 
 		<div class="description short">
 			
@@ -408,7 +404,7 @@ object DibiFluent, Nette\Database\Table\Selection</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setFilterRenderType">#</a>
-		<code><a href="source-class-Grido.Grid.html#194-209" title="Go to source code">setFilterRenderType</a>( <span>string <var>$type</var></span> )</code>
+		<code><a href="source-class-Grido.Grid.html#196-211" title="Go to source code">setFilterRenderType</a>( <span>string <var>$type</var></span> )</code>
 
 		<div class="description short">
 			
@@ -456,7 +452,7 @@ column doesn't exist then outer filter (Filter::RENDER_OUTER).</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setPaginator">#</a>
-		<code><a href="source-class-Grido.Grid.html#211-220" title="Go to source code">setPaginator</a>( <span><code><a href="class-Grido.Paginator.html">Grido\Paginator</a></code> <var>$paginator</var></span> )</code>
+		<code><a href="source-class-Grido.Grid.html#213-222" title="Go to source code">setPaginator</a>( <span><code><a href="class-Grido.Components.Paginator.html">Grido\Components\Paginator</a></code> <var>$paginator</var></span> )</code>
 
 		<div class="description short">
 			
@@ -473,7 +469,7 @@ column doesn't exist then outer filter (Filter::RENDER_OUTER).</p>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$paginator</var></dt>
-					<dd><code><code><a href="class-Grido.Paginator.html">Grido\Paginator</a></code></code><br>$paginator</dd>
+					<dd><code><code><a href="class-Grido.Components.Paginator.html">Grido\Components\Paginator</a></code></code><br>$paginator</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -498,7 +494,7 @@ column doesn't exist then outer filter (Filter::RENDER_OUTER).</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setPrimaryKey">#</a>
-		<code><a href="source-class-Grido.Grid.html#222-231" title="Go to source code">setPrimaryKey</a>( <span>string <var>$key</var></span> )</code>
+		<code><a href="source-class-Grido.Grid.html#224-233" title="Go to source code">setPrimaryKey</a>( <span>string <var>$key</var></span> )</code>
 
 		<div class="description short">
 			
@@ -536,7 +532,7 @@ column doesn't exist then outer filter (Filter::RENDER_OUTER).</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setTemplateFile">#</a>
-		<code><a href="source-class-Grido.Grid.html#233-242" title="Go to source code">setTemplateFile</a>( <span>string <var>$file</var></span> )</code>
+		<code><a href="source-class-Grido.Grid.html#235-244" title="Go to source code">setTemplateFile</a>( <span>string <var>$file</var></span> )</code>
 
 		<div class="description short">
 			
@@ -578,7 +574,7 @@ column doesn't exist then outer filter (Filter::RENDER_OUTER).</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setRememberState">#</a>
-		<code><a href="source-class-Grido.Grid.html#244-253" title="Go to source code">setRememberState</a>( <span>boolean <var>$state</var> = <span class="php-keyword1">TRUE</span></span> )</code>
+		<code><a href="source-class-Grido.Grid.html#246-255" title="Go to source code">setRememberState</a>( <span>boolean <var>$state</var> = <span class="php-keyword1">TRUE</span></span> )</code>
 
 		<div class="description short">
 			
@@ -620,7 +616,7 @@ column doesn't exist then outer filter (Filter::RENDER_OUTER).</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setRowCallback">#</a>
-		<code><a href="source-class-Grido.Grid.html#255-265" title="Go to source code">setRowCallback</a>( <span>mixed <var>$callback</var></span> )</code>
+		<code><a href="source-class-Grido.Grid.html#257-267" title="Go to source code">setRowCallback</a>( <span>mixed <var>$callback</var></span> )</code>
 
 		<div class="description short">
 			
@@ -664,7 +660,7 @@ element; function($row, Html $tr).</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getCount">#</a>
-		<code><a href="source-class-Grido.Grid.html#269-280" title="Go to source code">getCount</a>( )</code>
+		<code><a href="source-class-Grido.Grid.html#271-282" title="Go to source code">getCount</a>( )</code>
 
 		<div class="description short">
 			
@@ -701,7 +697,7 @@ element; function($row, Html $tr).</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getDefaultFilter">#</a>
-		<code><a href="source-class-Grido.Grid.html#282-289" title="Go to source code">getDefaultFilter</a>( )</code>
+		<code><a href="source-class-Grido.Grid.html#284-291" title="Go to source code">getDefaultFilter</a>( )</code>
 
 		<div class="description short">
 			
@@ -738,7 +734,7 @@ element; function($row, Html $tr).</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getDefaultSort">#</a>
-		<code><a href="source-class-Grido.Grid.html#291-298" title="Go to source code">getDefaultSort</a>( )</code>
+		<code><a href="source-class-Grido.Grid.html#293-300" title="Go to source code">getDefaultSort</a>( )</code>
 
 		<div class="description short">
 			
@@ -775,7 +771,7 @@ element; function($row, Html $tr).</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getPerPageList">#</a>
-		<code><a href="source-class-Grido.Grid.html#300-307" title="Go to source code">getPerPageList</a>( )</code>
+		<code><a href="source-class-Grido.Grid.html#302-309" title="Go to source code">getPerPageList</a>( )</code>
 
 		<div class="description short">
 			
@@ -812,7 +808,7 @@ element; function($row, Html $tr).</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getPrimaryKey">#</a>
-		<code><a href="source-class-Grido.Grid.html#309-316" title="Go to source code">getPrimaryKey</a>( )</code>
+		<code><a href="source-class-Grido.Grid.html#311-318" title="Go to source code">getPrimaryKey</a>( )</code>
 
 		<div class="description short">
 			
@@ -849,7 +845,7 @@ element; function($row, Html $tr).</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getPerPage">#</a>
-		<code><a href="source-class-Grido.Grid.html#318-325" title="Go to source code">getPerPage</a>( )</code>
+		<code><a href="source-class-Grido.Grid.html#320-327" title="Go to source code">getPerPage</a>( )</code>
 
 		<div class="description short">
 			
@@ -879,14 +875,14 @@ element; function($row, Html $tr).</p>
 
 		<td class="attributes"><code>
 			 public 
-			<code><a href="class-Grido.Columns.Column.html">Grido\Columns\Column</a></code>
+			<code><a href="class-Grido.Components.Columns.Column.html">Grido\Components\Columns\Column</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getColumn">#</a>
-		<code><a href="source-class-Grido.Grid.html#327-336" title="Go to source code">getColumn</a>( <span>string <var>$name</var></span>, <span>boolean <var>$need</var> = <span class="php-keyword1">TRUE</span></span> )</code>
+		<code><a href="source-class-Grido.Grid.html#329-338" title="Go to source code">getColumn</a>( <span>string <var>$name</var></span>, <span>boolean <var>$need</var> = <span class="php-keyword1">TRUE</span></span> )</code>
 
 		<div class="description short">
 			
@@ -910,7 +906,7 @@ element; function($row, Html $tr).</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Grido.Columns.Column.html">Grido\Columns\Column</a></code></code><br />
+					<code><code><a href="class-Grido.Components.Columns.Column.html">Grido\Components\Columns\Column</a></code></code><br />
 				</div>
 
 
@@ -923,14 +919,14 @@ element; function($row, Html $tr).</p>
 
 		<td class="attributes"><code>
 			 public 
-			<code><a href="class-Grido.Filters.Filter.html">Grido\Filters\Filter</a></code>
+			<code><a href="class-Grido.Components.Filters.Filter.html">Grido\Components\Filters\Filter</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getFilter">#</a>
-		<code><a href="source-class-Grido.Grid.html#338-347" title="Go to source code">getFilter</a>( <span>string <var>$name</var></span>, <span>boolean <var>$need</var> = <span class="php-keyword1">TRUE</span></span> )</code>
+		<code><a href="source-class-Grido.Grid.html#340-349" title="Go to source code">getFilter</a>( <span>string <var>$name</var></span>, <span>boolean <var>$need</var> = <span class="php-keyword1">TRUE</span></span> )</code>
 
 		<div class="description short">
 			
@@ -954,7 +950,7 @@ element; function($row, Html $tr).</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Grido.Filters.Filter.html">Grido\Filters\Filter</a></code></code><br />
+					<code><code><a href="class-Grido.Components.Filters.Filter.html">Grido\Components\Filters\Filter</a></code></code><br />
 				</div>
 
 
@@ -967,14 +963,14 @@ element; function($row, Html $tr).</p>
 
 		<td class="attributes"><code>
 			 public 
-			<code><a href="class-Grido.Actions.Action.html">Grido\Actions\Action</a></code>
+			<code><a href="class-Grido.Components.Actions.Action.html">Grido\Components\Actions\Action</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getAction">#</a>
-		<code><a href="source-class-Grido.Grid.html#349-358" title="Go to source code">getAction</a>( <span>string <var>$name</var></span>, <span>boolean <var>$need</var> = <span class="php-keyword1">TRUE</span></span> )</code>
+		<code><a href="source-class-Grido.Grid.html#351-360" title="Go to source code">getAction</a>( <span>string <var>$name</var></span>, <span>boolean <var>$need</var> = <span class="php-keyword1">TRUE</span></span> )</code>
 
 		<div class="description short">
 			
@@ -998,7 +994,7 @@ element; function($row, Html $tr).</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Grido.Actions.Action.html">Grido\Actions\Action</a></code></code><br />
+					<code><code><a href="class-Grido.Components.Actions.Action.html">Grido\Components\Actions\Action</a></code></code><br />
 				</div>
 
 
@@ -1011,14 +1007,14 @@ element; function($row, Html $tr).</p>
 
 		<td class="attributes"><code>
 			 public 
-			<code><a href="class-Grido.Operation.html">Grido\Operation</a></code>
+			<code><a href="class-Grido.Components.Operation.html">Grido\Components\Operation</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getOperations">#</a>
-		<code><a href="source-class-Grido.Grid.html#360-368" title="Go to source code">getOperations</a>( <span>boolean <var>$need</var> = <span class="php-keyword1">TRUE</span></span> )</code>
+		<code><a href="source-class-Grido.Grid.html#362-370" title="Go to source code">getOperations</a>( <span>boolean <var>$need</var> = <span class="php-keyword1">TRUE</span></span> )</code>
 
 		<div class="description short">
 			
@@ -1040,7 +1036,7 @@ element; function($row, Html $tr).</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Grido.Operation.html">Grido\Operation</a></code></code><br />
+					<code><code><a href="class-Grido.Components.Operation.html">Grido\Components\Operation</a></code></code><br />
 				</div>
 
 
@@ -1060,7 +1056,7 @@ element; function($row, Html $tr).</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getActualFilter">#</a>
-		<code><a href="source-class-Grido.Grid.html#370-379" title="Go to source code">getActualFilter</a>( <span>string <var>$key</var> = <span class="php-keyword1">NULL</span></span> )</code>
+		<code><a href="source-class-Grido.Grid.html#372-381" title="Go to source code">getActualFilter</a>( <span>string <var>$key</var> = <span class="php-keyword1">NULL</span></span> )</code>
 
 		<div class="description short">
 			
@@ -1102,7 +1098,7 @@ element; function($row, Html $tr).</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getData">#</a>
-		<code><a href="source-class-Grido.Grid.html#381-407" title="Go to source code">getData</a>( <span>mixed <var>$applyPaging</var> = <span class="php-keyword1">TRUE</span></span> )</code>
+		<code><a href="source-class-Grido.Grid.html#383-409" title="Go to source code">getData</a>( <span>mixed <var>$applyPaging</var> = <span class="php-keyword1">TRUE</span></span> )</code>
 
 		<div class="description short">
 			
@@ -1132,14 +1128,14 @@ element; function($row, Html $tr).</p>
 
 		<td class="attributes"><code>
 			 public 
-			<code><a href="class-Grido.FileTranslator.html">Grido\FileTranslator</a></code>
+			<code><a href="class-Grido.Translations.FileTranslator.html">Grido\Translations\FileTranslator</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getTranslator">#</a>
-		<code><a href="source-class-Grido.Grid.html#409-420" title="Go to source code">getTranslator</a>( )</code>
+		<code><a href="source-class-Grido.Grid.html#411-422" title="Go to source code">getTranslator</a>( )</code>
 
 		<div class="description short">
 			
@@ -1156,7 +1152,7 @@ element; function($row, Html $tr).</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Grido.FileTranslator.html">Grido\FileTranslator</a></code></code><br />
+					<code><code><a href="class-Grido.Translations.FileTranslator.html">Grido\Translations\FileTranslator</a></code></code><br />
 				</div>
 
 
@@ -1176,7 +1172,7 @@ element; function($row, Html $tr).</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getRememberSession">#</a>
-		<code><a href="source-class-Grido.Grid.html#422-429" title="Go to source code">getRememberSession</a>( )</code>
+		<code><a href="source-class-Grido.Grid.html#424-431" title="Go to source code">getRememberSession</a>( )</code>
 
 		<div class="description short">
 			
@@ -1213,7 +1209,7 @@ element; function($row, Html $tr).</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_loadRememberState">#</a>
-		<code><a href="source-class-Grido.Grid.html#515-527" title="Go to source code">loadRememberState</a>( <span>array <var>&amp; $params</var></span> )</code>
+		<code><a href="source-class-Grido.Grid.html#517-529" title="Go to source code">loadRememberState</a>( <span>array <var>&amp; $params</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1251,7 +1247,7 @@ element; function($row, Html $tr).</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_reload">#</a>
-		<code><a href="source-class-Grido.Grid.html#659-670" title="Go to source code">reload</a>( )</code>
+		<code><a href="source-class-Grido.Grid.html#661-672" title="Go to source code">reload</a>( )</code>
 
 		<div class="description short">
 			
@@ -1284,7 +1280,7 @@ element; function($row, Html $tr).</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_saveRememberState">#</a>
-		<code><a href="source-class-Grido.Grid.html#759-765" title="Go to source code">saveRememberState</a>( )</code>
+		<code><a href="source-class-Grido.Grid.html#761-767" title="Go to source code">saveRememberState</a>( )</code>
 
 		<div class="description short">
 			
@@ -1313,7 +1309,7 @@ element; function($row, Html $tr).</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_applyFiltering">#</a>
-		<code><a href="source-class-Grido.Grid.html#767-773" title="Go to source code">applyFiltering</a>( )</code>
+		<code><a href="source-class-Grido.Grid.html#769-775" title="Go to source code">applyFiltering</a>( )</code>
 
 		<div class="description short">
 			
@@ -1342,7 +1338,7 @@ element; function($row, Html $tr).</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#__applyFiltering">#</a>
-		<code><a href="source-class-Grido.Grid.html#775-800" title="Go to source code">_applyFiltering</a>( <span>array <var>$filter</var></span> )</code>
+		<code><a href="source-class-Grido.Grid.html#777-802" title="Go to source code">_applyFiltering</a>( <span>array <var>$filter</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1380,7 +1376,7 @@ element; function($row, Html $tr).</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_applySorting">#</a>
-		<code><a href="source-class-Grido.Grid.html#802-826" title="Go to source code">applySorting</a>( )</code>
+		<code><a href="source-class-Grido.Grid.html#804-828" title="Go to source code">applySorting</a>( )</code>
 
 		<div class="description short">
 			
@@ -1409,7 +1405,7 @@ element; function($row, Html $tr).</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_applyPaging">#</a>
-		<code><a href="source-class-Grido.Grid.html#828-836" title="Go to source code">applyPaging</a>( )</code>
+		<code><a href="source-class-Grido.Grid.html#830-838" title="Go to source code">applyPaging</a>( )</code>
 
 		<div class="description short">
 			
@@ -1438,7 +1434,7 @@ element; function($row, Html $tr).</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_addCheckers">#</a>
-		<code><a href="source-class-Grido.Grid.html#838-852" title="Go to source code">addCheckers</a>( <span>array <var>$data</var></span> )</code>
+		<code><a href="source-class-Grido.Grid.html#840-854" title="Go to source code">addCheckers</a>( <span>array <var>$data</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1465,14 +1461,14 @@ element; function($row, Html $tr).</p>
 
 		<td class="attributes"><code>
 			 public 
-			<code><a href="class-Grido.Columns.Column.html">Grido\Columns\Column</a></code>
+			<code><a href="class-Grido.Components.Columns.Column.html">Grido\Components\Columns\Column</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_addColumn">#</a>
-		<code><a href="source-class-Grido.Grid.html#856-869" title="Go to source code">addColumn</a>( <span>string <var>$name</var></span>, <span>string <var>$label</var></span>, <span>string <var>$type</var> = Grido\Column::TYPE_TEXT</span> )</code>
+		<code><a href="source-class-Grido.Grid.html#858-871" title="Go to source code">addColumn</a>( <span>string <var>$name</var></span>, <span>string <var>$label</var></span>, <span>string <var>$type</var> = Grido\Column::TYPE_TEXT</span> )</code>
 
 		<div class="description short">
 			
@@ -1494,7 +1490,7 @@ element; function($row, Html $tr).</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Grido.Columns.Column.html">Grido\Columns\Column</a></code></code><br />
+					<code><code><a href="class-Grido.Components.Columns.Column.html">Grido\Components\Columns\Column</a></code></code><br />
 				</div>
 
 
@@ -1507,14 +1503,14 @@ element; function($row, Html $tr).</p>
 
 		<td class="attributes"><code>
 			 public 
-			<code><a href="class-Grido.Filters.Filter.html">Grido\Filters\Filter</a></code>
+			<code><a href="class-Grido.Components.Filters.Filter.html">Grido\Components\Filters\Filter</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_addFilter">#</a>
-		<code><a href="source-class-Grido.Grid.html#871-885" title="Go to source code">addFilter</a>( <span>string <var>$name</var></span>, <span>string <var>$label</var></span>, <span>string <var>$type</var> = Grido\Filter::TYPE_TEXT</span>, <span>mixed <var>$optional</var> = <span class="php-keyword1">NULL</span></span> )</code>
+		<code><a href="source-class-Grido.Grid.html#873-887" title="Go to source code">addFilter</a>( <span>string <var>$name</var></span>, <span>string <var>$label</var></span>, <span>string <var>$type</var> = Grido\Filter::TYPE_TEXT</span>, <span>mixed <var>$optional</var> = <span class="php-keyword1">NULL</span></span> )</code>
 
 		<div class="description short">
 			
@@ -1538,7 +1534,7 @@ element; function($row, Html $tr).</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Grido.Filters.Filter.html">Grido\Filters\Filter</a></code></code><br />
+					<code><code><a href="class-Grido.Components.Filters.Filter.html">Grido\Components\Filters\Filter</a></code></code><br />
 				</div>
 
 
@@ -1551,14 +1547,14 @@ element; function($row, Html $tr).</p>
 
 		<td class="attributes"><code>
 			 public 
-			<code><a href="class-Grido.Actions.Action.html">Grido\Actions\Action</a></code>
+			<code><a href="class-Grido.Components.Actions.Action.html">Grido\Components\Actions\Action</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_addAction">#</a>
-		<code><a href="source-class-Grido.Grid.html#887-902" title="Go to source code">addAction</a>( <span>string <var>$name</var></span>, <span>string <var>$label</var></span>, <span>string <var>$type</var> = Grido\Action::TYPE_HREF</span>, <span>string <var>$destination</var> = <span class="php-keyword1">NULL</span></span>, <span>array <var>$args</var> = <span class="php-keyword1">array</span>()</span> )</code>
+		<code><a href="source-class-Grido.Grid.html#889-904" title="Go to source code">addAction</a>( <span>string <var>$name</var></span>, <span>string <var>$label</var></span>, <span>string <var>$type</var> = Grido\Action::TYPE_HREF</span>, <span>string <var>$destination</var> = <span class="php-keyword1">NULL</span></span>, <span>array <var>$args</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 		<div class="description short">
 			
@@ -1584,7 +1580,7 @@ element; function($row, Html $tr).</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Grido.Actions.Action.html">Grido\Actions\Action</a></code></code><br />
+					<code><code><a href="class-Grido.Components.Actions.Action.html">Grido\Components\Actions\Action</a></code></code><br />
 				</div>
 
 
@@ -1597,14 +1593,14 @@ element; function($row, Html $tr).</p>
 
 		<td class="attributes"><code>
 			 public 
-			<code><a href="class-Grido.Operation.html">Grido\Operation</a></code>
+			<code><a href="class-Grido.Components.Operation.html">Grido\Components\Operation</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setOperations">#</a>
-		<code><a href="source-class-Grido.Grid.html#904-917" title="Go to source code">setOperations</a>( <span>array <var>$operations</var></span>, <span>callable <var>$onSubmit</var></span>, <span>string <var>$type</var> = <span class="php-quote">'Grido\Operation'</span></span> )</code>
+		<code><a href="source-class-Grido.Grid.html#906-919" title="Go to source code">setOperations</a>( <span>array <var>$operations</var></span>, <span>callable <var>$onSubmit</var></span>, <span>string <var>$type</var> = <span class="php-quote">'\Grido\Components\Operation'</span></span> )</code>
 
 		<div class="description short">
 			
@@ -1626,7 +1622,7 @@ element; function($row, Html $tr).</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Grido.Operation.html">Grido\Operation</a></code></code><br />
+					<code><code><a href="class-Grido.Components.Operation.html">Grido\Components\Operation</a></code></code><br />
 				</div>
 
 
@@ -1639,14 +1635,14 @@ element; function($row, Html $tr).</p>
 
 		<td class="attributes"><code>
 			 public 
-			<code><a href="class-Grido.Export.html">Grido\Export</a></code>
+			<code><a href="class-Grido.Components.Export.html">Grido\Components\Export</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setExporting">#</a>
-		<code><a href="source-class-Grido.Grid.html#919-933" title="Go to source code">setExporting</a>( <span>string <var>$name</var> = <span class="php-keyword1">NULL</span></span>, <span>string <var>$type</var> = <span class="php-quote">'Grido\Export'</span></span> )</code>
+		<code><a href="source-class-Grido.Grid.html#921-935" title="Go to source code">setExporting</a>( <span>string <var>$name</var> = <span class="php-keyword1">NULL</span></span>, <span>string <var>$type</var> = <span class="php-quote">'\Grido\Components\Export'</span></span> )</code>
 
 		<div class="description short">
 			
@@ -1666,7 +1662,7 @@ element; function($row, Html $tr).</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Grido.Export.html">Grido\Export</a></code></code><br />
+					<code><code><a href="class-Grido.Components.Export.html">Grido\Components\Export</a></code></code><br />
 				</div>
 
 				<h4>Throws</h4>
@@ -1690,7 +1686,7 @@ element; function($row, Html $tr).</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_createComponentForm">#</a>
-		<code><a href="source-class-Grido.Grid.html#935-950" title="Go to source code">createComponentForm</a>( )</code>
+		<code><a href="source-class-Grido.Grid.html#937-952" title="Go to source code">createComponentForm</a>( )</code>
 
 		<div class="description short">
 			
@@ -1723,7 +1719,7 @@ element; function($row, Html $tr).</p>
 
 		<td class="attributes"><code>string</code></td>
 		<td class="name"><code>
-				<a href="source-class-Grido.Grid.html#43" title="Go to source code"><b>BUTTONS</b></a>
+				<a href="source-class-Grido.Grid.html#45" title="Go to source code"><b>BUTTONS</b></a>
 		</code></td>
 		<td class="value"><code><span class="php-quote">'buttons'</span></code></td>
 		<td class="description"><div>
@@ -1753,7 +1749,7 @@ element; function($row, Html $tr).</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#45-46" title="Go to source code"><var>$page</var></a>
+				<a href="source-class-Grido.Grid.html#47-48" title="Go to source code"><var>$page</var></a>
 		</td>
 		<td class="value"><code><span class="php-num">1</span></code></td>
 		<td class="description"><div>
@@ -1780,7 +1776,7 @@ element; function($row, Html $tr).</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#48-49" title="Go to source code"><var>$perPage</var></a>
+				<a href="source-class-Grido.Grid.html#50-51" title="Go to source code"><var>$perPage</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -1807,7 +1803,7 @@ element; function($row, Html $tr).</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#51-52" title="Go to source code"><var>$sort</var></a>
+				<a href="source-class-Grido.Grid.html#53-54" title="Go to source code"><var>$sort</var></a>
 		</td>
 		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
 		<td class="description"><div>
@@ -1834,7 +1830,7 @@ element; function($row, Html $tr).</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#54-55" title="Go to source code"><var>$filter</var></a>
+				<a href="source-class-Grido.Grid.html#56-57" title="Go to source code"><var>$filter</var></a>
 		</td>
 		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
 		<td class="description"><div>
@@ -1861,7 +1857,7 @@ element; function($row, Html $tr).</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#57-58" title="Go to source code"><var>$onRender</var></a>
+				<a href="source-class-Grido.Grid.html#59-60" title="Go to source code"><var>$onRender</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -1888,7 +1884,7 @@ element; function($row, Html $tr).</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#60-61" title="Go to source code"><var>$onFetchData</var></a>
+				<a href="source-class-Grido.Grid.html#62-63" title="Go to source code"><var>$onFetchData</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -1915,7 +1911,7 @@ element; function($row, Html $tr).</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#63-64" title="Go to source code"><var>$rowCallback</var></a>
+				<a href="source-class-Grido.Grid.html#65-66" title="Go to source code"><var>$rowCallback</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -1942,7 +1938,7 @@ element; function($row, Html $tr).</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#66-67" title="Go to source code"><var>$rememberState</var></a>
+				<a href="source-class-Grido.Grid.html#68-69" title="Go to source code"><var>$rememberState</var></a>
 		</td>
 		<td class="value"><code><span class="php-keyword1">FALSE</span></code></td>
 		<td class="description"><div>
@@ -1965,7 +1961,7 @@ element; function($row, Html $tr).</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#69-70" title="Go to source code"><var>$primaryKey</var></a>
+				<a href="source-class-Grido.Grid.html#71-72" title="Go to source code"><var>$primaryKey</var></a>
 		</td>
 		<td class="value"><code><span class="php-quote">'id'</span></code></td>
 		<td class="description"><div>
@@ -1988,7 +1984,7 @@ element; function($row, Html $tr).</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#72-73" title="Go to source code"><var>$filterRenderType</var></a>
+				<a href="source-class-Grido.Grid.html#74-75" title="Go to source code"><var>$filterRenderType</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -2011,7 +2007,7 @@ element; function($row, Html $tr).</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#75-76" title="Go to source code"><var>$perPageList</var></a>
+				<a href="source-class-Grido.Grid.html#77-78" title="Go to source code"><var>$perPageList</var></a>
 		</td>
 		<td class="value"><code><span class="php-keyword1">array</span>(<span class="php-num">10</span>, <span class="php-num">20</span>, <span class="php-num">30</span>, <span class="php-num">50</span>, <span class="php-num">100</span>)</code></td>
 		<td class="description"><div>
@@ -2034,7 +2030,7 @@ element; function($row, Html $tr).</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#78-79" title="Go to source code"><var>$defaultPerPage</var></a>
+				<a href="source-class-Grido.Grid.html#80-81" title="Go to source code"><var>$defaultPerPage</var></a>
 		</td>
 		<td class="value"><code><span class="php-num">20</span></code></td>
 		<td class="description"><div>
@@ -2057,7 +2053,7 @@ element; function($row, Html $tr).</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#81-82" title="Go to source code"><var>$defaultFilter</var></a>
+				<a href="source-class-Grido.Grid.html#83-84" title="Go to source code"><var>$defaultFilter</var></a>
 		</td>
 		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
 		<td class="description"><div>
@@ -2080,7 +2076,7 @@ element; function($row, Html $tr).</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#84-85" title="Go to source code"><var>$defaultSort</var></a>
+				<a href="source-class-Grido.Grid.html#86-87" title="Go to source code"><var>$defaultSort</var></a>
 		</td>
 		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
 		<td class="description"><div>
@@ -2099,11 +2095,11 @@ element; function($row, Html $tr).</p>
 	<tr data-order="model" id="$model">
 		<td class="attributes"><code>
 			protected  
-			<code><a href="class-Grido.IDataSource.html">Grido\IDataSource</a></code>
+			<code><a href="class-Grido.DataSources.IDataSource.html">Grido\DataSources\IDataSource</a></code>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#87-88" title="Go to source code"><var>$model</var></a>
+				<a href="source-class-Grido.Grid.html#89-90" title="Go to source code"><var>$model</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -2126,7 +2122,7 @@ element; function($row, Html $tr).</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#90-91" title="Go to source code"><var>$count</var></a>
+				<a href="source-class-Grido.Grid.html#92-93" title="Go to source code"><var>$count</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -2153,7 +2149,7 @@ element; function($row, Html $tr).</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#93-94" title="Go to source code"><var>$data</var></a>
+				<a href="source-class-Grido.Grid.html#95-96" title="Go to source code"><var>$data</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -2172,11 +2168,11 @@ element; function($row, Html $tr).</p>
 	<tr data-order="paginator" id="$paginator">
 		<td class="attributes"><code>
 			protected  
-			<code><a href="class-Grido.Paginator.html">Grido\Paginator</a></code>
+			<code><a href="class-Grido.Components.Paginator.html">Grido\Components\Paginator</a></code>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#96-97" title="Go to source code"><var>$paginator</var></a>
+				<a href="source-class-Grido.Grid.html#98-99" title="Go to source code"><var>$paginator</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -2195,11 +2191,11 @@ element; function($row, Html $tr).</p>
 	<tr data-order="translator" id="$translator">
 		<td class="attributes"><code>
 			protected  
-			ITranslator
+			Nette\Localization\ITranslator
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#99-100" title="Go to source code"><var>$translator</var></a>
+				<a href="source-class-Grido.Grid.html#101-102" title="Go to source code"><var>$translator</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -2222,7 +2218,7 @@ element; function($row, Html $tr).</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#102-103" title="Go to source code"><var>$hasFilters</var></a>
+				<a href="source-class-Grido.Grid.html#104-105" title="Go to source code"><var>$hasFilters</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -2249,7 +2245,7 @@ element; function($row, Html $tr).</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#103" title="Go to source code"><var>$hasActions</var></a>
+				<a href="source-class-Grido.Grid.html#105" title="Go to source code"><var>$hasActions</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -2272,7 +2268,7 @@ element; function($row, Html $tr).</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#103" title="Go to source code"><var>$hasOperations</var></a>
+				<a href="source-class-Grido.Grid.html#105" title="Go to source code"><var>$hasOperations</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -2295,7 +2291,7 @@ element; function($row, Html $tr).</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#103" title="Go to source code"><var>$hasExporting</var></a>
+				<a href="source-class-Grido.Grid.html#105" title="Go to source code"><var>$hasExporting</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -2324,7 +2320,7 @@ element; function($row, Html $tr).</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#31" title="Go to source code"><var>$defaultFilter</var></a>
+				<a href="source-class-Grido.Grid.html#33" title="Go to source code"><var>$defaultFilter</var></a>
 		</td>
 		<td class="description"><div>
 			<a href="#m$defaultFilter" class="anchor">#</a>
@@ -2346,7 +2342,7 @@ element; function($row, Html $tr).</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#32" title="Go to source code"><var>$defaultSort</var></a>
+				<a href="source-class-Grido.Grid.html#34" title="Go to source code"><var>$defaultSort</var></a>
 		</td>
 		<td class="description"><div>
 			<a href="#m$defaultSort" class="anchor">#</a>
@@ -2363,12 +2359,12 @@ element; function($row, Html $tr).</p>
 	</tr>
 	<tr data-order="perPageList" id="m$perPageList">
 		<td class="attributes"><code>
-			public  read-only
-			callable
+			public  
+			array
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#25" title="Go to source code"><var>$perPageList</var></a>
+				<a href="source-class-Grido.Grid.html#35" title="Go to source code"><var>$perPageList</var></a>
 		</td>
 		<td class="description"><div>
 			<a href="#m$perPageList" class="anchor">#</a>
@@ -2390,7 +2386,7 @@ element; function($row, Html $tr).</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#34" title="Go to source code"><var>$translator</var></a>
+				<a href="source-class-Grido.Grid.html#36" title="Go to source code"><var>$translator</var></a>
 		</td>
 		<td class="description"><div>
 			<a href="#m$translator" class="anchor">#</a>
@@ -2408,11 +2404,11 @@ element; function($row, Html $tr).</p>
 	<tr data-order="paginator" id="m$paginator">
 		<td class="attributes"><code>
 			public  
-			<code><a href="class-Grido.Paginator.html">Grido\Paginator</a></code>
+			<code><a href="class-Grido.Components.Paginator.html">Grido\Components\Paginator</a></code>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#35" title="Go to source code"><var>$paginator</var></a>
+				<a href="source-class-Grido.Grid.html#37" title="Go to source code"><var>$paginator</var></a>
 		</td>
 		<td class="description"><div>
 			<a href="#m$paginator" class="anchor">#</a>
@@ -2434,7 +2430,7 @@ element; function($row, Html $tr).</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#36" title="Go to source code"><var>$primaryKey</var></a>
+				<a href="source-class-Grido.Grid.html#38" title="Go to source code"><var>$primaryKey</var></a>
 		</td>
 		<td class="description"><div>
 			<a href="#m$primaryKey" class="anchor">#</a>
@@ -2456,7 +2452,7 @@ element; function($row, Html $tr).</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#37" title="Go to source code"><var>$filterRenderType</var></a>
+				<a href="source-class-Grido.Grid.html#39" title="Go to source code"><var>$filterRenderType</var></a>
 		</td>
 		<td class="description"><div>
 			<a href="#m$filterRenderType" class="anchor">#</a>
@@ -2474,11 +2470,11 @@ element; function($row, Html $tr).</p>
 	<tr data-order="model" id="m$model">
 		<td class="attributes"><code>
 			public  
-			<code><a href="class-Grido.IDataSource.html">Grido\IDataSource</a></code>
+			<code><a href="class-Grido.DataSources.IDataSource.html">Grido\DataSources\IDataSource</a></code>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#38" title="Go to source code"><var>$model</var></a>
+				<a href="source-class-Grido.Grid.html#40" title="Go to source code"><var>$model</var></a>
 		</td>
 		<td class="description"><div>
 			<a href="#m$model" class="anchor">#</a>
@@ -2500,7 +2496,7 @@ element; function($row, Html $tr).</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#24" title="Go to source code"><var>$count</var></a>
+				<a href="source-class-Grido.Grid.html#27" title="Go to source code"><var>$count</var></a>
 		</td>
 		<td class="description"><div>
 			<a href="#m$count" class="anchor">#</a>
@@ -2522,7 +2518,7 @@ element; function($row, Html $tr).</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#26" title="Go to source code"><var>$data</var></a>
+				<a href="source-class-Grido.Grid.html#28" title="Go to source code"><var>$data</var></a>
 		</td>
 		<td class="description"><div>
 			<a href="#m$data" class="anchor">#</a>
@@ -2544,7 +2540,7 @@ element; function($row, Html $tr).</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#27" title="Go to source code"><var>$rowCallback</var></a>
+				<a href="source-class-Grido.Grid.html#29" title="Go to source code"><var>$rowCallback</var></a>
 		</td>
 		<td class="description"><div>
 			<a href="#m$rowCallback" class="anchor">#</a>
@@ -2566,7 +2562,7 @@ element; function($row, Html $tr).</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#28" title="Go to source code"><var>$rememberState</var></a>
+				<a href="source-class-Grido.Grid.html#30" title="Go to source code"><var>$rememberState</var></a>
 		</td>
 		<td class="description"><div>
 			<a href="#m$rememberState" class="anchor">#</a>
@@ -2588,7 +2584,7 @@ element; function($row, Html $tr).</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#29" title="Go to source code"><var>$defaultPerPage</var></a>
+				<a href="source-class-Grido.Grid.html#31" title="Go to source code"><var>$defaultPerPage</var></a>
 		</td>
 		<td class="description"><div>
 			<a href="#m$defaultPerPage" class="anchor">#</a>
@@ -2610,7 +2606,7 @@ element; function($row, Html $tr).</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Grid.html#30" title="Go to source code"><var>$templateFile</var></a>
+				<a href="source-class-Grido.Grid.html#32" title="Go to source code"><var>$templateFile</var></a>
 		</td>
 		<td class="description"><div>
 			<a href="#m$templateFile" class="anchor">#</a>
