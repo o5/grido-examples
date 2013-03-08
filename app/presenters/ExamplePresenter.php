@@ -1,8 +1,8 @@
 <?php
 
 use Grido\Grid,
-    Grido\Filters\Filter,
-    Grido\Columns\Column,
+    Grido\Components\Filters\Filter,
+    Grido\Components\Columns\Column,
     Nette\Utils\Html;
 
 /**
@@ -39,7 +39,7 @@ final class ExamplePresenter extends BasePresenter
             ->cellPrototype->class[] = 'center';
 
         $grid->addColumn('birthday', 'Birthday', Column::TYPE_DATE)
-            ->setDateFormat(Grido\Columns\Date::FORMAT_TEXT)
+            ->setDateFormat(Grido\Components\Columns\Date::FORMAT_TEXT)
             ->setSortable()
             ->setFilter(Filter::TYPE_DATE)
                 ->setCondition(Filter::CONDITION_CALLBACK, callback($this, 'gridBirthdayFilterCondition'));
