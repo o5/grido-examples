@@ -20,10 +20,11 @@ final class ExamplePresenter extends BasePresenter
     {
         $grid = new Grid($this, $name);
 
-        $fluent = dibi::select('U.*, C.title as country')
-            ->from('user U')
-            ->join('country C')->on('U.country_code = C.code');
+        $fluent = dibi::select('u.*, c.title AS country')
+            ->from('[user] u')
+            ->join('[country] c')->on('u.country_code = c.code');
         $grid->setModel($fluent);
+        //$grid->setModel($this->context->sqlite->table('user'));
 
         $grid->addColumn('firstname', 'Firstname')
             ->setFilter()

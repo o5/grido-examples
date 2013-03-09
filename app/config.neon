@@ -4,21 +4,46 @@ common:
         default_charset: UTF-8
 
     parameters:
-        db:
-            driver: sqlite3
-            file: %appDir%/models/users.s3db
-            profiler: true
+        database:
+            sqlite:
+                driver: sqlite3
+                file: %appDir%/models/users.s3db
+                profiler: true
+            mysql:
+                driver: mysql
+                host: localhost
+                user: root
+                password:
+                database: grido-sandbox
+                profiler: true
+            postgre:
+                driver: postgre
+                host: localhost
+                user: postgres
+                password: root
+                dbname: grido-sandbox
+                profiler: true
         baseUri:
 
     nette:
         database:
-            default:
-                dsn: "sqlite:%appDir%/models/users.s3db"
+            sqlite:
+                dsn: 'sqlite:%database.sqlite.file%'
+            mysql:
+                dsn: 'mysql:host=%database.mysql.host%;dbname=%database.mysql.database%'
+                user: %database.mysql.user%
+                password: %database.mysql.password%
+            postgre:
+                dsn: 'pgsql:host=%database.postgre.host%;dbname=%database.postgre.dbname%'
+                user: %database.postgre.user%
+                password: %database.postgre.password%
         session:
             autoStart: yes
 
     services:
-        db: @nette.database.default
+        sqlite: @nette.database.sqlite
+        mysql: @nette.database.mysql
+        postgre: @nette.database.postgre
 
 
 production < common:

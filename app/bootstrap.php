@@ -31,7 +31,7 @@ $container = $configurator->createContainer();
 
 
 // Database connect
-dibi::connect($container->parameters['db']);
+dibi::connect($container->parameters['database']['sqlite']);
 
 // Setup router
 $uri = $container->parameters['productionMode'] ? 'example/' : '';
