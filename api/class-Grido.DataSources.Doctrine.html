@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="generator" content="ApiGen 2.8.0" />
 
-	<title>Class Grido\DataSources\NetteDatabase | Grido - DataGrid for Nette Framework</title>
+	<title>Class Grido\DataSources\Doctrine | Grido - DataGrid for Nette Framework</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
 	<script type="text/javascript" src="elementlist.js?1071984480"></script>
@@ -52,8 +52,8 @@
 			<h3>Classes</h3>
 			<ul>
 				<li><a href="class-Grido.DataSources.DibiFluent.html">DibiFluent</a></li>
-				<li><a href="class-Grido.DataSources.Doctrine.html">Doctrine</a></li>
-				<li class="active"><a href="class-Grido.DataSources.NetteDatabase.html">NetteDatabase</a></li>
+				<li class="active"><a href="class-Grido.DataSources.Doctrine.html">Doctrine</a></li>
+				<li><a href="class-Grido.DataSources.NetteDatabase.html">NetteDatabase</a></li>
 			</ul>
 
 			<h3>Interfaces</h3>
@@ -100,12 +100,12 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class NetteDatabase</h1>
+	<h1>Class Doctrine</h1>
 
 
 	<div class="description">
 	
-<p>Nette Database data source.</p>
+<p>Doctrine data source.</p>
 
 	</div>
 
@@ -117,7 +117,7 @@ Nette\Object
 		</dd>
 		<dd style="padding-left:30px">
 			<img src="resources/inherit.png" alt="Extended by" />
-<b><span>Grido\DataSources\NetteDatabase</span></b>			
+<b><span>Grido\DataSources\Doctrine</span></b>			
 			 implements 
 				<a href="class-Grido.DataSources.IDataSource.html"><span>Grido\DataSources\IDataSource</span></a>
 			
@@ -139,8 +139,9 @@ Nette\Object
 		<b>Package:</b> Grido\DataSources<br />
 
 				<b>Author:</b>
-				Petr Bugyík<br />
-		<b>Located at</b> <a href="source-class-Grido.DataSources.NetteDatabase.html#14-102" title="Go to source code">Grido/DataSources/NetteDatabase.php</a><br />
+				Martin Jantosovic &lt;<a
+href="mailto:martin.jantosovic&#64;freya.sk">martin.jantosovic&#64;<!---->freya.sk</a>&gt;<br />
+		<b>Located at</b> <a href="source-class-Grido.DataSources.Doctrine.html#17-210" title="Go to source code">Grido/DataSources/Doctrine.php</a><br />
 	</div>
 
 
@@ -158,7 +159,51 @@ Nette\Object
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Grido.DataSources.NetteDatabase.html#29-35" title="Go to source code">__construct</a>( <span>Nette\Database\Table\Selection <var>$selection</var></span> )</code>
+		<code><a href="source-class-Grido.DataSources.Doctrine.html#38-55" title="Go to source code">__construct</a>( <span>Doctrine\ORM\QueryBuilder <var>$qb</var></span>, <span>array <var>$filterMapping</var> = <span class="php-keyword1">NULL</span></span>, <span>array <var>$sortMapping</var> = <span class="php-keyword1">NULL</span></span> )</code>
+
+		<div class="description short">
+			
+<p>If $sortMapping is not set and $filterMapping is set, $filterMapping will be
+used also as $sortMapping.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>If $sortMapping is not set and $filterMapping is set, $filterMapping will be
+used also as $sortMapping.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$qb</var></dt>
+					<dd><code>Doctrine\ORM\QueryBuilder</code><br>$qb</dd>
+					<dt><var>$filterMapping</var></dt>
+					<dd><code>array</code><br>$filterMapping Maps columns to the DQL columns</dd>
+					<dt><var>$sortMapping</var></dt>
+					<dd><code>array</code><br>$sortMapping Maps columns to the DQL columns</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getQuery" id="_getQuery">
+
+		<td class="attributes"><code>
+			 public 
+			Doctrine\ORM\Query
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getQuery">#</a>
+		<code><a href="source-class-Grido.DataSources.Doctrine.html#57-63" title="Go to source code">getQuery</a>( )</code>
 
 		<div class="description short">
 			
@@ -168,12 +213,11 @@ Nette\Object
 			
 
 
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$selection</var></dt>
-					<dd><code>Nette\Database\Table\Selection</code><br>$selection</dd>
-				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Doctrine\ORM\Query</code><br />
+				</div>
 
 
 
@@ -192,7 +236,7 @@ Nette\Object
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getCount">#</a>
-		<code><a href="source-class-Grido.DataSources.NetteDatabase.html#37-43" title="Go to source code">getCount</a>( )</code>
+		<code><a href="source-class-Grido.DataSources.Doctrine.html#65-72" title="Go to source code">getCount</a>( )</code>
 
 		<div class="description short">
 			
@@ -227,14 +271,20 @@ Nette\Object
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getData">#</a>
-		<code><a href="source-class-Grido.DataSources.NetteDatabase.html#45-51" title="Go to source code">getData</a>( )</code>
+		<code><a href="source-class-Grido.DataSources.Doctrine.html#74-108" title="Go to source code">getData</a>( )</code>
 
 		<div class="description short">
 			
+<p>It is possible to use query builder with additional columns. In this case,
+only item at index [0] is returned, because it should be an entity object.</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>It is possible to use query builder with additional columns. In this case,
+only item at index [0] is returned, because it should be an entity object.</p>
+
 
 
 
@@ -262,14 +312,18 @@ Nette\Object
 
 		<td class="name"><div>
 		<a class="anchor" href="#_filter">#</a>
-		<code><a href="source-class-Grido.DataSources.NetteDatabase.html#55-61" title="Go to source code">filter</a>( <span>array <var>$condition</var></span> )</code>
+		<code><a href="source-class-Grido.DataSources.Doctrine.html#112-125" title="Go to source code">filter</a>( <span>array <var>$condition</var></span> )</code>
 
 		<div class="description short">
 			
+<p>Set filter.</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Set filter.</p>
+
 
 
 				<h4>Parameters</h4>
@@ -298,14 +352,18 @@ Nette\Object
 
 		<td class="name"><div>
 		<a class="anchor" href="#_sort">#</a>
-		<code><a href="source-class-Grido.DataSources.NetteDatabase.html#63-71" title="Go to source code">sort</a>( <span>array <var>$sorting</var></span> )</code>
+		<code><a href="source-class-Grido.DataSources.Doctrine.html#127-141" title="Go to source code">sort</a>( <span>array <var>$sorting</var></span> )</code>
 
 		<div class="description short">
 			
+<p>Set sorting.</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Set sorting.</p>
+
 
 
 				<h4>Parameters</h4>
@@ -334,14 +392,18 @@ Nette\Object
 
 		<td class="name"><div>
 		<a class="anchor" href="#_limit">#</a>
-		<code><a href="source-class-Grido.DataSources.NetteDatabase.html#73-80" title="Go to source code">limit</a>( <span>integer <var>$offset</var></span>, <span>integer <var>$limit</var></span> )</code>
+		<code><a href="source-class-Grido.DataSources.Doctrine.html#143-153" title="Go to source code">limit</a>( <span>integer <var>$offset</var></span>, <span>integer <var>$limit</var></span> )</code>
 
 		<div class="description short">
 			
+<p>Set offset and limit.</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Set offset and limit.</p>
+
 
 
 				<h4>Parameters</h4>
@@ -372,7 +434,7 @@ Nette\Object
 
 		<td class="name"><div>
 		<a class="anchor" href="#_suggest">#</a>
-		<code><a href="source-class-Grido.DataSources.NetteDatabase.html#82-95" title="Go to source code">suggest</a>( <span>string <var>$column</var></span>, <span>array <var>$conditions</var></span> )</code>
+		<code><a href="source-class-Grido.DataSources.Doctrine.html#155-179" title="Go to source code">suggest</a>( <span>string <var>$column</var></span>, <span>array <var>$conditions</var></span> )</code>
 
 		<div class="description short">
 			
@@ -416,18 +478,18 @@ Nette\Object
 
 	<table class="summary" id="properties">
 	<caption>Properties summary</caption>
-	<tr data-order="selection" id="$selection">
+	<tr data-order="qb" id="$qb">
 		<td class="attributes"><code>
 			protected  
-			Nette\Database\Table\Selection
+			Doctrine\ORM\QueryBuilder
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.DataSources.NetteDatabase.html#26-27" title="Go to source code"><var>$selection</var></a>
+				<a href="source-class-Grido.DataSources.Doctrine.html#29-30" title="Go to source code"><var>$qb</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
-			<a href="#$selection" class="anchor">#</a>
+			<a href="#$qb" class="anchor">#</a>
 
 			<div class="description short">
 				
@@ -435,6 +497,60 @@ Nette\Object
 
 			<div class="description detailed hidden">
 				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="filterMapping" id="$filterMapping">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.DataSources.Doctrine.html#32-33" title="Go to source code"><var>$filterMapping</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$filterMapping" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Map column to the query builder</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Map column to the query builder</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="sortMapping" id="$sortMapping">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.DataSources.Doctrine.html#35-36" title="Go to source code"><var>$sortMapping</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$sortMapping" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Map column to the query builder</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Map column to the query builder</p>
+
 
 			</div>
 		</div></td>
@@ -452,7 +568,7 @@ Nette\Object
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.DataSources.NetteDatabase.html#21" title="Go to source code"><var>$count</var></a>
+				<a href="source-class-Grido.DataSources.Doctrine.html#24" title="Go to source code"><var>$count</var></a>
 		</td>
 		<td class="description"><div>
 			<a href="#m$count" class="anchor">#</a>
@@ -474,7 +590,7 @@ Nette\Object
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.DataSources.NetteDatabase.html#22" title="Go to source code"><var>$data</var></a>
+				<a href="source-class-Grido.DataSources.Doctrine.html#25" title="Go to source code"><var>$data</var></a>
 		</td>
 		<td class="description"><div>
 			<a href="#m$data" class="anchor">#</a>

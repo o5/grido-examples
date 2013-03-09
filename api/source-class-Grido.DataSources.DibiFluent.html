@@ -8,7 +8,7 @@
 	<title>File Grido/DataSources/DibiFluent.php | Grido - DataGrid for Nette Framework</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?1263969789"></script>
+	<script type="text/javascript" src="elementlist.js?1071984480"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido - DataGrid for Nette Framework" href="/opensearch.xml" />
 
@@ -53,6 +53,7 @@
 			<h3>Classes</h3>
 			<ul>
 				<li class="active"><a href="class-Grido.DataSources.DibiFluent.html">DibiFluent</a></li>
+				<li><a href="class-Grido.DataSources.Doctrine.html">Doctrine</a></li>
 				<li><a href="class-Grido.DataSources.NetteDatabase.html">NetteDatabase</a></li>
 			</ul>
 
@@ -148,7 +149,7 @@
 </span><span id="46" class="l"><a class="l" href="#46"> 46: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_getCount" href="#_getCount">getCount</a>()
 </span><span id="47" class="l"><a class="l" href="#47"> 47: </a>    {
 </span><span id="48" class="l"><a class="l" href="#48"> 48: </a>        <span class="php-var">$fluent</span> = <span class="php-keyword1">clone</span> <span class="php-var">$this</span>-&gt;fluent;
-</span><span id="49" class="l"><a class="l" href="#49"> 49: </a>        <span class="php-keyword1">return</span> <span class="php-var">$fluent</span>-&gt;removeClause(<span class="php-quote">'SELECT'</span>)-&gt;select(<span class="php-quote">'COUNT(*)'</span>)-&gt;fetchSingle();
+</span><span id="49" class="l"><a class="l" href="#49"> 49: </a>        <span class="php-keyword1">return</span> <span class="php-var">$fluent</span>-&gt;removeClause(<span class="php-quote">'ORDER BY'</span>)-&gt;removeClause(<span class="php-quote">'SELECT'</span>)-&gt;select(<span class="php-quote">'COUNT(*)'</span>)-&gt;fetchSingle();
 </span><span id="50" class="l"><a class="l" href="#50"> 50: </a>    }
 </span><span id="51" class="l"><a class="l" href="#51"> 51: </a>
 </span><span id="52" class="l"><a class="l" href="#52"> 52: </a>    <span class="php-comment">/**
