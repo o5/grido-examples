@@ -69,7 +69,12 @@ body {background: #FBFBFB url(../img/bg.jpg) 0 0 repeat}
 .alert .close {top: 0}
 
 .grido .grid-cell-country {padding-left: 1%}
-th.checker input, .filter input, .filter label {z-index: 1; position: relative;}
+th.checker input, .filter input, .filter label, .navbar .brand {z-index: 1; position: relative;}
 .navbar-inner ul.nav {padding-left: 50px}
+.navbar .brand {
+    padding: 10px 0px;
+    margin-left: 50px;
+}
+.navbar-inner ul.nav {padding-left:10px}
 
 select {text-align: center}

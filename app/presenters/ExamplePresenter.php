@@ -123,8 +123,8 @@ final class ExamplePresenter extends BasePresenter
 
     /**
      * Custom condition callback for filter birthday.
-     * @param string $operation
-     * @return array
+     * @param string $value
+     * @return array|NULL
      */
     public function gridBirthdayFilterCondition($value)
     {

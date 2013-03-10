@@ -14,7 +14,6 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
         $macros->addMacro('scache', '?>?<?php echo strtotime(date(\'Y-m-d hh \')); ?>"<?php');
 
         $template->registerFilter($latte);
-        $template->registerHelper('strtoupper', 'strtoupper');
 
         return $template;
     }
