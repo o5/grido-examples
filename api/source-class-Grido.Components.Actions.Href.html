@@ -190,7 +190,7 @@
 </span><span id="92" class="l"><a class="l" href="#92"> 92: </a>
 </span><span id="93" class="l"><a class="l" href="#93"> 93: </a>        <span class="php-var">$pk</span> = <span class="php-var">$this</span>-&gt;getPrimaryKey();
 </span><span id="94" class="l"><a class="l" href="#94"> 94: </a>
-</span><span id="95" class="l"><a class="l" href="#95"> 95: </a>        <span class="php-keyword1">if</span> (!<span class="php-var">$item</span>) {
+</span><span id="95" class="l"><a class="l" href="#95"> 95: </a>        <span class="php-keyword1">if</span> (!<span class="php-var">$item</span> || (<span class="php-var">$this</span>-&gt;disable &amp;&amp; callback(<span class="php-var">$this</span>-&gt;disable)-&gt;invokeArgs(<span class="php-keyword1">array</span>(<span class="php-var">$item</span>)))) {
 </span><span id="96" class="l"><a class="l" href="#96"> 96: </a>            <span class="php-keyword1">return</span>;
 </span><span id="97" class="l"><a class="l" href="#97"> 97: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-keyword1">empty</span>(<span class="php-var">$item</span>-&gt;<span class="php-var">$pk</span>)) {
 </span><span id="98" class="l"><a class="l" href="#98"> 98: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \InvalidArgumentException(<span class="php-quote">&quot;Primary key '</span><span class="php-var">$pk</span><span class="php-quote">' not found.&quot;</span>);

@@ -266,10 +266,28 @@
         <tr>
             <td>getRememberSession</td>
 
-            <td>vhodné např.: pro nastavení expirace session</td>
+            <td>vhodné např. pro nastavení expirace session</td>
+        </tr>
+
+        <tr>
+            <td>getModel</td>
+
+            <td>vhodné např. pro nastavení vlastní metody modelu</td>
         </tr>
         </tbody>
     </table>
+    <pre><code>//vlastní metoda modelu
+$grid->model->proxy['getCount'] = function(\Grido\DataSources\DibiFluent $dataSource) {
+    return $dataSource->fluent->count();
+};
+
+//je samozřejmě možné "přetěžovat" všechny metody implementující IDataSource,
+//přičemž argumenty volané z gridu jsou předány jako pole v druhém parametru
+$grid->model->proxy['limit'] = function($datasource, $args) {
+    $offset = $args[0];
+    $limit = $args[1];
+    //...
+};</code></pre>
 
     <h3 id="udalosti-gridu">Události gridu</h3>
 
@@ -642,14 +660,6 @@ $grid->addFilter('type', 'Type')
         </thead>
 
         <tbody>
-        <tr>
-            <td>setCustomRender</td>
-
-            <td>vlastní vykreslení</td>
-
-            <td>function($row) { return
-                Html::el('button')->setText('Edit') }</td>
-        </tr>
 
         <tr>
             <td>setPrimaryKey</td>
@@ -668,11 +678,27 @@ $grid->addFilter('type', 'Type')
         </tr>
 
         <tr>
+            <td>setCustomRender</td>
+
+            <td>callback pro vlastní vykreslení</td>
+
+            <td></td>
+        </tr>
+
+        <tr>
             <td>setCustomHref</td>
 
             <td>callback pro vlastní vytvoření odkazu</td>
 
             <td> </td>
+        </tr>
+
+        <tr>
+            <td>setDisable</td>
+
+            <td>callback pro ovlivnění vykreslení, když TRUE => nevykreslí se</td>
+
+            <td></td>
         </tr>
 
         <tr>
