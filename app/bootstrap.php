@@ -20,8 +20,8 @@ $configurator->enableDebugger(__DIR__ . '/../log');
 // Enable RobotLoader - this will load all classes automatically
 $configurator->setTempDirectory(__DIR__ . '/../temp');
 $configurator->createRobotLoader()
-	->addDirectory(__DIR__)
-	->register();
+    ->addDirectory(__DIR__)
+    ->register();
 
 
 // Create Dependency Injection container from config.neon file
@@ -35,9 +35,9 @@ dibi::connect($container->parameters['database']['sqlite']);
 // Setup router
 $uri = $container->parameters['productionMode'] ? 'example/' : '';
 $container->router[] = new Route("$uri<filterRenderType>/<action>/", array(
-	'presenter' => 'Example',
-	'action' => 'default',
-	'filterRenderType' => 'inner'
+    'presenter' => 'Example',
+    'action' => 'default',
+    'filterRenderType' => 'inner'
 ));
 
 // Run the application!
