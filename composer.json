@@ -1,0 +1,17 @@
+{
+    "name": "o5/grido-sandbox",
+    "description": "Grido sandbox",
+    "require": {
+        "php": ">=5.3.1",
+        "nette/nette" : "2.0.*",
+        "dg/dibi": "2.0.*",
+        "o5/grido": "@dev"
+    },
+    "license": ["BSD-3", "GPL-2.0", "GPL-3.0"],
+    "authors": [
+        {
+            "name": "Petr Bugyík",
+            "email": "petr@bugyik.cz"
+        }
+    ]
+}
