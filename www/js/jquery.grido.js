@@ -12,7 +12,8 @@
  *      jquery.maskedinput.js
  *      utils.js - methods from phpjs.org
  */
-(function($) {
+
+(function($, undefined) {
 
     $.grido =
     {
@@ -336,9 +337,9 @@
         });
     };
 
-})(jQuery);
+    $(function() {
+        $('table.grido').grido();
+        $('body').ajaxStop($.grido.ajaxStop);
+    });
 
-$(function() {
-    $('table.grido').grido();
-    $('body').ajaxStop($.grido.ajaxStop);
-});
+})(jQuery);
