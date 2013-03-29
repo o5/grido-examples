@@ -396,7 +396,7 @@
 </span><span id="281" class="l"><a class="l" href="#281">281: </a>
 </span><span id="282" class="l"><a class="l" href="#282">282: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_applyReplacement" href="#_applyReplacement">applyReplacement</a>(<span class="php-var">$value</span>)
 </span><span id="283" class="l"><a class="l" href="#283">283: </a>    {
-</span><span id="284" class="l"><a class="l" href="#284">284: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;replacements[<span class="php-var">$value</span>])
+</span><span id="284" class="l"><a class="l" href="#284">284: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">is_string</span>(<span class="php-var">$value</span>) &amp;&amp; <span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;replacements[<span class="php-var">$value</span>])
 </span><span id="285" class="l"><a class="l" href="#285">285: </a>            ? <span class="php-keyword2">str_replace</span>(self::VALUE_IDENTIFIER, <span class="php-var">$value</span>, <span class="php-var">$this</span>-&gt;replacements[<span class="php-var">$value</span>])
 </span><span id="286" class="l"><a class="l" href="#286">286: </a>            : <span class="php-var">$value</span>;
 </span><span id="287" class="l"><a class="l" href="#287">287: </a>    }
