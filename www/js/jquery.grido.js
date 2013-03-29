@@ -26,7 +26,11 @@
         /** jQuery object element of grid **/
         $element: $([]),
 
-        /** INIT **/
+        /**
+         * Initial function.
+         * @param {String} name
+         * @param {jQuery} $element
+         */
         init: function(name, $element)
         {
             this.name = name;
@@ -43,7 +47,9 @@
             this.initPagePromt();
         },
 
-        /******************** FILTERS ********************/
+        /**
+         * Filtering.
+         */
         initFilters: function()
         {
             this.$element.on('change', '.filter select, .filter [type=checkbox]', function() {
@@ -51,7 +57,9 @@
             });
         },
 
-        /******************** ITEMS PER PAGE ********************/
+        /**
+         * Items per page.
+         */
         initItemsPerPage: function()
         {
             this.$element.on('change', '[name=count]', function() {
@@ -59,7 +67,9 @@
             });
         },
 
-        /******************** CONFIRM ACTIONS ********************/
+        /**
+         * Confirm actions.
+         */
         initActions: function()
         {
             this.$element.on('click', '.actions a', function() {
@@ -68,7 +78,9 @@
             });
         },
 
-        /******************** URI HASH ********************/
+        /**
+         * Uri hash.
+         */
         initHash: function()
         {
             if (this.ajax) {
@@ -77,7 +89,9 @@
             }
         },
 
-        /******************** JUMP TO PAGE ********************/
+        /**
+         * Jumping to page.
+         */
         initPagePromt: function()
         {
             this.$element.on('click', '.paginator .promt', function() {
@@ -89,12 +103,17 @@
             });
         },
 
+        /**
+         * Sending filter form.
+         */
         sendFilterForm: function()
         {
             $('[name="buttons[search]"]', $.grido.$element).click();
         },
 
-        /******************** OPERATIONS ********************/
+        /**
+         * Operations methods.
+         */
         operations:
         {
             $last: $([]),
@@ -172,11 +191,19 @@
                 $.grido.$element.on('click', '.operations [type=submit]', this.onSubmit);
             },
 
+            /**
+             * Returns operations select.
+             * @returns {jQuery}
+             */
             getSelect: function()
             {
                 return $('.operations [name="operations[operations]"]', $.grido.$element);
             },
 
+            /**
+             * @param {jQuery} $row
+             * @param {bool} selected
+             */
             changeRow: function($row, selected)
             {
                 if (selected) {
@@ -211,6 +238,9 @@
                 }
             },
 
+            /**
+             * @param {String} state
+             */
             controlState: function(state)
             {
                 var $button = $('[name="buttons[operations]"]', $.grido.$element);
@@ -224,7 +254,9 @@
             }
         },
 
-        /******************** URI HASH - EXPERIMENTAL ********************/
+        /**
+         * Uri hash methods.
+         */
         hash:
         {
             query: '',
@@ -241,6 +273,9 @@
                 }
             },
 
+            /**
+             * @param {object} params
+             */
             change: function(params)
             {
                 var gridParams = {};
@@ -254,7 +289,9 @@
             }
         },
 
-        /******************** SUGGESTION ********************/
+        /**
+         * Suggestion.
+         */
         suggest: function()
         {
             this.$element
@@ -292,7 +329,9 @@
             });
         },
 
-        /******************** DATEPICKER ********************/
+        /**
+         * Datepicker.
+         */
         datepicker: function()
         {
             this.$element.on('focus', 'input.date', function() {
@@ -303,7 +342,9 @@
             });
         },
 
-        /******************** CHECKING NUMERIC INPUT ********************/
+        /**
+         * Checking numetic input.
+         */
         checkNumeric: function()
         {
             this.$element.on('keyup', 'input.number', function() {
@@ -315,8 +356,9 @@
             });
         },
 
-        /******************** OTHERS ********************/
-
+        /**
+         * When ajax stopped.
+         */
         ajaxStop: function()
         {
             var snippet = 'snippet-' + $.grido.name + '-grid';
