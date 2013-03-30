@@ -94,7 +94,9 @@ final class ExamplePresenter extends BasePresenter
 
         $grid->addAction('delete', 'Delete')
             ->setIcon('trash')
-            ->setConfirm('Are you sure you want to delete this item?');
+            ->setConfirm(function($item) {
+                return "Are you sure you want to delete {$item->firstname} {$item->surname}?";
+        });
 
         $operations = array('print' => 'Print', 'delete' => 'Delete');
         $grid->setOperations($operations, callback($this, 'gridOperationsHandler'))
