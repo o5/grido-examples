@@ -100,7 +100,7 @@
 
             <th>Popis</th>
 
-            <th>Příklad parametru / Výchozí</th>
+            <th style="width: 270px">Příklad parametru / Výchozí</th>
         </tr>
         </thead>
 
@@ -203,7 +203,7 @@
             <td>callback volaný při vykreslení řádku tabulky. Callback vrací tr Html
                 element</td>
 
-            <td>př.: function($row, Html $tr) {return $tr}</td>
+            <td>function($row, Html $tr)<br>{return $tr}</td>
         </tr>
         </tbody>
     </table>
@@ -278,7 +278,7 @@
     </table>
 
     <h3 id="vlastni-metody-modelu">Vlastní metody modelu</h3>
-    <p>Pokud potřebujeme změnit některou z modelových metod, lze místo dědění využít proxy callback.</p>
+    <p>Pokud potřebujeme změnit některou z modelových metod, lze místo dědění využít callback.</p>
     <pre><code>//reimplementace metody getCount()
 $grid->model->proxy['getCount'] = function(\Grido\DataSources\DibiFluent $dataSource) {
     return $dataSource->fluent->count();
@@ -298,29 +298,22 @@ $grid->model->proxy['limit'] = function($datasource, $args) {
         <thead>
         <tr>
             <th>Událost</th>
-
             <th>Popis</th>
-
-            <th>Příklad</th>
+            <th style="width: 180px">Příklad</th>
         </tr>
         </thead>
 
         <tbody>
         <tr>
             <td>onRender</td>
-
             <td>událost volající se při vykreslování gridu</td>
-
             <td>function (Grid $grid)</td>
         </tr>
 
         <tr>
             <td>onFetchData</td>
-
-            <td>událost, díky které můžeme modifikovat data těsně před předání
-                šabloně</td>
-
-            <td>function (Grid $grid) { return $grid->data}</td>
+            <td>událost umožnující modifikovat data těsně před předání šabloně</td>
+            <td>function (Grid $grid)<br>{return $grid->data}</td>
         </tr>
         </tbody>
     </table>
@@ -418,9 +411,9 @@ $grid->model->proxy['limit'] = function($datasource, $args) {
         <tr>
             <td>setColumn</td>
 
-            <td>namapuje na sloupec v db</td>
+            <td>namapuje na sloupec v db, lze použít callback</td>
 
-            <td> </td>
+            <td>function($item)<br>{return $item->country->title}</td>
         </tr>
 
         <tr>
@@ -444,7 +437,7 @@ $grid->model->proxy['limit'] = function($datasource, $args) {
 
             <td>callback pro vlastní vykreslení</td>
 
-            <td>function($item) {…return $item->mail}</td>
+            <td>function($item)<br>{return $item->mail}</td>
         </tr>
 
         <tr>
@@ -499,7 +492,7 @@ $grid->model->proxy['limit'] = function($datasource, $args) {
         <tr>
             <th>Typ</th>
 
-            <th>Popis</th>
+            <th style="width: 140px">Popis</th>
 
             <th>Info</th>
         </tr>
@@ -558,7 +551,7 @@ $grid->model->proxy['limit'] = function($datasource, $args) {
 
             <th>Popis</th>
 
-            <th>Příklad parametru</th>
+            <th style="width: 330px">Příklad parametru</th>
         </tr>
         </thead>
 
@@ -658,7 +651,7 @@ $grid->addFilter('type', 'Type')
 
             <th>Popis</th>
 
-            <th>Příklad parametru</th>
+            <th style="width: 440px">Příklad parametru</th>
         </tr>
         </thead>
 
@@ -715,9 +708,10 @@ $grid->addFilter('type', 'Type')
         <tr>
             <td>setConfirm</td>
 
-            <td>nastaví javascriptový confirm</td>
+            <td>nastaví javascriptový confirm, lze použít callback</td>
 
-            <td> </td>
+            <td>function($item)<br>
+                {return "Are you sure you want to delete {$item->title}?"}</td>
         </tr>
         </tbody>
     </table>
