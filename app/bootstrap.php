@@ -3,7 +3,7 @@
 use \Nette\Application\Routers\Route;
 
 // Load Nette Framework
-require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../libs/autoload.php';
 
 
 // Configure application
@@ -19,14 +19,19 @@ $configurator->enableDebugger(__DIR__ . '/../log');
 
 // Enable RobotLoader - this will load all classes automatically
 $configurator->setTempDirectory(__DIR__ . '/../temp');
+
+
+// Enable RobotLoader - this will load all classes automatically
 $configurator->createRobotLoader()
     ->addDirectory(__DIR__)
+    ->addDirectory(__DIR__ . '/../libs')
     ->register();
 
 
 // Create Dependency Injection container from config.neon file
 $configurator->addConfig(__DIR__ . '/config.neon');
 $container = $configurator->createContainer();
+
 
 // Setup router
 $uri = $container->parameters['productionMode'] ? 'example/' : '';
@@ -36,5 +41,4 @@ $container->router[] = new Route("$uri<filterRenderType>/<action>/", array(
     'filterRenderType' => 'inner'
 ));
 
-// Run the application!
-$container->application->run();
+return $container;
