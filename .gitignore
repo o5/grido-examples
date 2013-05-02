@@ -1,5 +1,6 @@
 nbproject
 .idea
+composer.lock
 temp
 log
 libs
