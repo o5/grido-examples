@@ -13,5 +13,8 @@
             "name": "Petr Bugyík",
             "email": "petr@bugyik.cz"
         }
-    ]
+    ],
+    "scripts": {
+        "post-install-cmd": [ "chmod -R 0777 temp/ log/" ]
+    }
 }
