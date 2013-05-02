@@ -28,10 +28,6 @@ $configurator->createRobotLoader()
 $configurator->addConfig(__DIR__ . '/config.neon');
 $container = $configurator->createContainer();
 
-
-// Database connect
-dibi::connect($container->parameters['database']['sqlite']);
-
 // Setup router
 $uri = $container->parameters['productionMode'] ? 'example/' : '';
 $container->router[] = new Route("$uri<filterRenderType>/<action>/", array(

@@ -41,10 +41,13 @@ common:
             autoStart: yes
 
     services:
-        sqlite: @nette.database.sqlite
-        mysql: @nette.database.mysql
-        postgre: @nette.database.postgre
+        ndb_sqlite: @nette.database.sqlite
+        ndb_mysql: @nette.database.mysql
+        ndb_postgre: @nette.database.postgre
 
+        dibi_sqlite: DibiConnection(%database.sqlite%)
+        dibi_mysql: DibiConnection(%database.mysql%)
+        dibi_postgre: DibiConnection(%database.postgre%)
 
 production < common:
     parameters:
