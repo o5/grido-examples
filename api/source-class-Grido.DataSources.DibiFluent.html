@@ -8,7 +8,7 @@
 	<title>File DataSources/DibiFluent.php | Grido - DataGrid for Nette Framework.</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?3943122536"></script>
+	<script type="text/javascript" src="elementlist.js?407009238"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido - DataGrid for Nette Framework." href="/opensearch.xml" />
 
@@ -47,6 +47,8 @@
 							</ul></li>
 				<li class="active"><a href="namespace-Grido.DataSources.html">DataSources</a>
 						</li>
+				<li><a href="namespace-Grido.PropertyAccessors.html">PropertyAccessors</a>
+						</li>
 				<li><a href="namespace-Grido.Translations.html">Translations</a>
 						</li>
 							</ul></li>
@@ -63,9 +65,10 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li><a href="class-Grido.DataSources.Base.html">Base</a></li>
+				<li><a href="class-Grido.DataSources.ArraySource.html">ArraySource</a></li>
 				<li class="active"><a href="class-Grido.DataSources.DibiFluent.html">DibiFluent</a></li>
 				<li><a href="class-Grido.DataSources.Doctrine.html">Doctrine</a></li>
+				<li><a href="class-Grido.DataSources.Model.html">Model</a></li>
 				<li><a href="class-Grido.DataSources.NetteDatabase.html">NetteDatabase</a></li>
 			</ul>
 
@@ -142,7 +145,7 @@
 </span></span><span id="24" class="l"><a class="l" href="#24"> 24: </a><span class="php-comment"> * @property-read int $limit
 </span></span><span id="25" class="l"><a class="l" href="#25"> 25: </a><span class="php-comment"> * @property-read int $offset
 </span></span><span id="26" class="l"><a class="l" href="#26"> 26: </a><span class="php-comment"> */</span>
-</span><span id="27" class="l"><a class="l" href="#27"> 27: </a><span class="php-keyword1">class</span> <a id="DibiFluent" href="#DibiFluent">DibiFluent</a> <span class="php-keyword1">extends</span> Base <span class="php-keyword1">implements</span> IDataSource
+</span><span id="27" class="l"><a class="l" href="#27"> 27: </a><span class="php-keyword1">class</span> <a id="DibiFluent" href="#DibiFluent">DibiFluent</a> <span class="php-keyword1">extends</span> \Nette\Object <span class="php-keyword1">implements</span> IDataSource
 </span><span id="28" class="l"><a class="l" href="#28"> 28: </a>{
 </span><span id="29" class="l"><a class="l" href="#29"> 29: </a>    <span class="php-comment">/** @var \DibiFluent */</span>
 </span><span id="30" class="l"><a class="l" href="#30"> 30: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$fluent" href="#$fluent">$fluent</a></span>;
@@ -185,67 +188,67 @@
 </span><span id="67" class="l"><a class="l" href="#67"> 67: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;offset;
 </span><span id="68" class="l"><a class="l" href="#68"> 68: </a>    }
 </span><span id="69" class="l"><a class="l" href="#69"> 69: </a>
-</span><span id="70" class="l"><a class="l" href="#70"> 70: </a>    <span class="php-comment">/**
-</span></span><span id="71" class="l"><a class="l" href="#71"> 71: </a><span class="php-comment">     * @param string $column
-</span></span><span id="72" class="l"><a class="l" href="#72"> 72: </a><span class="php-comment">     * @param array $conditions
+</span><span id="70" class="l"><a class="l" href="#70"> 70: </a>    <span class="php-comment">/*********************************** interface IDataSource ************************************/</span>
+</span><span id="71" class="l"><a class="l" href="#71"> 71: </a>
+</span><span id="72" class="l"><a class="l" href="#72"> 72: </a>    <span class="php-comment">/**
 </span></span><span id="73" class="l"><a class="l" href="#73"> 73: </a><span class="php-comment">     * @return array
 </span></span><span id="74" class="l"><a class="l" href="#74"> 74: </a><span class="php-comment">     */</span>
-</span><span id="75" class="l"><a class="l" href="#75"> 75: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_suggest" href="#_suggest">suggest</a>(<span class="php-var">$column</span>, <span class="php-keyword1">array</span> <span class="php-var">$conditions</span>)
+</span><span id="75" class="l"><a class="l" href="#75"> 75: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_getData" href="#_getData">getData</a>()
 </span><span id="76" class="l"><a class="l" href="#76"> 76: </a>    {
-</span><span id="77" class="l"><a class="l" href="#77"> 77: </a>        <span class="php-var">$fluent</span> = <span class="php-keyword1">clone</span> <span class="php-var">$this</span>-&gt;fluent;
-</span><span id="78" class="l"><a class="l" href="#78"> 78: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$conditions</span> <span class="php-keyword1">as</span> <span class="php-var">$condition</span>) {
-</span><span id="79" class="l"><a class="l" href="#79"> 79: </a>            <span class="php-keyword2">call_user_func_array</span>(<span class="php-keyword1">array</span>(<span class="php-var">$fluent</span>, <span class="php-quote">'where'</span>), <span class="php-var">$condition</span>);
-</span><span id="80" class="l"><a class="l" href="#80"> 80: </a>        }
-</span><span id="81" class="l"><a class="l" href="#81"> 81: </a>
-</span><span id="82" class="l"><a class="l" href="#82"> 82: </a>        <span class="php-var">$items</span> = <span class="php-keyword2">array_keys</span>(<span class="php-var">$fluent</span>-&gt;fetchPairs(<span class="php-var">$column</span>, <span class="php-var">$column</span>));
-</span><span id="83" class="l"><a class="l" href="#83"> 83: </a>        <span class="php-keyword1">return</span> <span class="php-var">$items</span>;
-</span><span id="84" class="l"><a class="l" href="#84"> 84: </a>    }
-</span><span id="85" class="l"><a class="l" href="#85"> 85: </a>
-</span><span id="86" class="l"><a class="l" href="#86"> 86: </a>    <span class="php-comment">/*********************************** interface IDataSource ************************************/</span>
-</span><span id="87" class="l"><a class="l" href="#87"> 87: </a>
-</span><span id="88" class="l"><a class="l" href="#88"> 88: </a>    <span class="php-comment">/**
-</span></span><span id="89" class="l"><a class="l" href="#89"> 89: </a><span class="php-comment">     * @return array
-</span></span><span id="90" class="l"><a class="l" href="#90"> 90: </a><span class="php-comment">     */</span>
-</span><span id="91" class="l"><a class="l" href="#91"> 91: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_getData" href="#_getData">getData</a>()
-</span><span id="92" class="l"><a class="l" href="#92"> 92: </a>    {
-</span><span id="93" class="l"><a class="l" href="#93"> 93: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;fluent-&gt;fetchAll(<span class="php-var">$this</span>-&gt;offset, <span class="php-var">$this</span>-&gt;limit);
-</span><span id="94" class="l"><a class="l" href="#94"> 94: </a>    }
-</span><span id="95" class="l"><a class="l" href="#95"> 95: </a>
-</span><span id="96" class="l"><a class="l" href="#96"> 96: </a>    <span class="php-comment">/**
-</span></span><span id="97" class="l"><a class="l" href="#97"> 97: </a><span class="php-comment">     * @return int
-</span></span><span id="98" class="l"><a class="l" href="#98"> 98: </a><span class="php-comment">     */</span>
-</span><span id="99" class="l"><a class="l" href="#99"> 99: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_getCount" href="#_getCount">getCount</a>()
-</span><span id="100" class="l"><a class="l" href="#100">100: </a>    {
-</span><span id="101" class="l"><a class="l" href="#101">101: </a>        <span class="php-var">$fluent</span> = <span class="php-keyword1">clone</span> <span class="php-var">$this</span>-&gt;fluent;
-</span><span id="102" class="l"><a class="l" href="#102">102: </a>        <span class="php-keyword1">return</span> <span class="php-var">$fluent</span>-&gt;removeClause(<span class="php-quote">'ORDER BY'</span>)-&gt;removeClause(<span class="php-quote">'SELECT'</span>)-&gt;select(<span class="php-quote">'COUNT(*)'</span>)-&gt;fetchSingle();
-</span><span id="103" class="l"><a class="l" href="#103">103: </a>    }
-</span><span id="104" class="l"><a class="l" href="#104">104: </a>
-</span><span id="105" class="l"><a class="l" href="#105">105: </a>    <span class="php-comment">/**
-</span></span><span id="106" class="l"><a class="l" href="#106">106: </a><span class="php-comment">     * @param array $condition
-</span></span><span id="107" class="l"><a class="l" href="#107">107: </a><span class="php-comment">     */</span>
-</span><span id="108" class="l"><a class="l" href="#108">108: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_filter" href="#_filter">filter</a>(<span class="php-keyword1">array</span> <span class="php-var">$condition</span>)
-</span><span id="109" class="l"><a class="l" href="#109">109: </a>    {
-</span><span id="110" class="l"><a class="l" href="#110">110: </a>        <span class="php-keyword2">call_user_func_array</span>(<span class="php-keyword1">array</span>(<span class="php-var">$this</span>-&gt;fluent, <span class="php-quote">'where'</span>), <span class="php-var">$condition</span>);
-</span><span id="111" class="l"><a class="l" href="#111">111: </a>    }
-</span><span id="112" class="l"><a class="l" href="#112">112: </a>
-</span><span id="113" class="l"><a class="l" href="#113">113: </a>    <span class="php-comment">/**
-</span></span><span id="114" class="l"><a class="l" href="#114">114: </a><span class="php-comment">     * @param int $offset
-</span></span><span id="115" class="l"><a class="l" href="#115">115: </a><span class="php-comment">     * @param int $limit
-</span></span><span id="116" class="l"><a class="l" href="#116">116: </a><span class="php-comment">     */</span>
-</span><span id="117" class="l"><a class="l" href="#117">117: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_limit" href="#_limit">limit</a>(<span class="php-var">$offset</span>, <span class="php-var">$limit</span>)
-</span><span id="118" class="l"><a class="l" href="#118">118: </a>    {
-</span><span id="119" class="l"><a class="l" href="#119">119: </a>        <span class="php-var">$this</span>-&gt;offset = <span class="php-var">$offset</span>;
-</span><span id="120" class="l"><a class="l" href="#120">120: </a>        <span class="php-var">$this</span>-&gt;limit = <span class="php-var">$limit</span>;
-</span><span id="121" class="l"><a class="l" href="#121">121: </a>    }
-</span><span id="122" class="l"><a class="l" href="#122">122: </a>
-</span><span id="123" class="l"><a class="l" href="#123">123: </a>    <span class="php-comment">/**
-</span></span><span id="124" class="l"><a class="l" href="#124">124: </a><span class="php-comment">     * @param array $sorting
-</span></span><span id="125" class="l"><a class="l" href="#125">125: </a><span class="php-comment">     */</span>
-</span><span id="126" class="l"><a class="l" href="#126">126: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <span class="php-keyword2">sort</span>(<span class="php-keyword1">array</span> <span class="php-var">$sorting</span>)
-</span><span id="127" class="l"><a class="l" href="#127">127: </a>    {
-</span><span id="128" class="l"><a class="l" href="#128">128: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$sorting</span> <span class="php-keyword1">as</span> <span class="php-var">$column</span> =&gt; <span class="php-var">$sort</span>) {
-</span><span id="129" class="l"><a class="l" href="#129">129: </a>            <span class="php-var">$this</span>-&gt;fluent-&gt;orderBy(<span class="php-var">$column</span>, <span class="php-var">$sort</span>);
-</span><span id="130" class="l"><a class="l" href="#130">130: </a>        }
+</span><span id="77" class="l"><a class="l" href="#77"> 77: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;fluent-&gt;fetchAll(<span class="php-var">$this</span>-&gt;offset, <span class="php-var">$this</span>-&gt;limit);
+</span><span id="78" class="l"><a class="l" href="#78"> 78: </a>    }
+</span><span id="79" class="l"><a class="l" href="#79"> 79: </a>
+</span><span id="80" class="l"><a class="l" href="#80"> 80: </a>    <span class="php-comment">/**
+</span></span><span id="81" class="l"><a class="l" href="#81"> 81: </a><span class="php-comment">     * @return int
+</span></span><span id="82" class="l"><a class="l" href="#82"> 82: </a><span class="php-comment">     */</span>
+</span><span id="83" class="l"><a class="l" href="#83"> 83: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_getCount" href="#_getCount">getCount</a>()
+</span><span id="84" class="l"><a class="l" href="#84"> 84: </a>    {
+</span><span id="85" class="l"><a class="l" href="#85"> 85: </a>        <span class="php-var">$fluent</span> = <span class="php-keyword1">clone</span> <span class="php-var">$this</span>-&gt;fluent;
+</span><span id="86" class="l"><a class="l" href="#86"> 86: </a>        <span class="php-keyword1">return</span> <span class="php-var">$fluent</span>-&gt;<span class="php-keyword2">count</span>();
+</span><span id="87" class="l"><a class="l" href="#87"> 87: </a>    }
+</span><span id="88" class="l"><a class="l" href="#88"> 88: </a>
+</span><span id="89" class="l"><a class="l" href="#89"> 89: </a>    <span class="php-comment">/**
+</span></span><span id="90" class="l"><a class="l" href="#90"> 90: </a><span class="php-comment">     * @param array $condition
+</span></span><span id="91" class="l"><a class="l" href="#91"> 91: </a><span class="php-comment">     */</span>
+</span><span id="92" class="l"><a class="l" href="#92"> 92: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_filter" href="#_filter">filter</a>(<span class="php-keyword1">array</span> <span class="php-var">$condition</span>)
+</span><span id="93" class="l"><a class="l" href="#93"> 93: </a>    {
+</span><span id="94" class="l"><a class="l" href="#94"> 94: </a>        <span class="php-keyword2">call_user_func_array</span>(<span class="php-keyword1">array</span>(<span class="php-var">$this</span>-&gt;fluent, <span class="php-quote">'where'</span>), <span class="php-var">$condition</span>);
+</span><span id="95" class="l"><a class="l" href="#95"> 95: </a>    }
+</span><span id="96" class="l"><a class="l" href="#96"> 96: </a>
+</span><span id="97" class="l"><a class="l" href="#97"> 97: </a>    <span class="php-comment">/**
+</span></span><span id="98" class="l"><a class="l" href="#98"> 98: </a><span class="php-comment">     * @param int $offset
+</span></span><span id="99" class="l"><a class="l" href="#99"> 99: </a><span class="php-comment">     * @param int $limit
+</span></span><span id="100" class="l"><a class="l" href="#100">100: </a><span class="php-comment">     */</span>
+</span><span id="101" class="l"><a class="l" href="#101">101: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_limit" href="#_limit">limit</a>(<span class="php-var">$offset</span>, <span class="php-var">$limit</span>)
+</span><span id="102" class="l"><a class="l" href="#102">102: </a>    {
+</span><span id="103" class="l"><a class="l" href="#103">103: </a>        <span class="php-var">$this</span>-&gt;offset = <span class="php-var">$offset</span>;
+</span><span id="104" class="l"><a class="l" href="#104">104: </a>        <span class="php-var">$this</span>-&gt;limit = <span class="php-var">$limit</span>;
+</span><span id="105" class="l"><a class="l" href="#105">105: </a>    }
+</span><span id="106" class="l"><a class="l" href="#106">106: </a>
+</span><span id="107" class="l"><a class="l" href="#107">107: </a>    <span class="php-comment">/**
+</span></span><span id="108" class="l"><a class="l" href="#108">108: </a><span class="php-comment">     * @param array $sorting
+</span></span><span id="109" class="l"><a class="l" href="#109">109: </a><span class="php-comment">     */</span>
+</span><span id="110" class="l"><a class="l" href="#110">110: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <span class="php-keyword2">sort</span>(<span class="php-keyword1">array</span> <span class="php-var">$sorting</span>)
+</span><span id="111" class="l"><a class="l" href="#111">111: </a>    {
+</span><span id="112" class="l"><a class="l" href="#112">112: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$sorting</span> <span class="php-keyword1">as</span> <span class="php-var">$column</span> =&gt; <span class="php-var">$sort</span>) {
+</span><span id="113" class="l"><a class="l" href="#113">113: </a>            <span class="php-var">$this</span>-&gt;fluent-&gt;orderBy(<span class="php-var">$column</span>, <span class="php-var">$sort</span>);
+</span><span id="114" class="l"><a class="l" href="#114">114: </a>        }
+</span><span id="115" class="l"><a class="l" href="#115">115: </a>    }
+</span><span id="116" class="l"><a class="l" href="#116">116: </a>
+</span><span id="117" class="l"><a class="l" href="#117">117: </a>    <span class="php-comment">/**
+</span></span><span id="118" class="l"><a class="l" href="#118">118: </a><span class="php-comment">     * @param string $column
+</span></span><span id="119" class="l"><a class="l" href="#119">119: </a><span class="php-comment">     * @param array $conditions
+</span></span><span id="120" class="l"><a class="l" href="#120">120: </a><span class="php-comment">     * @return array
+</span></span><span id="121" class="l"><a class="l" href="#121">121: </a><span class="php-comment">     */</span>
+</span><span id="122" class="l"><a class="l" href="#122">122: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_suggest" href="#_suggest">suggest</a>(<span class="php-var">$column</span>, <span class="php-keyword1">array</span> <span class="php-var">$conditions</span>)
+</span><span id="123" class="l"><a class="l" href="#123">123: </a>    {
+</span><span id="124" class="l"><a class="l" href="#124">124: </a>        <span class="php-var">$fluent</span> = <span class="php-keyword1">clone</span> <span class="php-var">$this</span>-&gt;fluent;
+</span><span id="125" class="l"><a class="l" href="#125">125: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$conditions</span> <span class="php-keyword1">as</span> <span class="php-var">$condition</span>) {
+</span><span id="126" class="l"><a class="l" href="#126">126: </a>            <span class="php-keyword2">call_user_func_array</span>(<span class="php-keyword1">array</span>(<span class="php-var">$fluent</span>, <span class="php-quote">'where'</span>), <span class="php-var">$condition</span>);
+</span><span id="127" class="l"><a class="l" href="#127">127: </a>        }
+</span><span id="128" class="l"><a class="l" href="#128">128: </a>
+</span><span id="129" class="l"><a class="l" href="#129">129: </a>        <span class="php-var">$items</span> = <span class="php-keyword2">array_keys</span>(<span class="php-var">$fluent</span>-&gt;fetchPairs(<span class="php-var">$column</span>, <span class="php-var">$column</span>));
+</span><span id="130" class="l"><a class="l" href="#130">130: </a>        <span class="php-keyword1">return</span> <span class="php-var">$items</span>;
 </span><span id="131" class="l"><a class="l" href="#131">131: </a>    }
 </span><span id="132" class="l"><a class="l" href="#132">132: </a>}
 </span><span id="133" class="l"><a class="l" href="#133">133: </a></span></code></pre>

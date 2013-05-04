@@ -7,7 +7,7 @@
 	<title>Class Grido\DataSources\DibiFluent | Grido - DataGrid for Nette Framework.</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?3943122536"></script>
+	<script type="text/javascript" src="elementlist.js?407009238"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido - DataGrid for Nette Framework." href="/opensearch.xml" />
 
@@ -46,6 +46,8 @@
 							</ul></li>
 				<li class="active"><a href="namespace-Grido.DataSources.html">DataSources</a>
 						</li>
+				<li><a href="namespace-Grido.PropertyAccessors.html">PropertyAccessors</a>
+						</li>
 				<li><a href="namespace-Grido.Translations.html">Translations</a>
 						</li>
 							</ul></li>
@@ -62,9 +64,10 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li><a href="class-Grido.DataSources.Base.html">Base</a></li>
+				<li><a href="class-Grido.DataSources.ArraySource.html">ArraySource</a></li>
 				<li class="active"><a href="class-Grido.DataSources.DibiFluent.html">DibiFluent</a></li>
 				<li><a href="class-Grido.DataSources.Doctrine.html">Doctrine</a></li>
+				<li><a href="class-Grido.DataSources.Model.html">Model</a></li>
 				<li><a href="class-Grido.DataSources.NetteDatabase.html">NetteDatabase</a></li>
 			</ul>
 
@@ -131,13 +134,6 @@ Nette\Object
 			
 		</dd>
 		<dd style="padding-left:30px">
-			<img src="resources/inherit.png" alt="Extended by" />
-			<a href="class-Grido.DataSources.Base.html"><span>Grido\DataSources\Base</span></a>
-			
-			
-			
-		</dd>
-		<dd style="padding-left:60px">
 			<img src="resources/inherit.png" alt="Extended by" />
 <b><span>Grido\DataSources\DibiFluent</span></b>			
 			 implements 
@@ -302,46 +298,6 @@ Nette\Object
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="suggest" id="_suggest">
-
-		<td class="attributes"><code>
-			 public 
-			array
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_suggest">#</a>
-		<code><a href="source-class-Grido.DataSources.DibiFluent.html#70-84" title="Go to source code">suggest</a>( <span>string <var>$column</var></span>, <span>array <var>$conditions</var></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$column</var></dt>
-					<dd><code>string</code><br>$column</dd>
-					<dt><var>$conditions</var></dt>
-					<dd><code>array</code><br>$conditions</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code>array</code><br />
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
 	<tr data-order="getData" id="_getData">
 
 		<td class="attributes"><code>
@@ -353,7 +309,7 @@ Nette\Object
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getData">#</a>
-		<code><a href="source-class-Grido.DataSources.DibiFluent.html#88-94" title="Go to source code">getData</a>( )</code>
+		<code><a href="source-class-Grido.DataSources.DibiFluent.html#72-78" title="Go to source code">getData</a>( )</code>
 
 		<div class="description short">
 			
@@ -388,7 +344,7 @@ Nette\Object
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getCount">#</a>
-		<code><a href="source-class-Grido.DataSources.DibiFluent.html#96-103" title="Go to source code">getCount</a>( )</code>
+		<code><a href="source-class-Grido.DataSources.DibiFluent.html#80-87" title="Go to source code">getCount</a>( )</code>
 
 		<div class="description short">
 			
@@ -423,7 +379,7 @@ Nette\Object
 
 		<td class="name"><div>
 		<a class="anchor" href="#_filter">#</a>
-		<code><a href="source-class-Grido.DataSources.DibiFluent.html#105-111" title="Go to source code">filter</a>( <span>array <var>$condition</var></span> )</code>
+		<code><a href="source-class-Grido.DataSources.DibiFluent.html#89-95" title="Go to source code">filter</a>( <span>array <var>$condition</var></span> )</code>
 
 		<div class="description short">
 			
@@ -459,7 +415,7 @@ Nette\Object
 
 		<td class="name"><div>
 		<a class="anchor" href="#_limit">#</a>
-		<code><a href="source-class-Grido.DataSources.DibiFluent.html#113-121" title="Go to source code">limit</a>( <span>integer <var>$offset</var></span>, <span>integer <var>$limit</var></span> )</code>
+		<code><a href="source-class-Grido.DataSources.DibiFluent.html#97-105" title="Go to source code">limit</a>( <span>integer <var>$offset</var></span>, <span>integer <var>$limit</var></span> )</code>
 
 		<div class="description short">
 			
@@ -497,7 +453,7 @@ Nette\Object
 
 		<td class="name"><div>
 		<a class="anchor" href="#_sort">#</a>
-		<code><a href="source-class-Grido.DataSources.DibiFluent.html#123-131" title="Go to source code">sort</a>( <span>array <var>$sorting</var></span> )</code>
+		<code><a href="source-class-Grido.DataSources.DibiFluent.html#107-115" title="Go to source code">sort</a>( <span>array <var>$sorting</var></span> )</code>
 
 		<div class="description short">
 			
@@ -522,16 +478,50 @@ Nette\Object
 		</div>
 		</div></td>
 	</tr>
-	</table>
+	<tr data-order="suggest" id="_suggest">
 
-	<table class="summary inherited">
-	<caption>Methods inherited from <a href="class-Grido.DataSources.Base.html#methods">Grido\DataSources\Base</a></caption>
-	<tr>
-		<td><code>
-			<a href="class-Grido.DataSources.Base.html#_call">call()</a>
-		</code></td>
+		<td class="attributes"><code>
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_suggest">#</a>
+		<code><a href="source-class-Grido.DataSources.DibiFluent.html#117-131" title="Go to source code">suggest</a>( <span>string <var>$column</var></span>, <span>array <var>$conditions</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$column</var></dt>
+					<dd><code>string</code><br>$column</dd>
+					<dt><var>$conditions</var></dt>
+					<dd><code>array</code><br>$conditions</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br />
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Grido.DataSources.IDataSource.html#_suggest">Grido\DataSources\IDataSource::suggest()</a></code></div>
+		</div>
+		</div></td>
 	</tr>
 	</table>
+
 
 
 
@@ -616,14 +606,6 @@ Nette\Object
 	</tr>
 	</table>
 
-	<table class="summary inherited">
-	<caption>Properties inherited from <a href="class-Grido.DataSources.Base.html#properties">Grido\DataSources\Base</a></caption>
-	<tr>
-		<td><code>
-			<a href="class-Grido.DataSources.Base.html#$proxy"><var>$proxy</var></a>
-		</code></td>
-	</tr>
-	</table>
 
 
 	<table class="summary" id="magicProperties">

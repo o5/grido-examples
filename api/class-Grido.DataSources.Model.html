@@ -4,10 +4,10 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="generator" content="ApiGen 2.8.0" />
 
-	<title>Class Grido\DataSources\Base | Grido - DataGrid for Nette Framework.</title>
+	<title>Class Grido\DataSources\Model | Grido - DataGrid for Nette Framework.</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?3943122536"></script>
+	<script type="text/javascript" src="elementlist.js?407009238"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido - DataGrid for Nette Framework." href="/opensearch.xml" />
 
@@ -46,6 +46,8 @@
 							</ul></li>
 				<li class="active"><a href="namespace-Grido.DataSources.html">DataSources</a>
 						</li>
+				<li><a href="namespace-Grido.PropertyAccessors.html">PropertyAccessors</a>
+						</li>
 				<li><a href="namespace-Grido.Translations.html">Translations</a>
 						</li>
 							</ul></li>
@@ -62,9 +64,10 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li class="active"><a href="class-Grido.DataSources.Base.html">Base</a></li>
+				<li><a href="class-Grido.DataSources.ArraySource.html">ArraySource</a></li>
 				<li><a href="class-Grido.DataSources.DibiFluent.html">DibiFluent</a></li>
 				<li><a href="class-Grido.DataSources.Doctrine.html">Doctrine</a></li>
+				<li class="active"><a href="class-Grido.DataSources.Model.html">Model</a></li>
 				<li><a href="class-Grido.DataSources.NetteDatabase.html">NetteDatabase</a></li>
 			</ul>
 
@@ -115,12 +118,12 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class Base</h1>
+	<h1>Class Model</h1>
 
 
 	<div class="description">
 	
-<p>Base of data source.</p>
+<p>Model of data source.</p>
 
 	</div>
 
@@ -132,19 +135,13 @@ Nette\Object
 		</dd>
 		<dd style="padding-left:30px">
 			<img src="resources/inherit.png" alt="Extended by" />
-<b><span>Grido\DataSources\Base</span></b>			
+<b><span>Grido\DataSources\Model</span></b>			
 			
 			
 		</dd>
 	</dl>
 
 
-	<div>
-		<h4>Direct known subclasses</h4>
-			<a href="class-Grido.DataSources.DibiFluent.html">Grido\DataSources\DibiFluent</a>, 
-			<a href="class-Grido.DataSources.Doctrine.html">Grido\DataSources\Doctrine</a>, 
-			<a href="class-Grido.DataSources.NetteDatabase.html">Grido\DataSources\NetteDatabase</a>
-	</div>
 
 
 
@@ -152,32 +149,32 @@ Nette\Object
 
 
 	<div class="info">
-		<b>Abstract</b><br />
+		
 		
 		<b>Namespace:</b> <a href="namespace-Grido.html">Grido</a>\<a href="namespace-Grido.DataSources.html">DataSources</a><br />
 		<b>Package:</b> Grido\DataSources<br />
 
 				<b>Author:</b>
 				Petr Bugyík<br />
-		<b>Located at</b> <a href="source-class-Grido.DataSources.Base.html#14-39" title="Go to source code">DataSources/Base.php</a><br />
+		<b>Located at</b> <a href="source-class-Grido.DataSources.Model.html#14-66" title="Go to source code">DataSources/Model.php</a><br />
 	</div>
 
 
 
 	<table class="summary" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="call" id="_call">
+	<tr data-order="__construct" id="___construct">
 
 		<td class="attributes"><code>
 			 public 
-			mixed
+			
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_call">#</a>
-		<code><a href="source-class-Grido.DataSources.Base.html#26-38" title="Go to source code">call</a>( <span>string <var>$method</var></span> )</code>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Grido.DataSources.Model.html#31-50" title="Go to source code">__construct</a>( <span>mixed <var>$model</var></span> )</code>
 
 		<div class="description short">
 			
@@ -189,14 +186,76 @@ Nette\Object
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$method</var></dt>
-					<dd><code>string</code><br>$method</dd>
+					<dt><var>$model</var></dt>
+					<dd><code>mixed</code><br>$model</dd>
 				</dl></div>
+
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code></code><br />
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getDataSource" id="_getDataSource">
+
+		<td class="attributes"><code>
+			 public 
+			IDataSource
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getDataSource">#</a>
+		<code><a href="source-class-Grido.DataSources.Model.html#52-58" title="Go to source code">getDataSource</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>mixed</code><br />
+					<code>IDataSource</code><br />
 				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__call" id="___call">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___call">#</a>
+		<code><a href="source-class-Grido.DataSources.Model.html#60-65" title="Go to source code">__call</a>( <span>mixed <var>$method</var></span>, <span>mixed <var>$args</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
 
 
 
@@ -219,29 +278,48 @@ Nette\Object
 
 	<table class="summary" id="properties">
 	<caption>Properties summary</caption>
-	<tr data-order="proxy" id="$proxy">
+	<tr data-order="callback" id="$callback">
 		<td class="attributes"><code>
 			public  
 			array
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.DataSources.Base.html#23-24" title="Go to source code"><var>$proxy</var></a>
+				<a href="source-class-Grido.DataSources.Model.html#25-26" title="Go to source code"><var>$callback</var></a>
 		</td>
 		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
 		<td class="description"><div>
-			<a href="#$proxy" class="anchor">#</a>
+			<a href="#$callback" class="anchor">#</a>
 
 			<div class="description short">
 				
-<p>of callbacks</p>
-
 			</div>
 
 			<div class="description detailed hidden">
 				
-<p>of callbacks</p>
 
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="dataSource" id="$dataSource">
+		<td class="attributes"><code>
+			protected  
+			<code><a href="class-Grido.DataSources.IDataSource.html">Grido\DataSources\IDataSource</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.DataSources.Model.html#28-29" title="Go to source code"><var>$dataSource</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$dataSource" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
 
 			</div>
 		</div></td>
@@ -250,6 +328,31 @@ Nette\Object
 
 
 
+	<table class="summary" id="magicProperties">
+	<caption>Magic properties summary</caption>
+	<tr data-order="dataSource" id="m$dataSource">
+		<td class="attributes"><code>
+			public  read-only
+			<code><a href="class-Grido.DataSources.IDataSource.html">Grido\DataSources\IDataSource</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.DataSources.Model.html#21" title="Go to source code"><var>$dataSource</var></a>
+		</td>
+		<td class="description"><div>
+			<a href="#m$dataSource" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
 
 
 

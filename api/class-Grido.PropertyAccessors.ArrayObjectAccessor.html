@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="generator" content="ApiGen 2.8.0" />
 
-	<title>Class Grido\Translations\FileTranslator | Grido - DataGrid for Nette Framework.</title>
+	<title>Class Grido\PropertyAccessors\ArrayObjectAccessor | Grido - DataGrid for Nette Framework.</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
 	<script type="text/javascript" src="elementlist.js?407009238"></script>
@@ -46,9 +46,9 @@
 							</ul></li>
 				<li><a href="namespace-Grido.DataSources.html">DataSources</a>
 						</li>
-				<li><a href="namespace-Grido.PropertyAccessors.html">PropertyAccessors</a>
+				<li class="active"><a href="namespace-Grido.PropertyAccessors.html">PropertyAccessors</a>
 						</li>
-				<li class="active"><a href="namespace-Grido.Translations.html">Translations</a>
+				<li><a href="namespace-Grido.Translations.html">Translations</a>
 						</li>
 							</ul></li>
 				<li><a href="namespace-None.html">None</a>
@@ -64,9 +64,13 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li class="active"><a href="class-Grido.Translations.FileTranslator.html">FileTranslator</a></li>
+				<li class="active"><a href="class-Grido.PropertyAccessors.ArrayObjectAccessor.html">ArrayObjectAccessor</a></li>
 			</ul>
 
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-Grido.PropertyAccessors.IPropertyAccessor.html">IPropertyAccessor</a></li>
+			</ul>
 
 
 
@@ -92,7 +96,7 @@
 				<a href="index.html" title="Overview"><span>Overview</span></a>
 			</li>
 			<li>
-				<a href="namespace-Grido.Translations.html" title="Summary of Grido\Translations"><span>Namespace</span></a>
+				<a href="namespace-Grido.PropertyAccessors.html" title="Summary of Grido\PropertyAccessors"><span>Namespace</span></a>
 			</li>
 			<li class="active">
 <span>Class</span>			</li>
@@ -110,26 +114,20 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class FileTranslator</h1>
+	<h1>Class ArrayObjectAccessor</h1>
 
 
 	<div class="description">
 	
-<p>Simple file translator.</p>
+<p>Accessor for array and object structures.</p>
 
 	</div>
 
 	<dl class="tree">
 		<dd style="padding-left:0px">
-Nette\Object
-			
-			
-		</dd>
-		<dd style="padding-left:30px">
-			<img src="resources/inherit.png" alt="Extended by" />
-<b><span>Grido\Translations\FileTranslator</span></b>			
+<b><span>Grido\PropertyAccessors\ArrayObjectAccessor</span></b>			
 			 implements 
-<span>Nette\Localization\ITranslator</span>
+				<a href="class-Grido.PropertyAccessors.IPropertyAccessor.html"><span>Grido\PropertyAccessors\IPropertyAccessor</span></a>
 			
 			
 		</dd>
@@ -145,30 +143,31 @@ Nette\Object
 	<div class="info">
 		
 		
-		<b>Namespace:</b> <a href="namespace-Grido.html">Grido</a>\<a href="namespace-Grido.Translations.html">Translations</a><br />
-		<b>Package:</b> Grido\Translations<br />
+		<b>Namespace:</b> <a href="namespace-Grido.html">Grido</a>\<a href="namespace-Grido.PropertyAccessors.html">PropertyAccessors</a><br />
+		<b>Package:</b> Grido\PropertyAccessors<br />
 
 				<b>Author:</b>
-				Petr Bugyík<br />
-		<b>Located at</b> <a href="source-class-Grido.Translations.FileTranslator.html#14-87" title="Go to source code">Translations/FileTranslator.php</a><br />
+				Josef Kříž &lt;<a
+href="mailto:pepakriz&#64;gmail.com">pepakriz&#64;<!---->gmail.com</a>&gt;<br />
+		<b>Located at</b> <a href="source-class-Grido.PropertyAccessors.ArrayObjectAccessor.html#14-64" title="Go to source code">PropertyAccessors/ArrayObjectAccessor.php</a><br />
 	</div>
 
 
 
 	<table class="summary" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="__construct" id="___construct">
+	<tr data-order="hasProperty" id="_hasProperty">
 
 		<td class="attributes"><code>
-			 public 
-			
+			 public static
+			boolean
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Grido.Translations.FileTranslator.html#25-37" title="Go to source code">__construct</a>( <span>string <var>$lang</var> = <span class="php-keyword1">NULL</span></span>, <span>array <var>$dictionary</var> = <span class="php-keyword1">array</span>()</span> )</code>
+		<a class="anchor" href="#_hasProperty">#</a>
+		<code><a href="source-class-Grido.PropertyAccessors.ArrayObjectAccessor.html#23-37" title="Go to source code">hasProperty</a>( <span>mixed <var>$object</var></span>, <span>string <var>$name</var></span> )</code>
 
 		<div class="description short">
 			
@@ -180,94 +179,104 @@ Nette\Object
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$lang</var></dt>
-					<dd><code>string</code><br>$lang</dd>
-					<dt><var>$dictionary</var></dt>
-					<dd><code>array</code><br>$dictionary</dd>
-				</dl></div>
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="setLang" id="_setLang">
-
-		<td class="attributes"><code>
-			 public 
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_setLang">#</a>
-		<code><a href="source-class-Grido.Translations.FileTranslator.html#39-47" title="Go to source code">setLang</a>( <span>string <var>$lang</var></span> )</code>
-
-		<div class="description short">
-			
-<p>Sets language of translation.</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Sets language of translation.</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$lang</var></dt>
-					<dd><code>string</code><br>$lang</dd>
-				</dl></div>
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="translate" id="_translate">
-
-		<td class="attributes"><code>
-			 public 
-			type
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_translate">#</a>
-		<code><a href="source-class-Grido.Translations.FileTranslator.html#51-86" title="Go to source code">translate</a>( <span>string <var>$message</var></span>, <span>integer <var>$count</var> = <span class="php-keyword1">NULL</span></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$message</var></dt>
-					<dd><code>string</code><br>$message</dd>
-					<dt><var>$count</var></dt>
-					<dd><code>integer</code><br>$count plural</dd>
+					<dt><var>$object</var></dt>
+					<dd><code>mixed</code><br>$object</dd>
+					<dt><var>$name</var></dt>
+					<dd><code>string</code><br>$name</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>type</code><br />
+					<code>boolean</code><br />
 				</div>
 
 
 
 
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Grido.PropertyAccessors.IPropertyAccessor.html#_hasProperty">Grido\PropertyAccessors\IPropertyAccessor::hasProperty()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getProperty" id="_getProperty">
+
+		<td class="attributes"><code>
+			 public static
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getProperty">#</a>
+		<code><a href="source-class-Grido.PropertyAccessors.ArrayObjectAccessor.html#39-49" title="Go to source code">getProperty</a>( <span>mixed <var>$object</var></span>, <span>string <var>$name</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$object</var></dt>
+					<dd><code>mixed</code><br>$object</dd>
+					<dt><var>$name</var></dt>
+					<dd><code>string</code><br>$name</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>mixed</code><br />
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Grido.PropertyAccessors.IPropertyAccessor.html#_getProperty">Grido\PropertyAccessors\IPropertyAccessor::getProperty()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setProperty" id="_setProperty">
+
+		<td class="attributes"><code>
+			 public static
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setProperty">#</a>
+		<code><a href="source-class-Grido.PropertyAccessors.ArrayObjectAccessor.html#51-63" title="Go to source code">setProperty</a>( <span>mixed <var>$object</var></span>, <span>string <var>$name</var></span>, <span>string <var>$value</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$object</var></dt>
+					<dd><code>mixed</code><br>$object</dd>
+					<dt><var>$name</var></dt>
+					<dd><code>string</code><br>$name</dd>
+					<dt><var>$value</var></dt>
+					<dd><code>string</code><br>$value</dd>
+				</dl></div>
+
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Grido.PropertyAccessors.IPropertyAccessor.html#_setProperty">Grido\PropertyAccessors\IPropertyAccessor::setProperty()</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -284,32 +293,6 @@ Nette\Object
 
 
 
-	<table class="summary" id="properties">
-	<caption>Properties summary</caption>
-	<tr data-order="dictionary" id="$dictionary">
-		<td class="attributes"><code>
-			public  
-			array
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Grido.Translations.FileTranslator.html#23" title="Go to source code"><var>$dictionary</var></a>
-		</td>
-		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
-		<td class="description"><div>
-			<a href="#$dictionary" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	</table>
 
 
 

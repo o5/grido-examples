@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="generator" content="ApiGen 2.8.0" />
 
-	<title>Interface Grido\DataSources\IDataSource | Grido - DataGrid for Nette Framework.</title>
+	<title>Class Grido\DataSources\ArraySource | Grido - DataGrid for Nette Framework.</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
 	<script type="text/javascript" src="elementlist.js?407009238"></script>
@@ -64,7 +64,7 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li><a href="class-Grido.DataSources.ArraySource.html">ArraySource</a></li>
+				<li class="active"><a href="class-Grido.DataSources.ArraySource.html">ArraySource</a></li>
 				<li><a href="class-Grido.DataSources.DibiFluent.html">DibiFluent</a></li>
 				<li><a href="class-Grido.DataSources.Doctrine.html">Doctrine</a></li>
 				<li><a href="class-Grido.DataSources.Model.html">Model</a></li>
@@ -73,7 +73,7 @@
 
 			<h3>Interfaces</h3>
 			<ul>
-				<li class="active"><a href="class-Grido.DataSources.IDataSource.html">IDataSource</a></li>
+				<li><a href="class-Grido.DataSources.IDataSource.html">IDataSource</a></li>
 			</ul>
 
 
@@ -118,26 +118,34 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Interface IDataSource</h1>
+	<h1>Class ArraySource</h1>
 
 
 	<div class="description">
 	
-<p>Defined method that must be implemented data source.</p>
+<p>Array data source.</p>
 
 	</div>
 
+	<dl class="tree">
+		<dd style="padding-left:0px">
+Nette\Object
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by" />
+<b><span>Grido\DataSources\ArraySource</span></b>			
+			 implements 
+				<a href="class-Grido.DataSources.IDataSource.html"><span>Grido\DataSources\IDataSource</span></a>
+			
+			
+		</dd>
+	</dl>
 
 
 
 
-	<div>
-		<h4>Direct known implementers</h4>
-			<a href="class-Grido.DataSources.ArraySource.html">Grido\DataSources\ArraySource</a>, 
-			<a href="class-Grido.DataSources.DibiFluent.html">Grido\DataSources\DibiFluent</a>, 
-			<a href="class-Grido.DataSources.Doctrine.html">Grido\DataSources\Doctrine</a>, 
-			<a href="class-Grido.DataSources.NetteDatabase.html">Grido\DataSources\NetteDatabase</a>
-	</div>
 
 
 
@@ -149,26 +157,61 @@
 		<b>Package:</b> Grido\DataSources<br />
 
 				<b>Author:</b>
-				Petr Bugyík<br />
-		<b>Located at</b> <a href="source-class-Grido.DataSources.IDataSource.html#14-58" title="Go to source code">DataSources/IDataSource.php</a><br />
+				Josef Kříž &lt;<a
+href="mailto:pepakriz&#64;gmail.com">pepakriz&#64;<!---->gmail.com</a>&gt;<br />
+		<b>Located at</b> <a href="source-class-Grido.DataSources.ArraySource.html#14-164" title="Go to source code">DataSources/ArraySource.php</a><br />
 	</div>
 
 
 
 	<table class="summary" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="getData" id="_getData">
+	<tr data-order="__construct" id="___construct">
 
 		<td class="attributes"><code>
 			 public 
-			array
+			
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_getData">#</a>
-		<code><a href="source-class-Grido.DataSources.IDataSource.html#23-26" title="Go to source code">getData</a>( )</code>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Grido.DataSources.ArraySource.html#26-32" title="Go to source code">__construct</a>( <span>array <var>$data</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$data</var></dt>
+					<dd><code>array</code><br>$data</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="formatFilterCondition" id="_formatFilterCondition">
+
+		<td class="attributes"><code>
+			 protected 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_formatFilterCondition">#</a>
+		<code><a href="source-class-Grido.DataSources.ArraySource.html#34-50" title="Go to source code">formatFilterCondition</a>( <span>array <var>$condition</var></span> )</code>
 
 		<div class="description short">
 			
@@ -179,10 +222,6 @@
 
 
 
-				<h4>Returns</h4>
-				<div class="list">
-					<code>array</code><br />
-				</div>
 
 
 
@@ -190,51 +229,18 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="getCount" id="_getCount">
+	<tr data-order="getFilter" id="_getFilter">
 
 		<td class="attributes"><code>
-			 public 
-			integer
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getCount">#</a>
-		<code><a href="source-class-Grido.DataSources.IDataSource.html#28-31" title="Go to source code">getCount</a>( )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code>integer</code><br />
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="filter" id="_filter">
-
-		<td class="attributes"><code>
-			 public 
+			 protected 
 			
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_filter">#</a>
-		<code><a href="source-class-Grido.DataSources.IDataSource.html#33-37" title="Go to source code">filter</a>( <span>array <var>$condition</var></span> )</code>
+		<a class="anchor" href="#_getFilter">#</a>
+		<code><a href="source-class-Grido.DataSources.ArraySource.html#52-78" title="Go to source code">getFilter</a>( <span>array <var>$condition</var></span> )</code>
 
 		<div class="description short">
 			
@@ -257,6 +263,112 @@
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="getData" id="_getData">
+
+		<td class="attributes"><code>
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getData">#</a>
+		<code><a href="source-class-Grido.DataSources.ArraySource.html#82-88" title="Go to source code">getData</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br />
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Grido.DataSources.IDataSource.html#_getData">Grido\DataSources\IDataSource::getData()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getCount" id="_getCount">
+
+		<td class="attributes"><code>
+			 public 
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getCount">#</a>
+		<code><a href="source-class-Grido.DataSources.ArraySource.html#90-96" title="Go to source code">getCount</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br />
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Grido.DataSources.IDataSource.html#_getCount">Grido\DataSources\IDataSource::getCount()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="filter" id="_filter">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_filter">#</a>
+		<code><a href="source-class-Grido.DataSources.ArraySource.html#98-105" title="Go to source code">filter</a>( <span>array <var>$condition</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$condition</var></dt>
+					<dd><code>array</code><br>$condition</dd>
+				</dl></div>
+
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Grido.DataSources.IDataSource.html#_filter">Grido\DataSources\IDataSource::filter()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="limit" id="_limit">
 
 		<td class="attributes"><code>
@@ -268,7 +380,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_limit">#</a>
-		<code><a href="source-class-Grido.DataSources.IDataSource.html#39-44" title="Go to source code">limit</a>( <span>integer <var>$offset</var></span>, <span>integer <var>$limit</var></span> )</code>
+		<code><a href="source-class-Grido.DataSources.ArraySource.html#107-115" title="Go to source code">limit</a>( <span>integer <var>$offset</var></span>, <span>integer <var>$limit</var></span> )</code>
 
 		<div class="description short">
 			
@@ -290,6 +402,8 @@
 
 
 
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Grido.DataSources.IDataSource.html#_limit">Grido\DataSources\IDataSource::limit()</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -304,7 +418,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_sort">#</a>
-		<code><a href="source-class-Grido.DataSources.IDataSource.html#46-50" title="Go to source code">sort</a>( <span>array <var>$sorting</var></span> )</code>
+		<code><a href="source-class-Grido.DataSources.ArraySource.html#117-142" title="Go to source code">sort</a>( <span>array <var>$sorting</var></span> )</code>
 
 		<div class="description short">
 			
@@ -324,6 +438,8 @@
 
 
 
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Grido.DataSources.IDataSource.html#_sort">Grido\DataSources\IDataSource::sort()</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -338,7 +454,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_suggest">#</a>
-		<code><a href="source-class-Grido.DataSources.IDataSource.html#52-57" title="Go to source code">suggest</a>( <span>string <var>$column</var></span>, <span>array <var>$conditions</var></span> )</code>
+		<code><a href="source-class-Grido.DataSources.ArraySource.html#144-163" title="Go to source code">suggest</a>( <span>string <var>$column</var></span>, <span>array <var>$conditions</var></span> )</code>
 
 		<div class="description short">
 			
@@ -364,6 +480,8 @@
 
 
 
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Grido.DataSources.IDataSource.html#_suggest">Grido\DataSources\IDataSource::suggest()</a></code></div>
 		</div>
 		</div></td>
 	</tr>

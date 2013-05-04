@@ -8,7 +8,7 @@
 	<title>File Components/Filters/Filter.php | Grido - DataGrid for Nette Framework.</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?3943122536"></script>
+	<script type="text/javascript" src="elementlist.js?407009238"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido - DataGrid for Nette Framework." href="/opensearch.xml" />
 
@@ -46,6 +46,8 @@
 						</li>
 							</ul></li>
 				<li><a href="namespace-Grido.DataSources.html">DataSources</a>
+						</li>
+				<li><a href="namespace-Grido.PropertyAccessors.html">PropertyAccessors</a>
 						</li>
 				<li><a href="namespace-Grido.Translations.html">Translations</a>
 						</li>
@@ -221,8 +223,8 @@
 </span></span><span id="105" class="l"><a class="l" href="#105">105: </a><span class="php-comment">     * Sets custom sql condition.
 </span></span><span id="106" class="l"><a class="l" href="#106">106: </a><span class="php-comment">     * @param $condition
 </span></span><span id="107" class="l"><a class="l" href="#107">107: </a><span class="php-comment">     * @param mixed $custom
-</span></span><span id="108" class="l"><a class="l" href="#108">108: </a><span class="php-comment">     * @return Filter
-</span></span><span id="109" class="l"><a class="l" href="#109">109: </a><span class="php-comment">     * @throws \InvalidArgumentException
+</span></span><span id="108" class="l"><a class="l" href="#108">108: </a><span class="php-comment">     * @throws \InvalidArgumentException
+</span></span><span id="109" class="l"><a class="l" href="#109">109: </a><span class="php-comment">     * @return Filter
 </span></span><span id="110" class="l"><a class="l" href="#110">110: </a><span class="php-comment">     */</span>
 </span><span id="111" class="l"><a class="l" href="#111">111: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setCondition" href="#_setCondition">setCondition</a>(<span class="php-var">$condition</span>, <span class="php-var">$custom</span> = <span class="php-keyword1">NULL</span>)
 </span><span id="112" class="l"><a class="l" href="#112">112: </a>    {
@@ -361,53 +363,52 @@
 </span><span id="245" class="l"><a class="l" href="#245">245: </a>            <span class="php-var">$condition</span>[] = <span class="php-quote">' )'</span>;
 </span><span id="246" class="l"><a class="l" href="#246">246: </a>        }
 </span><span id="247" class="l"><a class="l" href="#247">247: </a>
-</span><span id="248" class="l"><a class="l" href="#248">248: </a>        <span class="php-keyword1">if</span> (!<span class="php-var">$customCondition</span> &amp;&amp; <span class="php-var">$condition</span>) {
+</span><span id="248" class="l"><a class="l" href="#248">248: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$condition</span>) {
 </span><span id="249" class="l"><a class="l" href="#249">249: </a>            <span class="php-var">$condition</span> = <span class="php-keyword1">array</span>(<span class="php-keyword2">implode</span>(<span class="php-quote">''</span>, <span class="php-var">$condition</span>));
-</span><span id="250" class="l"><a class="l" href="#250">250: </a>
-</span><span id="251" class="l"><a class="l" href="#251">251: </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$values</span> <span class="php-keyword1">as</span> <span class="php-var">$val</span>) {
-</span><span id="252" class="l"><a class="l" href="#252">252: </a>                <span class="php-var">$condition</span>[] = <span class="php-var">$val</span>;
-</span><span id="253" class="l"><a class="l" href="#253">253: </a>            }
-</span><span id="254" class="l"><a class="l" href="#254">254: </a>        }
-</span><span id="255" class="l"><a class="l" href="#255">255: </a>
-</span><span id="256" class="l"><a class="l" href="#256">256: </a>        <span class="php-keyword1">return</span> <span class="php-var">$condition</span>;
-</span><span id="257" class="l"><a class="l" href="#257">257: </a>    }
-</span><span id="258" class="l"><a class="l" href="#258">258: </a>
-</span><span id="259" class="l"><a class="l" href="#259">259: </a>    <span class="php-comment">/**
-</span></span><span id="260" class="l"><a class="l" href="#260">260: </a><span class="php-comment">     * @param string $column
-</span></span><span id="261" class="l"><a class="l" href="#261">261: </a><span class="php-comment">     * @param string $value
-</span></span><span id="262" class="l"><a class="l" href="#262">262: </a><span class="php-comment">     * @return array condition|value
-</span></span><span id="263" class="l"><a class="l" href="#263">263: </a><span class="php-comment">     */</span>
-</span><span id="264" class="l"><a class="l" href="#264">264: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="__makeFilter" href="#__makeFilter">_makeFilter</a>(<span class="php-var">$column</span>, <span class="php-var">$value</span>)
-</span><span id="265" class="l"><a class="l" href="#265">265: </a>    {
-</span><span id="266" class="l"><a class="l" href="#266">266: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">array</span>(<span class="php-quote">&quot;[</span><span class="php-var">$column</span><span class="php-quote">] &quot;</span> . <span class="php-var">$this</span>-&gt;condition, <span class="php-var">$this</span>-&gt;formatValue(<span class="php-var">$value</span>));
-</span><span id="267" class="l"><a class="l" href="#267">267: </a>    }
-</span><span id="268" class="l"><a class="l" href="#268">268: </a>
-</span><span id="269" class="l"><a class="l" href="#269">269: </a>    <span class="php-comment">/**
-</span></span><span id="270" class="l"><a class="l" href="#270">270: </a><span class="php-comment">     * Format value for database.
-</span></span><span id="271" class="l"><a class="l" href="#271">271: </a><span class="php-comment">     * @param string $value
-</span></span><span id="272" class="l"><a class="l" href="#272">272: </a><span class="php-comment">     * @return string
-</span></span><span id="273" class="l"><a class="l" href="#273">273: </a><span class="php-comment">     */</span>
-</span><span id="274" class="l"><a class="l" href="#274">274: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_formatValue" href="#_formatValue">formatValue</a>(<span class="php-var">$value</span>)
-</span><span id="275" class="l"><a class="l" href="#275">275: </a>    {
-</span><span id="276" class="l"><a class="l" href="#276">276: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;formatValue !== <span class="php-keyword1">NULL</span>) {
-</span><span id="277" class="l"><a class="l" href="#277">277: </a>            <span class="php-keyword1">return</span> <span class="php-keyword2">str_replace</span>(self::VALUE_IDENTIFIER, <span class="php-var">$value</span>, <span class="php-var">$this</span>-&gt;formatValue);
-</span><span id="278" class="l"><a class="l" href="#278">278: </a>        } <span class="php-keyword1">else</span> {
-</span><span id="279" class="l"><a class="l" href="#279">279: </a>            <span class="php-keyword1">return</span> <span class="php-var">$value</span>;
-</span><span id="280" class="l"><a class="l" href="#280">280: </a>        }
-</span><span id="281" class="l"><a class="l" href="#281">281: </a>    }
-</span><span id="282" class="l"><a class="l" href="#282">282: </a>
-</span><span id="283" class="l"><a class="l" href="#283">283: </a>    <span class="php-comment">/**
-</span></span><span id="284" class="l"><a class="l" href="#284">284: </a><span class="php-comment">     * Value representation in URI.
-</span></span><span id="285" class="l"><a class="l" href="#285">285: </a><span class="php-comment">     * @internal
-</span></span><span id="286" class="l"><a class="l" href="#286">286: </a><span class="php-comment">     * @param string $value
-</span></span><span id="287" class="l"><a class="l" href="#287">287: </a><span class="php-comment">     * @return string
-</span></span><span id="288" class="l"><a class="l" href="#288">288: </a><span class="php-comment">     */</span>
-</span><span id="289" class="l"><a class="l" href="#289">289: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_changeValue" href="#_changeValue">changeValue</a>(<span class="php-var">$value</span>)
-</span><span id="290" class="l"><a class="l" href="#290">290: </a>    {
-</span><span id="291" class="l"><a class="l" href="#291">291: </a>        <span class="php-keyword1">return</span> <span class="php-var">$value</span>;
-</span><span id="292" class="l"><a class="l" href="#292">292: </a>    }
-</span><span id="293" class="l"><a class="l" href="#293">293: </a>}
-</span><span id="294" class="l"><a class="l" href="#294">294: </a></span></code></pre>
+</span><span id="250" class="l"><a class="l" href="#250">250: </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$values</span> <span class="php-keyword1">as</span> <span class="php-var">$val</span>) {
+</span><span id="251" class="l"><a class="l" href="#251">251: </a>                <span class="php-var">$condition</span>[] = <span class="php-var">$val</span>;
+</span><span id="252" class="l"><a class="l" href="#252">252: </a>            }
+</span><span id="253" class="l"><a class="l" href="#253">253: </a>        }
+</span><span id="254" class="l"><a class="l" href="#254">254: </a>
+</span><span id="255" class="l"><a class="l" href="#255">255: </a>        <span class="php-keyword1">return</span> <span class="php-var">$condition</span>;
+</span><span id="256" class="l"><a class="l" href="#256">256: </a>    }
+</span><span id="257" class="l"><a class="l" href="#257">257: </a>
+</span><span id="258" class="l"><a class="l" href="#258">258: </a>    <span class="php-comment">/**
+</span></span><span id="259" class="l"><a class="l" href="#259">259: </a><span class="php-comment">     * @param string $column
+</span></span><span id="260" class="l"><a class="l" href="#260">260: </a><span class="php-comment">     * @param string $value
+</span></span><span id="261" class="l"><a class="l" href="#261">261: </a><span class="php-comment">     * @return array condition|value
+</span></span><span id="262" class="l"><a class="l" href="#262">262: </a><span class="php-comment">     */</span>
+</span><span id="263" class="l"><a class="l" href="#263">263: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="__makeFilter" href="#__makeFilter">_makeFilter</a>(<span class="php-var">$column</span>, <span class="php-var">$value</span>)
+</span><span id="264" class="l"><a class="l" href="#264">264: </a>    {
+</span><span id="265" class="l"><a class="l" href="#265">265: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">array</span>(<span class="php-quote">&quot;[</span><span class="php-var">$column</span><span class="php-quote">] &quot;</span> . <span class="php-var">$this</span>-&gt;condition, <span class="php-var">$this</span>-&gt;formatValue(<span class="php-var">$value</span>));
+</span><span id="266" class="l"><a class="l" href="#266">266: </a>    }
+</span><span id="267" class="l"><a class="l" href="#267">267: </a>
+</span><span id="268" class="l"><a class="l" href="#268">268: </a>    <span class="php-comment">/**
+</span></span><span id="269" class="l"><a class="l" href="#269">269: </a><span class="php-comment">     * Format value for database.
+</span></span><span id="270" class="l"><a class="l" href="#270">270: </a><span class="php-comment">     * @param string $value
+</span></span><span id="271" class="l"><a class="l" href="#271">271: </a><span class="php-comment">     * @return string
+</span></span><span id="272" class="l"><a class="l" href="#272">272: </a><span class="php-comment">     */</span>
+</span><span id="273" class="l"><a class="l" href="#273">273: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_formatValue" href="#_formatValue">formatValue</a>(<span class="php-var">$value</span>)
+</span><span id="274" class="l"><a class="l" href="#274">274: </a>    {
+</span><span id="275" class="l"><a class="l" href="#275">275: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;formatValue !== <span class="php-keyword1">NULL</span>) {
+</span><span id="276" class="l"><a class="l" href="#276">276: </a>            <span class="php-keyword1">return</span> <span class="php-keyword2">str_replace</span>(self::VALUE_IDENTIFIER, <span class="php-var">$value</span>, <span class="php-var">$this</span>-&gt;formatValue);
+</span><span id="277" class="l"><a class="l" href="#277">277: </a>        } <span class="php-keyword1">else</span> {
+</span><span id="278" class="l"><a class="l" href="#278">278: </a>            <span class="php-keyword1">return</span> <span class="php-var">$value</span>;
+</span><span id="279" class="l"><a class="l" href="#279">279: </a>        }
+</span><span id="280" class="l"><a class="l" href="#280">280: </a>    }
+</span><span id="281" class="l"><a class="l" href="#281">281: </a>
+</span><span id="282" class="l"><a class="l" href="#282">282: </a>    <span class="php-comment">/**
+</span></span><span id="283" class="l"><a class="l" href="#283">283: </a><span class="php-comment">     * Value representation in URI.
+</span></span><span id="284" class="l"><a class="l" href="#284">284: </a><span class="php-comment">     * @internal
+</span></span><span id="285" class="l"><a class="l" href="#285">285: </a><span class="php-comment">     * @param string $value
+</span></span><span id="286" class="l"><a class="l" href="#286">286: </a><span class="php-comment">     * @return string
+</span></span><span id="287" class="l"><a class="l" href="#287">287: </a><span class="php-comment">     */</span>
+</span><span id="288" class="l"><a class="l" href="#288">288: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_changeValue" href="#_changeValue">changeValue</a>(<span class="php-var">$value</span>)
+</span><span id="289" class="l"><a class="l" href="#289">289: </a>    {
+</span><span id="290" class="l"><a class="l" href="#290">290: </a>        <span class="php-keyword1">return</span> <span class="php-var">$value</span>;
+</span><span id="291" class="l"><a class="l" href="#291">291: </a>    }
+</span><span id="292" class="l"><a class="l" href="#292">292: </a>}
+</span><span id="293" class="l"><a class="l" href="#293">293: </a></span></code></pre>
 
 	<div id="footer">
 		Grido - DataGrid for Nette Framework. API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>

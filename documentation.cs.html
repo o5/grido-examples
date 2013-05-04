@@ -280,13 +280,14 @@
     <h3 id="vlastni-metody-modelu">Vlastní metody modelu</h3>
     <p>Pokud potřebujeme změnit některou z modelových metod, lze místo dědění využít callback.</p>
     <pre><code>//reimplementace metody getCount()
-$grid->model->proxy['getCount'] = function(\Grido\DataSources\DibiFluent $dataSource) {
-    return $dataSource->fluent->count();
+$grid->model->callback['getCount'] = function($model) {
+    $fluent = clone $model->fluent;
+    return $fluent->removeClause('SELECT')->select('COUNT(*)')->fetchSingle();
 };
 
-//je samozřejmě možné "přetěžovat" všechny metody implementující IDataSource,
+//je samozřejmě možné "přetěžovat" všechny metody modelu,
 //přičemž argumenty volané z gridu jsou předány jako pole v druhém parametru
-$grid->model->proxy['limit'] = function($datasource, $args) {
+$grid->model->callback['limit'] = function($model, $args) {
     $offset = $args[0];
     $limit = $args[1];
     //...
@@ -678,7 +679,7 @@ $grid->addFilter('type', 'Type')
 
             <td>callback pro vlastní vykreslení</td>
 
-            <td></td>
+            <td>function($item, \Nette\Utils\Html $el)<br>{return $el}</td>
         </tr>
 
         <tr>
