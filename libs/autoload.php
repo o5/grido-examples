@@ -8,3 +8,5 @@ if (!is_file(__DIR__ . '/Nette/loader.php')) {
 }
 
 require __DIR__ . '/Nette/loader.php';
+
+return FALSE;

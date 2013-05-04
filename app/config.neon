@@ -49,6 +49,9 @@ common:
         dibi_mysql: DibiConnection(%database.mysql%)
         dibi_postgre: DibiConnection(%database.postgre%)
 
+    doctrine:
+        connection: [driver: pdo_sqlite, path: %database.sqlite.file%]
+
 production < common:
     parameters:
         baseUri: /example

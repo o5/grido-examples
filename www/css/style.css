@@ -78,3 +78,7 @@ th.checker input, .filter input, .filter label, .navbar .brand {z-index: 1; posi
 .navbar-inner ul.nav {padding-left:10px}
 
 select {text-align: center}
+
+.btn-mini [class^="icon-"], .btn-mini [class*=" icon-"] {
+    margin-top: 1px;
+}
