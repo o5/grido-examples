@@ -11,20 +11,24 @@ final class ArrayPresenter extends BasePresenter
     protected function createComponentGrid($name)
     {
         $grid = new Grido\Grid($this, $name);
-        $grid->setDefaultPerPage(4);
+
+        $grid->translator->lang = 'cs';
+        $grid->defaultPerPage = 5;
 
         $grid->setModel($this->getData());
 
-        $grid->addColumnText('firstname', 'Firstname')
+        $grid->addColumnText('firstname', 'Jméno')
             ->setFilterText()
                 ->setSuggestion();
+        $grid->getColumn('firstname')->headerPrototype->style = 'width: 30%';
 
-        $grid->addColumnText('surname', 'Surname')
+        $grid->addColumnText('surname', 'Příjmení')
             ->setSortable()
             ->setFilterText()
                 ->setSuggestion();
+        $grid->getColumn('surname')->headerPrototype->style = 'width: 30%';
 
-        $grid->addColumn('card', 'Card')
+        $grid->addColumn('card', 'Platební karta')
             ->setSortable()
             ->setReplacement(array('Visa' => Nette\Utils\Html::el('b')->setText('Visa')))
             ->setFilterSelect(array(
@@ -34,18 +38,18 @@ final class ArrayPresenter extends BasePresenter
             ));
         $grid->getColumn('card')->cellPrototype->class[] = 'center';
 
-        $grid->addActionHref('edit', 'Edit')
+        $grid->addActionHref('edit', 'Upravit')
             ->setIcon('pencil');
 
-        $grid->addActionHref('delete', 'Delete')
+        $grid->addActionHref('delete', 'Smazat')
             ->setIcon('trash')
             ->setConfirm(function($item) {
-                return "Are you sure you want to delete {$item['firstname']} {$item['surname']}?";
+                return "Opravdu chcete smazat slečnu se jménem {$item['firstname']} {$item['surname']}?";
         });
 
         $operations = array('print' => 'Print', 'delete' => 'Delete');
         $grid->setOperations($operations, callback($this, 'gridOperationsHandler'))
-            ->setConfirm('delete', 'Are you sure you want to delete %i items?');
+            ->setConfirm('delete', 'Opravdu chcete smazat označené položky? (%i)');
 
         $grid->setFilterRenderType($this->filterRenderType);
         $grid->setExporting();
