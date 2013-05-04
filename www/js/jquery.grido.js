@@ -221,14 +221,17 @@
 
             onSubmit: function()
             {
-                var itemsCount = $($.grido.operations.selector + ':checked', $.grido.$element).length,
-                    hasConfirm = $.grido.operations.getSelect().attr(
-                        'data-grido-' + $.grido.operations.getSelect().val()
-                    );
+                var hasConfirm = $.grido.operations.getSelect().attr('data-grido-' + $.grido.operations.getSelect().val());
+                if (hasConfirm) {
+                    if (confirm(hasConfirm.replace(/%i/g, $($.grido.operations.selector + ':checked', $.grido.$element).length))) {
+                        return true;
+                    }
 
-                return hasConfirm
-                    ? confirm(hasConfirm.replace(/%i/g, itemsCount))
-                    : true;
+                    $.grido.operations.getSelect().val('');
+                    return false;
+                }
+
+                return true;
             },
 
             setSelectState: function()
