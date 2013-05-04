@@ -26,11 +26,13 @@ final class ArrayPresenter extends BasePresenter
 
         $grid->addColumn('card', 'Card')
             ->setSortable()
+            ->setReplacement(array('Visa' => Nette\Utils\Html::el('b')->setText('Visa')))
             ->setFilterSelect(array(
                 '' => '',
                 'Visa' => 'Visa',
                 'MasterCard' => 'MasterCard'
             ));
+        $grid->getColumn('card')->cellPrototype->class[] = 'center';
 
         $grid->addActionHref('edit', 'Edit')
             ->setIcon('pencil');
