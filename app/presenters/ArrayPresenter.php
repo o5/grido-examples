@@ -39,10 +39,22 @@ final class ArrayPresenter extends BasePresenter
         $grid->getColumn('card')->cellPrototype->class[] = 'center';
 
         $grid->addActionHref('edit', 'Upravit')
-            ->setIcon('pencil');
+            ->setIcon('pencil')
+            ->setCustomRender(function($item, Nette\Utils\Html $el){
+                if ($item['firstname'] == 'Adéla') {
+                    $el->class[] = 'btn-danger';
+                }
+                return $el;
+            });
 
         $grid->addActionHref('delete', 'Smazat')
             ->setIcon('trash')
+            ->setCustomRender(function($item, Nette\Utils\Html $el){
+                if ($item['firstname'] == 'Adéla') {
+                    $el->class[] = 'btn-danger';
+                }
+                return $el;
+            })
             ->setConfirm(function($item) {
                 return "Opravdu chcete smazat slečnu se jménem {$item['firstname']} {$item['surname']}?";
         });
