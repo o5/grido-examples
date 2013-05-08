@@ -16,7 +16,7 @@ final class DoctrinePresenter extends BasePresenter
         $grid = new Grido\Grid($this, $name);
 
         $repository = $this->context->doctrine->entityManager->getRepository('Entities\User');
-        $grid->setModel(new Grido\DataSources\Doctrine($repository->createQueryBuilder('a')));
+        $grid->setModel($repository->createQueryBuilder('a'));
 
         $grid->addColumnText('firstname', 'Firstname')
             ->setFilterText()

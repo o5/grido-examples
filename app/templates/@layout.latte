@@ -34,6 +34,11 @@
                                         Nette\Database
                                     </a>
                                 </li>
+                                <li n:class="$presenter->name == 'Array' ? 'active'">
+                                    <a class="no-ajax" n:href="Array:">
+                                        Array
+                                    </a>
+                                </li>
                                 <li n:class="$presenter->name == 'Dibi' ? 'active'">
                                     <a class="no-ajax" n:href="Dibi:">
                                         Dibi
@@ -42,11 +47,6 @@
                                 <li n:class="$presenter->name == 'Doctrine' ? 'active'">
                                     <a class="no-ajax" n:href="Doctrine:">
                                         Doctrine
-                                    </a>
-                                </li>
-                                <li n:class="$presenter->name == 'Array' ? 'active'">
-                                    <a class="no-ajax" n:href="Array:">
-                                        Array
                                     </a>
                                 </li>
                             </ul>
