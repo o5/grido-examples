@@ -346,7 +346,7 @@
         },
 
         /**
-         * Checking numetic input.
+         * Checking numeric input.
          */
         checkNumeric: function()
         {
