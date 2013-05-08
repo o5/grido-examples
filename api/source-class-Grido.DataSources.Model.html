@@ -159,10 +159,10 @@
 </span><span id="38" class="l"><a class="l" href="#38">38: </a>            <span class="php-var">$dataSource</span> = <span class="php-keyword1">new</span> DibiFluent(<span class="php-var">$model</span>);
 </span><span id="39" class="l"><a class="l" href="#39">39: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-var">$model</span> <span class="php-keyword1">instanceof</span> \Nette\Database\Table\Selection) {
 </span><span id="40" class="l"><a class="l" href="#40">40: </a>            <span class="php-var">$dataSource</span> = <span class="php-keyword1">new</span> NetteDatabase(<span class="php-var">$model</span>);
-</span><span id="41" class="l"><a class="l" href="#41">41: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-keyword2">is_array</span>(<span class="php-var">$model</span>)) {
-</span><span id="42" class="l"><a class="l" href="#42">42: </a>            <span class="php-var">$dataSource</span> = <span class="php-keyword1">new</span> ArraySource(<span class="php-var">$model</span>);
-</span><span id="43" class="l"><a class="l" href="#43">43: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-var">$model</span> <span class="php-keyword1">instanceof</span> IDataSource) {
-</span><span id="44" class="l"><a class="l" href="#44">44: </a>            <span class="php-var">$dataSource</span> = <span class="php-var">$model</span>;
+</span><span id="41" class="l"><a class="l" href="#41">41: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-var">$model</span> <span class="php-keyword1">instanceof</span> \Doctrine\ORM\QueryBuilder) {
+</span><span id="42" class="l"><a class="l" href="#42">42: </a>            <span class="php-var">$dataSource</span> = <span class="php-keyword1">new</span> Doctrine(<span class="php-var">$model</span>);
+</span><span id="43" class="l"><a class="l" href="#43">43: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-keyword2">is_array</span>(<span class="php-var">$model</span>)) {
+</span><span id="44" class="l"><a class="l" href="#44">44: </a>            <span class="php-var">$dataSource</span> = <span class="php-keyword1">new</span> ArraySource(<span class="php-var">$model</span>);
 </span><span id="45" class="l"><a class="l" href="#45">45: </a>        } <span class="php-keyword1">else</span> {
 </span><span id="46" class="l"><a class="l" href="#46">46: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \InvalidArgumentException(<span class="php-quote">'Model must be implemented \Grido\DataSources\IDataSource.'</span>);
 </span><span id="47" class="l"><a class="l" href="#47">47: </a>        }
