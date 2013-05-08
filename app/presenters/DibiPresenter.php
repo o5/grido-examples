@@ -40,8 +40,7 @@ final class DibiPresenter extends BasePresenter
             ->setSortable()
             ->cellPrototype->class[] = 'center';
 
-        $grid->addColumnDate('birthday', 'Birthday')
-            ->setDateFormat(Grido\Components\Columns\Date::FORMAT_TEXT)
+        $grid->addColumnDate('birthday', 'Birthday', Grido\Components\Columns\Date::FORMAT_TEXT)
             ->setSortable()
             ->setFilterDate()
                 ->setCondition(Filter::CONDITION_CALLBACK, callback($this, 'gridBirthdayFilterCondition'));
