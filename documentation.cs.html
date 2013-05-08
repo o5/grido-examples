@@ -336,6 +336,8 @@ $grid->model->callback['limit'] = function($model, $args) {
         <tr>
             <th>Typ</th>
 
+            <th>Metoda</th>
+
             <th>Popis</th>
 
             <th>Výchozí</th>
@@ -346,6 +348,8 @@ $grid->model->callback['limit'] = function($model, $args) {
         <tr>
             <td>TYPE_TEXT</td>
 
+            <td>addColumnText</td>
+
             <td>výchozí typ, surový text</td>
 
             <td> </td>
@@ -353,6 +357,8 @@ $grid->model->callback['limit'] = function($model, $args) {
 
         <tr>
             <td>TYPE_MAIL</td>
+
+            <td>addColumnMail</td>
 
             <td>naformátuje výstup na klikací mail</td>
 
@@ -362,6 +368,8 @@ $grid->model->callback['limit'] = function($model, $args) {
         <tr>
             <td>TYPE_HREF</td>
 
+            <td>addColumnHref</td>
+
             <td>naformátuje výstup na klikací odkaz</td>
 
             <td> </td>
@@ -369,6 +377,8 @@ $grid->model->callback['limit'] = function($model, $args) {
 
         <tr>
             <td>TYPE_DATE</td>
+
+            <td>addColumnDate</td>
 
             <td>naformátuje výstup na datum</td>
 
@@ -493,6 +503,8 @@ $grid->model->callback['limit'] = function($model, $args) {
         <tr>
             <th>Typ</th>
 
+            <th>Metoda</th>
+
             <th style="width: 140px">Popis</th>
 
             <th>Info</th>
@@ -503,6 +515,8 @@ $grid->model->callback['limit'] = function($model, $args) {
         <tr>
             <td>TYPE_TEXT</td>
 
+            <td>addFilterText</td>
+
             <td>výchozí typ</td>
 
             <td>metoda <a href="http://o5.github.com/grido-sandbox/api/class-Grido.Components.Filters.Text.html#_setSuggestion">setSuggestion()</a> povolí našeptávání zohleďnující
@@ -512,6 +526,8 @@ $grid->model->callback['limit'] = function($model, $args) {
         <tr>
             <td>TYPE_DATE</td>
 
+            <td>addFilterDate</td>
+
             <td>hledání dle data</td>
 
             <td> </td>
@@ -519,6 +535,8 @@ $grid->model->callback['limit'] = function($model, $args) {
 
         <tr>
             <td>TYPE_CHECK</td>
+
+            <td>addFilterCheck</td>
 
             <td>checkbox filtr</td>
 
@@ -528,6 +546,8 @@ $grid->model->callback['limit'] = function($model, $args) {
         <tr>
             <td>TYPE_SELECT</td>
 
+            <td>addFilterSelect</td>
+
             <td>selectbox filtr</td>
 
             <td>položky výběru se nastavují parametrem č.4</td>
@@ -535,6 +555,8 @@ $grid->model->callback['limit'] = function($model, $args) {
 
         <tr>
             <td>TYPE_NUMBER</td>
+
+            <td>addFilterNumber</td>
 
             <td>číselný typ</td>
 
