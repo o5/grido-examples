@@ -7,7 +7,7 @@
 	<title>Class Grido\Components\Columns\Date | Grido - DataGrid for Nette Framework.</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?407009238"></script>
+	<script type="text/javascript" src="elementlist.js?2768608841"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido - DataGrid for Nette Framework." href="/opensearch.xml" />
 
@@ -68,6 +68,7 @@
 				<li class="active"><a href="class-Grido.Components.Columns.Date.html">Date</a></li>
 				<li><a href="class-Grido.Components.Columns.Href.html">Href</a></li>
 				<li><a href="class-Grido.Components.Columns.Mail.html">Mail</a></li>
+				<li><a href="class-Grido.Components.Columns.Number.html">Number</a></li>
 				<li><a href="class-Grido.Components.Columns.Text.html">Text</a></li>
 			</ul>
 
@@ -173,13 +174,55 @@ Nette\Application\UI\PresenterComponent
 
 				<b>Author:</b>
 				Petr Bugyík<br />
-		<b>Located at</b> <a href="source-class-Grido.Components.Columns.Date.html#14-67" title="Go to source code">Components/Columns/Date.php</a><br />
+		<b>Located at</b> <a href="source-class-Grido.Components.Columns.Date.html#14-82" title="Go to source code">Components/Columns/Date.php</a><br />
 	</div>
 
 
 
 	<table class="summary" id="methods">
 	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Grido.Components.Columns.Date.html#32-45" title="Go to source code">__construct</a>( <span><code><a href="class-Grido.Grid.html">Grido\Grid</a></code> <var>$grid</var></span>, <span>string <var>$name</var></span>, <span>string <var>$label</var></span>, <span>string <var>$dateFormat</var> = <span class="php-keyword1">NULL</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$grid</var></dt>
+					<dd><code><code><a href="class-Grido.Grid.html">Grido\Grid</a></code></code><br>$grid</dd>
+					<dt><var>$name</var></dt>
+					<dd><code>string</code><br>$name</dd>
+					<dt><var>$label</var></dt>
+					<dd><code>string</code><br>$label</dd>
+					<dt><var>$dateFormat</var></dt>
+					<dd><code>string</code><br>$dateFormat</dd>
+				</dl></div>
+
+
+
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-Grido.Components.Columns.Column.html#___construct">Grido\Components\Columns\Column::__construct()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="setDateFormat" id="_setDateFormat">
 
 		<td class="attributes"><code>
@@ -191,7 +234,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setDateFormat">#</a>
-		<code><a href="source-class-Grido.Components.Columns.Date.html#32-40" title="Go to source code">setDateFormat</a>( <span>string <var>$format</var></span> )</code>
+		<code><a href="source-class-Grido.Components.Columns.Date.html#47-55" title="Go to source code">setDateFormat</a>( <span>string <var>$format</var></span> )</code>
 
 		<div class="description short">
 			
@@ -229,7 +272,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_formatValue">#</a>
-		<code><a href="source-class-Grido.Components.Columns.Date.html#42-55" title="Go to source code">formatValue</a>( <span>mixed <var>$value</var></span> )</code>
+		<code><a href="source-class-Grido.Components.Columns.Date.html#57-70" title="Go to source code">formatValue</a>( <span>mixed <var>$value</var></span> )</code>
 
 		<div class="description short">
 			
@@ -264,7 +307,6 @@ Nette\Application\UI\PresenterComponent
 	<caption>Methods inherited from <a href="class-Grido.Components.Columns.Column.html#methods">Grido\Components\Columns\Column</a></caption>
 	<tr>
 		<td><code>
-			<a href="class-Grido.Components.Columns.Column.html#___construct">__construct()</a>, 
 			<a href="class-Grido.Components.Columns.Column.html#_applyReplacement">applyReplacement()</a>, 
 			<a href="class-Grido.Components.Columns.Column.html#_getCellPrototype">getCellPrototype()</a>, 
 			<a href="class-Grido.Components.Columns.Column.html#_getHeaderPrototype">getHeaderPrototype()</a>, 
@@ -376,6 +418,7 @@ Nette\Application\UI\PresenterComponent
 			<a href="class-Grido.Components.Columns.Column.html#TYPE_DATE"><b>TYPE_DATE</b></a>, 
 			<a href="class-Grido.Components.Columns.Column.html#TYPE_HREF"><b>TYPE_HREF</b></a>, 
 			<a href="class-Grido.Components.Columns.Column.html#TYPE_MAIL"><b>TYPE_MAIL</b></a>, 
+			<a href="class-Grido.Components.Columns.Column.html#TYPE_NUMBER"><b>TYPE_NUMBER</b></a>, 
 			<a href="class-Grido.Components.Columns.Column.html#TYPE_TEXT"><b>TYPE_TEXT</b></a>, 
 			<a href="class-Grido.Components.Columns.Column.html#VALUE_IDENTIFIER"><b>VALUE_IDENTIFIER</b></a>
 		</code></td>
