@@ -11,29 +11,45 @@ final class ArrayPresenter extends BasePresenter
     protected function createComponentGrid($name)
     {
         $grid = new Grido\Grid($this, $name);
-
         $grid->translator->lang = 'cs';
         $grid->defaultPerPage = 5;
 
         $grid->setModel($this->getData());
 
+        $grid->addColumnNumber('id', '#');
+        $header = $grid->getColumn('id')->headerPrototype;
+        $header->rowspan = "2";
+        $header->style = 'width: 0.1%';
+
         $grid->addColumnText('firstname', 'Jméno')
             ->setFilterText()
                 ->setSuggestion();
-        $grid->getColumn('firstname')->headerPrototype->style = 'width: 30%';
+        $grid->getColumn('firstname')->headerPrototype->style = 'width: 25%';
 
         $grid->addColumnText('surname', 'Příjmení')
             ->setSortable()
             ->setFilterText()
                 ->setSuggestion();
-        $grid->getColumn('surname')->headerPrototype->style = 'width: 30%';
+        $grid->getColumn('surname')->headerPrototype->style = 'width: 25%';
+
+        $grid->addColumnNumber('allowance', 'Kapesné [CZK]', 2, ',', ' ')
+            ->setSortable()
+            ->setFilterNumber();
+        $grid->getColumn('allowance')->cellPrototype->class[] = 'center';
 
         $grid->addColumnDate('last_login', 'Poslední přihlášení')
+            ->setSortable()
             ->setDateFormat(\Grido\Components\Columns\Date::FORMAT_DATETIME)
             ->setReplacement(array(NULL => 'Nikdy'));
         $grid->getColumn('last_login')->cellPrototype->class[] = 'center';
 
+        $grid->addColumn('ok', 'OK', 'Grido\Components\Columns\Boolean')
+            ->headerPrototype->style = 'width: 0.1%';
+
         $grid->addActionHref('edit', 'Upravit')
+            ->setCustomHref(function($item) {
+                return "/edit/{$item['id']}";
+            })
             ->setIcon('pencil')
             ->setCustomRender(callback($this, 'gridHrefRender'));
 
@@ -43,10 +59,6 @@ final class ArrayPresenter extends BasePresenter
             ->setConfirm(function($item) {
                 return "Opravdu chcete smazat slečnu se jménem {$item['firstname']} {$item['surname']}?";
         });
-
-        $operations = array('print' => 'Print', 'delete' => 'Delete');
-        $grid->setOperations($operations, callback($this, 'gridOperationsHandler'))
-            ->setConfirm('delete', 'Opravdu chcete smazat označené položky? (%i)');
 
         $grid->setFilterRenderType($this->filterRenderType);
         $grid->setExporting();
@@ -68,35 +80,50 @@ final class ArrayPresenter extends BasePresenter
     }
 
     /**
+     * Returns "generated" data.
+     * NOTE: This location is only for demo!
      * @return array
      */
-    private function getData()
+    private function getData($cacheKey = 'data')
     {
-        $data = array(
-            array('id' => 1,  'firstname' => 'Eva',     'surname' => 'Malá'),
-            array('id' => 2,  'firstname' => 'Adéla',   'surname' => 'Střední'),
-            array('id' => 3,  'firstname' => 'Jana',    'surname' => 'Absolonová'),
-            array('id' => 4,  'firstname' => 'Lucie',   'surname' => 'Šikovná'),
-            array('id' => 5,  'firstname' => 'Andrea',  'surname' => 'Potřebná'),
-            array('id' => 6,  'firstname' => 'Michala', 'surname' => 'Zadní'),
-            array('id' => 7,  'firstname' => 'Markéta', 'surname' => 'Mladá'),
-            array('id' => 8,  'firstname' => 'Lenka',   'surname' => 'Přední'),
-            array('id' => 9,  'firstname' => 'Marie',   'surname' => 'Dolní'),
-            array('id' => 10, 'firstname' => 'Hanka',   'surname' => 'Horní'),
-            array('id' => 11, 'firstname' => 'Petra',   'surname' => 'Vysoká'),
-        );
+        $storage = new Nette\Caching\Storages\FileStorage($this->context->parameters['tempDir']);
+        $cache = new Nette\Caching\Cache($storage, 'example_data');
+        $data = $cache->load($cacheKey);
 
-        $limit = array(1, 9);
-        foreach ($data as &$item) {
+        if (empty($data)) {
+            $data = array(
+                array('id' => 1,  'firstname' => 'Eva',     'surname' => 'Malá'),
+                array('id' => 2,  'firstname' => 'Adéla',   'surname' => 'Střední'),
+                array('id' => 3,  'firstname' => 'Jana',    'surname' => 'Absolonová'),
+                array('id' => 4,  'firstname' => 'Lucie',   'surname' => 'Šikovná'),
+                array('id' => 5,  'firstname' => 'Andrea',  'surname' => 'Potřebná'),
+                array('id' => 6,  'firstname' => 'Michala', 'surname' => 'Zadní'),
+                array('id' => 7,  'firstname' => 'Markéta', 'surname' => 'Mladá'),
+                array('id' => 8,  'firstname' => 'Lenka',   'surname' => 'Přední'),
+                array('id' => 9,  'firstname' => 'Marie',   'surname' => 'Dolní'),
+                array('id' => 10, 'firstname' => 'Hanka',   'surname' => 'Horní'),
+                array('id' => 11, 'firstname' => 'Petra',   'surname' => 'Vysoká'),
+            );
 
-            $d = rand($limit[0], $limit[1]);
-            $h = rand($limit[0], $limit[1]);
-            $m = rand($limit[0], $limit[1]);
-            $s = rand($limit[0], $limit[1]);
+            $limit = array(1, 9);
+            foreach ($data as &$item) {
 
-            $item['last_login'] = $item['id'] == 4
-                ? NULL
-                : new DateTime("NOW - {$d}day {$h}hour {$m}minute {$s}second");
+                $d = rand($limit[0], $limit[1]);
+                $h = rand($limit[0], $limit[1]);
+                $m = rand($limit[0], $limit[1]);
+                $s = rand($limit[0], $limit[1]);
+
+                $item['last_login'] = $item['id'] == 4
+                    ? NULL
+                    : new Nette\DateTime("NOW - {$d}day {$h}hour {$m}minute {$s}second");
+
+                $item['allowance'] = rand(10000, 100000) / 10;
+                $item['ok'] = (bool) rand(0, 1);
+            }
+
+            $cache->save($cacheKey, $data, array(
+                Nette\Caching\Cache::EXPIRE => '+ 60 minutes',
+            ));
         }
 
         return $data;
