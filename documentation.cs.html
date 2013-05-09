@@ -709,15 +709,15 @@ $grid->addFilter('type', 'Type')
 
             <td>callback pro vlastní vytvoření odkazu</td>
 
-            <td> </td>
+            <td>function($item)<br>{return '/edit/{$item->id}'}</td>
         </tr>
 
         <tr>
             <td>setDisable</td>
 
-            <td>callback pro ovlivnění vykreslení, když TRUE => nevykreslí se</td>
+            <td>callback pro ovlivnění vykreslení, když vrátí TRUE => nevykreslí se</td>
 
-            <td></td>
+            <td>function($item)<br>{return $item->role == 'admin'}</td>
         </tr>
 
         <tr>
@@ -733,8 +733,7 @@ $grid->addFilter('type', 'Type')
 
             <td>nastaví javascriptový confirm, lze použít callback</td>
 
-            <td>function($item)<br>
-                {return "Are you sure you want to delete {$item->title}?"}</td>
+            <td>function($item)<br>{return "Are you sure you want to delete {$item->title}?"}</td>
         </tr>
         </tbody>
     </table>
