@@ -44,13 +44,9 @@ final class ArrayPresenter extends BasePresenter
         $grid->getColumn('last_login')->cellPrototype->class[] = 'center';
 
         $grid->addColumn('ok', 'OK', 'Grido\Components\Columns\Boolean')
-            ->setSortable()
-            ->headerPrototype->style = 'width: 0.1%';
+            ->headerPrototype->style = 'width: 1%';
 
         $grid->addActionHref('edit', 'Upravit')
-            ->setCustomHref(function($item) {
-                return "/edit/{$item['id']}";
-            })
             ->setIcon('pencil')
             ->setCustomRender(callback($this, 'gridHrefRender'));
 
