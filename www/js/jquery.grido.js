@@ -313,10 +313,11 @@
                             if (!/\S/.test(query)) {
                                 return false;
                             }
-                            var params = {};
-                            params[$.grido.name + '-query'] = query;
 
-                            return $.get(this.$element.attr('data-grido-source'), params, function (items) {
+                            var link = this.$element.attr('data-grido-suggest-handler'),
+                                replacement = this.$element.attr('data-grido-suggest-replacement');
+
+                            return $.get(link.replace(replacement, query), function (items) {
                                 //TODO local cache??
                                 process(items);
                             }, "json");
