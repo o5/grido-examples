@@ -1,6 +1,7 @@
 {
     "name": "o5/grido-sandbox",
     "description": "Grido sandbox",
+    "homepage": "http://grido.bugyik.cz/example/",
     "require": {
         "php": ">=5.3.1",
         "nette/nette" : "2.0.*",
@@ -20,8 +21,7 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "chmod -R 0777 temp/ log/ app/proxies",
-            "git update-index --assume-unchanged libs/autoload.php"
+            "chmod -R 0777 temp/ log/ app/proxies"
         ]
     }
 }

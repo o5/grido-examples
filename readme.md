@@ -6,8 +6,8 @@
 composer create-project o5/grido-sandbox:dev-master
 ```
 
-[Project Pages](http://o5.github.com/grido-sandbox/)
+[Project Pages](http://o5.github.io/grido-sandbox/)
 =============
 
-[API](http://o5.github.com/grido-sandbox/api/)
+[API](http://o5.github.io/grido-sandbox/api/)
 =============
