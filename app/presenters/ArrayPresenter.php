@@ -44,6 +44,7 @@ final class ArrayPresenter extends BasePresenter
         $grid->getColumn('last_login')->cellPrototype->class[] = 'center';
 
         $grid->addColumn('ok', 'OK', 'Grido\Components\Columns\Boolean')
+            ->setSortable()
             ->headerPrototype->style = 'width: 0.1%';
 
         $grid->addActionHref('edit', 'Upravit')
