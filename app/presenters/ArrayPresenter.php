@@ -16,7 +16,8 @@ final class ArrayPresenter extends BasePresenter
 
         $grid->setModel($this->getData());
 
-        $grid->addColumnNumber('id', '#');
+        $grid->addColumnNumber('id', '#')
+            ->cellPrototype->class[] = 'center';
         $header = $grid->getColumn('id')->headerPrototype;
         $header->rowspan = "2";
         $header->style = 'width: 0.1%';
