@@ -4,7 +4,7 @@ use Grido\Components\Filters\Filter,
     Nette\Utils\Html;
 
 /**
- * Dibi example.
+ * Doctrine example.
  *
  * @package     Grido
  * @author      Petr Bugyík
@@ -76,13 +76,13 @@ final class DoctrinePresenter extends BasePresenter
             ))
             ->setColumn('cctype');
 
-        $grid->addActionHref('edit', 'Edit')
-            ->setIcon('pencil');
-
         $grid->addFilterCheck('preferred', 'Only preferred girls :)')
             ->setCondition(Filter::CONDITION_CUSTOM, array(
-                TRUE => '[gender] = \'female\' AND [centimeters] >= 170' //for checked
+                TRUE => "[gender] = 'female' AND [centimeters] >= 170" //for checked
         ));
+
+        $grid->addActionHref('edit', 'Edit')
+            ->setIcon('pencil');
 
         $grid->addActionHref('delete', 'Delete')
             ->setIcon('trash')
