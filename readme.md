@@ -3,7 +3,7 @@
 - Install via [Composer](http://getcomposer.org/)!
 
 ```
-composer create-project o5/grido-sandbox:dev-master
+composer create-project o5/grido-sandbox
 ```
 
 [Project Pages](http://o5.github.io/grido-sandbox/)
