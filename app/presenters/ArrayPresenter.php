@@ -25,18 +25,19 @@ final class ArrayPresenter extends BasePresenter
         $grid->addColumnText('firstname', 'Jméno')
             ->setFilterText()
                 ->setSuggestion();
-        $grid->getColumn('firstname')->headerPrototype->style = 'width: 25%';
+        $grid->getColumn('firstname')->headerPrototype->style = 'width: 12%';
 
         $grid->addColumnText('surname', 'Příjmení')
             ->setSortable()
             ->setFilterText()
                 ->setSuggestion();
-        $grid->getColumn('surname')->headerPrototype->style = 'width: 25%';
+        $grid->getColumn('surname')->headerPrototype->style = 'width: 11%';
 
         $grid->addColumnNumber('allowance', 'Kapesné [CZK]', 2, ',', ' ')
             ->setSortable()
             ->setFilterNumber();
         $grid->getColumn('allowance')->cellPrototype->class[] = 'center';
+        $grid->getColumn('allowance')->headerPrototype->style = 'width: 6%';
 
         $grid->addColumnDate('last_login', 'Poslední přihlášení')
             ->setSortable()
@@ -45,7 +46,7 @@ final class ArrayPresenter extends BasePresenter
         $grid->getColumn('last_login')->cellPrototype->class[] = 'center';
 
         $grid->addColumn('ok', 'OK', 'Grido\Components\Columns\Boolean')
-            ->headerPrototype->style = 'width: 1%';
+            ->headerPrototype->style = 'width: 0.1%';
 
         $grid->addActionHref('edit', 'Upravit')
             ->setIcon('pencil')
