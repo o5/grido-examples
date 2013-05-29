@@ -57,7 +57,7 @@ var ajax = {
 
     flashHide: function()
     {
-        var $el = $('.alert');
+        var $el = $('.alert.fade.in');
         if ($el.length) {
             setTimeout(function() {
                 $el.animate({"opacity": 0}, 800, function(){

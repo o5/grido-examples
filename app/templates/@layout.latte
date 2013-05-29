@@ -88,13 +88,17 @@
                 </div>
             </div>
 
+            <div n:if="$first" class="alert alert-info">
+                <button type="button" class="close" data-dismiss="alert" onclick="$.get({link closeTip!});">×</button>
+                <p>
+                    Do you want to play with this example on your localhost? Install the sandbox via <a href="http://getcomposer.org/">Composer</a> with only one command: <code>composer create-project o5/grido-sandbox</code>.
+                </p>
+            </div>
+
             {snippet flash}
                 <div n:foreach="$flashes as $flash" class="alert alert-{$flash->type} fade in">
                     <button type="button" class="close" data-dismiss="alert">×</button>
-                    <p>
-                        <strong>{$flash->type|strtoupper}:</strong>
-                        {$flash->message}
-                    </p>
+                    <p>{$flash->message}</p>
                 </div>
             {/snippet}
 

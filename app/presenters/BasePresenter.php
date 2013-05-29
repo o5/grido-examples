@@ -8,6 +8,12 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
     /** @var string @persistent */
     public $filterRenderType = Grido\Components\Filters\Filter::RENDER_INNER;
 
+    public function handleCloseTip()
+    {
+        $this->context->httpResponse->setCookie('grido-sandbox-first', 0, 0);
+        $this->redirect('this');
+    }
+
     /**
      * Handler for operations.
      * @param string $operation
@@ -72,13 +78,13 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 
         $baseUri = $this->context->parameters['baseUri'];
         $template->baseUri = $baseUri ? $baseUri : $template->basePath;;
+        $template->first = $this->context->httpRequest->getCookie('grido-sandbox-first', 1);
 
         $latte = new Nette\Latte\Engine;
         $macros = Nette\Latte\Macros\MacroSet::install($latte->compiler);
         $macros->addMacro('scache', '?>?<?php echo strtotime(date(\'Y-m-d hh \')); ?>"<?php');
 
         $template->registerFilter($latte);
-        $template->registerHelper('strtoupper', 'strtoupper');
 
         return $template;
     }
