@@ -5,6 +5,7 @@ use Grido\Components\Filters\Filter,
 
 /**
  * Doctrine example.
+ * @link http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/index.html
  *
  * @package     Grido
  * @author      Petr Bugyík

@@ -5,6 +5,7 @@ use Grido\Components\Filters\Filter,
 
 /**
  * Nette\Database example.
+ * @link http://doc.nette.org/en/database
  *
  * @package     Grido
  * @author      Petr Bugyík

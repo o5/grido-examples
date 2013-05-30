@@ -5,6 +5,7 @@ use Grido\Components\Filters\Filter,
 
 /**
  * Dibi example.
+ * @link http://dibiphp.com/
  *
  * @package     Grido
  * @author      Petr Bugyík
@@ -22,7 +23,7 @@ final class DibiPresenter extends BasePresenter
         $grid->setModel($fluent);
 
         //modify default driver method
-        $grid->model->callback['getCount'] = function($dataSource) {
+        $grid->model->callback['getCount'] = function(Grido\DataSources\DibiFluent $dataSource) {
             $fluent = clone $dataSource->fluent;
             return $fluent->removeClause('SELECT')->select('COUNT(*)')->fetchSingle();
         };
