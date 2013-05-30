@@ -625,7 +625,7 @@ $grid->addFilter('sta­tus', 'Status', Filter::TYPE_SE­LECT, $list)
 //Filter::CON­DITION_CALLBACK
 $grid->addFilter('type', 'Type')
     ->setCondition(Fil­ter::CONDITION_CAL­LBACK, function($value){
-        return array('[status] =%s' ⇒ $value);
+        return array('[status] =%s', $value);
 });
 
 //filtrování lze vyloučit
