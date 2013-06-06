@@ -45,7 +45,10 @@ final class NetteDatabasePresenter extends BasePresenter
                 return "$img {$item->country->title}";
             })
             ->setFilterText()
-                ->setSuggestion();
+                ->setColumn('country.title')
+                ->setSuggestion(function($item){
+                    return $item->country->title;
+                });
 
         $grid->addColumnText('card', 'Card')
             ->setSortable()

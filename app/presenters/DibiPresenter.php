@@ -22,12 +22,6 @@ final class DibiPresenter extends BasePresenter
 
         $grid->setModel($fluent);
 
-        //modify default driver method
-        $grid->model->callback['getCount'] = function(Grido\DataSources\DibiFluent $dataSource) {
-            $fluent = clone $dataSource->fluent;
-            return $fluent->removeClause('SELECT')->select('COUNT(*)')->fetchSingle();
-        };
-
         $grid->addColumnText('firstname', 'Firstname')
             ->setFilterText()
                 ->setSuggestion();
@@ -48,7 +42,7 @@ final class DibiPresenter extends BasePresenter
         $grid->getColumn('birthday')->cellPrototype->class[] = 'center';
 
         $baseUri = $this->template->baseUri;
-        $grid->addColumnText('country_code', 'Country')
+        $grid->addColumnText('country', 'Country')
             ->setSortable()
             ->setCustomRender(function($item) use($baseUri) {
                 $img = Html::el('img')->src("$baseUri/img/flags/$item->country_code.gif");

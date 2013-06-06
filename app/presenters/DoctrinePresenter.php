@@ -39,7 +39,7 @@ final class DoctrinePresenter extends BasePresenter
         $grid->getColumn('birthday')->cellPrototype->class[] = 'center';
 
         $baseUri = $this->template->baseUri;
-        $grid->addColumnText('country', 'Country')
+        $grid->addColumnText('country_code', 'Country')
             ->setSortable()
             ->setCustomRender(function($item) use($baseUri) {
                 $img = Html::el('img')->src("$baseUri/img/flags/$item->country_code.gif");
