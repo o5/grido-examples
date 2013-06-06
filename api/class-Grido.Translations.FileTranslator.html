@@ -7,7 +7,7 @@
 	<title>Class Grido\Translations\FileTranslator | Grido - DataGrid for Nette Framework.</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?2768608841"></script>
+	<script type="text/javascript" src="elementlist.js?3417875385"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido - DataGrid for Nette Framework." href="/opensearch.xml" />
 
@@ -51,8 +51,6 @@
 				<li class="active"><a href="namespace-Grido.Translations.html">Translations</a>
 						</li>
 							</ul></li>
-				<li><a href="namespace-None.html">None</a>
-						</li>
 				<li><a href="namespace-PHP.html">PHP</a>
 						</li>
 			</ul>
@@ -150,7 +148,7 @@ Nette\Object
 
 				<b>Author:</b>
 				Petr Bugyík<br />
-		<b>Located at</b> <a href="source-class-Grido.Translations.FileTranslator.html#14-87" title="Go to source code">Translations/FileTranslator.php</a><br />
+		<b>Located at</b> <a href="source-class-Grido.Translations.FileTranslator.html#14-74" title="Go to source code">Translations/FileTranslator.php</a><br />
 	</div>
 
 
@@ -168,7 +166,7 @@ Nette\Object
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Grido.Translations.FileTranslator.html#25-37" title="Go to source code">__construct</a>( <span>string <var>$lang</var> = <span class="php-keyword1">NULL</span></span>, <span>array <var>$dictionary</var> = <span class="php-keyword1">array</span>()</span> )</code>
+		<code><a href="source-class-Grido.Translations.FileTranslator.html#26-37" title="Go to source code">__construct</a>( <span>string <var>$lang</var> = <span class="php-keyword1">NULL</span></span>, <span>array <var>$translations</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 		<div class="description short">
 			
@@ -182,8 +180,8 @@ Nette\Object
 				<div class="list"><dl>
 					<dt><var>$lang</var></dt>
 					<dd><code>string</code><br>$lang</dd>
-					<dt><var>$dictionary</var></dt>
-					<dd><code>array</code><br>$dictionary</dd>
+					<dt><var>$translations</var></dt>
+					<dd><code>array</code><br>$translations</dd>
 				</dl></div>
 
 
@@ -204,7 +202,7 @@ Nette\Object
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setLang">#</a>
-		<code><a href="source-class-Grido.Translations.FileTranslator.html#39-47" title="Go to source code">setLang</a>( <span>string <var>$lang</var></span> )</code>
+		<code><a href="source-class-Grido.Translations.FileTranslator.html#39-46" title="Go to source code">setLang</a>( <span>string <var>$lang</var></span> )</code>
 
 		<div class="description short">
 			
@@ -231,18 +229,56 @@ Nette\Object
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="getTranslationsFromFile" id="_getTranslationsFromFile">
+
+		<td class="attributes"><code>
+			 protected 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getTranslationsFromFile">#</a>
+		<code><a href="source-class-Grido.Translations.FileTranslator.html#48-59" title="Go to source code">getTranslationsFromFile</a>( <span>string <var>$lang</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$lang</var></dt>
+					<dd><code>string</code><br>$lang</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="translate" id="_translate">
 
 		<td class="attributes"><code>
 			 public 
-			type
+			string
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_translate">#</a>
-		<code><a href="source-class-Grido.Translations.FileTranslator.html#51-86" title="Go to source code">translate</a>( <span>string <var>$message</var></span>, <span>integer <var>$count</var> = <span class="php-keyword1">NULL</span></span> )</code>
+		<code><a href="source-class-Grido.Translations.FileTranslator.html#63-73" title="Go to source code">translate</a>( <span>string <var>$message</var></span>, <span>integer <var>$count</var> = <span class="php-keyword1">NULL</span></span> )</code>
 
 		<div class="description short">
 			
@@ -262,7 +298,7 @@ Nette\Object
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>type</code><br />
+					<code>string</code><br />
 				</div>
 
 
@@ -286,18 +322,18 @@ Nette\Object
 
 	<table class="summary" id="properties">
 	<caption>Properties summary</caption>
-	<tr data-order="dictionary" id="$dictionary">
+	<tr data-order="translations" id="$translations">
 		<td class="attributes"><code>
-			public  
+			protected  
 			array
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Translations.FileTranslator.html#23" title="Go to source code"><var>$dictionary</var></a>
+				<a href="source-class-Grido.Translations.FileTranslator.html#23-24" title="Go to source code"><var>$translations</var></a>
 		</td>
 		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
 		<td class="description"><div>
-			<a href="#$dictionary" class="anchor">#</a>
+			<a href="#$translations" class="anchor">#</a>
 
 			<div class="description short">
 				
