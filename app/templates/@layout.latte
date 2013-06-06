@@ -29,6 +29,11 @@
                                 Data source <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
+                                <li n:class="$presenter->name == 'Dibi' ? 'active'">
+                                    <a class="no-ajax" n:href="Dibi:">
+                                        Dibi
+                                    </a>
+                                </li>
                                 <li n:class="$presenter->name == 'NetteDatabase' ? 'active'">
                                     <a class="no-ajax" n:href="NetteDatabase:">
                                         Nette\Database
@@ -37,11 +42,6 @@
                                 <li n:class="$presenter->name == 'Array' ? 'active'">
                                     <a class="no-ajax" n:href="Array:">
                                         Array
-                                    </a>
-                                </li>
-                                <li n:class="$presenter->name == 'Dibi' ? 'active'">
-                                    <a class="no-ajax" n:href="Dibi:">
-                                        Dibi
                                     </a>
                                 </li>
                                 <li n:class="$presenter->name == 'Doctrine' ? 'active'">

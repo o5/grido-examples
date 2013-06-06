@@ -41,7 +41,7 @@ $container = $configurator->createContainer();
 $uri = $container->parameters['productionMode'] ? 'example/' : '';
 $container->router[] = new Route("$uri<filterRenderType>/<presenter>/<action>/<ajax>/", array(
     'filterRenderType' => 'inner',
-    'presenter' => 'NetteDatabase',
+    'presenter' => 'Dibi',
     'action' => 'default',
     'ajax' => 'on',
 ));
