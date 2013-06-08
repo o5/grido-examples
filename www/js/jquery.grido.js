@@ -129,40 +129,19 @@
                 this.setSelectState();
 
                 //click on checkbox with shift support
-                $.grido.$element.on('click', $.grido.operations.selector, function(event) {
-                    var $boxes = $($.grido.operations.selector, $.grido.$element);
-
-                    if(!$.grido.operations.$last) {
-                        $.grido.operations.$last = this;
-                        return;
-                    }
-
-                    if(event.shiftKey) {
-                        var start = $boxes.index(this),
-                            end = $boxes.index($.grido.operations.$last);
-
-                        $boxes.slice(Math.min(start, end), Math.max(start, end) + 1)
-                            .attr('checked', $.grido.operations.$last.checked)
-                            .trigger('change');
+                $.grido.$element.on('click', $.grido.operations.selector, function(event, data) {
+                    if(event.shiftKey || (data && data.shiftKey)) {
+                        $.grido.operations.shiftKeyPressed(this);
                     }
 
                     $.grido.operations.$last = this;
                 });
 
                 //click on row
-                $.grido.$element.on('click', 'tbody td:not(.checker,.actions)', function() {
-                    var $row = $(this).parent(),
-                        $checkbox = $('[type=checkbox]', $row);
-
-                    $.grido.operations.$last = $checkbox[0];
-
-                    if ($checkbox.prop('checked')) {
-                        $checkbox.prop('checked', false);
-                        $.grido.operations.changeRow($row, false);
-                    } else {
-                        $checkbox.prop('checked', true);
-                        $.grido.operations.changeRow($row, true);
-                    }
+                $.grido.$element.on('click', 'tbody td:not(.checker,.actions)', function(event) {
+                    $.grido.operations.disableSelection();
+                    $('[type=checkbox]', $(this).parent()).trigger('click', [{shiftKey: event.shiftKey}]);
+                    $.grido.operations.enableSelection();
                 });
 
                 //click on invertor
@@ -172,6 +151,7 @@
                         $(this).prop('checked', !val);
                         $.grido.operations.changeRow($(this).parent().parent(), !val);
                     });
+
                     return false;
                 });
 
@@ -189,6 +169,39 @@
 
                 //click on submit button
                 $.grido.$element.on('click', '.operations [type=submit]', this.onSubmit);
+            },
+
+            shiftKeyPressed: function(element) {
+                var $boxes = $($.grido.operations.selector, $.grido.$element),
+                    start = $boxes.index(element),
+                    end = $boxes.index($.grido.operations.$last);
+
+                $boxes.slice(Math.min(start, end), Math.max(start, end))
+                    .attr('checked', $.grido.operations.$last.checked)
+                    .trigger('change');
+
+            },
+
+            disableSelection: function() {
+                $.grido.$element
+                    .attr('unselectable', 'on')
+                    .css('user-select', 'none');
+            },
+
+            enableSelection: function() {
+                if (window.getSelection) {
+                    var selection = window.getSelection();
+                    if (selection.removeAllRanges) {
+                        selection.removeAllRanges();
+                    }
+
+                } else if (window.document.selection) {
+                    window.document.selection.empty();
+                }
+
+                $.grido.$element
+                    .attr('unselectable', 'off')
+                    .attr('style', null);
             },
 
             /**
