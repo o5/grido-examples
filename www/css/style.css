@@ -80,6 +80,5 @@ th.checker input, .filter input, .filter label, .navbar .brand {z-index: 1; posi
 
 select {text-align: center}
 
-.btn-mini [class^="icon-"], .btn-mini [class*=" icon-"] {
-    margin-top: 1px;
-}
+.btn-mini [class^="icon-"], .btn-mini [class*=" icon-"] {margin-top: 1px}
+.filter textarea {padding: 0; margin: 0; height: 23px}

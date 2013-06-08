@@ -39,7 +39,7 @@
                                     </a>
                                 </li>
                                 <li n:class="$presenter->name == 'Array' ? 'active'">
-                                    <a class="no-ajax" n:href="Array:">
+                                    <a class="no-ajax" n:href="Array: filterRenderType => Grido\Components\Filters\Filter::RENDER_OUTER">
                                         Array
                                     </a>
                                 </li>
@@ -55,7 +55,7 @@
                                 Filter type <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
-                                <li n:class="$presenter->parameter['filterRenderType'] == Grido\Components\Filters\Filter::RENDER_INNER ? 'active'">
+                                <li n:if="$presenter->name != 'Array'" n:class="$presenter->parameter['filterRenderType'] == Grido\Components\Filters\Filter::RENDER_INNER ? 'active'">
                                     <a class="no-ajax" n:href="this filterRenderType => Grido\Components\Filters\Filter::RENDER_INNER">
                                         Inner
                                     </a>

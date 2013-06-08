@@ -1,5 +1,7 @@
 <?php
 
+use Grido\Components\Filters\Filter;
+
 /**
  * Array example.
  *
@@ -11,6 +13,7 @@ final class ArrayPresenter extends BasePresenter
     protected function createComponentGrid($name)
     {
         $grid = new Grido\Grid($this, $name);
+        $grid->filterRenderType = Filter::RENDER_OUTER;
         $grid->translator->lang = 'cs';
         $grid->defaultPerPage = 5;
 
@@ -39,6 +42,12 @@ final class ArrayPresenter extends BasePresenter
         $grid->getColumn('allowance')->cellPrototype->class[] = 'center';
         $grid->getColumn('allowance')->headerPrototype->style = 'width: 6%';
 
+        $grid->addFilterCustom('name', new \Nette\Forms\Controls\TextArea('Jméno nebo příjmení'))
+            ->setColumn('firstname')
+            ->setColumn('surname', Filter::OPERATOR_OR)
+            ->setCondition('LIKE %s')
+            ->setFormatValue('%%value%');
+
         $grid->addColumnDate('last_login', 'Poslední přihlášení')
             ->setSortable()
             ->setDateFormat(\Grido\Components\Columns\Date::FORMAT_DATETIME)
@@ -59,7 +68,6 @@ final class ArrayPresenter extends BasePresenter
                 return "Opravdu chcete smazat slečnu se jménem {$item['firstname']} {$item['surname']}?";
         });
 
-        $grid->setFilterRenderType($this->filterRenderType);
         $grid->setExporting();
     }
 
