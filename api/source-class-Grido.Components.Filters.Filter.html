@@ -8,7 +8,7 @@
 	<title>File Components/Filters/Filter.php | Grido - DataGrid for Nette Framework.</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?3417875385"></script>
+	<script type="text/javascript" src="elementlist.js?3404767357"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido - DataGrid for Nette Framework." href="/opensearch.xml" />
 
@@ -64,6 +64,7 @@
 			<h3>Classes</h3>
 			<ul>
 				<li><a href="class-Grido.Components.Filters.Check.html">Check</a></li>
+				<li><a href="class-Grido.Components.Filters.Custom.html">Custom</a></li>
 				<li><a href="class-Grido.Components.Filters.Date.html">Date</a></li>
 				<li class="active"><a href="class-Grido.Components.Filters.Filter.html">Filter</a></li>
 				<li><a href="class-Grido.Components.Filters.Number.html">Number</a></li>
@@ -150,44 +151,44 @@
 </span><span id="34" class="l"><a class="l" href="#34"> 34: </a>    <span class="php-keyword1">const</span> <a id="TYPE_CHECK" href="#TYPE_CHECK">TYPE_CHECK</a> = <span class="php-quote">'Grido\Components\Filters\Check'</span>;
 </span><span id="35" class="l"><a class="l" href="#35"> 35: </a>    <span class="php-keyword1">const</span> <a id="TYPE_SELECT" href="#TYPE_SELECT">TYPE_SELECT</a> = <span class="php-quote">'Grido\Components\Filters\Select'</span>;
 </span><span id="36" class="l"><a class="l" href="#36"> 36: </a>    <span class="php-keyword1">const</span> <a id="TYPE_NUMBER" href="#TYPE_NUMBER">TYPE_NUMBER</a> = <span class="php-quote">'Grido\Components\Filters\Number'</span>;
-</span><span id="37" class="l"><a class="l" href="#37"> 37: </a>
-</span><span id="38" class="l"><a class="l" href="#38"> 38: </a>    <span class="php-keyword1">const</span> <a id="OPERATOR_AND" href="#OPERATOR_AND">OPERATOR_AND</a>  = <span class="php-quote">'AND'</span>;
-</span><span id="39" class="l"><a class="l" href="#39"> 39: </a>    <span class="php-keyword1">const</span> <a id="OPERATOR_OR" href="#OPERATOR_OR">OPERATOR_OR</a>   = <span class="php-quote">'OR'</span>;
-</span><span id="40" class="l"><a class="l" href="#40"> 40: </a>
-</span><span id="41" class="l"><a class="l" href="#41"> 41: </a>    <span class="php-keyword1">const</span> <a id="VALUE_IDENTIFIER" href="#VALUE_IDENTIFIER">VALUE_IDENTIFIER</a> = <span class="php-quote">'%value'</span>;
-</span><span id="42" class="l"><a class="l" href="#42"> 42: </a>
-</span><span id="43" class="l"><a class="l" href="#43"> 43: </a>    <span class="php-keyword1">const</span> <a id="CONDITION_CUSTOM" href="#CONDITION_CUSTOM">CONDITION_CUSTOM</a> = <span class="php-quote">':condition-custom:'</span>;
-</span><span id="44" class="l"><a class="l" href="#44"> 44: </a>    <span class="php-keyword1">const</span> <a id="CONDITION_CALLBACK" href="#CONDITION_CALLBACK">CONDITION_CALLBACK</a> = <span class="php-quote">':condition-callback:'</span>;
-</span><span id="45" class="l"><a class="l" href="#45"> 45: </a>    <span class="php-keyword1">const</span> <a id="CONDITION_NOT_APPLY" href="#CONDITION_NOT_APPLY">CONDITION_NOT_APPLY</a> = <span class="php-quote">':not-apply:'</span>;
-</span><span id="46" class="l"><a class="l" href="#46"> 46: </a>
-</span><span id="47" class="l"><a class="l" href="#47"> 47: </a>    <span class="php-keyword1">const</span> <a id="RENDER_INNER" href="#RENDER_INNER">RENDER_INNER</a> = <span class="php-quote">'inner'</span>;
-</span><span id="48" class="l"><a class="l" href="#48"> 48: </a>    <span class="php-keyword1">const</span> <a id="RENDER_OUTER" href="#RENDER_OUTER">RENDER_OUTER</a> = <span class="php-quote">'outer'</span>;
-</span><span id="49" class="l"><a class="l" href="#49"> 49: </a>
-</span><span id="50" class="l"><a class="l" href="#50"> 50: </a>    <span class="php-comment">/** @var mixed */</span>
-</span><span id="51" class="l"><a class="l" href="#51"> 51: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$optional" href="#$optional">$optional</a></span>;
-</span><span id="52" class="l"><a class="l" href="#52"> 52: </a>
-</span><span id="53" class="l"><a class="l" href="#53"> 53: </a>    <span class="php-comment">/** @var array */</span>
-</span><span id="54" class="l"><a class="l" href="#54"> 54: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$columns" href="#$columns">$columns</a></span> = <span class="php-keyword1">array</span>();
-</span><span id="55" class="l"><a class="l" href="#55"> 55: </a>
-</span><span id="56" class="l"><a class="l" href="#56"> 56: </a>    <span class="php-comment">/** @var mixed for -&gt;where('&lt;column&gt; = %s', &lt;value&gt;)  */</span>
-</span><span id="57" class="l"><a class="l" href="#57"> 57: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$condition" href="#$condition">$condition</a></span> = <span class="php-quote">'= %s'</span>;
-</span><span id="58" class="l"><a class="l" href="#58"> 58: </a>
-</span><span id="59" class="l"><a class="l" href="#59"> 59: </a>    <span class="php-comment">/** @var string */</span>
-</span><span id="60" class="l"><a class="l" href="#60"> 60: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$formatValue" href="#$formatValue">$formatValue</a></span>;
-</span><span id="61" class="l"><a class="l" href="#61"> 61: </a>
-</span><span id="62" class="l"><a class="l" href="#62"> 62: </a>    <span class="php-comment">/** @var \Nette\Utils\Html */</span>
-</span><span id="63" class="l"><a class="l" href="#63"> 63: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$wrapperPrototype" href="#$wrapperPrototype">$wrapperPrototype</a></span>;
-</span><span id="64" class="l"><a class="l" href="#64"> 64: </a>
-</span><span id="65" class="l"><a class="l" href="#65"> 65: </a>    <span class="php-comment">/** @var \Nette\Forms\Controls\BaseControl */</span>
-</span><span id="66" class="l"><a class="l" href="#66"> 66: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$control" href="#$control">$control</a></span>;
-</span><span id="67" class="l"><a class="l" href="#67"> 67: </a>
-</span><span id="68" class="l"><a class="l" href="#68"> 68: </a>    <span class="php-comment">/**
-</span></span><span id="69" class="l"><a class="l" href="#69"> 69: </a><span class="php-comment">     * @param \Grido\Grid $grid
-</span></span><span id="70" class="l"><a class="l" href="#70"> 70: </a><span class="php-comment">     * @param string $name
-</span></span><span id="71" class="l"><a class="l" href="#71"> 71: </a><span class="php-comment">     * @param string $label
-</span></span><span id="72" class="l"><a class="l" href="#72"> 72: </a><span class="php-comment">     * @param mixed $optional - if TYPE_SELECT then this it items for select
+</span><span id="37" class="l"><a class="l" href="#37"> 37: </a>    <span class="php-keyword1">const</span> <a id="TYPE_CUSTOM" href="#TYPE_CUSTOM">TYPE_CUSTOM</a> = <span class="php-quote">'Grido\Components\Filters\Custom'</span>;
+</span><span id="38" class="l"><a class="l" href="#38"> 38: </a>
+</span><span id="39" class="l"><a class="l" href="#39"> 39: </a>    <span class="php-keyword1">const</span> <a id="OPERATOR_AND" href="#OPERATOR_AND">OPERATOR_AND</a>  = <span class="php-quote">'AND'</span>;
+</span><span id="40" class="l"><a class="l" href="#40"> 40: </a>    <span class="php-keyword1">const</span> <a id="OPERATOR_OR" href="#OPERATOR_OR">OPERATOR_OR</a>   = <span class="php-quote">'OR'</span>;
+</span><span id="41" class="l"><a class="l" href="#41"> 41: </a>
+</span><span id="42" class="l"><a class="l" href="#42"> 42: </a>    <span class="php-keyword1">const</span> <a id="VALUE_IDENTIFIER" href="#VALUE_IDENTIFIER">VALUE_IDENTIFIER</a> = <span class="php-quote">'%value'</span>;
+</span><span id="43" class="l"><a class="l" href="#43"> 43: </a>
+</span><span id="44" class="l"><a class="l" href="#44"> 44: </a>    <span class="php-keyword1">const</span> <a id="CONDITION_CUSTOM" href="#CONDITION_CUSTOM">CONDITION_CUSTOM</a> = <span class="php-quote">':condition-custom:'</span>;
+</span><span id="45" class="l"><a class="l" href="#45"> 45: </a>    <span class="php-keyword1">const</span> <a id="CONDITION_CALLBACK" href="#CONDITION_CALLBACK">CONDITION_CALLBACK</a> = <span class="php-quote">':condition-callback:'</span>;
+</span><span id="46" class="l"><a class="l" href="#46"> 46: </a>    <span class="php-keyword1">const</span> <a id="CONDITION_NOT_APPLY" href="#CONDITION_NOT_APPLY">CONDITION_NOT_APPLY</a> = <span class="php-quote">':not-apply:'</span>;
+</span><span id="47" class="l"><a class="l" href="#47"> 47: </a>
+</span><span id="48" class="l"><a class="l" href="#48"> 48: </a>    <span class="php-keyword1">const</span> <a id="RENDER_INNER" href="#RENDER_INNER">RENDER_INNER</a> = <span class="php-quote">'inner'</span>;
+</span><span id="49" class="l"><a class="l" href="#49"> 49: </a>    <span class="php-keyword1">const</span> <a id="RENDER_OUTER" href="#RENDER_OUTER">RENDER_OUTER</a> = <span class="php-quote">'outer'</span>;
+</span><span id="50" class="l"><a class="l" href="#50"> 50: </a>
+</span><span id="51" class="l"><a class="l" href="#51"> 51: </a>    <span class="php-comment">/** @var mixed */</span>
+</span><span id="52" class="l"><a class="l" href="#52"> 52: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$optional" href="#$optional">$optional</a></span>;
+</span><span id="53" class="l"><a class="l" href="#53"> 53: </a>
+</span><span id="54" class="l"><a class="l" href="#54"> 54: </a>    <span class="php-comment">/** @var array */</span>
+</span><span id="55" class="l"><a class="l" href="#55"> 55: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$columns" href="#$columns">$columns</a></span> = <span class="php-keyword1">array</span>();
+</span><span id="56" class="l"><a class="l" href="#56"> 56: </a>
+</span><span id="57" class="l"><a class="l" href="#57"> 57: </a>    <span class="php-comment">/** @var mixed for -&gt;where('&lt;column&gt; = %s', &lt;value&gt;)  */</span>
+</span><span id="58" class="l"><a class="l" href="#58"> 58: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$condition" href="#$condition">$condition</a></span> = <span class="php-quote">'= %s'</span>;
+</span><span id="59" class="l"><a class="l" href="#59"> 59: </a>
+</span><span id="60" class="l"><a class="l" href="#60"> 60: </a>    <span class="php-comment">/** @var string */</span>
+</span><span id="61" class="l"><a class="l" href="#61"> 61: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$formatValue" href="#$formatValue">$formatValue</a></span>;
+</span><span id="62" class="l"><a class="l" href="#62"> 62: </a>
+</span><span id="63" class="l"><a class="l" href="#63"> 63: </a>    <span class="php-comment">/** @var \Nette\Utils\Html */</span>
+</span><span id="64" class="l"><a class="l" href="#64"> 64: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$wrapperPrototype" href="#$wrapperPrototype">$wrapperPrototype</a></span>;
+</span><span id="65" class="l"><a class="l" href="#65"> 65: </a>
+</span><span id="66" class="l"><a class="l" href="#66"> 66: </a>    <span class="php-comment">/** @var \Nette\Forms\Controls\BaseControl */</span>
+</span><span id="67" class="l"><a class="l" href="#67"> 67: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$control" href="#$control">$control</a></span>;
+</span><span id="68" class="l"><a class="l" href="#68"> 68: </a>
+</span><span id="69" class="l"><a class="l" href="#69"> 69: </a>    <span class="php-comment">/**
+</span></span><span id="70" class="l"><a class="l" href="#70"> 70: </a><span class="php-comment">     * @param \Grido\Grid $grid
+</span></span><span id="71" class="l"><a class="l" href="#71"> 71: </a><span class="php-comment">     * @param string $name
+</span></span><span id="72" class="l"><a class="l" href="#72"> 72: </a><span class="php-comment">     * @param string $label
 </span></span><span id="73" class="l"><a class="l" href="#73"> 73: </a><span class="php-comment">     */</span>
-</span><span id="74" class="l"><a class="l" href="#74"> 74: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="___construct" href="#___construct">__construct</a>(<span class="php-var">$grid</span>, <span class="php-var">$name</span>, <span class="php-var">$label</span>, <span class="php-var">$optional</span> = <span class="php-keyword1">NULL</span>)
+</span><span id="74" class="l"><a class="l" href="#74"> 74: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="___construct" href="#___construct">__construct</a>(<span class="php-var">$grid</span>, <span class="php-var">$name</span>, <span class="php-var">$label</span>)
 </span><span id="75" class="l"><a class="l" href="#75"> 75: </a>    {
 </span><span id="76" class="l"><a class="l" href="#76"> 76: </a>        <span class="php-var">$this</span>-&gt;addComponentToGrid(<span class="php-var">$grid</span>, <span class="php-var">$name</span>);
 </span><span id="77" class="l"><a class="l" href="#77"> 77: </a>

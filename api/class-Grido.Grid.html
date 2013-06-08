@@ -7,7 +7,7 @@
 	<title>Class Grido\Grid | Grido - DataGrid for Nette Framework.</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?3417875385"></script>
+	<script type="text/javascript" src="elementlist.js?3404767357"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido - DataGrid for Nette Framework." href="/opensearch.xml" />
 
@@ -146,7 +146,7 @@ Nette\Application\UI\Control
 
 				<b>Author:</b>
 				Petr Bugyík<br />
-		<b>Located at</b> <a href="source-class-Grido.Grid.html#21-1074" title="Go to source code">Grid.php</a><br />
+		<b>Located at</b> <a href="source-class-Grido.Grid.html#21-1084" title="Go to source code">Grid.php</a><br />
 	</div>
 
 
@@ -1970,6 +1970,46 @@ element; function($row, Html $tr).</p>
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="addFilterCustom" id="_addFilterCustom">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Grido.Components.Filters.Custom.html">Grido\Components\Filters\Custom</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_addFilterCustom">#</a>
+		<code><a href="source-class-Grido.Grid.html#989-997" title="Go to source code">addFilterCustom</a>( <span>string <var>$name</var></span>, <span>Nette\Forms\IControl <var>$formControl</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd><code>string</code><br>$name</dd>
+					<dt><var>$formControl</var></dt>
+					<dd><code>Nette\Forms\IControl</code><br>$formControl</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Grido.Components.Filters.Custom.html">Grido\Components\Filters\Custom</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="addFilter" id="_addFilter">
 
 		<td class="attributes"><code>
@@ -1981,7 +2021,7 @@ element; function($row, Html $tr).</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_addFilter">#</a>
-		<code><a href="source-class-Grido.Grid.html#989-1005" title="Go to source code">addFilter</a>( <span>string <var>$name</var></span>, <span>string <var>$label</var></span>, <span>string <var>$type</var> = Grido\Filter::TYPE_TEXT</span>, <span>mixed <var>$optional</var> = <span class="php-keyword1">NULL</span></span> )</code>
+		<code><a href="source-class-Grido.Grid.html#999-1015" title="Go to source code">addFilter</a>( <span>string <var>$name</var></span>, <span>string <var>$label</var> = <span class="php-keyword1">NULL</span></span>, <span>string <var>$type</var> = Grido\Filter::TYPE_TEXT</span>, <span>mixed <var>$optional</var> = <span class="php-keyword1">NULL</span></span> )</code>
 
 		<div class="description short">
 			
@@ -2000,7 +2040,7 @@ element; function($row, Html $tr).</p>
 					<dt><var>$type</var></dt>
 					<dd><code>string</code><br>$type starting constants with Filter::TYPE_</dd>
 					<dt><var>$optional</var></dt>
-					<dd><code>mixed</code><br>$optional if type is select, then this it items for select</dd>
+					<dd><code>mixed</code><br>$optional if type is select, then this is items for select</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -2029,7 +2069,7 @@ element; function($row, Html $tr).</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_addActionHref">#</a>
-		<code><a href="source-class-Grido.Grid.html#1009-1019" title="Go to source code">addActionHref</a>( <span>string <var>$name</var></span>, <span>string <var>$label</var></span>, <span>string <var>$destination</var> = <span class="php-keyword1">NULL</span></span>, <span>array <var>$args</var> = <span class="php-keyword1">NULL</span></span> )</code>
+		<code><a href="source-class-Grido.Grid.html#1019-1029" title="Go to source code">addActionHref</a>( <span>string <var>$name</var></span>, <span>string <var>$label</var></span>, <span>string <var>$destination</var> = <span class="php-keyword1">NULL</span></span>, <span>array <var>$args</var> = <span class="php-keyword1">NULL</span></span> )</code>
 
 		<div class="description short">
 			
@@ -2073,7 +2113,7 @@ element; function($row, Html $tr).</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_addAction">#</a>
-		<code><a href="source-class-Grido.Grid.html#1021-1038" title="Go to source code">addAction</a>( <span>string <var>$name</var></span>, <span>string <var>$label</var></span>, <span>string <var>$type</var> = Grido\Action::TYPE_HREF</span>, <span>string <var>$destination</var> = <span class="php-keyword1">NULL</span></span>, <span>array <var>$args</var> = <span class="php-keyword1">NULL</span></span> )</code>
+		<code><a href="source-class-Grido.Grid.html#1031-1048" title="Go to source code">addAction</a>( <span>string <var>$name</var></span>, <span>string <var>$label</var></span>, <span>string <var>$type</var> = Grido\Action::TYPE_HREF</span>, <span>string <var>$destination</var> = <span class="php-keyword1">NULL</span></span>, <span>array <var>$args</var> = <span class="php-keyword1">NULL</span></span> )</code>
 
 		<div class="description short">
 			
@@ -2123,7 +2163,7 @@ element; function($row, Html $tr).</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setOperations">#</a>
-		<code><a href="source-class-Grido.Grid.html#1042-1057" title="Go to source code">setOperations</a>( <span>array <var>$operations</var></span>, <span>callable <var>$onSubmit</var></span>, <span>string <var>$type</var> = <span class="php-quote">'\Grido\Components\Operation'</span></span> )</code>
+		<code><a href="source-class-Grido.Grid.html#1052-1067" title="Go to source code">setOperations</a>( <span>array <var>$operations</var></span>, <span>callable <var>$onSubmit</var></span>, <span>string <var>$type</var> = <span class="php-quote">'\Grido\Components\Operation'</span></span> )</code>
 
 		<div class="description short">
 			
@@ -2169,7 +2209,7 @@ element; function($row, Html $tr).</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setExporting">#</a>
-		<code><a href="source-class-Grido.Grid.html#1059-1073" title="Go to source code">setExporting</a>( <span>string <var>$name</var> = <span class="php-keyword1">NULL</span></span>, <span>string <var>$type</var> = <span class="php-quote">'\Grido\Components\Export'</span></span> )</code>
+		<code><a href="source-class-Grido.Grid.html#1069-1083" title="Go to source code">setExporting</a>( <span>string <var>$name</var> = <span class="php-keyword1">NULL</span></span>, <span>string <var>$type</var> = <span class="php-quote">'\Grido\Components\Export'</span></span> )</code>
 
 		<div class="description short">
 			
