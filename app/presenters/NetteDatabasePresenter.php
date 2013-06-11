@@ -37,13 +37,10 @@ final class NetteDatabasePresenter extends BasePresenter
                 ->setCondition(Filter::CONDITION_CALLBACK, callback($this, 'gridBirthdayFilterCondition'));
         $grid->getColumn('birthday')->cellPrototype->class[] = 'center';
 
-        $baseUri = $this->template->baseUri;
+        $templatePath = "{$this->context->parameters['appDir']}/templates/{$this->name}";
         $grid->addColumnText('country_code', 'Country')
             ->setSortable()
-            ->setCustomRender(function($item) use($baseUri) {
-                $img = Html::el('img')->src("$baseUri/img/flags/$item->country_code.gif");
-                return "$img {$item->country->title}";
-            })
+            ->setCustomRender("$templatePath/grid.country.latte")
             ->setFilterText()
                 ->setColumn('country.title')
                 ->setSuggestion(function($item){
