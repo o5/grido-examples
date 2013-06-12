@@ -140,7 +140,7 @@
 </span></span><span id="24" class="l"><a class="l" href="#24"> 24: </a><span class="php-comment"> * @property-read \Nette\Utils\Html $cellPrototype
 </span></span><span id="25" class="l"><a class="l" href="#25"> 25: </a><span class="php-comment"> * @property-read \Nette\Utils\Html $headerPrototype
 </span></span><span id="26" class="l"><a class="l" href="#26"> 26: </a><span class="php-comment"> * @property-write string $defaultSorting
-</span></span><span id="27" class="l"><a class="l" href="#27"> 27: </a><span class="php-comment"> * @property-write callback $customRender
+</span></span><span id="27" class="l"><a class="l" href="#27"> 27: </a><span class="php-comment"> * @property-write mixed $customRender
 </span></span><span id="28" class="l"><a class="l" href="#28"> 28: </a><span class="php-comment"> * @property-write array $replacements
 </span></span><span id="29" class="l"><a class="l" href="#29"> 29: </a><span class="php-comment"> * @property-write bool $sortable
 </span></span><span id="30" class="l"><a class="l" href="#30"> 30: </a><span class="php-comment"> * @property string $column
@@ -172,7 +172,7 @@
 </span><span id="56" class="l"><a class="l" href="#56"> 56: </a>    <span class="php-comment">/** @var \Nette\Utils\Html &lt;th&gt; html tag */</span>
 </span><span id="57" class="l"><a class="l" href="#57"> 57: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$headerPrototype" href="#$headerPrototype">$headerPrototype</a></span>;
 </span><span id="58" class="l"><a class="l" href="#58"> 58: </a>
-</span><span id="59" class="l"><a class="l" href="#59"> 59: </a>    <span class="php-comment">/** @var callback for custom rendering */</span>
+</span><span id="59" class="l"><a class="l" href="#59"> 59: </a>    <span class="php-comment">/** @var mixed for custom rendering */</span>
 </span><span id="60" class="l"><a class="l" href="#60"> 60: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$customRender" href="#$customRender">$customRender</a></span>;
 </span><span id="61" class="l"><a class="l" href="#61"> 61: </a>
 </span><span id="62" class="l"><a class="l" href="#62"> 62: </a>    <span class="php-comment">/** @var bool */</span>
@@ -238,12 +238,12 @@
 </span><span id="122" class="l"><a class="l" href="#122">122: </a>    }
 </span><span id="123" class="l"><a class="l" href="#123">123: </a>
 </span><span id="124" class="l"><a class="l" href="#124">124: </a>    <span class="php-comment">/**
-</span></span><span id="125" class="l"><a class="l" href="#125">125: </a><span class="php-comment">     * @param callback $callback array|closure
+</span></span><span id="125" class="l"><a class="l" href="#125">125: </a><span class="php-comment">     * @param mixed $customRender callback | string for name of template filename
 </span></span><span id="126" class="l"><a class="l" href="#126">126: </a><span class="php-comment">     * @return Column
 </span></span><span id="127" class="l"><a class="l" href="#127">127: </a><span class="php-comment">     */</span>
-</span><span id="128" class="l"><a class="l" href="#128">128: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setCustomRender" href="#_setCustomRender">setCustomRender</a>(<span class="php-var">$callback</span>)
+</span><span id="128" class="l"><a class="l" href="#128">128: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setCustomRender" href="#_setCustomRender">setCustomRender</a>(<span class="php-var">$customRender</span>)
 </span><span id="129" class="l"><a class="l" href="#129">129: </a>    {
-</span><span id="130" class="l"><a class="l" href="#130">130: </a>        <span class="php-var">$this</span>-&gt;customRender = <span class="php-var">$callback</span>;
+</span><span id="130" class="l"><a class="l" href="#130">130: </a>        <span class="php-var">$this</span>-&gt;customRender = <span class="php-var">$customRender</span>;
 </span><span id="131" class="l"><a class="l" href="#131">131: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>;
 </span><span id="132" class="l"><a class="l" href="#132">132: </a>    }
 </span><span id="133" class="l"><a class="l" href="#133">133: </a>
@@ -377,97 +377,106 @@
 </span><span id="261" class="l"><a class="l" href="#261">261: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;<span class="php-keyword2">sort</span>;
 </span><span id="262" class="l"><a class="l" href="#262">262: </a>    }
 </span><span id="263" class="l"><a class="l" href="#263">263: </a>
-</span><span id="264" class="l"><a class="l" href="#264">264: </a>    <span class="php-comment">/**********************************************************************************************/</span>
-</span><span id="265" class="l"><a class="l" href="#265">265: </a>
-</span><span id="266" class="l"><a class="l" href="#266">266: </a>    <span class="php-comment">/**
-</span></span><span id="267" class="l"><a class="l" href="#267">267: </a><span class="php-comment">     * @internal
-</span></span><span id="268" class="l"><a class="l" href="#268">268: </a><span class="php-comment">     * @return bool
-</span></span><span id="269" class="l"><a class="l" href="#269">269: </a><span class="php-comment">     */</span>
-</span><span id="270" class="l"><a class="l" href="#270">270: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_isSortable" href="#_isSortable">isSortable</a>()
-</span><span id="271" class="l"><a class="l" href="#271">271: </a>    {
-</span><span id="272" class="l"><a class="l" href="#272">272: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;sortable;
-</span><span id="273" class="l"><a class="l" href="#273">273: </a>    }
+</span><span id="264" class="l"><a class="l" href="#264">264: </a>    <span class="php-comment">/**
+</span></span><span id="265" class="l"><a class="l" href="#265">265: </a><span class="php-comment">     * @internal
+</span></span><span id="266" class="l"><a class="l" href="#266">266: </a><span class="php-comment">     * @return mixed
+</span></span><span id="267" class="l"><a class="l" href="#267">267: </a><span class="php-comment">     */</span>
+</span><span id="268" class="l"><a class="l" href="#268">268: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_getCustomRender" href="#_getCustomRender">getCustomRender</a>()
+</span><span id="269" class="l"><a class="l" href="#269">269: </a>    {
+</span><span id="270" class="l"><a class="l" href="#270">270: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;customRender;
+</span><span id="271" class="l"><a class="l" href="#271">271: </a>    }
+</span><span id="272" class="l"><a class="l" href="#272">272: </a>
+</span><span id="273" class="l"><a class="l" href="#273">273: </a>    <span class="php-comment">/**********************************************************************************************/</span>
 </span><span id="274" class="l"><a class="l" href="#274">274: </a>
 </span><span id="275" class="l"><a class="l" href="#275">275: </a>    <span class="php-comment">/**
 </span></span><span id="276" class="l"><a class="l" href="#276">276: </a><span class="php-comment">     * @internal
 </span></span><span id="277" class="l"><a class="l" href="#277">277: </a><span class="php-comment">     * @return bool
 </span></span><span id="278" class="l"><a class="l" href="#278">278: </a><span class="php-comment">     */</span>
-</span><span id="279" class="l"><a class="l" href="#279">279: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_hasFilter" href="#_hasFilter">hasFilter</a>()
+</span><span id="279" class="l"><a class="l" href="#279">279: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_isSortable" href="#_isSortable">isSortable</a>()
 </span><span id="280" class="l"><a class="l" href="#280">280: </a>    {
-</span><span id="281" class="l"><a class="l" href="#281">281: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;grid-&gt;hasFilters() &amp;&amp; <span class="php-var">$this</span>-&gt;grid[Filter::ID]-&gt;getComponent(<span class="php-var">$this</span>-&gt;name, <span class="php-keyword1">FALSE</span>);
+</span><span id="281" class="l"><a class="l" href="#281">281: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;sortable;
 </span><span id="282" class="l"><a class="l" href="#282">282: </a>    }
 </span><span id="283" class="l"><a class="l" href="#283">283: </a>
-</span><span id="284" class="l"><a class="l" href="#284">284: </a>    <span class="php-comment">/**********************************************************************************************/</span>
-</span><span id="285" class="l"><a class="l" href="#285">285: </a>
-</span><span id="286" class="l"><a class="l" href="#286">286: </a>    <span class="php-comment">/**
-</span></span><span id="287" class="l"><a class="l" href="#287">287: </a><span class="php-comment">     * @internal
-</span></span><span id="288" class="l"><a class="l" href="#288">288: </a><span class="php-comment">     * @param mixed $row
-</span></span><span id="289" class="l"><a class="l" href="#289">289: </a><span class="php-comment">     * @return void
-</span></span><span id="290" class="l"><a class="l" href="#290">290: </a><span class="php-comment">     */</span>
-</span><span id="291" class="l"><a class="l" href="#291">291: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_render" href="#_render">render</a>(<span class="php-var">$row</span>)
-</span><span id="292" class="l"><a class="l" href="#292">292: </a>    {
-</span><span id="293" class="l"><a class="l" href="#293">293: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;customRender) {
-</span><span id="294" class="l"><a class="l" href="#294">294: </a>            <span class="php-keyword1">return</span> callback(<span class="php-var">$this</span>-&gt;customRender)-&gt;invokeArgs(<span class="php-keyword1">array</span>(<span class="php-var">$row</span>));
-</span><span id="295" class="l"><a class="l" href="#295">295: </a>        }
-</span><span id="296" class="l"><a class="l" href="#296">296: </a>
-</span><span id="297" class="l"><a class="l" href="#297">297: </a>        <span class="php-var">$value</span> = <span class="php-var">$this</span>-&gt;getValue(<span class="php-var">$row</span>);
-</span><span id="298" class="l"><a class="l" href="#298">298: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword2">is_string</span>(<span class="php-var">$value</span>) || (<span class="php-keyword2">is_object</span>(<span class="php-var">$value</span>) &amp;&amp; <span class="php-keyword2">method_exists</span>(<span class="php-var">$value</span>, <span class="php-quote">'__toString'</span>))) {
-</span><span id="299" class="l"><a class="l" href="#299">299: </a>            <span class="php-var">$value</span> = \Nette\Templating\Helpers::escapeHtml(<span class="php-var">$value</span>);
-</span><span id="300" class="l"><a class="l" href="#300">300: </a>            <span class="php-var">$value</span> = <span class="php-var">$this</span>-&gt;applyReplacement(<span class="php-var">$value</span>);
-</span><span id="301" class="l"><a class="l" href="#301">301: </a>        }
-</span><span id="302" class="l"><a class="l" href="#302">302: </a>
-</span><span id="303" class="l"><a class="l" href="#303">303: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;formatValue(<span class="php-var">$value</span>);
-</span><span id="304" class="l"><a class="l" href="#304">304: </a>    }
+</span><span id="284" class="l"><a class="l" href="#284">284: </a>    <span class="php-comment">/**
+</span></span><span id="285" class="l"><a class="l" href="#285">285: </a><span class="php-comment">     * @internal
+</span></span><span id="286" class="l"><a class="l" href="#286">286: </a><span class="php-comment">     * @return bool
+</span></span><span id="287" class="l"><a class="l" href="#287">287: </a><span class="php-comment">     */</span>
+</span><span id="288" class="l"><a class="l" href="#288">288: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_hasFilter" href="#_hasFilter">hasFilter</a>()
+</span><span id="289" class="l"><a class="l" href="#289">289: </a>    {
+</span><span id="290" class="l"><a class="l" href="#290">290: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;grid-&gt;hasFilters() &amp;&amp; <span class="php-var">$this</span>-&gt;grid[Filter::ID]-&gt;getComponent(<span class="php-var">$this</span>-&gt;name, <span class="php-keyword1">FALSE</span>);
+</span><span id="291" class="l"><a class="l" href="#291">291: </a>    }
+</span><span id="292" class="l"><a class="l" href="#292">292: </a>
+</span><span id="293" class="l"><a class="l" href="#293">293: </a>    <span class="php-comment">/**********************************************************************************************/</span>
+</span><span id="294" class="l"><a class="l" href="#294">294: </a>
+</span><span id="295" class="l"><a class="l" href="#295">295: </a>    <span class="php-comment">/**
+</span></span><span id="296" class="l"><a class="l" href="#296">296: </a><span class="php-comment">     * @internal
+</span></span><span id="297" class="l"><a class="l" href="#297">297: </a><span class="php-comment">     * @param mixed $row
+</span></span><span id="298" class="l"><a class="l" href="#298">298: </a><span class="php-comment">     * @return void
+</span></span><span id="299" class="l"><a class="l" href="#299">299: </a><span class="php-comment">     */</span>
+</span><span id="300" class="l"><a class="l" href="#300">300: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_render" href="#_render">render</a>(<span class="php-var">$row</span>)
+</span><span id="301" class="l"><a class="l" href="#301">301: </a>    {
+</span><span id="302" class="l"><a class="l" href="#302">302: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword2">is_callable</span>(<span class="php-var">$this</span>-&gt;customRender)) {
+</span><span id="303" class="l"><a class="l" href="#303">303: </a>            <span class="php-keyword1">return</span> callback(<span class="php-var">$this</span>-&gt;customRender)-&gt;invokeArgs(<span class="php-keyword1">array</span>(<span class="php-var">$row</span>));
+</span><span id="304" class="l"><a class="l" href="#304">304: </a>        }
 </span><span id="305" class="l"><a class="l" href="#305">305: </a>
-</span><span id="306" class="l"><a class="l" href="#306">306: </a>    <span class="php-comment">/**
-</span></span><span id="307" class="l"><a class="l" href="#307">307: </a><span class="php-comment">     * @internal
-</span></span><span id="308" class="l"><a class="l" href="#308">308: </a><span class="php-comment">     * @param mixed $row
-</span></span><span id="309" class="l"><a class="l" href="#309">309: </a><span class="php-comment">     * @return string
-</span></span><span id="310" class="l"><a class="l" href="#310">310: </a><span class="php-comment">     */</span>
-</span><span id="311" class="l"><a class="l" href="#311">311: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_renderExport" href="#_renderExport">renderExport</a>(<span class="php-var">$row</span>)
-</span><span id="312" class="l"><a class="l" href="#312">312: </a>    {
-</span><span id="313" class="l"><a class="l" href="#313">313: </a>        <span class="php-var">$value</span> = <span class="php-var">$this</span>-&gt;getValue(<span class="php-var">$row</span>);
-</span><span id="314" class="l"><a class="l" href="#314">314: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">strip_tags</span>(<span class="php-var">$this</span>-&gt;applyReplacement(<span class="php-var">$value</span>));
-</span><span id="315" class="l"><a class="l" href="#315">315: </a>    }
-</span><span id="316" class="l"><a class="l" href="#316">316: </a>
-</span><span id="317" class="l"><a class="l" href="#317">317: </a>    <span class="php-comment">/**
-</span></span><span id="318" class="l"><a class="l" href="#318">318: </a><span class="php-comment">     * @param mixed $row
-</span></span><span id="319" class="l"><a class="l" href="#319">319: </a><span class="php-comment">     * @throws \InvalidArgumentException
-</span></span><span id="320" class="l"><a class="l" href="#320">320: </a><span class="php-comment">     * @return mixed
-</span></span><span id="321" class="l"><a class="l" href="#321">321: </a><span class="php-comment">     */</span>
-</span><span id="322" class="l"><a class="l" href="#322">322: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_getValue" href="#_getValue">getValue</a>(<span class="php-var">$row</span>)
-</span><span id="323" class="l"><a class="l" href="#323">323: </a>    {
-</span><span id="324" class="l"><a class="l" href="#324">324: </a>        <span class="php-var">$column</span> = <span class="php-var">$this</span>-&gt;getColumn();
-</span><span id="325" class="l"><a class="l" href="#325">325: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword2">is_string</span>(<span class="php-var">$column</span>)) {
-</span><span id="326" class="l"><a class="l" href="#326">326: </a>            <span class="php-keyword1">if</span> (!<span class="php-var">$this</span>-&gt;grid-&gt;propertyAccessor-&gt;hasProperty(<span class="php-var">$row</span>, <span class="php-var">$column</span>)) {
-</span><span id="327" class="l"><a class="l" href="#327">327: </a>                <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \InvalidArgumentException(<span class="php-quote">&quot;Column '</span><span class="php-var">$column</span><span class="php-quote">' does not exist in datasource.&quot;</span>);
-</span><span id="328" class="l"><a class="l" href="#328">328: </a>            }
-</span><span id="329" class="l"><a class="l" href="#329">329: </a>            <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;grid-&gt;propertyAccessor-&gt;getProperty(<span class="php-var">$row</span>, <span class="php-var">$column</span>);
-</span><span id="330" class="l"><a class="l" href="#330">330: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-keyword2">is_callable</span>(<span class="php-var">$column</span>)) {
-</span><span id="331" class="l"><a class="l" href="#331">331: </a>            <span class="php-keyword1">return</span> callback(<span class="php-var">$column</span>)-&gt;invokeArgs(<span class="php-keyword1">array</span>(<span class="php-var">$row</span>));
-</span><span id="332" class="l"><a class="l" href="#332">332: </a>        } <span class="php-keyword1">else</span> {
-</span><span id="333" class="l"><a class="l" href="#333">333: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \InvalidArgumentException(<span class="php-quote">'Column must be string or callback.'</span>);
-</span><span id="334" class="l"><a class="l" href="#334">334: </a>        }
-</span><span id="335" class="l"><a class="l" href="#335">335: </a>    }
-</span><span id="336" class="l"><a class="l" href="#336">336: </a>
-</span><span id="337" class="l"><a class="l" href="#337">337: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_applyReplacement" href="#_applyReplacement">applyReplacement</a>(<span class="php-var">$value</span>)
-</span><span id="338" class="l"><a class="l" href="#338">338: </a>    {
-</span><span id="339" class="l"><a class="l" href="#339">339: </a>        <span class="php-keyword1">return</span> (<span class="php-keyword2">is_string</span>(<span class="php-var">$value</span>) || <span class="php-var">$value</span> == <span class="php-quote">''</span> || <span class="php-var">$value</span> === <span class="php-keyword1">NULL</span>) &amp;&amp; <span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;replacements[<span class="php-var">$value</span>])
-</span><span id="340" class="l"><a class="l" href="#340">340: </a>            ? <span class="php-keyword2">str_replace</span>(self::VALUE_IDENTIFIER, <span class="php-var">$value</span>, <span class="php-var">$this</span>-&gt;replacements[<span class="php-var">$value</span>])
-</span><span id="341" class="l"><a class="l" href="#341">341: </a>            : <span class="php-var">$value</span>;
-</span><span id="342" class="l"><a class="l" href="#342">342: </a>    }
-</span><span id="343" class="l"><a class="l" href="#343">343: </a>
-</span><span id="344" class="l"><a class="l" href="#344">344: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_formatValue" href="#_formatValue">formatValue</a>(<span class="php-var">$value</span>)
-</span><span id="345" class="l"><a class="l" href="#345">345: </a>    {
-</span><span id="346" class="l"><a class="l" href="#346">346: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;truncate) {
-</span><span id="347" class="l"><a class="l" href="#347">347: </a>            <span class="php-var">$truncate</span> = <span class="php-var">$this</span>-&gt;truncate;
-</span><span id="348" class="l"><a class="l" href="#348">348: </a>            <span class="php-var">$value</span> = <span class="php-var">$truncate</span>(<span class="php-var">$value</span>);
-</span><span id="349" class="l"><a class="l" href="#349">349: </a>        }
-</span><span id="350" class="l"><a class="l" href="#350">350: </a>
-</span><span id="351" class="l"><a class="l" href="#351">351: </a>        <span class="php-keyword1">return</span> <span class="php-var">$value</span>;
-</span><span id="352" class="l"><a class="l" href="#352">352: </a>    }
-</span><span id="353" class="l"><a class="l" href="#353">353: </a>}
-</span><span id="354" class="l"><a class="l" href="#354">354: </a></span></code></pre>
+</span><span id="306" class="l"><a class="l" href="#306">306: </a>        <span class="php-var">$value</span> = <span class="php-var">$this</span>-&gt;getValue(<span class="php-var">$row</span>);
+</span><span id="307" class="l"><a class="l" href="#307">307: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword2">is_string</span>(<span class="php-var">$value</span>) || (<span class="php-keyword2">is_object</span>(<span class="php-var">$value</span>) &amp;&amp; <span class="php-keyword2">method_exists</span>(<span class="php-var">$value</span>, <span class="php-quote">'__toString'</span>))) {
+</span><span id="308" class="l"><a class="l" href="#308">308: </a>            <span class="php-var">$value</span> = \Nette\Templating\Helpers::escapeHtml(<span class="php-var">$value</span>);
+</span><span id="309" class="l"><a class="l" href="#309">309: </a>            <span class="php-var">$value</span> = <span class="php-var">$this</span>-&gt;applyReplacement(<span class="php-var">$value</span>);
+</span><span id="310" class="l"><a class="l" href="#310">310: </a>        }
+</span><span id="311" class="l"><a class="l" href="#311">311: </a>
+</span><span id="312" class="l"><a class="l" href="#312">312: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;formatValue(<span class="php-var">$value</span>);
+</span><span id="313" class="l"><a class="l" href="#313">313: </a>    }
+</span><span id="314" class="l"><a class="l" href="#314">314: </a>
+</span><span id="315" class="l"><a class="l" href="#315">315: </a>    <span class="php-comment">/**
+</span></span><span id="316" class="l"><a class="l" href="#316">316: </a><span class="php-comment">     * @internal
+</span></span><span id="317" class="l"><a class="l" href="#317">317: </a><span class="php-comment">     * @param mixed $row
+</span></span><span id="318" class="l"><a class="l" href="#318">318: </a><span class="php-comment">     * @return string
+</span></span><span id="319" class="l"><a class="l" href="#319">319: </a><span class="php-comment">     */</span>
+</span><span id="320" class="l"><a class="l" href="#320">320: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_renderExport" href="#_renderExport">renderExport</a>(<span class="php-var">$row</span>)
+</span><span id="321" class="l"><a class="l" href="#321">321: </a>    {
+</span><span id="322" class="l"><a class="l" href="#322">322: </a>        <span class="php-var">$value</span> = <span class="php-var">$this</span>-&gt;getValue(<span class="php-var">$row</span>);
+</span><span id="323" class="l"><a class="l" href="#323">323: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">strip_tags</span>(<span class="php-var">$this</span>-&gt;applyReplacement(<span class="php-var">$value</span>));
+</span><span id="324" class="l"><a class="l" href="#324">324: </a>    }
+</span><span id="325" class="l"><a class="l" href="#325">325: </a>
+</span><span id="326" class="l"><a class="l" href="#326">326: </a>    <span class="php-comment">/**
+</span></span><span id="327" class="l"><a class="l" href="#327">327: </a><span class="php-comment">     * @param mixed $row
+</span></span><span id="328" class="l"><a class="l" href="#328">328: </a><span class="php-comment">     * @throws \InvalidArgumentException
+</span></span><span id="329" class="l"><a class="l" href="#329">329: </a><span class="php-comment">     * @return mixed
+</span></span><span id="330" class="l"><a class="l" href="#330">330: </a><span class="php-comment">     */</span>
+</span><span id="331" class="l"><a class="l" href="#331">331: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_getValue" href="#_getValue">getValue</a>(<span class="php-var">$row</span>)
+</span><span id="332" class="l"><a class="l" href="#332">332: </a>    {
+</span><span id="333" class="l"><a class="l" href="#333">333: </a>        <span class="php-var">$column</span> = <span class="php-var">$this</span>-&gt;getColumn();
+</span><span id="334" class="l"><a class="l" href="#334">334: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword2">is_string</span>(<span class="php-var">$column</span>)) {
+</span><span id="335" class="l"><a class="l" href="#335">335: </a>            <span class="php-keyword1">if</span> (!<span class="php-var">$this</span>-&gt;grid-&gt;propertyAccessor-&gt;hasProperty(<span class="php-var">$row</span>, <span class="php-var">$column</span>)) {
+</span><span id="336" class="l"><a class="l" href="#336">336: </a>                <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \InvalidArgumentException(<span class="php-quote">&quot;Column '</span><span class="php-var">$column</span><span class="php-quote">' does not exist in datasource.&quot;</span>);
+</span><span id="337" class="l"><a class="l" href="#337">337: </a>            }
+</span><span id="338" class="l"><a class="l" href="#338">338: </a>            <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;grid-&gt;propertyAccessor-&gt;getProperty(<span class="php-var">$row</span>, <span class="php-var">$column</span>);
+</span><span id="339" class="l"><a class="l" href="#339">339: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-keyword2">is_callable</span>(<span class="php-var">$column</span>)) {
+</span><span id="340" class="l"><a class="l" href="#340">340: </a>            <span class="php-keyword1">return</span> callback(<span class="php-var">$column</span>)-&gt;invokeArgs(<span class="php-keyword1">array</span>(<span class="php-var">$row</span>));
+</span><span id="341" class="l"><a class="l" href="#341">341: </a>        } <span class="php-keyword1">else</span> {
+</span><span id="342" class="l"><a class="l" href="#342">342: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \InvalidArgumentException(<span class="php-quote">'Column must be string or callback.'</span>);
+</span><span id="343" class="l"><a class="l" href="#343">343: </a>        }
+</span><span id="344" class="l"><a class="l" href="#344">344: </a>    }
+</span><span id="345" class="l"><a class="l" href="#345">345: </a>
+</span><span id="346" class="l"><a class="l" href="#346">346: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_applyReplacement" href="#_applyReplacement">applyReplacement</a>(<span class="php-var">$value</span>)
+</span><span id="347" class="l"><a class="l" href="#347">347: </a>    {
+</span><span id="348" class="l"><a class="l" href="#348">348: </a>        <span class="php-keyword1">return</span> (<span class="php-keyword2">is_string</span>(<span class="php-var">$value</span>) || <span class="php-var">$value</span> == <span class="php-quote">''</span> || <span class="php-var">$value</span> === <span class="php-keyword1">NULL</span>) &amp;&amp; <span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;replacements[<span class="php-var">$value</span>])
+</span><span id="349" class="l"><a class="l" href="#349">349: </a>            ? <span class="php-keyword2">str_replace</span>(self::VALUE_IDENTIFIER, <span class="php-var">$value</span>, <span class="php-var">$this</span>-&gt;replacements[<span class="php-var">$value</span>])
+</span><span id="350" class="l"><a class="l" href="#350">350: </a>            : <span class="php-var">$value</span>;
+</span><span id="351" class="l"><a class="l" href="#351">351: </a>    }
+</span><span id="352" class="l"><a class="l" href="#352">352: </a>
+</span><span id="353" class="l"><a class="l" href="#353">353: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_formatValue" href="#_formatValue">formatValue</a>(<span class="php-var">$value</span>)
+</span><span id="354" class="l"><a class="l" href="#354">354: </a>    {
+</span><span id="355" class="l"><a class="l" href="#355">355: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;truncate) {
+</span><span id="356" class="l"><a class="l" href="#356">356: </a>            <span class="php-var">$truncate</span> = <span class="php-var">$this</span>-&gt;truncate;
+</span><span id="357" class="l"><a class="l" href="#357">357: </a>            <span class="php-var">$value</span> = <span class="php-var">$truncate</span>(<span class="php-var">$value</span>);
+</span><span id="358" class="l"><a class="l" href="#358">358: </a>        }
+</span><span id="359" class="l"><a class="l" href="#359">359: </a>
+</span><span id="360" class="l"><a class="l" href="#360">360: </a>        <span class="php-keyword1">return</span> <span class="php-var">$value</span>;
+</span><span id="361" class="l"><a class="l" href="#361">361: </a>    }
+</span><span id="362" class="l"><a class="l" href="#362">362: </a>}
+</span><span id="363" class="l"><a class="l" href="#363">363: </a></span></code></pre>
 
 	<div id="footer">
 		Grido - DataGrid for Nette Framework. API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>

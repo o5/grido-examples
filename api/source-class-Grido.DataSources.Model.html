@@ -161,29 +161,31 @@
 </span><span id="42" class="l"><a class="l" href="#42">42: </a>            <span class="php-var">$dataSource</span> = <span class="php-keyword1">new</span> Doctrine(<span class="php-var">$model</span>);
 </span><span id="43" class="l"><a class="l" href="#43">43: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-keyword2">is_array</span>(<span class="php-var">$model</span>)) {
 </span><span id="44" class="l"><a class="l" href="#44">44: </a>            <span class="php-var">$dataSource</span> = <span class="php-keyword1">new</span> ArraySource(<span class="php-var">$model</span>);
-</span><span id="45" class="l"><a class="l" href="#45">45: </a>        } <span class="php-keyword1">else</span> {
-</span><span id="46" class="l"><a class="l" href="#46">46: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \InvalidArgumentException(<span class="php-quote">'Model must be implemented \Grido\DataSources\IDataSource.'</span>);
-</span><span id="47" class="l"><a class="l" href="#47">47: </a>        }
-</span><span id="48" class="l"><a class="l" href="#48">48: </a>
-</span><span id="49" class="l"><a class="l" href="#49">49: </a>        <span class="php-var">$this</span>-&gt;dataSource = <span class="php-var">$dataSource</span>;
-</span><span id="50" class="l"><a class="l" href="#50">50: </a>    }
-</span><span id="51" class="l"><a class="l" href="#51">51: </a>
-</span><span id="52" class="l"><a class="l" href="#52">52: </a>    <span class="php-comment">/**
-</span></span><span id="53" class="l"><a class="l" href="#53">53: </a><span class="php-comment">     * @return \IDataSource
-</span></span><span id="54" class="l"><a class="l" href="#54">54: </a><span class="php-comment">     */</span>
-</span><span id="55" class="l"><a class="l" href="#55">55: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_getDataSource" href="#_getDataSource">getDataSource</a>()
-</span><span id="56" class="l"><a class="l" href="#56">56: </a>    {
-</span><span id="57" class="l"><a class="l" href="#57">57: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;dataSource;
-</span><span id="58" class="l"><a class="l" href="#58">58: </a>    }
-</span><span id="59" class="l"><a class="l" href="#59">59: </a>
-</span><span id="60" class="l"><a class="l" href="#60">60: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="___call" href="#___call">__call</a>(<span class="php-var">$method</span>, <span class="php-var">$args</span>)
-</span><span id="61" class="l"><a class="l" href="#61">61: </a>    {
-</span><span id="62" class="l"><a class="l" href="#62">62: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;callback[<span class="php-var">$method</span>])
-</span><span id="63" class="l"><a class="l" href="#63">63: </a>            ? callback(<span class="php-var">$this</span>-&gt;callback[<span class="php-var">$method</span>])-&gt;invokeArgs(<span class="php-keyword1">array</span>(<span class="php-var">$this</span>-&gt;dataSource, <span class="php-var">$args</span>))
-</span><span id="64" class="l"><a class="l" href="#64">64: </a>            : <span class="php-keyword2">call_user_func_array</span>(<span class="php-keyword1">array</span>(<span class="php-var">$this</span>-&gt;dataSource, <span class="php-var">$method</span>), <span class="php-var">$args</span>);
-</span><span id="65" class="l"><a class="l" href="#65">65: </a>    }
-</span><span id="66" class="l"><a class="l" href="#66">66: </a>}
-</span><span id="67" class="l"><a class="l" href="#67">67: </a></span></code></pre>
+</span><span id="45" class="l"><a class="l" href="#45">45: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-var">$model</span> <span class="php-keyword1">instanceof</span> IDataSource) {
+</span><span id="46" class="l"><a class="l" href="#46">46: </a>            <span class="php-var">$dataSource</span> = <span class="php-var">$model</span>;
+</span><span id="47" class="l"><a class="l" href="#47">47: </a>        } <span class="php-keyword1">else</span> {
+</span><span id="48" class="l"><a class="l" href="#48">48: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \InvalidArgumentException(<span class="php-quote">'Model must be implemented \Grido\DataSources\IDataSource.'</span>);
+</span><span id="49" class="l"><a class="l" href="#49">49: </a>        }
+</span><span id="50" class="l"><a class="l" href="#50">50: </a>
+</span><span id="51" class="l"><a class="l" href="#51">51: </a>        <span class="php-var">$this</span>-&gt;dataSource = <span class="php-var">$dataSource</span>;
+</span><span id="52" class="l"><a class="l" href="#52">52: </a>    }
+</span><span id="53" class="l"><a class="l" href="#53">53: </a>
+</span><span id="54" class="l"><a class="l" href="#54">54: </a>    <span class="php-comment">/**
+</span></span><span id="55" class="l"><a class="l" href="#55">55: </a><span class="php-comment">     * @return \IDataSource
+</span></span><span id="56" class="l"><a class="l" href="#56">56: </a><span class="php-comment">     */</span>
+</span><span id="57" class="l"><a class="l" href="#57">57: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_getDataSource" href="#_getDataSource">getDataSource</a>()
+</span><span id="58" class="l"><a class="l" href="#58">58: </a>    {
+</span><span id="59" class="l"><a class="l" href="#59">59: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;dataSource;
+</span><span id="60" class="l"><a class="l" href="#60">60: </a>    }
+</span><span id="61" class="l"><a class="l" href="#61">61: </a>
+</span><span id="62" class="l"><a class="l" href="#62">62: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="___call" href="#___call">__call</a>(<span class="php-var">$method</span>, <span class="php-var">$args</span>)
+</span><span id="63" class="l"><a class="l" href="#63">63: </a>    {
+</span><span id="64" class="l"><a class="l" href="#64">64: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;callback[<span class="php-var">$method</span>])
+</span><span id="65" class="l"><a class="l" href="#65">65: </a>            ? callback(<span class="php-var">$this</span>-&gt;callback[<span class="php-var">$method</span>])-&gt;invokeArgs(<span class="php-keyword1">array</span>(<span class="php-var">$this</span>-&gt;dataSource, <span class="php-var">$args</span>))
+</span><span id="66" class="l"><a class="l" href="#66">66: </a>            : <span class="php-keyword2">call_user_func_array</span>(<span class="php-keyword1">array</span>(<span class="php-var">$this</span>-&gt;dataSource, <span class="php-var">$method</span>), <span class="php-var">$args</span>);
+</span><span id="67" class="l"><a class="l" href="#67">67: </a>    }
+</span><span id="68" class="l"><a class="l" href="#68">68: </a>}
+</span><span id="69" class="l"><a class="l" href="#69">69: </a></span></code></pre>
 
 	<div id="footer">
 		Grido - DataGrid for Nette Framework. API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>

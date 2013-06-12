@@ -169,7 +169,7 @@ Nette\Application\UI\PresenterComponent
 
 				<b>Author:</b>
 				Petr Bugyík<br />
-		<b>Located at</b> <a href="source-class-Grido.Components.Columns.Column.html#16-353" title="Go to source code">Components/Columns/Column.php</a><br />
+		<b>Located at</b> <a href="source-class-Grido.Components.Columns.Column.html#16-362" title="Go to source code">Components/Columns/Column.php</a><br />
 	</div>
 
 
@@ -377,7 +377,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setCustomRender">#</a>
-		<code><a href="source-class-Grido.Components.Columns.Column.html#124-132" title="Go to source code">setCustomRender</a>( <span>callable <var>$callback</var></span> )</code>
+		<code><a href="source-class-Grido.Components.Columns.Column.html#124-132" title="Go to source code">setCustomRender</a>( <span>mixed <var>$customRender</var></span> )</code>
 
 		<div class="description short">
 			
@@ -389,8 +389,8 @@ Nette\Application\UI\PresenterComponent
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$callback</var></dt>
-					<dd><code>callable</code><br>$callback array|closure</dd>
+					<dt><var>$customRender</var></dt>
+					<dd><code>mixed</code><br>$customRender callback | string for name of template filename</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -739,7 +739,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getValue">#</a>
-		<code><a href="source-class-Grido.Components.Columns.Column.html#317-335" title="Go to source code">getValue</a>( <span>mixed <var>$row</var></span> )</code>
+		<code><a href="source-class-Grido.Components.Columns.Column.html#326-344" title="Go to source code">getValue</a>( <span>mixed <var>$row</var></span> )</code>
 
 		<div class="description short">
 			
@@ -781,7 +781,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_applyReplacement">#</a>
-		<code><a href="source-class-Grido.Components.Columns.Column.html#337-342" title="Go to source code">applyReplacement</a>( <span>mixed <var>$value</var></span> )</code>
+		<code><a href="source-class-Grido.Components.Columns.Column.html#346-351" title="Go to source code">applyReplacement</a>( <span>mixed <var>$value</var></span> )</code>
 
 		<div class="description short">
 			
@@ -810,7 +810,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_formatValue">#</a>
-		<code><a href="source-class-Grido.Components.Columns.Column.html#344-352" title="Go to source code">formatValue</a>( <span>mixed <var>$value</var></span> )</code>
+		<code><a href="source-class-Grido.Components.Columns.Column.html#353-361" title="Go to source code">formatValue</a>( <span>mixed <var>$value</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1140,7 +1140,7 @@ Nette\Application\UI\PresenterComponent
 	<tr data-order="customRender" id="$customRender">
 		<td class="attributes"><code>
 			protected  
-			callable
+			mixed
 		</code></td>
 
 		<td class="name">
@@ -1367,7 +1367,7 @@ Nette\Application\UI\PresenterComponent
 	<tr data-order="customRender" id="m$customRender">
 		<td class="attributes"><code>
 			public  write-only
-			callable
+			mixed
 		</code></td>
 
 		<td class="name">

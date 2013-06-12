@@ -154,69 +154,77 @@
 </span><span id="40" class="l"><a class="l" href="#40"> 40: </a>        <span class="php-var">$grid</span>-&gt;addComponent(<span class="php-var">$this</span>, self::ID);
 </span><span id="41" class="l"><a class="l" href="#41"> 41: </a>    }
 </span><span id="42" class="l"><a class="l" href="#42"> 42: </a>
-</span><span id="43" class="l"><a class="l" href="#43"> 43: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_generateCsv" href="#_generateCsv">generateCsv</a>(<span class="php-var">$data</span>, <span class="php-var">$columns</span>)
-</span><span id="44" class="l"><a class="l" href="#44"> 44: </a>    {
-</span><span id="45" class="l"><a class="l" href="#45"> 45: </a>        <span class="php-var">$newLine</span> = <span class="php-quote">&quot;\n&quot;</span>;
-</span><span id="46" class="l"><a class="l" href="#46"> 46: </a>        <span class="php-var">$delimiter</span> = <span class="php-quote">&quot;\t&quot;</span>;
-</span><span id="47" class="l"><a class="l" href="#47"> 47: </a>
-</span><span id="48" class="l"><a class="l" href="#48"> 48: </a>        <span class="php-var">$head</span> = <span class="php-keyword1">array</span>();
-</span><span id="49" class="l"><a class="l" href="#49"> 49: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$columns</span> <span class="php-keyword1">as</span> <span class="php-var">$column</span>) {
-</span><span id="50" class="l"><a class="l" href="#50"> 50: </a>            <span class="php-var">$head</span>[] = <span class="php-var">$column</span>-&gt;label;
-</span><span id="51" class="l"><a class="l" href="#51"> 51: </a>        }
-</span><span id="52" class="l"><a class="l" href="#52"> 52: </a>        <span class="php-var">$a</span> = <span class="php-keyword1">FALSE</span>;
-</span><span id="53" class="l"><a class="l" href="#53"> 53: </a>        <span class="php-var">$source</span> = <span class="php-keyword2">implode</span>(<span class="php-var">$delimiter</span>, <span class="php-var">$head</span>) . <span class="php-var">$newLine</span>;
-</span><span id="54" class="l"><a class="l" href="#54"> 54: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$data</span> <span class="php-keyword1">as</span> <span class="php-var">$item</span>) {
-</span><span id="55" class="l"><a class="l" href="#55"> 55: </a>            <span class="php-keyword1">if</span> (<span class="php-var">$a</span>) {
-</span><span id="56" class="l"><a class="l" href="#56"> 56: </a>                <span class="php-var">$source</span> .= <span class="php-var">$newLine</span>;
-</span><span id="57" class="l"><a class="l" href="#57"> 57: </a>            }
-</span><span id="58" class="l"><a class="l" href="#58"> 58: </a>            <span class="php-var">$b</span> = <span class="php-keyword1">FALSE</span>;
-</span><span id="59" class="l"><a class="l" href="#59"> 59: </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$columns</span> <span class="php-keyword1">as</span> <span class="php-var">$column</span>) {
-</span><span id="60" class="l"><a class="l" href="#60"> 60: </a>                <span class="php-keyword1">if</span> (<span class="php-var">$b</span>) {
-</span><span id="61" class="l"><a class="l" href="#61"> 61: </a>                    <span class="php-var">$source</span> .= <span class="php-var">$delimiter</span>;
-</span><span id="62" class="l"><a class="l" href="#62"> 62: </a>                }
-</span><span id="63" class="l"><a class="l" href="#63"> 63: </a>                <span class="php-var">$source</span> .= <span class="php-var">$column</span>-&gt;renderExport(<span class="php-var">$item</span>);
-</span><span id="64" class="l"><a class="l" href="#64"> 64: </a>                <span class="php-var">$b</span> = <span class="php-keyword1">TRUE</span>;
-</span><span id="65" class="l"><a class="l" href="#65"> 65: </a>            }
-</span><span id="66" class="l"><a class="l" href="#66"> 66: </a>            <span class="php-var">$a</span> = <span class="php-keyword1">TRUE</span>;
-</span><span id="67" class="l"><a class="l" href="#67"> 67: </a>        }
-</span><span id="68" class="l"><a class="l" href="#68"> 68: </a>
-</span><span id="69" class="l"><a class="l" href="#69"> 69: </a>        <span class="php-keyword1">return</span> <span class="php-var">$source</span>;
-</span><span id="70" class="l"><a class="l" href="#70"> 70: </a>    }
-</span><span id="71" class="l"><a class="l" href="#71"> 71: </a>
-</span><span id="72" class="l"><a class="l" href="#72"> 72: </a>    <span class="php-comment">/**
-</span></span><span id="73" class="l"><a class="l" href="#73"> 73: </a><span class="php-comment">     * @internal
-</span></span><span id="74" class="l"><a class="l" href="#74"> 74: </a><span class="php-comment">     */</span>
-</span><span id="75" class="l"><a class="l" href="#75"> 75: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_handleExport" href="#_handleExport">handleExport</a>()
-</span><span id="76" class="l"><a class="l" href="#76"> 76: </a>    {
-</span><span id="77" class="l"><a class="l" href="#77"> 77: </a>        <span class="php-var">$this</span>-&gt;grid-&gt;presenter-&gt;sendResponse(<span class="php-var">$this</span>);
-</span><span id="78" class="l"><a class="l" href="#78"> 78: </a>        <span class="php-var">$this</span>-&gt;grid-&gt;presenter-&gt;terminate();
-</span><span id="79" class="l"><a class="l" href="#79"> 79: </a>    }
-</span><span id="80" class="l"><a class="l" href="#80"> 80: </a>
-</span><span id="81" class="l"><a class="l" href="#81"> 81: </a>    <span class="php-comment">/*************************** interface \Nette\Application\IResponse ***************************/</span>
-</span><span id="82" class="l"><a class="l" href="#82"> 82: </a>
-</span><span id="83" class="l"><a class="l" href="#83"> 83: </a>    <span class="php-comment">/**
-</span></span><span id="84" class="l"><a class="l" href="#84"> 84: </a><span class="php-comment">     * Sends response to output.
-</span></span><span id="85" class="l"><a class="l" href="#85"> 85: </a><span class="php-comment">     * @return void
-</span></span><span id="86" class="l"><a class="l" href="#86"> 86: </a><span class="php-comment">     */</span>
-</span><span id="87" class="l"><a class="l" href="#87"> 87: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_send" href="#_send">send</a>(\Nette\Http\IRequest <span class="php-var">$httpRequest</span>, \Nette\Http\IResponse <span class="php-var">$httpResponse</span>)
-</span><span id="88" class="l"><a class="l" href="#88"> 88: </a>    {
-</span><span id="89" class="l"><a class="l" href="#89"> 89: </a>        <span class="php-var">$data</span> = <span class="php-var">$this</span>-&gt;grid-&gt;getData(<span class="php-keyword1">FALSE</span>);
-</span><span id="90" class="l"><a class="l" href="#90"> 90: </a>        <span class="php-var">$columns</span> = <span class="php-var">$this</span>-&gt;grid[\Grido\Components\Columns\Column::ID]-&gt;getComponents();
-</span><span id="91" class="l"><a class="l" href="#91"> 91: </a>        <span class="php-var">$source</span> = <span class="php-var">$this</span>-&gt;generateCsv(<span class="php-var">$data</span>, <span class="php-var">$columns</span>);
-</span><span id="92" class="l"><a class="l" href="#92"> 92: </a>
-</span><span id="93" class="l"><a class="l" href="#93"> 93: </a>        <span class="php-var">$charset</span> = <span class="php-quote">'UTF-16LE'</span>;
-</span><span id="94" class="l"><a class="l" href="#94"> 94: </a>        <span class="php-var">$source</span> = <span class="php-keyword2">mb_convert_encoding</span>(<span class="php-var">$source</span>, <span class="php-var">$charset</span>, <span class="php-quote">'UTF-8'</span>);
-</span><span id="95" class="l"><a class="l" href="#95"> 95: </a>        <span class="php-var">$source</span> = <span class="php-quote">&quot;\xFF\xFE&quot;</span> . <span class="php-var">$source</span>; <span class="php-comment">//add BOM</span>
-</span><span id="96" class="l"><a class="l" href="#96"> 96: </a>
-</span><span id="97" class="l"><a class="l" href="#97"> 97: </a>        <span class="php-var">$httpResponse</span>-&gt;setHeader(<span class="php-quote">'Content-Encoding'</span>, <span class="php-var">$charset</span>);
-</span><span id="98" class="l"><a class="l" href="#98"> 98: </a>        <span class="php-var">$httpResponse</span>-&gt;setHeader(<span class="php-quote">'Content-Length'</span>, <span class="php-keyword2">strlen</span>(<span class="php-var">$source</span>));
-</span><span id="99" class="l"><a class="l" href="#99"> 99: </a>        <span class="php-var">$httpResponse</span>-&gt;setHeader(<span class="php-quote">'Content-Type'</span>, <span class="php-quote">&quot;text/csv; charset=</span><span class="php-var">$charset</span><span class="php-quote">&quot;</span>);
-</span><span id="100" class="l"><a class="l" href="#100">100: </a>        <span class="php-var">$httpResponse</span>-&gt;setHeader(<span class="php-quote">'Content-Disposition'</span>, <span class="php-quote">&quot;attachment; filename=\&quot;</span><span class="php-var">{$this-&gt;name}</span><span class="php-quote">.csv\&quot;&quot;</span>);
-</span><span id="101" class="l"><a class="l" href="#101">101: </a>
-</span><span id="102" class="l"><a class="l" href="#102">102: </a>        <span class="php-keyword1">print</span> <span class="php-var">$source</span>;
-</span><span id="103" class="l"><a class="l" href="#103">103: </a>    }
-</span><span id="104" class="l"><a class="l" href="#104">104: </a>}
-</span><span id="105" class="l"><a class="l" href="#105">105: </a></span></code></pre>
+</span><span id="43" class="l"><a class="l" href="#43"> 43: </a>    <span class="php-comment">/**
+</span></span><span id="44" class="l"><a class="l" href="#44"> 44: </a><span class="php-comment">     * @param array $data
+</span></span><span id="45" class="l"><a class="l" href="#45"> 45: </a><span class="php-comment">     * @param \Nette\ComponentModel\RecursiveComponentIterator $columns
+</span></span><span id="46" class="l"><a class="l" href="#46"> 46: </a><span class="php-comment">     * @return string
+</span></span><span id="47" class="l"><a class="l" href="#47"> 47: </a><span class="php-comment">     */</span>
+</span><span id="48" class="l"><a class="l" href="#48"> 48: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_generateCsv" href="#_generateCsv">generateCsv</a>(<span class="php-var">$data</span>, <span class="php-var">$columns</span>)
+</span><span id="49" class="l"><a class="l" href="#49"> 49: </a>    {
+</span><span id="50" class="l"><a class="l" href="#50"> 50: </a>        <span class="php-var">$newLine</span> = <span class="php-quote">&quot;\n&quot;</span>;
+</span><span id="51" class="l"><a class="l" href="#51"> 51: </a>        <span class="php-var">$delimiter</span> = <span class="php-quote">&quot;\t&quot;</span>;
+</span><span id="52" class="l"><a class="l" href="#52"> 52: </a>
+</span><span id="53" class="l"><a class="l" href="#53"> 53: </a>        <span class="php-var">$head</span> = <span class="php-keyword1">array</span>();
+</span><span id="54" class="l"><a class="l" href="#54"> 54: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$columns</span> <span class="php-keyword1">as</span> <span class="php-var">$column</span>) {
+</span><span id="55" class="l"><a class="l" href="#55"> 55: </a>            <span class="php-var">$head</span>[] = <span class="php-var">$column</span>-&gt;label;
+</span><span id="56" class="l"><a class="l" href="#56"> 56: </a>        }
+</span><span id="57" class="l"><a class="l" href="#57"> 57: </a>
+</span><span id="58" class="l"><a class="l" href="#58"> 58: </a>        <span class="php-var">$a</span> = <span class="php-keyword1">FALSE</span>;
+</span><span id="59" class="l"><a class="l" href="#59"> 59: </a>        <span class="php-var">$source</span> = <span class="php-keyword2">implode</span>(<span class="php-var">$delimiter</span>, <span class="php-var">$head</span>) . <span class="php-var">$newLine</span>;
+</span><span id="60" class="l"><a class="l" href="#60"> 60: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$data</span> <span class="php-keyword1">as</span> <span class="php-var">$item</span>) {
+</span><span id="61" class="l"><a class="l" href="#61"> 61: </a>            <span class="php-keyword1">if</span> (<span class="php-var">$a</span>) {
+</span><span id="62" class="l"><a class="l" href="#62"> 62: </a>                <span class="php-var">$source</span> .= <span class="php-var">$newLine</span>;
+</span><span id="63" class="l"><a class="l" href="#63"> 63: </a>            }
+</span><span id="64" class="l"><a class="l" href="#64"> 64: </a>
+</span><span id="65" class="l"><a class="l" href="#65"> 65: </a>            <span class="php-var">$b</span> = <span class="php-keyword1">FALSE</span>;
+</span><span id="66" class="l"><a class="l" href="#66"> 66: </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$columns</span> <span class="php-keyword1">as</span> <span class="php-var">$column</span>) {
+</span><span id="67" class="l"><a class="l" href="#67"> 67: </a>                <span class="php-keyword1">if</span> (<span class="php-var">$b</span>) {
+</span><span id="68" class="l"><a class="l" href="#68"> 68: </a>                    <span class="php-var">$source</span> .= <span class="php-var">$delimiter</span>;
+</span><span id="69" class="l"><a class="l" href="#69"> 69: </a>                }
+</span><span id="70" class="l"><a class="l" href="#70"> 70: </a>
+</span><span id="71" class="l"><a class="l" href="#71"> 71: </a>                <span class="php-var">$source</span> .= <span class="php-var">$column</span>-&gt;renderExport(<span class="php-var">$item</span>);
+</span><span id="72" class="l"><a class="l" href="#72"> 72: </a>                <span class="php-var">$b</span> = <span class="php-keyword1">TRUE</span>;
+</span><span id="73" class="l"><a class="l" href="#73"> 73: </a>            }
+</span><span id="74" class="l"><a class="l" href="#74"> 74: </a>            <span class="php-var">$a</span> = <span class="php-keyword1">TRUE</span>;
+</span><span id="75" class="l"><a class="l" href="#75"> 75: </a>        }
+</span><span id="76" class="l"><a class="l" href="#76"> 76: </a>
+</span><span id="77" class="l"><a class="l" href="#77"> 77: </a>        <span class="php-keyword1">return</span> <span class="php-var">$source</span>;
+</span><span id="78" class="l"><a class="l" href="#78"> 78: </a>    }
+</span><span id="79" class="l"><a class="l" href="#79"> 79: </a>
+</span><span id="80" class="l"><a class="l" href="#80"> 80: </a>    <span class="php-comment">/**
+</span></span><span id="81" class="l"><a class="l" href="#81"> 81: </a><span class="php-comment">     * @internal
+</span></span><span id="82" class="l"><a class="l" href="#82"> 82: </a><span class="php-comment">     */</span>
+</span><span id="83" class="l"><a class="l" href="#83"> 83: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_handleExport" href="#_handleExport">handleExport</a>()
+</span><span id="84" class="l"><a class="l" href="#84"> 84: </a>    {
+</span><span id="85" class="l"><a class="l" href="#85"> 85: </a>        <span class="php-var">$this</span>-&gt;grid-&gt;presenter-&gt;sendResponse(<span class="php-var">$this</span>);
+</span><span id="86" class="l"><a class="l" href="#86"> 86: </a>        <span class="php-var">$this</span>-&gt;grid-&gt;presenter-&gt;terminate();
+</span><span id="87" class="l"><a class="l" href="#87"> 87: </a>    }
+</span><span id="88" class="l"><a class="l" href="#88"> 88: </a>
+</span><span id="89" class="l"><a class="l" href="#89"> 89: </a>    <span class="php-comment">/*************************** interface \Nette\Application\IResponse ***************************/</span>
+</span><span id="90" class="l"><a class="l" href="#90"> 90: </a>
+</span><span id="91" class="l"><a class="l" href="#91"> 91: </a>    <span class="php-comment">/**
+</span></span><span id="92" class="l"><a class="l" href="#92"> 92: </a><span class="php-comment">     * Sends response to output.
+</span></span><span id="93" class="l"><a class="l" href="#93"> 93: </a><span class="php-comment">     * @return void
+</span></span><span id="94" class="l"><a class="l" href="#94"> 94: </a><span class="php-comment">     */</span>
+</span><span id="95" class="l"><a class="l" href="#95"> 95: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_send" href="#_send">send</a>(\Nette\Http\IRequest <span class="php-var">$httpRequest</span>, \Nette\Http\IResponse <span class="php-var">$httpResponse</span>)
+</span><span id="96" class="l"><a class="l" href="#96"> 96: </a>    {
+</span><span id="97" class="l"><a class="l" href="#97"> 97: </a>        <span class="php-var">$data</span> = <span class="php-var">$this</span>-&gt;grid-&gt;getData(<span class="php-keyword1">FALSE</span>);
+</span><span id="98" class="l"><a class="l" href="#98"> 98: </a>        <span class="php-var">$columns</span> = <span class="php-var">$this</span>-&gt;grid[\Grido\Components\Columns\Column::ID]-&gt;getComponents();
+</span><span id="99" class="l"><a class="l" href="#99"> 99: </a>        <span class="php-var">$source</span> = <span class="php-var">$this</span>-&gt;generateCsv(<span class="php-var">$data</span>, <span class="php-var">$columns</span>);
+</span><span id="100" class="l"><a class="l" href="#100">100: </a>
+</span><span id="101" class="l"><a class="l" href="#101">101: </a>        <span class="php-var">$charset</span> = <span class="php-quote">'UTF-16LE'</span>;
+</span><span id="102" class="l"><a class="l" href="#102">102: </a>        <span class="php-var">$source</span> = <span class="php-keyword2">mb_convert_encoding</span>(<span class="php-var">$source</span>, <span class="php-var">$charset</span>, <span class="php-quote">'UTF-8'</span>);
+</span><span id="103" class="l"><a class="l" href="#103">103: </a>        <span class="php-var">$source</span> = <span class="php-quote">&quot;\xFF\xFE&quot;</span> . <span class="php-var">$source</span>; <span class="php-comment">//add BOM</span>
+</span><span id="104" class="l"><a class="l" href="#104">104: </a>
+</span><span id="105" class="l"><a class="l" href="#105">105: </a>        <span class="php-var">$httpResponse</span>-&gt;setHeader(<span class="php-quote">'Content-Encoding'</span>, <span class="php-var">$charset</span>);
+</span><span id="106" class="l"><a class="l" href="#106">106: </a>        <span class="php-var">$httpResponse</span>-&gt;setHeader(<span class="php-quote">'Content-Length'</span>, <span class="php-keyword2">strlen</span>(<span class="php-var">$source</span>));
+</span><span id="107" class="l"><a class="l" href="#107">107: </a>        <span class="php-var">$httpResponse</span>-&gt;setHeader(<span class="php-quote">'Content-Type'</span>, <span class="php-quote">&quot;text/csv; charset=</span><span class="php-var">$charset</span><span class="php-quote">&quot;</span>);
+</span><span id="108" class="l"><a class="l" href="#108">108: </a>        <span class="php-var">$httpResponse</span>-&gt;setHeader(<span class="php-quote">'Content-Disposition'</span>, <span class="php-quote">&quot;attachment; filename=\&quot;</span><span class="php-var">{$this-&gt;name}</span><span class="php-quote">.csv\&quot;&quot;</span>);
+</span><span id="109" class="l"><a class="l" href="#109">109: </a>
+</span><span id="110" class="l"><a class="l" href="#110">110: </a>        <span class="php-keyword1">print</span> <span class="php-var">$source</span>;
+</span><span id="111" class="l"><a class="l" href="#111">111: </a>    }
+</span><span id="112" class="l"><a class="l" href="#112">112: </a>}
+</span><span id="113" class="l"><a class="l" href="#113">113: </a></span></code></pre>
 
 	<div id="footer">
 		Grido - DataGrid for Nette Framework. API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
