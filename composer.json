@@ -5,7 +5,7 @@
     "require": {
         "php": ">=5.3.1",
         "nette/nette" : "2.0.*",
-        "dg/dibi": "2.0.*",
+        "dibi/dibi": "2.1.*",
         "o5/grido": "@dev",
         "nella/doctrine": "dev-master"
     },
