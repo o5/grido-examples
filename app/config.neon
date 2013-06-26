@@ -39,6 +39,7 @@ common:
                 password: %database.postgre.password%
         session:
             autoStart: yes
+            save_path: "%tempDir%/sessions"
 
     services:
         ndb_sqlite: @nette.database.sqlite
