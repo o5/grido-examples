@@ -100,5 +100,18 @@ final class DibiPresenter extends BasePresenter
 
         $grid->setFilterRenderType($this->filterRenderType);
         $grid->setExporting();
+
+        return $grid;
+    }
+
+    protected function createComponentCachedGrid($name)
+    {
+        $grid = $this->createComponentGrid($name);
+
+        $fluent = $this->context->dibi_sqlite->select('u.*, c.title AS country')
+            ->from('[user] u')
+            ->join('[country] c')->on('u.country_code = c.code');
+
+        $grid->setModel(new Cache($fluent, array(\Nette\Caching\Cache::TAGS => 'user')));
     }
 }

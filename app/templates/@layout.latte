@@ -28,9 +28,14 @@
                                 Data source <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
-                                <li n:class="$presenter->name == 'Dibi' ? 'active'">
+                                <li n:class="$presenter->name == 'Dibi' && $presenter->action == 'default' ? 'active'">
                                     <a class="no-ajax" n:href="Dibi:">
                                         Dibi
+                                    </a>
+                                </li>
+                                <li n:class="$presenter->name == 'Dibi' && $presenter->action == 'cached' ? 'active'">
+                                    <a class="no-ajax" n:href="Dibi:cached">
+                                        Dibi - cached
                                     </a>
                                 </li>
                                 <li n:class="$presenter->name == 'NetteDatabase' ? 'active'">
