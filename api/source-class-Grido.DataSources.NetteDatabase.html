@@ -8,7 +8,7 @@
 	<title>File DataSources/NetteDatabase.php | Grido - DataGrid for Nette Framework.</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?380682889"></script>
+	<script type="text/javascript" src="elementlist.js?2311747968"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido - DataGrid for Nette Framework." href="/opensearch.xml" />
 
@@ -137,9 +137,9 @@
 </span></span><span id="18" class="l"><a class="l" href="#18"> 18: </a><span class="php-comment"> * @subpackage  DataSources
 </span></span><span id="19" class="l"><a class="l" href="#19"> 19: </a><span class="php-comment"> * @author      Petr Bugyík
 </span></span><span id="20" class="l"><a class="l" href="#20"> 20: </a><span class="php-comment"> *
-</span></span><span id="21" class="l"><a class="l" href="#21"> 21: </a><span class="php-comment"> * @property-read int $count
-</span></span><span id="22" class="l"><a class="l" href="#22"> 22: </a><span class="php-comment"> * @property-read array $data
-</span></span><span id="23" class="l"><a class="l" href="#23"> 23: </a><span class="php-comment"> * @property-read \Nette\Database\Table\Selection $selection
+</span></span><span id="21" class="l"><a class="l" href="#21"> 21: </a><span class="php-comment"> * @property-read \Nette\Database\Table\Selection $selection
+</span></span><span id="22" class="l"><a class="l" href="#22"> 22: </a><span class="php-comment"> * @property-read int $count
+</span></span><span id="23" class="l"><a class="l" href="#23"> 23: </a><span class="php-comment"> * @property-read array $data
 </span></span><span id="24" class="l"><a class="l" href="#24"> 24: </a><span class="php-comment"> */</span>
 </span><span id="25" class="l"><a class="l" href="#25"> 25: </a><span class="php-keyword1">class</span> <a id="NetteDatabase" href="#NetteDatabase">NetteDatabase</a> <span class="php-keyword1">extends</span> \Nette\Object <span class="php-keyword1">implements</span> IDataSource
 </span><span id="26" class="l"><a class="l" href="#26"> 26: </a>{
@@ -173,19 +173,19 @@
 </span><span id="54" class="l"><a class="l" href="#54"> 54: </a>    <span class="php-comment">/*********************************** interface IDataSource ************************************/</span>
 </span><span id="55" class="l"><a class="l" href="#55"> 55: </a>
 </span><span id="56" class="l"><a class="l" href="#56"> 56: </a>    <span class="php-comment">/**
-</span></span><span id="57" class="l"><a class="l" href="#57"> 57: </a><span class="php-comment">     * @return array
+</span></span><span id="57" class="l"><a class="l" href="#57"> 57: </a><span class="php-comment">     * @return int
 </span></span><span id="58" class="l"><a class="l" href="#58"> 58: </a><span class="php-comment">     */</span>
-</span><span id="59" class="l"><a class="l" href="#59"> 59: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_getData" href="#_getData">getData</a>()
+</span><span id="59" class="l"><a class="l" href="#59"> 59: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_getCount" href="#_getCount">getCount</a>()
 </span><span id="60" class="l"><a class="l" href="#60"> 60: </a>    {
-</span><span id="61" class="l"><a class="l" href="#61"> 61: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;selection;
+</span><span id="61" class="l"><a class="l" href="#61"> 61: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;selection-&gt;<span class="php-keyword2">count</span>(<span class="php-quote">'*'</span>);
 </span><span id="62" class="l"><a class="l" href="#62"> 62: </a>    }
 </span><span id="63" class="l"><a class="l" href="#63"> 63: </a>
 </span><span id="64" class="l"><a class="l" href="#64"> 64: </a>    <span class="php-comment">/**
-</span></span><span id="65" class="l"><a class="l" href="#65"> 65: </a><span class="php-comment">     * @return int
+</span></span><span id="65" class="l"><a class="l" href="#65"> 65: </a><span class="php-comment">     * @return array
 </span></span><span id="66" class="l"><a class="l" href="#66"> 66: </a><span class="php-comment">     */</span>
-</span><span id="67" class="l"><a class="l" href="#67"> 67: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_getCount" href="#_getCount">getCount</a>()
+</span><span id="67" class="l"><a class="l" href="#67"> 67: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_getData" href="#_getData">getData</a>()
 </span><span id="68" class="l"><a class="l" href="#68"> 68: </a>    {
-</span><span id="69" class="l"><a class="l" href="#69"> 69: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;selection-&gt;<span class="php-keyword2">count</span>(<span class="php-quote">'*'</span>);
+</span><span id="69" class="l"><a class="l" href="#69"> 69: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;selection;
 </span><span id="70" class="l"><a class="l" href="#70"> 70: </a>    }
 </span><span id="71" class="l"><a class="l" href="#71"> 71: </a>
 </span><span id="72" class="l"><a class="l" href="#72"> 72: </a>    <span class="php-comment">/**
