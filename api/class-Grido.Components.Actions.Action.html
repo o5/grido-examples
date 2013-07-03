@@ -7,7 +7,7 @@
 	<title>Class Grido\Components\Actions\Action | Grido - DataGrid for Nette Framework.</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?3478033375"></script>
+	<script type="text/javascript" src="elementlist.js?380682889"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido - DataGrid for Nette Framework." href="/opensearch.xml" />
 
@@ -158,7 +158,7 @@ Nette\Application\UI\PresenterComponent
 
 				<b>Author:</b>
 				Petr Bugyík<br />
-		<b>Located at</b> <a href="source-class-Grido.Components.Actions.Action.html#14-139" title="Go to source code">Components/Actions/Action.php</a><br />
+		<b>Located at</b> <a href="source-class-Grido.Components.Actions.Action.html#16-219" title="Go to source code">Components/Actions/Action.php</a><br />
 	</div>
 
 
@@ -176,7 +176,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Grido.Components.Actions.Action.html#50-65" title="Go to source code">__construct</a>( <span><code><a href="class-Grido.Grid.html">Grido\Grid</a></code> <var>$grid</var></span>, <span>string <var>$name</var></span>, <span>string <var>$label</var></span>, <span>string <var>$destination</var> = <span class="php-keyword1">NULL</span></span>, <span>array <var>$args</var> = <span class="php-keyword1">NULL</span></span> )</code>
+		<code><a href="source-class-Grido.Components.Actions.Action.html#55-66" title="Go to source code">__construct</a>( <span><code><a href="class-Grido.Grid.html">Grido\Grid</a></code> <var>$grid</var></span>, <span>string <var>$name</var></span>, <span>string <var>$label</var></span> )</code>
 
 		<div class="description short">
 			
@@ -194,10 +194,6 @@ Nette\Application\UI\PresenterComponent
 					<dd><code>string</code><br>$name</dd>
 					<dt><var>$label</var></dt>
 					<dd><code>string</code><br>$label</dd>
-					<dt><var>$destination</var></dt>
-					<dd><code>string</code><br>$destination - first param for method $presenter-&gt;link()</dd>
-					<dt><var>$args</var></dt>
-					<dd><code>array</code><br>$args - second param for method $presenter-&gt;link()</dd>
 				</dl></div>
 
 
@@ -218,7 +214,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setCustomRender">#</a>
-		<code><a href="source-class-Grido.Components.Actions.Action.html#67-76" title="Go to source code">setCustomRender</a>( <span>callable <var>$callback</var></span> )</code>
+		<code><a href="source-class-Grido.Components.Actions.Action.html#68-77" title="Go to source code">setCustomRender</a>( <span>callable <var>$callback</var></span> )</code>
 
 		<div class="description short">
 			
@@ -260,7 +256,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setPrimaryKey">#</a>
-		<code><a href="source-class-Grido.Components.Actions.Action.html#78-87" title="Go to source code">setPrimaryKey</a>( <span>string <var>$primaryKey</var></span> )</code>
+		<code><a href="source-class-Grido.Components.Actions.Action.html#79-88" title="Go to source code">setPrimaryKey</a>( <span>string <var>$primaryKey</var></span> )</code>
 
 		<div class="description short">
 			
@@ -302,7 +298,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setElementPrototype">#</a>
-		<code><a href="source-class-Grido.Components.Actions.Action.html#89-98" title="Go to source code">setElementPrototype</a>( <span>Nette\Utils\Html <var>$elementPrototype</var></span> )</code>
+		<code><a href="source-class-Grido.Components.Actions.Action.html#90-99" title="Go to source code">setElementPrototype</a>( <span>Nette\Utils\Html <var>$elementPrototype</var></span> )</code>
 
 		<div class="description short">
 			
@@ -344,7 +340,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setDisable">#</a>
-		<code><a href="source-class-Grido.Components.Actions.Action.html#100-110" title="Go to source code">setDisable</a>( <span>callable <var>$callback</var></span> )</code>
+		<code><a href="source-class-Grido.Components.Actions.Action.html#101-111" title="Go to source code">setDisable</a>( <span>callable <var>$callback</var></span> )</code>
 
 		<div class="description short">
 			
@@ -377,6 +373,207 @@ allowed for current item.</p>
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="setConfirm" id="_setConfirm">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Grido.Components.Actions.Href.html">Grido\Components\Actions\Href</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setConfirm">#</a>
+		<code><a href="source-class-Grido.Components.Actions.Action.html#113-122" title="Go to source code">setConfirm</a>( <span>string|callable <var>$confirm</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Sets client side confirm.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Sets client side confirm.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$confirm</var></dt>
+					<dd><code>string|callable</code><br>$confirm</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Grido.Components.Actions.Href.html">Grido\Components\Actions\Href</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setIcon" id="_setIcon">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Grido.Components.Actions.Href.html">Grido\Components\Actions\Href</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setIcon">#</a>
+		<code><a href="source-class-Grido.Components.Actions.Action.html#124-133" title="Go to source code">setIcon</a>( <span>string <var>$iconName</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Sets twitter bootstrap icon class.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Sets twitter bootstrap icon class.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$iconName</var></dt>
+					<dd><code>string</code><br>$iconName</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Grido.Components.Actions.Href.html">Grido\Components\Actions\Href</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getElementPrototype" id="_getElementPrototype">
+
+		<td class="attributes"><code>
+			 public 
+			Nette\Utils\Html
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getElementPrototype">#</a>
+		<code><a href="source-class-Grido.Components.Actions.Action.html#137-149" title="Go to source code">getElementPrototype</a>( )</code>
+
+		<div class="description short">
+			
+<p>Returns element prototype (&lt;a&gt; html tag).</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns element prototype (&lt;a&gt; html tag).</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Utils\Html</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getElement" id="_getElement">
+
+		<td class="attributes"><code>
+			 protected 
+			Nette\Utils\Html
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getElement">#</a>
+		<code><a href="source-class-Grido.Components.Actions.Action.html#151-184" title="Go to source code">getElement</a>( <span>mixed <var>$item</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$item</var></dt>
+					<dd><code>mixed</code><br>$item</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Utils\Html</code><br />
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code></code><br />
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="render" id="_render">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_render">#</a>
+		<code><a href="source-class-Grido.Components.Actions.Action.html#199-218" title="Go to source code">render</a>( <span>mixed <var>$item</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$item</var></dt>
+					<dd><code>mixed</code><br>$item</dd>
+				</dl></div>
+
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code></code><br />
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	</table>
 
 	<table class="summary inherited">
@@ -403,7 +600,7 @@ allowed for current item.</p>
 
 		<td class="attributes"><code>string</code></td>
 		<td class="name"><code>
-				<a href="source-class-Grido.Components.Actions.Action.html#28" title="Go to source code"><b>ID</b></a>
+				<a href="source-class-Grido.Components.Actions.Action.html#33" title="Go to source code"><b>ID</b></a>
 		</code></td>
 		<td class="value"><code><span class="php-quote">'actions'</span></code></td>
 		<td class="description"><div>
@@ -423,7 +620,7 @@ allowed for current item.</p>
 
 		<td class="attributes"><code>string</code></td>
 		<td class="name"><code>
-				<a href="source-class-Grido.Components.Actions.Action.html#30" title="Go to source code"><b>TYPE_HREF</b></a>
+				<a href="source-class-Grido.Components.Actions.Action.html#35" title="Go to source code"><b>TYPE_HREF</b></a>
 		</code></td>
 		<td class="value"><code><span class="php-quote">'Grido\Components\Actions\Href'</span></code></td>
 		<td class="description"><div>
@@ -453,7 +650,7 @@ allowed for current item.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Actions.Action.html#32-33" title="Go to source code"><var>$customRender</var></a>
+				<a href="source-class-Grido.Components.Actions.Action.html#37-38" title="Go to source code"><var>$customRender</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -480,7 +677,7 @@ allowed for current item.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Actions.Action.html#35-36" title="Go to source code"><var>$disable</var></a>
+				<a href="source-class-Grido.Components.Actions.Action.html#40-41" title="Go to source code"><var>$disable</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -507,7 +704,7 @@ allowed for current item.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Actions.Action.html#38-39" title="Go to source code"><var>$elementPrototype</var></a>
+				<a href="source-class-Grido.Components.Actions.Action.html#43-44" title="Go to source code"><var>$elementPrototype</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -527,60 +724,6 @@ allowed for current item.</p>
 			</div>
 		</div></td>
 	</tr>
-	<tr data-order="destination" id="$destination">
-		<td class="attributes"><code>
-			protected  
-			string
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Grido.Components.Actions.Action.html#41-42" title="Go to source code"><var>$destination</var></a>
-		</td>
-		<td class="value"><code></code></td>
-		<td class="description"><div>
-			<a href="#$destination" class="anchor">#</a>
-
-			<div class="description short">
-				
-<p>first param for method $presenter-&gt;link()</p>
-
-			</div>
-
-			<div class="description detailed hidden">
-				
-<p>first param for method $presenter-&gt;link()</p>
-
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="arguments" id="$arguments">
-		<td class="attributes"><code>
-			protected  
-			array
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Grido.Components.Actions.Action.html#44-45" title="Go to source code"><var>$arguments</var></a>
-		</td>
-		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
-		<td class="description"><div>
-			<a href="#$arguments" class="anchor">#</a>
-
-			<div class="description short">
-				
-<p>second param for method $presenter-&gt;link()</p>
-
-			</div>
-
-			<div class="description detailed hidden">
-				
-<p>second param for method $presenter-&gt;link()</p>
-
-
-			</div>
-		</div></td>
-	</tr>
 	<tr data-order="primaryKey" id="$primaryKey">
 		<td class="attributes"><code>
 			protected  
@@ -588,7 +731,7 @@ allowed for current item.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Actions.Action.html#47-48" title="Go to source code"><var>$primaryKey</var></a>
+				<a href="source-class-Grido.Components.Actions.Action.html#46-47" title="Go to source code"><var>$primaryKey</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -610,6 +753,52 @@ allowed for current item.</p>
 	1))</li>
 </ul>
 
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="confirm" id="$confirm">
+		<td class="attributes"><code>
+			protected  
+			string|callable
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Components.Actions.Action.html#49-50" title="Go to source code"><var>$confirm</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$confirm" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="icon" id="$icon">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Components.Actions.Action.html#52-53" title="Go to source code"><var>$icon</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$icon" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
 
 			</div>
 		</div></td>
@@ -638,10 +827,54 @@ allowed for current item.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Actions.Action.html#24" title="Go to source code"><var>$primaryKey</var></a>
+				<a href="source-class-Grido.Components.Actions.Action.html#27" title="Go to source code"><var>$primaryKey</var></a>
 		</td>
 		<td class="description"><div>
 			<a href="#m$primaryKey" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="icon" id="m$icon">
+		<td class="attributes"><code>
+			public  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Components.Actions.Action.html#29" title="Go to source code"><var>$icon</var></a>
+		</td>
+		<td class="description"><div>
+			<a href="#m$icon" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="element" id="m$element">
+		<td class="attributes"><code>
+			public  read-only
+			Nette\Utils\Html
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Components.Actions.Action.html#23" title="Go to source code"><var>$element</var></a>
+		</td>
+		<td class="description"><div>
+			<a href="#m$element" class="anchor">#</a>
 
 			<div class="description short">
 				
@@ -660,7 +893,7 @@ allowed for current item.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Actions.Action.html#21" title="Go to source code"><var>$elementPrototype</var></a>
+				<a href="source-class-Grido.Components.Actions.Action.html#23" title="Go to source code"><var>$elementPrototype</var></a>
 		</td>
 		<td class="description"><div>
 			<a href="#m$elementPrototype" class="anchor">#</a>
@@ -682,7 +915,7 @@ allowed for current item.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Actions.Action.html#22" title="Go to source code"><var>$customRender</var></a>
+				<a href="source-class-Grido.Components.Actions.Action.html#25" title="Go to source code"><var>$customRender</var></a>
 		</td>
 		<td class="description"><div>
 			<a href="#m$customRender" class="anchor">#</a>
@@ -704,10 +937,32 @@ allowed for current item.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Actions.Action.html#23" title="Go to source code"><var>$disable</var></a>
+				<a href="source-class-Grido.Components.Actions.Action.html#26" title="Go to source code"><var>$disable</var></a>
 		</td>
 		<td class="description"><div>
 			<a href="#m$disable" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="confirm" id="m$confirm">
+		<td class="attributes"><code>
+			public  write-only
+			string|callable
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Components.Actions.Action.html#28" title="Go to source code"><var>$confirm</var></a>
+		</td>
+		<td class="description"><div>
+			<a href="#m$confirm" class="anchor">#</a>
 
 			<div class="description short">
 				

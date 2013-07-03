@@ -8,7 +8,7 @@
 	<title>File Grid.php | Grido - DataGrid for Nette Framework.</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?3478033375"></script>
+	<script type="text/javascript" src="elementlist.js?380682889"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido - DataGrid for Nette Framework." href="/opensearch.xml" />
 
@@ -1142,58 +1142,68 @@
 </span><span id="1031" class="l"><a class="l" href="#1031">1031: </a>    <span class="php-comment">/**
 </span></span><span id="1032" class="l"><a class="l" href="#1032">1032: </a><span class="php-comment">     * @param string $name
 </span></span><span id="1033" class="l"><a class="l" href="#1033">1033: </a><span class="php-comment">     * @param string $label
-</span></span><span id="1034" class="l"><a class="l" href="#1034">1034: </a><span class="php-comment">     * @param string $type starting constants with Action::TYPE_
-</span></span><span id="1035" class="l"><a class="l" href="#1035">1035: </a><span class="php-comment">     * @param string $destination - first param for method $presenter-&gt;link()
-</span></span><span id="1036" class="l"><a class="l" href="#1036">1036: </a><span class="php-comment">     * @param array $args - second param for method $presenter-&gt;link()
-</span></span><span id="1037" class="l"><a class="l" href="#1037">1037: </a><span class="php-comment">     * @throws \InvalidArgumentException
-</span></span><span id="1038" class="l"><a class="l" href="#1038">1038: </a><span class="php-comment">     * @return Action
-</span></span><span id="1039" class="l"><a class="l" href="#1039">1039: </a><span class="php-comment">     */</span>
-</span><span id="1040" class="l"><a class="l" href="#1040">1040: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_addAction" href="#_addAction">addAction</a>(<span class="php-var">$name</span>, <span class="php-var">$label</span>, <span class="php-var">$type</span> = Action::TYPE_HREF, <span class="php-var">$destination</span> = <span class="php-keyword1">NULL</span>, <span class="php-keyword1">array</span> <span class="php-var">$args</span> = <span class="php-keyword1">NULL</span>)
-</span><span id="1041" class="l"><a class="l" href="#1041">1041: </a>    {
-</span><span id="1042" class="l"><a class="l" href="#1042">1042: </a>        <span class="php-var">$action</span> = <span class="php-keyword1">new</span> <span class="php-var">$type</span>(<span class="php-var">$this</span>, <span class="php-var">$name</span>, <span class="php-var">$label</span>, <span class="php-var">$destination</span>, <span class="php-var">$args</span>);
-</span><span id="1043" class="l"><a class="l" href="#1043">1043: </a>        <span class="php-keyword1">if</span> (!<span class="php-var">$action</span> <span class="php-keyword1">instanceof</span> Action) {
-</span><span id="1044" class="l"><a class="l" href="#1044">1044: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \InvalidArgumentException(<span class="php-quote">'Action must be inherited from \Grido\Components\Actions\Action.'</span>);
-</span><span id="1045" class="l"><a class="l" href="#1045">1045: </a>        }
-</span><span id="1046" class="l"><a class="l" href="#1046">1046: </a>
-</span><span id="1047" class="l"><a class="l" href="#1047">1047: </a>        <span class="php-keyword1">return</span> <span class="php-var">$action</span>;
-</span><span id="1048" class="l"><a class="l" href="#1048">1048: </a>    }
-</span><span id="1049" class="l"><a class="l" href="#1049">1049: </a>
-</span><span id="1050" class="l"><a class="l" href="#1050">1050: </a>    <span class="php-comment">/**********************************************************************************************/</span>
-</span><span id="1051" class="l"><a class="l" href="#1051">1051: </a>
-</span><span id="1052" class="l"><a class="l" href="#1052">1052: </a>    <span class="php-comment">/**
-</span></span><span id="1053" class="l"><a class="l" href="#1053">1053: </a><span class="php-comment">     * @param array $operations
-</span></span><span id="1054" class="l"><a class="l" href="#1054">1054: </a><span class="php-comment">     * @param callback $onSubmit - callback after operation submit
-</span></span><span id="1055" class="l"><a class="l" href="#1055">1055: </a><span class="php-comment">     * @param string $type operation class
-</span></span><span id="1056" class="l"><a class="l" href="#1056">1056: </a><span class="php-comment">     * @throws \InvalidArgumentException
-</span></span><span id="1057" class="l"><a class="l" href="#1057">1057: </a><span class="php-comment">     * @return Operation
-</span></span><span id="1058" class="l"><a class="l" href="#1058">1058: </a><span class="php-comment">     */</span>
-</span><span id="1059" class="l"><a class="l" href="#1059">1059: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setOperations" href="#_setOperations">setOperations</a>(<span class="php-var">$operations</span>, <span class="php-var">$onSubmit</span>, <span class="php-var">$type</span> = <span class="php-quote">'\Grido\Components\Operation'</span>)
-</span><span id="1060" class="l"><a class="l" href="#1060">1060: </a>    {
-</span><span id="1061" class="l"><a class="l" href="#1061">1061: </a>        <span class="php-var">$operation</span> = <span class="php-keyword1">new</span> <span class="php-var">$type</span>(<span class="php-var">$this</span>, <span class="php-var">$operations</span>, <span class="php-var">$onSubmit</span>);
-</span><span id="1062" class="l"><a class="l" href="#1062">1062: </a>        <span class="php-keyword1">if</span> (!<span class="php-var">$operation</span> <span class="php-keyword1">instanceof</span> Components\Operation) {
-</span><span id="1063" class="l"><a class="l" href="#1063">1063: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \InvalidArgumentException(<span class="php-quote">'Operation must be inherited from \Grido\Components\Operation.'</span>);
-</span><span id="1064" class="l"><a class="l" href="#1064">1064: </a>        }
-</span><span id="1065" class="l"><a class="l" href="#1065">1065: </a>
-</span><span id="1066" class="l"><a class="l" href="#1066">1066: </a>        <span class="php-keyword1">return</span> <span class="php-var">$operation</span>;
-</span><span id="1067" class="l"><a class="l" href="#1067">1067: </a>    }
-</span><span id="1068" class="l"><a class="l" href="#1068">1068: </a>
-</span><span id="1069" class="l"><a class="l" href="#1069">1069: </a>    <span class="php-comment">/**
-</span></span><span id="1070" class="l"><a class="l" href="#1070">1070: </a><span class="php-comment">     * @param string $name of exporting file
-</span></span><span id="1071" class="l"><a class="l" href="#1071">1071: </a><span class="php-comment">     * @param string $type export class
-</span></span><span id="1072" class="l"><a class="l" href="#1072">1072: </a><span class="php-comment">     * @throws \InvalidArgumentException
-</span></span><span id="1073" class="l"><a class="l" href="#1073">1073: </a><span class="php-comment">     * @return Export
-</span></span><span id="1074" class="l"><a class="l" href="#1074">1074: </a><span class="php-comment">     */</span>
-</span><span id="1075" class="l"><a class="l" href="#1075">1075: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setExporting" href="#_setExporting">setExporting</a>(<span class="php-var">$name</span> = <span class="php-keyword1">NULL</span>, <span class="php-var">$type</span> = <span class="php-quote">'\Grido\Components\Export'</span>)
-</span><span id="1076" class="l"><a class="l" href="#1076">1076: </a>    {
-</span><span id="1077" class="l"><a class="l" href="#1077">1077: </a>        <span class="php-var">$export</span> = <span class="php-keyword1">new</span> <span class="php-var">$type</span>(<span class="php-var">$this</span>, <span class="php-var">$name</span> ? <span class="php-var">$name</span> : <span class="php-keyword2">ucfirst</span>(<span class="php-var">$this</span>-&gt;name));
-</span><span id="1078" class="l"><a class="l" href="#1078">1078: </a>        <span class="php-keyword1">if</span> (!<span class="php-var">$export</span> <span class="php-keyword1">instanceof</span> Components\Export) {
-</span><span id="1079" class="l"><a class="l" href="#1079">1079: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \InvalidArgumentException(<span class="php-quote">'Export must be inherited from \Grido\Components\Export.'</span>);
-</span><span id="1080" class="l"><a class="l" href="#1080">1080: </a>        }
-</span><span id="1081" class="l"><a class="l" href="#1081">1081: </a>
-</span><span id="1082" class="l"><a class="l" href="#1082">1082: </a>        <span class="php-keyword1">return</span> <span class="php-var">$export</span>;
-</span><span id="1083" class="l"><a class="l" href="#1083">1083: </a>    }
-</span><span id="1084" class="l"><a class="l" href="#1084">1084: </a>}
-</span><span id="1085" class="l"><a class="l" href="#1085">1085: </a></span></code></pre>
+</span></span><span id="1034" class="l"><a class="l" href="#1034">1034: </a><span class="php-comment">     * @return \Grido\Components\Actions\Event
+</span></span><span id="1035" class="l"><a class="l" href="#1035">1035: </a><span class="php-comment">     */</span>
+</span><span id="1036" class="l"><a class="l" href="#1036">1036: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_addActionEvent" href="#_addActionEvent">addActionEvent</a>(<span class="php-var">$name</span>, <span class="php-var">$label</span>)
+</span><span id="1037" class="l"><a class="l" href="#1037">1037: </a>    {
+</span><span id="1038" class="l"><a class="l" href="#1038">1038: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> Components\Actions\Event(<span class="php-var">$this</span>, <span class="php-var">$name</span>, <span class="php-var">$label</span>);
+</span><span id="1039" class="l"><a class="l" href="#1039">1039: </a>    }
+</span><span id="1040" class="l"><a class="l" href="#1040">1040: </a>
+</span><span id="1041" class="l"><a class="l" href="#1041">1041: </a>    <span class="php-comment">/**
+</span></span><span id="1042" class="l"><a class="l" href="#1042">1042: </a><span class="php-comment">     * @param string $name
+</span></span><span id="1043" class="l"><a class="l" href="#1043">1043: </a><span class="php-comment">     * @param string $label
+</span></span><span id="1044" class="l"><a class="l" href="#1044">1044: </a><span class="php-comment">     * @param string $type starting constants with Action::TYPE_
+</span></span><span id="1045" class="l"><a class="l" href="#1045">1045: </a><span class="php-comment">     * @param string $destination - first param for method $presenter-&gt;link()
+</span></span><span id="1046" class="l"><a class="l" href="#1046">1046: </a><span class="php-comment">     * @param array $args - second param for method $presenter-&gt;link()
+</span></span><span id="1047" class="l"><a class="l" href="#1047">1047: </a><span class="php-comment">     * @throws \InvalidArgumentException
+</span></span><span id="1048" class="l"><a class="l" href="#1048">1048: </a><span class="php-comment">     * @return Action
+</span></span><span id="1049" class="l"><a class="l" href="#1049">1049: </a><span class="php-comment">     */</span>
+</span><span id="1050" class="l"><a class="l" href="#1050">1050: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_addAction" href="#_addAction">addAction</a>(<span class="php-var">$name</span>, <span class="php-var">$label</span>, <span class="php-var">$type</span> = Action::TYPE_HREF, <span class="php-var">$destination</span> = <span class="php-keyword1">NULL</span>, <span class="php-keyword1">array</span> <span class="php-var">$args</span> = <span class="php-keyword1">NULL</span>)
+</span><span id="1051" class="l"><a class="l" href="#1051">1051: </a>    {
+</span><span id="1052" class="l"><a class="l" href="#1052">1052: </a>        <span class="php-var">$action</span> = <span class="php-keyword1">new</span> <span class="php-var">$type</span>(<span class="php-var">$this</span>, <span class="php-var">$name</span>, <span class="php-var">$label</span>, <span class="php-var">$destination</span>, <span class="php-var">$args</span>);
+</span><span id="1053" class="l"><a class="l" href="#1053">1053: </a>        <span class="php-keyword1">if</span> (!<span class="php-var">$action</span> <span class="php-keyword1">instanceof</span> Action) {
+</span><span id="1054" class="l"><a class="l" href="#1054">1054: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \InvalidArgumentException(<span class="php-quote">'Action must be inherited from \Grido\Components\Actions\Action.'</span>);
+</span><span id="1055" class="l"><a class="l" href="#1055">1055: </a>        }
+</span><span id="1056" class="l"><a class="l" href="#1056">1056: </a>
+</span><span id="1057" class="l"><a class="l" href="#1057">1057: </a>        <span class="php-keyword1">return</span> <span class="php-var">$action</span>;
+</span><span id="1058" class="l"><a class="l" href="#1058">1058: </a>    }
+</span><span id="1059" class="l"><a class="l" href="#1059">1059: </a>
+</span><span id="1060" class="l"><a class="l" href="#1060">1060: </a>    <span class="php-comment">/**********************************************************************************************/</span>
+</span><span id="1061" class="l"><a class="l" href="#1061">1061: </a>
+</span><span id="1062" class="l"><a class="l" href="#1062">1062: </a>    <span class="php-comment">/**
+</span></span><span id="1063" class="l"><a class="l" href="#1063">1063: </a><span class="php-comment">     * @param array $operations
+</span></span><span id="1064" class="l"><a class="l" href="#1064">1064: </a><span class="php-comment">     * @param callback $onSubmit - callback after operation submit
+</span></span><span id="1065" class="l"><a class="l" href="#1065">1065: </a><span class="php-comment">     * @param string $type operation class
+</span></span><span id="1066" class="l"><a class="l" href="#1066">1066: </a><span class="php-comment">     * @throws \InvalidArgumentException
+</span></span><span id="1067" class="l"><a class="l" href="#1067">1067: </a><span class="php-comment">     * @return Operation
+</span></span><span id="1068" class="l"><a class="l" href="#1068">1068: </a><span class="php-comment">     */</span>
+</span><span id="1069" class="l"><a class="l" href="#1069">1069: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setOperations" href="#_setOperations">setOperations</a>(<span class="php-var">$operations</span>, <span class="php-var">$onSubmit</span>, <span class="php-var">$type</span> = <span class="php-quote">'\Grido\Components\Operation'</span>)
+</span><span id="1070" class="l"><a class="l" href="#1070">1070: </a>    {
+</span><span id="1071" class="l"><a class="l" href="#1071">1071: </a>        <span class="php-var">$operation</span> = <span class="php-keyword1">new</span> <span class="php-var">$type</span>(<span class="php-var">$this</span>, <span class="php-var">$operations</span>, <span class="php-var">$onSubmit</span>);
+</span><span id="1072" class="l"><a class="l" href="#1072">1072: </a>        <span class="php-keyword1">if</span> (!<span class="php-var">$operation</span> <span class="php-keyword1">instanceof</span> Components\Operation) {
+</span><span id="1073" class="l"><a class="l" href="#1073">1073: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \InvalidArgumentException(<span class="php-quote">'Operation must be inherited from \Grido\Components\Operation.'</span>);
+</span><span id="1074" class="l"><a class="l" href="#1074">1074: </a>        }
+</span><span id="1075" class="l"><a class="l" href="#1075">1075: </a>
+</span><span id="1076" class="l"><a class="l" href="#1076">1076: </a>        <span class="php-keyword1">return</span> <span class="php-var">$operation</span>;
+</span><span id="1077" class="l"><a class="l" href="#1077">1077: </a>    }
+</span><span id="1078" class="l"><a class="l" href="#1078">1078: </a>
+</span><span id="1079" class="l"><a class="l" href="#1079">1079: </a>    <span class="php-comment">/**
+</span></span><span id="1080" class="l"><a class="l" href="#1080">1080: </a><span class="php-comment">     * @param string $name of exporting file
+</span></span><span id="1081" class="l"><a class="l" href="#1081">1081: </a><span class="php-comment">     * @param string $type export class
+</span></span><span id="1082" class="l"><a class="l" href="#1082">1082: </a><span class="php-comment">     * @throws \InvalidArgumentException
+</span></span><span id="1083" class="l"><a class="l" href="#1083">1083: </a><span class="php-comment">     * @return Export
+</span></span><span id="1084" class="l"><a class="l" href="#1084">1084: </a><span class="php-comment">     */</span>
+</span><span id="1085" class="l"><a class="l" href="#1085">1085: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setExporting" href="#_setExporting">setExporting</a>(<span class="php-var">$name</span> = <span class="php-keyword1">NULL</span>, <span class="php-var">$type</span> = <span class="php-quote">'\Grido\Components\Export'</span>)
+</span><span id="1086" class="l"><a class="l" href="#1086">1086: </a>    {
+</span><span id="1087" class="l"><a class="l" href="#1087">1087: </a>        <span class="php-var">$export</span> = <span class="php-keyword1">new</span> <span class="php-var">$type</span>(<span class="php-var">$this</span>, <span class="php-var">$name</span> ? <span class="php-var">$name</span> : <span class="php-keyword2">ucfirst</span>(<span class="php-var">$this</span>-&gt;name));
+</span><span id="1088" class="l"><a class="l" href="#1088">1088: </a>        <span class="php-keyword1">if</span> (!<span class="php-var">$export</span> <span class="php-keyword1">instanceof</span> Components\Export) {
+</span><span id="1089" class="l"><a class="l" href="#1089">1089: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \InvalidArgumentException(<span class="php-quote">'Export must be inherited from \Grido\Components\Export.'</span>);
+</span><span id="1090" class="l"><a class="l" href="#1090">1090: </a>        }
+</span><span id="1091" class="l"><a class="l" href="#1091">1091: </a>
+</span><span id="1092" class="l"><a class="l" href="#1092">1092: </a>        <span class="php-keyword1">return</span> <span class="php-var">$export</span>;
+</span><span id="1093" class="l"><a class="l" href="#1093">1093: </a>    }
+</span><span id="1094" class="l"><a class="l" href="#1094">1094: </a>}
+</span><span id="1095" class="l"><a class="l" href="#1095">1095: </a></span></code></pre>
 
 	<div id="footer">
 		Grido - DataGrid for Nette Framework. API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
