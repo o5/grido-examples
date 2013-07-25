@@ -4,7 +4,7 @@
     "homepage": "http://grido.bugyik.cz/example/",
     "require": {
         "php": ">=5.3.1",
-        "nette/nette" : "2.0.*",
+        "nette/nette-minified" : "2.0.*",
         "dibi/dibi": "2.1.*",
         "o5/grido": "@dev",
         "nella/doctrine": "dev-master"
