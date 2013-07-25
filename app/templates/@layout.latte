@@ -116,20 +116,24 @@
             </div>
         </div>
 
+        {var ajax = $presenter->parameter['ajax'] == 'on'}
+
         <script src="{$baseUri}/js/jquery.min.js"></script>
-        <script src="{$baseUri}/js/jquery.hashchange.min.js"></script>
-        <script src="{$baseUri}/js/jquery.maskedinput.min.js"></script>
         <script src="{$baseUri}/js/bootstrap-dropdown.js"></script>
         <script src="{$baseUri}/js/bootstrap-alert.js"></script>
+        <script src="{$baseUri}/js/netteForms.js"></script>
+        <script n:if="$ajax" src="{$baseUri}/js/nette.ajax.js"></script>
+        <script n:if="$ajax" src="{$baseUri}/js/spinner.ajax.js"></script>
+
+        {************************************************************}
+
+        <script src="{$baseUri}/js/jquery.hashchange.min.js"></script>
+        <script src="{$baseUri}/js/jquery.maskedinput.min.js"></script>
         <script src="{$baseUri}/js/bootstrap-typeahead.js{scache}"></script>
         <script src="{$baseUri}/js/bootstrap-datepicker.js"></script>
-        <script src="{$baseUri}/js/netteForms.min.js"></script>
-        <script src="{$baseUri}/js/jquery.nette.js"></script>
-        <script src="{$baseUri}/js/jquery.ajaxform.js"></script>
         <script src="{$baseUri}/js/jquery.grido.js{scache}"></script>
-        <script src="{$baseUri}/js/utils.js{scache}"></script>
 
-        <script n:if="$presenter->parameter['ajax'] == 'on'" src="{$baseUri}/js/ajax.js"></script>
-        <script n:if="$presenter->parameter['ajax'] == 'ajax-off'">$.grido.ajax = false;</script>
+        <script n:if="$ajax"  src="{$baseUri}/js/application.ajax.js"></script>
+        <script n:if="!$ajax" src="{$baseUri}/js/application.js"></script>
     </body>
 </html>
