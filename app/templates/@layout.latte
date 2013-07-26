@@ -21,69 +21,72 @@
         <div id="content">
             <div class="navbar">
                 <div class="navbar-inner">
-                    <a class="brand no-ajax" href="http://o5.github.io/grido-sandbox/">Grido</a>
+                    <a class="brand" href="http://o5.github.io/grido-sandbox/">Grido project</a>
                     <ul class="nav">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle no-ajax" data-toggle="dropdown">
-                                Data source <b class="caret"></b>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Data sources <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
                                 <li n:class="$presenter->name == 'Dibi' && $presenter->action == 'default' ? 'active'">
-                                    <a class="no-ajax" n:href="Dibi:">
+                                    <a n:href="Dibi:">
                                         Dibi
                                     </a>
                                 </li>
                                 <li n:class="$presenter->name == 'Dibi' && $presenter->action == 'cached' ? 'active'">
-                                    <a class="no-ajax" n:href="Dibi:cached">
+                                    <a n:href="Dibi:cached">
                                         Dibi - cached
                                     </a>
                                 </li>
                                 <li n:class="$presenter->name == 'NetteDatabase' ? 'active'">
-                                    <a class="no-ajax" n:href="NetteDatabase:">
+                                    <a n:href="NetteDatabase:">
                                         Nette\Database
                                     </a>
                                 </li>
                                 <li n:class="$presenter->name == 'Array' ? 'active'">
-                                    <a class="no-ajax" n:href="Array: filterRenderType => Grido\Components\Filters\Filter::RENDER_OUTER">
+                                    <a n:href="Array: filterRenderType => Grido\Components\Filters\Filter::RENDER_OUTER">
                                         Array
                                     </a>
                                 </li>
                                 <li n:class="$presenter->name == 'Doctrine' ? 'active'">
-                                    <a class="no-ajax" n:href="Doctrine:">
+                                    <a n:href="Doctrine:">
                                         Doctrine
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle no-ajax" data-toggle="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 Filter type <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
                                 <li n:if="$presenter->name != 'Array'" n:class="$presenter->parameter['filterRenderType'] == Grido\Components\Filters\Filter::RENDER_INNER ? 'active'">
-                                    <a class="no-ajax" n:href="this filterRenderType => Grido\Components\Filters\Filter::RENDER_INNER">
+                                    <a n:href="this filterRenderType => Grido\Components\Filters\Filter::RENDER_INNER">
                                         Inner
                                     </a>
                                 </li>
                                 <li n:class="$presenter->parameter['filterRenderType'] == Grido\Components\Filters\Filter::RENDER_OUTER ? 'active'">
-                                    <a class="no-ajax" n:href="this filterRenderType => Grido\Components\Filters\Filter::RENDER_OUTER">
+                                    <a n:href="this filterRenderType => Grido\Components\Filters\Filter::RENDER_OUTER">
                                         Outer
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle no-ajax" data-toggle="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 Ajax state <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
                                 <li n:class="$presenter->parameter['ajax'] == 'on' ? 'active'">
-                                    <a class="no-ajax" n:href="this ajax => on">ON</a>
+                                    <a n:href="this ajax => on">ON</a>
                                 </li>
                                 <li n:class="$presenter->parameter['ajax'] == 'ajax-off' ? 'active'">
-                                    <a class="no-ajax" n:href="this ajax => ajax-off">OFF</a>
+                                    <a n:href="this ajax => ajax-off">OFF</a>
                                 </li>
                             </ul>
+                        </li>
+                        <li n:class="$presenter->name == 'MultiRender' ? 'active'">
+                            <a n:href="multiRender:">Multi render</b></a>
                         </li>
                     </ul>
                     <ul class="nav pull-right">
@@ -109,7 +112,7 @@
             {include #content}
             <div class="github-fork-ribbon-wrapper left">
                 <div class="github-fork-ribbon">
-                    <a class="no-ajax" href="https://github.com/o5/grido-sandbox/blob/master/app/presenters/{$presenter->name}Presenter.php">
+                    <a href="https://github.com/o5/grido-sandbox/blob/master/app/presenters/{$presenter->name}Presenter.php">
                         Source on GitHub
                     </a>
                 </div>
