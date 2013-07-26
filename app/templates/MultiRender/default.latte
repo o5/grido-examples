@@ -2,6 +2,6 @@
 
 {var list = array('one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight')}
 {foreach $list as $name}
-    <h4>Grido {$name}</h4>
+    <h4 id="{$name}">Grido {$name}</h4>
     {$presenter[$name]->render()}
 {/foreach}
