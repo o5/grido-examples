@@ -26,6 +26,7 @@ final class ArrayPresenter extends BasePresenter
         $header->style = 'width: 0.1%';
 
         $grid->addColumnText('firstname', 'Jméno')
+            ->setSortable()
             ->setFilterText()
                 ->setSuggestion();
         $grid->getColumn('firstname')->headerPrototype->style = 'width: 12%';
@@ -40,6 +41,7 @@ final class ArrayPresenter extends BasePresenter
             ->setSortable()
             ->setFilterNumber();
         $grid->getColumn('allowance')->cellPrototype->class[] = 'center';
+        $grid->getColumn('allowance')->headerPrototype->class[] = 'center';
         $grid->getColumn('allowance')->headerPrototype->style = 'width: 6%';
 
         $grid->addFilterCustom('name', new \Nette\Forms\Controls\TextArea('Jméno nebo příjmení'))
@@ -53,9 +55,11 @@ final class ArrayPresenter extends BasePresenter
             ->setDateFormat(\Grido\Components\Columns\Date::FORMAT_DATETIME)
             ->setReplacement(array(NULL => 'Nikdy'));
         $grid->getColumn('last_login')->cellPrototype->class[] = 'center';
+        $grid->getColumn('last_login')->headerPrototype->style = 'width: 5%';
 
         $grid->addColumn('ok', 'OK', 'Grido\Components\Columns\Boolean')
-            ->headerPrototype->style = 'width: 0.1%';
+            ->setSortable()
+            ->headerPrototype->style = 'width: .8%';
 
         $grid->addActionHref('edit', 'Upravit')
             ->setIcon('pencil')
