@@ -5,6 +5,7 @@
 }
 body {background: #FBFBFB url(../img/bg.jpg) 0 0 repeat}
 .grido {font: 13px "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif}
+.grido input.date {background: url('../img/cal.jpg') #fff no-repeat right center}
 
 #content {
     padding:20px 45px;
