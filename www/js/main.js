@@ -1,11 +1,6 @@
 $(function(){
 
-    //uncomment below if you want to change the datepicker...
-    //$.fn.grido.Grid.prototype.initDatepicker = function() {
-    //    this.$element.on('focus', 'input.date').mySuperTruperDatePicker();
-    //};
+    //init grido
+    $('.grido').grido({ajax: false});
 
-    $('.grido').grido({
-        ajax: false
-    });
 });

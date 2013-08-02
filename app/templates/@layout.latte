@@ -125,14 +125,18 @@
         <script src="{$baseUri}/js/bootstrap-dropdown.js"></script>
         <script src="{$baseUri}/js/bootstrap-alert.js"></script>
         <script src="{$baseUri}/js/netteForms.js"></script>
+
         <script n:if="$ajax" src="{$baseUri}/js/nette.ajax.js"></script>
         <script n:if="$ajax" src="{$baseUri}/js/spinner.ajax.js"></script>
+        <script n:if="$ajax" src="{$baseUri}/js/grido.ajax.js{scache}"></script>
 
         <script src="{$baseUri}/js/jquery.hashchange.min.js"></script>
         <script src="{$baseUri}/js/jquery.maskedinput.min.js"></script>
         <script src="{$baseUri}/js/bootstrap-typeahead.js{scache}"></script>
         <script src="{$baseUri}/js/bootstrap-datepicker.js"></script>
-        <script src="https://rawgithub.com/o5/grido/master/client-side/grido.js{scache}"></script>  
+
+        <script src="https://rawgithub.com/o5/grido/master/client-side/grido.js{scache}"></script>
+        <script src="{$baseUri}/js/grido.ext.js{scache}"></script>
 
         <script n:if="$ajax"  src="{$baseUri}/js/main.ajax.js{scache}"></script>
         <script n:if="!$ajax" src="{$baseUri}/js/main.js{scache}"></script>
