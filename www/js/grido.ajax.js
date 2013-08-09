@@ -10,14 +10,19 @@
     {
         load: function()
         {
-            $('.grido').grido();
+            this.selector = $('.grido');
+            this.selector.grido();
         },
 
         success: function(payload)
         {
-            $('.grido').trigger('gridoAjaxSuccess', payload);
-            $('html, body').animate({scrollTop: 0}, 400); //scroll up after ajax update
+            this.selector.trigger('success.ajax.grido', payload);
+
+            //scroll up after ajax update
+            $('html, body').animate({scrollTop: 0}, 400);
         }
+    }, {
+        selector: null
     });
 
 })(jQuery);
