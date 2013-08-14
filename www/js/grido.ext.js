@@ -6,6 +6,12 @@
  * @param {Window} window
  * @param {Grido} Grido
  * @param {undefined} undefined
+ * @depends:
+ *      https://rawgithub.com/digitalBush/jquery.maskedinput/master/dist/jquery.maskedinput.js
+ *      https://rawgithub.com/Aymkdn/Datepicker-for-Bootstrap/master/bootstrap-datepicker.js
+ *      https://rawgithub.com/o5/bootstrap/master/js/bootstrap-typeahead.js
+ *      https://rawgithub.com/cowboy/jquery-hashchange/master/jquery.ba-hashchange.min.js
+ *      https://rawgithub.com/vojtech-dobes/nette.ajax.js/master/nette.ajax.js
  */
 ;(function($, window, Grido, undefined) {
     /*jshint laxbreak: true, expr: true */
@@ -17,11 +23,6 @@
         this.initSuggest();
     };
 
-    /**
-    * Init datepicker.
-    * @link https://rawgithub.com/digitalBush/jquery.maskedinput/master/dist/jquery.maskedinput.js
-    * @link https://rawgithub.com/Aymkdn/Datepicker-for-Bootstrap/master/bootstrap-datepicker.js
-    */
     Grido.Grid.prototype.initDatepicker = function()
     {
         var _this = this;
@@ -36,10 +37,6 @@
         });
     };
 
-    /**
-     * Init suggestion.
-     * @link https://rawgithub.com/o5/bootstrap/master/js/bootstrap-typeahead.js
-     */
     Grido.Grid.prototype.initSuggest = function()
     {
         if ($.fn.typeahead === undefined) {
@@ -95,13 +92,15 @@
 
     /**
      * @param {string} url
-     * @link https://rawgithub.com/vojtech-dobes/nette.ajax.js/master/nette.ajax.js
      */
     Grido.Ajax.prototype.doRequest = function(url)
     {
-        $.fn.netteAjax === undefined
-            ? $.get(url)
-            : $.nette.ajax({url: url});
+        if ($.fn.netteAjax === undefined) {
+            console.error('Plugin "nette.ajax.js" is missing!');
+            $.get(url);
+        } else {
+            $.nette.ajax({url: url});
+        }
     };
 
 })(jQuery, window, window.Grido);
