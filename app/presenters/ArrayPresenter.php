@@ -29,13 +29,13 @@ final class ArrayPresenter extends BasePresenter
             ->setSortable()
             ->setFilterText()
                 ->setSuggestion();
-        $grid->getColumn('firstname')->headerPrototype->style = 'width: 12%';
+        $grid->getColumn('firstname')->headerPrototype->style = 'width: 10%';
 
         $grid->addColumnText('surname', 'Příjmení')
             ->setSortable()
             ->setFilterText()
                 ->setSuggestion();
-        $grid->getColumn('surname')->headerPrototype->style = 'width: 11%';
+        $grid->getColumn('surname')->headerPrototype->style = 'width: 10%';
 
         $grid->addColumnNumber('allowance', 'Kapesné [CZK]', 2, ',', ' ')
             ->setSortable()
@@ -55,11 +55,13 @@ final class ArrayPresenter extends BasePresenter
             ->setDateFormat(\Grido\Components\Columns\Date::FORMAT_DATETIME)
             ->setReplacement(array(NULL => 'Nikdy'));
         $grid->getColumn('last_login')->cellPrototype->class[] = 'center';
-        $grid->getColumn('last_login')->headerPrototype->style = 'width: 5%';
+        $grid->getColumn('last_login')->headerPrototype->class[] = 'center';
+        $grid->getColumn('last_login')->headerPrototype->style = 'width: 9%';
 
         $grid->addColumn('ok', 'OK', 'Grido\Components\Columns\Boolean')
             ->setSortable()
-            ->headerPrototype->style = 'width: .8%';
+            ->headerPrototype->style = 'width: 2%';
+        $grid->getColumn('ok')->headerPrototype->class[] = 'center';
 
         $grid->addActionHref('edit', 'Upravit')
             ->setIcon('pencil')
