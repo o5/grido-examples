@@ -222,4 +222,20 @@ final class MultiRenderPresenter extends BasePresenter
         $this->addActions($grid);
         $this->addFilters($grid);
     }
+
+    public function renderDefault()
+    {
+        $this->template->list = array();
+        $methods = $this->getReflection()->getMethods(ReflectionMethod::IS_PROTECTED);
+        foreach ($methods as $method) {
+            if ($method->class != __CLASS__) {
+                break;
+            }
+
+            $grid = strtolower(str_replace('createComponent', '', $method->name));
+            $this->template->list[] = $grid;
+
+            $this[$grid]; // ONLY FOR DEMO! A better visualization of The Error 500..
+        }
+    }
 }

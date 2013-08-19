@@ -70,6 +70,11 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
         $this->redirect('default');
     }
 
+    public function renderDefault()
+    {
+        $this['grid']; // ONLY FOR DEMO! A better visualization of The Error 500..
+    }
+
     /**********************************************************************************************/
 
     public function createTemplate($class = NULL)

@@ -114,4 +114,9 @@ final class DibiPresenter extends BasePresenter
 
         $grid->setModel(new Cache($fluent, array(\Nette\Caching\Cache::TAGS => 'user')));
     }
+
+    public function renderCached()
+    {
+        $this['cachedGrid']; // ONLY FOR DEMO! A better visualization of The Error 500..
+    }
 }
