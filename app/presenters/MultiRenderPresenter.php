@@ -235,7 +235,7 @@ final class MultiRenderPresenter extends BasePresenter
             $grid = strtolower(str_replace('createComponent', '', $method->name));
             $this->template->list[] = $grid;
 
-            $this[$grid]; // ONLY FOR DEMO! A better visualization of The Error 500..
+            $this[$grid]; //WORKAROUND! A better visualization of the error 500..
         }
     }
 }

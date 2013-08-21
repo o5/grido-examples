@@ -117,6 +117,6 @@ final class DibiPresenter extends BasePresenter
 
     public function renderCached()
     {
-        $this['cachedGrid']; // ONLY FOR DEMO! A better visualization of The Error 500..
+        $this['cachedGrid']; //WORKAROUND! A better visualization of the error 500..
     }
 }
