@@ -9,9 +9,9 @@ namespace Grido\Components\Columns;
  */
 class Boolean extends Text
 {
-    public function getCellPrototype()
+    public function getCellPrototype($row = NULL)
     {
-        $cell = parent::getCellPrototype();
+        $cell = parent::getCellPrototype($row = NULL);
         $cell->class[] = 'center';
 
         return $cell;
