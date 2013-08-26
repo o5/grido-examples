@@ -58,8 +58,8 @@ final class ArrayPresenter extends BasePresenter
         $grid->getColumn('last_login')->headerPrototype->class[] = 'center';
         $grid->getColumn('last_login')->headerPrototype->style = 'width: 9%';
 
-        $grid->addColumn('ok', 'OK', 'Grido\Components\Columns\Boolean')
-            ->setSortable()
+        $column = new Grido\Components\Columns\Boolean($grid, 'ok', 'OK');
+        $column->setSortable()
             ->headerPrototype->style = 'width: 2%';
         $grid->getColumn('ok')->headerPrototype->class[] = 'center';
 

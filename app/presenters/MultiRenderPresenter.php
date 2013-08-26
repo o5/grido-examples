@@ -49,18 +49,18 @@ final class MultiRenderPresenter extends BasePresenter
             })->headerPrototype->class[] = 'center';
         $grid->getColumn('country')->cellPrototype->class[] = 'center';
 
-        $grid->addColumn('city', 'City')
+        $grid->addColumnText('city', 'City')
             ->setSortable()
             ->headerPrototype->class[] = 'center';
         $grid->getColumn('city')->cellPrototype->class[] = 'center';
 
-        $grid->addColumn('zip', 'ZIP')
+        $grid->addColumnText('zip', 'ZIP')
             ->setColumn('zipcode')
             ->setSortable()
             ->headerPrototype->class[] = 'center';
         $grid->getColumn('zip')->cellPrototype->class[] = 'center';
 
-        $grid->addColumn('phone', 'Phone')
+        $grid->addColumnText('phone', 'Phone')
             ->setColumn('telephonenumber')
             ->setSortable()
             ->headerPrototype->class[] = 'center';
