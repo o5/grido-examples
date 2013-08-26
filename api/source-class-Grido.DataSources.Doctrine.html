@@ -8,7 +8,7 @@
 	<title>File DataSources/Doctrine.php | Grido - DataGrid for Nette Framework.</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?2311747968"></script>
+	<script type="text/javascript" src="elementlist.js?2916077483"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido - DataGrid for Nette Framework." href="/opensearch.xml" />
 
@@ -348,11 +348,11 @@
 </span><span id="229" class="l"><a class="l" href="#229">229: </a>                ? <span class="php-keyword2">str_replace</span>(<span class="php-quote">'.'</span>, <span class="php-quote">'_'</span>, <span class="php-var">$this</span>-&gt;filterMapping[<span class="php-var">$column</span>])
 </span><span id="230" class="l"><a class="l" href="#230">230: </a>                : <span class="php-var">$qb</span>-&gt;getRootAlias() . <span class="php-quote">'_'</span> . <span class="php-var">$column</span>;
 </span><span id="231" class="l"><a class="l" href="#231">231: </a>
-</span><span id="232" class="l"><a class="l" href="#232">232: </a>            <span class="php-var">$value</span> = <span class="php-var">$row</span>[<span class="php-var">$mapping</span>];
+</span><span id="232" class="l"><a class="l" href="#232">232: </a>            <span class="php-var">$value</span> = (string) <span class="php-var">$row</span>[<span class="php-var">$mapping</span>];
 </span><span id="233" class="l"><a class="l" href="#233">233: </a>            <span class="php-var">$items</span>[<span class="php-var">$value</span>] = <span class="php-var">$value</span>;
 </span><span id="234" class="l"><a class="l" href="#234">234: </a>        }
 </span><span id="235" class="l"><a class="l" href="#235">235: </a>
-</span><span id="236" class="l"><a class="l" href="#236">236: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">array_keys</span>(<span class="php-var">$items</span>);
+</span><span id="236" class="l"><a class="l" href="#236">236: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">array_values</span>(<span class="php-var">$items</span>);
 </span><span id="237" class="l"><a class="l" href="#237">237: </a>    }
 </span><span id="238" class="l"><a class="l" href="#238">238: </a>}
 </span><span id="239" class="l"><a class="l" href="#239">239: </a></span></code></pre>

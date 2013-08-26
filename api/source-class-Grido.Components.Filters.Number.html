@@ -8,7 +8,7 @@
 	<title>File Components/Filters/Number.php | Grido - DataGrid for Nette Framework.</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?2311747968"></script>
+	<script type="text/javascript" src="elementlist.js?2916077483"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido - DataGrid for Nette Framework." href="/opensearch.xml" />
 
@@ -138,7 +138,7 @@
 </span><span id="21" class="l"><a class="l" href="#21">21: </a><span class="php-keyword1">class</span> <a id="Number" href="#Number">Number</a> <span class="php-keyword1">extends</span> Text
 </span><span id="22" class="l"><a class="l" href="#22">22: </a>{
 </span><span id="23" class="l"><a class="l" href="#23">23: </a>    <span class="php-comment">/** @var string for -&gt;where('&lt;column&gt; &lt;&gt; %f', &lt;value&gt;) */</span>
-</span><span id="24" class="l"><a class="l" href="#24">24: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$condition" href="#$condition">$condition</a></span> = <span class="php-quote">'/(&lt;&gt;|[&lt;|&gt;]=?)?([0-9,|.]+)/'</span>;
+</span><span id="24" class="l"><a class="l" href="#24">24: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$condition" href="#$condition">$condition</a></span> = <span class="php-quote">'/(&lt;&gt;|[&lt;|&gt;]=?)?([-0-9,|.]+)/'</span>;
 </span><span id="25" class="l"><a class="l" href="#25">25: </a>
 </span><span id="26" class="l"><a class="l" href="#26">26: </a>    <span class="php-comment">/**
 </span></span><span id="27" class="l"><a class="l" href="#27">27: </a><span class="php-comment">     * @return \Nette\Forms\Controls\TextInput
@@ -163,16 +163,17 @@
 </span><span id="46" class="l"><a class="l" href="#46">46: </a>        <span class="php-var">$condition</span> = <span class="php-keyword1">NULL</span>;
 </span><span id="47" class="l"><a class="l" href="#47">47: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword2">preg_match</span>(<span class="php-var">$this</span>-&gt;condition, <span class="php-var">$value</span>, <span class="php-var">$matches</span>)) {
 </span><span id="48" class="l"><a class="l" href="#48">48: </a>            <span class="php-var">$operator</span> = <span class="php-var">$matches</span>[<span class="php-num">1</span>] ? <span class="php-var">$matches</span>[<span class="php-num">1</span>] : <span class="php-quote">'='</span>;
-</span><span id="49" class="l"><a class="l" href="#49">49: </a>            <span class="php-var">$condition</span> = <span class="php-keyword1">array</span>(
-</span><span id="50" class="l"><a class="l" href="#50">50: </a>                <span class="php-quote">&quot;[</span><span class="php-var">$column</span><span class="php-quote">] </span><span class="php-var">$operator</span><span class="php-quote"> %f&quot;</span>,
-</span><span id="51" class="l"><a class="l" href="#51">51: </a>                <span class="php-keyword2">str_replace</span>(<span class="php-quote">','</span>, <span class="php-quote">'.'</span>, <span class="php-var">$matches</span>[<span class="php-num">2</span>])
-</span><span id="52" class="l"><a class="l" href="#52">52: </a>            );
-</span><span id="53" class="l"><a class="l" href="#53">53: </a>        }
-</span><span id="54" class="l"><a class="l" href="#54">54: </a>
-</span><span id="55" class="l"><a class="l" href="#55">55: </a>        <span class="php-keyword1">return</span> <span class="php-var">$condition</span>;
-</span><span id="56" class="l"><a class="l" href="#56">56: </a>    }
-</span><span id="57" class="l"><a class="l" href="#57">57: </a>}
-</span><span id="58" class="l"><a class="l" href="#58">58: </a></span></code></pre>
+</span><span id="49" class="l"><a class="l" href="#49">49: </a>            <span class="php-var">$value</span> = <span class="php-keyword2">str_replace</span>(<span class="php-quote">','</span>, <span class="php-quote">'.'</span>, <span class="php-var">$matches</span>[<span class="php-num">2</span>]);
+</span><span id="50" class="l"><a class="l" href="#50">50: </a>            <span class="php-var">$condition</span> = <span class="php-keyword1">array</span>(
+</span><span id="51" class="l"><a class="l" href="#51">51: </a>                <span class="php-quote">&quot;[</span><span class="php-var">$column</span><span class="php-quote">] </span><span class="php-var">$operator</span><span class="php-quote"> %f&quot;</span>,
+</span><span id="52" class="l"><a class="l" href="#52">52: </a>                <span class="php-var">$value</span> === <span class="php-quote">'.'</span> ? <span class="php-num">0</span> : <span class="php-var">$value</span> <span class="php-comment">//prevents error for input like &quot;&gt;.&quot;</span>
+</span><span id="53" class="l"><a class="l" href="#53">53: </a>            );
+</span><span id="54" class="l"><a class="l" href="#54">54: </a>        }
+</span><span id="55" class="l"><a class="l" href="#55">55: </a>
+</span><span id="56" class="l"><a class="l" href="#56">56: </a>        <span class="php-keyword1">return</span> <span class="php-var">$condition</span>;
+</span><span id="57" class="l"><a class="l" href="#57">57: </a>    }
+</span><span id="58" class="l"><a class="l" href="#58">58: </a>}
+</span><span id="59" class="l"><a class="l" href="#59">59: </a></span></code></pre>
 
 	<div id="footer">
 		Grido - DataGrid for Nette Framework. API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
