@@ -21,8 +21,6 @@
             //scroll up after ajax update
             $('html, body').animate({scrollTop: 0}, 400);
         }
-    }, {
-        selector: null
     });
 
 })(jQuery);
