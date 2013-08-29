@@ -23,26 +23,26 @@ final class ArrayPresenter extends BasePresenter
             ->cellPrototype->class[] = 'center';
         $header = $grid->getColumn('id')->headerPrototype;
         $header->rowspan = "2";
-        $header->style = 'width: 0.1%';
+        $header->style['width'] = '0.1%';
 
         $grid->addColumnText('firstname', 'Jméno')
             ->setSortable()
             ->setFilterText()
                 ->setSuggestion();
-        $grid->getColumn('firstname')->headerPrototype->style = 'width: 10%';
+        $grid->getColumn('firstname')->headerPrototype->style['width'] = '10%';
 
         $grid->addColumnText('surname', 'Příjmení')
             ->setSortable()
             ->setFilterText()
                 ->setSuggestion();
-        $grid->getColumn('surname')->headerPrototype->style = 'width: 10%';
+        $grid->getColumn('surname')->headerPrototype->style['width'] = '10%';
 
         $grid->addColumnNumber('allowance', 'Kapesné [CZK]', 2, ',', ' ')
             ->setSortable()
             ->setFilterNumber();
         $grid->getColumn('allowance')->cellPrototype->class[] = 'center';
         $grid->getColumn('allowance')->headerPrototype->class[] = 'center';
-        $grid->getColumn('allowance')->headerPrototype->style = 'width: 6%';
+        $grid->getColumn('allowance')->headerPrototype->style['width'] = '6%';
 
         $grid->addFilterCustom('name', new \Nette\Forms\Controls\TextArea('Jméno nebo příjmení'))
             ->setColumn('firstname')
@@ -56,11 +56,11 @@ final class ArrayPresenter extends BasePresenter
             ->setReplacement(array(NULL => 'Nikdy'));
         $grid->getColumn('last_login')->cellPrototype->class[] = 'center';
         $grid->getColumn('last_login')->headerPrototype->class[] = 'center';
-        $grid->getColumn('last_login')->headerPrototype->style = 'width: 9%';
+        $grid->getColumn('last_login')->headerPrototype->style['width'] = '9%';
 
         $column = new Grido\Components\Columns\Boolean($grid, 'ok', 'OK');
         $column->setSortable()
-            ->headerPrototype->style = 'width: 2%';
+            ->headerPrototype->style['width'] ='2%';
         $grid->getColumn('ok')->headerPrototype->class[] = 'center';
 
         $grid->addActionHref('edit', 'Upravit')
