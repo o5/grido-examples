@@ -43,9 +43,9 @@ php: Yes
 # Generate tree view of classes, interfaces and exceptions
 tree: Yes
 # Generate documentation for deprecated classes, methods, properties and constants
-deprecated: No
+deprecated: Yes
 # Generate documentation of tasks
-todo: No
+todo: Yes
 # Generate highlighted source code files
 sourceCode: Yes
 # Add a link to download documentation as a ZIP archive
