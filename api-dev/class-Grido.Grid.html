@@ -1,0 +1,3003 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class Grido\Grid | Grido@dev</title>
+
+	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
+	<script type="text/javascript" src="elementlist.js?1001150995"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+	<link rel="search" type="application/opensearchdescription+xml" title="Grido@dev" href="/opensearch.xml" />
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', "UA-39540018-1"]);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active"><a href="namespace-Grido.html">Grido<span></span></a>
+						<ul>
+				<li><a href="namespace-Grido.Components.html">Components<span></span></a>
+						<ul>
+				<li><a href="namespace-Grido.Components.Actions.html">Actions</a>
+						</li>
+				<li><a href="namespace-Grido.Components.Columns.html">Columns</a>
+						</li>
+				<li><a href="namespace-Grido.Components.Filters.html">Filters</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Grido.DataSources.html">DataSources</a>
+						</li>
+				<li><a href="namespace-Grido.PropertyAccessors.html">PropertyAccessors</a>
+						</li>
+				<li><a href="namespace-Grido.Translations.html">Translations</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-Grido.Grid.html">Grid</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form action="http://www.google.com/cse" id="search">
+		<input type="hidden" name="cx" value="000181613663465349732:u4pmlhe6onw" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Grido.html" title="Summary of Grido"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+			<li>
+				<a href="deprecated.html" title="List of deprecated elements"><span>Deprecated</span></a>
+			</li>
+			<li>
+				<a href="todo.html" title="Todo list"><span>Todo</span></a>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="grido-dev-api-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
+			</li>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Grid</h1>
+
+
+	<div class="description">
+	
+<p>Grido - DataGrid for Nette Framework.</p>
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+Nette\Application\UI\Control
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by" />
+			<a href="class-Grido.Components.Container.html"><span>Grido\Components\Container</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:60px">
+			<img src="resources/inherit.png" alt="Extended by" />
+<b><span>Grido\Grid</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Grido.html">Grido</a><br />
+		<b>Package:</b> Grido<br />
+
+				<b>Author:</b>
+				Petr Bugyík<br />
+		<b>Located at</b> <a href="source-class-Grido.Grid.html#18-824" title="Go to source code">Grid.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="setModel" id="_setModel">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Grido.Grid.html">Grido\Grid</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setModel">#</a>
+		<code><a href="source-class-Grido.Grid.html#109-123" title="Go to source code">setModel</a>( <span>mixed <var>$model</var></span>, <span>boolean <var>$forceWrapper</var> = <span class="php-keyword1">FALSE</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Sets a model that implements the interface Grido\DataSources\IDataSource or
+data-source object.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Sets a model that implements the interface Grido\DataSources\IDataSource or
+data-source object.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$model</var></dt>
+					<dd><code>mixed</code><br>$model</dd>
+					<dt><var>$forceWrapper</var></dt>
+					<dd><code>boolean</code><br>$forceWrapper</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Grido.Grid.html">Grido\Grid</a></code></code><br />
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code></code><br />
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setPropertyAccessor" id="_setPropertyAccessor">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Grido.Grid.html">Grido\Grid</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setPropertyAccessor">#</a>
+		<code><a href="source-class-Grido.Grid.html#125-134" title="Go to source code">setPropertyAccessor</a>( <span><code><a href="class-Grido.PropertyAccessors.IPropertyAccessor.html">Grido\PropertyAccessors\IPropertyAccessor</a></code> <var>$propertyAccessor</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Sets a property accesor that implements the interface
+Grido\PropertyAccessors\IPropertyAccessor.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Sets a property accesor that implements the interface
+Grido\PropertyAccessors\IPropertyAccessor.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$propertyAccessor</var></dt>
+					<dd><code><code><a href="class-Grido.PropertyAccessors.IPropertyAccessor.html">Grido\PropertyAccessors\IPropertyAccessor</a></code></code><br>$propertyAccessor</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Grido.Grid.html">Grido\Grid</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setDefaultPerPage" id="_setDefaultPerPage">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Grido.Grid.html">Grido\Grid</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setDefaultPerPage">#</a>
+		<code><a href="source-class-Grido.Grid.html#136-152" title="Go to source code">setDefaultPerPage</a>( <span>integer <var>$perPage</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Sets the default number of items per page.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Sets the default number of items per page.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$perPage</var></dt>
+					<dd><code>integer</code><br>$perPage</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Grido.Grid.html">Grido\Grid</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setDefaultFilter" id="_setDefaultFilter">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Grido.Grid.html">Grido\Grid</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setDefaultFilter">#</a>
+		<code><a href="source-class-Grido.Grid.html#154-163" title="Go to source code">setDefaultFilter</a>( <span>array <var>$filter</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Sets default filtering.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Sets default filtering.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$filter</var></dt>
+					<dd><code>array</code><br>$filter</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Grido.Grid.html">Grido\Grid</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setDefaultSort" id="_setDefaultSort">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Grido.Grid.html">Grido\Grid</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setDefaultSort">#</a>
+		<code><a href="source-class-Grido.Grid.html#165-184" title="Go to source code">setDefaultSort</a>( <span>array <var>$sort</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Sets default sorting.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Sets default sorting.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sort</var></dt>
+					<dd><code>array</code><br>$sort</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Grido.Grid.html">Grido\Grid</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setPerPageList" id="_setPerPageList">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Grido.Grid.html">Grido\Grid</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setPerPageList">#</a>
+		<code><a href="source-class-Grido.Grid.html#186-200" title="Go to source code">setPerPageList</a>( <span>array <var>$perPageList</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Sets items to per-page select.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Sets items to per-page select.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$perPageList</var></dt>
+					<dd><code>array</code><br>$perPageList</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Grido.Grid.html">Grido\Grid</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setTranslator" id="_setTranslator">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Grido.Grid.html">Grido\Grid</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setTranslator">#</a>
+		<code><a href="source-class-Grido.Grid.html#202-211" title="Go to source code">setTranslator</a>( <span>Nette\Localization\ITranslator <var>$translator</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Sets translator.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Sets translator.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$translator</var></dt>
+					<dd><code>Nette\Localization\ITranslator</code><br>$translator</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Grido.Grid.html">Grido\Grid</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setFilterRenderType" id="_setFilterRenderType">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Grido.Grid.html">Grido\Grid</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setFilterRenderType">#</a>
+		<code><a href="source-class-Grido.Grid.html#213-230" title="Go to source code">setFilterRenderType</a>( <span>string <var>$type</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Sets type of filter rendering. Defaults inner (Filter::RENDER_INNER) if
+column does not exist then outer filter (Filter::RENDER_OUTER).</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Sets type of filter rendering. Defaults inner (Filter::RENDER_INNER) if
+column does not exist then outer filter (Filter::RENDER_OUTER).</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$type</var></dt>
+					<dd><code>string</code><br>$type</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Grido.Grid.html">Grido\Grid</a></code></code><br />
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code></code><br />
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setPaginator" id="_setPaginator">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Grido.Grid.html">Grido\Grid</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setPaginator">#</a>
+		<code><a href="source-class-Grido.Grid.html#232-241" title="Go to source code">setPaginator</a>( <span><code><a href="class-Grido.Components.Paginator.html">Grido\Components\Paginator</a></code> <var>$paginator</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Sets custom paginator.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Sets custom paginator.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$paginator</var></dt>
+					<dd><code><code><a href="class-Grido.Components.Paginator.html">Grido\Components\Paginator</a></code></code><br>$paginator</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Grido.Grid.html">Grido\Grid</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setPrimaryKey" id="_setPrimaryKey">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setPrimaryKey">#</a>
+		<code><a href="source-class-Grido.Grid.html#243-252" title="Go to source code">setPrimaryKey</a>( <span>string <var>$key</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Sets grid primary key. Defaults is "id".</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Sets grid primary key. Defaults is "id".</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd><code>string</code><br>$key</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setTemplateFile" id="_setTemplateFile">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Grido.Grid.html">Grido\Grid</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setTemplateFile">#</a>
+		<code><a href="source-class-Grido.Grid.html#254-263" title="Go to source code">setTemplateFile</a>( <span>string <var>$file</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Sets file name of custom template.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Sets file name of custom template.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$file</var></dt>
+					<dd><code>string</code><br>$file</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Grido.Grid.html">Grido\Grid</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setRememberState" id="_setRememberState">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Grido.Grid.html">Grido\Grid</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setRememberState">#</a>
+		<code><a href="source-class-Grido.Grid.html#265-274" title="Go to source code">setRememberState</a>( <span>boolean <var>$state</var> = <span class="php-keyword1">TRUE</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Sets saving state to session.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Sets saving state to session.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$state</var></dt>
+					<dd><code>boolean</code><br>$states</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Grido.Grid.html">Grido\Grid</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setRowCallback" id="_setRowCallback">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Grido.Grid.html">Grido\Grid</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setRowCallback">#</a>
+		<code><a href="source-class-Grido.Grid.html#276-286" title="Go to source code">setRowCallback</a>( <span>mixed <var>$callback</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Sets callback for customizing tr html object. Callback returns tr html
+element; function($row, Html $tr).</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Sets callback for customizing tr html object. Callback returns tr html
+element; function($row, Html $tr).</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$callback</var></dt>
+					<dd><code>mixed</code><br>$callback</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Grido.Grid.html">Grido\Grid</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setClientSideOptions" id="_setClientSideOptions">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Grido.Grid.html">Grido\Grid</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setClientSideOptions">#</a>
+		<code><a href="source-class-Grido.Grid.html#288-297" title="Go to source code">setClientSideOptions</a>( <span>array <var>$options</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Sets client-side options.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Sets client-side options.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$options</var></dt>
+					<dd><code>array</code><br>$options</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Grido.Grid.html">Grido\Grid</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getCount" id="_getCount">
+
+		<td class="attributes"><code>
+			 public 
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getCount">#</a>
+		<code><a href="source-class-Grido.Grid.html#301-312" title="Go to source code">getCount</a>( )</code>
+
+		<div class="description short">
+			
+<p>Returns total count of data.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns total count of data.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getDefaultPerPage" id="_getDefaultPerPage">
+
+		<td class="attributes"><code>
+			 public 
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getDefaultPerPage">#</a>
+		<code><a href="source-class-Grido.Grid.html#314-325" title="Go to source code">getDefaultPerPage</a>( )</code>
+
+		<div class="description short">
+			
+<p>Returns default per page.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns default per page.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getDefaultFilter" id="_getDefaultFilter">
+
+		<td class="attributes"><code>
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getDefaultFilter">#</a>
+		<code><a href="source-class-Grido.Grid.html#327-334" title="Go to source code">getDefaultFilter</a>( )</code>
+
+		<div class="description short">
+			
+<p>Returns default filter.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns default filter.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getDefaultSort" id="_getDefaultSort">
+
+		<td class="attributes"><code>
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getDefaultSort">#</a>
+		<code><a href="source-class-Grido.Grid.html#336-343" title="Go to source code">getDefaultSort</a>( )</code>
+
+		<div class="description short">
+			
+<p>Returns default sort.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns default sort.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getPerPageList" id="_getPerPageList">
+
+		<td class="attributes"><code>
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getPerPageList">#</a>
+		<code><a href="source-class-Grido.Grid.html#345-352" title="Go to source code">getPerPageList</a>( )</code>
+
+		<div class="description short">
+			
+<p>Returns list of possible items per page.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns list of possible items per page.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getPrimaryKey" id="_getPrimaryKey">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getPrimaryKey">#</a>
+		<code><a href="source-class-Grido.Grid.html#354-361" title="Go to source code">getPrimaryKey</a>( )</code>
+
+		<div class="description short">
+			
+<p>Returns primary key.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns primary key.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getRememberState" id="_getRememberState">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getRememberState">#</a>
+		<code><a href="source-class-Grido.Grid.html#363-370" title="Go to source code">getRememberState</a>( )</code>
+
+		<div class="description short">
+			
+<p>Returns remember state.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns remember state.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getRowCallback" id="_getRowCallback">
+
+		<td class="attributes"><code>
+			 public 
+			callable
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getRowCallback">#</a>
+		<code><a href="source-class-Grido.Grid.html#372-379" title="Go to source code">getRowCallback</a>( )</code>
+
+		<div class="description short">
+			
+<p>Returns row callback.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns row callback.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>callable</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getPerPage" id="_getPerPage">
+
+		<td class="attributes"><code>
+			 public 
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getPerPage">#</a>
+		<code><a href="source-class-Grido.Grid.html#381-390" title="Go to source code">getPerPage</a>( )</code>
+
+		<div class="description short">
+			
+<p>Returns items per page.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns items per page.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getActualFilter" id="_getActualFilter">
+
+		<td class="attributes"><code>
+			 public 
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getActualFilter">#</a>
+		<code><a href="source-class-Grido.Grid.html#392-401" title="Go to source code">getActualFilter</a>( <span>string <var>$key</var> = <span class="php-keyword1">NULL</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Returns actual filter values.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns actual filter values.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd><code>string</code><br>$key</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>mixed</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getData" id="_getData">
+
+		<td class="attributes"><code>
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getData">#</a>
+		<code><a href="source-class-Grido.Grid.html#403-442" title="Go to source code">getData</a>( <span>boolean <var>$applyPaging</var> = <span class="php-keyword1">TRUE</span></span>, <span>boolean <var>$useCache</var> = <span class="php-keyword1">TRUE</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Returns fetched data.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns fetched data.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$applyPaging</var></dt>
+					<dd><code>boolean</code><br>$applyPaging</dd>
+					<dt><var>$useCache</var></dt>
+					<dd><code>boolean</code><br>$useCache</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br />
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><code><a href="class-Exception.html">Exception</a></code></code><br />
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getTranslator" id="_getTranslator">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Grido.Translations.FileTranslator.html">Grido\Translations\FileTranslator</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getTranslator">#</a>
+		<code><a href="source-class-Grido.Grid.html#444-455" title="Go to source code">getTranslator</a>( )</code>
+
+		<div class="description short">
+			
+<p>Returns translator.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns translator.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Grido.Translations.FileTranslator.html">Grido\Translations\FileTranslator</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getRememberSession" id="_getRememberSession">
+
+		<td class="attributes"><code>
+			 public 
+			Nette\Http\Session
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getRememberSession">#</a>
+		<code><a href="source-class-Grido.Grid.html#457-464" title="Go to source code">getRememberSession</a>( )</code>
+
+		<div class="description short">
+			
+<p>Returns remember session for set expiration, etc.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns remember session for set expiration, etc.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Http\Session</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getTablePrototype" id="_getTablePrototype">
+
+		<td class="attributes"><code>
+			 public 
+			Nette\Utils\Html
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getTablePrototype">#</a>
+		<code><a href="source-class-Grido.Grid.html#466-479" title="Go to source code">getTablePrototype</a>( )</code>
+
+		<div class="description short">
+			
+<p>Returns table html element of grid.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns table html element of grid.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Utils\Html</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getFilterRenderType" id="_getFilterRenderType">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getFilterRenderType">#</a>
+		<code><a href="source-class-Grido.Grid.html#481-506" title="Go to source code">getFilterRenderType</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getModel" id="_getModel">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Grido.DataSources.IDataSource.html">Grido\DataSources\IDataSource</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getModel">#</a>
+		<code><a href="source-class-Grido.Grid.html#508-515" title="Go to source code">getModel</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Grido.DataSources.IDataSource.html">Grido\DataSources\IDataSource</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getPropertyAccessor" id="_getPropertyAccessor">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Grido.PropertyAccessors.IPropertyAccessor.html">Grido\PropertyAccessors\IPropertyAccessor</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getPropertyAccessor">#</a>
+		<code><a href="source-class-Grido.Grid.html#517-528" title="Go to source code">getPropertyAccessor</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Grido.PropertyAccessors.IPropertyAccessor.html">Grido\PropertyAccessors\IPropertyAccessor</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getPaginator" id="_getPaginator">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Grido.Components.Paginator.html">Grido\Components\Paginator</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getPaginator">#</a>
+		<code><a href="source-class-Grido.Grid.html#530-543" title="Go to source code">getPaginator</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Grido.Components.Paginator.html">Grido\Components\Paginator</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getRowPrototype" id="_getRowPrototype">
+
+		<td class="attributes"><code>
+			 public 
+			Nette\Utils\Html
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getRowPrototype">#</a>
+		<code><a href="source-class-Grido.Grid.html#545-558" title="Go to source code">getRowPrototype</a>( <span>mixed <var>$row</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$row</var></dt>
+					<dd><code>mixed</code><br>$row item from db</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Utils\Html</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="loadState" id="_loadState">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_loadState">#</a>
+		<code><a href="source-class-Grido.Grid.html#562-578" title="Go to source code">loadState</a>( <span>array <var>$params</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Loads state informations.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Loads state informations.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$params</var></dt>
+					<dd><code>array</code><br>$params</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="handleRefresh" id="_handleRefresh">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_handleRefresh">#</a>
+		<code><a href="source-class-Grido.Grid.html#580-587" title="Go to source code">handleRefresh</a>( )</code>
+
+		<div class="description short">
+			
+<p>Ajax method.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Ajax method.</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="handlePage" id="_handlePage">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_handlePage">#</a>
+		<code><a href="source-class-Grido.Grid.html#589-596" title="Go to source code">handlePage</a>( <span>integer <var>$page</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$page</var></dt>
+					<dd><code>integer</code><br>$page</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="handleSort" id="_handleSort">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_handleSort">#</a>
+		<code><a href="source-class-Grido.Grid.html#598-606" title="Go to source code">handleSort</a>( <span>array <var>$sort</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sort</var></dt>
+					<dd><code>array</code><br>$sort</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="handleFilter" id="_handleFilter">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_handleFilter">#</a>
+		<code><a href="source-class-Grido.Grid.html#608-625" title="Go to source code">handleFilter</a>( <span>Nette\Forms\Controls\SubmitButton <var>$button</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$button</var></dt>
+					<dd><code>Nette\Forms\Controls\SubmitButton</code><br>$button</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="handleReset" id="_handleReset">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_handleReset">#</a>
+		<code><a href="source-class-Grido.Grid.html#627-641" title="Go to source code">handleReset</a>( <span>Nette\Forms\Controls\SubmitButton <var>$button</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$button</var></dt>
+					<dd><code>Nette\Forms\Controls\SubmitButton</code><br>$button</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="handlePerPage" id="_handlePerPage">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_handlePerPage">#</a>
+		<code><a href="source-class-Grido.Grid.html#643-656" title="Go to source code">handlePerPage</a>( <span>Nette\Forms\Controls\SubmitButton <var>$button</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$button</var></dt>
+					<dd><code>Nette\Forms\Controls\SubmitButton</code><br>$button</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="reload" id="_reload">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_reload">#</a>
+		<code><a href="source-class-Grido.Grid.html#658-670" title="Go to source code">reload</a>( )</code>
+
+		<div class="description short">
+			
+<p>Refresh wrapper.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Refresh wrapper.</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createTemplate" id="_createTemplate">
+
+		<td class="attributes"><code>
+			 public 
+			Nette\Templating\FileTemplate
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createTemplate">#</a>
+		<code><a href="source-class-Grido.Grid.html#674-686" title="Go to source code">createTemplate</a>( <span>string <var>$class</var> = <span class="php-keyword1">NULL</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$class</var></dt>
+					<dd><code>string</code><br>$class</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Templating\FileTemplate</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="render" id="_render">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_render">#</a>
+		<code><a href="source-class-Grido.Grid.html#688-701" title="Go to source code">render</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="saveRememberState" id="_saveRememberState">
+
+		<td class="attributes"><code>
+			 protected 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_saveRememberState">#</a>
+		<code><a href="source-class-Grido.Grid.html#703-709" title="Go to source code">saveRememberState</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="applyFiltering" id="_applyFiltering">
+
+		<td class="attributes"><code>
+			 protected 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_applyFiltering">#</a>
+		<code><a href="source-class-Grido.Grid.html#711-717" title="Go to source code">applyFiltering</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__applyFiltering" id="___applyFiltering">
+
+		<td class="attributes"><code>
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___applyFiltering">#</a>
+		<code><a href="source-class-Grido.Grid.html#719-746" title="Go to source code">__applyFiltering</a>( <span>array <var>$filter</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Do not call directly.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Do not call directly.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$filter</var></dt>
+					<dd><code>array</code><br>$filter</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="applySorting" id="_applySorting">
+
+		<td class="attributes"><code>
+			 protected 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_applySorting">#</a>
+		<code><a href="source-class-Grido.Grid.html#748-781" title="Go to source code">applySorting</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="applyPaging" id="_applyPaging">
+
+		<td class="attributes"><code>
+			 protected 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_applyPaging">#</a>
+		<code><a href="source-class-Grido.Grid.html#783-797" title="Go to source code">applyPaging</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createComponentForm" id="_createComponentForm">
+
+		<td class="attributes"><code>
+			 protected 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createComponentForm">#</a>
+		<code><a href="source-class-Grido.Grid.html#799-815" title="Go to source code">createComponentForm</a>( <span>mixed <var>$name</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getItemsForCountSelect" id="_getItemsForCountSelect">
+
+		<td class="attributes"><code>
+			 protected 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getItemsForCountSelect">#</a>
+		<code><a href="source-class-Grido.Grid.html#817-823" title="Go to source code">getItemsForCountSelect</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-Grido.Components.Container.html#methods">Grido\Components\Container</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Grido.Components.Container.html#_addActionEvent">addActionEvent()</a>, 
+			<a href="class-Grido.Components.Container.html#_addActionHref">addActionHref()</a>, 
+			<a href="class-Grido.Components.Container.html#_addColumnDate">addColumnDate()</a>, 
+			<a href="class-Grido.Components.Container.html#_addColumnHref">addColumnHref()</a>, 
+			<a href="class-Grido.Components.Container.html#_addColumnMail">addColumnMail()</a>, 
+			<a href="class-Grido.Components.Container.html#_addColumnNumber">addColumnNumber()</a>, 
+			<a href="class-Grido.Components.Container.html#_addColumnText">addColumnText()</a>, 
+			<a href="class-Grido.Components.Container.html#_addFilterCheck">addFilterCheck()</a>, 
+			<a href="class-Grido.Components.Container.html#_addFilterCustom">addFilterCustom()</a>, 
+			<a href="class-Grido.Components.Container.html#_addFilterDate">addFilterDate()</a>, 
+			<a href="class-Grido.Components.Container.html#_addFilterNumber">addFilterNumber()</a>, 
+			<a href="class-Grido.Components.Container.html#_addFilterSelect">addFilterSelect()</a>, 
+			<a href="class-Grido.Components.Container.html#_addFilterText">addFilterText()</a>, 
+			<a href="class-Grido.Components.Container.html#_getAction">getAction()</a>, 
+			<a href="class-Grido.Components.Container.html#_getColumn">getColumn()</a>, 
+			<a href="class-Grido.Components.Container.html#_getExport">getExport()</a>, 
+			<a href="class-Grido.Components.Container.html#_getFilter">getFilter()</a>, 
+			<a href="class-Grido.Components.Container.html#_getOperations">getOperations()</a>, 
+			<a href="class-Grido.Components.Container.html#_hasActions">hasActions()</a>, 
+			<a href="class-Grido.Components.Container.html#_hasColumns">hasColumns()</a>, 
+			<a href="class-Grido.Components.Container.html#_hasExport">hasExport()</a>, 
+			<a href="class-Grido.Components.Container.html#_hasFilters">hasFilters()</a>, 
+			<a href="class-Grido.Components.Container.html#_hasOperations">hasOperations()</a>, 
+			<a href="class-Grido.Components.Container.html#_setExport">setExport()</a>, 
+			<a href="class-Grido.Components.Container.html#_setOperations">setOperations()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+	<table class="summary" id="constants">
+	<caption>Constants summary</caption>
+	<tr data-order="BUTTONS" id="BUTTONS">
+
+		<td class="attributes"><code>string</code></td>
+		<td class="name"><code>
+				<a href="source-class-Grido.Grid.html#44" title="Go to source code"><b>BUTTONS</b></a>
+		</code></td>
+		<td class="value"><code><span class="php-quote">'buttons'</span></code></td>
+		<td class="description"><div>
+			<a href="#BUTTONS" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="page" id="$page">
+		<td class="attributes"><code>
+			public  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#46-47" title="Go to source code"><var>$page</var></a>
+		</td>
+		<td class="value"><code><span class="php-num">1</span></code></td>
+		<td class="description"><div>
+			<a href="#$page" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>@persistent</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>@persistent</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="perPage" id="$perPage">
+		<td class="attributes"><code>
+			public  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#49-50" title="Go to source code"><var>$perPage</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$perPage" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>@persistent</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>@persistent</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="sort" id="$sort">
+		<td class="attributes"><code>
+			public  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#52-53" title="Go to source code"><var>$sort</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
+		<td class="description"><div>
+			<a href="#$sort" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>@persistent</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>@persistent</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="filter" id="$filter">
+		<td class="attributes"><code>
+			public  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#55-56" title="Go to source code"><var>$filter</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
+		<td class="description"><div>
+			<a href="#$filter" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>@persistent</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>@persistent</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="onRender" id="$onRender">
+		<td class="attributes"><code>
+			public  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#58-59" title="Go to source code"><var>$onRender</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$onRender" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>event on render</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>event on render</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="onFetchData" id="$onFetchData">
+		<td class="attributes"><code>
+			public  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#61-62" title="Go to source code"><var>$onFetchData</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$onFetchData" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>event for modifying data</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>event for modifying data</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="rowCallback" id="$rowCallback">
+		<td class="attributes"><code>
+			protected  
+			callable
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#64-65" title="Go to source code"><var>$rowCallback</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$rowCallback" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>returns tr html element; function($row, Html $tr)</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>returns tr html element; function($row, Html $tr)</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="tablePrototype" id="$tablePrototype">
+		<td class="attributes"><code>
+			protected  
+			Nette\Utils\Html
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#67-68" title="Go to source code"><var>$tablePrototype</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$tablePrototype" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="rememberState" id="$rememberState">
+		<td class="attributes"><code>
+			protected  
+			boolean
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#70-71" title="Go to source code"><var>$rememberState</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">FALSE</span></code></td>
+		<td class="description"><div>
+			<a href="#$rememberState" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="primaryKey" id="$primaryKey">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#73-74" title="Go to source code"><var>$primaryKey</var></a>
+		</td>
+		<td class="value"><code><span class="php-quote">'id'</span></code></td>
+		<td class="description"><div>
+			<a href="#$primaryKey" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="filterRenderType" id="$filterRenderType">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#76-77" title="Go to source code"><var>$filterRenderType</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$filterRenderType" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="perPageList" id="$perPageList">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#79-80" title="Go to source code"><var>$perPageList</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>(<span class="php-num">10</span>, <span class="php-num">20</span>, <span class="php-num">30</span>, <span class="php-num">50</span>, <span class="php-num">100</span>)</code></td>
+		<td class="description"><div>
+			<a href="#$perPageList" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="defaultPerPage" id="$defaultPerPage">
+		<td class="attributes"><code>
+			protected  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#82-83" title="Go to source code"><var>$defaultPerPage</var></a>
+		</td>
+		<td class="value"><code><span class="php-num">20</span></code></td>
+		<td class="description"><div>
+			<a href="#$defaultPerPage" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="defaultFilter" id="$defaultFilter">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#85-86" title="Go to source code"><var>$defaultFilter</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
+		<td class="description"><div>
+			<a href="#$defaultFilter" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="defaultSort" id="$defaultSort">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#88-89" title="Go to source code"><var>$defaultSort</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
+		<td class="description"><div>
+			<a href="#$defaultSort" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="model" id="$model">
+		<td class="attributes"><code>
+			protected  
+			<code><a href="class-Grido.DataSources.IDataSource.html">Grido\DataSources\IDataSource</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#91-92" title="Go to source code"><var>$model</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$model" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="count" id="$count">
+		<td class="attributes"><code>
+			protected  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#94-95" title="Go to source code"><var>$count</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$count" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>total count of items</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>total count of items</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="data" id="$data">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#97-98" title="Go to source code"><var>$data</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$data" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="paginator" id="$paginator">
+		<td class="attributes"><code>
+			protected  
+			<code><a href="class-Grido.Components.Paginator.html">Grido\Components\Paginator</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#100-101" title="Go to source code"><var>$paginator</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$paginator" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="translator" id="$translator">
+		<td class="attributes"><code>
+			protected  
+			Nette\Localization\ITranslator
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#103-104" title="Go to source code"><var>$translator</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$translator" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="propertyAccessor" id="$propertyAccessor">
+		<td class="attributes"><code>
+			protected  
+			<code><a href="class-Grido.PropertyAccessors.IPropertyAccessor.html">Grido\PropertyAccessors\IPropertyAccessor</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#106-107" title="Go to source code"><var>$propertyAccessor</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$propertyAccessor" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Properties inherited from <a href="class-Grido.Components.Container.html#properties">Grido\Components\Container</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Grido.Components.Container.html#$hasActions"><var>$hasActions</var></a>, 
+			<a href="class-Grido.Components.Container.html#$hasColumns"><var>$hasColumns</var></a>, 
+			<a href="class-Grido.Components.Container.html#$hasExport"><var>$hasExport</var></a>, 
+			<a href="class-Grido.Components.Container.html#$hasFilters"><var>$hasFilters</var></a>, 
+			<a href="class-Grido.Components.Container.html#$hasOperations"><var>$hasOperations</var></a>
+		</code></td>
+	</tr>
+	</table>
+
+
+	<table class="summary" id="magicProperties">
+	<caption>Magic properties summary</caption>
+	<tr data-order="rememberState" id="m$rememberState">
+		<td class="attributes"><code>
+			public  
+			boolean
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#28" title="Go to source code"><var>$rememberState</var></a>
+		</td>
+		<td class="description"><div>
+			<a href="#m$rememberState" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="defaultPerPage" id="m$defaultPerPage">
+		<td class="attributes"><code>
+			public  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#29" title="Go to source code"><var>$defaultPerPage</var></a>
+		</td>
+		<td class="description"><div>
+			<a href="#m$defaultPerPage" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="defaultFilter" id="m$defaultFilter">
+		<td class="attributes"><code>
+			public  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#30" title="Go to source code"><var>$defaultFilter</var></a>
+		</td>
+		<td class="description"><div>
+			<a href="#m$defaultFilter" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="defaultSort" id="m$defaultSort">
+		<td class="attributes"><code>
+			public  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#31" title="Go to source code"><var>$defaultSort</var></a>
+		</td>
+		<td class="description"><div>
+			<a href="#m$defaultSort" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="perPageList" id="m$perPageList">
+		<td class="attributes"><code>
+			public  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#32" title="Go to source code"><var>$perPageList</var></a>
+		</td>
+		<td class="description"><div>
+			<a href="#m$perPageList" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="translator" id="m$translator">
+		<td class="attributes"><code>
+			public  
+			Nette\Localization\ITranslator
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#33" title="Go to source code"><var>$translator</var></a>
+		</td>
+		<td class="description"><div>
+			<a href="#m$translator" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="paginator" id="m$paginator">
+		<td class="attributes"><code>
+			public  
+			<code><a href="class-Grido.Components.Paginator.html">Grido\Components\Paginator</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#34" title="Go to source code"><var>$paginator</var></a>
+		</td>
+		<td class="description"><div>
+			<a href="#m$paginator" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="primaryKey" id="m$primaryKey">
+		<td class="attributes"><code>
+			public  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#35" title="Go to source code"><var>$primaryKey</var></a>
+		</td>
+		<td class="description"><div>
+			<a href="#m$primaryKey" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="filterRenderType" id="m$filterRenderType">
+		<td class="attributes"><code>
+			public  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#36" title="Go to source code"><var>$filterRenderType</var></a>
+		</td>
+		<td class="description"><div>
+			<a href="#m$filterRenderType" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="model" id="m$model">
+		<td class="attributes"><code>
+			public  
+			<code><a href="class-Grido.DataSources.IDataSource.html">Grido\DataSources\IDataSource</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#37" title="Go to source code"><var>$model</var></a>
+		</td>
+		<td class="description"><div>
+			<a href="#m$model" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="propertyAccessor" id="m$propertyAccessor">
+		<td class="attributes"><code>
+			public  
+			<code><a href="class-Grido.PropertyAccessors.IPropertyAccessor.html">Grido\PropertyAccessors\IPropertyAccessor</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#38" title="Go to source code"><var>$propertyAccessor</var></a>
+		</td>
+		<td class="description"><div>
+			<a href="#m$propertyAccessor" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="rowCallback" id="m$rowCallback">
+		<td class="attributes"><code>
+			public  
+			callable
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#39" title="Go to source code"><var>$rowCallback</var></a>
+		</td>
+		<td class="description"><div>
+			<a href="#m$rowCallback" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="count" id="m$count">
+		<td class="attributes"><code>
+			public  read-only
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#24" title="Go to source code"><var>$count</var></a>
+		</td>
+		<td class="description"><div>
+			<a href="#m$count" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="data" id="m$data">
+		<td class="attributes"><code>
+			public  read-only
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#25" title="Go to source code"><var>$data</var></a>
+		</td>
+		<td class="description"><div>
+			<a href="#m$data" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="tablePrototype" id="m$tablePrototype">
+		<td class="attributes"><code>
+			public  read-only
+			Nette\Utils\Html
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#26" title="Go to source code"><var>$tablePrototype</var></a>
+		</td>
+		<td class="description"><div>
+			<a href="#m$tablePrototype" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="templateFile" id="m$templateFile">
+		<td class="attributes"><code>
+			public  write-only
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Grid.html#27" title="Go to source code"><var>$templateFile</var></a>
+		</td>
+		<td class="description"><div>
+			<a href="#m$templateFile" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+</div>
+
+	<div id="footer">
+		Grido@dev API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

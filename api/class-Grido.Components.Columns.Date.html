@@ -7,7 +7,7 @@
 	<title>Class Grido\Components\Columns\Date | Grido - DataGrid for Nette Framework.</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?2916077483"></script>
+	<script type="text/javascript" src="elementlist.js?1490757444"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido - DataGrid for Nette Framework." href="/opensearch.xml" />
 
@@ -104,6 +104,12 @@
 			<li>
 				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
 			</li>
+			<li>
+				<a href="deprecated.html" title="List of deprecated elements"><span>Deprecated</span></a>
+			</li>
+			<li>
+				<a href="todo.html" title="Todo list"><span>Todo</span></a>
+			</li>
 		</ul>
 		<ul>
 			<li>
@@ -172,7 +178,7 @@ Nette\Application\UI\PresenterComponent
 
 				<b>Author:</b>
 				Petr Bugyík<br />
-		<b>Located at</b> <a href="source-class-Grido.Components.Columns.Date.html#14-82" title="Go to source code">Components/Columns/Date.php</a><br />
+		<b>Located at</b> <a href="source-class-Grido.Components.Columns.Date.html#14-90" title="Go to source code">Components/Columns/Date.php</a><br />
 	</div>
 
 
@@ -259,6 +265,39 @@ Nette\Application\UI\PresenterComponent
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="getDateFormat" id="_getDateFormat">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getDateFormat">#</a>
+		<code><a href="source-class-Grido.Components.Columns.Date.html#57-63" title="Go to source code">getDateFormat</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="formatValue" id="_formatValue">
 
 		<td class="attributes"><code>
@@ -270,7 +309,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_formatValue">#</a>
-		<code><a href="source-class-Grido.Components.Columns.Date.html#57-70" title="Go to source code">formatValue</a>( <span>mixed <var>$value</var></span> )</code>
+		<code><a href="source-class-Grido.Components.Columns.Date.html#65-78" title="Go to source code">formatValue</a>( <span>mixed <var>$value</var></span> )</code>
 
 		<div class="description short">
 			
@@ -299,6 +338,46 @@ Nette\Application\UI\PresenterComponent
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="renderExport" id="_renderExport">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_renderExport">#</a>
+		<code><a href="source-class-Grido.Components.Columns.Date.html#80-89" title="Go to source code">renderExport</a>( <span>mixed <var>$row</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$row</var></dt>
+					<dd><code>mixed</code><br>$row</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-Grido.Components.Columns.Column.html#_renderExport">Grido\Components\Columns\Column::renderExport()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
 	</table>
 
 	<table class="summary inherited">
@@ -307,8 +386,14 @@ Nette\Application\UI\PresenterComponent
 		<td><code>
 			<a href="class-Grido.Components.Columns.Column.html#_applyReplacement">applyReplacement()</a>, 
 			<a href="class-Grido.Components.Columns.Column.html#_getCellPrototype">getCellPrototype()</a>, 
+			<a href="class-Grido.Components.Columns.Column.html#_getColumn">getColumn()</a>, 
+			<a href="class-Grido.Components.Columns.Column.html#_getCustomRender">getCustomRender()</a>, 
 			<a href="class-Grido.Components.Columns.Column.html#_getHeaderPrototype">getHeaderPrototype()</a>, 
+			<a href="class-Grido.Components.Columns.Column.html#_getSort">getSort()</a>, 
 			<a href="class-Grido.Components.Columns.Column.html#_getValue">getValue()</a>, 
+			<a href="class-Grido.Components.Columns.Column.html#_hasFilter">hasFilter()</a>, 
+			<a href="class-Grido.Components.Columns.Column.html#_isSortable">isSortable()</a>, 
+			<a href="class-Grido.Components.Columns.Column.html#_render">render()</a>, 
 			<a href="class-Grido.Components.Columns.Column.html#_setCellCallback">setCellCallback()</a>, 
 			<a href="class-Grido.Components.Columns.Column.html#_setColumn">setColumn()</a>, 
 			<a href="class-Grido.Components.Columns.Column.html#_setCustomRender">setCustomRender()</a>, 
@@ -332,6 +417,8 @@ Nette\Application\UI\PresenterComponent
 			<a href="class-Grido.Components.Base.html#_addComponentToGrid">addComponentToGrid()</a>, 
 			<a href="class-Grido.Components.Base.html#_getForm">getForm()</a>, 
 			<a href="class-Grido.Components.Base.html#_getGrid">getGrid()</a>, 
+			<a href="class-Grido.Components.Base.html#_getLabel">getLabel()</a>, 
+			<a href="class-Grido.Components.Base.html#_getType">getType()</a>, 
 			<a href="class-Grido.Components.Base.html#_translate">translate()</a>
 		</code></td>
 	</tr>
@@ -414,11 +501,11 @@ Nette\Application\UI\PresenterComponent
 			<a href="class-Grido.Components.Columns.Column.html#ASC"><b>ASC</b></a>, 
 			<a href="class-Grido.Components.Columns.Column.html#DESC"><b>DESC</b></a>, 
 			<a href="class-Grido.Components.Columns.Column.html#ID"><b>ID</b></a>, 
-			<a href="class-Grido.Components.Columns.Column.html#TYPE_DATE"><b>TYPE_DATE</b></a>, 
-			<a href="class-Grido.Components.Columns.Column.html#TYPE_HREF"><b>TYPE_HREF</b></a>, 
-			<a href="class-Grido.Components.Columns.Column.html#TYPE_MAIL"><b>TYPE_MAIL</b></a>, 
-			<a href="class-Grido.Components.Columns.Column.html#TYPE_NUMBER"><b>TYPE_NUMBER</b></a>, 
-			<a href="class-Grido.Components.Columns.Column.html#TYPE_TEXT"><b>TYPE_TEXT</b></a>, 
+			<a href="class-Grido.Components.Columns.Column.html#TYPE_DATE"><b><span class"deprecated">TYPE_DATE</span></b></a>, 
+			<a href="class-Grido.Components.Columns.Column.html#TYPE_HREF"><b><span class"deprecated">TYPE_HREF</span></b></a>, 
+			<a href="class-Grido.Components.Columns.Column.html#TYPE_MAIL"><b><span class"deprecated">TYPE_MAIL</span></b></a>, 
+			<a href="class-Grido.Components.Columns.Column.html#TYPE_NUMBER"><b><span class"deprecated">TYPE_NUMBER</span></b></a>, 
+			<a href="class-Grido.Components.Columns.Column.html#TYPE_TEXT"><b><span class"deprecated">TYPE_TEXT</span></b></a>, 
 			<a href="class-Grido.Components.Columns.Column.html#VALUE_IDENTIFIER"><b>VALUE_IDENTIFIER</b></a>
 		</code></td>
 	</tr>
@@ -486,7 +573,7 @@ Nette\Application\UI\PresenterComponent
 	<caption>Magic properties summary</caption>
 	<tr data-order="dateFormat" id="m$dateFormat">
 		<td class="attributes"><code>
-			public  write-only
+			public  
 			string
 		</code></td>
 

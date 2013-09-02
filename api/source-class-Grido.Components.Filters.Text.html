@@ -8,7 +8,7 @@
 	<title>File Components/Filters/Text.php | Grido - DataGrid for Nette Framework.</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?2916077483"></script>
+	<script type="text/javascript" src="elementlist.js?1490757444"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido - DataGrid for Nette Framework." href="/opensearch.xml" />
 
@@ -107,6 +107,12 @@
 			<li>
 				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
 			</li>
+			<li>
+				<a href="deprecated.html" title="List of deprecated elements"><span>Deprecated</span></a>
+			</li>
+			<li>
+				<a href="todo.html" title="Todo list"><span>Todo</span></a>
+			</li>
 		</ul>
 		<ul>
 			<li>
@@ -162,8 +168,8 @@
 </span><span id="45" class="l"><a class="l" href="#45">45: </a>        <span class="php-var">$filter</span> = <span class="php-var">$this</span>;
 </span><span id="46" class="l"><a class="l" href="#46">46: </a>        <span class="php-var">$this</span>-&gt;grid-&gt;onRender[] = <span class="php-keyword1">function</span>(\Grido\Grid <span class="php-var">$grid</span>) <span class="php-keyword1">use</span> (<span class="php-var">$prototype</span>, <span class="php-var">$filter</span>) {
 </span><span id="47" class="l"><a class="l" href="#47">47: </a>            <span class="php-var">$replacement</span> = <span class="php-quote">'-query-'</span>;
-</span><span id="48" class="l"><a class="l" href="#48">48: </a>            <span class="php-var">$prototype</span>-&gt;attrs[<span class="php-quote">'data-grido-suggest-replacement'</span>] = <span class="php-var">$replacement</span>;
-</span><span id="49" class="l"><a class="l" href="#49">49: </a>            <span class="php-var">$prototype</span>-&gt;attrs[<span class="php-quote">'data-grido-suggest-handler'</span>] = <span class="php-var">$filter</span>-&gt;<span class="php-keyword2">link</span>(<span class="php-quote">'suggest!'</span>, <span class="php-keyword1">array</span>(
+</span><span id="48" class="l"><a class="l" href="#48">48: </a>            <span class="php-var">$prototype</span>-&gt;data[<span class="php-quote">'grido-suggest-replacement'</span>] = <span class="php-var">$replacement</span>;
+</span><span id="49" class="l"><a class="l" href="#49">49: </a>            <span class="php-var">$prototype</span>-&gt;data[<span class="php-quote">'grido-suggest-handler'</span>] = <span class="php-var">$filter</span>-&gt;<span class="php-keyword2">link</span>(<span class="php-quote">'suggest!'</span>, <span class="php-keyword1">array</span>(
 </span><span id="50" class="l"><a class="l" href="#50">50: </a>                <span class="php-quote">'query'</span> =&gt; <span class="php-var">$replacement</span>)
 </span><span id="51" class="l"><a class="l" href="#51">51: </a>            );
 </span><span id="52" class="l"><a class="l" href="#52">52: </a>        };
@@ -174,7 +180,7 @@
 </span><span id="57" class="l"><a class="l" href="#57">57: </a>    <span class="php-comment">/**********************************************************************************************/</span>
 </span><span id="58" class="l"><a class="l" href="#58">58: </a>
 </span><span id="59" class="l"><a class="l" href="#59">59: </a>    <span class="php-comment">/**
-</span></span><span id="60" class="l"><a class="l" href="#60">60: </a><span class="php-comment">     * @internal
+</span></span><span id="60" class="l"><a class="l" href="#60">60: </a><span class="php-comment">     * @internal - Do not call directly.
 </span></span><span id="61" class="l"><a class="l" href="#61">61: </a><span class="php-comment">     * @param string $query - value from input
 </span></span><span id="62" class="l"><a class="l" href="#62">62: </a><span class="php-comment">     */</span>
 </span><span id="63" class="l"><a class="l" href="#63">63: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_handleSuggest" href="#_handleSuggest">handleSuggest</a>(<span class="php-var">$query</span>)
@@ -187,8 +193,8 @@
 </span><span id="70" class="l"><a class="l" href="#70">70: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$actualFilter</span>[<span class="php-var">$this</span>-&gt;name])) {
 </span><span id="71" class="l"><a class="l" href="#71">71: </a>            <span class="php-keyword1">unset</span>(<span class="php-var">$actualFilter</span>[<span class="php-var">$this</span>-&gt;name]);
 </span><span id="72" class="l"><a class="l" href="#72">72: </a>        }
-</span><span id="73" class="l"><a class="l" href="#73">73: </a>        <span class="php-var">$conditions</span> = <span class="php-var">$this</span>-&gt;grid-&gt;_applyFiltering(<span class="php-var">$actualFilter</span>);
-</span><span id="74" class="l"><a class="l" href="#74">74: </a>        <span class="php-var">$conditions</span>[] = <span class="php-var">$this</span>-&gt;makeFilter(<span class="php-var">$query</span>);
+</span><span id="73" class="l"><a class="l" href="#73">73: </a>        <span class="php-var">$conditions</span> = <span class="php-var">$this</span>-&gt;grid-&gt;__applyFiltering(<span class="php-var">$actualFilter</span>);
+</span><span id="74" class="l"><a class="l" href="#74">74: </a>        <span class="php-var">$conditions</span>[] = <span class="php-var">$this</span>-&gt;__makeFilter(<span class="php-var">$query</span>);
 </span><span id="75" class="l"><a class="l" href="#75">75: </a>
 </span><span id="76" class="l"><a class="l" href="#76">76: </a>        <span class="php-var">$column</span> = <span class="php-var">$this</span>-&gt;suggestionColumn ? <span class="php-var">$this</span>-&gt;suggestionColumn : <span class="php-keyword2">key</span>(<span class="php-var">$this</span>-&gt;getColumns());
 </span><span id="77" class="l"><a class="l" href="#77">77: </a>        <span class="php-var">$items</span> = <span class="php-var">$this</span>-&gt;grid-&gt;model-&gt;suggest(<span class="php-var">$column</span>, <span class="php-var">$conditions</span>);
