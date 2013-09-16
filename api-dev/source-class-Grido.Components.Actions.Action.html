@@ -8,7 +8,7 @@
 	<title>File Components/Actions/Action.php | Grido@dev</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?1001150995"></script>
+	<script type="text/javascript" src="elementlist.js?10515351"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido@dev" href="/opensearch.xml" />
 
@@ -141,8 +141,8 @@
 </span></span><span id="22" class="l"><a class="l" href="#22"> 22: </a><span class="php-comment"> *
 </span></span><span id="23" class="l"><a class="l" href="#23"> 23: </a><span class="php-comment"> * @property-read Html $element
 </span></span><span id="24" class="l"><a class="l" href="#24"> 24: </a><span class="php-comment"> * @property-write Html $elementPrototype
-</span></span><span id="25" class="l"><a class="l" href="#25"> 25: </a><span class="php-comment"> * @property-write array $customRender
-</span></span><span id="26" class="l"><a class="l" href="#26"> 26: </a><span class="php-comment"> * @property-write array $disable
+</span></span><span id="25" class="l"><a class="l" href="#25"> 25: </a><span class="php-comment"> * @property-write callback $customRender
+</span></span><span id="26" class="l"><a class="l" href="#26"> 26: </a><span class="php-comment"> * @property-write callback $disable
 </span></span><span id="27" class="l"><a class="l" href="#27"> 27: </a><span class="php-comment"> * @property-write string|callback $confirm
 </span></span><span id="28" class="l"><a class="l" href="#28"> 28: </a><span class="php-comment"> * @property string $primaryKey
 </span></span><span id="29" class="l"><a class="l" href="#29"> 29: </a><span class="php-comment"> * @property string $icon
@@ -151,17 +151,17 @@
 </span><span id="32" class="l"><a class="l" href="#32"> 32: </a>{
 </span><span id="33" class="l"><a class="l" href="#33"> 33: </a>    <span class="php-keyword1">const</span> <a id="ID" href="#ID">ID</a> = <span class="php-quote">'actions'</span>;
 </span><span id="34" class="l"><a class="l" href="#34"> 34: </a>
-</span><span id="35" class="l"><a class="l" href="#35"> 35: </a>    <span class="php-comment">/** @var callback for custom rendering */</span>
-</span><span id="36" class="l"><a class="l" href="#36"> 36: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$customRender" href="#$customRender">$customRender</a></span>;
+</span><span id="35" class="l"><a class="l" href="#35"> 35: </a>    <span class="php-comment">/** @var Html &lt;a&gt; html tag */</span>
+</span><span id="36" class="l"><a class="l" href="#36"> 36: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$elementPrototype" href="#$elementPrototype">$elementPrototype</a></span>;
 </span><span id="37" class="l"><a class="l" href="#37"> 37: </a>
-</span><span id="38" class="l"><a class="l" href="#38"> 38: </a>    <span class="php-comment">/** @var callback for disabling */</span>
-</span><span id="39" class="l"><a class="l" href="#39"> 39: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$disable" href="#$disable">$disable</a></span>;
+</span><span id="38" class="l"><a class="l" href="#38"> 38: </a>    <span class="php-comment">/** @var callback for custom rendering */</span>
+</span><span id="39" class="l"><a class="l" href="#39"> 39: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$customRender" href="#$customRender">$customRender</a></span>;
 </span><span id="40" class="l"><a class="l" href="#40"> 40: </a>
-</span><span id="41" class="l"><a class="l" href="#41"> 41: </a>    <span class="php-comment">/** @var Html &lt;a&gt; html tag */</span>
-</span><span id="42" class="l"><a class="l" href="#42"> 42: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$elementPrototype" href="#$elementPrototype">$elementPrototype</a></span>;
+</span><span id="41" class="l"><a class="l" href="#41"> 41: </a>    <span class="php-comment">/** @var string - name of primary key f.e.: link-&gt;('Article:edit', array($primaryKey =&gt; 1)) */</span>
+</span><span id="42" class="l"><a class="l" href="#42"> 42: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$primaryKey" href="#$primaryKey">$primaryKey</a></span>;
 </span><span id="43" class="l"><a class="l" href="#43"> 43: </a>
-</span><span id="44" class="l"><a class="l" href="#44"> 44: </a>    <span class="php-comment">/** @var string - name of primary key f.e.: link-&gt;('Article:edit', array($primaryKey =&gt; 1)) */</span>
-</span><span id="45" class="l"><a class="l" href="#45"> 45: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$primaryKey" href="#$primaryKey">$primaryKey</a></span>;
+</span><span id="44" class="l"><a class="l" href="#44"> 44: </a>    <span class="php-comment">/** @var callback for disabling */</span>
+</span><span id="45" class="l"><a class="l" href="#45"> 45: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$disable" href="#$disable">$disable</a></span>;
 </span><span id="46" class="l"><a class="l" href="#46"> 46: </a>
 </span><span id="47" class="l"><a class="l" href="#47"> 47: </a>    <span class="php-comment">/** @var string|callback */</span>
 </span><span id="48" class="l"><a class="l" href="#48"> 48: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$confirm" href="#$confirm">$confirm</a></span>;
@@ -183,35 +183,35 @@
 </span><span id="64" class="l"><a class="l" href="#64"> 64: </a>    }
 </span><span id="65" class="l"><a class="l" href="#65"> 65: </a>
 </span><span id="66" class="l"><a class="l" href="#66"> 66: </a>    <span class="php-comment">/**
-</span></span><span id="67" class="l"><a class="l" href="#67"> 67: </a><span class="php-comment">     * Sets callback for custom rendering.
-</span></span><span id="68" class="l"><a class="l" href="#68"> 68: </a><span class="php-comment">     * @param callback
+</span></span><span id="67" class="l"><a class="l" href="#67"> 67: </a><span class="php-comment">     * Sets html element.
+</span></span><span id="68" class="l"><a class="l" href="#68"> 68: </a><span class="php-comment">     * @param Html $elementPrototype
 </span></span><span id="69" class="l"><a class="l" href="#69"> 69: </a><span class="php-comment">     * @return Action
 </span></span><span id="70" class="l"><a class="l" href="#70"> 70: </a><span class="php-comment">     */</span>
-</span><span id="71" class="l"><a class="l" href="#71"> 71: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setCustomRender" href="#_setCustomRender">setCustomRender</a>(<span class="php-var">$callback</span>)
+</span><span id="71" class="l"><a class="l" href="#71"> 71: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setElementPrototype" href="#_setElementPrototype">setElementPrototype</a>(Html <span class="php-var">$elementPrototype</span>)
 </span><span id="72" class="l"><a class="l" href="#72"> 72: </a>    {
-</span><span id="73" class="l"><a class="l" href="#73"> 73: </a>        <span class="php-var">$this</span>-&gt;customRender = <span class="php-var">$callback</span>;
+</span><span id="73" class="l"><a class="l" href="#73"> 73: </a>        <span class="php-var">$this</span>-&gt;elementPrototype = <span class="php-var">$elementPrototype</span>;
 </span><span id="74" class="l"><a class="l" href="#74"> 74: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>;
 </span><span id="75" class="l"><a class="l" href="#75"> 75: </a>    }
 </span><span id="76" class="l"><a class="l" href="#76"> 76: </a>
 </span><span id="77" class="l"><a class="l" href="#77"> 77: </a>    <span class="php-comment">/**
-</span></span><span id="78" class="l"><a class="l" href="#78"> 78: </a><span class="php-comment">     * Sets primary key.
-</span></span><span id="79" class="l"><a class="l" href="#79"> 79: </a><span class="php-comment">     * @param string $primaryKey
+</span></span><span id="78" class="l"><a class="l" href="#78"> 78: </a><span class="php-comment">     * Sets callback for custom rendering.
+</span></span><span id="79" class="l"><a class="l" href="#79"> 79: </a><span class="php-comment">     * @param callback
 </span></span><span id="80" class="l"><a class="l" href="#80"> 80: </a><span class="php-comment">     * @return Action
 </span></span><span id="81" class="l"><a class="l" href="#81"> 81: </a><span class="php-comment">     */</span>
-</span><span id="82" class="l"><a class="l" href="#82"> 82: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setPrimaryKey" href="#_setPrimaryKey">setPrimaryKey</a>(<span class="php-var">$primaryKey</span>)
+</span><span id="82" class="l"><a class="l" href="#82"> 82: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setCustomRender" href="#_setCustomRender">setCustomRender</a>(<span class="php-var">$callback</span>)
 </span><span id="83" class="l"><a class="l" href="#83"> 83: </a>    {
-</span><span id="84" class="l"><a class="l" href="#84"> 84: </a>        <span class="php-var">$this</span>-&gt;primaryKey = <span class="php-var">$primaryKey</span>;
+</span><span id="84" class="l"><a class="l" href="#84"> 84: </a>        <span class="php-var">$this</span>-&gt;customRender = <span class="php-var">$callback</span>;
 </span><span id="85" class="l"><a class="l" href="#85"> 85: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>;
 </span><span id="86" class="l"><a class="l" href="#86"> 86: </a>    }
 </span><span id="87" class="l"><a class="l" href="#87"> 87: </a>
 </span><span id="88" class="l"><a class="l" href="#88"> 88: </a>    <span class="php-comment">/**
-</span></span><span id="89" class="l"><a class="l" href="#89"> 89: </a><span class="php-comment">     * Sets html element.
-</span></span><span id="90" class="l"><a class="l" href="#90"> 90: </a><span class="php-comment">     * @param Html $elementPrototype
+</span></span><span id="89" class="l"><a class="l" href="#89"> 89: </a><span class="php-comment">     * Sets primary key.
+</span></span><span id="90" class="l"><a class="l" href="#90"> 90: </a><span class="php-comment">     * @param string $primaryKey
 </span></span><span id="91" class="l"><a class="l" href="#91"> 91: </a><span class="php-comment">     * @return Action
 </span></span><span id="92" class="l"><a class="l" href="#92"> 92: </a><span class="php-comment">     */</span>
-</span><span id="93" class="l"><a class="l" href="#93"> 93: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setElementPrototype" href="#_setElementPrototype">setElementPrototype</a>(Html <span class="php-var">$elementPrototype</span>)
+</span><span id="93" class="l"><a class="l" href="#93"> 93: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setPrimaryKey" href="#_setPrimaryKey">setPrimaryKey</a>(<span class="php-var">$primaryKey</span>)
 </span><span id="94" class="l"><a class="l" href="#94"> 94: </a>    {
-</span><span id="95" class="l"><a class="l" href="#95"> 95: </a>        <span class="php-var">$this</span>-&gt;elementPrototype = <span class="php-var">$elementPrototype</span>;
+</span><span id="95" class="l"><a class="l" href="#95"> 95: </a>        <span class="php-var">$this</span>-&gt;primaryKey = <span class="php-var">$primaryKey</span>;
 </span><span id="96" class="l"><a class="l" href="#96"> 96: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>;
 </span><span id="97" class="l"><a class="l" href="#97"> 97: </a>    }
 </span><span id="98" class="l"><a class="l" href="#98"> 98: </a>
@@ -230,7 +230,7 @@
 </span><span id="111" class="l"><a class="l" href="#111">111: </a>    <span class="php-comment">/**
 </span></span><span id="112" class="l"><a class="l" href="#112">112: </a><span class="php-comment">     * Sets client side confirm.
 </span></span><span id="113" class="l"><a class="l" href="#113">113: </a><span class="php-comment">     * @param string|callback $confirm
-</span></span><span id="114" class="l"><a class="l" href="#114">114: </a><span class="php-comment">     * @return Href
+</span></span><span id="114" class="l"><a class="l" href="#114">114: </a><span class="php-comment">     * @return Action
 </span></span><span id="115" class="l"><a class="l" href="#115">115: </a><span class="php-comment">     */</span>
 </span><span id="116" class="l"><a class="l" href="#116">116: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setConfirm" href="#_setConfirm">setConfirm</a>(<span class="php-var">$confirm</span>)
 </span><span id="117" class="l"><a class="l" href="#117">117: </a>    {
@@ -241,7 +241,7 @@
 </span><span id="122" class="l"><a class="l" href="#122">122: </a>    <span class="php-comment">/**
 </span></span><span id="123" class="l"><a class="l" href="#123">123: </a><span class="php-comment">     * Sets twitter bootstrap icon class.
 </span></span><span id="124" class="l"><a class="l" href="#124">124: </a><span class="php-comment">     * @param string $iconName
-</span></span><span id="125" class="l"><a class="l" href="#125">125: </a><span class="php-comment">     * @return Href
+</span></span><span id="125" class="l"><a class="l" href="#125">125: </a><span class="php-comment">     * @return Action
 </span></span><span id="126" class="l"><a class="l" href="#126">126: </a><span class="php-comment">     */</span>
 </span><span id="127" class="l"><a class="l" href="#127">127: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setIcon" href="#_setIcon">setIcon</a>(<span class="php-var">$iconName</span>)
 </span><span id="128" class="l"><a class="l" href="#128">128: </a>    {
@@ -266,68 +266,68 @@
 </span><span id="147" class="l"><a class="l" href="#147">147: </a>    }
 </span><span id="148" class="l"><a class="l" href="#148">148: </a>
 </span><span id="149" class="l"><a class="l" href="#149">149: </a>    <span class="php-comment">/**
-</span></span><span id="150" class="l"><a class="l" href="#150">150: </a><span class="php-comment">     * @param mixed $item
-</span></span><span id="151" class="l"><a class="l" href="#151">151: </a><span class="php-comment">     * @return Html
-</span></span><span id="152" class="l"><a class="l" href="#152">152: </a><span class="php-comment">     * @throws \InvalidArgumentException
-</span></span><span id="153" class="l"><a class="l" href="#153">153: </a><span class="php-comment">     */</span>
-</span><span id="154" class="l"><a class="l" href="#154">154: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_getElement" href="#_getElement">getElement</a>(<span class="php-var">$item</span>)
-</span><span id="155" class="l"><a class="l" href="#155">155: </a>    {
-</span><span id="156" class="l"><a class="l" href="#156">156: </a>        <span class="php-var">$primaryKey</span> = <span class="php-var">$this</span>-&gt;getPrimaryKey();
-</span><span id="157" class="l"><a class="l" href="#157">157: </a>        <span class="php-var">$propertyAccessor</span> = <span class="php-var">$this</span>-&gt;grid-&gt;propertyAccessor;
+</span></span><span id="150" class="l"><a class="l" href="#150">150: </a><span class="php-comment">     * @internal - Do not call directly.
+</span></span><span id="151" class="l"><a class="l" href="#151">151: </a><span class="php-comment">     * @return string
+</span></span><span id="152" class="l"><a class="l" href="#152">152: </a><span class="php-comment">     */</span>
+</span><span id="153" class="l"><a class="l" href="#153">153: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_getPrimaryKey" href="#_getPrimaryKey">getPrimaryKey</a>()
+</span><span id="154" class="l"><a class="l" href="#154">154: </a>    {
+</span><span id="155" class="l"><a class="l" href="#155">155: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;primaryKey === <span class="php-keyword1">NULL</span>) {
+</span><span id="156" class="l"><a class="l" href="#156">156: </a>            <span class="php-var">$this</span>-&gt;primaryKey = <span class="php-var">$this</span>-&gt;grid-&gt;primaryKey;
+</span><span id="157" class="l"><a class="l" href="#157">157: </a>        }
 </span><span id="158" class="l"><a class="l" href="#158">158: </a>
-</span><span id="159" class="l"><a class="l" href="#159">159: </a>        <span class="php-keyword1">if</span> (!<span class="php-var">$this</span>-&gt;customRender &amp;&amp; !<span class="php-var">$propertyAccessor</span>-&gt;hasProperty(<span class="php-var">$item</span>, <span class="php-var">$primaryKey</span>)) {
-</span><span id="160" class="l"><a class="l" href="#160">160: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \InvalidArgumentException(<span class="php-quote">&quot;Primary key '</span><span class="php-var">$primaryKey</span><span class="php-quote">' not found.&quot;</span>);
-</span><span id="161" class="l"><a class="l" href="#161">161: </a>        }
-</span><span id="162" class="l"><a class="l" href="#162">162: </a>
-</span><span id="163" class="l"><a class="l" href="#163">163: </a>        <span class="php-var">$text</span> = <span class="php-var">$this</span>-&gt;translate(<span class="php-var">$this</span>-&gt;label);
-</span><span id="164" class="l"><a class="l" href="#164">164: </a>        <span class="php-var">$this</span>-&gt;icon ? <span class="php-var">$text</span> = <span class="php-quote">' '</span> . <span class="php-var">$text</span> : <span class="php-var">$text</span>;
-</span><span id="165" class="l"><a class="l" href="#165">165: </a>
-</span><span id="166" class="l"><a class="l" href="#166">166: </a>        <span class="php-var">$element</span> = <span class="php-keyword1">clone</span> <span class="php-var">$this</span>-&gt;getElementPrototype()
-</span><span id="167" class="l"><a class="l" href="#167">167: </a>            -&gt;setText(<span class="php-var">$text</span>);
-</span><span id="168" class="l"><a class="l" href="#168">168: </a>
-</span><span id="169" class="l"><a class="l" href="#169">169: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;confirm) {
-</span><span id="170" class="l"><a class="l" href="#170">170: </a>            <span class="php-var">$element</span>-&gt;data[<span class="php-quote">'grido-confirm'</span>] = <span class="php-var">$this</span>-&gt;translate(
-</span><span id="171" class="l"><a class="l" href="#171">171: </a>                <span class="php-keyword2">is_callable</span>(<span class="php-var">$this</span>-&gt;confirm)
-</span><span id="172" class="l"><a class="l" href="#172">172: </a>                    ? callback(<span class="php-var">$this</span>-&gt;confirm)-&gt;invokeArgs(<span class="php-keyword1">array</span>(<span class="php-var">$item</span>))
-</span><span id="173" class="l"><a class="l" href="#173">173: </a>                    : <span class="php-var">$this</span>-&gt;confirm
-</span><span id="174" class="l"><a class="l" href="#174">174: </a>            );
-</span><span id="175" class="l"><a class="l" href="#175">175: </a>        }
-</span><span id="176" class="l"><a class="l" href="#176">176: </a>
-</span><span id="177" class="l"><a class="l" href="#177">177: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;icon) {
-</span><span id="178" class="l"><a class="l" href="#178">178: </a>            <span class="php-var">$element</span>-&gt;insert(<span class="php-num">0</span>, Html::el(<span class="php-quote">'i'</span>)-&gt;setClass(<span class="php-keyword1">array</span>(<span class="php-quote">&quot;icon-</span><span class="php-var">$this</span><span class="php-quote">-&gt;icon&quot;</span>)));
-</span><span id="179" class="l"><a class="l" href="#179">179: </a>        }
-</span><span id="180" class="l"><a class="l" href="#180">180: </a>
-</span><span id="181" class="l"><a class="l" href="#181">181: </a>        <span class="php-keyword1">return</span> <span class="php-var">$element</span>;
-</span><span id="182" class="l"><a class="l" href="#182">182: </a>    }
-</span><span id="183" class="l"><a class="l" href="#183">183: </a>
-</span><span id="184" class="l"><a class="l" href="#184">184: </a>    <span class="php-comment">/**
-</span></span><span id="185" class="l"><a class="l" href="#185">185: </a><span class="php-comment">     * @internal - Do not call directly.
-</span></span><span id="186" class="l"><a class="l" href="#186">186: </a><span class="php-comment">     * @return string
-</span></span><span id="187" class="l"><a class="l" href="#187">187: </a><span class="php-comment">     */</span>
-</span><span id="188" class="l"><a class="l" href="#188">188: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_getPrimaryKey" href="#_getPrimaryKey">getPrimaryKey</a>()
-</span><span id="189" class="l"><a class="l" href="#189">189: </a>    {
-</span><span id="190" class="l"><a class="l" href="#190">190: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;primaryKey === <span class="php-keyword1">NULL</span>) {
-</span><span id="191" class="l"><a class="l" href="#191">191: </a>            <span class="php-var">$this</span>-&gt;primaryKey = <span class="php-var">$this</span>-&gt;grid-&gt;primaryKey;
+</span><span id="159" class="l"><a class="l" href="#159">159: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;primaryKey;
+</span><span id="160" class="l"><a class="l" href="#160">160: </a>    }
+</span><span id="161" class="l"><a class="l" href="#161">161: </a>
+</span><span id="162" class="l"><a class="l" href="#162">162: </a>    <span class="php-comment">/**
+</span></span><span id="163" class="l"><a class="l" href="#163">163: </a><span class="php-comment">     * @param mixed $row
+</span></span><span id="164" class="l"><a class="l" href="#164">164: </a><span class="php-comment">     * @return Html
+</span></span><span id="165" class="l"><a class="l" href="#165">165: </a><span class="php-comment">     * @throws \InvalidArgumentException
+</span></span><span id="166" class="l"><a class="l" href="#166">166: </a><span class="php-comment">     */</span>
+</span><span id="167" class="l"><a class="l" href="#167">167: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_getElement" href="#_getElement">getElement</a>(<span class="php-var">$row</span>)
+</span><span id="168" class="l"><a class="l" href="#168">168: </a>    {
+</span><span id="169" class="l"><a class="l" href="#169">169: </a>        <span class="php-var">$primaryKey</span> = <span class="php-var">$this</span>-&gt;getPrimaryKey();
+</span><span id="170" class="l"><a class="l" href="#170">170: </a>        <span class="php-var">$propertyAccessor</span> = <span class="php-var">$this</span>-&gt;grid-&gt;propertyAccessor;
+</span><span id="171" class="l"><a class="l" href="#171">171: </a>
+</span><span id="172" class="l"><a class="l" href="#172">172: </a>        <span class="php-keyword1">if</span> (!<span class="php-var">$this</span>-&gt;customRender &amp;&amp; !<span class="php-var">$propertyAccessor</span>-&gt;hasProperty(<span class="php-var">$row</span>, <span class="php-var">$primaryKey</span>)) {
+</span><span id="173" class="l"><a class="l" href="#173">173: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \InvalidArgumentException(<span class="php-quote">&quot;Primary key '</span><span class="php-var">$primaryKey</span><span class="php-quote">' not found.&quot;</span>);
+</span><span id="174" class="l"><a class="l" href="#174">174: </a>        }
+</span><span id="175" class="l"><a class="l" href="#175">175: </a>
+</span><span id="176" class="l"><a class="l" href="#176">176: </a>        <span class="php-var">$text</span> = <span class="php-var">$this</span>-&gt;translate(<span class="php-var">$this</span>-&gt;label);
+</span><span id="177" class="l"><a class="l" href="#177">177: </a>        <span class="php-var">$this</span>-&gt;icon ? <span class="php-var">$text</span> = <span class="php-quote">' '</span> . <span class="php-var">$text</span> : <span class="php-var">$text</span>;
+</span><span id="178" class="l"><a class="l" href="#178">178: </a>
+</span><span id="179" class="l"><a class="l" href="#179">179: </a>        <span class="php-var">$element</span> = <span class="php-keyword1">clone</span> <span class="php-var">$this</span>-&gt;getElementPrototype()
+</span><span id="180" class="l"><a class="l" href="#180">180: </a>            -&gt;setText(<span class="php-var">$text</span>);
+</span><span id="181" class="l"><a class="l" href="#181">181: </a>
+</span><span id="182" class="l"><a class="l" href="#182">182: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;confirm) {
+</span><span id="183" class="l"><a class="l" href="#183">183: </a>            <span class="php-var">$element</span>-&gt;data[<span class="php-quote">'grido-confirm'</span>] = <span class="php-var">$this</span>-&gt;translate(
+</span><span id="184" class="l"><a class="l" href="#184">184: </a>                <span class="php-keyword2">is_callable</span>(<span class="php-var">$this</span>-&gt;confirm)
+</span><span id="185" class="l"><a class="l" href="#185">185: </a>                    ? callback(<span class="php-var">$this</span>-&gt;confirm)-&gt;invokeArgs(<span class="php-keyword1">array</span>(<span class="php-var">$row</span>))
+</span><span id="186" class="l"><a class="l" href="#186">186: </a>                    : <span class="php-var">$this</span>-&gt;confirm
+</span><span id="187" class="l"><a class="l" href="#187">187: </a>            );
+</span><span id="188" class="l"><a class="l" href="#188">188: </a>        }
+</span><span id="189" class="l"><a class="l" href="#189">189: </a>
+</span><span id="190" class="l"><a class="l" href="#190">190: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;icon) {
+</span><span id="191" class="l"><a class="l" href="#191">191: </a>            <span class="php-var">$element</span>-&gt;insert(<span class="php-num">0</span>, Html::el(<span class="php-quote">'i'</span>)-&gt;setClass(<span class="php-keyword1">array</span>(<span class="php-quote">&quot;icon-</span><span class="php-var">$this</span><span class="php-quote">-&gt;icon&quot;</span>)));
 </span><span id="192" class="l"><a class="l" href="#192">192: </a>        }
 </span><span id="193" class="l"><a class="l" href="#193">193: </a>
-</span><span id="194" class="l"><a class="l" href="#194">194: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;primaryKey;
+</span><span id="194" class="l"><a class="l" href="#194">194: </a>        <span class="php-keyword1">return</span> <span class="php-var">$element</span>;
 </span><span id="195" class="l"><a class="l" href="#195">195: </a>    }
 </span><span id="196" class="l"><a class="l" href="#196">196: </a>
 </span><span id="197" class="l"><a class="l" href="#197">197: </a>    <span class="php-comment">/**
-</span></span><span id="198" class="l"><a class="l" href="#198">198: </a><span class="php-comment">     * @param mixed $item
+</span></span><span id="198" class="l"><a class="l" href="#198">198: </a><span class="php-comment">     * @param mixed $row
 </span></span><span id="199" class="l"><a class="l" href="#199">199: </a><span class="php-comment">     * @throws \InvalidArgumentException
 </span></span><span id="200" class="l"><a class="l" href="#200">200: </a><span class="php-comment">     * @return void
 </span></span><span id="201" class="l"><a class="l" href="#201">201: </a><span class="php-comment">     */</span>
-</span><span id="202" class="l"><a class="l" href="#202">202: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_render" href="#_render">render</a>(<span class="php-var">$item</span>)
+</span><span id="202" class="l"><a class="l" href="#202">202: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_render" href="#_render">render</a>(<span class="php-var">$row</span>)
 </span><span id="203" class="l"><a class="l" href="#203">203: </a>    {
-</span><span id="204" class="l"><a class="l" href="#204">204: </a>        <span class="php-keyword1">if</span> (!<span class="php-var">$item</span> || (<span class="php-var">$this</span>-&gt;disable &amp;&amp; callback(<span class="php-var">$this</span>-&gt;disable)-&gt;invokeArgs(<span class="php-keyword1">array</span>(<span class="php-var">$item</span>)))) {
+</span><span id="204" class="l"><a class="l" href="#204">204: </a>        <span class="php-keyword1">if</span> (!<span class="php-var">$row</span> || (<span class="php-var">$this</span>-&gt;disable &amp;&amp; callback(<span class="php-var">$this</span>-&gt;disable)-&gt;invokeArgs(<span class="php-keyword1">array</span>(<span class="php-var">$row</span>)))) {
 </span><span id="205" class="l"><a class="l" href="#205">205: </a>            <span class="php-keyword1">return</span>;
 </span><span id="206" class="l"><a class="l" href="#206">206: </a>        }
 </span><span id="207" class="l"><a class="l" href="#207">207: </a>
-</span><span id="208" class="l"><a class="l" href="#208">208: </a>        <span class="php-var">$element</span> = <span class="php-var">$this</span>-&gt;getElement(<span class="php-var">$item</span>);
+</span><span id="208" class="l"><a class="l" href="#208">208: </a>        <span class="php-var">$element</span> = <span class="php-var">$this</span>-&gt;getElement(<span class="php-var">$row</span>);
 </span><span id="209" class="l"><a class="l" href="#209">209: </a>
 </span><span id="210" class="l"><a class="l" href="#210">210: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;customRender) {
-</span><span id="211" class="l"><a class="l" href="#211">211: </a>            <span class="php-keyword1">echo</span> callback(<span class="php-var">$this</span>-&gt;customRender)-&gt;invokeArgs(<span class="php-keyword1">array</span>(<span class="php-var">$item</span>, <span class="php-var">$element</span>));
+</span><span id="211" class="l"><a class="l" href="#211">211: </a>            <span class="php-keyword1">echo</span> callback(<span class="php-var">$this</span>-&gt;customRender)-&gt;invokeArgs(<span class="php-keyword1">array</span>(<span class="php-var">$row</span>, <span class="php-var">$element</span>));
 </span><span id="212" class="l"><a class="l" href="#212">212: </a>            <span class="php-keyword1">return</span>;
 </span><span id="213" class="l"><a class="l" href="#213">213: </a>        }
 </span><span id="214" class="l"><a class="l" href="#214">214: </a>
