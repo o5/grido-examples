@@ -8,7 +8,7 @@
 	<title>File Components/Actions/Event.php | Grido@tests</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?1490757444"></script>
+	<script type="text/javascript" src="elementlist.js?413191069"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido@tests" href="/opensearch.xml" />
 
@@ -162,16 +162,16 @@
 </span><span id="43" class="l"><a class="l" href="#43">43: </a>    <span class="php-comment">/**********************************************************************************************/</span>
 </span><span id="44" class="l"><a class="l" href="#44">44: </a>
 </span><span id="45" class="l"><a class="l" href="#45">45: </a>    <span class="php-comment">/**
-</span></span><span id="46" class="l"><a class="l" href="#46">46: </a><span class="php-comment">     * @param mixed $item
+</span></span><span id="46" class="l"><a class="l" href="#46">46: </a><span class="php-comment">     * @param mixed $row
 </span></span><span id="47" class="l"><a class="l" href="#47">47: </a><span class="php-comment">     * @return \Nette\Utils\Html
 </span></span><span id="48" class="l"><a class="l" href="#48">48: </a><span class="php-comment">     */</span>
-</span><span id="49" class="l"><a class="l" href="#49">49: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_getElement" href="#_getElement">getElement</a>(<span class="php-var">$item</span>)
+</span><span id="49" class="l"><a class="l" href="#49">49: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_getElement" href="#_getElement">getElement</a>(<span class="php-var">$row</span>)
 </span><span id="50" class="l"><a class="l" href="#50">50: </a>    {
-</span><span id="51" class="l"><a class="l" href="#51">51: </a>        <span class="php-var">$element</span> = parent::getElement(<span class="php-var">$item</span>);
+</span><span id="51" class="l"><a class="l" href="#51">51: </a>        <span class="php-var">$element</span> = parent::getElement(<span class="php-var">$row</span>);
 </span><span id="52" class="l"><a class="l" href="#52">52: </a>
 </span><span id="53" class="l"><a class="l" href="#53">53: </a>        <span class="php-var">$primaryKey</span> = <span class="php-var">$this</span>-&gt;getPrimaryKey();
-</span><span id="54" class="l"><a class="l" href="#54">54: </a>        <span class="php-var">$primaryValue</span> = <span class="php-var">$this</span>-&gt;grid-&gt;propertyAccessor-&gt;hasProperty(<span class="php-var">$item</span>, <span class="php-var">$primaryKey</span>)
-</span><span id="55" class="l"><a class="l" href="#55">55: </a>            ? <span class="php-var">$this</span>-&gt;grid-&gt;propertyAccessor-&gt;getProperty(<span class="php-var">$item</span>, <span class="php-var">$primaryKey</span>)
+</span><span id="54" class="l"><a class="l" href="#54">54: </a>        <span class="php-var">$primaryValue</span> = <span class="php-var">$this</span>-&gt;grid-&gt;propertyAccessor-&gt;hasProperty(<span class="php-var">$row</span>, <span class="php-var">$primaryKey</span>)
+</span><span id="55" class="l"><a class="l" href="#55">55: </a>            ? <span class="php-var">$this</span>-&gt;grid-&gt;propertyAccessor-&gt;getProperty(<span class="php-var">$row</span>, <span class="php-var">$primaryKey</span>)
 </span><span id="56" class="l"><a class="l" href="#56">56: </a>            : <span class="php-keyword1">NULL</span>;
 </span><span id="57" class="l"><a class="l" href="#57">57: </a>
 </span><span id="58" class="l"><a class="l" href="#58">58: </a>        <span class="php-var">$element</span>-&gt;href(<span class="php-var">$this</span>-&gt;<span class="php-keyword2">link</span>(<span class="php-quote">'click!'</span>, <span class="php-var">$primaryValue</span>));

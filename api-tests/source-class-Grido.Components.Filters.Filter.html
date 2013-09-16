@@ -8,7 +8,7 @@
 	<title>File Components/Filters/Filter.php | Grido@tests</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?1490757444"></script>
+	<script type="text/javascript" src="elementlist.js?413191069"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido@tests" href="/opensearch.xml" />
 
@@ -402,7 +402,7 @@
 </span><span id="279" class="l"><a class="l" href="#279">279: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_formatValue" href="#_formatValue">formatValue</a>(<span class="php-var">$value</span>)
 </span><span id="280" class="l"><a class="l" href="#280">280: </a>    {
 </span><span id="281" class="l"><a class="l" href="#281">281: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;formatValue !== <span class="php-keyword1">NULL</span>) {
-</span><span id="282" class="l"><a class="l" href="#282">282: </a>            <span class="php-keyword1">return</span> <span class="php-keyword2">str_replace</span>(self::VALUE_IDENTIFIER, <span class="php-var">$value</span>, <span class="php-var">$this</span>-&gt;formatValue);
+</span><span id="282" class="l"><a class="l" href="#282">282: </a>            <span class="php-keyword1">return</span> <span class="php-keyword2">str_replace</span>(<span class="php-keyword1">static</span>::VALUE_IDENTIFIER, <span class="php-var">$value</span>, <span class="php-var">$this</span>-&gt;formatValue);
 </span><span id="283" class="l"><a class="l" href="#283">283: </a>        } <span class="php-keyword1">else</span> {
 </span><span id="284" class="l"><a class="l" href="#284">284: </a>            <span class="php-keyword1">return</span> <span class="php-var">$value</span>;
 </span><span id="285" class="l"><a class="l" href="#285">285: </a>        }

@@ -8,7 +8,7 @@
 	<title>File Components/Actions/Href.php | Grido@tests</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?1490757444"></script>
+	<script type="text/javascript" src="elementlist.js?413191069"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido@tests" href="/opensearch.xml" />
 
@@ -182,26 +182,26 @@
 </span><span id="63" class="l"><a class="l" href="#63"> 63: </a>    <span class="php-comment">/**********************************************************************************************/</span>
 </span><span id="64" class="l"><a class="l" href="#64"> 64: </a>
 </span><span id="65" class="l"><a class="l" href="#65"> 65: </a>    <span class="php-comment">/**
-</span></span><span id="66" class="l"><a class="l" href="#66"> 66: </a><span class="php-comment">     * @param mixed $item
+</span></span><span id="66" class="l"><a class="l" href="#66"> 66: </a><span class="php-comment">     * @param mixed $row
 </span></span><span id="67" class="l"><a class="l" href="#67"> 67: </a><span class="php-comment">     * @return \Nette\Utils\Html
 </span></span><span id="68" class="l"><a class="l" href="#68"> 68: </a><span class="php-comment">     */</span>
-</span><span id="69" class="l"><a class="l" href="#69"> 69: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_getElement" href="#_getElement">getElement</a>(<span class="php-var">$item</span>)
+</span><span id="69" class="l"><a class="l" href="#69"> 69: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_getElement" href="#_getElement">getElement</a>(<span class="php-var">$row</span>)
 </span><span id="70" class="l"><a class="l" href="#70"> 70: </a>    {
-</span><span id="71" class="l"><a class="l" href="#71"> 71: </a>        <span class="php-var">$element</span> = parent::getElement(<span class="php-var">$item</span>);
+</span><span id="71" class="l"><a class="l" href="#71"> 71: </a>        <span class="php-var">$element</span> = parent::getElement(<span class="php-var">$row</span>);
 </span><span id="72" class="l"><a class="l" href="#72"> 72: </a>
 </span><span id="73" class="l"><a class="l" href="#73"> 73: </a>        <span class="php-var">$href</span> = <span class="php-quote">''</span>;
 </span><span id="74" class="l"><a class="l" href="#74"> 74: </a>        <span class="php-var">$primaryKey</span> = <span class="php-var">$this</span>-&gt;getPrimaryKey();
-</span><span id="75" class="l"><a class="l" href="#75"> 75: </a>        <span class="php-var">$primaryValue</span> = <span class="php-var">$this</span>-&gt;grid-&gt;propertyAccessor-&gt;hasProperty(<span class="php-var">$item</span>, <span class="php-var">$primaryKey</span>)
-</span><span id="76" class="l"><a class="l" href="#76"> 76: </a>            ? <span class="php-var">$this</span>-&gt;grid-&gt;propertyAccessor-&gt;getProperty(<span class="php-var">$item</span>, <span class="php-var">$primaryKey</span>)
+</span><span id="75" class="l"><a class="l" href="#75"> 75: </a>        <span class="php-var">$primaryValue</span> = <span class="php-var">$this</span>-&gt;grid-&gt;propertyAccessor-&gt;hasProperty(<span class="php-var">$row</span>, <span class="php-var">$primaryKey</span>)
+</span><span id="76" class="l"><a class="l" href="#76"> 76: </a>            ? <span class="php-var">$this</span>-&gt;grid-&gt;propertyAccessor-&gt;getProperty(<span class="php-var">$row</span>, <span class="php-var">$primaryKey</span>)
 </span><span id="77" class="l"><a class="l" href="#77"> 77: </a>            : <span class="php-keyword1">NULL</span>;
 </span><span id="78" class="l"><a class="l" href="#78"> 78: </a>
 </span><span id="79" class="l"><a class="l" href="#79"> 79: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;customHref) {
-</span><span id="80" class="l"><a class="l" href="#80"> 80: </a>            <span class="php-var">$href</span> = callback(<span class="php-var">$this</span>-&gt;customHref)-&gt;invokeArgs(<span class="php-keyword1">array</span>(<span class="php-var">$item</span>));
+</span><span id="80" class="l"><a class="l" href="#80"> 80: </a>            <span class="php-var">$href</span> = callback(<span class="php-var">$this</span>-&gt;customHref)-&gt;invokeArgs(<span class="php-keyword1">array</span>(<span class="php-var">$row</span>));
 </span><span id="81" class="l"><a class="l" href="#81"> 81: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-var">$this</span>-&gt;onClick) { <span class="php-comment">//@deprecated</span>
 </span><span id="82" class="l"><a class="l" href="#82"> 82: </a>            <span class="php-keyword2">trigger_error</span>(<span class="php-quote">'Parameter $onClick is deprecated in &quot;href&quot; type; use type &quot;event&quot; instead.'</span>, E_USER_DEPRECATED);
 </span><span id="83" class="l"><a class="l" href="#83"> 83: </a>            <span class="php-var">$href</span> = <span class="php-var">$this</span>-&gt;<span class="php-keyword2">link</span>(<span class="php-quote">'click!'</span>, <span class="php-var">$primaryValue</span>);
 </span><span id="84" class="l"><a class="l" href="#84"> 84: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-var">$primaryValue</span>) {
-</span><span id="85" class="l"><a class="l" href="#85"> 85: </a>            <span class="php-var">$href</span> = <span class="php-var">$this</span>-&gt;presenter-&gt;<span class="php-keyword2">link</span>(<span class="php-var">$this</span>-&gt;getDestination(), <span class="php-var">$this</span>-&gt;getArguments(<span class="php-var">$item</span>));
+</span><span id="85" class="l"><a class="l" href="#85"> 85: </a>            <span class="php-var">$href</span> = <span class="php-var">$this</span>-&gt;presenter-&gt;<span class="php-keyword2">link</span>(<span class="php-var">$this</span>-&gt;getDestination(), <span class="php-var">$this</span>-&gt;getArguments(<span class="php-var">$row</span>));
 </span><span id="86" class="l"><a class="l" href="#86"> 86: </a>        }
 </span><span id="87" class="l"><a class="l" href="#87"> 87: </a>
 </span><span id="88" class="l"><a class="l" href="#88"> 88: </a>        <span class="php-var">$element</span>-&gt;href(<span class="php-var">$href</span>);
@@ -226,13 +226,13 @@
 </span></span><span id="107" class="l"><a class="l" href="#107">107: </a><span class="php-comment">     * @internal - Do not call directly.
 </span></span><span id="108" class="l"><a class="l" href="#108">108: </a><span class="php-comment">     * @return array
 </span></span><span id="109" class="l"><a class="l" href="#109">109: </a><span class="php-comment">     */</span>
-</span><span id="110" class="l"><a class="l" href="#110">110: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_getArguments" href="#_getArguments">getArguments</a>(<span class="php-var">$item</span> = <span class="php-keyword1">NULL</span>)
+</span><span id="110" class="l"><a class="l" href="#110">110: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_getArguments" href="#_getArguments">getArguments</a>(<span class="php-var">$row</span> = <span class="php-keyword1">NULL</span>)
 </span><span id="111" class="l"><a class="l" href="#111">111: </a>    {
-</span><span id="112" class="l"><a class="l" href="#112">112: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;arguments === <span class="php-keyword1">NULL</span> &amp;&amp; <span class="php-var">$item</span> !== <span class="php-keyword1">NULL</span>) {
-</span><span id="113" class="l"><a class="l" href="#113">113: </a>            <span class="php-comment">//@TODO: remove code below</span>
+</span><span id="112" class="l"><a class="l" href="#112">112: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;arguments === <span class="php-keyword1">NULL</span> &amp;&amp; <span class="php-var">$row</span> !== <span class="php-keyword1">NULL</span>) {
+</span><span id="113" class="l"><a class="l" href="#113">113: </a>            <span class="php-comment">//@todo: remove code below</span>
 </span><span id="114" class="l"><a class="l" href="#114">114: </a>            <span class="php-var">$primaryKey</span> = <span class="php-var">$this</span>-&gt;getPrimaryKey();
-</span><span id="115" class="l"><a class="l" href="#115">115: </a>            <span class="php-var">$primaryValue</span> = <span class="php-var">$this</span>-&gt;grid-&gt;propertyAccessor-&gt;hasProperty(<span class="php-var">$item</span>, <span class="php-var">$primaryKey</span>)
-</span><span id="116" class="l"><a class="l" href="#116">116: </a>                ? <span class="php-var">$this</span>-&gt;grid-&gt;propertyAccessor-&gt;getProperty(<span class="php-var">$item</span>, <span class="php-var">$primaryKey</span>)
+</span><span id="115" class="l"><a class="l" href="#115">115: </a>            <span class="php-var">$primaryValue</span> = <span class="php-var">$this</span>-&gt;grid-&gt;propertyAccessor-&gt;hasProperty(<span class="php-var">$row</span>, <span class="php-var">$primaryKey</span>)
+</span><span id="116" class="l"><a class="l" href="#116">116: </a>                ? <span class="php-var">$this</span>-&gt;grid-&gt;propertyAccessor-&gt;getProperty(<span class="php-var">$row</span>, <span class="php-var">$primaryKey</span>)
 </span><span id="117" class="l"><a class="l" href="#117">117: </a>                : <span class="php-keyword1">NULL</span>;
 </span><span id="118" class="l"><a class="l" href="#118">118: </a>
 </span><span id="119" class="l"><a class="l" href="#119">119: </a>            <span class="php-var">$this</span>-&gt;arguments[<span class="php-var">$primaryKey</span>] = <span class="php-var">$primaryValue</span>;
