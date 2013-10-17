@@ -28,7 +28,7 @@ common:
     nette:
         database:
             sqlite:
-                dsn: 'sqlite:%database.sqlite.file%'
+                dsn: sqlite:%database.sqlite.file%
             mysql:
                 dsn: 'mysql:host=%database.mysql.host%;dbname=%database.mysql.database%'
                 user: %database.mysql.user%
@@ -39,7 +39,9 @@ common:
                 password: %database.postgre.password%
         session:
             autoStart: yes
-            save_path: "%tempDir%/sessions"
+            save_path: %tempDir%/sessions
+        debugger:
+            showLocation: true
 
     services:
         ndb_sqlite: @nette.database.sqlite
