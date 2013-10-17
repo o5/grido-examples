@@ -4,9 +4,9 @@
     "homepage": "http://grido.bugyik.cz/example/",
     "require": {
         "php": ">=5.3.1",
-        "nette/nette-minified" : "2.0.*",
+        "nette/nette" : ">=2.0.12",
         "dibi/dibi": "2.1.*",
-        "o5/grido": "@dev",
+        "o5/grido": "0.9.1",
         "nella/doctrine": "dev-master"
     },
     "license": ["BSD-3", "GPL-2.0", "GPL-3.0"],
