@@ -6,7 +6,7 @@
         "php": ">=5.3.1",
         "nette/nette" : ">=2.0.12",
         "dibi/dibi": "2.1.*",
-        "o5/grido": "0.9.1",
+        "o5/grido": "0.9.2",
         "nella/doctrine": "dev-master"
     },
     "license": ["BSD-3", "GPL-2.0", "GPL-3.0"],
@@ -21,7 +21,7 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "chmod -R 0777 temp/ log/ app/proxies"
+            "chmod -R 0777 temp/ log/ app/models/doctrine"
         ]
     }
 }
