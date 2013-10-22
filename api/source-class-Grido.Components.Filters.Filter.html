@@ -8,7 +8,7 @@
 	<title>File Components/Filters/Filter.php | Grido - DataGrid for Nette Framework.</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?1021166852"></script>
+	<script type="text/javascript" src="elementlist.js?2623689187"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido - DataGrid for Nette Framework." href="/opensearch.xml" />
 
@@ -261,7 +261,7 @@
 </span><span id="137" class="l"><a class="l" href="#137">137: </a>    <span class="php-comment">/**
 </span></span><span id="138" class="l"><a class="l" href="#138">138: </a><span class="php-comment">     * Sets custom &quot;sql&quot; where.
 </span></span><span id="139" class="l"><a class="l" href="#139">139: </a><span class="php-comment">     * @param callable $callback function($value, $source) {}
-</span></span><span id="140" class="l"><a class="l" href="#140">140: </a><span class="php-comment">     * @return \Grido\Components\Filters\Filter
+</span></span><span id="140" class="l"><a class="l" href="#140">140: </a><span class="php-comment">     * @return Filter
 </span></span><span id="141" class="l"><a class="l" href="#141">141: </a><span class="php-comment">     */</span>
 </span><span id="142" class="l"><a class="l" href="#142">142: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setWhere" href="#_setWhere">setWhere</a>(<span class="php-var">$callback</span>)
 </span><span id="143" class="l"><a class="l" href="#143">143: </a>    {
@@ -294,8 +294,8 @@
 </span><span id="170" class="l"><a class="l" href="#170">170: </a>    <span class="php-comment">/**********************************************************************************************/</span>
 </span><span id="171" class="l"><a class="l" href="#171">171: </a>
 </span><span id="172" class="l"><a class="l" href="#172">172: </a>    <span class="php-comment">/**
-</span></span><span id="173" class="l"><a class="l" href="#173">173: </a><span class="php-comment">     * @internal
-</span></span><span id="174" class="l"><a class="l" href="#174">174: </a><span class="php-comment">     * @return array
+</span></span><span id="173" class="l"><a class="l" href="#173">173: </a><span class="php-comment">     * @return array
+</span></span><span id="174" class="l"><a class="l" href="#174">174: </a><span class="php-comment">     * @internal
 </span></span><span id="175" class="l"><a class="l" href="#175">175: </a><span class="php-comment">     */</span>
 </span><span id="176" class="l"><a class="l" href="#176">176: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_getColumn" href="#_getColumn">getColumn</a>()
 </span><span id="177" class="l"><a class="l" href="#177">177: </a>    {
@@ -312,8 +312,8 @@
 </span><span id="188" class="l"><a class="l" href="#188">188: </a>    }
 </span><span id="189" class="l"><a class="l" href="#189">189: </a>
 </span><span id="190" class="l"><a class="l" href="#190">190: </a>    <span class="php-comment">/**
-</span></span><span id="191" class="l"><a class="l" href="#191">191: </a><span class="php-comment">     * @internal - Do not call directly.
-</span></span><span id="192" class="l"><a class="l" href="#192">192: </a><span class="php-comment">     * @return \Nette\Forms\Controls\BaseControl
+</span></span><span id="191" class="l"><a class="l" href="#191">191: </a><span class="php-comment">     * @return \Nette\Forms\Controls\BaseControl
+</span></span><span id="192" class="l"><a class="l" href="#192">192: </a><span class="php-comment">     * @internal
 </span></span><span id="193" class="l"><a class="l" href="#193">193: </a><span class="php-comment">     */</span>
 </span><span id="194" class="l"><a class="l" href="#194">194: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_getControl" href="#_getControl">getControl</a>()
 </span><span id="195" class="l"><a class="l" href="#195">195: </a>    {
@@ -347,10 +347,10 @@
 </span><span id="223" class="l"><a class="l" href="#223">223: </a>    }
 </span><span id="224" class="l"><a class="l" href="#224">224: </a>
 </span><span id="225" class="l"><a class="l" href="#225">225: </a>    <span class="php-comment">/**
-</span></span><span id="226" class="l"><a class="l" href="#226">226: </a><span class="php-comment">     * @internal - do not call directly.
-</span></span><span id="227" class="l"><a class="l" href="#227">227: </a><span class="php-comment">     * @param string $value
-</span></span><span id="228" class="l"><a class="l" href="#228">228: </a><span class="php-comment">     * @return Condition
-</span></span><span id="229" class="l"><a class="l" href="#229">229: </a><span class="php-comment">     * @throws \Exception
+</span></span><span id="226" class="l"><a class="l" href="#226">226: </a><span class="php-comment">     * @param string $value
+</span></span><span id="227" class="l"><a class="l" href="#227">227: </a><span class="php-comment">     * @return Condition
+</span></span><span id="228" class="l"><a class="l" href="#228">228: </a><span class="php-comment">     * @throws \Exception
+</span></span><span id="229" class="l"><a class="l" href="#229">229: </a><span class="php-comment">     * @internal
 </span></span><span id="230" class="l"><a class="l" href="#230">230: </a><span class="php-comment">     */</span>
 </span><span id="231" class="l"><a class="l" href="#231">231: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="___getCondition" href="#___getCondition">__getCondition</a>(<span class="php-var">$value</span>)
 </span><span id="232" class="l"><a class="l" href="#232">232: </a>    {
@@ -405,9 +405,9 @@
 </span><span id="281" class="l"><a class="l" href="#281">281: </a>
 </span><span id="282" class="l"><a class="l" href="#282">282: </a>    <span class="php-comment">/**
 </span></span><span id="283" class="l"><a class="l" href="#283">283: </a><span class="php-comment">     * Value representation in URI.
-</span></span><span id="284" class="l"><a class="l" href="#284">284: </a><span class="php-comment">     * @internal - Do not call directly.
-</span></span><span id="285" class="l"><a class="l" href="#285">285: </a><span class="php-comment">     * @param string $value
-</span></span><span id="286" class="l"><a class="l" href="#286">286: </a><span class="php-comment">     * @return string
+</span></span><span id="284" class="l"><a class="l" href="#284">284: </a><span class="php-comment">     * @param string $value
+</span></span><span id="285" class="l"><a class="l" href="#285">285: </a><span class="php-comment">     * @return string
+</span></span><span id="286" class="l"><a class="l" href="#286">286: </a><span class="php-comment">     * @internal
 </span></span><span id="287" class="l"><a class="l" href="#287">287: </a><span class="php-comment">     */</span>
 </span><span id="288" class="l"><a class="l" href="#288">288: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_changeValue" href="#_changeValue">changeValue</a>(<span class="php-var">$value</span>)
 </span><span id="289" class="l"><a class="l" href="#289">289: </a>    {
