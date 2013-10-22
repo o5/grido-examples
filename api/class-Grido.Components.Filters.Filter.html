@@ -7,7 +7,7 @@
 	<title>Class Grido\Components\Filters\Filter | Grido - DataGrid for Nette Framework.</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?1490757444"></script>
+	<script type="text/javascript" src="elementlist.js?1021166852"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido - DataGrid for Nette Framework." href="/opensearch.xml" />
 
@@ -63,6 +63,7 @@
 			<h3>Classes</h3>
 			<ul>
 				<li><a href="class-Grido.Components.Filters.Check.html">Check</a></li>
+				<li><a href="class-Grido.Components.Filters.Condition.html">Condition</a></li>
 				<li><a href="class-Grido.Components.Filters.Custom.html">Custom</a></li>
 				<li><a href="class-Grido.Components.Filters.Date.html">Date</a></li>
 				<li class="active"><a href="class-Grido.Components.Filters.Filter.html">Filter</a></li>
@@ -177,7 +178,7 @@ Nette\Application\UI\PresenterComponent
 
 				<b>Author:</b>
 				Petr Bugyík<br />
-		<b>Located at</b> <a href="source-class-Grido.Components.Filters.Filter.html#14-298" title="Go to source code">Components/Filters/Filter.php</a><br />
+		<b>Located at</b> <a href="source-class-Grido.Components.Filters.Filter.html#14-292" title="Go to source code">Components/Filters/Filter.php</a><br />
 	</div>
 
 
@@ -195,7 +196,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Grido.Components.Filters.Filter.html#70-89" title="Go to source code">__construct</a>( <span><code><a href="class-Grido.Grid.html">Grido\Grid</a></code> <var>$grid</var></span>, <span>string <var>$name</var></span>, <span>string <var>$label</var></span> )</code>
+		<code><a href="source-class-Grido.Components.Filters.Filter.html#76-95" title="Go to source code">__construct</a>( <span><code><a href="class-Grido.Grid.html">Grido\Grid</a></code> <var>$grid</var></span>, <span>string <var>$name</var></span>, <span>string <var>$label</var></span> )</code>
 
 		<div class="description short">
 			
@@ -233,7 +234,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setColumn">#</a>
-		<code><a href="source-class-Grido.Components.Filters.Filter.html#93-103" title="Go to source code">setColumn</a>( <span>string <var>$column</var></span>, <span>string <var>$operator</var> = <code><a href="class-Grido.Components.Filters.Filter.html#OPERATOR_AND">Grido\Components\Filters\Filter::<b>OPERATOR_AND</b></a></code></span> )</code>
+		<code><a href="source-class-Grido.Components.Filters.Filter.html#99-120" title="Go to source code">setColumn</a>( <span>string <var>$column</var></span>, <span>string <var>$operator</var> = <code><a href="class-Grido.Components.Filters.Condition.html#OPERATOR_OR">Grido\Components\Filters\Condition::<b>OPERATOR_OR</b></a></code></span> )</code>
 
 		<div class="description short">
 			
@@ -277,17 +278,17 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setCondition">#</a>
-		<code><a href="source-class-Grido.Components.Filters.Filter.html#105-124" title="Go to source code">setCondition</a>( <span>mixed <var>$condition</var></span>, <span>mixed <var>$custom</var> = <span class="php-keyword1">NULL</span></span> )</code>
+		<code><a href="source-class-Grido.Components.Filters.Filter.html#122-135" title="Go to source code">setCondition</a>( <span>mixed <var>$condition</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Sets custom sql condition.</p>
+<p>Sets custom condition.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Sets custom sql condition.</p>
+<p>Sets custom condition.</p>
 
 
 
@@ -295,8 +296,6 @@ Nette\Application\UI\PresenterComponent
 				<div class="list"><dl>
 					<dt><var>$condition</var></dt>
 					<dd><code>mixed</code><br>$condition</dd>
-					<dt><var>$custom</var></dt>
-					<dd><code>mixed</code><br>$custom</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -304,10 +303,48 @@ Nette\Application\UI\PresenterComponent
 					<code><code><a href="class-Grido.Components.Filters.Filter.html">Grido\Components\Filters\Filter</a></code></code><br />
 				</div>
 
-				<h4>Throws</h4>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setWhere" id="_setWhere">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Grido.Components.Filters.Filter.html">Grido\Components\Filters\Filter</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setWhere">#</a>
+		<code><a href="source-class-Grido.Components.Filters.Filter.html#137-146" title="Go to source code">setWhere</a>( <span>callable <var>$callback</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Sets custom "sql" where.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Sets custom "sql" where.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$callback</var></dt>
+					<dd><code>callable</code><br>$callback function($value, $source) {}</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code></code><br />
+					<code><code><a href="class-Grido.Components.Filters.Filter.html">Grido\Components\Filters\Filter</a></code></code><br />
 				</div>
+
 
 
 
@@ -325,7 +362,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setFormatValue">#</a>
-		<code><a href="source-class-Grido.Components.Filters.Filter.html#126-135" title="Go to source code">setFormatValue</a>( <span>string <var>$format</var></span> )</code>
+		<code><a href="source-class-Grido.Components.Filters.Filter.html#148-157" title="Go to source code">setFormatValue</a>( <span>string <var>$format</var></span> )</code>
 
 		<div class="description short">
 			
@@ -367,7 +404,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setDefaultValue">#</a>
-		<code><a href="source-class-Grido.Components.Filters.Filter.html#137-146" title="Go to source code">setDefaultValue</a>( <span>string <var>$value</var></span> )</code>
+		<code><a href="source-class-Grido.Components.Filters.Filter.html#159-168" title="Go to source code">setDefaultValue</a>( <span>string <var>$value</var></span> )</code>
 
 		<div class="description short">
 			
@@ -398,39 +435,6 @@ Nette\Application\UI\PresenterComponent
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="getColumns" id="_getColumns">
-
-		<td class="attributes"><code>
-			 public 
-			array
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getColumns">#</a>
-		<code><a href="source-class-Grido.Components.Filters.Filter.html#150-166" title="Go to source code">getColumns</a>( )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code>array</code><br />
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
 	<tr data-order="getControl" id="_getControl">
 
 		<td class="attributes"><code>
@@ -442,7 +446,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getControl">#</a>
-		<code><a href="source-class-Grido.Components.Filters.Filter.html#168-179" title="Go to source code">getControl</a>( )</code>
+		<code><a href="source-class-Grido.Components.Filters.Filter.html#190-201" title="Go to source code">getControl</a>( )</code>
 
 		<div class="description short">
 			
@@ -475,7 +479,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getWrapperPrototype">#</a>
-		<code><a href="source-class-Grido.Components.Filters.Filter.html#181-193" title="Go to source code">getWrapperPrototype</a>( )</code>
+		<code><a href="source-class-Grido.Components.Filters.Filter.html#203-215" title="Go to source code">getWrapperPrototype</a>( )</code>
 
 		<div class="description short">
 			
@@ -501,18 +505,18 @@ Nette\Application\UI\PresenterComponent
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="__makeFilter" id="___makeFilter">
+	<tr data-order="getCondition" id="_getCondition">
 
 		<td class="attributes"><code>
 			 public 
-			array
+			string
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#___makeFilter">#</a>
-		<code><a href="source-class-Grido.Components.Filters.Filter.html#197-262" title="Go to source code">__makeFilter</a>( <span>string <var>$value</var></span> )</code>
+		<a class="anchor" href="#_getCondition">#</a>
+		<code><a href="source-class-Grido.Components.Filters.Filter.html#217-223" title="Go to source code">getCondition</a>( )</code>
 
 		<div class="description short">
 			
@@ -522,15 +526,10 @@ Nette\Application\UI\PresenterComponent
 			
 
 
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$value</var></dt>
-					<dd><code>string</code><br>$value</dd>
-				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>array</code><br />
+					<code>string</code><br />
 				</div>
 
 
@@ -539,18 +538,18 @@ Nette\Application\UI\PresenterComponent
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="makeFilter" id="_makeFilter">
+	<tr data-order="__getCondition" id="___getCondition">
 
 		<td class="attributes"><code>
-			 protected 
-			array
+			 public 
+			<code><a href="class-Grido.Components.Filters.Condition.html">Grido\Components\Filters\Condition</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_makeFilter">#</a>
-		<code><a href="source-class-Grido.Components.Filters.Filter.html#264-272" title="Go to source code">makeFilter</a>( <span>string <var>$column</var></span>, <span>string <var>$value</var></span> )</code>
+		<a class="anchor" href="#___getCondition">#</a>
+		<code><a href="source-class-Grido.Components.Filters.Filter.html#225-264" title="Go to source code">__getCondition</a>( <span>string <var>$value</var></span> )</code>
 
 		<div class="description short">
 			
@@ -562,17 +561,19 @@ Nette\Application\UI\PresenterComponent
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$column</var></dt>
-					<dd><code>string</code><br>$column</dd>
 					<dt><var>$value</var></dt>
 					<dd><code>string</code><br>$value</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>array</code><br>condition|value<br />
+					<code><code><a href="class-Grido.Components.Filters.Condition.html">Grido\Components\Filters\Condition</a></code></code><br />
 				</div>
 
+				<h4>Throws</h4>
+				<div class="list">
+					<code><code><a href="class-Exception.html">Exception</a></code></code><br />
+				</div>
 
 
 
@@ -590,7 +591,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_formatValue">#</a>
-		<code><a href="source-class-Grido.Components.Filters.Filter.html#274-286" title="Go to source code">formatValue</a>( <span>string <var>$value</var></span> )</code>
+		<code><a href="source-class-Grido.Components.Filters.Filter.html#268-280" title="Go to source code">formatValue</a>( <span>string <var>$value</var></span> )</code>
 
 		<div class="description short">
 			
@@ -632,7 +633,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_changeValue">#</a>
-		<code><a href="source-class-Grido.Components.Filters.Filter.html#288-297" title="Go to source code">changeValue</a>( <span>string <var>$value</var></span> )</code>
+		<code><a href="source-class-Grido.Components.Filters.Filter.html#282-291" title="Go to source code">changeValue</a>( <span>string <var>$value</var></span> )</code>
 
 		<div class="description short">
 			
@@ -673,6 +674,7 @@ Nette\Application\UI\PresenterComponent
 			<a href="class-Grido.Components.Base.html#_getForm">getForm()</a>, 
 			<a href="class-Grido.Components.Base.html#_getGrid">getGrid()</a>, 
 			<a href="class-Grido.Components.Base.html#_getLabel">getLabel()</a>, 
+			<a href="class-Grido.Components.Base.html#_getPropertyAccessor">getPropertyAccessor()</a>, 
 			<a href="class-Grido.Components.Base.html#_getType">getType()</a>, 
 			<a href="class-Grido.Components.Base.html#_translate">translate()</a>
 		</code></td>
@@ -691,7 +693,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="attributes"><code>string</code></td>
 		<td class="name"><code>
-				<a href="source-class-Grido.Components.Filters.Filter.html#30" title="Go to source code"><b>ID</b></a>
+				<a href="source-class-Grido.Components.Filters.Filter.html#31" title="Go to source code"><b>ID</b></a>
 		</code></td>
 		<td class="value"><code><span class="php-quote">'filters'</span></code></td>
 		<td class="description"><div>
@@ -711,7 +713,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="attributes"><code>string</code></td>
 		<td class="name"><code>
-				<a href="source-class-Grido.Components.Filters.Filter.html#32-33" title="Go to source code"><b>TYPE_TEXT</b></a>
+				<a href="source-class-Grido.Components.Filters.Filter.html#33-34" title="Go to source code"><b>TYPE_TEXT</b></a>
 		</code></td>
 		<td class="value"><code><span class="php-quote">'Grido\Components\Filters\Text'</span></code></td>
 		<td class="description"><div>
@@ -734,7 +736,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="attributes"><code>string</code></td>
 		<td class="name"><code>
-				<a href="source-class-Grido.Components.Filters.Filter.html#33-34" title="Go to source code"><b>TYPE_DATE</b></a>
+				<a href="source-class-Grido.Components.Filters.Filter.html#34-35" title="Go to source code"><b>TYPE_DATE</b></a>
 		</code></td>
 		<td class="value"><code><span class="php-quote">'Grido\Components\Filters\Date'</span></code></td>
 		<td class="description"><div>
@@ -757,7 +759,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="attributes"><code>string</code></td>
 		<td class="name"><code>
-				<a href="source-class-Grido.Components.Filters.Filter.html#34-35" title="Go to source code"><b>TYPE_CHECK</b></a>
+				<a href="source-class-Grido.Components.Filters.Filter.html#35-36" title="Go to source code"><b>TYPE_CHECK</b></a>
 		</code></td>
 		<td class="value"><code><span class="php-quote">'Grido\Components\Filters\Check'</span></code></td>
 		<td class="description"><div>
@@ -780,7 +782,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="attributes"><code>string</code></td>
 		<td class="name"><code>
-				<a href="source-class-Grido.Components.Filters.Filter.html#35-36" title="Go to source code"><b>TYPE_SELECT</b></a>
+				<a href="source-class-Grido.Components.Filters.Filter.html#36-37" title="Go to source code"><b>TYPE_SELECT</b></a>
 		</code></td>
 		<td class="value"><code><span class="php-quote">'Grido\Components\Filters\Select'</span></code></td>
 		<td class="description"><div>
@@ -803,7 +805,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="attributes"><code>string</code></td>
 		<td class="name"><code>
-				<a href="source-class-Grido.Components.Filters.Filter.html#36-37" title="Go to source code"><b>TYPE_NUMBER</b></a>
+				<a href="source-class-Grido.Components.Filters.Filter.html#37-38" title="Go to source code"><b>TYPE_NUMBER</b></a>
 		</code></td>
 		<td class="value"><code><span class="php-quote">'Grido\Components\Filters\Number'</span></code></td>
 		<td class="description"><div>
@@ -826,7 +828,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="attributes"><code>string</code></td>
 		<td class="name"><code>
-				<a href="source-class-Grido.Components.Filters.Filter.html#37-38" title="Go to source code"><b>TYPE_CUSTOM</b></a>
+				<a href="source-class-Grido.Components.Filters.Filter.html#38-39" title="Go to source code"><b>TYPE_CUSTOM</b></a>
 		</code></td>
 		<td class="value"><code><span class="php-quote">'Grido\Components\Filters\Custom'</span></code></td>
 		<td class="description"><div>
@@ -845,31 +847,11 @@ Nette\Application\UI\PresenterComponent
 			</div>
 		</div></td>
 	</tr>
-	<tr data-order="OPERATOR_AND" id="OPERATOR_AND">
-
-		<td class="attributes"><code>string</code></td>
-		<td class="name"><code>
-				<a href="source-class-Grido.Components.Filters.Filter.html#40" title="Go to source code"><b>OPERATOR_AND</b></a>
-		</code></td>
-		<td class="value"><code><span class="php-quote">'AND'</span></code></td>
-		<td class="description"><div>
-			<a href="#OPERATOR_AND" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
 	<tr data-order="OPERATOR_OR" id="OPERATOR_OR">
 
 		<td class="attributes"><code>string</code></td>
 		<td class="name"><code>
-				<a href="source-class-Grido.Components.Filters.Filter.html#41" title="Go to source code"><b>OPERATOR_OR</b></a>
+				<a href="source-class-Grido.Components.Filters.Filter.html#41-42" title="Go to source code"><b>OPERATOR_OR</b></a>
 		</code></td>
 		<td class="value"><code><span class="php-quote">'OR'</span></code></td>
 		<td class="description"><div>
@@ -882,6 +864,32 @@ Nette\Application\UI\PresenterComponent
 			<div class="description detailed hidden">
 				
 
+					<h4>Deprecated</h4>
+					<div class="list">
+					</div>
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="OPERATOR_AND" id="OPERATOR_AND">
+
+		<td class="attributes"><code>string</code></td>
+		<td class="name"><code>
+				<a href="source-class-Grido.Components.Filters.Filter.html#42-43" title="Go to source code"><b>OPERATOR_AND</b></a>
+		</code></td>
+		<td class="value"><code><span class="php-quote">'AND'</span></code></td>
+		<td class="description"><div>
+			<a href="#OPERATOR_AND" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+					<h4>Deprecated</h4>
+					<div class="list">
+					</div>
 			</div>
 		</div></td>
 	</tr>
@@ -889,7 +897,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="attributes"><code>string</code></td>
 		<td class="name"><code>
-				<a href="source-class-Grido.Components.Filters.Filter.html#43" title="Go to source code"><b>VALUE_IDENTIFIER</b></a>
+				<a href="source-class-Grido.Components.Filters.Filter.html#45" title="Go to source code"><b>VALUE_IDENTIFIER</b></a>
 		</code></td>
 		<td class="value"><code><span class="php-quote">'%value'</span></code></td>
 		<td class="description"><div>
@@ -909,7 +917,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="attributes"><code>string</code></td>
 		<td class="name"><code>
-				<a href="source-class-Grido.Components.Filters.Filter.html#45" title="Go to source code"><b>CONDITION_CUSTOM</b></a>
+				<a href="source-class-Grido.Components.Filters.Filter.html#47-48" title="Go to source code"><b>CONDITION_CUSTOM</b></a>
 		</code></td>
 		<td class="value"><code><span class="php-quote">':condition-custom:'</span></code></td>
 		<td class="description"><div>
@@ -922,6 +930,9 @@ Nette\Application\UI\PresenterComponent
 			<div class="description detailed hidden">
 				
 
+					<h4>Deprecated</h4>
+					<div class="list">
+					</div>
 			</div>
 		</div></td>
 	</tr>
@@ -929,7 +940,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="attributes"><code>string</code></td>
 		<td class="name"><code>
-				<a href="source-class-Grido.Components.Filters.Filter.html#46" title="Go to source code"><b>CONDITION_CALLBACK</b></a>
+				<a href="source-class-Grido.Components.Filters.Filter.html#48-49" title="Go to source code"><b>CONDITION_CALLBACK</b></a>
 		</code></td>
 		<td class="value"><code><span class="php-quote">':condition-callback:'</span></code></td>
 		<td class="description"><div>
@@ -942,6 +953,9 @@ Nette\Application\UI\PresenterComponent
 			<div class="description detailed hidden">
 				
 
+					<h4>Deprecated</h4>
+					<div class="list">
+					</div>
 			</div>
 		</div></td>
 	</tr>
@@ -949,7 +963,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="attributes"><code>string</code></td>
 		<td class="name"><code>
-				<a href="source-class-Grido.Components.Filters.Filter.html#47" title="Go to source code"><b>CONDITION_NOT_APPLY</b></a>
+				<a href="source-class-Grido.Components.Filters.Filter.html#49-50" title="Go to source code"><b>CONDITION_NOT_APPLY</b></a>
 		</code></td>
 		<td class="value"><code><span class="php-quote">':not-apply:'</span></code></td>
 		<td class="description"><div>
@@ -962,6 +976,9 @@ Nette\Application\UI\PresenterComponent
 			<div class="description detailed hidden">
 				
 
+					<h4>Deprecated</h4>
+					<div class="list">
+					</div>
 			</div>
 		</div></td>
 	</tr>
@@ -969,7 +986,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="attributes"><code>string</code></td>
 		<td class="name"><code>
-				<a href="source-class-Grido.Components.Filters.Filter.html#49" title="Go to source code"><b>RENDER_INNER</b></a>
+				<a href="source-class-Grido.Components.Filters.Filter.html#52" title="Go to source code"><b>RENDER_INNER</b></a>
 		</code></td>
 		<td class="value"><code><span class="php-quote">'inner'</span></code></td>
 		<td class="description"><div>
@@ -989,7 +1006,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="attributes"><code>string</code></td>
 		<td class="name"><code>
-				<a href="source-class-Grido.Components.Filters.Filter.html#50" title="Go to source code"><b>RENDER_OUTER</b></a>
+				<a href="source-class-Grido.Components.Filters.Filter.html#53" title="Go to source code"><b>RENDER_OUTER</b></a>
 		</code></td>
 		<td class="value"><code><span class="php-quote">'outer'</span></code></td>
 		<td class="description"><div>
@@ -1019,7 +1036,7 @@ Nette\Application\UI\PresenterComponent
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Filters.Filter.html#52-53" title="Go to source code"><var>$optional</var></a>
+				<a href="source-class-Grido.Components.Filters.Filter.html#55-56" title="Go to source code"><var>$optional</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -1035,18 +1052,18 @@ Nette\Application\UI\PresenterComponent
 			</div>
 		</div></td>
 	</tr>
-	<tr data-order="columns" id="$columns">
+	<tr data-order="column" id="$column">
 		<td class="attributes"><code>
 			protected  
 			array
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Filters.Filter.html#55-56" title="Go to source code"><var>$columns</var></a>
+				<a href="source-class-Grido.Components.Filters.Filter.html#58-59" title="Go to source code"><var>$column</var></a>
 		</td>
 		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
 		<td class="description"><div>
-			<a href="#$columns" class="anchor">#</a>
+			<a href="#$column" class="anchor">#</a>
 
 			<div class="description short">
 				
@@ -1061,26 +1078,45 @@ Nette\Application\UI\PresenterComponent
 	<tr data-order="condition" id="$condition">
 		<td class="attributes"><code>
 			protected  
-			mixed
+			string
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Filters.Filter.html#58-59" title="Go to source code"><var>$condition</var></a>
+				<a href="source-class-Grido.Components.Filters.Filter.html#61-62" title="Go to source code"><var>$condition</var></a>
 		</td>
-		<td class="value"><code><span class="php-quote">'= %s'</span></code></td>
+		<td class="value"><code><span class="php-quote">'= ?'</span></code></td>
 		<td class="description"><div>
 			<a href="#$condition" class="anchor">#</a>
 
 			<div class="description short">
 				
-<p>for -&gt;where('&lt;column&gt; = %s', &lt;value&gt;)</p>
-
 			</div>
 
 			<div class="description detailed hidden">
 				
-<p>for -&gt;where('&lt;column&gt; = %s', &lt;value&gt;)</p>
 
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="where" id="$where">
+		<td class="attributes"><code>
+			protected  
+			callable
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Components.Filters.Filter.html#64-65" title="Go to source code"><var>$where</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$where" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
 
 			</div>
 		</div></td>
@@ -1092,7 +1128,7 @@ Nette\Application\UI\PresenterComponent
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Filters.Filter.html#61-62" title="Go to source code"><var>$formatValue</var></a>
+				<a href="source-class-Grido.Components.Filters.Filter.html#67-68" title="Go to source code"><var>$formatValue</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -1115,7 +1151,7 @@ Nette\Application\UI\PresenterComponent
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Filters.Filter.html#64-65" title="Go to source code"><var>$wrapperPrototype</var></a>
+				<a href="source-class-Grido.Components.Filters.Filter.html#70-71" title="Go to source code"><var>$wrapperPrototype</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -1138,7 +1174,7 @@ Nette\Application\UI\PresenterComponent
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Filters.Filter.html#67-68" title="Go to source code"><var>$control</var></a>
+				<a href="source-class-Grido.Components.Filters.Filter.html#73-74" title="Go to source code"><var>$control</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -1163,6 +1199,7 @@ Nette\Application\UI\PresenterComponent
 			<a href="class-Grido.Components.Base.html#$form"><var>$form</var></a>, 
 			<a href="class-Grido.Components.Base.html#$grid"><var>$grid</var></a>, 
 			<a href="class-Grido.Components.Base.html#$label"><var>$label</var></a>, 
+			<a href="class-Grido.Components.Base.html#$propertyAccessor"><var>$propertyAccessor</var></a>, 
 			<a href="class-Grido.Components.Base.html#$type"><var>$type</var></a>
 		</code></td>
 	</tr>
@@ -1171,17 +1208,17 @@ Nette\Application\UI\PresenterComponent
 
 	<table class="summary" id="magicProperties">
 	<caption>Magic properties summary</caption>
-	<tr data-order="columns" id="m$columns">
+	<tr data-order="column" id="m$column">
 		<td class="attributes"><code>
 			public  read-only
-			string
+			array
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Filters.Filter.html#21" title="Go to source code"><var>$columns</var></a>
+				<a href="source-class-Grido.Components.Filters.Filter.html#21" title="Go to source code"><var>$column</var></a>
 		</td>
 		<td class="description"><div>
-			<a href="#m$columns" class="anchor">#</a>
+			<a href="#m$column" class="anchor">#</a>
 
 			<div class="description short">
 				
@@ -1240,7 +1277,7 @@ Nette\Application\UI\PresenterComponent
 	<tr data-order="condition" id="m$condition">
 		<td class="attributes"><code>
 			public  write-only
-			mixed
+			string
 		</code></td>
 
 		<td class="name">
@@ -1259,6 +1296,28 @@ Nette\Application\UI\PresenterComponent
 			</div>
 		</div></td>
 	</tr>
+	<tr data-order="where" id="m$where">
+		<td class="attributes"><code>
+			public  write-only
+			callable
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Components.Filters.Filter.html#25" title="Go to source code"><var>$where</var></a>
+		</td>
+		<td class="description"><div>
+			<a href="#m$where" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
 	<tr data-order="formatValue" id="m$formatValue">
 		<td class="attributes"><code>
 			public  write-only
@@ -1266,7 +1325,7 @@ Nette\Application\UI\PresenterComponent
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Filters.Filter.html#25" title="Go to source code"><var>$formatValue</var></a>
+				<a href="source-class-Grido.Components.Filters.Filter.html#26" title="Go to source code"><var>$formatValue</var></a>
 		</td>
 		<td class="description"><div>
 			<a href="#m$formatValue" class="anchor">#</a>
@@ -1288,7 +1347,7 @@ Nette\Application\UI\PresenterComponent
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Filters.Filter.html#26" title="Go to source code"><var>$defaultValue</var></a>
+				<a href="source-class-Grido.Components.Filters.Filter.html#27" title="Go to source code"><var>$defaultValue</var></a>
 		</td>
 		<td class="description"><div>
 			<a href="#m$defaultValue" class="anchor">#</a>

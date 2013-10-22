@@ -7,7 +7,7 @@
 	<title>Class Grido\DataSources\ArraySource | Grido@dev</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?10515351"></script>
+	<script type="text/javascript" src="elementlist.js?29701629"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido@dev" href="/opensearch.xml" />
 
@@ -163,7 +163,9 @@ Nette\Object
 				<b>Author:</b>
 				Josef Kříž &lt;<a
 href="mailto:pepakriz&#64;gmail.com">pepakriz&#64;<!---->gmail.com</a>&gt;<br />
-		<b>Located at</b> <a href="source-class-Grido.DataSources.ArraySource.html#14-164" title="Go to source code">DataSources/ArraySource.php</a><br />
+				<b>Author:</b>
+				Petr Bugyík<br />
+		<b>Located at</b> <a href="source-class-Grido.DataSources.ArraySource.html#16-201" title="Go to source code">DataSources/ArraySource.php</a><br />
 	</div>
 
 
@@ -181,7 +183,7 @@ href="mailto:pepakriz&#64;gmail.com">pepakriz&#64;<!---->gmail.com</a>&gt;<br />
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Grido.DataSources.ArraySource.html#29-35" title="Go to source code">__construct</a>( <span>array <var>$data</var></span> )</code>
+		<code><a href="source-class-Grido.DataSources.ArraySource.html#32-38" title="Go to source code">__construct</a>( <span>array <var>$data</var></span> )</code>
 
 		<div class="description short">
 			
@@ -204,47 +206,18 @@ href="mailto:pepakriz&#64;gmail.com">pepakriz&#64;<!---->gmail.com</a>&gt;<br />
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="formatFilterCondition" id="_formatFilterCondition">
+	<tr data-order="makeWhere" id="_makeWhere">
 
 		<td class="attributes"><code>
 			 protected 
-			
+			array
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_formatFilterCondition">#</a>
-		<code><a href="source-class-Grido.DataSources.ArraySource.html#37-50" title="Go to source code">formatFilterCondition</a>( <span>array <var>$condition</var></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getFilter" id="_getFilter">
-
-		<td class="attributes"><code>
-			 protected 
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getFilter">#</a>
-		<code><a href="source-class-Grido.DataSources.ArraySource.html#52-78" title="Go to source code">getFilter</a>( <span>array <var>$data</var></span>, <span>array <var>$condition</var></span> )</code>
+		<a class="anchor" href="#_makeWhere">#</a>
+		<code><a href="source-class-Grido.DataSources.ArraySource.html#40-76" title="Go to source code">makeWhere</a>( <span><code><a href="class-Grido.Components.Filters.Condition.html">Grido\Components\Filters\Condition</a></code> <var>$condition</var></span>, <span>array <var>$data</var> = <span class="php-keyword1">NULL</span></span> )</code>
 
 		<div class="description short">
 			
@@ -256,13 +229,63 @@ href="mailto:pepakriz&#64;gmail.com">pepakriz&#64;<!---->gmail.com</a>&gt;<br />
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$data</var></dt>
-					<dd><code>array</code><br>$data</dd>
 					<dt><var>$condition</var></dt>
-					<dd><code>array</code><br>$condition</dd>
+					<dd><code><code><a href="class-Grido.Components.Filters.Condition.html">Grido\Components\Filters\Condition</a></code></code><br>$condition</dd>
+					<dt><var>$data</var></dt>
+					<dd><code>array</code><br>$data</dd>
 				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br />
+				</div>
 
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="compare" id="_compare">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_compare">#</a>
+		<code><a href="source-class-Grido.DataSources.ArraySource.html#78-108" title="Go to source code">compare</a>( <span>string <var>$actual</var></span>, <span>string <var>$condition</var></span>, <span>mixed <var>$expected</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$actual</var></dt>
+					<dd><code>string</code><br>$actual</dd>
+					<dt><var>$condition</var></dt>
+					<dd><code>string</code><br>$condition</dd>
+					<dt><var>$expected</var></dt>
+					<dd><code>mixed</code><br>$expected</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code></code><br />
+				</div>
 
 
 
@@ -280,7 +303,7 @@ href="mailto:pepakriz&#64;gmail.com">pepakriz&#64;<!---->gmail.com</a>&gt;<br />
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getCount">#</a>
-		<code><a href="source-class-Grido.DataSources.ArraySource.html#82-88" title="Go to source code">getCount</a>( )</code>
+		<code><a href="source-class-Grido.DataSources.ArraySource.html#112-118" title="Go to source code">getCount</a>( )</code>
 
 		<div class="description short">
 			
@@ -315,7 +338,7 @@ href="mailto:pepakriz&#64;gmail.com">pepakriz&#64;<!---->gmail.com</a>&gt;<br />
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getData">#</a>
-		<code><a href="source-class-Grido.DataSources.ArraySource.html#90-96" title="Go to source code">getData</a>( )</code>
+		<code><a href="source-class-Grido.DataSources.ArraySource.html#120-126" title="Go to source code">getData</a>( )</code>
 
 		<div class="description short">
 			
@@ -350,7 +373,7 @@ href="mailto:pepakriz&#64;gmail.com">pepakriz&#64;<!---->gmail.com</a>&gt;<br />
 
 		<td class="name"><div>
 		<a class="anchor" href="#_filter">#</a>
-		<code><a href="source-class-Grido.DataSources.ArraySource.html#98-105" title="Go to source code">filter</a>( <span>array <var>$condition</var></span> )</code>
+		<code><a href="source-class-Grido.DataSources.ArraySource.html#128-136" title="Go to source code">filter</a>( <span>array <var>$conditions</var></span> )</code>
 
 		<div class="description short">
 			
@@ -362,8 +385,8 @@ href="mailto:pepakriz&#64;gmail.com">pepakriz&#64;<!---->gmail.com</a>&gt;<br />
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$condition</var></dt>
-					<dd><code>array</code><br>$condition</dd>
+					<dt><var>$conditions</var></dt>
+					<dd><code>array</code><br>$conditions</dd>
 				</dl></div>
 
 
@@ -386,7 +409,7 @@ href="mailto:pepakriz&#64;gmail.com">pepakriz&#64;<!---->gmail.com</a>&gt;<br />
 
 		<td class="name"><div>
 		<a class="anchor" href="#_limit">#</a>
-		<code><a href="source-class-Grido.DataSources.ArraySource.html#107-115" title="Go to source code">limit</a>( <span>integer <var>$offset</var></span>, <span>integer <var>$limit</var></span> )</code>
+		<code><a href="source-class-Grido.DataSources.ArraySource.html#138-145" title="Go to source code">limit</a>( <span>integer <var>$offset</var></span>, <span>integer <var>$limit</var></span> )</code>
 
 		<div class="description short">
 			
@@ -424,7 +447,7 @@ href="mailto:pepakriz&#64;gmail.com">pepakriz&#64;<!---->gmail.com</a>&gt;<br />
 
 		<td class="name"><div>
 		<a class="anchor" href="#_sort">#</a>
-		<code><a href="source-class-Grido.DataSources.ArraySource.html#117-142" title="Go to source code">sort</a>( <span>array <var>$sorting</var></span> )</code>
+		<code><a href="source-class-Grido.DataSources.ArraySource.html#147-176" title="Go to source code">sort</a>( <span>array <var>$sorting</var></span> )</code>
 
 		<div class="description short">
 			
@@ -460,7 +483,7 @@ href="mailto:pepakriz&#64;gmail.com">pepakriz&#64;<!---->gmail.com</a>&gt;<br />
 
 		<td class="name"><div>
 		<a class="anchor" href="#_suggest">#</a>
-		<code><a href="source-class-Grido.DataSources.ArraySource.html#144-163" title="Go to source code">suggest</a>( <span>string <var>$column</var></span>, <span>array <var>$conditions</var></span> )</code>
+		<code><a href="source-class-Grido.DataSources.ArraySource.html#178-200" title="Go to source code">suggest</a>( <span>string <var>$column</var></span>, <span>array <var>$conditions</var></span> )</code>
 
 		<div class="description short">
 			
@@ -513,7 +536,7 @@ href="mailto:pepakriz&#64;gmail.com">pepakriz&#64;<!---->gmail.com</a>&gt;<br />
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.DataSources.ArraySource.html#26-27" title="Go to source code"><var>$data</var></a>
+				<a href="source-class-Grido.DataSources.ArraySource.html#29-30" title="Go to source code"><var>$data</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -542,7 +565,7 @@ href="mailto:pepakriz&#64;gmail.com">pepakriz&#64;<!---->gmail.com</a>&gt;<br />
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.DataSources.ArraySource.html#21" title="Go to source code"><var>$data</var></a>
+				<a href="source-class-Grido.DataSources.ArraySource.html#24" title="Go to source code"><var>$data</var></a>
 		</td>
 		<td class="description"><div>
 			<a href="#m$data" class="anchor">#</a>
@@ -564,7 +587,7 @@ href="mailto:pepakriz&#64;gmail.com">pepakriz&#64;<!---->gmail.com</a>&gt;<br />
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.DataSources.ArraySource.html#22" title="Go to source code"><var>$count</var></a>
+				<a href="source-class-Grido.DataSources.ArraySource.html#25" title="Go to source code"><var>$count</var></a>
 		</td>
 		<td class="description"><div>
 			<a href="#m$count" class="anchor">#</a>

@@ -7,7 +7,7 @@
 	<title>Class Grido\Components\Actions\Href | Grido - DataGrid for Nette Framework.</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?1490757444"></script>
+	<script type="text/javascript" src="elementlist.js?1021166852"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido - DataGrid for Nette Framework." href="/opensearch.xml" />
 
@@ -168,7 +168,7 @@ Nette\Application\UI\PresenterComponent
 
 				<b>Author:</b>
 				Petr Bugyík<br />
-		<b>Located at</b> <a href="source-class-Grido.Components.Actions.Href.html#14-135" title="Go to source code">Components/Actions/Href.php</a><br />
+		<b>Located at</b> <a href="source-class-Grido.Components.Actions.Href.html#14-124" title="Go to source code">Components/Actions/Href.php</a><br />
 	</div>
 
 
@@ -272,7 +272,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getElement">#</a>
-		<code><a href="source-class-Grido.Components.Actions.Href.html#65-91" title="Go to source code">getElement</a>( <span>mixed <var>$item</var></span> )</code>
+		<code><a href="source-class-Grido.Components.Actions.Href.html#65-91" title="Go to source code">getElement</a>( <span>mixed <var>$row</var></span> )</code>
 
 		<div class="description short">
 			
@@ -284,8 +284,8 @@ Nette\Application\UI\PresenterComponent
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$item</var></dt>
-					<dd><code>mixed</code><br>$item</dd>
+					<dt><var>$row</var></dt>
+					<dd><code>mixed</code><br>$row</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -293,10 +293,6 @@ Nette\Application\UI\PresenterComponent
 					<code>Nette\Utils\Html</code><br />
 				</div>
 
-				<h4>Throws</h4>
-				<div class="list">
-					<code><code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code></code><br />
-				</div>
 
 
 				<h4>Overrides</h4>
@@ -349,7 +345,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getArguments">#</a>
-		<code><a href="source-class-Grido.Components.Actions.Href.html#106-123" title="Go to source code">getArguments</a>( <span>mixed <var>$item</var> = <span class="php-keyword1">NULL</span></span> )</code>
+		<code><a href="source-class-Grido.Components.Actions.Href.html#106-112" title="Go to source code">getArguments</a>( )</code>
 
 		<div class="description short">
 			
@@ -382,7 +378,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_handleClick">#</a>
-		<code><a href="source-class-Grido.Components.Actions.Href.html#127-134" title="Go to source code">handleClick</a>( <span>mixed <var>$id</var></span> )</code>
+		<code><a href="source-class-Grido.Components.Actions.Href.html#116-123" title="Go to source code">handleClick</a>( <span>mixed <var>$id</var></span> )</code>
 
 		<div class="description short">
 			
@@ -415,6 +411,8 @@ Nette\Application\UI\PresenterComponent
 	<tr>
 		<td><code>
 			<a href="class-Grido.Components.Actions.Action.html#_getElementPrototype">getElementPrototype()</a>, 
+			<a href="class-Grido.Components.Actions.Action.html#_getOption">getOption()</a>, 
+			<a href="class-Grido.Components.Actions.Action.html#_getOptions">getOptions()</a>, 
 			<a href="class-Grido.Components.Actions.Action.html#_getPrimaryKey">getPrimaryKey()</a>, 
 			<a href="class-Grido.Components.Actions.Action.html#_render">render()</a>, 
 			<a href="class-Grido.Components.Actions.Action.html#_setConfirm">setConfirm()</a>, 
@@ -422,6 +420,7 @@ Nette\Application\UI\PresenterComponent
 			<a href="class-Grido.Components.Actions.Action.html#_setDisable">setDisable()</a>, 
 			<a href="class-Grido.Components.Actions.Action.html#_setElementPrototype">setElementPrototype()</a>, 
 			<a href="class-Grido.Components.Actions.Action.html#_setIcon">setIcon()</a>, 
+			<a href="class-Grido.Components.Actions.Action.html#_setOption">setOption()</a>, 
 			<a href="class-Grido.Components.Actions.Action.html#_setPrimaryKey">setPrimaryKey()</a>
 		</code></td>
 	</tr>
@@ -434,6 +433,7 @@ Nette\Application\UI\PresenterComponent
 			<a href="class-Grido.Components.Base.html#_getForm">getForm()</a>, 
 			<a href="class-Grido.Components.Base.html#_getGrid">getGrid()</a>, 
 			<a href="class-Grido.Components.Base.html#_getLabel">getLabel()</a>, 
+			<a href="class-Grido.Components.Base.html#_getPropertyAccessor">getPropertyAccessor()</a>, 
 			<a href="class-Grido.Components.Base.html#_getType">getType()</a>, 
 			<a href="class-Grido.Components.Base.html#_translate">translate()</a>
 		</code></td>
@@ -576,11 +576,10 @@ Nette\Application\UI\PresenterComponent
 	<caption>Properties inherited from <a href="class-Grido.Components.Actions.Action.html#properties">Grido\Components\Actions\Action</a></caption>
 	<tr>
 		<td><code>
-			<a href="class-Grido.Components.Actions.Action.html#$confirm"><var>$confirm</var></a>, 
 			<a href="class-Grido.Components.Actions.Action.html#$customRender"><var>$customRender</var></a>, 
 			<a href="class-Grido.Components.Actions.Action.html#$disable"><var>$disable</var></a>, 
 			<a href="class-Grido.Components.Actions.Action.html#$elementPrototype"><var>$elementPrototype</var></a>, 
-			<a href="class-Grido.Components.Actions.Action.html#$icon"><var>$icon</var></a>, 
+			<a href="class-Grido.Components.Actions.Action.html#$options"><var>$options</var></a>, 
 			<a href="class-Grido.Components.Actions.Action.html#$primaryKey"><var>$primaryKey</var></a>
 		</code></td>
 	</tr>
@@ -592,6 +591,7 @@ Nette\Application\UI\PresenterComponent
 			<a href="class-Grido.Components.Base.html#$form"><var>$form</var></a>, 
 			<a href="class-Grido.Components.Base.html#$grid"><var>$grid</var></a>, 
 			<a href="class-Grido.Components.Base.html#$label"><var>$label</var></a>, 
+			<a href="class-Grido.Components.Base.html#$propertyAccessor"><var>$propertyAccessor</var></a>, 
 			<a href="class-Grido.Components.Base.html#$type"><var>$type</var></a>
 		</code></td>
 	</tr>
@@ -628,12 +628,11 @@ Nette\Application\UI\PresenterComponent
 	<caption>Magic properties inherited from <a href="class-Grido.Components.Actions.Action.html#properties">Grido\Components\Actions\Action</a></caption>
 	<tr>
 		<td><code>
-			<a href="class-Grido.Components.Actions.Action.html#m$confirm"><var>$confirm</var></a>, 
 			<a href="class-Grido.Components.Actions.Action.html#m$customRender"><var>$customRender</var></a>, 
 			<a href="class-Grido.Components.Actions.Action.html#m$disable"><var>$disable</var></a>, 
 			<a href="class-Grido.Components.Actions.Action.html#m$element"><var>$element</var></a>, 
 			<a href="class-Grido.Components.Actions.Action.html#m$elementPrototype"><var>$elementPrototype</var></a>, 
-			<a href="class-Grido.Components.Actions.Action.html#m$icon"><var>$icon</var></a>, 
+			<a href="class-Grido.Components.Actions.Action.html#m$options"><var>$options</var></a>, 
 			<a href="class-Grido.Components.Actions.Action.html#m$primaryKey"><var>$primaryKey</var></a>
 		</code></td>
 	</tr>

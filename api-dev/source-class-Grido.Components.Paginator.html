@@ -8,7 +8,7 @@
 	<title>File Components/Paginator.php | Grido@dev</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?10515351"></script>
+	<script type="text/javascript" src="elementlist.js?29701629"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido@dev" href="/opensearch.xml" />
 
@@ -127,7 +127,7 @@
 </span></span><span id="6" class="l"><a class="l" href="#6">  6: </a><span class="php-comment"> * Copyright (c) 2011 Petr Bugyík (http://petr.bugyik.cz)
 </span></span><span id="7" class="l"><a class="l" href="#7">  7: </a><span class="php-comment"> *
 </span></span><span id="8" class="l"><a class="l" href="#8">  8: </a><span class="php-comment"> * For the full copyright and license information, please view
-</span></span><span id="9" class="l"><a class="l" href="#9">  9: </a><span class="php-comment"> * the file license.md that was distributed with this source code.
+</span></span><span id="9" class="l"><a class="l" href="#9">  9: </a><span class="php-comment"> * the file LICENSE.md that was distributed with this source code.
 </span></span><span id="10" class="l"><a class="l" href="#10"> 10: </a><span class="php-comment"> */</span>
 </span><span id="11" class="l"><a class="l" href="#11"> 11: </a>
 </span><span id="12" class="l"><a class="l" href="#12"> 12: </a><span class="php-keyword1">namespace</span> Grido\Components;
@@ -193,15 +193,15 @@
 </span><span id="72" class="l"><a class="l" href="#72"> 72: </a>    {
 </span><span id="73" class="l"><a class="l" href="#73"> 73: </a>        <span class="php-keyword1">if</span> (!<span class="php-var">$this</span>-&gt;steps) {
 </span><span id="74" class="l"><a class="l" href="#74"> 74: </a>            <span class="php-var">$arr</span> = <span class="php-keyword2">range</span>(
-</span><span id="75" class="l"><a class="l" href="#75"> 75: </a>                <span class="php-keyword2">max</span>(<span class="php-var">$this</span>-&gt;firstPage, <span class="php-var">$this</span>-&gt;getPage() - <span class="php-num">3</span>),
-</span><span id="76" class="l"><a class="l" href="#76"> 76: </a>                <span class="php-keyword2">min</span>(<span class="php-var">$this</span>-&gt;lastPage, <span class="php-var">$this</span>-&gt;getPage() + <span class="php-num">3</span>)
+</span><span id="75" class="l"><a class="l" href="#75"> 75: </a>                <span class="php-keyword2">max</span>(<span class="php-var">$this</span>-&gt;getFirstPage(), <span class="php-var">$this</span>-&gt;getPage() - <span class="php-num">3</span>),
+</span><span id="76" class="l"><a class="l" href="#76"> 76: </a>                <span class="php-keyword2">min</span>(<span class="php-var">$this</span>-&gt;getLastPage(), <span class="php-var">$this</span>-&gt;getPage() + <span class="php-num">3</span>)
 </span><span id="77" class="l"><a class="l" href="#77"> 77: </a>            );
 </span><span id="78" class="l"><a class="l" href="#78"> 78: </a>
 </span><span id="79" class="l"><a class="l" href="#79"> 79: </a>            <span class="php-var">$count</span> = <span class="php-num">4</span>;
-</span><span id="80" class="l"><a class="l" href="#80"> 80: </a>            <span class="php-var">$quotient</span> = (<span class="php-var">$this</span>-&gt;pageCount - <span class="php-num">1</span>) / <span class="php-var">$count</span>;
+</span><span id="80" class="l"><a class="l" href="#80"> 80: </a>            <span class="php-var">$quotient</span> = (<span class="php-var">$this</span>-&gt;getPageCount() - <span class="php-num">1</span>) / <span class="php-var">$count</span>;
 </span><span id="81" class="l"><a class="l" href="#81"> 81: </a>
 </span><span id="82" class="l"><a class="l" href="#82"> 82: </a>            <span class="php-keyword1">for</span> (<span class="php-var">$i</span> = <span class="php-num">0</span>; <span class="php-var">$i</span> &lt;= <span class="php-var">$count</span>; <span class="php-var">$i</span>++) {
-</span><span id="83" class="l"><a class="l" href="#83"> 83: </a>                <span class="php-var">$arr</span>[] = (int) (<span class="php-keyword2">round</span>(<span class="php-var">$quotient</span> * <span class="php-var">$i</span>) + <span class="php-var">$this</span>-&gt;firstPage);
+</span><span id="83" class="l"><a class="l" href="#83"> 83: </a>                <span class="php-var">$arr</span>[] = (int) (<span class="php-keyword2">round</span>(<span class="php-var">$quotient</span> * <span class="php-var">$i</span>) + <span class="php-var">$this</span>-&gt;getFirstPage());
 </span><span id="84" class="l"><a class="l" href="#84"> 84: </a>            }
 </span><span id="85" class="l"><a class="l" href="#85"> 85: </a>
 </span><span id="86" class="l"><a class="l" href="#86"> 86: </a>            <span class="php-keyword2">sort</span>(<span class="php-var">$arr</span>);

@@ -7,7 +7,7 @@
 	<title>Class Grido\DataSources\Doctrine | Grido - DataGrid for Nette Framework.</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?1490757444"></script>
+	<script type="text/javascript" src="elementlist.js?1021166852"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido - DataGrid for Nette Framework." href="/opensearch.xml" />
 
@@ -163,7 +163,9 @@ Nette\Object
 				<b>Author:</b>
 				Martin Jantosovic &lt;<a
 href="mailto:martin.jantosovic&#64;freya.sk">martin.jantosovic&#64;<!---->freya.sk</a>&gt;<br />
-		<b>Located at</b> <a href="source-class-Grido.DataSources.Doctrine.html#17-238" title="Go to source code">DataSources/Doctrine.php</a><br />
+				<b>Author:</b>
+				Petr Bugyík<br />
+		<b>Located at</b> <a href="source-class-Grido.DataSources.Doctrine.html#17-256" title="Go to source code">DataSources/Doctrine.php</a><br />
 	</div>
 
 
@@ -181,7 +183,7 @@ href="mailto:martin.jantosovic&#64;freya.sk">martin.jantosovic&#64;<!---->freya.
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Grido.DataSources.Doctrine.html#41-57" title="Go to source code">__construct</a>( <span>Doctrine\ORM\QueryBuilder <var>$qb</var></span>, <span>array <var>$filterMapping</var> = <span class="php-keyword1">NULL</span></span>, <span>array <var>$sortMapping</var> = <span class="php-keyword1">NULL</span></span> )</code>
+		<code><a href="source-class-Grido.DataSources.Doctrine.html#44-60" title="Go to source code">__construct</a>( <span>Doctrine\ORM\QueryBuilder <var>$qb</var></span>, <span>array <var>$filterMapping</var> = <span class="php-keyword1">NULL</span></span>, <span>array <var>$sortMapping</var> = <span class="php-keyword1">NULL</span></span> )</code>
 
 		<div class="description short">
 			
@@ -225,7 +227,7 @@ used also as $sortMapping.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getQuery">#</a>
-		<code><a href="source-class-Grido.DataSources.Doctrine.html#59-65" title="Go to source code">getQuery</a>( )</code>
+		<code><a href="source-class-Grido.DataSources.Doctrine.html#62-68" title="Go to source code">getQuery</a>( )</code>
 
 		<div class="description short">
 			
@@ -258,7 +260,7 @@ used also as $sortMapping.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getQb">#</a>
-		<code><a href="source-class-Grido.DataSources.Doctrine.html#67-73" title="Go to source code">getQb</a>( )</code>
+		<code><a href="source-class-Grido.DataSources.Doctrine.html#70-76" title="Go to source code">getQb</a>( )</code>
 
 		<div class="description short">
 			
@@ -291,7 +293,7 @@ used also as $sortMapping.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getFilterMapping">#</a>
-		<code><a href="source-class-Grido.DataSources.Doctrine.html#75-81" title="Go to source code">getFilterMapping</a>( )</code>
+		<code><a href="source-class-Grido.DataSources.Doctrine.html#78-84" title="Go to source code">getFilterMapping</a>( )</code>
 
 		<div class="description short">
 			
@@ -324,7 +326,7 @@ used also as $sortMapping.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getSortMapping">#</a>
-		<code><a href="source-class-Grido.DataSources.Doctrine.html#83-89" title="Go to source code">getSortMapping</a>( )</code>
+		<code><a href="source-class-Grido.DataSources.Doctrine.html#86-92" title="Go to source code">getSortMapping</a>( )</code>
 
 		<div class="description short">
 			
@@ -346,7 +348,7 @@ used also as $sortMapping.</p>
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="formatFilterCondition" id="_formatFilterCondition">
+	<tr data-order="makeWhere" id="_makeWhere">
 
 		<td class="attributes"><code>
 			 protected 
@@ -356,8 +358,44 @@ used also as $sortMapping.</p>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_formatFilterCondition">#</a>
-		<code><a href="source-class-Grido.DataSources.Doctrine.html#91-120" title="Go to source code">formatFilterCondition</a>( <span>array <var>$condition</var></span> )</code>
+		<a class="anchor" href="#_makeWhere">#</a>
+		<code><a href="source-class-Grido.DataSources.Doctrine.html#94-131" title="Go to source code">makeWhere</a>( <span><code><a href="class-Grido.Components.Filters.Condition.html">Grido\Components\Filters\Condition</a></code> <var>$condition</var></span>, <span>Doctrine\ORM\QueryBuilder <var>$qb</var> = <span class="php-keyword1">NULL</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$condition</var></dt>
+					<dd><code><code><a href="class-Grido.Components.Filters.Condition.html">Grido\Components\Filters\Condition</a></code></code><br>$condition</dd>
+					<dt><var>$qb</var></dt>
+					<dd><code>Doctrine\ORM\QueryBuilder</code><br>$qb</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getRand" id="_getRand">
+
+		<td class="attributes"><code>
+			 protected 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getRand">#</a>
+		<code><a href="source-class-Grido.DataSources.Doctrine.html#133-144" title="Go to source code">getRand</a>( )</code>
 
 		<div class="description short">
 			
@@ -368,6 +406,10 @@ used also as $sortMapping.</p>
 
 
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
 
 
 
@@ -386,7 +428,7 @@ used also as $sortMapping.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getCount">#</a>
-		<code><a href="source-class-Grido.DataSources.Doctrine.html#124-131" title="Go to source code">getCount</a>( )</code>
+		<code><a href="source-class-Grido.DataSources.Doctrine.html#148-155" title="Go to source code">getCount</a>( )</code>
 
 		<div class="description short">
 			
@@ -421,7 +463,7 @@ used also as $sortMapping.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getData">#</a>
-		<code><a href="source-class-Grido.DataSources.Doctrine.html#133-166" title="Go to source code">getData</a>( )</code>
+		<code><a href="source-class-Grido.DataSources.Doctrine.html#157-190" title="Go to source code">getData</a>( )</code>
 
 		<div class="description short">
 			
@@ -462,24 +504,24 @@ only item at index [0] is returned, because it should be an entity object.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_filter">#</a>
-		<code><a href="source-class-Grido.DataSources.Doctrine.html#168-180" title="Go to source code">filter</a>( <span>array <var>$condition</var></span> )</code>
+		<code><a href="source-class-Grido.DataSources.Doctrine.html#192-201" title="Go to source code">filter</a>( <span>array <var>$conditions</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Set filter.</p>
+<p>Sets filter.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Set filter.</p>
+<p>Sets filter.</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$condition</var></dt>
-					<dd><code>array</code><br>$condition</dd>
+					<dt><var>$conditions</var></dt>
+					<dd><code>array</code><br>$conditions</dd>
 				</dl></div>
 
 
@@ -502,17 +544,17 @@ only item at index [0] is returned, because it should be an entity object.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_limit">#</a>
-		<code><a href="source-class-Grido.DataSources.Doctrine.html#182-191" title="Go to source code">limit</a>( <span>integer <var>$offset</var></span>, <span>integer <var>$limit</var></span> )</code>
+		<code><a href="source-class-Grido.DataSources.Doctrine.html#203-212" title="Go to source code">limit</a>( <span>integer <var>$offset</var></span>, <span>integer <var>$limit</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Set offset and limit.</p>
+<p>Sets offset and limit.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Set offset and limit.</p>
+<p>Sets offset and limit.</p>
 
 
 
@@ -544,17 +586,17 @@ only item at index [0] is returned, because it should be an entity object.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_sort">#</a>
-		<code><a href="source-class-Grido.DataSources.Doctrine.html#193-206" title="Go to source code">sort</a>( <span>array <var>$sorting</var></span> )</code>
+		<code><a href="source-class-Grido.DataSources.Doctrine.html#214-227" title="Go to source code">sort</a>( <span>array <var>$sorting</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Set sorting.</p>
+<p>Sets sorting.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Set sorting.</p>
+<p>Sets sorting.</p>
 
 
 
@@ -584,7 +626,7 @@ only item at index [0] is returned, because it should be an entity object.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_suggest">#</a>
-		<code><a href="source-class-Grido.DataSources.Doctrine.html#208-237" title="Go to source code">suggest</a>( <span>string <var>$column</var></span>, <span>array <var>$conditions</var></span> )</code>
+		<code><a href="source-class-Grido.DataSources.Doctrine.html#229-255" title="Go to source code">suggest</a>( <span>string <var>$column</var></span>, <span>array <var>$conditions</var></span> )</code>
 
 		<div class="description short">
 			
@@ -637,7 +679,7 @@ only item at index [0] is returned, because it should be an entity object.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.DataSources.Doctrine.html#32-33" title="Go to source code"><var>$qb</var></a>
+				<a href="source-class-Grido.DataSources.Doctrine.html#33-34" title="Go to source code"><var>$qb</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -660,7 +702,7 @@ only item at index [0] is returned, because it should be an entity object.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.DataSources.Doctrine.html#35-36" title="Go to source code"><var>$filterMapping</var></a>
+				<a href="source-class-Grido.DataSources.Doctrine.html#36-37" title="Go to source code"><var>$filterMapping</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -687,7 +729,7 @@ only item at index [0] is returned, because it should be an entity object.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.DataSources.Doctrine.html#38-39" title="Go to source code"><var>$sortMapping</var></a>
+				<a href="source-class-Grido.DataSources.Doctrine.html#39-40" title="Go to source code"><var>$sortMapping</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -707,6 +749,29 @@ only item at index [0] is returned, because it should be an entity object.</p>
 			</div>
 		</div></td>
 	</tr>
+	<tr data-order="rand" id="$rand">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.DataSources.Doctrine.html#42" title="Go to source code"><var>$rand</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$rand" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
 	</table>
 
 
@@ -720,7 +785,7 @@ only item at index [0] is returned, because it should be an entity object.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.DataSources.Doctrine.html#24" title="Go to source code"><var>$qb</var></a>
+				<a href="source-class-Grido.DataSources.Doctrine.html#25" title="Go to source code"><var>$qb</var></a>
 		</td>
 		<td class="description"><div>
 			<a href="#m$qb" class="anchor">#</a>
@@ -742,7 +807,7 @@ only item at index [0] is returned, because it should be an entity object.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.DataSources.Doctrine.html#25" title="Go to source code"><var>$filterMapping</var></a>
+				<a href="source-class-Grido.DataSources.Doctrine.html#26" title="Go to source code"><var>$filterMapping</var></a>
 		</td>
 		<td class="description"><div>
 			<a href="#m$filterMapping" class="anchor">#</a>
@@ -764,7 +829,7 @@ only item at index [0] is returned, because it should be an entity object.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.DataSources.Doctrine.html#26" title="Go to source code"><var>$sortMapping</var></a>
+				<a href="source-class-Grido.DataSources.Doctrine.html#27" title="Go to source code"><var>$sortMapping</var></a>
 		</td>
 		<td class="description"><div>
 			<a href="#m$sortMapping" class="anchor">#</a>
@@ -786,7 +851,7 @@ only item at index [0] is returned, because it should be an entity object.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.DataSources.Doctrine.html#27" title="Go to source code"><var>$count</var></a>
+				<a href="source-class-Grido.DataSources.Doctrine.html#28" title="Go to source code"><var>$count</var></a>
 		</td>
 		<td class="description"><div>
 			<a href="#m$count" class="anchor">#</a>
@@ -808,7 +873,7 @@ only item at index [0] is returned, because it should be an entity object.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.DataSources.Doctrine.html#28" title="Go to source code"><var>$data</var></a>
+				<a href="source-class-Grido.DataSources.Doctrine.html#29" title="Go to source code"><var>$data</var></a>
 		</td>
 		<td class="description"><div>
 			<a href="#m$data" class="anchor">#</a>

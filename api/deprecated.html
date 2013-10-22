@@ -7,7 +7,7 @@
 	<title>Deprecated | Grido - DataGrid for Nette Framework.</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?1490757444"></script>
+	<script type="text/javascript" src="elementlist.js?1021166852"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido - DataGrid for Nette Framework." href="/opensearch.xml" />
 
@@ -74,6 +74,7 @@
 				<li><a href="class-Grido.Components.Columns.Text.html">Grido\Components\Columns\Text</a></li>
 				<li><a href="class-Grido.Components.Export.html">Grido\Components\Export</a></li>
 				<li><a href="class-Grido.Components.Filters.Check.html">Grido\Components\Filters\Check</a></li>
+				<li><a href="class-Grido.Components.Filters.Condition.html">Grido\Components\Filters\Condition</a></li>
 				<li><a href="class-Grido.Components.Filters.Custom.html">Grido\Components\Filters\Custom</a></li>
 				<li><a href="class-Grido.Components.Filters.Date.html">Grido\Components\Filters\Date</a></li>
 				<li><a href="class-Grido.Components.Filters.Filter.html">Grido\Components\Filters\Filter</a></li>
@@ -102,6 +103,7 @@
 			<h3>Exceptions</h3>
 			<ul>
 				<li><a href="class-Exception.html">Exception</a></li>
+				<li><a href="class-Grido.PropertyAccessors.PropertyAccessorException.html">Grido\PropertyAccessors\PropertyAccessorException</a></li>
 				<li><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></li>
 				<li><a href="class-LogicException.html">LogicException</a></li>
 			</ul>
@@ -166,6 +168,12 @@
 		</td>
 	</tr>
 	<tr>
+		<td class="name"><a href="class-Grido.Components.Columns.Column.html">Grido\Components\Columns\Column</a></td>
+		<td class="name"><code><a href="class-Grido.Components.Columns.Column.html#_setFilter">setFilter()</a></code></td>
+		<td>
+		</td>
+	</tr>
+	<tr>
 		<td class="name"><a href="class-Grido.Grid.html">Grido\Grid</a></td>
 		<td class="name"><code><a href="class-Grido.Grid.html#_addAction">addAction()</a></code></td>
 		<td>
@@ -185,7 +193,25 @@
 	</tr>
 	<tr>
 		<td class="name"><a href="class-Grido.Grid.html">Grido\Grid</a></td>
+		<td class="name"><code><a href="class-Grido.Grid.html#_getOperations">getOperations()</a></code></td>
+		<td>
+		</td>
+	</tr>
+	<tr>
+		<td class="name"><a href="class-Grido.Grid.html">Grido\Grid</a></td>
+		<td class="name"><code><a href="class-Grido.Grid.html#_hasOperations">hasOperations()</a></code></td>
+		<td>
+		</td>
+	</tr>
+	<tr>
+		<td class="name"><a href="class-Grido.Grid.html">Grido\Grid</a></td>
 		<td class="name"><code><a href="class-Grido.Grid.html#_setExporting">setExporting()</a></code></td>
+		<td>
+		</td>
+	</tr>
+	<tr>
+		<td class="name"><a href="class-Grido.Grid.html">Grido\Grid</a></td>
+		<td class="name"><code><a href="class-Grido.Grid.html#_setOperations">setOperations()</a></code></td>
 		<td>
 		</td>
 	</tr>
@@ -202,6 +228,18 @@
 	<tr>
 		<td class="name"><a href="class-Grido.Components.Actions.Action.html">Grido\Components\Actions\Action</a></td>
 		<td class="name"><code><a href="class-Grido.Components.Actions.Action.html#TYPE_HREF"><b>TYPE_HREF</b></a></code></td>
+		<td>
+		</td>
+	</tr>
+	<tr>
+		<td class="name"><a href="class-Grido.Components.Columns.Column.html">Grido\Components\Columns\Column</a></td>
+		<td class="name"><code><a href="class-Grido.Components.Columns.Column.html#ASC"><b>ASC</b></a></code></td>
+		<td>
+		</td>
+	</tr>
+	<tr>
+		<td class="name"><a href="class-Grido.Components.Columns.Column.html">Grido\Components\Columns\Column</a></td>
+		<td class="name"><code><a href="class-Grido.Components.Columns.Column.html#DESC"><b>DESC</b></a></code></td>
 		<td>
 		</td>
 	</tr>
@@ -232,6 +270,36 @@
 	<tr>
 		<td class="name"><a href="class-Grido.Components.Columns.Column.html">Grido\Components\Columns\Column</a></td>
 		<td class="name"><code><a href="class-Grido.Components.Columns.Column.html#TYPE_TEXT"><b>TYPE_TEXT</b></a></code></td>
+		<td>
+		</td>
+	</tr>
+	<tr>
+		<td class="name"><a href="class-Grido.Components.Filters.Filter.html">Grido\Components\Filters\Filter</a></td>
+		<td class="name"><code><a href="class-Grido.Components.Filters.Filter.html#CONDITION_CALLBACK"><b>CONDITION_CALLBACK</b></a></code></td>
+		<td>
+		</td>
+	</tr>
+	<tr>
+		<td class="name"><a href="class-Grido.Components.Filters.Filter.html">Grido\Components\Filters\Filter</a></td>
+		<td class="name"><code><a href="class-Grido.Components.Filters.Filter.html#CONDITION_CUSTOM"><b>CONDITION_CUSTOM</b></a></code></td>
+		<td>
+		</td>
+	</tr>
+	<tr>
+		<td class="name"><a href="class-Grido.Components.Filters.Filter.html">Grido\Components\Filters\Filter</a></td>
+		<td class="name"><code><a href="class-Grido.Components.Filters.Filter.html#CONDITION_NOT_APPLY"><b>CONDITION_NOT_APPLY</b></a></code></td>
+		<td>
+		</td>
+	</tr>
+	<tr>
+		<td class="name"><a href="class-Grido.Components.Filters.Filter.html">Grido\Components\Filters\Filter</a></td>
+		<td class="name"><code><a href="class-Grido.Components.Filters.Filter.html#OPERATOR_AND"><b>OPERATOR_AND</b></a></code></td>
+		<td>
+		</td>
+	</tr>
+	<tr>
+		<td class="name"><a href="class-Grido.Components.Filters.Filter.html">Grido\Components\Filters\Filter</a></td>
+		<td class="name"><code><a href="class-Grido.Components.Filters.Filter.html#OPERATOR_OR"><b>OPERATOR_OR</b></a></code></td>
 		<td>
 		</td>
 	</tr>

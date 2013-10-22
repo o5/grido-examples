@@ -7,7 +7,7 @@
 	<title>Class Grido\Components\Columns\Href | Grido - DataGrid for Nette Framework.</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?1490757444"></script>
+	<script type="text/javascript" src="elementlist.js?1021166852"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido - DataGrid for Nette Framework." href="/opensearch.xml" />
 
@@ -178,7 +178,7 @@ Nette\Application\UI\PresenterComponent
 
 				<b>Author:</b>
 				Petr Bugyík<br />
-		<b>Located at</b> <a href="source-class-Grido.Components.Columns.Href.html#14-40" title="Go to source code">Components/Columns/Href.php</a><br />
+		<b>Located at</b> <a href="source-class-Grido.Components.Columns.Href.html#14-43" title="Go to source code">Components/Columns/Href.php</a><br />
 	</div>
 
 
@@ -196,7 +196,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_formatValue">#</a>
-		<code><a href="source-class-Grido.Components.Columns.Href.html#23-39" title="Go to source code">formatValue</a>( <span>mixed <var>$value</var></span> )</code>
+		<code><a href="source-class-Grido.Components.Columns.Href.html#23-42" title="Go to source code">formatValue</a>( <span>mixed <var>$value</var></span> )</code>
 
 		<div class="description short">
 			
@@ -220,13 +220,21 @@ Nette\Application\UI\PresenterComponent
 
 
 				<h4>Overrides</h4>
-				<div class="list"><code><a href="class-Grido.Components.Columns.Column.html#_formatValue">Grido\Components\Columns\Column::formatValue()</a></code></div>
+				<div class="list"><code><a href="class-Grido.Components.Columns.Text.html#_formatValue">Grido\Components\Columns\Text::formatValue()</a></code></div>
 
 		</div>
 		</div></td>
 	</tr>
 	</table>
 
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-Grido.Components.Columns.Text.html#methods">Grido\Components\Columns\Text</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Grido.Components.Columns.Text.html#_setTruncate">setTruncate()</a>
+		</code></td>
+	</tr>
+	</table>
 	<table class="summary inherited">
 	<caption>Methods inherited from <a href="class-Grido.Components.Columns.Column.html#methods">Grido\Components\Columns\Column</a></caption>
 	<tr>
@@ -246,16 +254,17 @@ Nette\Application\UI\PresenterComponent
 			<a href="class-Grido.Components.Columns.Column.html#_setCellCallback">setCellCallback()</a>, 
 			<a href="class-Grido.Components.Columns.Column.html#_setColumn">setColumn()</a>, 
 			<a href="class-Grido.Components.Columns.Column.html#_setCustomRender">setCustomRender()</a>, 
+			<a href="class-Grido.Components.Columns.Column.html#_setCustomRenderExport">setCustomRenderExport()</a>, 
 			<a href="class-Grido.Components.Columns.Column.html#_setDefaultSort">setDefaultSort()</a>, 
-			<a href="class-Grido.Components.Columns.Column.html#_setFilter">setFilter()</a>, 
+			<a href="class-Grido.Components.Columns.Column.html#_setFilter"><span class="deprecated">setFilter()</span></a>, 
 			<a href="class-Grido.Components.Columns.Column.html#_setFilterCheck">setFilterCheck()</a>, 
+			<a href="class-Grido.Components.Columns.Column.html#_setFilterCustom">setFilterCustom()</a>, 
 			<a href="class-Grido.Components.Columns.Column.html#_setFilterDate">setFilterDate()</a>, 
 			<a href="class-Grido.Components.Columns.Column.html#_setFilterNumber">setFilterNumber()</a>, 
 			<a href="class-Grido.Components.Columns.Column.html#_setFilterSelect">setFilterSelect()</a>, 
 			<a href="class-Grido.Components.Columns.Column.html#_setFilterText">setFilterText()</a>, 
 			<a href="class-Grido.Components.Columns.Column.html#_setReplacement">setReplacement()</a>, 
-			<a href="class-Grido.Components.Columns.Column.html#_setSortable">setSortable()</a>, 
-			<a href="class-Grido.Components.Columns.Column.html#_setTruncate">setTruncate()</a>
+			<a href="class-Grido.Components.Columns.Column.html#_setSortable">setSortable()</a>
 		</code></td>
 	</tr>
 	</table>
@@ -267,6 +276,7 @@ Nette\Application\UI\PresenterComponent
 			<a href="class-Grido.Components.Base.html#_getForm">getForm()</a>, 
 			<a href="class-Grido.Components.Base.html#_getGrid">getGrid()</a>, 
 			<a href="class-Grido.Components.Base.html#_getLabel">getLabel()</a>, 
+			<a href="class-Grido.Components.Base.html#_getPropertyAccessor">getPropertyAccessor()</a>, 
 			<a href="class-Grido.Components.Base.html#_getType">getType()</a>, 
 			<a href="class-Grido.Components.Base.html#_translate">translate()</a>
 		</code></td>
@@ -284,9 +294,11 @@ Nette\Application\UI\PresenterComponent
 	<caption>Constants inherited from <a href="class-Grido.Components.Columns.Column.html#constants">Grido\Components\Columns\Column</a></caption>
 	<tr>
 		<td><code>
-			<a href="class-Grido.Components.Columns.Column.html#ASC"><b>ASC</b></a>, 
-			<a href="class-Grido.Components.Columns.Column.html#DESC"><b>DESC</b></a>, 
+			<a href="class-Grido.Components.Columns.Column.html#ASC"><b><span class"deprecated">ASC</span></b></a>, 
+			<a href="class-Grido.Components.Columns.Column.html#DESC"><b><span class"deprecated">DESC</span></b></a>, 
 			<a href="class-Grido.Components.Columns.Column.html#ID"><b>ID</b></a>, 
+			<a href="class-Grido.Components.Columns.Column.html#ORDER_ASC"><b>ORDER_ASC</b></a>, 
+			<a href="class-Grido.Components.Columns.Column.html#ORDER_DESC"><b>ORDER_DESC</b></a>, 
 			<a href="class-Grido.Components.Columns.Column.html#TYPE_DATE"><b><span class"deprecated">TYPE_DATE</span></b></a>, 
 			<a href="class-Grido.Components.Columns.Column.html#TYPE_HREF"><b><span class"deprecated">TYPE_HREF</span></b></a>, 
 			<a href="class-Grido.Components.Columns.Column.html#TYPE_MAIL"><b><span class"deprecated">TYPE_MAIL</span></b></a>, 
@@ -301,6 +313,14 @@ Nette\Application\UI\PresenterComponent
 
 
 	<table class="summary inherited">
+	<caption>Properties inherited from <a href="class-Grido.Components.Columns.Text.html#properties">Grido\Components\Columns\Text</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Grido.Components.Columns.Text.html#$truncate"><var>$truncate</var></a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary inherited">
 	<caption>Properties inherited from <a href="class-Grido.Components.Columns.Column.html#properties">Grido\Components\Columns\Column</a></caption>
 	<tr>
 		<td><code>
@@ -308,11 +328,11 @@ Nette\Application\UI\PresenterComponent
 			<a href="class-Grido.Components.Columns.Column.html#$cellPrototype"><var>$cellPrototype</var></a>, 
 			<a href="class-Grido.Components.Columns.Column.html#$column"><var>$column</var></a>, 
 			<a href="class-Grido.Components.Columns.Column.html#$customRender"><var>$customRender</var></a>, 
+			<a href="class-Grido.Components.Columns.Column.html#$customRenderExport"><var>$customRenderExport</var></a>, 
 			<a href="class-Grido.Components.Columns.Column.html#$headerPrototype"><var>$headerPrototype</var></a>, 
 			<a href="class-Grido.Components.Columns.Column.html#$replacements"><var>$replacements</var></a>, 
 			<a href="class-Grido.Components.Columns.Column.html#$sort"><var>$sort</var></a>, 
-			<a href="class-Grido.Components.Columns.Column.html#$sortable"><var>$sortable</var></a>, 
-			<a href="class-Grido.Components.Columns.Column.html#$truncate"><var>$truncate</var></a>
+			<a href="class-Grido.Components.Columns.Column.html#$sortable"><var>$sortable</var></a>
 		</code></td>
 	</tr>
 	</table>
@@ -323,6 +343,7 @@ Nette\Application\UI\PresenterComponent
 			<a href="class-Grido.Components.Base.html#$form"><var>$form</var></a>, 
 			<a href="class-Grido.Components.Base.html#$grid"><var>$grid</var></a>, 
 			<a href="class-Grido.Components.Base.html#$label"><var>$label</var></a>, 
+			<a href="class-Grido.Components.Base.html#$propertyAccessor"><var>$propertyAccessor</var></a>, 
 			<a href="class-Grido.Components.Base.html#$type"><var>$type</var></a>
 		</code></td>
 	</tr>
@@ -338,6 +359,7 @@ Nette\Application\UI\PresenterComponent
 			<a href="class-Grido.Components.Columns.Column.html#m$cellPrototype"><var>$cellPrototype</var></a>, 
 			<a href="class-Grido.Components.Columns.Column.html#m$column"><var>$column</var></a>, 
 			<a href="class-Grido.Components.Columns.Column.html#m$customRender"><var>$customRender</var></a>, 
+			<a href="class-Grido.Components.Columns.Column.html#m$customRenderExport"><var>$customRenderExport</var></a>, 
 			<a href="class-Grido.Components.Columns.Column.html#m$defaultSorting"><var>$defaultSorting</var></a>, 
 			<a href="class-Grido.Components.Columns.Column.html#m$headerPrototype"><var>$headerPrototype</var></a>, 
 			<a href="class-Grido.Components.Columns.Column.html#m$replacements"><var>$replacements</var></a>, 
