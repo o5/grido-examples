@@ -8,7 +8,7 @@
 	<title>File Components/Columns/Column.php | Grido@dev</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?29701629"></script>
+	<script type="text/javascript" src="elementlist.js?4284207213"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido@dev" href="/opensearch.xml" />
 
@@ -190,7 +190,7 @@
 </span><span id="68" class="l"><a class="l" href="#68"> 68: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$replacements" href="#$replacements">$replacements</a></span> = <span class="php-keyword1">array</span>();
 </span><span id="69" class="l"><a class="l" href="#69"> 69: </a>
 </span><span id="70" class="l"><a class="l" href="#70"> 70: </a>    <span class="php-comment">/**
-</span></span><span id="71" class="l"><a class="l" href="#71"> 71: </a><span class="php-comment">     * @param \Grido\Grid $grid
+</span></span><span id="71" class="l"><a class="l" href="#71"> 71: </a><span class="php-comment">     * @param Grido\Grid $grid
 </span></span><span id="72" class="l"><a class="l" href="#72"> 72: </a><span class="php-comment">     * @param string $name
 </span></span><span id="73" class="l"><a class="l" href="#73"> 73: </a><span class="php-comment">     * @param string $label
 </span></span><span id="74" class="l"><a class="l" href="#74"> 74: </a><span class="php-comment">     */</span>
@@ -264,7 +264,7 @@
 </span><span id="142" class="l"><a class="l" href="#142">142: </a>
 </span><span id="143" class="l"><a class="l" href="#143">143: </a>    <span class="php-comment">/**
 </span></span><span id="144" class="l"><a class="l" href="#144">144: </a><span class="php-comment">     * @param callback $callback
-</span></span><span id="145" class="l"><a class="l" href="#145">145: </a><span class="php-comment">     * @return \Grido\Components\Columns\Column
+</span></span><span id="145" class="l"><a class="l" href="#145">145: </a><span class="php-comment">     * @return Column
 </span></span><span id="146" class="l"><a class="l" href="#146">146: </a><span class="php-comment">     */</span>
 </span><span id="147" class="l"><a class="l" href="#147">147: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setCellCallback" href="#_setCellCallback">setCellCallback</a>(<span class="php-var">$callback</span>)
 </span><span id="148" class="l"><a class="l" href="#148">148: </a>    {
@@ -317,8 +317,8 @@
 </span><span id="195" class="l"><a class="l" href="#195">195: </a>    }
 </span><span id="196" class="l"><a class="l" href="#196">196: </a>
 </span><span id="197" class="l"><a class="l" href="#197">197: </a>    <span class="php-comment">/**
-</span></span><span id="198" class="l"><a class="l" href="#198">198: </a><span class="php-comment">     * @internal - Do not call directly.
-</span></span><span id="199" class="l"><a class="l" href="#199">199: </a><span class="php-comment">     * @return mixed
+</span></span><span id="198" class="l"><a class="l" href="#198">198: </a><span class="php-comment">     * @return mixed
+</span></span><span id="199" class="l"><a class="l" href="#199">199: </a><span class="php-comment">     * @internal
 </span></span><span id="200" class="l"><a class="l" href="#200">200: </a><span class="php-comment">     */</span>
 </span><span id="201" class="l"><a class="l" href="#201">201: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_getColumn" href="#_getColumn">getColumn</a>()
 </span><span id="202" class="l"><a class="l" href="#202">202: </a>    {
@@ -326,8 +326,8 @@
 </span><span id="204" class="l"><a class="l" href="#204">204: </a>    }
 </span><span id="205" class="l"><a class="l" href="#205">205: </a>
 </span><span id="206" class="l"><a class="l" href="#206">206: </a>    <span class="php-comment">/**
-</span></span><span id="207" class="l"><a class="l" href="#207">207: </a><span class="php-comment">     * @internal - Do not call directly.
-</span></span><span id="208" class="l"><a class="l" href="#208">208: </a><span class="php-comment">     * @return string
+</span></span><span id="207" class="l"><a class="l" href="#207">207: </a><span class="php-comment">     * @return string
+</span></span><span id="208" class="l"><a class="l" href="#208">208: </a><span class="php-comment">     * @internal
 </span></span><span id="209" class="l"><a class="l" href="#209">209: </a><span class="php-comment">     */</span>
 </span><span id="210" class="l"><a class="l" href="#210">210: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_getSort" href="#_getSort">getSort</a>()
 </span><span id="211" class="l"><a class="l" href="#211">211: </a>    {
@@ -345,8 +345,8 @@
 </span><span id="223" class="l"><a class="l" href="#223">223: </a>    }
 </span><span id="224" class="l"><a class="l" href="#224">224: </a>
 </span><span id="225" class="l"><a class="l" href="#225">225: </a>    <span class="php-comment">/**
-</span></span><span id="226" class="l"><a class="l" href="#226">226: </a><span class="php-comment">     * @internal - Do not call directly.
-</span></span><span id="227" class="l"><a class="l" href="#227">227: </a><span class="php-comment">     * @return mixed
+</span></span><span id="226" class="l"><a class="l" href="#226">226: </a><span class="php-comment">     * @return mixed
+</span></span><span id="227" class="l"><a class="l" href="#227">227: </a><span class="php-comment">     * @internal
 </span></span><span id="228" class="l"><a class="l" href="#228">228: </a><span class="php-comment">     */</span>
 </span><span id="229" class="l"><a class="l" href="#229">229: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_getCustomRender" href="#_getCustomRender">getCustomRender</a>()
 </span><span id="230" class="l"><a class="l" href="#230">230: </a>    {
@@ -356,8 +356,8 @@
 </span><span id="234" class="l"><a class="l" href="#234">234: </a>    <span class="php-comment">/**********************************************************************************************/</span>
 </span><span id="235" class="l"><a class="l" href="#235">235: </a>
 </span><span id="236" class="l"><a class="l" href="#236">236: </a>    <span class="php-comment">/**
-</span></span><span id="237" class="l"><a class="l" href="#237">237: </a><span class="php-comment">     * @internal - Do not call directly.
-</span></span><span id="238" class="l"><a class="l" href="#238">238: </a><span class="php-comment">     * @return bool
+</span></span><span id="237" class="l"><a class="l" href="#237">237: </a><span class="php-comment">     * @return bool
+</span></span><span id="238" class="l"><a class="l" href="#238">238: </a><span class="php-comment">     * @internal
 </span></span><span id="239" class="l"><a class="l" href="#239">239: </a><span class="php-comment">     */</span>
 </span><span id="240" class="l"><a class="l" href="#240">240: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_isSortable" href="#_isSortable">isSortable</a>()
 </span><span id="241" class="l"><a class="l" href="#241">241: </a>    {
@@ -365,8 +365,8 @@
 </span><span id="243" class="l"><a class="l" href="#243">243: </a>    }
 </span><span id="244" class="l"><a class="l" href="#244">244: </a>
 </span><span id="245" class="l"><a class="l" href="#245">245: </a>    <span class="php-comment">/**
-</span></span><span id="246" class="l"><a class="l" href="#246">246: </a><span class="php-comment">     * @internal - Do not call directly.
-</span></span><span id="247" class="l"><a class="l" href="#247">247: </a><span class="php-comment">     * @return bool
+</span></span><span id="246" class="l"><a class="l" href="#246">246: </a><span class="php-comment">     * @return bool
+</span></span><span id="247" class="l"><a class="l" href="#247">247: </a><span class="php-comment">     * @internal
 </span></span><span id="248" class="l"><a class="l" href="#248">248: </a><span class="php-comment">     */</span>
 </span><span id="249" class="l"><a class="l" href="#249">249: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_hasFilter" href="#_hasFilter">hasFilter</a>()
 </span><span id="250" class="l"><a class="l" href="#250">250: </a>    {
@@ -376,9 +376,9 @@
 </span><span id="254" class="l"><a class="l" href="#254">254: </a>    <span class="php-comment">/**********************************************************************************************/</span>
 </span><span id="255" class="l"><a class="l" href="#255">255: </a>
 </span><span id="256" class="l"><a class="l" href="#256">256: </a>    <span class="php-comment">/**
-</span></span><span id="257" class="l"><a class="l" href="#257">257: </a><span class="php-comment">     * @internal - Do not call directly.
-</span></span><span id="258" class="l"><a class="l" href="#258">258: </a><span class="php-comment">     * @param mixed $row
-</span></span><span id="259" class="l"><a class="l" href="#259">259: </a><span class="php-comment">     * @return string
+</span></span><span id="257" class="l"><a class="l" href="#257">257: </a><span class="php-comment">     * @param mixed $row
+</span></span><span id="258" class="l"><a class="l" href="#258">258: </a><span class="php-comment">     * @return string
+</span></span><span id="259" class="l"><a class="l" href="#259">259: </a><span class="php-comment">     * @internal
 </span></span><span id="260" class="l"><a class="l" href="#260">260: </a><span class="php-comment">     */</span>
 </span><span id="261" class="l"><a class="l" href="#261">261: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_render" href="#_render">render</a>(<span class="php-var">$row</span>)
 </span><span id="262" class="l"><a class="l" href="#262">262: </a>    {
@@ -391,9 +391,9 @@
 </span><span id="269" class="l"><a class="l" href="#269">269: </a>    }
 </span><span id="270" class="l"><a class="l" href="#270">270: </a>
 </span><span id="271" class="l"><a class="l" href="#271">271: </a>    <span class="php-comment">/**
-</span></span><span id="272" class="l"><a class="l" href="#272">272: </a><span class="php-comment">     * @internal - Do not call directly.
-</span></span><span id="273" class="l"><a class="l" href="#273">273: </a><span class="php-comment">     * @param mixed $row
-</span></span><span id="274" class="l"><a class="l" href="#274">274: </a><span class="php-comment">     * @return string
+</span></span><span id="272" class="l"><a class="l" href="#272">272: </a><span class="php-comment">     * @param mixed $row
+</span></span><span id="273" class="l"><a class="l" href="#273">273: </a><span class="php-comment">     * @return string
+</span></span><span id="274" class="l"><a class="l" href="#274">274: </a><span class="php-comment">     * @internal
 </span></span><span id="275" class="l"><a class="l" href="#275">275: </a><span class="php-comment">     */</span>
 </span><span id="276" class="l"><a class="l" href="#276">276: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_renderExport" href="#_renderExport">renderExport</a>(<span class="php-var">$row</span>)
 </span><span id="277" class="l"><a class="l" href="#277">277: </a>    {
@@ -452,7 +452,7 @@
 </span><span id="330" class="l"><a class="l" href="#330">330: </a>    <span class="php-comment">/******************************* Aliases for filters ******************************************/</span>
 </span><span id="331" class="l"><a class="l" href="#331">331: </a>
 </span><span id="332" class="l"><a class="l" href="#332">332: </a>    <span class="php-comment">/**
-</span></span><span id="333" class="l"><a class="l" href="#333">333: </a><span class="php-comment">     * @return \Grido\Components\Filters\Text
+</span></span><span id="333" class="l"><a class="l" href="#333">333: </a><span class="php-comment">     * @return Grido\Components\Filters\Text
 </span></span><span id="334" class="l"><a class="l" href="#334">334: </a><span class="php-comment">     */</span>
 </span><span id="335" class="l"><a class="l" href="#335">335: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setFilterText" href="#_setFilterText">setFilterText</a>()
 </span><span id="336" class="l"><a class="l" href="#336">336: </a>    {
@@ -460,7 +460,7 @@
 </span><span id="338" class="l"><a class="l" href="#338">338: </a>    }
 </span><span id="339" class="l"><a class="l" href="#339">339: </a>
 </span><span id="340" class="l"><a class="l" href="#340">340: </a>    <span class="php-comment">/**
-</span></span><span id="341" class="l"><a class="l" href="#341">341: </a><span class="php-comment">     * @return \Grido\Components\Filters\Date
+</span></span><span id="341" class="l"><a class="l" href="#341">341: </a><span class="php-comment">     * @return Grido\Components\Filters\Date
 </span></span><span id="342" class="l"><a class="l" href="#342">342: </a><span class="php-comment">     */</span>
 </span><span id="343" class="l"><a class="l" href="#343">343: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setFilterDate" href="#_setFilterDate">setFilterDate</a>()
 </span><span id="344" class="l"><a class="l" href="#344">344: </a>    {
@@ -468,7 +468,7 @@
 </span><span id="346" class="l"><a class="l" href="#346">346: </a>    }
 </span><span id="347" class="l"><a class="l" href="#347">347: </a>
 </span><span id="348" class="l"><a class="l" href="#348">348: </a>    <span class="php-comment">/**
-</span></span><span id="349" class="l"><a class="l" href="#349">349: </a><span class="php-comment">     * @return \Grido\Components\Filters\Check
+</span></span><span id="349" class="l"><a class="l" href="#349">349: </a><span class="php-comment">     * @return Grido\Components\Filters\Check
 </span></span><span id="350" class="l"><a class="l" href="#350">350: </a><span class="php-comment">     */</span>
 </span><span id="351" class="l"><a class="l" href="#351">351: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setFilterCheck" href="#_setFilterCheck">setFilterCheck</a>()
 </span><span id="352" class="l"><a class="l" href="#352">352: </a>    {
@@ -477,7 +477,7 @@
 </span><span id="355" class="l"><a class="l" href="#355">355: </a>
 </span><span id="356" class="l"><a class="l" href="#356">356: </a>    <span class="php-comment">/**
 </span></span><span id="357" class="l"><a class="l" href="#357">357: </a><span class="php-comment">     * @param array $items
-</span></span><span id="358" class="l"><a class="l" href="#358">358: </a><span class="php-comment">     * @return \Grido\Components\Filters\Select
+</span></span><span id="358" class="l"><a class="l" href="#358">358: </a><span class="php-comment">     * @return Grido\Components\Filters\Select
 </span></span><span id="359" class="l"><a class="l" href="#359">359: </a><span class="php-comment">     */</span>
 </span><span id="360" class="l"><a class="l" href="#360">360: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setFilterSelect" href="#_setFilterSelect">setFilterSelect</a>(<span class="php-keyword1">array</span> <span class="php-var">$items</span> = <span class="php-keyword1">NULL</span>)
 </span><span id="361" class="l"><a class="l" href="#361">361: </a>    {
@@ -485,7 +485,7 @@
 </span><span id="363" class="l"><a class="l" href="#363">363: </a>    }
 </span><span id="364" class="l"><a class="l" href="#364">364: </a>
 </span><span id="365" class="l"><a class="l" href="#365">365: </a>    <span class="php-comment">/**
-</span></span><span id="366" class="l"><a class="l" href="#366">366: </a><span class="php-comment">     * @return \Grido\Components\Filters\Number
+</span></span><span id="366" class="l"><a class="l" href="#366">366: </a><span class="php-comment">     * @return Grido\Components\Filters\Number
 </span></span><span id="367" class="l"><a class="l" href="#367">367: </a><span class="php-comment">     */</span>
 </span><span id="368" class="l"><a class="l" href="#368">368: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setFilterNumber" href="#_setFilterNumber">setFilterNumber</a>()
 </span><span id="369" class="l"><a class="l" href="#369">369: </a>    {
@@ -494,7 +494,7 @@
 </span><span id="372" class="l"><a class="l" href="#372">372: </a>
 </span><span id="373" class="l"><a class="l" href="#373">373: </a>    <span class="php-comment">/**
 </span></span><span id="374" class="l"><a class="l" href="#374">374: </a><span class="php-comment">     * @param \Nette\Forms\IControl $formControl
-</span></span><span id="375" class="l"><a class="l" href="#375">375: </a><span class="php-comment">     * @return \Grido\Components\Filters\Custom
+</span></span><span id="375" class="l"><a class="l" href="#375">375: </a><span class="php-comment">     * @return Grido\Components\Filters\Custom
 </span></span><span id="376" class="l"><a class="l" href="#376">376: </a><span class="php-comment">     */</span>
 </span><span id="377" class="l"><a class="l" href="#377">377: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setFilterCustom" href="#_setFilterCustom">setFilterCustom</a>(\Nette\Forms\IControl <span class="php-var">$formControl</span>)
 </span><span id="378" class="l"><a class="l" href="#378">378: </a>    {
