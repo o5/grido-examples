@@ -13,6 +13,8 @@ $configurator = new Nette\Config\Configurator;
 //$configurator->setProductionMode();
 $configurator->enableDebugger(__DIR__ . '/../log');
 
+//\Nette\Diagnostics\Debugger::$maxDepth = 10;
+//\Nette\Diagnostics\Debugger::$maxLen = 500;
 
 // Specify folder for cache
 $configurator->setTempDirectory(__DIR__ . '/../temp');
