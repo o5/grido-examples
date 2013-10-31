@@ -44,7 +44,7 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
         }
 
         return count($date) == 3
-            ? array('[birthday] = %s', "{$date[2]}-{$date[1]}-{$date[0]}")
+            ? array('birthday', '= ?', "{$date[2]}-{$date[1]}-{$date[0]}")
             : NULL;
     }
 

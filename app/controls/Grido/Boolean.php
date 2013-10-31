@@ -23,12 +23,7 @@ class Boolean extends Text
      */
     protected function formatValue($value)
     {
-        if ($value == 0) {
-            $a = \Nette\Utils\Html::el('i')->class("icon-remove");
-        } else {
-            $a = \Nette\Utils\Html::el('i')->class("icon-ok");
-        }
-
-        return $a;
+        $icon = $value ? 'ok' : 'remove';
+        return \Nette\Utils\Html::el('i')->class("glyphicon glyphicon-$icon icon-$icon");
     }
 }

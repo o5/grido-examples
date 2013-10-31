@@ -1,7 +1,6 @@
 <?php
 
-use Grido\Components\Filters\Filter,
-    Nette\Utils\Html;
+use Nette\Utils\Html;
 
 /**
  * Dibi example.
@@ -19,11 +18,10 @@ final class DibiPresenter extends BasePresenter
         $fluent = $this->context->dibi_sqlite->select('u.*, c.title AS country')
             ->from('[user] u')
             ->join('[country] c')->on('u.country_code = c.code');
-
-        $grid->setModel($fluent);
+        $grid->model = $fluent;
 
         $grid->addColumnText('firstname', 'Firstname')
-            ->setFilterText()
+                ->setFilterText()
                 ->setSuggestion();
 
         $grid->addColumnText('surname', 'Surname')
@@ -38,16 +36,17 @@ final class DibiPresenter extends BasePresenter
         $grid->addColumnDate('birthday', 'Birthday', Grido\Components\Columns\Date::FORMAT_TEXT)
             ->setSortable()
             ->setFilterDate()
-                ->setCondition(Filter::CONDITION_CALLBACK, callback($this, 'gridBirthdayFilterCondition'));
+                ->setCondition($this->gridBirthdayFilterCondition);
         $grid->getColumn('birthday')->cellPrototype->class[] = 'center';
 
         $baseUri = $this->template->baseUri;
+        $customRender = function($item) use($baseUri) {
+            $img = Html::el('img')->src("$baseUri/img/flags/$item->country_code.gif");
+            return "$img $item->country";
+        };
         $grid->addColumnText('country', 'Country')
             ->setSortable()
-            ->setCustomRender(function($item) use($baseUri) {
-                $img = Html::el('img')->src("$baseUri/img/flags/$item->country_code.gif");
-                return "$img $item->country";
-            })
+            ->setCustomRender($customRender)
             ->setFilterText()
                 ->setSuggestion();
 
@@ -81,9 +80,9 @@ final class DibiPresenter extends BasePresenter
             ->setColumn('cctype');
 
         $grid->addFilterCheck('preferred', 'Only preferred girls :)')
-            ->setCondition(Filter::CONDITION_CUSTOM, array(
-                TRUE => '[gender] = "female" AND [centimeters] >= 170' //for checked
-        ));
+            ->setCondition(array(
+                TRUE => array(array('gender', 'AND', 'centimeters'), array('= ?', '>= ?'), array('female', 170)))
+        );
 
         $grid->addActionHref('edit', 'Edit')
             ->setIcon('pencil');
@@ -95,11 +94,11 @@ final class DibiPresenter extends BasePresenter
         });
 
         $operations = array('print' => 'Print', 'delete' => 'Delete');
-        $grid->setOperations($operations, callback($this, 'gridOperationsHandler'))
+        $grid->setOperation($operations, $this->gridOperationsHandler)
             ->setConfirm('delete', 'Are you sure you want to delete %i items?');
 
-        $grid->setFilterRenderType($this->filterRenderType);
-        $grid->setExporting();
+        $grid->filterRenderType = $this->filterRenderType;
+        $grid->setExport();
 
         return $grid;
     }

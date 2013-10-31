@@ -13,12 +13,13 @@ final class MultiRenderPresenter extends BasePresenter
     private function baseGrid($name)
     {
         $grid = new Grido\Grid($this, $name);
+        $grid->translator->lang = 'cs';
         $grid->defaultPerPage = 4;
 
         $fluent = $this->context->dibi_sqlite->select('u.*, c.title AS country')
             ->from('[user] u')
             ->join('[country] c')->on('u.country_code = c.code');
-        $grid->setModel($fluent);
+        $grid->model = $fluent;
 
         $grid->addColumnText('firstname', 'Firstname')
             ->setSortable()
@@ -86,11 +87,11 @@ final class MultiRenderPresenter extends BasePresenter
             ->headerPrototype->class[] = 'center';
         $grid->getColumn('height')->cellPrototype->class[] = 'center';
 
-        $operations = array('print' => 'Print', 'delete' => 'Delete');
-        $grid->setOperations($operations, callback($this, 'gridOperationsHandler'))
+        $operation = array('print' => 'Print', 'delete' => 'Delete');
+        $grid->setOperation($operation, $this->gridOperationsHandler)
             ->setConfirm('delete', 'Are you sure you want to delete %i items?');
 
-        $grid->setExporting();
+        $grid->setExport();
 
         return $grid;
     }

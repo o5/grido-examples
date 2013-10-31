@@ -13,11 +13,11 @@ final class ArrayPresenter extends BasePresenter
     protected function createComponentGrid($name)
     {
         $grid = new Grido\Grid($this, $name);
+        $grid->model = $this->getData();
+
         $grid->filterRenderType = Filter::RENDER_OUTER;
         $grid->translator->lang = 'cs';
         $grid->defaultPerPage = 5;
-
-        $grid->setModel($this->getData());
 
         $grid->addColumnNumber('id', '#')
             ->cellPrototype->class[] = 'center';
@@ -46,8 +46,8 @@ final class ArrayPresenter extends BasePresenter
 
         $grid->addFilterCustom('name', new \Nette\Forms\Controls\TextArea('Jméno nebo příjmení'))
             ->setColumn('firstname')
-            ->setColumn('surname', Filter::OPERATOR_OR)
-            ->setCondition('LIKE %s')
+            ->setColumn('surname', Grido\Components\Filters\Condition::OPERATOR_OR)
+            ->setCondition('LIKE ?')
             ->setFormatValue('%%value%');
 
         $grid->addColumnDate('last_login', 'Poslední přihlášení')
@@ -65,16 +65,16 @@ final class ArrayPresenter extends BasePresenter
 
         $grid->addActionHref('edit', 'Upravit')
             ->setIcon('pencil')
-            ->setCustomRender(callback($this, 'gridHrefRender'));
+            ->setCustomRender($this->gridHrefRender);
 
         $grid->addActionHref('delete', 'Smazat')
             ->setIcon('trash')
-            ->setCustomRender(callback($this, 'gridHrefRender'))
+            ->setCustomRender($this->gridHrefRender)
             ->setConfirm(function($item) {
                 return "Opravdu chcete smazat slečnu se jménem {$item['firstname']} {$item['surname']}?";
         });
 
-        $grid->setExporting();
+        $grid->setExport();
     }
 
     /**

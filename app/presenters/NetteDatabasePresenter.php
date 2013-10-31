@@ -1,7 +1,6 @@
 <?php
 
-use Grido\Components\Filters\Filter,
-    Nette\Utils\Html;
+use Nette\Utils\Html;
 
 /**
  * Nette\Database example.
@@ -15,8 +14,7 @@ final class NetteDatabasePresenter extends BasePresenter
     protected function createComponentGrid($name)
     {
         $grid = new Grido\Grid($this, $name);
-
-        $grid->setModel($this->context->ndb_sqlite->table('user'));
+        $grid->model = $this->context->ndb_sqlite->table('user');
 
         $grid->addColumnText('firstname', 'Firstname')
             ->setFilterText()
@@ -34,18 +32,18 @@ final class NetteDatabasePresenter extends BasePresenter
         $grid->addColumnDate('birthday', 'Birthday', Grido\Components\Columns\Date::FORMAT_TEXT)
             ->setSortable()
             ->setFilterDate()
-                ->setCondition(Filter::CONDITION_CALLBACK, callback($this, 'gridBirthdayFilterCondition'));
+                ->setCondition($this->gridBirthdayFilterCondition);
         $grid->getColumn('birthday')->cellPrototype->class[] = 'center';
 
         $templatePath = "{$this->context->parameters['appDir']}/templates/{$this->name}";
-        $grid->addColumnText('country_code', 'Country')
+        $renderer = function($row) { return $row->country->title; };
+        $grid->addColumnText('country', 'Country')
             ->setSortable()
+            ->setColumn('country.title') //for ordering/filtering
             ->setCustomRender("$templatePath/grid.country.latte")
+            ->setCustomRenderExport($renderer)
             ->setFilterText()
-                ->setColumn('country.title')
-                ->setSuggestion(function($item){
-                    return $item->country->title;
-                });
+                ->setSuggestion($renderer);
 
         $grid->addColumnText('card', 'Card')
             ->setSortable()
@@ -77,9 +75,9 @@ final class NetteDatabasePresenter extends BasePresenter
             ->setColumn('cctype');
 
         $grid->addFilterCheck('preferred', 'Only preferred girls :)')
-            ->setCondition(Filter::CONDITION_CUSTOM, array(
-                TRUE => 'gender = "female" AND centimeters >= 170' //for checked
-        ));
+            ->setCondition(array(
+                TRUE => array(array('gender', 'AND', 'centimeters'), array('= ?', '>= ?'), array('female', 170)))
+        );
 
         $grid->addActionHref('edit', 'Edit')
             ->setIcon('pencil');
@@ -90,11 +88,11 @@ final class NetteDatabasePresenter extends BasePresenter
                 return "Are you sure you want to delete {$item->firstname} {$item->surname}?";
         });
 
-        $operations = array('print' => 'Print', 'delete' => 'Delete');
-        $grid->setOperations($operations, callback($this, 'gridOperationsHandler'))
+        $operation = array('print' => 'Print', 'delete' => 'Delete');
+        $grid->setOperation($operation, $this->gridOperationsHandler)
             ->setConfirm('delete', 'Are you sure you want to delete %i items?');
 
-        $grid->setFilterRenderType($this->filterRenderType);
-        $grid->setExporting();
+        $grid->filterRenderType = $this->filterRenderType;
+        $grid->setExport();
     }
 }

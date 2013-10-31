@@ -22,7 +22,7 @@ final class DoctrinePresenter extends BasePresenter
                 ->addSelect('c')                 // This will produce less SQL queries with prefetch.
                 ->innerJoin('a.country', 'c'),
             array('country' => 'c.title'));      // Map country column to the title of the Country entity
-        $grid->setModel($model);
+        $grid->model = $model;
 
         $grid->addColumnText('firstname', 'Firstname')
             ->setFilterText()
@@ -40,7 +40,7 @@ final class DoctrinePresenter extends BasePresenter
         $grid->addColumnDate('birthday', 'Birthday', Grido\Components\Columns\Date::FORMAT_TEXT)
             ->setSortable()
             ->setFilterDate()
-                ->setCondition(Filter::CONDITION_CALLBACK, callback($this, 'gridBirthdayFilterCondition'));
+                ->setCondition($this->gridBirthdayFilterCondition);
         $grid->getColumn('birthday')->cellPrototype->class[] = 'center';
 
         $baseUri = $this->template->baseUri;
@@ -83,9 +83,9 @@ final class DoctrinePresenter extends BasePresenter
             ->setColumn('cctype');
 
         $grid->addFilterCheck('preferred', 'Only preferred girls :)')
-            ->setCondition(Filter::CONDITION_CUSTOM, array(
-                TRUE => "[gender] = 'female' AND [centimeters] >= 170" //for checked
-        ));
+            ->setCondition(array(
+                TRUE => array(array('gender', 'AND', 'centimeters'), array('= ?', '>= ?'), array('female', 170)))
+        );
 
         $grid->addActionHref('edit', 'Edit')
             ->setIcon('pencil');
@@ -96,11 +96,11 @@ final class DoctrinePresenter extends BasePresenter
                 return "Are you sure you want to delete {$item->firstname} {$item->surname}?";
         });
 
-        $operations = array('print' => 'Print', 'delete' => 'Delete');
-        $grid->setOperations($operations, callback($this, 'gridOperationsHandler'))
+        $operation = array('print' => 'Print', 'delete' => 'Delete');
+        $grid->setOperation($operation, $this->gridOperationsHandler)
             ->setConfirm('delete', 'Are you sure you want to delete %i items?');
 
-        $grid->setFilterRenderType($this->filterRenderType);
-        $grid->setExporting();
+        $grid->filterRenderType = $this->filterRenderType;
+        $grid->setExport();
     }
 }
