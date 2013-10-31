@@ -16,7 +16,7 @@ charset: 'utf-8'
 main:
 
 # Title of generated documentation
-title: 'Grido - DataGrid for Nette Framework.'
+title: 'Grido 1.0.0'
 # Documentation base URL
 baseUrl:
 # Google Custom Search ID
