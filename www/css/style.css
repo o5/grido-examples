@@ -19,7 +19,7 @@ body {background: #FBFBFB url(../img/bg.jpg) 0 0 repeat}
     height: 16px;
     width: 16px;
     float: right;
-    margin: 12px 0 0 0;
+    margin: 15px 0 0 0;
 }
 
 .loading,
@@ -28,16 +28,6 @@ body {background: #FBFBFB url(../img/bg.jpg) 0 0 repeat}
 }
 
 /* TWITTER BOOTSTRAP RESET */
-
-.navbar-inner {
-    padding-right: 10px;
-    border-color: #CACACA;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-}
-
-.navbar .nav {margin: 0}
 
 .alert {
     border-radius: 4px;
@@ -71,15 +61,54 @@ body {background: #FBFBFB url(../img/bg.jpg) 0 0 repeat}
 
 .grido .grid-cell-country,
 .grido .grid-cell-country_code {padding-left: 1%}
-th.checker input, .filter input, .filter label, .navbar .brand {z-index: 1; position: relative;}
-.navbar-inner ul.nav {padding-left: 50px}
-.navbar .brand {
-    padding: 10px 0px;
+
+.navbar-brand {
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.navbar .container {
     margin-left: 50px;
+    max-width: 100%;
+}
+
+th.checker input
+{
+    z-index: 2;
+    position: relative;
+}
+
+.github-fork-ribbon-wrapper {
+    z-index: 1;
+}
+
+.navbar-default .dropdown-menu {
+    z-index: 0;
+}
+
+.navbar-default {
+    z-index: 0;
+    background-color: #fafafa;
+    background-image: -moz-linear-gradient(top,#fff,#f2f2f2);
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#fff),to(#f2f2f2));
+    background-image: -webkit-linear-gradient(top,#fff,#f2f2f2);
+    background-image: -o-linear-gradient(top,#fff,#f2f2f2);
+    background-image: linear-gradient(to bottom,#fff,#f2f2f2);
+    background-repeat: repeat-x;
+    border: 1px solid #d4d4d4;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff',endColorstr='#fff2f2f2',GradientType=0);
+    -webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.065);
+    -moz-box-shadow: 0 1px 4px rgba(0,0,0,0.065);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.065);
 }
 .navbar-inner ul.nav {padding-left:10px}
 
 select {text-align: center}
-
-.btn-mini [class^="icon-"], .btn-mini [class*=" icon-"] {margin-top: 1px}
 .filter textarea {padding: 0; margin: 0; height: 23px}
+
+.grido .filter textarea {
+    height: 23px!important;
+}
