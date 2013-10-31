@@ -9,20 +9,23 @@
         <meta name="robots" content="{$robots}" n:ifset="$robots">
         <link rel="shortcut icon" href="{$baseUri}/favicon.ico">
         <link rel="stylesheet" href="{$baseUri}/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{$baseUri}/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="{$baseUri}/css/datepicker.css">
         <link rel="stylesheet" href="{$baseUri}/css/gh-fork-ribbon.css">
         <!--[if IE]>
         <link rel="stylesheet" href="{$baseUri}/css/gh-fork-ribbon.ie.css{scache}">
         <![endif]-->
         <link rel="stylesheet" href="{$baseUri}/css/style.css{scache}">
-        <link rel="stylesheet" href="{$baseUri}/css/grido.0.9.2.css{scache}">
+        <link rel="stylesheet" href="{$baseUri}/css/grido.1.0.0.css{scache}">
     </head>
     <body>
         <div id="content">
-            <div class="navbar">
-                <div class="navbar-inner">
-                    <a class="brand" href="http://o5.github.io/grido-sandbox/">Grido project</a>
-                    <ul class="nav">
+                <div class="navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="http://o5.github.io/grido-sandbox/">Grido project</a>
+                    </div>
+                    <ul class="nav navbar-nav">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 Data sources <b class="caret"></b>
@@ -89,7 +92,7 @@
                             <a n:href="multiRender:">Multi render</b></a>
                         </li>
                     </ul>
-                    <ul class="nav pull-right">
+                    <ul class="nav navbar-nav navbar-right">
                         <li><span id="ajax-spinner" class="hide">&nbsp;</span></li>
                     </ul>
                 </div>
@@ -110,6 +113,7 @@
             {/snippet}
 
             {include #content}
+
             <div class="github-fork-ribbon-wrapper left">
                 <div class="github-fork-ribbon">
                     <a href="https://github.com/o5/grido-sandbox/blob/master/app/presenters/{$presenter->name}Presenter.php">
@@ -135,7 +139,7 @@
         <script src="{$baseUri}/js/bootstrap-typeahead.js{scache}"></script>
         <script src="{$baseUri}/js/bootstrap-datepicker.js"></script>
 
-        <script src="{$baseUri}/js/grido.0.9.2.js{scache}"></script>
+        <script src="{$baseUri}/js/grido.1.0.0.js{scache}"></script>
         <script src="{$baseUri}/js/grido.ext.js{scache}"></script>
 
         <script n:if="$ajax"  src="{$baseUri}/js/main.ajax.js{scache}"></script>
