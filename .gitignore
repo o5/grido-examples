@@ -1,6 +1,7 @@
 temp/*
 log/*
 libs/*
+app/models/doctrine/proxies/*
 
 .DS_Store
 nbproject
