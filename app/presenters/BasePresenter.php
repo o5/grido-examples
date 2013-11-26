@@ -77,20 +77,20 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 
     /**********************************************************************************************/
 
-    public function createTemplate($class = NULL)
+    public function templatePrepareFilters($template)
     {
-        $template = parent::createTemplate($class);
-
-        $baseUri = $this->context->parameters['baseUri'];
-        $template->baseUri = $baseUri ? $baseUri : $template->basePath;;
-        $template->first = $this->context->httpRequest->getCookie('grido-sandbox-first', 1);
-
         $latte = new Nette\Latte\Engine;
-        $macros = Nette\Latte\Macros\MacroSet::install($latte->compiler);
-        $macros->addMacro('scache', '?>?<?php echo strtotime(date(\'Y-m-d hh \')); ?>"<?php');
+
+        $set = Nette\Latte\Macros\MacroSet($latte->getCompiler());
+        $set->addMacro('scache', '?>?<?php echo strtotime(date(\'Y-m-d hh \')); ?>"<?php');
 
         $template->registerFilter($latte);
+    }
 
-        return $template;
+    public function beforeRender()
+    {
+        $baseUri = $this->context->parameters['baseUri'];
+        $this->template->baseUri = $baseUri ? $baseUri : $this->template->basePath;
+        $this->template->first = $this->context->httpRequest->getCookie('grido-sandbox-first', 1);
     }
 }
