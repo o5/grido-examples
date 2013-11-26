@@ -81,7 +81,7 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
     {
         $latte = new Nette\Latte\Engine;
 
-        $set = Nette\Latte\Macros\MacroSet($latte->getCompiler());
+        $set = new Nette\Latte\Macros\MacroSet($latte->getCompiler());
         $set->addMacro('scache', '?>?<?php echo strtotime(date(\'Y-m-d hh \')); ?>"<?php');
 
         $template->registerFilter($latte);
