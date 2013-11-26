@@ -5,12 +5,12 @@
 	<meta name="generator" content="ApiGen 2.8.0" />
 	<meta name="robots" content="noindex" />
 
-	<title>File Grid.php | Grido 1.0.0</title>
+	<title>File Grid.php | Grido 1.0.2</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?4284207213"></script>
+	<script type="text/javascript" src="elementlist.js?3306536585"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
-	<link rel="search" type="application/opensearchdescription+xml" title="Grido 1.0.0" href="/opensearch.xml" />
+	<link rel="search" type="application/opensearchdescription+xml" title="Grido 1.0.2" href="/opensearch.xml" />
 
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
@@ -110,7 +110,7 @@
 		</ul>
 		<ul>
 			<li>
-				<a href="grido-1-0-0-api-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
+				<a href="grido-1-0-2-api-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
 			</li>
 		</ul>
 	</div>
@@ -587,9 +587,9 @@
 </span><span id="470" class="l"><a class="l" href="#470">470: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_getTablePrototype" href="#_getTablePrototype">getTablePrototype</a>()
 </span><span id="471" class="l"><a class="l" href="#471">471: </a>    {
 </span><span id="472" class="l"><a class="l" href="#472">472: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;tablePrototype === <span class="php-keyword1">NULL</span>) {
-</span><span id="473" class="l"><a class="l" href="#473">473: </a>            <span class="php-var">$this</span>-&gt;tablePrototype = \Nette\Utils\Html::el(<span class="php-quote">'table'</span>)
-</span><span id="474" class="l"><a class="l" href="#474">474: </a>                -&gt;id(<span class="php-var">$this</span>-&gt;getName())
-</span><span id="475" class="l"><a class="l" href="#475">475: </a>                -&gt;<span class="php-keyword1">class</span>(<span class="php-quote">'table table-striped table-hover'</span>);
+</span><span id="473" class="l"><a class="l" href="#473">473: </a>            <span class="php-var">$this</span>-&gt;tablePrototype = \Nette\Utils\Html::el(<span class="php-quote">'table'</span>);
+</span><span id="474" class="l"><a class="l" href="#474">474: </a>            <span class="php-var">$this</span>-&gt;tablePrototype-&gt;id(<span class="php-var">$this</span>-&gt;getName())
+</span><span id="475" class="l"><a class="l" href="#475">475: </a>                -&gt;<span class="php-keyword1">class</span>[] = <span class="php-quote">'table table-striped table-hover'</span>;
 </span><span id="476" class="l"><a class="l" href="#476">476: </a>        }
 </span><span id="477" class="l"><a class="l" href="#477">477: </a>
 </span><span id="478" class="l"><a class="l" href="#478">478: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;tablePrototype;
@@ -870,79 +870,84 @@
 </span><span id="753" class="l"><a class="l" href="#753">753: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$this</span>-&gt;<span class="php-keyword2">sort</span> <span class="php-keyword1">as</span> <span class="php-var">$column</span> =&gt; <span class="php-var">$dir</span>) {
 </span><span id="754" class="l"><a class="l" href="#754">754: </a>            <span class="php-var">$component</span> = <span class="php-var">$this</span>-&gt;getColumn(<span class="php-var">$column</span>, <span class="php-keyword1">FALSE</span>);
 </span><span id="755" class="l"><a class="l" href="#755">755: </a>            <span class="php-keyword1">if</span> (!<span class="php-var">$component</span>) {
-</span><span id="756" class="l"><a class="l" href="#756">756: </a>                <span class="php-keyword2">trigger_error</span>(<span class="php-quote">&quot;Column with name '</span><span class="php-var">$column</span><span class="php-quote">' does not exist.&quot;</span>, E_USER_NOTICE);
-</span><span id="757" class="l"><a class="l" href="#757">757: </a>                <span class="php-keyword1">break</span>;
-</span><span id="758" class="l"><a class="l" href="#758">758: </a>            } <span class="php-keyword1">elseif</span> (!<span class="php-var">$component</span>-&gt;isSortable()) {
-</span><span id="759" class="l"><a class="l" href="#759">759: </a>                <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;defaultSort[<span class="php-var">$column</span>])) {
-</span><span id="760" class="l"><a class="l" href="#760">760: </a>                    <span class="php-var">$component</span>-&gt;setSortable();
-</span><span id="761" class="l"><a class="l" href="#761">761: </a>                } <span class="php-keyword1">else</span> {
-</span><span id="762" class="l"><a class="l" href="#762">762: </a>                    <span class="php-keyword2">trigger_error</span>(<span class="php-quote">&quot;Column with name '</span><span class="php-var">$column</span><span class="php-quote">' is not sortable.&quot;</span>, E_USER_NOTICE);
-</span><span id="763" class="l"><a class="l" href="#763">763: </a>                    <span class="php-keyword1">break</span>;
-</span><span id="764" class="l"><a class="l" href="#764">764: </a>                }
-</span><span id="765" class="l"><a class="l" href="#765">765: </a>            } <span class="php-keyword1">elseif</span> (!<span class="php-keyword2">in_array</span>(<span class="php-var">$dir</span>, <span class="php-keyword1">array</span>(Column::ORDER_ASC, Column::ORDER_DESC))) {
-</span><span id="766" class="l"><a class="l" href="#766">766: </a>                <span class="php-keyword1">if</span> (<span class="php-var">$dir</span> == <span class="php-quote">''</span> &amp;&amp; <span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;defaultSort[<span class="php-var">$column</span>])) {
-</span><span id="767" class="l"><a class="l" href="#767">767: </a>                    <span class="php-keyword1">unset</span>(<span class="php-var">$this</span>-&gt;<span class="php-keyword2">sort</span>[<span class="php-var">$column</span>]);
-</span><span id="768" class="l"><a class="l" href="#768">768: </a>                    <span class="php-keyword1">break</span>;
-</span><span id="769" class="l"><a class="l" href="#769">769: </a>                }
-</span><span id="770" class="l"><a class="l" href="#770">770: </a>
-</span><span id="771" class="l"><a class="l" href="#771">771: </a>                <span class="php-keyword2">trigger_error</span>(<span class="php-quote">&quot;Dir '</span><span class="php-var">$dir</span><span class="php-quote">' is not allowed.&quot;</span>, E_USER_NOTICE);
-</span><span id="772" class="l"><a class="l" href="#772">772: </a>                <span class="php-keyword1">break</span>;
-</span><span id="773" class="l"><a class="l" href="#773">773: </a>            }
-</span><span id="774" class="l"><a class="l" href="#774">774: </a>
-</span><span id="775" class="l"><a class="l" href="#775">775: </a>            <span class="php-var">$sort</span>[<span class="php-var">$component</span>-&gt;column] = <span class="php-var">$dir</span> == Column::ORDER_ASC ? <span class="php-quote">'ASC'</span> : <span class="php-quote">'DESC'</span>;
-</span><span id="776" class="l"><a class="l" href="#776">776: </a>        }
-</span><span id="777" class="l"><a class="l" href="#777">777: </a>
-</span><span id="778" class="l"><a class="l" href="#778">778: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$sort</span>) {
-</span><span id="779" class="l"><a class="l" href="#779">779: </a>            <span class="php-var">$this</span>-&gt;model-&gt;<span class="php-keyword2">sort</span>(<span class="php-var">$sort</span>);
-</span><span id="780" class="l"><a class="l" href="#780">780: </a>        }
-</span><span id="781" class="l"><a class="l" href="#781">781: </a>    }
+</span><span id="756" class="l"><a class="l" href="#756">756: </a>                <span class="php-keyword1">if</span> (!<span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;defaultSort[<span class="php-var">$column</span>])) {
+</span><span id="757" class="l"><a class="l" href="#757">757: </a>                    <span class="php-keyword2">trigger_error</span>(<span class="php-quote">&quot;Column with name '</span><span class="php-var">$column</span><span class="php-quote">' does not exist.&quot;</span>, E_USER_NOTICE);
+</span><span id="758" class="l"><a class="l" href="#758">758: </a>                    <span class="php-keyword1">break</span>;
+</span><span id="759" class="l"><a class="l" href="#759">759: </a>                }
+</span><span id="760" class="l"><a class="l" href="#760">760: </a>
+</span><span id="761" class="l"><a class="l" href="#761">761: </a>            } <span class="php-keyword1">elseif</span> (!<span class="php-var">$component</span>-&gt;isSortable()) {
+</span><span id="762" class="l"><a class="l" href="#762">762: </a>                <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;defaultSort[<span class="php-var">$column</span>])) {
+</span><span id="763" class="l"><a class="l" href="#763">763: </a>                    <span class="php-var">$component</span>-&gt;setSortable();
+</span><span id="764" class="l"><a class="l" href="#764">764: </a>                } <span class="php-keyword1">else</span> {
+</span><span id="765" class="l"><a class="l" href="#765">765: </a>                    <span class="php-keyword2">trigger_error</span>(<span class="php-quote">&quot;Column with name '</span><span class="php-var">$column</span><span class="php-quote">' is not sortable.&quot;</span>, E_USER_NOTICE);
+</span><span id="766" class="l"><a class="l" href="#766">766: </a>                    <span class="php-keyword1">break</span>;
+</span><span id="767" class="l"><a class="l" href="#767">767: </a>                }
+</span><span id="768" class="l"><a class="l" href="#768">768: </a>            }
+</span><span id="769" class="l"><a class="l" href="#769">769: </a>
+</span><span id="770" class="l"><a class="l" href="#770">770: </a>            <span class="php-keyword1">if</span> (!<span class="php-keyword2">in_array</span>(<span class="php-var">$dir</span>, <span class="php-keyword1">array</span>(Column::ORDER_ASC, Column::ORDER_DESC))) {
+</span><span id="771" class="l"><a class="l" href="#771">771: </a>                <span class="php-keyword1">if</span> (<span class="php-var">$dir</span> == <span class="php-quote">''</span> &amp;&amp; <span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;defaultSort[<span class="php-var">$column</span>])) {
+</span><span id="772" class="l"><a class="l" href="#772">772: </a>                    <span class="php-keyword1">unset</span>(<span class="php-var">$this</span>-&gt;<span class="php-keyword2">sort</span>[<span class="php-var">$column</span>]);
+</span><span id="773" class="l"><a class="l" href="#773">773: </a>                    <span class="php-keyword1">break</span>;
+</span><span id="774" class="l"><a class="l" href="#774">774: </a>                }
+</span><span id="775" class="l"><a class="l" href="#775">775: </a>
+</span><span id="776" class="l"><a class="l" href="#776">776: </a>                <span class="php-keyword2">trigger_error</span>(<span class="php-quote">&quot;Dir '</span><span class="php-var">$dir</span><span class="php-quote">' is not allowed.&quot;</span>, E_USER_NOTICE);
+</span><span id="777" class="l"><a class="l" href="#777">777: </a>                <span class="php-keyword1">break</span>;
+</span><span id="778" class="l"><a class="l" href="#778">778: </a>            }
+</span><span id="779" class="l"><a class="l" href="#779">779: </a>
+</span><span id="780" class="l"><a class="l" href="#780">780: </a>            <span class="php-var">$sort</span>[<span class="php-var">$component</span> ? <span class="php-var">$component</span>-&gt;column : <span class="php-var">$column</span>] = <span class="php-var">$dir</span> == Column::ORDER_ASC ? <span class="php-quote">'ASC'</span> : <span class="php-quote">'DESC'</span>;
+</span><span id="781" class="l"><a class="l" href="#781">781: </a>        }
 </span><span id="782" class="l"><a class="l" href="#782">782: </a>
-</span><span id="783" class="l"><a class="l" href="#783">783: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_applyPaging" href="#_applyPaging">applyPaging</a>()
-</span><span id="784" class="l"><a class="l" href="#784">784: </a>    {
-</span><span id="785" class="l"><a class="l" href="#785">785: </a>        <span class="php-var">$paginator</span> = <span class="php-var">$this</span>-&gt;getPaginator()
-</span><span id="786" class="l"><a class="l" href="#786">786: </a>            -&gt;setItemCount(<span class="php-var">$this</span>-&gt;getCount())
-</span><span id="787" class="l"><a class="l" href="#787">787: </a>            -&gt;setPage(<span class="php-var">$this</span>-&gt;page);
-</span><span id="788" class="l"><a class="l" href="#788">788: </a>
-</span><span id="789" class="l"><a class="l" href="#789">789: </a>        <span class="php-var">$perPage</span> = <span class="php-var">$this</span>-&gt;getPerPage();
-</span><span id="790" class="l"><a class="l" href="#790">790: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$perPage</span> !== <span class="php-keyword1">NULL</span> &amp;&amp; !<span class="php-keyword2">in_array</span>(<span class="php-var">$perPage</span>, <span class="php-var">$this</span>-&gt;perPageList)) {
-</span><span id="791" class="l"><a class="l" href="#791">791: </a>            <span class="php-keyword2">trigger_error</span>(<span class="php-quote">&quot;The number '</span><span class="php-var">$perPage</span><span class="php-quote">' of items per page is out of range.&quot;</span>, E_USER_NOTICE);
-</span><span id="792" class="l"><a class="l" href="#792">792: </a>            <span class="php-var">$perPage</span> = <span class="php-var">$this</span>-&gt;defaultPerPage;
-</span><span id="793" class="l"><a class="l" href="#793">793: </a>        }
-</span><span id="794" class="l"><a class="l" href="#794">794: </a>
-</span><span id="795" class="l"><a class="l" href="#795">795: </a>        <span class="php-var">$this</span>[<span class="php-quote">'form'</span>][<span class="php-quote">'count'</span>]-&gt;setValue(<span class="php-var">$perPage</span>);
-</span><span id="796" class="l"><a class="l" href="#796">796: </a>        <span class="php-var">$this</span>-&gt;model-&gt;limit(<span class="php-var">$paginator</span>-&gt;getOffset(), <span class="php-var">$paginator</span>-&gt;getLength());
-</span><span id="797" class="l"><a class="l" href="#797">797: </a>    }
-</span><span id="798" class="l"><a class="l" href="#798">798: </a>
-</span><span id="799" class="l"><a class="l" href="#799">799: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_createComponentForm" href="#_createComponentForm">createComponentForm</a>(<span class="php-var">$name</span>)
-</span><span id="800" class="l"><a class="l" href="#800">800: </a>    {
-</span><span id="801" class="l"><a class="l" href="#801">801: </a>        <span class="php-var">$form</span> = <span class="php-keyword1">new</span> \Nette\Application\UI\Form(<span class="php-var">$this</span>, <span class="php-var">$name</span>);
-</span><span id="802" class="l"><a class="l" href="#802">802: </a>        <span class="php-var">$form</span>-&gt;setTranslator(<span class="php-var">$this</span>-&gt;getTranslator());
-</span><span id="803" class="l"><a class="l" href="#803">803: </a>        <span class="php-var">$form</span>-&gt;setMethod(<span class="php-var">$form</span>::GET);
-</span><span id="804" class="l"><a class="l" href="#804">804: </a>
-</span><span id="805" class="l"><a class="l" href="#805">805: </a>        <span class="php-var">$buttons</span> = <span class="php-var">$form</span>-&gt;addContainer(self::BUTTONS);
-</span><span id="806" class="l"><a class="l" href="#806">806: </a>        <span class="php-var">$buttons</span>-&gt;addSubmit(<span class="php-quote">'search'</span>, <span class="php-quote">'Search'</span>)
-</span><span id="807" class="l"><a class="l" href="#807">807: </a>            -&gt;onClick[] = <span class="php-var">$this</span>-&gt;handleFilter;
-</span><span id="808" class="l"><a class="l" href="#808">808: </a>        <span class="php-var">$buttons</span>-&gt;addSubmit(<span class="php-quote">'reset'</span>, <span class="php-quote">'Reset'</span>)
-</span><span id="809" class="l"><a class="l" href="#809">809: </a>            -&gt;onClick[] = <span class="php-var">$this</span>-&gt;handleReset;
-</span><span id="810" class="l"><a class="l" href="#810">810: </a>        <span class="php-var">$buttons</span>-&gt;addSubmit(<span class="php-quote">'perPage'</span>, <span class="php-quote">'Items per page'</span>)
-</span><span id="811" class="l"><a class="l" href="#811">811: </a>            -&gt;onClick[] = <span class="php-var">$this</span>-&gt;handlePerPage;
-</span><span id="812" class="l"><a class="l" href="#812">812: </a>
-</span><span id="813" class="l"><a class="l" href="#813">813: </a>        <span class="php-var">$form</span>-&gt;addSelect(<span class="php-quote">'count'</span>, <span class="php-quote">'Count'</span>, <span class="php-var">$this</span>-&gt;getItemsForCountSelect())
-</span><span id="814" class="l"><a class="l" href="#814">814: </a>            -&gt;controlPrototype-&gt;attrs[<span class="php-quote">'title'</span>] = <span class="php-var">$this</span>-&gt;getTranslator()-&gt;translate(<span class="php-quote">'Items per page'</span>);
-</span><span id="815" class="l"><a class="l" href="#815">815: </a>    }
-</span><span id="816" class="l"><a class="l" href="#816">816: </a>
-</span><span id="817" class="l"><a class="l" href="#817">817: </a>    <span class="php-comment">/**
-</span></span><span id="818" class="l"><a class="l" href="#818">818: </a><span class="php-comment">     * @return array
-</span></span><span id="819" class="l"><a class="l" href="#819">819: </a><span class="php-comment">     */</span>
-</span><span id="820" class="l"><a class="l" href="#820">820: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_getItemsForCountSelect" href="#_getItemsForCountSelect">getItemsForCountSelect</a>()
-</span><span id="821" class="l"><a class="l" href="#821">821: </a>    {
-</span><span id="822" class="l"><a class="l" href="#822">822: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">array_combine</span>(<span class="php-var">$this</span>-&gt;perPageList, <span class="php-var">$this</span>-&gt;perPageList);
-</span><span id="823" class="l"><a class="l" href="#823">823: </a>    }
-</span><span id="824" class="l"><a class="l" href="#824">824: </a>}
-</span><span id="825" class="l"><a class="l" href="#825">825: </a></span></code></pre>
+</span><span id="783" class="l"><a class="l" href="#783">783: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$sort</span>) {
+</span><span id="784" class="l"><a class="l" href="#784">784: </a>            <span class="php-var">$this</span>-&gt;model-&gt;<span class="php-keyword2">sort</span>(<span class="php-var">$sort</span>);
+</span><span id="785" class="l"><a class="l" href="#785">785: </a>        }
+</span><span id="786" class="l"><a class="l" href="#786">786: </a>    }
+</span><span id="787" class="l"><a class="l" href="#787">787: </a>
+</span><span id="788" class="l"><a class="l" href="#788">788: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_applyPaging" href="#_applyPaging">applyPaging</a>()
+</span><span id="789" class="l"><a class="l" href="#789">789: </a>    {
+</span><span id="790" class="l"><a class="l" href="#790">790: </a>        <span class="php-var">$paginator</span> = <span class="php-var">$this</span>-&gt;getPaginator()
+</span><span id="791" class="l"><a class="l" href="#791">791: </a>            -&gt;setItemCount(<span class="php-var">$this</span>-&gt;getCount())
+</span><span id="792" class="l"><a class="l" href="#792">792: </a>            -&gt;setPage(<span class="php-var">$this</span>-&gt;page);
+</span><span id="793" class="l"><a class="l" href="#793">793: </a>
+</span><span id="794" class="l"><a class="l" href="#794">794: </a>        <span class="php-var">$perPage</span> = <span class="php-var">$this</span>-&gt;getPerPage();
+</span><span id="795" class="l"><a class="l" href="#795">795: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$perPage</span> !== <span class="php-keyword1">NULL</span> &amp;&amp; !<span class="php-keyword2">in_array</span>(<span class="php-var">$perPage</span>, <span class="php-var">$this</span>-&gt;perPageList)) {
+</span><span id="796" class="l"><a class="l" href="#796">796: </a>            <span class="php-keyword2">trigger_error</span>(<span class="php-quote">&quot;The number '</span><span class="php-var">$perPage</span><span class="php-quote">' of items per page is out of range.&quot;</span>, E_USER_NOTICE);
+</span><span id="797" class="l"><a class="l" href="#797">797: </a>            <span class="php-var">$perPage</span> = <span class="php-var">$this</span>-&gt;defaultPerPage;
+</span><span id="798" class="l"><a class="l" href="#798">798: </a>        }
+</span><span id="799" class="l"><a class="l" href="#799">799: </a>
+</span><span id="800" class="l"><a class="l" href="#800">800: </a>        <span class="php-var">$this</span>[<span class="php-quote">'form'</span>][<span class="php-quote">'count'</span>]-&gt;setValue(<span class="php-var">$perPage</span>);
+</span><span id="801" class="l"><a class="l" href="#801">801: </a>        <span class="php-var">$this</span>-&gt;model-&gt;limit(<span class="php-var">$paginator</span>-&gt;getOffset(), <span class="php-var">$paginator</span>-&gt;getLength());
+</span><span id="802" class="l"><a class="l" href="#802">802: </a>    }
+</span><span id="803" class="l"><a class="l" href="#803">803: </a>
+</span><span id="804" class="l"><a class="l" href="#804">804: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_createComponentForm" href="#_createComponentForm">createComponentForm</a>(<span class="php-var">$name</span>)
+</span><span id="805" class="l"><a class="l" href="#805">805: </a>    {
+</span><span id="806" class="l"><a class="l" href="#806">806: </a>        <span class="php-var">$form</span> = <span class="php-keyword1">new</span> \Nette\Application\UI\Form(<span class="php-var">$this</span>, <span class="php-var">$name</span>);
+</span><span id="807" class="l"><a class="l" href="#807">807: </a>        <span class="php-var">$form</span>-&gt;setTranslator(<span class="php-var">$this</span>-&gt;getTranslator());
+</span><span id="808" class="l"><a class="l" href="#808">808: </a>        <span class="php-var">$form</span>-&gt;setMethod(<span class="php-var">$form</span>::GET);
+</span><span id="809" class="l"><a class="l" href="#809">809: </a>
+</span><span id="810" class="l"><a class="l" href="#810">810: </a>        <span class="php-var">$buttons</span> = <span class="php-var">$form</span>-&gt;addContainer(self::BUTTONS);
+</span><span id="811" class="l"><a class="l" href="#811">811: </a>        <span class="php-var">$buttons</span>-&gt;addSubmit(<span class="php-quote">'search'</span>, <span class="php-quote">'Search'</span>)
+</span><span id="812" class="l"><a class="l" href="#812">812: </a>            -&gt;onClick[] = <span class="php-var">$this</span>-&gt;handleFilter;
+</span><span id="813" class="l"><a class="l" href="#813">813: </a>        <span class="php-var">$buttons</span>-&gt;addSubmit(<span class="php-quote">'reset'</span>, <span class="php-quote">'Reset'</span>)
+</span><span id="814" class="l"><a class="l" href="#814">814: </a>            -&gt;onClick[] = <span class="php-var">$this</span>-&gt;handleReset;
+</span><span id="815" class="l"><a class="l" href="#815">815: </a>        <span class="php-var">$buttons</span>-&gt;addSubmit(<span class="php-quote">'perPage'</span>, <span class="php-quote">'Items per page'</span>)
+</span><span id="816" class="l"><a class="l" href="#816">816: </a>            -&gt;onClick[] = <span class="php-var">$this</span>-&gt;handlePerPage;
+</span><span id="817" class="l"><a class="l" href="#817">817: </a>
+</span><span id="818" class="l"><a class="l" href="#818">818: </a>        <span class="php-var">$form</span>-&gt;addSelect(<span class="php-quote">'count'</span>, <span class="php-quote">'Count'</span>, <span class="php-var">$this</span>-&gt;getItemsForCountSelect())
+</span><span id="819" class="l"><a class="l" href="#819">819: </a>            -&gt;controlPrototype-&gt;attrs[<span class="php-quote">'title'</span>] = <span class="php-var">$this</span>-&gt;getTranslator()-&gt;translate(<span class="php-quote">'Items per page'</span>);
+</span><span id="820" class="l"><a class="l" href="#820">820: </a>    }
+</span><span id="821" class="l"><a class="l" href="#821">821: </a>
+</span><span id="822" class="l"><a class="l" href="#822">822: </a>    <span class="php-comment">/**
+</span></span><span id="823" class="l"><a class="l" href="#823">823: </a><span class="php-comment">     * @return array
+</span></span><span id="824" class="l"><a class="l" href="#824">824: </a><span class="php-comment">     */</span>
+</span><span id="825" class="l"><a class="l" href="#825">825: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_getItemsForCountSelect" href="#_getItemsForCountSelect">getItemsForCountSelect</a>()
+</span><span id="826" class="l"><a class="l" href="#826">826: </a>    {
+</span><span id="827" class="l"><a class="l" href="#827">827: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">array_combine</span>(<span class="php-var">$this</span>-&gt;perPageList, <span class="php-var">$this</span>-&gt;perPageList);
+</span><span id="828" class="l"><a class="l" href="#828">828: </a>    }
+</span><span id="829" class="l"><a class="l" href="#829">829: </a>}
+</span><span id="830" class="l"><a class="l" href="#830">830: </a></span></code></pre>
 
 	<div id="footer">
-		Grido 1.0.0 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+		Grido 1.0.2 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
 	</div>
 </div>
 </div>

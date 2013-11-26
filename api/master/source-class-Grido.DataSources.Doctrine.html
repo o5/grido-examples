@@ -5,12 +5,12 @@
 	<meta name="generator" content="ApiGen 2.8.0" />
 	<meta name="robots" content="noindex" />
 
-	<title>File DataSources/Doctrine.php | Grido 1.0.0</title>
+	<title>File DataSources/Doctrine.php | Grido 1.0.2</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?4284207213"></script>
+	<script type="text/javascript" src="elementlist.js?3306536585"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
-	<link rel="search" type="application/opensearchdescription+xml" title="Grido 1.0.0" href="/opensearch.xml" />
+	<link rel="search" type="application/opensearchdescription+xml" title="Grido 1.0.2" href="/opensearch.xml" />
 
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
@@ -118,7 +118,7 @@
 		</ul>
 		<ul>
 			<li>
-				<a href="grido-1-0-0-api-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
+				<a href="grido-1-0-2-api-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
 			</li>
 		</ul>
 	</div>
@@ -231,16 +231,16 @@
 </span><span id="106" class="l"><a class="l" href="#106">106: </a>        }
 </span><span id="107" class="l"><a class="l" href="#107">107: </a>
 </span><span id="108" class="l"><a class="l" href="#108">108: </a>        <span class="php-var">$columns</span> = <span class="php-var">$condition</span>-&gt;column;
-</span><span id="109" class="l"><a class="l" href="#109">109: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$columns</span> <span class="php-keyword1">as</span> <span class="php-var">$column</span>) {
+</span><span id="109" class="l"><a class="l" href="#109">109: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$columns</span> <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$column</span>) {
 </span><span id="110" class="l"><a class="l" href="#110">110: </a>            <span class="php-keyword1">if</span> (!Condition::isOperator(<span class="php-var">$column</span>)) {
-</span><span id="111" class="l"><a class="l" href="#111">111: </a>                <span class="php-var">$columns</span>[<span class="php-var">$column</span>] = <span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;filterMapping[<span class="php-var">$column</span>])
+</span><span id="111" class="l"><a class="l" href="#111">111: </a>                <span class="php-var">$columns</span>[<span class="php-var">$key</span>] = <span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;filterMapping[<span class="php-var">$column</span>])
 </span><span id="112" class="l"><a class="l" href="#112">112: </a>                    ? <span class="php-var">$this</span>-&gt;filterMapping[<span class="php-var">$column</span>]
 </span><span id="113" class="l"><a class="l" href="#113">113: </a>                    : <span class="php-var">$this</span>-&gt;qb-&gt;getRootAlias() . <span class="php-quote">'.'</span> . <span class="php-var">$column</span>;
 </span><span id="114" class="l"><a class="l" href="#114">114: </a>            }
 </span><span id="115" class="l"><a class="l" href="#115">115: </a>        }
 </span><span id="116" class="l"><a class="l" href="#116">116: </a>
-</span><span id="117" class="l"><a class="l" href="#117">117: </a>        <span class="php-keyword1">list</span>(<span class="php-var">$where</span>) = <span class="php-var">$condition</span>-&gt;__toArray(<span class="php-keyword1">NULL</span>, <span class="php-keyword1">NULL</span>, <span class="php-keyword1">FALSE</span>);
-</span><span id="118" class="l"><a class="l" href="#118">118: </a>        <span class="php-var">$where</span> = <span class="php-keyword2">str_replace</span>(<span class="php-keyword2">array_keys</span>(<span class="php-var">$columns</span>), <span class="php-keyword2">array_values</span>(<span class="php-var">$columns</span>), <span class="php-var">$where</span>);
+</span><span id="117" class="l"><a class="l" href="#117">117: </a>        <span class="php-var">$condition</span>-&gt;setColumn(<span class="php-var">$columns</span>);
+</span><span id="118" class="l"><a class="l" href="#118">118: </a>        <span class="php-keyword1">list</span>(<span class="php-var">$where</span>) = <span class="php-var">$condition</span>-&gt;__toArray(<span class="php-keyword1">NULL</span>, <span class="php-keyword1">NULL</span>, <span class="php-keyword1">FALSE</span>);
 </span><span id="119" class="l"><a class="l" href="#119">119: </a>
 </span><span id="120" class="l"><a class="l" href="#120">120: </a>        <span class="php-var">$rand</span> = <span class="php-var">$this</span>-&gt;getRand();
 </span><span id="121" class="l"><a class="l" href="#121">121: </a>        <span class="php-var">$where</span> = <span class="php-keyword2">preg_replace_callback</span>(<span class="php-quote">'/\?/'</span>, <span class="php-keyword1">function</span>() <span class="php-keyword1">use</span> (<span class="php-var">$rand</span>) {
@@ -352,37 +352,49 @@
 </span><span id="227" class="l"><a class="l" href="#227">227: </a>    }
 </span><span id="228" class="l"><a class="l" href="#228">228: </a>
 </span><span id="229" class="l"><a class="l" href="#229">229: </a>    <span class="php-comment">/**
-</span></span><span id="230" class="l"><a class="l" href="#230">230: </a><span class="php-comment">     * @param string $column
+</span></span><span id="230" class="l"><a class="l" href="#230">230: </a><span class="php-comment">     * @param mixed $column
 </span></span><span id="231" class="l"><a class="l" href="#231">231: </a><span class="php-comment">     * @param array $conditions
-</span></span><span id="232" class="l"><a class="l" href="#232">232: </a><span class="php-comment">     * @return array
-</span></span><span id="233" class="l"><a class="l" href="#233">233: </a><span class="php-comment">     */</span>
-</span><span id="234" class="l"><a class="l" href="#234">234: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_suggest" href="#_suggest">suggest</a>(<span class="php-var">$column</span>, <span class="php-keyword1">array</span> <span class="php-var">$conditions</span>)
-</span><span id="235" class="l"><a class="l" href="#235">235: </a>    {
-</span><span id="236" class="l"><a class="l" href="#236">236: </a>        <span class="php-var">$qb</span> = <span class="php-keyword1">clone</span> <span class="php-var">$this</span>-&gt;qb;
-</span><span id="237" class="l"><a class="l" href="#237">237: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$conditions</span> <span class="php-keyword1">as</span> <span class="php-var">$condition</span>) {
-</span><span id="238" class="l"><a class="l" href="#238">238: </a>            <span class="php-var">$this</span>-&gt;makeWhere(<span class="php-var">$condition</span>, <span class="php-var">$qb</span>);
-</span><span id="239" class="l"><a class="l" href="#239">239: </a>        }
-</span><span id="240" class="l"><a class="l" href="#240">240: </a>
-</span><span id="241" class="l"><a class="l" href="#241">241: </a>        <span class="php-var">$items</span> = <span class="php-keyword1">array</span>();
-</span><span id="242" class="l"><a class="l" href="#242">242: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$qb</span>-&gt;getQuery()-&gt;getScalarResult() <span class="php-keyword1">as</span> <span class="php-var">$row</span>) {
-</span><span id="243" class="l"><a class="l" href="#243">243: </a>            <span class="php-var">$mapping</span> = <span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;filterMapping[<span class="php-var">$column</span>])
-</span><span id="244" class="l"><a class="l" href="#244">244: </a>                ? <span class="php-keyword2">str_replace</span>(<span class="php-quote">'.'</span>, <span class="php-quote">'_'</span>, <span class="php-var">$this</span>-&gt;filterMapping[<span class="php-var">$column</span>])
-</span><span id="245" class="l"><a class="l" href="#245">245: </a>                : <span class="php-var">$qb</span>-&gt;getRootAlias() . <span class="php-quote">'_'</span> . <span class="php-var">$column</span>;
-</span><span id="246" class="l"><a class="l" href="#246">246: </a>
-</span><span id="247" class="l"><a class="l" href="#247">247: </a>            <span class="php-var">$value</span> = (string) <span class="php-var">$row</span>[<span class="php-var">$mapping</span>];
-</span><span id="248" class="l"><a class="l" href="#248">248: </a>            <span class="php-var">$items</span>[<span class="php-var">$value</span>] = <span class="php-var">$value</span>;
-</span><span id="249" class="l"><a class="l" href="#249">249: </a>        }
-</span><span id="250" class="l"><a class="l" href="#250">250: </a>
-</span><span id="251" class="l"><a class="l" href="#251">251: </a>        <span class="php-var">$items</span> = <span class="php-keyword2">array_values</span>(<span class="php-var">$items</span>);
-</span><span id="252" class="l"><a class="l" href="#252">252: </a>        <span class="php-keyword2">sort</span>(<span class="php-var">$items</span>);
-</span><span id="253" class="l"><a class="l" href="#253">253: </a>
-</span><span id="254" class="l"><a class="l" href="#254">254: </a>        <span class="php-keyword1">return</span> <span class="php-var">$items</span>;;
-</span><span id="255" class="l"><a class="l" href="#255">255: </a>    }
-</span><span id="256" class="l"><a class="l" href="#256">256: </a>}
-</span><span id="257" class="l"><a class="l" href="#257">257: </a></span></code></pre>
+</span></span><span id="232" class="l"><a class="l" href="#232">232: </a><span class="php-comment">     * @param int $limit
+</span></span><span id="233" class="l"><a class="l" href="#233">233: </a><span class="php-comment">     * @return array
+</span></span><span id="234" class="l"><a class="l" href="#234">234: </a><span class="php-comment">     */</span>
+</span><span id="235" class="l"><a class="l" href="#235">235: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_suggest" href="#_suggest">suggest</a>(<span class="php-var">$column</span>, <span class="php-keyword1">array</span> <span class="php-var">$conditions</span>, <span class="php-var">$limit</span>)
+</span><span id="236" class="l"><a class="l" href="#236">236: </a>    {
+</span><span id="237" class="l"><a class="l" href="#237">237: </a>        <span class="php-var">$qb</span> = <span class="php-keyword1">clone</span> <span class="php-var">$this</span>-&gt;qb;
+</span><span id="238" class="l"><a class="l" href="#238">238: </a>        <span class="php-var">$qb</span>-&gt;setMaxResults(<span class="php-var">$limit</span>);
+</span><span id="239" class="l"><a class="l" href="#239">239: </a>
+</span><span id="240" class="l"><a class="l" href="#240">240: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$conditions</span> <span class="php-keyword1">as</span> <span class="php-var">$condition</span>) {
+</span><span id="241" class="l"><a class="l" href="#241">241: </a>            <span class="php-var">$this</span>-&gt;makeWhere(<span class="php-var">$condition</span>, <span class="php-var">$qb</span>);
+</span><span id="242" class="l"><a class="l" href="#242">242: </a>        }
+</span><span id="243" class="l"><a class="l" href="#243">243: </a>
+</span><span id="244" class="l"><a class="l" href="#244">244: </a>        <span class="php-var">$items</span> = <span class="php-keyword1">array</span>();
+</span><span id="245" class="l"><a class="l" href="#245">245: </a>        <span class="php-var">$data</span> = <span class="php-var">$qb</span>-&gt;getQuery()-&gt;getScalarResult();
+</span><span id="246" class="l"><a class="l" href="#246">246: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$data</span> <span class="php-keyword1">as</span> <span class="php-var">$row</span>) {
+</span><span id="247" class="l"><a class="l" href="#247">247: </a>            <span class="php-keyword1">if</span> (<span class="php-keyword2">is_string</span>(<span class="php-var">$column</span>)) {
+</span><span id="248" class="l"><a class="l" href="#248">248: </a>                <span class="php-var">$mapping</span> = <span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;filterMapping[<span class="php-var">$column</span>])
+</span><span id="249" class="l"><a class="l" href="#249">249: </a>                    ? <span class="php-keyword2">str_replace</span>(<span class="php-quote">'.'</span>, <span class="php-quote">'_'</span>, <span class="php-var">$this</span>-&gt;filterMapping[<span class="php-var">$column</span>])
+</span><span id="250" class="l"><a class="l" href="#250">250: </a>                    : <span class="php-var">$qb</span>-&gt;getRootAlias() . <span class="php-quote">'_'</span> . <span class="php-var">$column</span>;
+</span><span id="251" class="l"><a class="l" href="#251">251: </a>
+</span><span id="252" class="l"><a class="l" href="#252">252: </a>                <span class="php-var">$value</span> = (string) <span class="php-var">$row</span>[<span class="php-var">$mapping</span>];
+</span><span id="253" class="l"><a class="l" href="#253">253: </a>                <span class="php-var">$items</span>[<span class="php-var">$value</span>] = <span class="php-var">$value</span>;
+</span><span id="254" class="l"><a class="l" href="#254">254: </a>            } <span class="php-keyword1">elseif</span> (<span class="php-keyword2">is_callable</span>(<span class="php-var">$column</span>)) {
+</span><span id="255" class="l"><a class="l" href="#255">255: </a>                <span class="php-var">$value</span> = (string) <span class="php-var">$column</span>(<span class="php-var">$row</span>);
+</span><span id="256" class="l"><a class="l" href="#256">256: </a>                <span class="php-var">$items</span>[<span class="php-var">$value</span>] = <span class="php-var">$value</span>;
+</span><span id="257" class="l"><a class="l" href="#257">257: </a>
+</span><span id="258" class="l"><a class="l" href="#258">258: </a>            } <span class="php-keyword1">else</span> {
+</span><span id="259" class="l"><a class="l" href="#259">259: </a>                <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \InvalidArgumentException(<span class="php-quote">'Column of suggestion must be string or callback, '</span> . <span class="php-keyword2">gettype</span>(<span class="php-var">$column</span>) . <span class="php-quote">' given.'</span>);
+</span><span id="260" class="l"><a class="l" href="#260">260: </a>            }
+</span><span id="261" class="l"><a class="l" href="#261">261: </a>        }
+</span><span id="262" class="l"><a class="l" href="#262">262: </a>
+</span><span id="263" class="l"><a class="l" href="#263">263: </a>        <span class="php-var">$items</span> = <span class="php-keyword2">array_values</span>(<span class="php-var">$items</span>);
+</span><span id="264" class="l"><a class="l" href="#264">264: </a>        <span class="php-keyword2">sort</span>(<span class="php-var">$items</span>);
+</span><span id="265" class="l"><a class="l" href="#265">265: </a>
+</span><span id="266" class="l"><a class="l" href="#266">266: </a>        <span class="php-keyword1">return</span> <span class="php-var">$items</span>;
+</span><span id="267" class="l"><a class="l" href="#267">267: </a>    }
+</span><span id="268" class="l"><a class="l" href="#268">268: </a>}
+</span><span id="269" class="l"><a class="l" href="#269">269: </a></span></code></pre>
 
 	<div id="footer">
-		Grido 1.0.0 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+		Grido 1.0.2 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
 	</div>
 </div>
 </div>
