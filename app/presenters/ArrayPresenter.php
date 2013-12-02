@@ -86,7 +86,8 @@ final class ArrayPresenter extends BasePresenter
     public function gridHrefRender(array $item, Nette\Utils\Html $el)
     {
         if ($item['last_login'] === NULL) {
-            $el->class[] = 'btn-danger';
+            $class = str_replace('btn-default ', '', implode(' ', $el->class));
+            $el->class = [$class . ' btn-danger'];
         }
 
         return $el;
