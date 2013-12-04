@@ -16,10 +16,12 @@
 
         success: function(payload)
         {
-            this.selector.trigger('success.ajax.grido', payload);
+            if (payload.grido) {
+                this.selector.trigger('success.ajax.grido', payload);
 
-            //scroll up after ajax update
-            $('html, body').animate({scrollTop: 0}, 400);
+                //scroll up after ajax update
+                $('html, body').animate({scrollTop: 0}, 400);
+            }
         }
     });
 
