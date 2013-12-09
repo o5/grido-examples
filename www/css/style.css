@@ -68,7 +68,7 @@ body {background: #FBFBFB url(../img/bg.jpg) 0 0 repeat}
 }
 
 .navbar .container {
-    margin-left: 50px;
+    margin-left: 0;
     max-width: 100%;
 }
 
@@ -87,7 +87,7 @@ th.checker input
 }
 
 .navbar-default {
-    z-index: 0;
+    z-index: 1;
     background-color: #fafafa;
     background-image: -moz-linear-gradient(top,#fff,#f2f2f2);
     background-image: -webkit-gradient(linear,0 0,0 100%,from(#fff),to(#f2f2f2));
@@ -111,4 +111,9 @@ select {text-align: center}
 
 .grido .filter textarea {
     height: 23px!important;
+}
+
+.grido .buttons {
+    z-index: 2;
+    position: relative;
 }

@@ -9,11 +9,12 @@
  * @depends:
  *      https://rawgithub.com/digitalBush/jquery.maskedinput/master/dist/jquery.maskedinput.js
  *      https://rawgithub.com/Aymkdn/Datepicker-for-Bootstrap/master/bootstrap-datepicker.js
- *      https://rawgithub.com/o5/bootstrap/master/js/bootstrap-typeahead.js
+ *      https://rawgithub.com/walmartlabs/typeahead.js/master/dist/typeahead.min.js
  *      https://rawgithub.com/cowboy/jquery-hashchange/master/jquery.ba-hashchange.min.js
  *      https://rawgithub.com/vojtech-dobes/nette.ajax.js/master/nette.ajax.js
  */
-;(function($, window, Grido, undefined) {
+;
+(function($, window, Grido, undefined) {
     /*jshint laxbreak: true, expr: true */
     "use strict";
 
@@ -40,44 +41,39 @@
     Grido.Grid.prototype.initSuggest = function()
     {
         if ($.fn.typeahead === undefined) {
-            console.error('Plugin "bootstrap-typeahead.js" is missing!');
+            console.error('Plugin "typeahead.js" is missing!');
             return;
         }
 
         var _this = this;
-        this.$element
-            .on('keyup', 'input.suggest', function(event) {
-                var key = event.keyCode || event.which;
-                if (key === 13) { //enter
-                    event.stopPropagation();
-                    event.preventDefault();
+        this.$element.find('input.suggest').each(function() {
 
-                    _this.sendFilterForm();
+            var limit = $(this).data('grido-suggest-limit'),
+                url = $(this).data('grido-suggest-handler'),
+                wildcard = $(this).data('grido-suggest-replacement');
+
+            $(this).typeahead({
+                limit: limit,
+                highlight: true,
+                remote: {
+                    url: url,
+                    wildcard: wildcard
                 }
-            })
-            .on('focus', 'input.suggest', function() {
-                $(this).typeahead({
-                    source: function (query, process) {
-                        if (!/\S/.test(query)) {
-                            return false;
-                        }
+            });
 
-                        var link = this.$element.data('grido-suggest-handler'),
-                            replacement = this.$element.data('grido-suggest-replacement');
+            $(this).on('typeahead:selected', function() {
+                _this.sendFilterForm();
+            });
+        });
 
-                        return $.get(link.replace(replacement, query), function (items) {
-                            //TODO local cache??
-                            process(items);
-                        }, "json");
-                    },
+        this.$element.on('keyup', 'input.suggest', function(event) {
+            var key = event.keyCode || event.which;
+            if (key === 13) { //enter
+                event.stopPropagation();
+                event.preventDefault();
 
-                    updater: function (item) {
-                        this.$element.val(item);
-                        _this.sendFilterForm();
-                    },
-
-                    autoSelect: false //improvement of original bootstrap-typeahead.js
-                });
+                _this.sendFilterForm();
+            }
         });
     };
 
