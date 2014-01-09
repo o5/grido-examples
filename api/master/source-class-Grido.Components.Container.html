@@ -8,7 +8,7 @@
 	<title>File Components/Container.php | Grido 1.0.2</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?3306536585"></script>
+	<script type="text/javascript" src="elementlist.js?1172242878"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido 1.0.2" href="/opensearch.xml" />
 
@@ -380,91 +380,101 @@
 </span><span id="259" class="l"><a class="l" href="#259">259: </a>    <span class="php-comment">/**
 </span></span><span id="260" class="l"><a class="l" href="#260">260: </a><span class="php-comment">     * @param string $name
 </span></span><span id="261" class="l"><a class="l" href="#261">261: </a><span class="php-comment">     * @param string $label
-</span></span><span id="262" class="l"><a class="l" href="#262">262: </a><span class="php-comment">     * @return Filters\Check
+</span></span><span id="262" class="l"><a class="l" href="#262">262: </a><span class="php-comment">     * @return Filters\DateRange
 </span></span><span id="263" class="l"><a class="l" href="#263">263: </a><span class="php-comment">     */</span>
-</span><span id="264" class="l"><a class="l" href="#264">264: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_addFilterCheck" href="#_addFilterCheck">addFilterCheck</a>(<span class="php-var">$name</span>, <span class="php-var">$label</span>)
+</span><span id="264" class="l"><a class="l" href="#264">264: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_addFilterDateRange" href="#_addFilterDateRange">addFilterDateRange</a>(<span class="php-var">$name</span>, <span class="php-var">$label</span>)
 </span><span id="265" class="l"><a class="l" href="#265">265: </a>    {
-</span><span id="266" class="l"><a class="l" href="#266">266: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> Filters\Check(<span class="php-var">$this</span>, <span class="php-var">$name</span>, <span class="php-var">$label</span>);
+</span><span id="266" class="l"><a class="l" href="#266">266: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> Filters\DateRange(<span class="php-var">$this</span>, <span class="php-var">$name</span>, <span class="php-var">$label</span>);
 </span><span id="267" class="l"><a class="l" href="#267">267: </a>    }
 </span><span id="268" class="l"><a class="l" href="#268">268: </a>
 </span><span id="269" class="l"><a class="l" href="#269">269: </a>    <span class="php-comment">/**
 </span></span><span id="270" class="l"><a class="l" href="#270">270: </a><span class="php-comment">     * @param string $name
 </span></span><span id="271" class="l"><a class="l" href="#271">271: </a><span class="php-comment">     * @param string $label
-</span></span><span id="272" class="l"><a class="l" href="#272">272: </a><span class="php-comment">     * @param array $items
-</span></span><span id="273" class="l"><a class="l" href="#273">273: </a><span class="php-comment">     * @return Filters\Select
-</span></span><span id="274" class="l"><a class="l" href="#274">274: </a><span class="php-comment">     */</span>
-</span><span id="275" class="l"><a class="l" href="#275">275: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_addFilterSelect" href="#_addFilterSelect">addFilterSelect</a>(<span class="php-var">$name</span>, <span class="php-var">$label</span>, <span class="php-keyword1">array</span> <span class="php-var">$items</span> = <span class="php-keyword1">NULL</span>)
-</span><span id="276" class="l"><a class="l" href="#276">276: </a>    {
-</span><span id="277" class="l"><a class="l" href="#277">277: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> Filters\Select(<span class="php-var">$this</span>, <span class="php-var">$name</span>, <span class="php-var">$label</span>, <span class="php-var">$items</span>);
-</span><span id="278" class="l"><a class="l" href="#278">278: </a>    }
-</span><span id="279" class="l"><a class="l" href="#279">279: </a>
-</span><span id="280" class="l"><a class="l" href="#280">280: </a>    <span class="php-comment">/**
-</span></span><span id="281" class="l"><a class="l" href="#281">281: </a><span class="php-comment">     * @param string $name
-</span></span><span id="282" class="l"><a class="l" href="#282">282: </a><span class="php-comment">     * @param string $label
-</span></span><span id="283" class="l"><a class="l" href="#283">283: </a><span class="php-comment">     * @return Filters\Number
+</span></span><span id="272" class="l"><a class="l" href="#272">272: </a><span class="php-comment">     * @return Filters\Check
+</span></span><span id="273" class="l"><a class="l" href="#273">273: </a><span class="php-comment">     */</span>
+</span><span id="274" class="l"><a class="l" href="#274">274: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_addFilterCheck" href="#_addFilterCheck">addFilterCheck</a>(<span class="php-var">$name</span>, <span class="php-var">$label</span>)
+</span><span id="275" class="l"><a class="l" href="#275">275: </a>    {
+</span><span id="276" class="l"><a class="l" href="#276">276: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> Filters\Check(<span class="php-var">$this</span>, <span class="php-var">$name</span>, <span class="php-var">$label</span>);
+</span><span id="277" class="l"><a class="l" href="#277">277: </a>    }
+</span><span id="278" class="l"><a class="l" href="#278">278: </a>
+</span><span id="279" class="l"><a class="l" href="#279">279: </a>    <span class="php-comment">/**
+</span></span><span id="280" class="l"><a class="l" href="#280">280: </a><span class="php-comment">     * @param string $name
+</span></span><span id="281" class="l"><a class="l" href="#281">281: </a><span class="php-comment">     * @param string $label
+</span></span><span id="282" class="l"><a class="l" href="#282">282: </a><span class="php-comment">     * @param array $items
+</span></span><span id="283" class="l"><a class="l" href="#283">283: </a><span class="php-comment">     * @return Filters\Select
 </span></span><span id="284" class="l"><a class="l" href="#284">284: </a><span class="php-comment">     */</span>
-</span><span id="285" class="l"><a class="l" href="#285">285: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_addFilterNumber" href="#_addFilterNumber">addFilterNumber</a>(<span class="php-var">$name</span>, <span class="php-var">$label</span>)
+</span><span id="285" class="l"><a class="l" href="#285">285: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_addFilterSelect" href="#_addFilterSelect">addFilterSelect</a>(<span class="php-var">$name</span>, <span class="php-var">$label</span>, <span class="php-keyword1">array</span> <span class="php-var">$items</span> = <span class="php-keyword1">NULL</span>)
 </span><span id="286" class="l"><a class="l" href="#286">286: </a>    {
-</span><span id="287" class="l"><a class="l" href="#287">287: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> Filters\Number(<span class="php-var">$this</span>, <span class="php-var">$name</span>, <span class="php-var">$label</span>);
+</span><span id="287" class="l"><a class="l" href="#287">287: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> Filters\Select(<span class="php-var">$this</span>, <span class="php-var">$name</span>, <span class="php-var">$label</span>, <span class="php-var">$items</span>);
 </span><span id="288" class="l"><a class="l" href="#288">288: </a>    }
 </span><span id="289" class="l"><a class="l" href="#289">289: </a>
 </span><span id="290" class="l"><a class="l" href="#290">290: </a>    <span class="php-comment">/**
 </span></span><span id="291" class="l"><a class="l" href="#291">291: </a><span class="php-comment">     * @param string $name
-</span></span><span id="292" class="l"><a class="l" href="#292">292: </a><span class="php-comment">     * @param \Nette\Forms\IControl $formControl
-</span></span><span id="293" class="l"><a class="l" href="#293">293: </a><span class="php-comment">     * @return Filters\Custom
+</span></span><span id="292" class="l"><a class="l" href="#292">292: </a><span class="php-comment">     * @param string $label
+</span></span><span id="293" class="l"><a class="l" href="#293">293: </a><span class="php-comment">     * @return Filters\Number
 </span></span><span id="294" class="l"><a class="l" href="#294">294: </a><span class="php-comment">     */</span>
-</span><span id="295" class="l"><a class="l" href="#295">295: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_addFilterCustom" href="#_addFilterCustom">addFilterCustom</a>(<span class="php-var">$name</span>, \Nette\Forms\IControl <span class="php-var">$formControl</span>)
+</span><span id="295" class="l"><a class="l" href="#295">295: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_addFilterNumber" href="#_addFilterNumber">addFilterNumber</a>(<span class="php-var">$name</span>, <span class="php-var">$label</span>)
 </span><span id="296" class="l"><a class="l" href="#296">296: </a>    {
-</span><span id="297" class="l"><a class="l" href="#297">297: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> Filters\Custom(<span class="php-var">$this</span>, <span class="php-var">$name</span>, <span class="php-keyword1">NULL</span>, <span class="php-var">$formControl</span>);
+</span><span id="297" class="l"><a class="l" href="#297">297: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> Filters\Number(<span class="php-var">$this</span>, <span class="php-var">$name</span>, <span class="php-var">$label</span>);
 </span><span id="298" class="l"><a class="l" href="#298">298: </a>    }
 </span><span id="299" class="l"><a class="l" href="#299">299: </a>
-</span><span id="300" class="l"><a class="l" href="#300">300: </a>    <span class="php-comment">/**********************************************************************************************/</span>
-</span><span id="301" class="l"><a class="l" href="#301">301: </a>
-</span><span id="302" class="l"><a class="l" href="#302">302: </a>    <span class="php-comment">/**
-</span></span><span id="303" class="l"><a class="l" href="#303">303: </a><span class="php-comment">     * @param string $name
-</span></span><span id="304" class="l"><a class="l" href="#304">304: </a><span class="php-comment">     * @param string $label
-</span></span><span id="305" class="l"><a class="l" href="#305">305: </a><span class="php-comment">     * @param string $destination
-</span></span><span id="306" class="l"><a class="l" href="#306">306: </a><span class="php-comment">     * @param array $args
-</span></span><span id="307" class="l"><a class="l" href="#307">307: </a><span class="php-comment">     * @return Actions\Href
-</span></span><span id="308" class="l"><a class="l" href="#308">308: </a><span class="php-comment">     */</span>
-</span><span id="309" class="l"><a class="l" href="#309">309: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_addActionHref" href="#_addActionHref">addActionHref</a>(<span class="php-var">$name</span>, <span class="php-var">$label</span>, <span class="php-var">$destination</span> = <span class="php-keyword1">NULL</span>, <span class="php-keyword1">array</span> <span class="php-var">$args</span> = <span class="php-keyword1">NULL</span>)
-</span><span id="310" class="l"><a class="l" href="#310">310: </a>    {
-</span><span id="311" class="l"><a class="l" href="#311">311: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> Actions\Href(<span class="php-var">$this</span>, <span class="php-var">$name</span>, <span class="php-var">$label</span>, <span class="php-var">$destination</span>, <span class="php-var">$args</span>);
-</span><span id="312" class="l"><a class="l" href="#312">312: </a>    }
-</span><span id="313" class="l"><a class="l" href="#313">313: </a>
-</span><span id="314" class="l"><a class="l" href="#314">314: </a>    <span class="php-comment">/**
-</span></span><span id="315" class="l"><a class="l" href="#315">315: </a><span class="php-comment">     * @param string $name
-</span></span><span id="316" class="l"><a class="l" href="#316">316: </a><span class="php-comment">     * @param string $label
-</span></span><span id="317" class="l"><a class="l" href="#317">317: </a><span class="php-comment">     * @param callback $onClick
-</span></span><span id="318" class="l"><a class="l" href="#318">318: </a><span class="php-comment">     * @return Actions\Event
-</span></span><span id="319" class="l"><a class="l" href="#319">319: </a><span class="php-comment">     */</span>
-</span><span id="320" class="l"><a class="l" href="#320">320: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_addActionEvent" href="#_addActionEvent">addActionEvent</a>(<span class="php-var">$name</span>, <span class="php-var">$label</span>, <span class="php-var">$onClick</span> = <span class="php-keyword1">NULL</span>)
-</span><span id="321" class="l"><a class="l" href="#321">321: </a>    {
-</span><span id="322" class="l"><a class="l" href="#322">322: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> Actions\Event(<span class="php-var">$this</span>, <span class="php-var">$name</span>, <span class="php-var">$label</span>, <span class="php-var">$onClick</span>);
-</span><span id="323" class="l"><a class="l" href="#323">323: </a>    }
-</span><span id="324" class="l"><a class="l" href="#324">324: </a>
-</span><span id="325" class="l"><a class="l" href="#325">325: </a>    <span class="php-comment">/**********************************************************************************************/</span>
-</span><span id="326" class="l"><a class="l" href="#326">326: </a>
-</span><span id="327" class="l"><a class="l" href="#327">327: </a>    <span class="php-comment">/**
-</span></span><span id="328" class="l"><a class="l" href="#328">328: </a><span class="php-comment">     * @param array $operations
-</span></span><span id="329" class="l"><a class="l" href="#329">329: </a><span class="php-comment">     * @param callback $onSubmit - callback after operation submit
-</span></span><span id="330" class="l"><a class="l" href="#330">330: </a><span class="php-comment">     * @return Operation
-</span></span><span id="331" class="l"><a class="l" href="#331">331: </a><span class="php-comment">     */</span>
-</span><span id="332" class="l"><a class="l" href="#332">332: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setOperation" href="#_setOperation">setOperation</a>(<span class="php-keyword1">array</span> <span class="php-var">$operations</span>, <span class="php-var">$onSubmit</span>)
-</span><span id="333" class="l"><a class="l" href="#333">333: </a>    {
-</span><span id="334" class="l"><a class="l" href="#334">334: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> Operation(<span class="php-var">$this</span>, <span class="php-var">$operations</span>, <span class="php-var">$onSubmit</span>);
-</span><span id="335" class="l"><a class="l" href="#335">335: </a>    }
+</span><span id="300" class="l"><a class="l" href="#300">300: </a>    <span class="php-comment">/**
+</span></span><span id="301" class="l"><a class="l" href="#301">301: </a><span class="php-comment">     * @param string $name
+</span></span><span id="302" class="l"><a class="l" href="#302">302: </a><span class="php-comment">     * @param \Nette\Forms\IControl $formControl
+</span></span><span id="303" class="l"><a class="l" href="#303">303: </a><span class="php-comment">     * @return Filters\Custom
+</span></span><span id="304" class="l"><a class="l" href="#304">304: </a><span class="php-comment">     */</span>
+</span><span id="305" class="l"><a class="l" href="#305">305: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_addFilterCustom" href="#_addFilterCustom">addFilterCustom</a>(<span class="php-var">$name</span>, \Nette\Forms\IControl <span class="php-var">$formControl</span>)
+</span><span id="306" class="l"><a class="l" href="#306">306: </a>    {
+</span><span id="307" class="l"><a class="l" href="#307">307: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> Filters\Custom(<span class="php-var">$this</span>, <span class="php-var">$name</span>, <span class="php-keyword1">NULL</span>, <span class="php-var">$formControl</span>);
+</span><span id="308" class="l"><a class="l" href="#308">308: </a>    }
+</span><span id="309" class="l"><a class="l" href="#309">309: </a>
+</span><span id="310" class="l"><a class="l" href="#310">310: </a>    <span class="php-comment">/**********************************************************************************************/</span>
+</span><span id="311" class="l"><a class="l" href="#311">311: </a>
+</span><span id="312" class="l"><a class="l" href="#312">312: </a>    <span class="php-comment">/**
+</span></span><span id="313" class="l"><a class="l" href="#313">313: </a><span class="php-comment">     * @param string $name
+</span></span><span id="314" class="l"><a class="l" href="#314">314: </a><span class="php-comment">     * @param string $label
+</span></span><span id="315" class="l"><a class="l" href="#315">315: </a><span class="php-comment">     * @param string $destination
+</span></span><span id="316" class="l"><a class="l" href="#316">316: </a><span class="php-comment">     * @param array $args
+</span></span><span id="317" class="l"><a class="l" href="#317">317: </a><span class="php-comment">     * @return Actions\Href
+</span></span><span id="318" class="l"><a class="l" href="#318">318: </a><span class="php-comment">     */</span>
+</span><span id="319" class="l"><a class="l" href="#319">319: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_addActionHref" href="#_addActionHref">addActionHref</a>(<span class="php-var">$name</span>, <span class="php-var">$label</span>, <span class="php-var">$destination</span> = <span class="php-keyword1">NULL</span>, <span class="php-keyword1">array</span> <span class="php-var">$args</span> = <span class="php-keyword1">NULL</span>)
+</span><span id="320" class="l"><a class="l" href="#320">320: </a>    {
+</span><span id="321" class="l"><a class="l" href="#321">321: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> Actions\Href(<span class="php-var">$this</span>, <span class="php-var">$name</span>, <span class="php-var">$label</span>, <span class="php-var">$destination</span>, <span class="php-var">$args</span>);
+</span><span id="322" class="l"><a class="l" href="#322">322: </a>    }
+</span><span id="323" class="l"><a class="l" href="#323">323: </a>
+</span><span id="324" class="l"><a class="l" href="#324">324: </a>    <span class="php-comment">/**
+</span></span><span id="325" class="l"><a class="l" href="#325">325: </a><span class="php-comment">     * @param string $name
+</span></span><span id="326" class="l"><a class="l" href="#326">326: </a><span class="php-comment">     * @param string $label
+</span></span><span id="327" class="l"><a class="l" href="#327">327: </a><span class="php-comment">     * @param callback $onClick
+</span></span><span id="328" class="l"><a class="l" href="#328">328: </a><span class="php-comment">     * @return Actions\Event
+</span></span><span id="329" class="l"><a class="l" href="#329">329: </a><span class="php-comment">     */</span>
+</span><span id="330" class="l"><a class="l" href="#330">330: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_addActionEvent" href="#_addActionEvent">addActionEvent</a>(<span class="php-var">$name</span>, <span class="php-var">$label</span>, <span class="php-var">$onClick</span> = <span class="php-keyword1">NULL</span>)
+</span><span id="331" class="l"><a class="l" href="#331">331: </a>    {
+</span><span id="332" class="l"><a class="l" href="#332">332: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> Actions\Event(<span class="php-var">$this</span>, <span class="php-var">$name</span>, <span class="php-var">$label</span>, <span class="php-var">$onClick</span>);
+</span><span id="333" class="l"><a class="l" href="#333">333: </a>    }
+</span><span id="334" class="l"><a class="l" href="#334">334: </a>
+</span><span id="335" class="l"><a class="l" href="#335">335: </a>    <span class="php-comment">/**********************************************************************************************/</span>
 </span><span id="336" class="l"><a class="l" href="#336">336: </a>
 </span><span id="337" class="l"><a class="l" href="#337">337: </a>    <span class="php-comment">/**
-</span></span><span id="338" class="l"><a class="l" href="#338">338: </a><span class="php-comment">     * @param string $label of exporting file
-</span></span><span id="339" class="l"><a class="l" href="#339">339: </a><span class="php-comment">     * @return Export
-</span></span><span id="340" class="l"><a class="l" href="#340">340: </a><span class="php-comment">     */</span>
-</span><span id="341" class="l"><a class="l" href="#341">341: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setExport" href="#_setExport">setExport</a>(<span class="php-var">$label</span> = <span class="php-keyword1">NULL</span>)
-</span><span id="342" class="l"><a class="l" href="#342">342: </a>    {
-</span><span id="343" class="l"><a class="l" href="#343">343: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> Export(<span class="php-var">$this</span>, <span class="php-var">$label</span>);
-</span><span id="344" class="l"><a class="l" href="#344">344: </a>    }
-</span><span id="345" class="l"><a class="l" href="#345">345: </a>}
-</span><span id="346" class="l"><a class="l" href="#346">346: </a></span></code></pre>
+</span></span><span id="338" class="l"><a class="l" href="#338">338: </a><span class="php-comment">     * @param array $operations
+</span></span><span id="339" class="l"><a class="l" href="#339">339: </a><span class="php-comment">     * @param callback $onSubmit - callback after operation submit
+</span></span><span id="340" class="l"><a class="l" href="#340">340: </a><span class="php-comment">     * @return Operation
+</span></span><span id="341" class="l"><a class="l" href="#341">341: </a><span class="php-comment">     */</span>
+</span><span id="342" class="l"><a class="l" href="#342">342: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setOperation" href="#_setOperation">setOperation</a>(<span class="php-keyword1">array</span> <span class="php-var">$operations</span>, <span class="php-var">$onSubmit</span>)
+</span><span id="343" class="l"><a class="l" href="#343">343: </a>    {
+</span><span id="344" class="l"><a class="l" href="#344">344: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> Operation(<span class="php-var">$this</span>, <span class="php-var">$operations</span>, <span class="php-var">$onSubmit</span>);
+</span><span id="345" class="l"><a class="l" href="#345">345: </a>    }
+</span><span id="346" class="l"><a class="l" href="#346">346: </a>
+</span><span id="347" class="l"><a class="l" href="#347">347: </a>    <span class="php-comment">/**
+</span></span><span id="348" class="l"><a class="l" href="#348">348: </a><span class="php-comment">     * @param string $label of exporting file
+</span></span><span id="349" class="l"><a class="l" href="#349">349: </a><span class="php-comment">     * @return Export
+</span></span><span id="350" class="l"><a class="l" href="#350">350: </a><span class="php-comment">     */</span>
+</span><span id="351" class="l"><a class="l" href="#351">351: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setExport" href="#_setExport">setExport</a>(<span class="php-var">$label</span> = <span class="php-keyword1">NULL</span>)
+</span><span id="352" class="l"><a class="l" href="#352">352: </a>    {
+</span><span id="353" class="l"><a class="l" href="#353">353: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> Export(<span class="php-var">$this</span>, <span class="php-var">$label</span>);
+</span><span id="354" class="l"><a class="l" href="#354">354: </a>    }
+</span><span id="355" class="l"><a class="l" href="#355">355: </a>}
+</span><span id="356" class="l"><a class="l" href="#356">356: </a></span></code></pre>
 
 	<div id="footer">
 		Grido 1.0.2 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>

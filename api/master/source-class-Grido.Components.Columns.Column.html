@@ -8,7 +8,7 @@
 	<title>File Components/Columns/Column.php | Grido 1.0.2</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?3306536585"></script>
+	<script type="text/javascript" src="elementlist.js?1172242878"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido 1.0.2" href="/opensearch.xml" />
 
@@ -468,40 +468,48 @@
 </span><span id="346" class="l"><a class="l" href="#346">346: </a>    }
 </span><span id="347" class="l"><a class="l" href="#347">347: </a>
 </span><span id="348" class="l"><a class="l" href="#348">348: </a>    <span class="php-comment">/**
-</span></span><span id="349" class="l"><a class="l" href="#349">349: </a><span class="php-comment">     * @return \Grido\Components\Filters\Check
+</span></span><span id="349" class="l"><a class="l" href="#349">349: </a><span class="php-comment">     * @return \Grido\Components\Filters\DateRange
 </span></span><span id="350" class="l"><a class="l" href="#350">350: </a><span class="php-comment">     */</span>
-</span><span id="351" class="l"><a class="l" href="#351">351: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setFilterCheck" href="#_setFilterCheck">setFilterCheck</a>()
+</span><span id="351" class="l"><a class="l" href="#351">351: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setFilterDateRange" href="#_setFilterDateRange">setFilterDateRange</a>()
 </span><span id="352" class="l"><a class="l" href="#352">352: </a>    {
-</span><span id="353" class="l"><a class="l" href="#353">353: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;grid-&gt;addFilterCheck(<span class="php-var">$this</span>-&gt;getName(), <span class="php-var">$this</span>-&gt;label);
+</span><span id="353" class="l"><a class="l" href="#353">353: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;grid-&gt;addFilterDateRange(<span class="php-var">$this</span>-&gt;getName(), <span class="php-var">$this</span>-&gt;label);
 </span><span id="354" class="l"><a class="l" href="#354">354: </a>    }
 </span><span id="355" class="l"><a class="l" href="#355">355: </a>
 </span><span id="356" class="l"><a class="l" href="#356">356: </a>    <span class="php-comment">/**
-</span></span><span id="357" class="l"><a class="l" href="#357">357: </a><span class="php-comment">     * @param array $items
-</span></span><span id="358" class="l"><a class="l" href="#358">358: </a><span class="php-comment">     * @return \Grido\Components\Filters\Select
-</span></span><span id="359" class="l"><a class="l" href="#359">359: </a><span class="php-comment">     */</span>
-</span><span id="360" class="l"><a class="l" href="#360">360: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setFilterSelect" href="#_setFilterSelect">setFilterSelect</a>(<span class="php-keyword1">array</span> <span class="php-var">$items</span> = <span class="php-keyword1">NULL</span>)
-</span><span id="361" class="l"><a class="l" href="#361">361: </a>    {
-</span><span id="362" class="l"><a class="l" href="#362">362: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;grid-&gt;addFilterSelect(<span class="php-var">$this</span>-&gt;getName(), <span class="php-var">$this</span>-&gt;label, <span class="php-var">$items</span>);
-</span><span id="363" class="l"><a class="l" href="#363">363: </a>    }
-</span><span id="364" class="l"><a class="l" href="#364">364: </a>
-</span><span id="365" class="l"><a class="l" href="#365">365: </a>    <span class="php-comment">/**
-</span></span><span id="366" class="l"><a class="l" href="#366">366: </a><span class="php-comment">     * @return \Grido\Components\Filters\Number
+</span></span><span id="357" class="l"><a class="l" href="#357">357: </a><span class="php-comment">     * @return \Grido\Components\Filters\Check
+</span></span><span id="358" class="l"><a class="l" href="#358">358: </a><span class="php-comment">     */</span>
+</span><span id="359" class="l"><a class="l" href="#359">359: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setFilterCheck" href="#_setFilterCheck">setFilterCheck</a>()
+</span><span id="360" class="l"><a class="l" href="#360">360: </a>    {
+</span><span id="361" class="l"><a class="l" href="#361">361: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;grid-&gt;addFilterCheck(<span class="php-var">$this</span>-&gt;getName(), <span class="php-var">$this</span>-&gt;label);
+</span><span id="362" class="l"><a class="l" href="#362">362: </a>    }
+</span><span id="363" class="l"><a class="l" href="#363">363: </a>
+</span><span id="364" class="l"><a class="l" href="#364">364: </a>    <span class="php-comment">/**
+</span></span><span id="365" class="l"><a class="l" href="#365">365: </a><span class="php-comment">     * @param array $items
+</span></span><span id="366" class="l"><a class="l" href="#366">366: </a><span class="php-comment">     * @return \Grido\Components\Filters\Select
 </span></span><span id="367" class="l"><a class="l" href="#367">367: </a><span class="php-comment">     */</span>
-</span><span id="368" class="l"><a class="l" href="#368">368: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setFilterNumber" href="#_setFilterNumber">setFilterNumber</a>()
+</span><span id="368" class="l"><a class="l" href="#368">368: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setFilterSelect" href="#_setFilterSelect">setFilterSelect</a>(<span class="php-keyword1">array</span> <span class="php-var">$items</span> = <span class="php-keyword1">NULL</span>)
 </span><span id="369" class="l"><a class="l" href="#369">369: </a>    {
-</span><span id="370" class="l"><a class="l" href="#370">370: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;grid-&gt;addFilterNumber(<span class="php-var">$this</span>-&gt;getName(), <span class="php-var">$this</span>-&gt;label);
+</span><span id="370" class="l"><a class="l" href="#370">370: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;grid-&gt;addFilterSelect(<span class="php-var">$this</span>-&gt;getName(), <span class="php-var">$this</span>-&gt;label, <span class="php-var">$items</span>);
 </span><span id="371" class="l"><a class="l" href="#371">371: </a>    }
 </span><span id="372" class="l"><a class="l" href="#372">372: </a>
 </span><span id="373" class="l"><a class="l" href="#373">373: </a>    <span class="php-comment">/**
-</span></span><span id="374" class="l"><a class="l" href="#374">374: </a><span class="php-comment">     * @param \Nette\Forms\IControl $formControl
-</span></span><span id="375" class="l"><a class="l" href="#375">375: </a><span class="php-comment">     * @return \Grido\Components\Filters\Custom
-</span></span><span id="376" class="l"><a class="l" href="#376">376: </a><span class="php-comment">     */</span>
-</span><span id="377" class="l"><a class="l" href="#377">377: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setFilterCustom" href="#_setFilterCustom">setFilterCustom</a>(\Nette\Forms\IControl <span class="php-var">$formControl</span>)
-</span><span id="378" class="l"><a class="l" href="#378">378: </a>    {
-</span><span id="379" class="l"><a class="l" href="#379">379: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;grid-&gt;addFilterCustom(<span class="php-var">$this</span>-&gt;getName(), <span class="php-var">$formControl</span>);
-</span><span id="380" class="l"><a class="l" href="#380">380: </a>    }
-</span><span id="381" class="l"><a class="l" href="#381">381: </a>}
-</span><span id="382" class="l"><a class="l" href="#382">382: </a></span></code></pre>
+</span></span><span id="374" class="l"><a class="l" href="#374">374: </a><span class="php-comment">     * @return \Grido\Components\Filters\Number
+</span></span><span id="375" class="l"><a class="l" href="#375">375: </a><span class="php-comment">     */</span>
+</span><span id="376" class="l"><a class="l" href="#376">376: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setFilterNumber" href="#_setFilterNumber">setFilterNumber</a>()
+</span><span id="377" class="l"><a class="l" href="#377">377: </a>    {
+</span><span id="378" class="l"><a class="l" href="#378">378: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;grid-&gt;addFilterNumber(<span class="php-var">$this</span>-&gt;getName(), <span class="php-var">$this</span>-&gt;label);
+</span><span id="379" class="l"><a class="l" href="#379">379: </a>    }
+</span><span id="380" class="l"><a class="l" href="#380">380: </a>
+</span><span id="381" class="l"><a class="l" href="#381">381: </a>    <span class="php-comment">/**
+</span></span><span id="382" class="l"><a class="l" href="#382">382: </a><span class="php-comment">     * @param \Nette\Forms\IControl $formControl
+</span></span><span id="383" class="l"><a class="l" href="#383">383: </a><span class="php-comment">     * @return \Grido\Components\Filters\Custom
+</span></span><span id="384" class="l"><a class="l" href="#384">384: </a><span class="php-comment">     */</span>
+</span><span id="385" class="l"><a class="l" href="#385">385: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_setFilterCustom" href="#_setFilterCustom">setFilterCustom</a>(\Nette\Forms\IControl <span class="php-var">$formControl</span>)
+</span><span id="386" class="l"><a class="l" href="#386">386: </a>    {
+</span><span id="387" class="l"><a class="l" href="#387">387: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;grid-&gt;addFilterCustom(<span class="php-var">$this</span>-&gt;getName(), <span class="php-var">$formControl</span>);
+</span><span id="388" class="l"><a class="l" href="#388">388: </a>    }
+</span><span id="389" class="l"><a class="l" href="#389">389: </a>}
+</span><span id="390" class="l"><a class="l" href="#390">390: </a></span></code></pre>
 
 	<div id="footer">
 		Grido 1.0.2 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>

@@ -7,7 +7,7 @@
 	<title>Class Grido\Components\Filters\Text | Grido 1.0.2</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?3306536585"></script>
+	<script type="text/javascript" src="elementlist.js?1172242878"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido 1.0.2" href="/opensearch.xml" />
 
@@ -66,6 +66,7 @@
 				<li><a href="class-Grido.Components.Filters.Condition.html">Condition</a></li>
 				<li><a href="class-Grido.Components.Filters.Custom.html">Custom</a></li>
 				<li><a href="class-Grido.Components.Filters.Date.html">Date</a></li>
+				<li><a href="class-Grido.Components.Filters.DateRange.html">DateRange</a></li>
 				<li><a href="class-Grido.Components.Filters.Filter.html">Filter</a></li>
 				<li><a href="class-Grido.Components.Filters.Number.html">Number</a></li>
 				<li><a href="class-Grido.Components.Filters.Select.html">Select</a></li>
@@ -165,6 +166,10 @@ Nette\Application\UI\PresenterComponent
 			<a href="class-Grido.Components.Filters.Number.html">Grido\Components\Filters\Number</a>
 	</div>
 
+	<div>
+		<h4>Indirect known subclasses</h4>
+			<a href="class-Grido.Components.Filters.DateRange.html">Grido\Components\Filters\DateRange</a>
+	</div>
 
 
 
@@ -178,7 +183,7 @@ Nette\Application\UI\PresenterComponent
 
 				<b>Author:</b>
 				Petr Bugyík<br />
-		<b>Located at</b> <a href="source-class-Grido.Components.Filters.Text.html#14-143" title="Go to source code">Components/Filters/Text.php</a><br />
+		<b>Located at</b> <a href="source-class-Grido.Components.Filters.Text.html#14-165" title="Go to source code">Components/Filters/Text.php</a><br />
 	</div>
 
 
@@ -196,7 +201,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setSuggestion">#</a>
-		<code><a href="source-class-Grido.Components.Filters.Text.html#41-65" title="Go to source code">setSuggestion</a>( <span>mixed <var>$column</var> = <span class="php-keyword1">NULL</span></span> )</code>
+		<code><a href="source-class-Grido.Components.Filters.Text.html#44-69" title="Go to source code">setSuggestion</a>( <span>mixed <var>$column</var> = <span class="php-keyword1">NULL</span></span> )</code>
 
 		<div class="description short">
 			
@@ -238,7 +243,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setSuggestionLimit">#</a>
-		<code><a href="source-class-Grido.Components.Filters.Text.html#67-76" title="Go to source code">setSuggestionLimit</a>( <span>integer <var>$limit</var></span> )</code>
+		<code><a href="source-class-Grido.Components.Filters.Text.html#71-80" title="Go to source code">setSuggestionLimit</a>( <span>integer <var>$limit</var></span> )</code>
 
 		<div class="description short">
 			
@@ -280,7 +285,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setSuggestionCallback">#</a>
-		<code><a href="source-class-Grido.Components.Filters.Text.html#78-87" title="Go to source code">setSuggestionCallback</a>( <span>callable <var>$callback</var></span> )</code>
+		<code><a href="source-class-Grido.Components.Filters.Text.html#82-91" title="Go to source code">setSuggestionCallback</a>( <span>callable <var>$callback</var></span> )</code>
 
 		<div class="description short">
 			
@@ -311,6 +316,39 @@ Nette\Application\UI\PresenterComponent
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="getSuggestionLimit" id="_getSuggestionLimit">
+
+		<td class="attributes"><code>
+			 public 
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getSuggestionLimit">#</a>
+		<code><a href="source-class-Grido.Components.Filters.Text.html#95-101" title="Go to source code">getSuggestionLimit</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="getFormControl" id="_getFormControl">
 
 		<td class="attributes"><code>
@@ -322,7 +360,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getFormControl">#</a>
-		<code><a href="source-class-Grido.Components.Filters.Text.html#133-142" title="Go to source code">getFormControl</a>( )</code>
+		<code><a href="source-class-Grido.Components.Filters.Text.html#155-164" title="Go to source code">getFormControl</a>( )</code>
 
 		<div class="description short">
 			
@@ -405,7 +443,7 @@ Nette\Application\UI\PresenterComponent
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Filters.Text.html#23-24" title="Go to source code"><var>$condition</var></a>
+				<a href="source-class-Grido.Components.Filters.Text.html#26-27" title="Go to source code"><var>$condition</var></a>
 		</td>
 		<td class="value"><code><span class="php-quote">'LIKE ?'</span></code></td>
 		<td class="description"><div>
@@ -428,7 +466,7 @@ Nette\Application\UI\PresenterComponent
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Filters.Text.html#26-27" title="Go to source code"><var>$formatValue</var></a>
+				<a href="source-class-Grido.Components.Filters.Text.html#29-30" title="Go to source code"><var>$formatValue</var></a>
 		</td>
 		<td class="value"><code><span class="php-quote">'%%value%'</span></code></td>
 		<td class="description"><div>
@@ -451,7 +489,7 @@ Nette\Application\UI\PresenterComponent
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Filters.Text.html#29-30" title="Go to source code"><var>$suggestion</var></a>
+				<a href="source-class-Grido.Components.Filters.Text.html#32-33" title="Go to source code"><var>$suggestion</var></a>
 		</td>
 		<td class="value"><code><span class="php-keyword1">FALSE</span></code></td>
 		<td class="description"><div>
@@ -474,7 +512,7 @@ Nette\Application\UI\PresenterComponent
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Filters.Text.html#32-33" title="Go to source code"><var>$suggestionColumn</var></a>
+				<a href="source-class-Grido.Components.Filters.Text.html#35-36" title="Go to source code"><var>$suggestionColumn</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -497,9 +535,9 @@ Nette\Application\UI\PresenterComponent
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Filters.Text.html#35-36" title="Go to source code"><var>$suggestionLimit</var></a>
+				<a href="source-class-Grido.Components.Filters.Text.html#38-39" title="Go to source code"><var>$suggestionLimit</var></a>
 		</td>
-		<td class="value"><code><span class="php-num">50</span></code></td>
+		<td class="value"><code><span class="php-num">10</span></code></td>
 		<td class="description"><div>
 			<a href="#$suggestionLimit" class="anchor">#</a>
 
@@ -520,7 +558,7 @@ Nette\Application\UI\PresenterComponent
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Filters.Text.html#38-39" title="Go to source code"><var>$suggestionCallback</var></a>
+				<a href="source-class-Grido.Components.Filters.Text.html#41-42" title="Go to source code"><var>$suggestionCallback</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -564,6 +602,53 @@ Nette\Application\UI\PresenterComponent
 	</table>
 
 
+	<table class="summary" id="magicProperties">
+	<caption>Magic properties summary</caption>
+	<tr data-order="suggestionLimit" id="m$suggestionLimit">
+		<td class="attributes"><code>
+			public  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Components.Filters.Text.html#21" title="Go to source code"><var>$suggestionLimit</var></a>
+		</td>
+		<td class="description"><div>
+			<a href="#m$suggestionLimit" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="suggestionCallback" id="m$suggestionCallback">
+		<td class="attributes"><code>
+			public  write-only
+			callable
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Components.Filters.Text.html#22" title="Go to source code"><var>$suggestionCallback</var></a>
+		</td>
+		<td class="description"><div>
+			<a href="#m$suggestionCallback" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
 
 	<table class="summary inherited">
 	<caption>Magic properties inherited from <a href="class-Grido.Components.Filters.Filter.html#properties">Grido\Components\Filters\Filter</a></caption>
