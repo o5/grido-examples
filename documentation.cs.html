@@ -60,14 +60,6 @@
             přizpůsobení</strong>.
     </p>
 
-    <p class="caution">Samotný grid má závislost pouze na Nette, ale
-        odkazované demo obsahuje klientský skript
-        <a href="https://raw.github.com/o5/grido-sandbox/master/www/js/jquery.grido.js">jquery.grido.js</a>,
-        který je spravován mimo hlavní repozitář. Veškeré jeho závislosti jsou uvedené v tomto souboru.
-        Demo také využívá části frameworku
-        <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.
-    </p>
-
     <h3 id="instalace">Instalace</h3>
 
     <p>Komponentu si stáhněte a rozbalte do projektu, nebo nainstalujte pomocí <a href="http://doc.nette.org/cs/composer">Composeru</a>.</p>
@@ -75,20 +67,24 @@
 <pre><code>{
     "require":
     {
-        "php" : ">=5.3.2",
-        "nette/nette": "2.0.*",
-        "o5/grido": "dev-master"
+        "php" : ">=5.3",
+        "nette/nette": "~2.0",
+        "o5/grido": "~1.0"
     }
 }</code></pre>
 
     <h3 id="pouziti">Použití</h3>
 
-    <p>Grid vytvoříme továrničkou na komponenty, nastavíme model…</p>
+    <p>Grid vytvoříme továrničkou na komponenty, nastavíme model. Grido aktuálně podporuje tyto datasources: <strong>Nette Database</strong>, <strong>Dibi</strong>, <strong>Doctrine</strong> a <strong>pole</strong>.</p>
 
 <pre><code>protected function createComponentGrid($name)
 {
     $grid = new Grido\Grid($this, $name);
-    $grid->setModel($this->context->database->table('user'));
+    $grid->setModel(array(
+        array('name' => 'Lucie', 'gender' => 'female'),
+        array('name' => 'Petra', 'gender' => 'female'),
+        array('name' => 'Lenka', 'gender' => 'female'),
+));
 }</code></pre>
 
     <h3 id="settery-gridu">Settery gridu</h3>
@@ -108,9 +104,12 @@
         <tr>
             <td>setModel</td>
 
-            <td>model implementující rozhraní IDataSource nebo datasource objekt
-                <a href="http://api.dibiphp.com/2.0/DibiFluent.html">DibiFluent</a>, <br>
-                <a href="http://api.nette.org/2.0/Nette.Database.Table.Selection.html">Nette\Da­tabase\Table\Se­lection</a></td>
+            <td>model implementující rozhraní IDataSource nebo
+                <a href="http://api.dibiphp.com/2.0/DibiFluent.html">DibiFluent</a>,
+                <a href="http://api.nette.org/2.0/Nette.Database.Table.Selection.html">Nette\Database\Table\Selection</a>,
+                <a href="http://docs.doctrine-project.org/projects/doctrine-mongodb-odm/en/latest/reference/query-builder-api.html">Doctrine\ORM\QueryBuilder</a>,
+                <a href="http://cz1.php.net/manual/en/language.types.array.php">Array</a>
+            </td>
 
             <td> </td>
         </tr>
@@ -245,7 +244,7 @@
         </tr>
 
         <tr>
-            <td>getOperations</td>
+            <td>getOperation</td>
 
             <td>vrátí operace</td>
         </tr>
@@ -323,41 +322,33 @@ $grid->model->callback['limit'] = function($model, $args) {
 
     <h3 id="sloupce">Sloupce</h3>
 
-    <pre><code>$grid->addColumn('email', 'E-mail', Column::TYPE_MAIL);</code></pre>
+    <pre><code>$grid->addColumnText('email', 'E-mail');</code></pre>
 
-    <p>První parametr reprezentuje název sloupce v datasource, následuje popisek
-        a typ vykreslení. Typ je název třídy, který se má použít (lze uvést
-        vlastní typ sloupce).</p>
+    <p>První parametr reprezentuje název sloupce v datasource, následuje popisek.</p>
 
     <h4 id="sloupce-typy">Typy</h4>
 
     <table>
         <thead>
         <tr>
-            <th>Typ</th>
-
             <th>Metoda</th>
 
             <th>Popis</th>
 
-            <th>Výchozí</th>
+            <th>Info</th>
         </tr>
         </thead>
 
         <tbody>
         <tr>
-            <td>TYPE_TEXT</td>
-
             <td>addColumnText</td>
 
-            <td>výchozí typ, surový text</td>
+            <td>surový text</td>
 
             <td> </td>
         </tr>
 
         <tr>
-            <td>TYPE_MAIL</td>
-
             <td>addColumnMail</td>
 
             <td>naformátuje výstup na klikací mail</td>
@@ -366,8 +357,6 @@ $grid->model->callback['limit'] = function($model, $args) {
         </tr>
 
         <tr>
-            <td>TYPE_HREF</td>
-
             <td>addColumnHref</td>
 
             <td>naformátuje výstup na klikací odkaz</td>
@@ -376,8 +365,6 @@ $grid->model->callback['limit'] = function($model, $args) {
         </tr>
 
         <tr>
-            <td>TYPE_DATE</td>
-
             <td>addColumnDate</td>
 
             <td>naformátuje výstup na datum</td>
@@ -490,19 +477,15 @@ $grid->model->callback['limit'] = function($model, $args) {
 
     <h3 id="filtry">Filtry</h3>
 
-    <pre><code>$grid->addFilter('bir­thday', 'Birthday', Column::TYPE_DA­TE);</code></pre>
+    <pre><code>$grid->addFilterText('bir­thday', 'Birthday');</code></pre>
 
-    <p>První parametr reprezentuje název sloupce v datasource, následuje popisek
-        a typ filtru. Typ je název třídy, který se má použít (lze uvést vlastní
-        typ filtru).</p>
+    <p>První parametr reprezentuje název sloupce v datasource, následuje popisek.</p>
 
     <h4 id="filtry-typy">Typy</h4>
 
     <table>
         <thead>
         <tr>
-            <th>Typ</th>
-
             <th>Metoda</th>
 
             <th style="width: 140px">Popis</th>
@@ -513,19 +496,15 @@ $grid->model->callback['limit'] = function($model, $args) {
 
         <tbody>
         <tr>
-            <td>TYPE_TEXT</td>
-
             <td>addFilterText</td>
 
-            <td>výchozí typ</td>
+            <td>surový text</td>
 
-            <td>metoda <a href="http://o5.github.com/grido-sandbox/api/class-Grido.Components.Filters.Text.html#_setSuggestion">setSuggestion()</a> povolí našeptávání zohleďnující
+            <td>metoda <a href="http://o5.github.io/grido-sandbox/api/master/source-class-Grido.Components.Filters.Text.html#41-65">setSuggestion()</a> povolí našeptávání zohleďnující
                 aktuální filtr, parametrem lze uvést callback pro data</td>
         </tr>
 
         <tr>
-            <td>TYPE_DATE</td>
-
             <td>addFilterDate</td>
 
             <td>hledání dle data</td>
@@ -534,8 +513,14 @@ $grid->model->callback['limit'] = function($model, $args) {
         </tr>
 
         <tr>
-            <td>TYPE_CHECK</td>
+            <td>addFilterDateRange</td>
 
+            <td>hledání dle datového rozsahu</td>
+
+            <td> </td>
+        </tr>
+
+        <tr>
             <td>addFilterCheck</td>
 
             <td>checkbox filtr</td>
@@ -544,8 +529,6 @@ $grid->model->callback['limit'] = function($model, $args) {
         </tr>
 
         <tr>
-            <td>TYPE_SELECT</td>
-
             <td>addFilterSelect</td>
 
             <td>selectbox filtr</td>
@@ -554,8 +537,6 @@ $grid->model->callback['limit'] = function($model, $args) {
         </tr>
 
         <tr>
-            <td>TYPE_NUMBER</td>
-
             <td>addFilterNumber</td>
 
             <td>číselný typ</td>
@@ -584,7 +565,7 @@ $grid->model->callback['limit'] = function($model, $args) {
 
             <td>namapuje na sloupec v db, lze filtrovat pomocí více sloupců</td>
 
-            <td>setColumn('date', Filter::OPERA­TOR_OR)</td>
+            <td>setColumn('date', Grido\Components\Filters\Condition::OPERATOR_OR)</td>
         </tr>
 
         <tr>
@@ -613,24 +594,28 @@ $grid->model->callback['limit'] = function($model, $args) {
         </tbody>
     </table>
 
-<pre><code>//Filter::CON­DITION_CUSTOM
+<pre><code>//VLASTNÍ PODMÍNKY
+
+//pouze operátor
+$grid->addFilterCheck('male', 'Only male')
+    ->setCondition('<> ?');
+
+//výčet hodnot a přiřazení celé podmínky
 $list = array('' ⇒ '', 'publihed' ⇒ 'Published', 'deleted' ⇒ 'Deleted');
-$grid->addFilter('sta­tus', 'Status', Filter::TYPE_SE­LECT, $list)
-    ->setCondition(Fil­ter::CONDITION_CUS­TOM, array(
+$grid->addFilterSelect('status', 'Status', $list)
+    ->setCondition(array(
         '' ⇒ '1=1',
-        'publihed' ⇒ '[status] <> "deleted"',
-        'deleted' ⇒ '[status] = "deleted"'
+        'publihed' ⇒ array('status',  '<>', 'deleted'),
+        'deleted' ⇒ array('status',  '=', 'deleted')
 ));
 
-//Filter::CON­DITION_CALLBACK
-$grid->addFilter('type', 'Type')
-    ->setCondition(Fil­ter::CONDITION_CAL­LBACK, function($value){
-        return array('[status] =%s', $value);
-});
-
-//filtrování lze vyloučit
-$grid->addFilter('type', 'Type')
-    ->setCondition(Fil­ter::CONDITION_NOT_AP­PLY);</code></pre>
+//callback
+$grid->addFilterCheck('male', 'Only male')
+    ->setWhere(function($value, \Nette\Database\Table\Selection $connection) {
+        $value
+            ? $connection->where('column = ?' , 'male')
+            : NULL;
+});</code></pre>
 
 
     <h4 id="filtry-gettery">Gettery</h4>
@@ -657,13 +642,44 @@ $grid->addFilter('type', 'Type')
 
     <h3 id="akce">Akce</h3>
 
-    <pre><code>$grid->addAction('edit', 'Edit');</code></pre>
+    <pre><code>$grid->addActionHref('edit', 'Edit');</code></pre>
 
-    <p>První parametr je název akce, následuje popisek a typ akce. Poslední
-        parametry jsou $destination a $args které se předají metodě
-        <a href="http://api.nette.org/2.0/Nette.Application.UI.PresenterComponent.html#_link">$presenter->link()</a>,
-        pokud se nenastaví, jako $destination se použije první parametr.
+    <p>První parametr je název akce, následuje popisek.
     </p>
+
+    <h4 id="akce-typy">Typy</h4>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Metoda</th>
+
+            <th>Popis</th>
+
+            <th>Info</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>addActionHref</td>
+
+            <td>vygeneruje odkaz na action / handle</td>
+
+            <td> Parametry jsou $destination a $args které se předají metodě
+        <a href="http://api.nette.org/2.0/Nette.Application.UI.PresenterComponent.html#_link">$presenter->link()</a>,
+        pokud se nenastaví, jako $destination se použije první parametr. </td>
+        </tr>
+
+        <tr>
+            <td>addActionEvent</td>
+
+            <td>vygeneruje odkaz na vlastní callback</td>
+
+            <td>callback je potřeba uvést ve třetím parametru</td>
+        </tr>
+        </tbody>
+    </table>
 
     <h4 id="akce-settery">Settery</h4>
 
@@ -705,14 +721,6 @@ $grid->addFilter('type', 'Type')
         </tr>
 
         <tr>
-            <td>setCustomHref</td>
-
-            <td>callback pro vlastní vytvoření odkazu</td>
-
-            <td>function($item)<br>{return "/edit/{$item->id}"}</td>
-        </tr>
-
-        <tr>
             <td>setDisable</td>
 
             <td>callback pro ovlivnění vykreslení, když vrátí TRUE => nevykreslí se</td>
@@ -723,7 +731,7 @@ $grid->addFilter('type', 'Type')
         <tr>
             <td>setIcon</td>
 
-            <td>nastaví twitter bootstrap ikonu</td>
+            <td>nastaví idetifikátor ikony</td>
 
             <td>'pencil'</td>
         </tr>
@@ -762,7 +770,7 @@ $grid->addFilter('type', 'Type')
 
     <h3 id="operace">Operace</h3>
 
-    <pre><code>$grid->setOperation­s(array('dele­te' ⇒ 'Delete'), function($ope­ration, $id) { … } );</code></pre>
+    <pre><code>$grid->setOperation(array('delete' ⇒ 'Delete'), function($operation, $id) { … } );</code></pre>
 
     <p>První parametr je pole podporovaných akcí, druhý je handler volající se po vybrání akce.</p>
 
@@ -802,13 +810,19 @@ $grid->addFilter('type', 'Type')
 
     <h3 id="export">Export</h3>
 
-    <pre><code>$grid->setExporting('u­ser_export');</code></pre>
+    <pre><code>$grid->setExport('user_export');</code></pre>
 
     <p>První parametr je název exportovného souboru, pokud není nastaven použije se název gridu. Formát exportu je CSV. Export zohleďňuje aktuální filtr.
     </p>
     <hr>
 
     <h3 id="client-side-features">Client-side features</h3>
+
+    <p class="caution">Ve složce <a href="https://github.com/o5/grido/tree/master/client-side">client-side</a> lze najít základní css styl a javascriptový plugin
+        zastřešující klientskou část. Obojí lze nainstalovat přes <a href="http://bower.io/">Bower</a>, název balíčku je <strong>grido</strong>.
+        Grido.js lze pomocí prototypů snadno rozšířit a je možné tak použít např. vlastní plugin pro kalendářík. Příklad takového rozšíření lze najít
+        v <a href="https://github.com/o5/grido-sandbox/blob/master/www/js/grido.ext.js">zde</a> v demu.
+    </p>
 
     <ul>
         <li>ajax s kompletním stavem v URL</li>
@@ -818,12 +832,6 @@ $grid->addFilter('type', 'Type')
         <li>invertování výběru řádků</li>
 
         <li>prompt pro rychlé přeskočení na stranu</li>
-
-        <li>napovídání založené na <a href="http://twitter.github.com/bootstrap/javascript.html#typeahead">Twitter Bootstrap Typeahead</a></li>
-
-        <li><a href="https://github.com/Aymkdn/Datepicker-for-Bootstrap">Datepicker</a> pro Twitter Bootstrap</li>
-
-        <li>zadávání datumu založené na <a href="http://digitalbush.com/projects/masked-input-plugin/">Masked input plugin</a></li>
 
         <li>kontrola numerického vstupu</li>
 
