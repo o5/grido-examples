@@ -52,7 +52,7 @@
     <div id="main_content_wrap" class="outer">
     <section id="main_content" class="inner documentation">
 
-    <p class="perex">Grido (dále jen grid) je komponenta usnadňující
+    <p class="perex">Grido je komponenta usnadňující
         <strong>výpis dat</strong>, jejich <strong>formátování</strong>,
         <strong>řazení</strong>, <strong>stránkování</strong>,
         <strong>filtrování</strong>, <strong>hromadné akce</strong> a <strong>export
@@ -62,7 +62,7 @@
 
     <h3 id="instalace">Instalace</h3>
 
-    <p>Komponentu si stáhněte a rozbalte do projektu, nebo nainstalujte pomocí <a href="http://doc.nette.org/cs/composer">Composeru</a>.</p>
+    <p>Komponentu si stáhněte a rozbalte do projektu, nebo nainstalujte pomocí nástroje <a href="http://doc.nette.org/cs/composer">Composer</a>.</p>
 
 <pre><code>{
     "require":
@@ -75,7 +75,7 @@
 
     <h3 id="pouziti">Použití</h3>
 
-    <p>Grid vytvoříme továrničkou na komponenty, nastavíme model. Grido aktuálně podporuje tyto datasources: <strong>Nette Database</strong>, <strong>Dibi</strong>, <strong>Doctrine</strong> a <strong>pole</strong>.</p>
+    <p>Grido vytvoříme továrničkou na komponenty, nastavíme model. Grido aktuálně podporuje tyto datasources: <strong>Nette Database</strong>, <strong>Dibi</strong>, <strong>Doctrine</strong> a <strong>Array</strong>.</p>
 
 <pre><code>protected function createComponentGrid($name)
 {
@@ -84,7 +84,7 @@
         array('name' => 'Lucie', 'gender' => 'female'),
         array('name' => 'Petra', 'gender' => 'female'),
         array('name' => 'Lenka', 'gender' => 'female'),
-));
+    ));
 }</code></pre>
 
     <h3 id="settery-gridu">Settery gridu</h3>
@@ -104,7 +104,7 @@
         <tr>
             <td>setModel</td>
 
-            <td>model implementující rozhraní IDataSource nebo
+            <td>model implementující rozhraní <a href="http://o5.github.io/grido-sandbox/api/master/class-Grido.DataSources.IDataSource.html">IDataSource</a> nebo
                 <a href="http://api.dibiphp.com/2.0/DibiFluent.html">DibiFluent</a>,
                 <a href="http://api.nette.org/2.0/Nette.Database.Table.Selection.html">Nette\Database\Table\Selection</a>,
                 <a href="http://docs.doctrine-project.org/projects/doctrine-mongodb-odm/en/latest/reference/query-builder-api.html">Doctrine\ORM\QueryBuilder</a>,
@@ -333,7 +333,7 @@ $grid->model->callback['limit'] = function($model, $args) {
         <tr>
             <th>Metoda</th>
 
-            <th>Popis</th>
+            <th style="width: 285px">Popis</th>
 
             <th>Info</th>
         </tr>
@@ -369,8 +369,8 @@ $grid->model->callback['limit'] = function($model, $args) {
 
             <td>naformátuje výstup na datum</td>
 
-            <td>formát lze měnit pomocí setDateFormat(). Existující formáty:<br>
-                Date::FORMAT_DATE, Date::FORMAT_DA­TETIME, Date::FORMAT_TEXT
+            <td>formát lze měnit pomocí setDateFormat(). <br>Existující formáty:
+                Date::FORMAT_DATE, Date::FORMAT_DATETIME, Date::FORMAT_TEXT
             </td>
         </tr>
         </tbody>
@@ -488,7 +488,7 @@ $grid->model->callback['limit'] = function($model, $args) {
         <tr>
             <th>Metoda</th>
 
-            <th style="width: 140px">Popis</th>
+            <th style="width: 240px">Popis</th>
 
             <th>Info</th>
         </tr>
@@ -501,7 +501,7 @@ $grid->model->callback['limit'] = function($model, $args) {
             <td>surový text</td>
 
             <td>metoda <a href="http://o5.github.io/grido-sandbox/api/master/source-class-Grido.Components.Filters.Text.html#41-65">setSuggestion()</a> povolí našeptávání zohleďnující
-                aktuální filtr, parametrem lze uvést callback pro data</td>
+                aktuální filtr, parametrem lze uvést sloupec zdroje. Další metody upravující chování našeptávače jsou uvedené v API <a href="http://o5.github.io/grido-sandbox/api/master/class-Grido.Components.Filters.Text.html">zde</a>.</td>
         </tr>
 
         <tr>
@@ -533,7 +533,7 @@ $grid->model->callback['limit'] = function($model, $args) {
 
             <td>selectbox filtr</td>
 
-            <td>položky výběru se nastavují parametrem č.4</td>
+            <td>položky výběru se nastavují parametrem č.3</td>
         </tr>
 
         <tr>
@@ -565,13 +565,13 @@ $grid->model->callback['limit'] = function($model, $args) {
 
             <td>namapuje na sloupec v db, lze filtrovat pomocí více sloupců</td>
 
-            <td>setColumn('date', Grido\Components\Filters\Condition::OPERATOR_OR)</td>
+            <td>'date', Condition::OPERATOR_OR</td>
         </tr>
 
         <tr>
             <td>setCondition</td>
 
-            <td>vlastní sql podmínka, příklady níže</td>
+            <td>vlastní sql podmínka, příklady <a href="#filtry-vlastni-podminky">níže</a></td>
 
             <td> </td>
         </tr>
@@ -581,7 +581,7 @@ $grid->model->callback['limit'] = function($model, $args) {
 
             <td>formátování hodnoty při sestavování sql podmínky</td>
 
-            <td>setFormatValu­e('%value%')</td>
+            <td>'%value%'</td>
         </tr>
 
         <tr>
@@ -594,9 +594,8 @@ $grid->model->callback['limit'] = function($model, $args) {
         </tbody>
     </table>
 
-<pre><code>//VLASTNÍ PODMÍNKY
-
-//pouze operátor
+    <h4 id="filtry-vlastni-podminky">Vlastní podmínky</h4>
+<pre><code>//pouze operátor
 $grid->addFilterCheck('male', 'Only male')
     ->setCondition('<> ?');
 
@@ -604,7 +603,6 @@ $grid->addFilterCheck('male', 'Only male')
 $list = array('' ⇒ '', 'publihed' ⇒ 'Published', 'deleted' ⇒ 'Deleted');
 $grid->addFilterSelect('status', 'Status', $list)
     ->setCondition(array(
-        '' ⇒ '1=1',
         'publihed' ⇒ array('status',  '<>', 'deleted'),
         'deleted' ⇒ array('status',  '=', 'deleted')
 ));
@@ -821,7 +819,7 @@ $grid->addFilterCheck('male', 'Only male')
     <p class="caution">Ve složce <a href="https://github.com/o5/grido/tree/master/client-side">client-side</a> lze najít základní css styl a javascriptový plugin
         zastřešující klientskou část. Obojí lze nainstalovat přes <a href="http://bower.io/">Bower</a>, název balíčku je <strong>grido</strong>.
         Grido.js lze pomocí prototypů snadno rozšířit a je možné tak použít např. vlastní plugin pro kalendářík. Příklad takového rozšíření lze najít
-        v <a href="https://github.com/o5/grido-sandbox/blob/master/www/js/grido.ext.js">zde</a> v demu.
+        <a href="https://github.com/o5/grido-sandbox/blob/master/www/js/grido.ext.js">zde</a> v demu.
     </p>
 
     <ul>
@@ -852,7 +850,7 @@ $grid->addFilterCheck('male', 'Only male')
 
     <div id="footer_wrap" class="outer">
     <footer class="inner">
-        <p class="copyright">Copyright © 2013 <a target="_blank" href="http://petr.bugyik.cz">Petr Bugyík</a></p>
+        <p class="copyright">Copyright © 2014 <a target="_blank" href="http://petr.bugyik.cz">Petr Bugyík</a></p>
     </footer>
     </div>
     <script src="js/jquery.min.js"></script>
