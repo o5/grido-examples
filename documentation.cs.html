@@ -603,8 +603,8 @@ $grid->addFilterCheck('male', 'Only male')
 $list = array('' ⇒ '', 'publihed' ⇒ 'Published', 'deleted' ⇒ 'Deleted');
 $grid->addFilterSelect('status', 'Status', $list)
     ->setCondition(array(
-        'publihed' ⇒ array('status',  '<>', 'deleted'),
-        'deleted' ⇒ array('status',  '=', 'deleted')
+        'publihed' ⇒ array('status',  '<> ?', 'deleted'),
+        'deleted' ⇒ array('status',  '= ?', 'deleted')
 ));
 
 //callback
