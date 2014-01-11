@@ -5,12 +5,12 @@
 	<meta name="generator" content="ApiGen 2.8.0" />
 	<meta name="robots" content="noindex" />
 
-	<title>File Components/Filters/DateRange.php | Grido 1.0.2</title>
+	<title>File Components/Filters/DateRange.php | Grido @master</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
 	<script type="text/javascript" src="elementlist.js?1172242878"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
-	<link rel="search" type="application/opensearchdescription+xml" title="Grido 1.0.2" href="/opensearch.xml" />
+	<link rel="search" type="application/opensearchdescription+xml" title="Grido @master" href="/opensearch.xml" />
 
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
@@ -118,7 +118,7 @@
 		</ul>
 		<ul>
 			<li>
-				<a href="grido-1-0-2-api-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
+				<a href="grido-master-api-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
 			</li>
 		</ul>
 	</div>
@@ -147,13 +147,13 @@
 </span></span><span id="22" class="l"><a class="l" href="#22">22: </a><span class="php-comment"> */</span>
 </span><span id="23" class="l"><a class="l" href="#23">23: </a><span class="php-keyword1">class</span> <a id="DateRange" href="#DateRange">DateRange</a> <span class="php-keyword1">extends</span> <span class="php-keyword2">Date</span>
 </span><span id="24" class="l"><a class="l" href="#24">24: </a>{
-</span><span id="25" class="l"><a class="l" href="#25">25: </a>    <span class="php-keyword1">const</span> <a id="DEFAULT_CONDITION" href="#DEFAULT_CONDITION">DEFAULT_CONDITION</a> = <span class="php-quote">'BETWEEN ? AND ?'</span>;
-</span><span id="26" class="l"><a class="l" href="#26">26: </a>
-</span><span id="27" class="l"><a class="l" href="#27">27: </a>    <span class="php-comment">/** @var string */</span>
-</span><span id="28" class="l"><a class="l" href="#28">28: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$condition" href="#$condition">$condition</a></span> = self::DEFAULT_CONDITION;
-</span><span id="29" class="l"><a class="l" href="#29">29: </a>
-</span><span id="30" class="l"><a class="l" href="#30">30: </a>    <span class="php-comment">/** @var string */</span>
-</span><span id="31" class="l"><a class="l" href="#31">31: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$formatValue" href="#$formatValue">$formatValue</a></span>;
+</span><span id="25" class="l"><a class="l" href="#25">25: </a>    <span class="php-comment">/** @var string */</span>
+</span><span id="26" class="l"><a class="l" href="#26">26: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$condition" href="#$condition">$condition</a></span> = <span class="php-quote">'BETWEEN ? AND ?'</span>;
+</span><span id="27" class="l"><a class="l" href="#27">27: </a>
+</span><span id="28" class="l"><a class="l" href="#28">28: </a>    <span class="php-comment">/**
+</span></span><span id="29" class="l"><a class="l" href="#29">29: </a><span class="php-comment">     * @var string
+</span></span><span id="30" class="l"><a class="l" href="#30">30: </a><span class="php-comment">     */</span>
+</span><span id="31" class="l"><a class="l" href="#31">31: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$dateFormatOutput" href="#$dateFormatOutput">$dateFormatOutput</a></span> = <span class="php-quote">'Y-m-d'</span>;
 </span><span id="32" class="l"><a class="l" href="#32">32: </a>
 </span><span id="33" class="l"><a class="l" href="#33">33: </a>    <span class="php-comment">/**
 </span></span><span id="34" class="l"><a class="l" href="#34">34: </a><span class="php-comment">     * @var string
@@ -201,7 +201,7 @@
 </span></span><span id="76" class="l"><a class="l" href="#76">76: </a><span class="php-comment">     */</span>
 </span><span id="77" class="l"><a class="l" href="#77">77: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="___getCondition" href="#___getCondition">__getCondition</a>(<span class="php-var">$value</span>)
 </span><span id="78" class="l"><a class="l" href="#78">78: </a>    {
-</span><span id="79" class="l"><a class="l" href="#79">79: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;where === <span class="php-keyword1">NULL</span> &amp;&amp; <span class="php-var">$this</span>-&gt;condition == self::DEFAULT_CONDITION) {
+</span><span id="79" class="l"><a class="l" href="#79">79: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;where === <span class="php-keyword1">NULL</span> &amp;&amp; <span class="php-keyword2">is_string</span>(<span class="php-var">$this</span>-&gt;condition)) {
 </span><span id="80" class="l"><a class="l" href="#80">80: </a>            <span class="php-keyword1">list</span> (, <span class="php-var">$from</span>, <span class="php-var">$to</span>) = \Nette\Utils\Strings::match(<span class="php-var">$value</span>, <span class="php-var">$this</span>-&gt;mask);
 </span><span id="81" class="l"><a class="l" href="#81">81: </a>            <span class="php-var">$from</span> = \DateTime::createFromFormat(<span class="php-var">$this</span>-&gt;dateFormatInput, <span class="php-keyword2">trim</span>(<span class="php-var">$from</span>));
 </span><span id="82" class="l"><a class="l" href="#82">82: </a>            <span class="php-var">$to</span> = \DateTime::createFromFormat(<span class="php-var">$this</span>-&gt;dateFormatInput, <span class="php-keyword2">trim</span>(<span class="php-var">$to</span>));
@@ -221,7 +221,7 @@
 </span><span id="96" class="l"><a class="l" href="#96">96: </a></span></code></pre>
 
 	<div id="footer">
-		Grido 1.0.2 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+		Grido @master API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
 	</div>
 </div>
 </div>
