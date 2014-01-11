@@ -127,7 +127,7 @@
 
             <td>výchozí řazení</td>
 
-            <td>př.: array('column_name' ⇒ 'asc')</td>
+            <td>př.: array('column_name' ⇒ 'ASC')</td>
         </tr>
 
         <tr>
@@ -157,8 +157,8 @@
         <tr>
             <td>setFilterRenderType</td>
 
-            <td>nastaví vnitřní (Filter::RENDER_IN­NER) nebo vnější
-                (Filter::RENDER_O­UTER) vykreslení filtrů</td>
+            <td>nastaví vnitřní (Filter::RENDER_INNER) nebo vnější
+                (Filter::RENDER_OUTER) vykreslení filtrů</td>
 
             <td>vniřní, ale pokud grid obsahuje filtr, který nemá svůj sloupec,
                 použije se vnejší vykreslení (stejně tak, když filtr nemá definovanou akci)</td>
@@ -258,8 +258,7 @@
         <tr>
             <td>getTranslator</td>
 
-            <td>vrátí translátor (výchozí FileTranslator, př.:
-                $grid->translator->setLang('cs');)</td>
+            <td>vrátí translátor (výchozí FileTranslator, př.:$grid->translator->setLang('cs');)</td>
         </tr>
 
         <tr>
@@ -369,8 +368,8 @@ $grid->model->callback['limit'] = function($model, $args) {
 
             <td>naformátuje výstup na datum</td>
 
-            <td>formát lze měnit pomocí setDateFormat(). <br>Existující formáty:
-                Date::FORMAT_DATE, Date::FORMAT_DATETIME, Date::FORMAT_TEXT
+            <td>formát lze měnit pomocí setDateFormat(). <br>
+                Existující formáty: Date::FORMAT_DATE, Date::FORMAT_DATETIME, Date::FORMAT_TEXT
             </td>
         </tr>
         </tbody>
