@@ -19,19 +19,32 @@
 </head>
 
 <body>
-    <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon-wrapper right">
         <div class="github-fork-ribbon">
             <a class="no-ajax" href="https://github.com/o5/grido">Fork me on GitHub</a>
         </div>
     </div>
 
-    <div class="navbar navbar-inverse">
+    <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-inner">
             <ul class="nav">
                 <li><a href="index.html">Home</a></li>
                 <li class="active"><a href="documentation.cs.html">Documentation</a></li>
                 <li><a target="_blank" href="http://grido.bugyik.cz/example/">Live demo</a></li>
                 <li><a target="_blank" href="api/">API</a></li>
+            </ul>
+            <ul class="nav navbar-right">
+                <li class="paypal">
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
+                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                    </form>
+                </li>
+                <li>
+                    <a href="https://flattr.com/submit/auto?user_id=bugyik&url=http%3A%2F%2Fo5.github.io%2Fgrido-sandbox%2F" target="_blank"><img src="//api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"></a>
+                </li>
             </ul>
         </div>
     </div>
