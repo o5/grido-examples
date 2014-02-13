@@ -85,11 +85,10 @@ th.checker input
 }
 
 .navbar-default .dropdown-menu {
-    z-index: 0;
+    z-index: 3;
 }
 
 .navbar-default {
-    z-index: 1;
     background-color: #fafafa;
     background-image: -moz-linear-gradient(top,#fff,#f2f2f2);
     background-image: -webkit-gradient(linear,0 0,0 100%,from(#fff),to(#f2f2f2));
