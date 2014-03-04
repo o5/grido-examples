@@ -66,8 +66,8 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -1px;
 }
 
-#main_content_wrap h3 {
-    margin: 10px 0;
+.documentation h3, .documentation h4 {
+    padding: 55px 0 10px;
 }
 
 h1 {
@@ -414,7 +414,11 @@ Small Device Styles
   border-radius: 0!important;
 }
 .navbar-inner ul {
-  margin-left: 452px!important;
+  margin-left: 493px!important;
+}
+
+.navbar-inner ul.navbar-right {
+  margin-left: 400px!important;
 }
 
 .paypal form {

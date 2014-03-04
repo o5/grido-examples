@@ -48,8 +48,8 @@
 
 .github-fork-ribbon-wrapper {
   width: 159px;
-  height: 159px;
-  position: absolute;
+  height: 163px;
+  position: fixed;
   overflow: hidden;
   top: 0;
 }
