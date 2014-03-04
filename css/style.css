@@ -208,7 +208,10 @@ dl p {
 }
 
 table {
+  box-shadow: 0 0 10px rgba(0,0,0,.1);
   border: 1px solid #373737;
+  border-radius: 4px;
+  border-collapse: inherit!important;
   margin-bottom: 20px;
   text-align: left;
   width: 100%;
