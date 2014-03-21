@@ -415,20 +415,24 @@ Small Device Styles
   }
 
 }
-
 .navbar {
-  margin-bottom: 0!important;
+    background-color: #1b1b1b;
+    background-image: -moz-linear-gradient(top,#222,#111);
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#222),to(#111));
+    background-image: -webkit-linear-gradient(top,#222,#111);
+    background-image: -o-linear-gradient(top,#222,#111);
+    background-image: linear-gradient(to bottom,#222,#111);
+    background-repeat: repeat-x;
 }
 
 .navbar-inner {
-  border-radius: 0!important;
-}
-.navbar-inner ul {
-  margin-left: 493px!important;
+    width: 920px;
+    margin: 0 auto;
 }
 
-.navbar-inner ul.navbar-right {
-  margin-left: 400px!important;
+.navbar-right {
+    float: right!important;
+    margin: 0!important;
 }
 
 .paypal form {
