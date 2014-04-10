@@ -56,7 +56,7 @@ final class DibiPresenter extends BasePresenter
             ->setReplacement(array('MasterCard' => Html::el('b')->setText('MasterCard')))
             ->cellPrototype->class[] = 'center';
 
-        $grid->addColumnMail('emailaddress', 'Email')
+        $grid->addColumnEmail('emailaddress', 'Email')
             ->setSortable()
             ->setFilterText();
         $grid->getColumn('emailaddress')->cellPrototype->class[] = 'center';

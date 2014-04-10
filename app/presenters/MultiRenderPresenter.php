@@ -67,7 +67,7 @@ final class MultiRenderPresenter extends BasePresenter
             ->headerPrototype->class[] = 'center';
         $grid->getColumn('phone')->cellPrototype->class[] = 'center';
 
-        $grid->addColumnMail('email', 'Email')
+        $grid->addColumnEmail('email', 'Email')
             ->setColumn('emailaddress')
             ->setSortable()
             ->headerPrototype->class[] = 'center';
