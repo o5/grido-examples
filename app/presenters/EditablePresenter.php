@@ -1,31 +1,25 @@
 <?php
 
-use Grido\Components\Filters\Filter,
-    Nette\Utils\Html;
+use Nette\Utils\Html;
 
 /**
- * Doctrine example.
- * @link http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/index.html
+ * Editable example.
+ * @link http://doc.nette.org/en/database
  *
  * @package     Grido
  * @author      Petr Bugyík
  */
-final class DoctrinePresenter extends BasePresenter
+final class EditablePresenter extends BasePresenter
 {
-    /** @var \Kdyby\Doctrine\EntityManager @inject */
+    /** @var Nette\Database\Context @inject */
     public $database;
 
     protected function createComponentGrid($name)
     {
         $grid = new Grido\Grid($this, $name);
+        $grid->model = $this->database->table('user');
 
-        $repository = $this->database->getRepository('Entities\User');
-        $model = new \Grido\DataSources\Doctrine(
-            $repository->createQueryBuilder('a') // We need to create query builder with inner join.
-                ->addSelect('c')                 // This will produce less SQL queries with prefetch.
-                ->innerJoin('a.country', 'c'),
-            array('country' => 'c.title'));      // Map country column to the title of the Country entity
-        $grid->model = $model;
+        $grid->setEditableColumns();
 
         $grid->addColumnText('firstname', 'Firstname')
             ->setFilterText()
@@ -37,8 +31,13 @@ final class DoctrinePresenter extends BasePresenter
                 ->setSuggestion();
 
         $grid->addColumnText('gender', 'Gender')
+            ->setEditableControl(new Nette\Forms\Controls\SelectBox(NULL, ['male' => 'Male', 'female' => 'Female']))
+            ->setEditableCallback(function() {dump("kks");exit(1);})
+            ->setEditableValueCallback(function($row) {return $row->gender . 'HEJJJ';})
             ->setSortable()
             ->cellPrototype->class[] = 'center';
+
+        $grid->getColumn('gender')->getEditableControl()->setRequired('HEEEJ');
 
         $grid->addColumnDate('birthday', 'Birthday', Grido\Components\Columns\Date::FORMAT_TEXT)
             ->setSortable()
@@ -46,15 +45,14 @@ final class DoctrinePresenter extends BasePresenter
                 ->setCondition($this->gridBirthdayFilterCondition);
         $grid->getColumn('birthday')->cellPrototype->class[] = 'center';
 
-        $baseUri = $this->template->baseUri;
+        $templatePath = "{$this->context->parameters['appDir']}/templates/{$this->name}";
         $grid->addColumnText('country', 'Country')
+            ->disableEditable()
             ->setSortable()
-            ->setCustomRender(function($item) use($baseUri) {
-                $img = Html::el('img')->src("$baseUri/img/flags/$item->country_code.gif");
-                return "$img $item->country";
-            })
+            ->setCustomRender("$templatePath/grid.country.latte")
+            ->setCustomRenderExport($renderer)
             ->setFilterText()
-                ->setSuggestion();
+                ->setSuggestion(function($row) { return $row->country->title; });
 
         $grid->addColumnText('card', 'Card')
             ->setSortable()
@@ -98,6 +96,12 @@ final class DoctrinePresenter extends BasePresenter
             ->setConfirm(function($item) {
                 return "Are you sure you want to delete {$item->firstname} {$item->surname}?";
         });
+
+        $grid->addActionEvent('remove', 'Remove', function($id, $action) {
+            $this->context->ndb_sqlite->table('user')->where('id = ?', $id)->delete();
+            $action->grid->reload();
+        })  ->setConfirm('Are you sure?')
+           ->elementPrototype->class[] = 'ajax';
 
         $operation = array('print' => 'Print', 'delete' => 'Delete');
         $grid->setOperation($operation, $this->gridOperationsHandler)

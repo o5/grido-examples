@@ -11,10 +11,13 @@ use Nette\Utils\Html;
  */
 final class NetteDatabasePresenter extends BasePresenter
 {
+    /** @var Nette\Database\Context @inject */
+    public $database;
+
     protected function createComponentGrid($name)
     {
         $grid = new Grido\Grid($this, $name);
-        $grid->model = $this->context->ndb_sqlite->table('user');
+        $grid->model = $this->database->table('user');
 
         $grid->addColumnText('firstname', 'Firstname')
             ->setFilterText()

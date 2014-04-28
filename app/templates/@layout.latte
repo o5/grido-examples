@@ -12,13 +12,12 @@
         <!--[if IE]>
         <link rel="stylesheet" href="{$baseUri}/css/gh-fork-ribbon.ie.css{scache}">
         <![endif]-->
-
         <link rel="stylesheet" href="{$baseUri}/css/bootstrap.min.css">
         <link rel="stylesheet" href="{$baseUri}/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="{$baseUri}/css/datepicker.css">
         <link rel="stylesheet" href="{$baseUri}/css/typeahead.css">
         <link rel="stylesheet" href="{$baseUri}/css/style.css{scache}">
-        <link rel="stylesheet" href="https://rawgithub.com/o5/grido/1.0.3/client-side/grido.css">
+        <link rel="stylesheet" href="https://rawgithub.com/o5/grido/1.0.6/client-side/grido.css">
     </head>
     <body>
         <div id="content">
@@ -33,30 +32,17 @@
                                 Data sources <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
-                                <li n:class="$presenter->name == 'Dibi' && $presenter->action == 'default' ? 'active'">
-                                    <a n:href="Dibi:">
-                                        Dibi
-                                    </a>
-                                </li>
-                                <li n:class="$presenter->name == 'Dibi' && $presenter->action == 'cached' ? 'active'">
-                                    <a n:href="Dibi:cached">
-                                        Dibi - cached
-                                    </a>
-                                </li>
                                 <li n:class="$presenter->name == 'NetteDatabase' ? 'active'">
-                                    <a n:href="NetteDatabase:">
-                                        Nette\Database
-                                    </a>
+                                    <a n:href="NetteDatabase:">Nette\Database</a>
                                 </li>
-                                <li n:class="$presenter->name == 'Array' ? 'active'">
-                                    <a n:href="Array: filterRenderType => Grido\Components\Filters\Filter::RENDER_OUTER">
-                                        Array
-                                    </a>
+                                <li n:class="$presenter->name == 'Dibi' && $presenter->action == 'default' ? 'active'">
+                                    <a n:href="Dibi:">Dibi</a>
                                 </li>
                                 <li n:class="$presenter->name == 'Doctrine' ? 'active'">
-                                    <a n:href="Doctrine:">
-                                        Doctrine
-                                    </a>
+                                    <a n:href="Doctrine:">Doctrine</a>
+                                </li>
+                                <li n:class="$presenter->name == 'Array' ? 'active'">
+                                    <a n:href="Array: filterRenderType => Grido\Components\Filters\Filter::RENDER_OUTER">Array</a>
                                 </li>
                             </ul>
                         </li>
@@ -65,12 +51,12 @@
                                 Filter type <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
-                                <li n:if="$presenter->name != 'Array'" n:class="$presenter->parameter['filterRenderType'] == Grido\Components\Filters\Filter::RENDER_INNER ? 'active'">
+                                <li n:if="$presenter->name != 'Array'" n:class="$presenter->getParameter('filterRenderType') == Grido\Components\Filters\Filter::RENDER_INNER ? 'active'">
                                     <a n:href="this filterRenderType => Grido\Components\Filters\Filter::RENDER_INNER">
                                         Inner
                                     </a>
                                 </li>
-                                <li n:class="$presenter->parameter['filterRenderType'] == Grido\Components\Filters\Filter::RENDER_OUTER ? 'active'">
+                                <li n:class="$presenter->getParameter('filterRenderType') == Grido\Components\Filters\Filter::RENDER_OUTER ? 'active'">
                                     <a n:href="this filterRenderType => Grido\Components\Filters\Filter::RENDER_OUTER">
                                         Outer
                                     </a>
@@ -82,16 +68,16 @@
                                 Ajax state <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
-                                <li n:class="$presenter->parameter['ajax'] == 'on' ? 'active'">
+                                <li n:class="$presenter->getParameter('ajax') == 'on' ? 'active'">
                                     <a n:href="this ajax => on">ON</a>
                                 </li>
-                                <li n:class="$presenter->parameter['ajax'] == 'ajax-off' ? 'active'">
+                                <li n:class="$presenter->getParameter('ajax') == 'ajax-off' ? 'active'">
                                     <a n:href="this ajax => ajax-off">OFF</a>
                                 </li>
                             </ul>
                         </li>
                         <li n:class="$presenter->name == 'MultiRender' ? 'active'">
-                            <a n:href="multiRender:">Multi render</b></a>
+                            <a n:href="MultiRender:">Multi render</a>
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -125,7 +111,7 @@
             </div>
         </div>
 
-        {var ajax = $presenter->parameter['ajax'] == 'on'}
+        {var ajax = $presenter->getParameter('ajax') == 'on'}
 
         <script src="{$baseUri}/js/jquery.min.js"></script>
         <script src="{$baseUri}/js/bootstrap-dropdown.js"></script>
@@ -141,7 +127,7 @@
         <script src="{$baseUri}/js/typeahead.min.js{scache}"></script>
         <script src="{$baseUri}/js/bootstrap-datepicker.js"></script>
 
-        <script src="https://rawgithub.com/o5/grido/1.0.3/client-side/grido.js"></script>
+        <script src="https://rawgithub.com/o5/grido/1.0.6/client-side/grido.js"></script>
         <script src="{$baseUri}/js/grido.ext.js{scache}"></script>
 
         <script n:if="$ajax"  src="{$baseUri}/js/main.ajax.js{scache}"></script>

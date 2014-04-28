@@ -11,18 +11,21 @@ use Nette\Utils\Html;
  */
 final class DibiPresenter extends BasePresenter
 {
+    /** @var DibiConnection @inject */
+    public $database;
+
     protected function createComponentGrid($name)
     {
         $grid = new Grido\Grid($this, $name);
 
-        $fluent = $this->context->dibi_sqlite->select('u.*, c.title AS country')
+        $fluent = $this->database->select('u.*, c.title AS country')
             ->from('[user] u')
             ->join('[country] c')->on('u.country_code = c.code');
         $grid->model = $fluent;
 
         $grid->addColumnText('firstname', 'Firstname')
-                ->setFilterText()
-                ->setSuggestion();
+            ->setFilterText()
+            ->setSuggestion();
 
         $grid->addColumnText('surname', 'Surname')
             ->setSortable()
@@ -101,21 +104,5 @@ final class DibiPresenter extends BasePresenter
         $grid->setExport();
 
         return $grid;
-    }
-
-    protected function createComponentCachedGrid($name)
-    {
-        $grid = $this->createComponentGrid($name);
-
-        $fluent = $this->context->dibi_sqlite->select('u.*, c.title AS country')
-            ->from('[user] u')
-            ->join('[country] c')->on('u.country_code = c.code');
-
-        $grid->setModel(new Cache($fluent, array(\Nette\Caching\Cache::TAGS => 'user')));
-    }
-
-    public function renderCached()
-    {
-        $this['cachedGrid']; //WORKAROUND! A better visualization of the error 500..
     }
 }

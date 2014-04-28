@@ -1,64 +1,35 @@
-common:
-    php:
-        date.timezone: Europe/Prague
-        default_charset: UTF-8
+php:
+    date.timezone: Europe/Prague
+    default_charset: UTF-8
 
-    parameters:
-        database:
-            sqlite:
-                driver: sqlite3
-                file: %appDir%/models/users.s3db
-                profiler: true
-            mysql:
-                driver: mysql
-                host: localhost
-                user: root
-                password:
-                database: grido-sandbox
-                profiler: true
-            postgre:
-                driver: postgre
-                host: localhost
-                user: postgres
-                password: root
-                dbname: grido-sandbox
-                profiler: true
-        baseUri:
+parameters:
+    database:
+        driver: sqlite3
+        file: %appDir%/models/users.s3db
 
-    nette:
-        database:
-            sqlite:
-                dsn: sqlite:%database.sqlite.file%
-            mysql:
-                dsn: 'mysql:host=%database.mysql.host%;dbname=%database.mysql.database%'
-                user: %database.mysql.user%
-                password: %database.mysql.password%
-            postgre:
-                dsn: 'pgsql:host=%database.postgre.host%;dbname=%database.postgre.dbname%'
-                user: %database.postgre.user%
-                password: %database.postgre.password%
-        session:
-            autoStart: yes
-            save_path: %tempDir%/sessions
-        debugger:
-            showLocation: true
+nette:
+    database:
+        dsn: sqlite:%database.file%
+    session:
+        autoStart: smart
+        save_path: %tempDir%/sessions
+    debugger:
+        maxDepth: 10
+        maxLen: 500
+        showLocation: true
+    container:
+        accessors: true
 
-    services:
-        ndb_sqlite: @nette.database.sqlite
-        ndb_mysql: @nette.database.mysql
-        ndb_postgre: @nette.database.postgre
+services:
+    database:
+        class: \DibiConnection(%database%)
 
-        dibi_sqlite: DibiConnection(%database.sqlite%)
-        dibi_mysql: DibiConnection(%database.mysql%)
-        dibi_postgre: DibiConnection(%database.postgre%)
+doctrine:
+    driver: pdo_sqlite
+    path: %database.file%
 
-    doctrine:
-        connection: [driver: pdo_sqlite, path: %database.sqlite.file%]
-
-production < common:
-    parameters:
-        baseUri: /example
-
-
-development < common:
-console < development:
+extensions:
+    console: Kdyby\Console\DI\ConsoleExtension
+    events: Kdyby\Events\DI\EventsExtension
+    annotations: Kdyby\Annotations\DI\AnnotationsExtension
+    doctrine: Kdyby\Doctrine\DI\OrmExtension
