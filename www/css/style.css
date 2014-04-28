@@ -19,7 +19,7 @@ body {background: #FBFBFB url(../img/bg.jpg) 0 0 repeat}
     height: 16px;
     width: 16px;
     float: right;
-    margin: 15px 0 0 0;
+    margin: 15px;
 }
 
 .loading,
