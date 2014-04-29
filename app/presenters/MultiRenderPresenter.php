@@ -5,6 +5,9 @@ use Nette\Utils\Html,
 
 final class MultiRenderPresenter extends BasePresenter
 {
+    /** @var DibiConnection @inject */
+    public $database;
+
     /**
      * Only columns and operations.
      * @param string $name
@@ -16,7 +19,7 @@ final class MultiRenderPresenter extends BasePresenter
         $grid->translator->lang = 'cs';
         $grid->defaultPerPage = 4;
 
-        $fluent = $this->context->dibi_sqlite->select('u.*, c.title AS country')
+        $fluent = $this->database->select('u.*, c.title AS country')
             ->from('[user] u')
             ->join('[country] c')->on('u.country_code = c.code');
         $grid->model = $fluent;
