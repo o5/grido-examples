@@ -7,6 +7,7 @@ $configurator = new \Nette\Configurator;
 
 // Enable Nette Debugger for error visualisation & logging
 //$configurator->setDebugMode();
+//$configurator->setDebugMode(FALSE);
  $configurator->enableDebugger(__DIR__ . '/../log');
 
 // Specify folder for cache
