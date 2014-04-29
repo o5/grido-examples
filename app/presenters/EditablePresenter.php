@@ -4,7 +4,6 @@ use Nette\Utils\Html;
 
 /**
  * Editable example.
- * @link http://doc.nette.org/en/database
  *
  * @package     Grido
  * @author      Petr Bugyík
@@ -19,7 +18,10 @@ final class EditablePresenter extends BasePresenter
         $grid = new Grido\Grid($this, $name);
         $grid->model = $this->database->table('user');
 
-        $grid->setEditableColumns();
+        $grid->setEditableColumns(function($id, $newValue, $oldValue, $column) {
+            //do update ... and return result
+            return TRUE;
+        });
 
         $grid->addColumnText('firstname', 'Firstname')
             ->setFilterText()
@@ -29,35 +31,32 @@ final class EditablePresenter extends BasePresenter
             ->setSortable()
             ->setFilterText()
                 ->setSuggestion();
+        $grid->getColumn('surname')->getEditableControl()->setRequired('Surname is required.');
 
+        $genderList = array('female' => 'female', 'male' => 'male');
         $grid->addColumnText('gender', 'Gender')
-            ->setEditableControl(new Nette\Forms\Controls\SelectBox(NULL, ['male' => 'Male', 'female' => 'Female']))
-            ->setEditableCallback(function() {dump("kks");exit(1);})
-            ->setEditableValueCallback(function($row) {return $row->gender . 'HEJJJ';})
+            ->setEditableControl(new Nette\Forms\Controls\SelectBox(NULL, $genderList))
             ->setSortable()
             ->cellPrototype->class[] = 'center';
-
-        $grid->getColumn('gender')->getEditableControl()->setRequired('HEEEJ');
 
         $grid->addColumnDate('birthday', 'Birthday', Grido\Components\Columns\Date::FORMAT_TEXT)
             ->setSortable()
             ->setFilterDate()
                 ->setCondition($this->gridBirthdayFilterCondition);
+
         $grid->getColumn('birthday')->cellPrototype->class[] = 'center';
 
-        $templatePath = "{$this->context->parameters['appDir']}/templates/{$this->name}";
-        $grid->addColumnText('country', 'Country')
-            ->disableEditable()
-            ->setSortable()
-            ->setCustomRender("$templatePath/grid.country.latte")
-            ->setCustomRenderExport($renderer)
-            ->setFilterText()
-                ->setSuggestion(function($row) { return $row->country->title; });
+        $grid->getColumn('birthday')->getEditableControl()->controlPrototype->class[] = 'date';
+        $grid->getColumn('birthday')->setEditableValueCallback(function($row, $column) {
+            return date($column::FORMAT_DATE, strtotime($row->birthday));
+        });
 
+        $cardList = array('MasterCard' => 'MasterCard', 'Visa' => 'Visa');
         $grid->addColumnText('card', 'Card')
             ->setSortable()
             ->setColumn('cctype') //name of db column
             ->setReplacement(array('MasterCard' => Html::el('b')->setText('MasterCard')))
+            ->setEditableControl(new Nette\Forms\Controls\SelectBox(NULL, $cardList))
             ->cellPrototype->class[] = 'center';
 
         $grid->addColumnEmail('emailaddress', 'Email')
@@ -69,24 +68,12 @@ final class EditablePresenter extends BasePresenter
             ->setSortable()
             ->setFilterNumber();
         $grid->getColumn('centimeters')->cellPrototype->class[] = 'center';
+        $grid->getColumn('centimeters')->getEditableControl()->controlPrototype->type = 'number';
 
-        $grid->addFilterSelect('gender', 'Gender', array(
-            '' => '',
-            'female' => 'female',
-            'male' => 'male'
-        ));
+        $grid->addFilterSelect('gender', 'Gender', array('' => '') + $genderList);
 
-        $grid->addFilterSelect('card', 'Card', array(
-                '' => '',
-                'MasterCard' => 'MasterCard',
-                'Visa' => 'Visa'
-            ))
+        $grid->addFilterSelect('card', 'Card', array('' => '') + $cardList)
             ->setColumn('cctype');
-
-        $grid->addFilterCheck('preferred', 'Only preferred girls :)')
-            ->setCondition(array(
-                TRUE => array(array('gender', 'AND', 'centimeters'), array('= ?', '>= ?'), array('female', 170)))
-        );
 
         $grid->addActionHref('edit', 'Edit')
             ->setIcon('pencil');
@@ -96,12 +83,6 @@ final class EditablePresenter extends BasePresenter
             ->setConfirm(function($item) {
                 return "Are you sure you want to delete {$item->firstname} {$item->surname}?";
         });
-
-        $grid->addActionEvent('remove', 'Remove', function($id, $action) {
-            $this->context->ndb_sqlite->table('user')->where('id = ?', $id)->delete();
-            $action->grid->reload();
-        })  ->setConfirm('Are you sure?')
-           ->elementPrototype->class[] = 'ajax';
 
         $operation = array('print' => 'Print', 'delete' => 'Delete');
         $grid->setOperation($operation, $this->gridOperationsHandler)
