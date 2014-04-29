@@ -7,7 +7,7 @@
 	<title>Class Grido\Components\Columns\Column | Grido @master</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?1172242878"></script>
+	<script type="text/javascript" src="elementlist.js?3215220117"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido @master" href="/opensearch.xml" />
 
@@ -64,8 +64,9 @@
 			<ul>
 				<li class="active"><a href="class-Grido.Components.Columns.Column.html">Column</a></li>
 				<li><a href="class-Grido.Components.Columns.Date.html">Date</a></li>
+				<li><a href="class-Grido.Components.Columns.Editable.html">Editable</a></li>
+				<li><a href="class-Grido.Components.Columns.Email.html">Email</a></li>
 				<li><a href="class-Grido.Components.Columns.Href.html">Href</a></li>
-				<li><a href="class-Grido.Components.Columns.Mail.html">Mail</a></li>
 				<li><a href="class-Grido.Components.Columns.Number.html">Number</a></li>
 				<li><a href="class-Grido.Components.Columns.Text.html">Text</a></li>
 			</ul>
@@ -152,15 +153,16 @@ Nette\Application\UI\PresenterComponent
 
 	<div>
 		<h4>Direct known subclasses</h4>
-			<a href="class-Grido.Components.Columns.Date.html">Grido\Components\Columns\Date</a>, 
-			<a href="class-Grido.Components.Columns.Number.html">Grido\Components\Columns\Number</a>, 
-			<a href="class-Grido.Components.Columns.Text.html">Grido\Components\Columns\Text</a>
+			<a href="class-Grido.Components.Columns.Editable.html">Grido\Components\Columns\Editable</a>
 	</div>
 
 	<div>
 		<h4>Indirect known subclasses</h4>
+			<a href="class-Grido.Components.Columns.Date.html">Grido\Components\Columns\Date</a>, 
+			<a href="class-Grido.Components.Columns.Email.html">Grido\Components\Columns\Email</a>, 
 			<a href="class-Grido.Components.Columns.Href.html">Grido\Components\Columns\Href</a>, 
-			<a href="class-Grido.Components.Columns.Mail.html">Grido\Components\Columns\Mail</a>
+			<a href="class-Grido.Components.Columns.Number.html">Grido\Components\Columns\Number</a>, 
+			<a href="class-Grido.Components.Columns.Text.html">Grido\Components\Columns\Text</a>
 	</div>
 
 
@@ -175,7 +177,7 @@ Nette\Application\UI\PresenterComponent
 
 				<b>Author:</b>
 				Petr Bugyík<br />
-		<b>Located at</b> <a href="source-class-Grido.Components.Columns.Column.html#16-389" title="Go to source code">Components/Columns/Column.php</a><br />
+		<b>Located at</b> <a href="source-class-Grido.Components.Columns.Column.html#16-416" title="Go to source code">Components/Columns/Column.php</a><br />
 	</div>
 
 
@@ -193,7 +195,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Grido.Components.Columns.Column.html#70-81" title="Go to source code">__construct</a>( <span><code><a href="class-Grido.Grid.html">Grido\Grid</a></code> <var>$grid</var></span>, <span>string <var>$name</var></span>, <span>string <var>$label</var></span> )</code>
+		<code><a href="source-class-Grido.Components.Columns.Column.html#74-85" title="Go to source code">__construct</a>( <span><code><a href="class-Grido.Grid.html">Grido\Grid</a></code> <var>$grid</var></span>, <span>string <var>$name</var></span>, <span>string <var>$label</var></span> )</code>
 
 		<div class="description short">
 			
@@ -231,7 +233,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setSortable">#</a>
-		<code><a href="source-class-Grido.Components.Columns.Column.html#83-91" title="Go to source code">setSortable</a>( <span>boolean <var>$sortable</var> = <span class="php-keyword1">TRUE</span></span> )</code>
+		<code><a href="source-class-Grido.Components.Columns.Column.html#87-95" title="Go to source code">setSortable</a>( <span>boolean <var>$sortable</var> = <span class="php-keyword1">TRUE</span></span> )</code>
 
 		<div class="description short">
 			
@@ -269,7 +271,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setReplacement">#</a>
-		<code><a href="source-class-Grido.Components.Columns.Column.html#93-101" title="Go to source code">setReplacement</a>( <span>array <var>$replacement</var></span> )</code>
+		<code><a href="source-class-Grido.Components.Columns.Column.html#97-105" title="Go to source code">setReplacement</a>( <span>array <var>$replacement</var></span> )</code>
 
 		<div class="description short">
 			
@@ -307,7 +309,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setColumn">#</a>
-		<code><a href="source-class-Grido.Components.Columns.Column.html#103-111" title="Go to source code">setColumn</a>( <span>mixed <var>$column</var></span> )</code>
+		<code><a href="source-class-Grido.Components.Columns.Column.html#107-115" title="Go to source code">setColumn</a>( <span>mixed <var>$column</var></span> )</code>
 
 		<div class="description short">
 			
@@ -345,7 +347,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setDefaultSort">#</a>
-		<code><a href="source-class-Grido.Components.Columns.Column.html#113-121" title="Go to source code">setDefaultSort</a>( <span>string <var>$dir</var></span> )</code>
+		<code><a href="source-class-Grido.Components.Columns.Column.html#117-125" title="Go to source code">setDefaultSort</a>( <span>string <var>$dir</var></span> )</code>
 
 		<div class="description short">
 			
@@ -383,7 +385,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setCustomRender">#</a>
-		<code><a href="source-class-Grido.Components.Columns.Column.html#123-131" title="Go to source code">setCustomRender</a>( <span>mixed <var>$callback</var></span> )</code>
+		<code><a href="source-class-Grido.Components.Columns.Column.html#127-138" title="Go to source code">setCustomRender</a>( <span>mixed <var>$callback</var></span>, <span>array <var>$variables</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 		<div class="description short">
 			
@@ -397,6 +399,8 @@ Nette\Application\UI\PresenterComponent
 				<div class="list"><dl>
 					<dt><var>$callback</var></dt>
 					<dd><code>mixed</code><br>$callback callback or string for name of template filename</dd>
+					<dt><var>$variables</var></dt>
+					<dd><code>array</code><br>$variables - template variables</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -421,7 +425,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setCustomRenderExport">#</a>
-		<code><a href="source-class-Grido.Components.Columns.Column.html#133-141" title="Go to source code">setCustomRenderExport</a>( <span>mixed <var>$callback</var></span> )</code>
+		<code><a href="source-class-Grido.Components.Columns.Column.html#140-148" title="Go to source code">setCustomRenderExport</a>( <span>mixed <var>$callback</var></span> )</code>
 
 		<div class="description short">
 			
@@ -459,7 +463,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setCellCallback">#</a>
-		<code><a href="source-class-Grido.Components.Columns.Column.html#143-151" title="Go to source code">setCellCallback</a>( <span>callable <var>$callback</var></span> )</code>
+		<code><a href="source-class-Grido.Components.Columns.Column.html#150-158" title="Go to source code">setCellCallback</a>( <span>callable <var>$callback</var></span> )</code>
 
 		<div class="description short">
 			
@@ -497,7 +501,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getCellPrototype">#</a>
-		<code><a href="source-class-Grido.Components.Columns.Column.html#155-175" title="Go to source code">getCellPrototype</a>( <span>mixed <var>$row</var> = <span class="php-keyword1">NULL</span></span> )</code>
+		<code><a href="source-class-Grido.Components.Columns.Column.html#162-182" title="Go to source code">getCellPrototype</a>( <span>mixed <var>$row</var> = <span class="php-keyword1">NULL</span></span> )</code>
 
 		<div class="description short">
 			
@@ -539,7 +543,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getHeaderPrototype">#</a>
-		<code><a href="source-class-Grido.Components.Columns.Column.html#177-195" title="Go to source code">getHeaderPrototype</a>( )</code>
+		<code><a href="source-class-Grido.Components.Columns.Column.html#184-202" title="Go to source code">getHeaderPrototype</a>( )</code>
 
 		<div class="description short">
 			
@@ -576,7 +580,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getValue">#</a>
-		<code><a href="source-class-Grido.Components.Columns.Column.html#286-303" title="Go to source code">getValue</a>( <span>mixed <var>$row</var></span> )</code>
+		<code><a href="source-class-Grido.Components.Columns.Column.html#313-330" title="Go to source code">getValue</a>( <span>mixed <var>$row</var></span> )</code>
 
 		<div class="description short">
 			
@@ -618,7 +622,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_applyReplacement">#</a>
-		<code><a href="source-class-Grido.Components.Columns.Column.html#309-314" title="Go to source code">applyReplacement</a>( <span>mixed <var>$value</var></span> )</code>
+		<code><a href="source-class-Grido.Components.Columns.Column.html#336-341" title="Go to source code">applyReplacement</a>( <span>mixed <var>$value</var></span> )</code>
 
 		<div class="description short">
 			
@@ -647,7 +651,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_formatValue">#</a>
-		<code><a href="source-class-Grido.Components.Columns.Column.html#316-328" title="Go to source code">formatValue</a>( <span>mixed <var>$value</var></span> )</code>
+		<code><a href="source-class-Grido.Components.Columns.Column.html#343-355" title="Go to source code">formatValue</a>( <span>mixed <var>$value</var></span> )</code>
 
 		<div class="description short">
 			
@@ -685,7 +689,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setFilterText">#</a>
-		<code><a href="source-class-Grido.Components.Columns.Column.html#332-338" title="Go to source code">setFilterText</a>( )</code>
+		<code><a href="source-class-Grido.Components.Columns.Column.html#359-365" title="Go to source code">setFilterText</a>( )</code>
 
 		<div class="description short">
 			
@@ -718,7 +722,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setFilterDate">#</a>
-		<code><a href="source-class-Grido.Components.Columns.Column.html#340-346" title="Go to source code">setFilterDate</a>( )</code>
+		<code><a href="source-class-Grido.Components.Columns.Column.html#367-373" title="Go to source code">setFilterDate</a>( )</code>
 
 		<div class="description short">
 			
@@ -751,7 +755,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setFilterDateRange">#</a>
-		<code><a href="source-class-Grido.Components.Columns.Column.html#348-354" title="Go to source code">setFilterDateRange</a>( )</code>
+		<code><a href="source-class-Grido.Components.Columns.Column.html#375-381" title="Go to source code">setFilterDateRange</a>( )</code>
 
 		<div class="description short">
 			
@@ -784,7 +788,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setFilterCheck">#</a>
-		<code><a href="source-class-Grido.Components.Columns.Column.html#356-362" title="Go to source code">setFilterCheck</a>( )</code>
+		<code><a href="source-class-Grido.Components.Columns.Column.html#383-389" title="Go to source code">setFilterCheck</a>( )</code>
 
 		<div class="description short">
 			
@@ -817,7 +821,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setFilterSelect">#</a>
-		<code><a href="source-class-Grido.Components.Columns.Column.html#364-371" title="Go to source code">setFilterSelect</a>( <span>array <var>$items</var> = <span class="php-keyword1">NULL</span></span> )</code>
+		<code><a href="source-class-Grido.Components.Columns.Column.html#391-398" title="Go to source code">setFilterSelect</a>( <span>array <var>$items</var> = <span class="php-keyword1">NULL</span></span> )</code>
 
 		<div class="description short">
 			
@@ -855,7 +859,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setFilterNumber">#</a>
-		<code><a href="source-class-Grido.Components.Columns.Column.html#373-379" title="Go to source code">setFilterNumber</a>( )</code>
+		<code><a href="source-class-Grido.Components.Columns.Column.html#400-406" title="Go to source code">setFilterNumber</a>( )</code>
 
 		<div class="description short">
 			
@@ -888,7 +892,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setFilterCustom">#</a>
-		<code><a href="source-class-Grido.Components.Columns.Column.html#381-388" title="Go to source code">setFilterCustom</a>( <span>Nette\Forms\IControl <var>$formControl</var></span> )</code>
+		<code><a href="source-class-Grido.Components.Columns.Column.html#408-415" title="Go to source code">setFilterCustom</a>( <span>Nette\Forms\IControl <var>$formControl</var></span> )</code>
 
 		<div class="description short">
 			
@@ -942,7 +946,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="attributes"><code>string</code></td>
 		<td class="name"><code>
-				<a href="source-class-Grido.Components.Columns.Column.html#36" title="Go to source code"><b>ID</b></a>
+				<a href="source-class-Grido.Components.Columns.Column.html#37" title="Go to source code"><b>ID</b></a>
 		</code></td>
 		<td class="value"><code><span class="php-quote">'columns'</span></code></td>
 		<td class="description"><div>
@@ -962,7 +966,7 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="attributes"><code>string</code></td>
 		<td class="name"><code>
-				<a href="source-class-Grido.Components.Columns.Column.html#38" title="Go to source code"><b>VALUE_IDENTIFIER</b></a>
+				<a href="source-class-Grido.Components.Columns.Column.html#39" title="Go to source code"><b>VALUE_IDENTIFIER</b></a>
 		</code></td>
 		<td class="value"><code><span class="php-quote">'%value'</span></code></td>
 		<td class="description"><div>
@@ -982,9 +986,9 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="attributes"><code>string</code></td>
 		<td class="name"><code>
-				<a href="source-class-Grido.Components.Columns.Column.html#40" title="Go to source code"><b>ORDER_ASC</b></a>
+				<a href="source-class-Grido.Components.Columns.Column.html#41" title="Go to source code"><b>ORDER_ASC</b></a>
 		</code></td>
-		<td class="value"><code><span class="php-quote">'↑'</span></code></td>
+		<td class="value"><code><span class="php-quote">'asc'</span></code></td>
 		<td class="description"><div>
 			<a href="#ORDER_ASC" class="anchor">#</a>
 
@@ -1002,9 +1006,9 @@ Nette\Application\UI\PresenterComponent
 
 		<td class="attributes"><code>string</code></td>
 		<td class="name"><code>
-				<a href="source-class-Grido.Components.Columns.Column.html#41" title="Go to source code"><b>ORDER_DESC</b></a>
+				<a href="source-class-Grido.Components.Columns.Column.html#42" title="Go to source code"><b>ORDER_DESC</b></a>
 		</code></td>
-		<td class="value"><code><span class="php-quote">'↓'</span></code></td>
+		<td class="value"><code><span class="php-quote">'desc'</span></code></td>
 		<td class="description"><div>
 			<a href="#ORDER_DESC" class="anchor">#</a>
 
@@ -1032,7 +1036,7 @@ Nette\Application\UI\PresenterComponent
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Columns.Column.html#43-44" title="Go to source code"><var>$sort</var></a>
+				<a href="source-class-Grido.Components.Columns.Column.html#44-45" title="Go to source code"><var>$sort</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -1055,7 +1059,7 @@ Nette\Application\UI\PresenterComponent
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Columns.Column.html#46-47" title="Go to source code"><var>$column</var></a>
+				<a href="source-class-Grido.Components.Columns.Column.html#47-48" title="Go to source code"><var>$column</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -1078,7 +1082,7 @@ Nette\Application\UI\PresenterComponent
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Columns.Column.html#49-50" title="Go to source code"><var>$cellPrototype</var></a>
+				<a href="source-class-Grido.Components.Columns.Column.html#50-51" title="Go to source code"><var>$cellPrototype</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -1105,7 +1109,7 @@ Nette\Application\UI\PresenterComponent
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Columns.Column.html#52-53" title="Go to source code"><var>$cellCallback</var></a>
+				<a href="source-class-Grido.Components.Columns.Column.html#53-54" title="Go to source code"><var>$cellCallback</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -1132,7 +1136,7 @@ Nette\Application\UI\PresenterComponent
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Columns.Column.html#55-56" title="Go to source code"><var>$headerPrototype</var></a>
+				<a href="source-class-Grido.Components.Columns.Column.html#56-57" title="Go to source code"><var>$headerPrototype</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -1159,7 +1163,7 @@ Nette\Application\UI\PresenterComponent
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Columns.Column.html#58-59" title="Go to source code"><var>$customRender</var></a>
+				<a href="source-class-Grido.Components.Columns.Column.html#59-60" title="Go to source code"><var>$customRender</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -1179,6 +1183,33 @@ Nette\Application\UI\PresenterComponent
 			</div>
 		</div></td>
 	</tr>
+	<tr data-order="customRenderVariables" id="$customRenderVariables">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Components.Columns.Column.html#62-63" title="Go to source code"><var>$customRenderVariables</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
+		<td class="description"><div>
+			<a href="#$customRenderVariables" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>custom rendering template variables</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>custom rendering template variables</p>
+
+
+			</div>
+		</div></td>
+	</tr>
 	<tr data-order="customRenderExport" id="$customRenderExport">
 		<td class="attributes"><code>
 			protected  
@@ -1186,7 +1217,7 @@ Nette\Application\UI\PresenterComponent
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Columns.Column.html#61-62" title="Go to source code"><var>$customRenderExport</var></a>
+				<a href="source-class-Grido.Components.Columns.Column.html#65-66" title="Go to source code"><var>$customRenderExport</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -1213,7 +1244,7 @@ Nette\Application\UI\PresenterComponent
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Columns.Column.html#64-65" title="Go to source code"><var>$sortable</var></a>
+				<a href="source-class-Grido.Components.Columns.Column.html#68-69" title="Go to source code"><var>$sortable</var></a>
 		</td>
 		<td class="value"><code><span class="php-keyword1">FALSE</span></code></td>
 		<td class="description"><div>
@@ -1236,7 +1267,7 @@ Nette\Application\UI\PresenterComponent
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Columns.Column.html#67-68" title="Go to source code"><var>$replacements</var></a>
+				<a href="source-class-Grido.Components.Columns.Column.html#71-72" title="Go to source code"><var>$replacements</var></a>
 		</td>
 		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
 		<td class="description"><div>
@@ -1281,7 +1312,7 @@ Nette\Application\UI\PresenterComponent
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Columns.Column.html#32" title="Go to source code"><var>$column</var></a>
+				<a href="source-class-Grido.Components.Columns.Column.html#33" title="Go to source code"><var>$column</var></a>
 		</td>
 		<td class="description"><div>
 			<a href="#m$column" class="anchor">#</a>
@@ -1428,6 +1459,28 @@ Nette\Application\UI\PresenterComponent
 			</div>
 		</div></td>
 	</tr>
+	<tr data-order="customRenderVariables" id="m$customRenderVariables">
+		<td class="attributes"><code>
+			public  write-only
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Components.Columns.Column.html#29" title="Go to source code"><var>$customRenderVariables</var></a>
+		</td>
+		<td class="description"><div>
+			<a href="#m$customRenderVariables" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
 	<tr data-order="customRenderExport" id="m$customRenderExport">
 		<td class="attributes"><code>
 			public  write-only
@@ -1435,7 +1488,7 @@ Nette\Application\UI\PresenterComponent
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Columns.Column.html#29" title="Go to source code"><var>$customRenderExport</var></a>
+				<a href="source-class-Grido.Components.Columns.Column.html#30" title="Go to source code"><var>$customRenderExport</var></a>
 		</td>
 		<td class="description"><div>
 			<a href="#m$customRenderExport" class="anchor">#</a>
@@ -1457,7 +1510,7 @@ Nette\Application\UI\PresenterComponent
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Columns.Column.html#30" title="Go to source code"><var>$replacements</var></a>
+				<a href="source-class-Grido.Components.Columns.Column.html#31" title="Go to source code"><var>$replacements</var></a>
 		</td>
 		<td class="description"><div>
 			<a href="#m$replacements" class="anchor">#</a>
@@ -1479,7 +1532,7 @@ Nette\Application\UI\PresenterComponent
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Columns.Column.html#31" title="Go to source code"><var>$sortable</var></a>
+				<a href="source-class-Grido.Components.Columns.Column.html#32" title="Go to source code"><var>$sortable</var></a>
 		</td>
 		<td class="description"><div>
 			<a href="#m$sortable" class="anchor">#</a>

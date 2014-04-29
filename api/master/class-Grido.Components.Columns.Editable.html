@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="generator" content="ApiGen 2.8.0" />
 
-	<title>Class Grido\Components\Columns\Number | Grido @master</title>
+	<title>Class Grido\Components\Columns\Editable | Grido @master</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
 	<script type="text/javascript" src="elementlist.js?3215220117"></script>
@@ -64,10 +64,10 @@
 			<ul>
 				<li><a href="class-Grido.Components.Columns.Column.html">Column</a></li>
 				<li><a href="class-Grido.Components.Columns.Date.html">Date</a></li>
-				<li><a href="class-Grido.Components.Columns.Editable.html">Editable</a></li>
+				<li class="active"><a href="class-Grido.Components.Columns.Editable.html">Editable</a></li>
 				<li><a href="class-Grido.Components.Columns.Email.html">Email</a></li>
 				<li><a href="class-Grido.Components.Columns.Href.html">Href</a></li>
-				<li class="active"><a href="class-Grido.Components.Columns.Number.html">Number</a></li>
+				<li><a href="class-Grido.Components.Columns.Number.html">Number</a></li>
 				<li><a href="class-Grido.Components.Columns.Text.html">Text</a></li>
 			</ul>
 
@@ -120,12 +120,12 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class Number</h1>
+	<h1>Class Editable</h1>
 
 
 	<div class="description">
 	
-<p>Number column.</p>
+<p>An inline editable column.</p>
 
 	</div>
 
@@ -151,125 +151,84 @@ Nette\Application\UI\PresenterComponent
 		</dd>
 		<dd style="padding-left:90px">
 			<img src="resources/inherit.png" alt="Extended by" />
-			<a href="class-Grido.Components.Columns.Editable.html"><span>Grido\Components\Columns\Editable</span></a>
-			
-			
-			
-		</dd>
-		<dd style="padding-left:120px">
-			<img src="resources/inherit.png" alt="Extended by" />
-<b><span>Grido\Components\Columns\Number</span></b>			
+<b><span>Grido\Components\Columns\Editable</span></b>			
 			
 			
 		</dd>
 	</dl>
 
 
+	<div>
+		<h4>Direct known subclasses</h4>
+			<a href="class-Grido.Components.Columns.Date.html">Grido\Components\Columns\Date</a>, 
+			<a href="class-Grido.Components.Columns.Number.html">Grido\Components\Columns\Number</a>, 
+			<a href="class-Grido.Components.Columns.Text.html">Grido\Components\Columns\Text</a>
+	</div>
 
+	<div>
+		<h4>Indirect known subclasses</h4>
+			<a href="class-Grido.Components.Columns.Email.html">Grido\Components\Columns\Email</a>, 
+			<a href="class-Grido.Components.Columns.Href.html">Grido\Components\Columns\Href</a>
+	</div>
 
 
 
 
 
 	<div class="info">
-		
+		<b>Abstract</b><br />
 		
 		<b>Namespace:</b> <a href="namespace-Grido.html">Grido</a>\<a href="namespace-Grido.Components.html">Components</a>\<a href="namespace-Grido.Components.Columns.html">Columns</a><br />
 		<b>Package:</b> Grido\Components\Columns<br />
 
 				<b>Author:</b>
+				Jakub Kopřiva &lt;<a
+href="mailto:kopriva.jakub&#64;gmail.com">kopriva.jakub&#64;<!---->gmail.com</a>&gt;<br />
+				<b>Author:</b>
 				Petr Bugyík<br />
-		<b>Located at</b> <a href="source-class-Grido.Components.Columns.Number.html#14-100" title="Go to source code">Components/Columns/Number.php</a><br />
+		<b>Located at</b> <a href="source-class-Grido.Components.Columns.Editable.html#14-258" title="Go to source code">Components/Columns/Editable.php</a><br />
 	</div>
 
 
 
 	<table class="summary" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="__construct" id="___construct">
+	<tr data-order="setEditable" id="_setEditable">
 
 		<td class="attributes"><code>
 			 public 
-			
+			<code><a href="class-Grido.Components.Columns.Editable.html">Grido\Components\Columns\Editable</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Grido.Components.Columns.Number.html#37-50" title="Go to source code">__construct</a>( <span><code><a href="class-Grido.Grid.html">Grido\Grid</a></code> <var>$grid</var></span>, <span>string <var>$name</var></span>, <span>string <var>$label</var></span>, <span>integer <var>$decimals</var> = <span class="php-keyword1">NULL</span></span>, <span>string <var>$decPoint</var> = <span class="php-keyword1">NULL</span></span>, <span>string <var>$thousandsSep</var> = <span class="php-keyword1">NULL</span></span> )</code>
+		<a class="anchor" href="#_setEditable">#</a>
+		<code><a href="source-class-Grido.Components.Columns.Editable.html#43-58" title="Go to source code">setEditable</a>( <span>callable <var>$callback</var> = <span class="php-keyword1">NULL</span></span>, <span>Nette\Forms\IControl <var>$control</var> = <span class="php-keyword1">NULL</span></span> )</code>
 
 		<div class="description short">
 			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$grid</var></dt>
-					<dd><code><code><a href="class-Grido.Grid.html">Grido\Grid</a></code></code><br>$grid</dd>
-					<dt><var>$name</var></dt>
-					<dd><code>string</code><br>$name</dd>
-					<dt><var>$label</var></dt>
-					<dd><code>string</code><br>$label</dd>
-					<dt><var>$decimals</var></dt>
-					<dd><code>integer</code><br>$decimals number of decimal points</dd>
-					<dt><var>$decPoint</var></dt>
-					<dd><code>string</code><br>$decPoint separator for the decimal point</dd>
-					<dt><var>$thousandsSep</var></dt>
-					<dd><code>string</code><br>$thousandsSep thousands separator</dd>
-				</dl></div>
-
-
-
-
-				<h4>Overrides</h4>
-				<div class="list"><code><a href="class-Grido.Components.Columns.Column.html#___construct">Grido\Components\Columns\Column::__construct()</a></code></div>
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="setNumberFormat" id="_setNumberFormat">
-
-		<td class="attributes"><code>
-			 public 
-			<code><a href="class-Grido.Components.Columns.Number.html">Grido\Components\Columns\Number</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_setNumberFormat">#</a>
-		<code><a href="source-class-Grido.Components.Columns.Number.html#52-74" title="Go to source code">setNumberFormat</a>( <span>integer <var>$decimals</var> = <span class="php-keyword1">NULL</span></span>, <span>string <var>$decPoint</var> = <span class="php-keyword1">NULL</span> </span>, <span>string <var>$thousandsSep</var> = <span class="php-keyword1">NULL</span></span> )</code>
-
-		<div class="description short">
-			
-<p>Sets number format. Params are same as internal function number_format().</p>
+<p>Sets column as editable.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Sets number format. Params are same as internal function number_format().</p>
+<p>Sets column as editable.</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$decimals</var></dt>
-					<dd><code>integer</code><br>$decimals number of decimal points</dd>
-					<dt><var>$decPoint</var></dt>
-					<dd><code>string</code><br>$decPoint separator for the decimal point</dd>
-					<dt><var>$thousandsSep</var></dt>
-					<dd><code>string</code><br>$thousandsSep thousands separator</dd>
+					<dt><var>$callback</var></dt>
+					<dd><code>callable</code><br>$callback function($id, $newValue, $oldValue, Columns\Editable $column) {} {}</dd>
+					<dt><var>$control</var></dt>
+					<dd><code>Nette\Forms\IControl</code><br>$control</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Grido.Components.Columns.Number.html">Grido\Components\Columns\Number</a></code></code><br />
+					<code><code><a href="class-Grido.Components.Columns.Editable.html">Grido\Components\Columns\Editable</a></code></code><br />
 				</div>
 
 
@@ -278,18 +237,144 @@ Nette\Application\UI\PresenterComponent
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="getNumberFormat" id="_getNumberFormat">
+	<tr data-order="setEditableControl" id="_setEditableControl">
 
 		<td class="attributes"><code>
 			 public 
-			array
+			<code><a href="class-Grido.Components.Columns.Editable.html">Grido\Components\Columns\Editable</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_getNumberFormat">#</a>
-		<code><a href="source-class-Grido.Components.Columns.Number.html#76-82" title="Go to source code">getNumberFormat</a>( )</code>
+		<a class="anchor" href="#_setEditableControl">#</a>
+		<code><a href="source-class-Grido.Components.Columns.Editable.html#60-71" title="Go to source code">setEditableControl</a>( <span>Nette\Forms\IControl <var>$control</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Sets control for inline editation.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Sets control for inline editation.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$control</var></dt>
+					<dd><code>Nette\Forms\IControl</code><br>$control</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Grido.Components.Columns.Editable.html">Grido\Components\Columns\Editable</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setEditableCallback" id="_setEditableCallback">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Grido.Components.Columns.Editable.html">Grido\Components\Columns\Editable</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setEditableCallback">#</a>
+		<code><a href="source-class-Grido.Components.Columns.Editable.html#73-84" title="Go to source code">setEditableCallback</a>( <span>callable <var>$callback</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Sets editable callback.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Sets editable callback.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$callback</var></dt>
+					<dd><code>callable</code><br>$callback function($id, $newValue, $oldValue, Columns\Editable $column) {}</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Grido.Components.Columns.Editable.html">Grido\Components\Columns\Editable</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setEditableValueCallback" id="_setEditableValueCallback">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Grido.Components.Columns.Editable.html">Grido\Components\Columns\Editable</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setEditableValueCallback">#</a>
+		<code><a href="source-class-Grido.Components.Columns.Editable.html#86-97" title="Go to source code">setEditableValueCallback</a>( <span>callable <var>$callback</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Sets editable value callback.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Sets editable value callback.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$callback</var></dt>
+					<dd><code>callable</code><br>$callback for custom value; function($row, Columns\Editable $column) {}</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Grido.Components.Columns.Editable.html">Grido\Components\Columns\Editable</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="disableEditable" id="_disableEditable">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Grido.Components.Columns.Editable.html">Grido\Components\Columns\Editable</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_disableEditable">#</a>
+		<code><a href="source-class-Grido.Components.Columns.Editable.html#99-108" title="Go to source code">disableEditable</a>( )</code>
 
 		<div class="description short">
 			
@@ -302,7 +387,7 @@ Nette\Application\UI\PresenterComponent
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>array</code><br />
+					<code><code><a href="class-Grido.Components.Columns.Editable.html">Grido\Components\Columns\Editable</a></code></code><br />
 				</div>
 
 
@@ -311,18 +396,18 @@ Nette\Application\UI\PresenterComponent
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="formatValue" id="_formatValue">
+	<tr data-order="setClientSideOptions" id="_setClientSideOptions">
 
 		<td class="attributes"><code>
 			 protected 
-			string
+			
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_formatValue">#</a>
-		<code><a href="source-class-Grido.Components.Columns.Number.html#84-99" title="Go to source code">formatValue</a>( <span>mixed <var>$value</var></span> )</code>
+		<a class="anchor" href="#_setClientSideOptions">#</a>
+		<code><a href="source-class-Grido.Components.Columns.Editable.html#110-132" title="Go to source code">setClientSideOptions</a>( )</code>
 
 		<div class="description short">
 			
@@ -332,48 +417,143 @@ Nette\Application\UI\PresenterComponent
 			
 
 
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$value</var></dt>
-					<dd><code>mixed</code><br>$value</dd>
-				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getHeaderPrototype" id="_getHeaderPrototype">
+
+		<td class="attributes"><code>
+			 public 
+			Nette\Utils\Html
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getHeaderPrototype">#</a>
+		<code><a href="source-class-Grido.Components.Columns.Editable.html#136-150" title="Go to source code">getHeaderPrototype</a>( )</code>
+
+		<div class="description short">
+			
+<p>Returns header cell prototype (&lt;th&gt; html tag).</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns header cell prototype (&lt;th&gt; html tag).</p>
+
+
+
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>string</code><br />
+					<code>Nette\Utils\Html</code><br />
 				</div>
 
 
 
 				<h4>Overrides</h4>
-				<div class="list"><code><a href="class-Grido.Components.Columns.Column.html#_formatValue">Grido\Components\Columns\Column::formatValue()</a></code></div>
+				<div class="list"><code><a href="class-Grido.Components.Columns.Column.html#_getHeaderPrototype">Grido\Components\Columns\Column::getHeaderPrototype()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getCellPrototype" id="_getCellPrototype">
+
+		<td class="attributes"><code>
+			 public 
+			Nette\Utils\Html
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getCellPrototype">#</a>
+		<code><a href="source-class-Grido.Components.Columns.Editable.html#152-168" title="Go to source code">getCellPrototype</a>( <span>mixed <var>$row</var> = <span class="php-keyword1">NULL</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Returns cell prototype (&lt;td&gt; html tag).</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns cell prototype (&lt;td&gt; html tag).</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$row</var></dt>
+					<dd><code>mixed</code><br>$row</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Utils\Html</code><br />
+				</div>
+
+
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-Grido.Components.Columns.Column.html#_getCellPrototype">Grido\Components\Columns\Column::getCellPrototype()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getEditableControl" id="_getEditableControl">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getEditableControl">#</a>
+		<code><a href="source-class-Grido.Components.Columns.Editable.html#170-182" title="Go to source code">getEditableControl</a>( )</code>
+
+		<div class="description short">
+			
+<p>Returns control for editation.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns control for editation.</p>
+
+
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+						\Nette\Forms\Controls\TextInput<br />
+				</div>
+
 
 		</div>
 		</div></td>
 	</tr>
 	</table>
 
-	<table class="summary inherited">
-	<caption>Methods inherited from <a href="class-Grido.Components.Columns.Editable.html#methods">Grido\Components\Columns\Editable</a></caption>
-	<tr>
-		<td><code>
-			<a href="class-Grido.Components.Columns.Editable.html#_disableEditable">disableEditable()</a>, 
-			<a href="class-Grido.Components.Columns.Editable.html#_getCellPrototype">getCellPrototype()</a>, 
-			<a href="class-Grido.Components.Columns.Editable.html#_getEditableControl">getEditableControl()</a>, 
-			<a href="class-Grido.Components.Columns.Editable.html#_getHeaderPrototype">getHeaderPrototype()</a>, 
-			<a href="class-Grido.Components.Columns.Editable.html#_setClientSideOptions">setClientSideOptions()</a>, 
-			<a href="class-Grido.Components.Columns.Editable.html#_setEditable">setEditable()</a>, 
-			<a href="class-Grido.Components.Columns.Editable.html#_setEditableCallback">setEditableCallback()</a>, 
-			<a href="class-Grido.Components.Columns.Editable.html#_setEditableControl">setEditableControl()</a>, 
-			<a href="class-Grido.Components.Columns.Editable.html#_setEditableValueCallback">setEditableValueCallback()</a>
-		</code></td>
-	</tr>
-	</table>
 	<table class="summary inherited">
 	<caption>Methods inherited from <a href="class-Grido.Components.Columns.Column.html#methods">Grido\Components\Columns\Column</a></caption>
 	<tr>
 		<td><code>
+			<a href="class-Grido.Components.Columns.Column.html#___construct">__construct()</a>, 
 			<a href="class-Grido.Components.Columns.Column.html#_applyReplacement">applyReplacement()</a>, 
+			<a href="class-Grido.Components.Columns.Column.html#_formatValue">formatValue()</a>, 
 			<a href="class-Grido.Components.Columns.Column.html#_getValue">getValue()</a>, 
 			<a href="class-Grido.Components.Columns.Column.html#_setCellCallback">setCellCallback()</a>, 
 			<a href="class-Grido.Components.Columns.Column.html#_setColumn">setColumn()</a>, 
@@ -411,73 +591,6 @@ Nette\Application\UI\PresenterComponent
 
 
 
-	<table class="summary" id="constants">
-	<caption>Constants summary</caption>
-	<tr data-order="NUMBER_FORMAT_DECIMALS" id="NUMBER_FORMAT_DECIMALS">
-
-		<td class="attributes"><code>integer</code></td>
-		<td class="name"><code>
-				<a href="source-class-Grido.Components.Columns.Number.html#32-33" title="Go to source code"><b>NUMBER_FORMAT_DECIMALS</b></a>
-		</code></td>
-		<td class="value"><code><span class="php-num">0</span></code></td>
-		<td class="description"><div>
-			<a href="#NUMBER_FORMAT_DECIMALS" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-					<h4>Const</h4>
-					<div class="list">
-							keys of array $numberFormat<br />
-					</div>
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="NUMBER_FORMAT_DECIMAL_POINT" id="NUMBER_FORMAT_DECIMAL_POINT">
-
-		<td class="attributes"><code>integer</code></td>
-		<td class="name"><code>
-				<a href="source-class-Grido.Components.Columns.Number.html#34" title="Go to source code"><b>NUMBER_FORMAT_DECIMAL_POINT</b></a>
-		</code></td>
-		<td class="value"><code><span class="php-num">1</span></code></td>
-		<td class="description"><div>
-			<a href="#NUMBER_FORMAT_DECIMAL_POINT" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="NUMBER_FORMAT_THOUSANDS_SEPARATOR" id="NUMBER_FORMAT_THOUSANDS_SEPARATOR">
-
-		<td class="attributes"><code>integer</code></td>
-		<td class="name"><code>
-				<a href="source-class-Grido.Components.Columns.Number.html#35" title="Go to source code"><b>NUMBER_FORMAT_THOUSANDS_SEPARATOR</b></a>
-		</code></td>
-		<td class="value"><code><span class="php-num">2</span></code></td>
-		<td class="description"><div>
-			<a href="#NUMBER_FORMAT_THOUSANDS_SEPARATOR" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	</table>
 
 	<table class="summary inherited">
 	<caption>Constants inherited from <a href="class-Grido.Components.Columns.Column.html#constants">Grido\Components\Columns\Column</a></caption>
@@ -495,22 +608,18 @@ Nette\Application\UI\PresenterComponent
 
 	<table class="summary" id="properties">
 	<caption>Properties summary</caption>
-	<tr data-order="numberFormat" id="$numberFormat">
+	<tr data-order="editable" id="$editable">
 		<td class="attributes"><code>
 			protected  
-			array
+			boolean
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Columns.Number.html#25-30" title="Go to source code"><var>$numberFormat</var></a>
+				<a href="source-class-Grido.Components.Columns.Editable.html#28-29" title="Go to source code"><var>$editable</var></a>
 		</td>
-		<td class="value"><code><span class="php-keyword1">array</span>(
-    self::NUMBER_FORMAT_DECIMALS =&gt; <span class="php-num">0</span>,
-    self::NUMBER_FORMAT_DECIMAL_POINT =&gt; <span class="php-quote">'.'</span>,
-    self::NUMBER_FORMAT_THOUSANDS_SEPARATOR =&gt; <span class="php-quote">','</span>
-)</code></td>
+		<td class="value"><code><span class="php-keyword1">FALSE</span></code></td>
 		<td class="description"><div>
-			<a href="#$numberFormat" class="anchor">#</a>
+			<a href="#$editable" class="anchor">#</a>
 
 			<div class="description short">
 				
@@ -522,20 +631,114 @@ Nette\Application\UI\PresenterComponent
 			</div>
 		</div></td>
 	</tr>
-	</table>
-
-	<table class="summary inherited">
-	<caption>Properties inherited from <a href="class-Grido.Components.Columns.Editable.html#properties">Grido\Components\Columns\Editable</a></caption>
-	<tr>
-		<td><code>
-			<a href="class-Grido.Components.Columns.Editable.html#$editable"><var>$editable</var></a>, 
-			<a href="class-Grido.Components.Columns.Editable.html#$editableCallback"><var>$editableCallback</var></a>, 
-			<a href="class-Grido.Components.Columns.Editable.html#$editableControl"><var>$editableControl</var></a>, 
-			<a href="class-Grido.Components.Columns.Editable.html#$editableDisabled"><var>$editableDisabled</var></a>, 
-			<a href="class-Grido.Components.Columns.Editable.html#$editableValueCallback"><var>$editableValueCallback</var></a>
+	<tr data-order="editableDisabled" id="$editableDisabled">
+		<td class="attributes"><code>
+			protected  
+			boolean
 		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Components.Columns.Editable.html#31-32" title="Go to source code"><var>$editableDisabled</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">FALSE</span></code></td>
+		<td class="description"><div>
+			<a href="#$editableDisabled" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="editableControl" id="$editableControl">
+		<td class="attributes"><code>
+			protected  
+			Nette\Forms\IControl
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Components.Columns.Editable.html#34-35" title="Go to source code"><var>$editableControl</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$editableControl" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Custom control for inline editing</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Custom control for inline editing</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="editableCallback" id="$editableCallback">
+		<td class="attributes"><code>
+			protected  
+			callable
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Components.Columns.Editable.html#37-38" title="Go to source code"><var>$editableCallback</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$editableCallback" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>for custom handling with edited data; function($id, $newValue, $oldValue,
+Editable $column) {}</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>for custom handling with edited data; function($id, $newValue, $oldValue,
+Editable $column) {}</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="editableValueCallback" id="$editableValueCallback">
+		<td class="attributes"><code>
+			protected  
+			callable
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Components.Columns.Editable.html#40-41" title="Go to source code"><var>$editableValueCallback</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$editableValueCallback" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>for custom value; function($row, Columns\Editable $column) {}</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>for custom value; function($row, Columns\Editable $column) {}</p>
+
+
+			</div>
+		</div></td>
 	</tr>
 	</table>
+
 	<table class="summary inherited">
 	<caption>Properties inherited from <a href="class-Grido.Components.Columns.Column.html#properties">Grido\Components\Columns\Column</a></caption>
 	<tr>
@@ -569,17 +772,61 @@ Nette\Application\UI\PresenterComponent
 
 	<table class="summary" id="magicProperties">
 	<caption>Magic properties summary</caption>
-	<tr data-order="numberFormat" id="m$numberFormat">
+	<tr data-order="editableControl" id="m$editableControl">
 		<td class="attributes"><code>
 			public  
-			array
+			Nette\Forms\IControl
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Grido.Components.Columns.Number.html#21" title="Go to source code"><var>$numberFormat</var></a>
+				<a href="source-class-Grido.Components.Columns.Editable.html#22" title="Go to source code"><var>$editableControl</var></a>
 		</td>
 		<td class="description"><div>
-			<a href="#m$numberFormat" class="anchor">#</a>
+			<a href="#m$editableControl" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="editableCallback" id="m$editableCallback">
+		<td class="attributes"><code>
+			public  
+			callable
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Components.Columns.Editable.html#23" title="Go to source code"><var>$editableCallback</var></a>
+		</td>
+		<td class="description"><div>
+			<a href="#m$editableCallback" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="editableValueCallback" id="m$editableValueCallback">
+		<td class="attributes"><code>
+			public  
+			callable
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Grido.Components.Columns.Editable.html#24" title="Go to source code"><var>$editableValueCallback</var></a>
+		</td>
+		<td class="description"><div>
+			<a href="#m$editableValueCallback" class="anchor">#</a>
 
 			<div class="description short">
 				
@@ -593,16 +840,6 @@ Nette\Application\UI\PresenterComponent
 	</tr>
 	</table>
 
-	<table class="summary inherited">
-	<caption>Magic properties inherited from <a href="class-Grido.Components.Columns.Editable.html#properties">Grido\Components\Columns\Editable</a></caption>
-	<tr>
-		<td><code>
-			<a href="class-Grido.Components.Columns.Editable.html#m$editableCallback"><var>$editableCallback</var></a>, 
-			<a href="class-Grido.Components.Columns.Editable.html#m$editableControl"><var>$editableControl</var></a>, 
-			<a href="class-Grido.Components.Columns.Editable.html#m$editableValueCallback"><var>$editableValueCallback</var></a>
-		</code></td>
-	</tr>
-	</table>
 	<table class="summary inherited">
 	<caption>Magic properties inherited from <a href="class-Grido.Components.Columns.Column.html#properties">Grido\Components\Columns\Column</a></caption>
 	<tr>

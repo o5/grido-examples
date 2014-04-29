@@ -7,7 +7,7 @@
 	<title>Class Grido\Components\Columns\Href | Grido @master</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?1172242878"></script>
+	<script type="text/javascript" src="elementlist.js?3215220117"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido @master" href="/opensearch.xml" />
 
@@ -64,8 +64,9 @@
 			<ul>
 				<li><a href="class-Grido.Components.Columns.Column.html">Column</a></li>
 				<li><a href="class-Grido.Components.Columns.Date.html">Date</a></li>
+				<li><a href="class-Grido.Components.Columns.Editable.html">Editable</a></li>
+				<li><a href="class-Grido.Components.Columns.Email.html">Email</a></li>
 				<li class="active"><a href="class-Grido.Components.Columns.Href.html">Href</a></li>
-				<li><a href="class-Grido.Components.Columns.Mail.html">Mail</a></li>
 				<li><a href="class-Grido.Components.Columns.Number.html">Number</a></li>
 				<li><a href="class-Grido.Components.Columns.Text.html">Text</a></li>
 			</ul>
@@ -150,12 +151,19 @@ Nette\Application\UI\PresenterComponent
 		</dd>
 		<dd style="padding-left:90px">
 			<img src="resources/inherit.png" alt="Extended by" />
-			<a href="class-Grido.Components.Columns.Text.html"><span>Grido\Components\Columns\Text</span></a>
+			<a href="class-Grido.Components.Columns.Editable.html"><span>Grido\Components\Columns\Editable</span></a>
 			
 			
 			
 		</dd>
 		<dd style="padding-left:120px">
+			<img src="resources/inherit.png" alt="Extended by" />
+			<a href="class-Grido.Components.Columns.Text.html"><span>Grido\Components\Columns\Text</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:150px">
 			<img src="resources/inherit.png" alt="Extended by" />
 <b><span>Grido\Components\Columns\Href</span></b>			
 			
@@ -236,13 +244,27 @@ Nette\Application\UI\PresenterComponent
 	</tr>
 	</table>
 	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-Grido.Components.Columns.Editable.html#methods">Grido\Components\Columns\Editable</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Grido.Components.Columns.Editable.html#_disableEditable">disableEditable()</a>, 
+			<a href="class-Grido.Components.Columns.Editable.html#_getCellPrototype">getCellPrototype()</a>, 
+			<a href="class-Grido.Components.Columns.Editable.html#_getEditableControl">getEditableControl()</a>, 
+			<a href="class-Grido.Components.Columns.Editable.html#_getHeaderPrototype">getHeaderPrototype()</a>, 
+			<a href="class-Grido.Components.Columns.Editable.html#_setClientSideOptions">setClientSideOptions()</a>, 
+			<a href="class-Grido.Components.Columns.Editable.html#_setEditable">setEditable()</a>, 
+			<a href="class-Grido.Components.Columns.Editable.html#_setEditableCallback">setEditableCallback()</a>, 
+			<a href="class-Grido.Components.Columns.Editable.html#_setEditableControl">setEditableControl()</a>, 
+			<a href="class-Grido.Components.Columns.Editable.html#_setEditableValueCallback">setEditableValueCallback()</a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary inherited">
 	<caption>Methods inherited from <a href="class-Grido.Components.Columns.Column.html#methods">Grido\Components\Columns\Column</a></caption>
 	<tr>
 		<td><code>
 			<a href="class-Grido.Components.Columns.Column.html#___construct">__construct()</a>, 
 			<a href="class-Grido.Components.Columns.Column.html#_applyReplacement">applyReplacement()</a>, 
-			<a href="class-Grido.Components.Columns.Column.html#_getCellPrototype">getCellPrototype()</a>, 
-			<a href="class-Grido.Components.Columns.Column.html#_getHeaderPrototype">getHeaderPrototype()</a>, 
 			<a href="class-Grido.Components.Columns.Column.html#_getValue">getValue()</a>, 
 			<a href="class-Grido.Components.Columns.Column.html#_setCellCallback">setCellCallback()</a>, 
 			<a href="class-Grido.Components.Columns.Column.html#_setColumn">setColumn()</a>, 
@@ -305,6 +327,18 @@ Nette\Application\UI\PresenterComponent
 	</tr>
 	</table>
 	<table class="summary inherited">
+	<caption>Properties inherited from <a href="class-Grido.Components.Columns.Editable.html#properties">Grido\Components\Columns\Editable</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Grido.Components.Columns.Editable.html#$editable"><var>$editable</var></a>, 
+			<a href="class-Grido.Components.Columns.Editable.html#$editableCallback"><var>$editableCallback</var></a>, 
+			<a href="class-Grido.Components.Columns.Editable.html#$editableControl"><var>$editableControl</var></a>, 
+			<a href="class-Grido.Components.Columns.Editable.html#$editableDisabled"><var>$editableDisabled</var></a>, 
+			<a href="class-Grido.Components.Columns.Editable.html#$editableValueCallback"><var>$editableValueCallback</var></a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary inherited">
 	<caption>Properties inherited from <a href="class-Grido.Components.Columns.Column.html#properties">Grido\Components\Columns\Column</a></caption>
 	<tr>
 		<td><code>
@@ -313,6 +347,7 @@ Nette\Application\UI\PresenterComponent
 			<a href="class-Grido.Components.Columns.Column.html#$column"><var>$column</var></a>, 
 			<a href="class-Grido.Components.Columns.Column.html#$customRender"><var>$customRender</var></a>, 
 			<a href="class-Grido.Components.Columns.Column.html#$customRenderExport"><var>$customRenderExport</var></a>, 
+			<a href="class-Grido.Components.Columns.Column.html#$customRenderVariables"><var>$customRenderVariables</var></a>, 
 			<a href="class-Grido.Components.Columns.Column.html#$headerPrototype"><var>$headerPrototype</var></a>, 
 			<a href="class-Grido.Components.Columns.Column.html#$replacements"><var>$replacements</var></a>, 
 			<a href="class-Grido.Components.Columns.Column.html#$sort"><var>$sort</var></a>, 
@@ -336,6 +371,16 @@ Nette\Application\UI\PresenterComponent
 
 
 	<table class="summary inherited">
+	<caption>Magic properties inherited from <a href="class-Grido.Components.Columns.Editable.html#properties">Grido\Components\Columns\Editable</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Grido.Components.Columns.Editable.html#m$editableCallback"><var>$editableCallback</var></a>, 
+			<a href="class-Grido.Components.Columns.Editable.html#m$editableControl"><var>$editableControl</var></a>, 
+			<a href="class-Grido.Components.Columns.Editable.html#m$editableValueCallback"><var>$editableValueCallback</var></a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary inherited">
 	<caption>Magic properties inherited from <a href="class-Grido.Components.Columns.Column.html#properties">Grido\Components\Columns\Column</a></caption>
 	<tr>
 		<td><code>
@@ -344,6 +389,7 @@ Nette\Application\UI\PresenterComponent
 			<a href="class-Grido.Components.Columns.Column.html#m$column"><var>$column</var></a>, 
 			<a href="class-Grido.Components.Columns.Column.html#m$customRender"><var>$customRender</var></a>, 
 			<a href="class-Grido.Components.Columns.Column.html#m$customRenderExport"><var>$customRenderExport</var></a>, 
+			<a href="class-Grido.Components.Columns.Column.html#m$customRenderVariables"><var>$customRenderVariables</var></a>, 
 			<a href="class-Grido.Components.Columns.Column.html#m$defaultSorting"><var>$defaultSorting</var></a>, 
 			<a href="class-Grido.Components.Columns.Column.html#m$headerPrototype"><var>$headerPrototype</var></a>, 
 			<a href="class-Grido.Components.Columns.Column.html#m$replacements"><var>$replacements</var></a>, 

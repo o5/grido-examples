@@ -8,7 +8,7 @@
 	<title>File Components/Filters/Condition.php | Grido @master</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?1172242878"></script>
+	<script type="text/javascript" src="elementlist.js?3215220117"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido @master" href="/opensearch.xml" />
 
@@ -193,9 +193,9 @@
 </span><span id="68" class="l"><a class="l" href="#68"> 68: </a>            }
 </span><span id="69" class="l"><a class="l" href="#69"> 69: </a>
 </span><span id="70" class="l"><a class="l" href="#70"> 70: </a>            <span class="php-keyword1">for</span> (<span class="php-var">$i</span> = <span class="php-num">0</span>; <span class="php-var">$i</span> &lt; <span class="php-var">$count</span>; <span class="php-var">$i</span>++) {
-</span><span id="71" class="l"><a class="l" href="#71"> 71: </a>                <span class="php-var">$item</span> = <span class="php-keyword2">strtoupper</span>(<span class="php-var">$column</span>[<span class="php-var">$i</span>]);
+</span><span id="71" class="l"><a class="l" href="#71"> 71: </a>                <span class="php-var">$item</span> = <span class="php-var">$column</span>[<span class="php-var">$i</span>];
 </span><span id="72" class="l"><a class="l" href="#72"> 72: </a>                <span class="php-keyword1">if</span> (<span class="php-var">$i</span> &amp; <span class="php-num">1</span> &amp;&amp; !self::isOperator(<span class="php-var">$item</span>)) {
-</span><span id="73" class="l"><a class="l" href="#73"> 73: </a>                    <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \InvalidArgumentException(<span class="php-quote">&quot;The even values of column must be 'AND' or 'OR', '</span><span class="php-var">$column</span><span class="php-quote">[</span><span class="php-var">$i</span><span class="php-quote">]' given.&quot;</span>);
+</span><span id="73" class="l"><a class="l" href="#73"> 73: </a>                    <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \InvalidArgumentException(<span class="php-quote">&quot;The even values of column must be 'AND' or 'OR', '</span><span class="php-var">$item</span><span class="php-quote">' given.&quot;</span>);
 </span><span id="74" class="l"><a class="l" href="#74"> 74: </a>                }
 </span><span id="75" class="l"><a class="l" href="#75"> 75: </a>            }
 </span><span id="76" class="l"><a class="l" href="#76"> 76: </a>        } <span class="php-keyword1">else</span> {
