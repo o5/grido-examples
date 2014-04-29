@@ -4,10 +4,11 @@
     "homepage": "http://grido.bugyik.cz/example/",
     "require": {
         "php": ">=5.3.1",
-        "nette/nette": "2.2-RC2",
-        "dibi/dibi": "@dev",
-        "o5/grido": "@dev",
-        "kdyby/doctrine": "@dev"
+        "nette/nette": "~2.1",
+        "dibi/dibi": "~2.1",
+        "o5/grido": "~1",
+        "kdyby/doctrine": "~1.1.0",
+        "doctrine/orm": "~2.4.1"
     },
     "license": ["BSD-3", "GPL-2.0", "GPL-3.0"],
     "authors": [
@@ -23,6 +24,5 @@
         "post-install-cmd": [
             "chmod -R 0777 temp/ log/ app/models/doctrine"
         ]
-    },
-    "minimum-stability": "dev"
+    }
 }

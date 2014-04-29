@@ -77,16 +77,28 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 
     /**********************************************************************************************/
 
-    protected function createTemplate()
+    protected function createTemplate($class = NULL)
     {
-        $template = parent::createTemplate();
-        $latte = $template->getLatte();
+        if (\Nette\Framework::VERSION_ID >= 20200) {
+            $template = parent::createTemplate();
+            $latte = $template->getLatte();
 
-        $set = new Latte\Macros\MacroSet($latte->getCompiler());
-        $set->addMacro('scache', '?>?<?php echo strtotime(date(\'Y-m-d hh \')); ?>"<?php');
-        $latte->addFilter('scache', $set);
+            $set = new Latte\Macros\MacroSet($latte->getCompiler());
+            $set->addMacro('scache', '?>?<?php echo strtotime(date(\'Y-m-d hh \')); ?>"<?php');
+            $latte->addFilter('scache', $set);
 
-        return $template;
+            return $template;
+
+        } else {
+            $template = parent::createTemplate($class);
+            $latte = new Nette\Latte\Engine;
+
+            $set = new Nette\Latte\Macros\MacroSet($latte->getCompiler());
+            $set->addMacro('scache', '?>?<?php echo strtotime(date(\'Y-m-d hh \')); ?>"<?php');
+            $template->registerFilter($latte);
+
+            return $template;
+        }
     }
 
     public function beforeRender()
