@@ -88,14 +88,16 @@
 
     /**
      * @param {string} url
+     * @param {Element|null} ussually Anchor or Form
+     * @param {event|null} event causing the request
      */
-    Grido.Ajax.prototype.doRequest = function(url)
+    Grido.Ajax.prototype.doRequest = function(url, ui, e)
     {
         if ($.fn.netteAjax === undefined) {
             console.error('Plugin "nette.ajax.js" is missing!');
             $.get(url);
         } else {
-            $.nette.ajax({url: url});
+            $.nette.ajax({url: url}, ui, e);
         }
     };
 
