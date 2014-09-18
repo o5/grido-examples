@@ -8,7 +8,7 @@
 	<title>File Components/Columns/Editable.php | Grido @master</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?3215220117"></script>
+	<script type="text/javascript" src="elementlist.js?3869680739"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido @master" href="/opensearch.xml" />
 
@@ -356,30 +356,35 @@
 </span><span id="233" class="l"><a class="l" href="#233">233: </a>        <span class="php-var">$success</span> = <span class="php-var">$this</span>-&gt;editableCallback
 </span><span id="234" class="l"><a class="l" href="#234">234: </a>            ? callback(<span class="php-var">$this</span>-&gt;editableCallback)-&gt;invokeArgs(<span class="php-keyword1">array</span>(<span class="php-var">$id</span>, <span class="php-var">$newValue</span>, <span class="php-var">$oldValue</span>, <span class="php-var">$this</span>))
 </span><span id="235" class="l"><a class="l" href="#235">235: </a>            : <span class="php-var">$this</span>-&gt;grid-&gt;model-&gt;update(<span class="php-var">$id</span>, <span class="php-keyword1">array</span>(<span class="php-var">$this</span>-&gt;getColumn() =&gt; <span class="php-var">$newValue</span>), <span class="php-var">$this</span>-&gt;grid-&gt;primaryKey);
-</span><span id="236" class="l"><a class="l" href="#236">236: </a>
-</span><span id="237" class="l"><a class="l" href="#237">237: </a>        <span class="php-var">$response</span> = <span class="php-keyword1">new</span> \Nette\Application\Responses\JsonResponse(<span class="php-keyword1">array</span>(<span class="php-quote">'updated'</span> =&gt; <span class="php-var">$success</span>));
-</span><span id="238" class="l"><a class="l" href="#238">238: </a>        <span class="php-var">$this</span>-&gt;presenter-&gt;sendResponse(<span class="php-var">$response</span>);
-</span><span id="239" class="l"><a class="l" href="#239">239: </a>    }
-</span><span id="240" class="l"><a class="l" href="#240">240: </a>
-</span><span id="241" class="l"><a class="l" href="#241">241: </a>    <span class="php-comment">/**
-</span></span><span id="242" class="l"><a class="l" href="#242">242: </a><span class="php-comment">     * @internal
-</span></span><span id="243" class="l"><a class="l" href="#243">243: </a><span class="php-comment">     */</span>
-</span><span id="244" class="l"><a class="l" href="#244">244: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_handleEditableControl" href="#_handleEditableControl">handleEditableControl</a>(<span class="php-var">$value</span>)
-</span><span id="245" class="l"><a class="l" href="#245">245: </a>    {
-</span><span id="246" class="l"><a class="l" href="#246">246: </a>        <span class="php-var">$this</span>-&gt;grid-&gt;onRegistered(<span class="php-var">$this</span>-&gt;grid);
-</span><span id="247" class="l"><a class="l" href="#247">247: </a>
-</span><span id="248" class="l"><a class="l" href="#248">248: </a>        <span class="php-keyword1">if</span> (!<span class="php-var">$this</span>-&gt;presenter-&gt;isAjax() || !<span class="php-var">$this</span>-&gt;isEditable()) {
-</span><span id="249" class="l"><a class="l" href="#249">249: </a>            <span class="php-var">$this</span>-&gt;presenter-&gt;terminate();
-</span><span id="250" class="l"><a class="l" href="#250">250: </a>        }
-</span><span id="251" class="l"><a class="l" href="#251">251: </a>
-</span><span id="252" class="l"><a class="l" href="#252">252: </a>        <span class="php-var">$control</span> = <span class="php-var">$this</span>-&gt;getEditableControl()-&gt;setValue(<span class="php-var">$value</span>);
-</span><span id="253" class="l"><a class="l" href="#253">253: </a>        <span class="php-var">$this</span>-&gt;getForm()-&gt;addComponent(<span class="php-var">$control</span>, <span class="php-quote">'edit'</span> . <span class="php-var">$this</span>-&gt;getName());
-</span><span id="254" class="l"><a class="l" href="#254">254: </a>
-</span><span id="255" class="l"><a class="l" href="#255">255: </a>        <span class="php-var">$response</span> = <span class="php-keyword1">new</span> \Nette\Application\Responses\TextResponse(<span class="php-var">$control</span>-&gt;getControl()-&gt;render());
-</span><span id="256" class="l"><a class="l" href="#256">256: </a>        <span class="php-var">$this</span>-&gt;presenter-&gt;sendResponse(<span class="php-var">$response</span>);
-</span><span id="257" class="l"><a class="l" href="#257">257: </a>    }
-</span><span id="258" class="l"><a class="l" href="#258">258: </a>}
-</span><span id="259" class="l"><a class="l" href="#259">259: </a></span></code></pre>
+</span><span id="236" class="l"><a class="l" href="#236">236: </a>    
+</span><span id="237" class="l"><a class="l" href="#237">237: </a>    <span class="php-comment">// New lines follow</span>
+</span><span id="238" class="l"><a class="l" href="#238">238: </a>    <span class="php-var">$data</span> = <span class="php-var">$this</span>-&gt;grid-&gt;model-&gt;getRow(<span class="php-var">$this</span>-&gt;grid-&gt;primaryKey, <span class="php-var">$id</span>)-&gt;fetch();  
+</span><span id="239" class="l"><a class="l" href="#239">239: </a>    <span class="php-var">$html</span> = <span class="php-var">$this</span>-&gt;render(<span class="php-var">$data</span>);
+</span><span id="240" class="l"><a class="l" href="#240">240: </a>    
+</span><span id="241" class="l"><a class="l" href="#241">241: </a>    <span class="php-comment">// Also change JSON Response</span>
+</span><span id="242" class="l"><a class="l" href="#242">242: </a>        <span class="php-var">$response</span> = <span class="php-keyword1">new</span> \Nette\Application\Responses\JsonResponse(<span class="php-keyword1">array</span>(<span class="php-quote">'updated'</span> =&gt; <span class="php-var">$success</span>, <span class="php-quote">'html'</span> =&gt; <span class="php-var">$html</span>));
+</span><span id="243" class="l"><a class="l" href="#243">243: </a>        <span class="php-var">$this</span>-&gt;presenter-&gt;sendResponse(<span class="php-var">$response</span>);
+</span><span id="244" class="l"><a class="l" href="#244">244: </a>    }
+</span><span id="245" class="l"><a class="l" href="#245">245: </a>
+</span><span id="246" class="l"><a class="l" href="#246">246: </a>    <span class="php-comment">/**
+</span></span><span id="247" class="l"><a class="l" href="#247">247: </a><span class="php-comment">     * @internal
+</span></span><span id="248" class="l"><a class="l" href="#248">248: </a><span class="php-comment">     */</span>
+</span><span id="249" class="l"><a class="l" href="#249">249: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_handleEditableControl" href="#_handleEditableControl">handleEditableControl</a>(<span class="php-var">$value</span>)
+</span><span id="250" class="l"><a class="l" href="#250">250: </a>    {
+</span><span id="251" class="l"><a class="l" href="#251">251: </a>        <span class="php-var">$this</span>-&gt;grid-&gt;onRegistered(<span class="php-var">$this</span>-&gt;grid);
+</span><span id="252" class="l"><a class="l" href="#252">252: </a>
+</span><span id="253" class="l"><a class="l" href="#253">253: </a>        <span class="php-keyword1">if</span> (!<span class="php-var">$this</span>-&gt;presenter-&gt;isAjax() || !<span class="php-var">$this</span>-&gt;isEditable()) {
+</span><span id="254" class="l"><a class="l" href="#254">254: </a>            <span class="php-var">$this</span>-&gt;presenter-&gt;terminate();
+</span><span id="255" class="l"><a class="l" href="#255">255: </a>        }
+</span><span id="256" class="l"><a class="l" href="#256">256: </a>
+</span><span id="257" class="l"><a class="l" href="#257">257: </a>        <span class="php-var">$control</span> = <span class="php-var">$this</span>-&gt;getEditableControl()-&gt;setValue(<span class="php-var">$value</span>);
+</span><span id="258" class="l"><a class="l" href="#258">258: </a>        <span class="php-var">$this</span>-&gt;getForm()-&gt;addComponent(<span class="php-var">$control</span>, <span class="php-quote">'edit'</span> . <span class="php-var">$this</span>-&gt;getName());
+</span><span id="259" class="l"><a class="l" href="#259">259: </a>
+</span><span id="260" class="l"><a class="l" href="#260">260: </a>        <span class="php-var">$response</span> = <span class="php-keyword1">new</span> \Nette\Application\Responses\TextResponse(<span class="php-var">$control</span>-&gt;getControl()-&gt;render());
+</span><span id="261" class="l"><a class="l" href="#261">261: </a>        <span class="php-var">$this</span>-&gt;presenter-&gt;sendResponse(<span class="php-var">$response</span>);
+</span><span id="262" class="l"><a class="l" href="#262">262: </a>    }
+</span><span id="263" class="l"><a class="l" href="#263">263: </a>}
+</span><span id="264" class="l"><a class="l" href="#264">264: </a></span></code></pre>
 
 	<div id="footer">
 		Grido @master API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>

@@ -8,7 +8,7 @@
 	<title>File Components/Filters/Check.php | Grido @master</title>
 
 	<script type="text/javascript" src="resources/combined.js?4127770442"></script>
-	<script type="text/javascript" src="elementlist.js?3215220117"></script>
+	<script type="text/javascript" src="elementlist.js?3869680739"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 	<link rel="search" type="application/opensearchdescription+xml" title="Grido @master" href="/opensearch.xml" />
 
@@ -190,7 +190,7 @@
 </span></span><span id="65" class="l"><a class="l" href="#65">65: </a><span class="php-comment">     */</span>
 </span><span id="66" class="l"><a class="l" href="#66">66: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_changeValue" href="#_changeValue">changeValue</a>(<span class="php-var">$value</span>)
 </span><span id="67" class="l"><a class="l" href="#67">67: </a>    {
-</span><span id="68" class="l"><a class="l" href="#68">68: </a>        <span class="php-keyword1">return</span> <span class="php-var">$value</span> === <span class="php-keyword1">TRUE</span>
+</span><span id="68" class="l"><a class="l" href="#68">68: </a>        <span class="php-keyword1">return</span> (bool) <span class="php-var">$value</span> === <span class="php-keyword1">TRUE</span>
 </span><span id="69" class="l"><a class="l" href="#69">69: </a>            ? self::<span class="php-keyword1">TRUE</span>
 </span><span id="70" class="l"><a class="l" href="#70">70: </a>            : <span class="php-var">$value</span>;
 </span><span id="71" class="l"><a class="l" href="#71">71: </a>    }
