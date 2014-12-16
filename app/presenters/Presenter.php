@@ -17,11 +17,11 @@ abstract class Presenter extends \Nette\Application\UI\Presenter
     }
 
     /**
-     * Handler for operations.
+     * Common handler for grid operations.
      * @param string $operation
      * @param array $id
      */
-    public function gridOperationsHandler($operation, $id)
+    public function handleOperations($operation, $id)
     {
         if ($id) {
             $row = implode(', ', $id);
@@ -31,23 +31,6 @@ abstract class Presenter extends \Nette\Application\UI\Presenter
         }
 
         $this->redirect($operation, array('id' => $id));
-    }
-
-    /**
-     * Custom condition callback for filter birthday.
-     * @param string $value
-     * @return array|NULL
-     */
-    public function gridBirthdayFilterCondition($value)
-    {
-        $date = explode('.', $value);
-        foreach ($date as &$val) {
-            $val = (int) $val;
-        }
-
-        return count($date) == 3
-            ? array('birthday', '= ?', "{$date[2]}-{$date[1]}-{$date[0]}")
-            : NULL;
     }
 
     public function actionEdit($id)

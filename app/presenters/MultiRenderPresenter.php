@@ -2,7 +2,7 @@
 
 namespace App\Presenters;
 
-use Grido\Grid;
+use App\Controls\Grido\Grid;
 use Grido\Components\Filters\Filter;
 use Nette\Utils\Html;
 
@@ -94,7 +94,7 @@ final class MultiRenderPresenter extends Presenter
         $grid->getColumn('height')->cellPrototype->class[] = 'center';
 
         $operation = array('print' => 'Print', 'delete' => 'Delete');
-        $grid->setOperation($operation, $this->gridOperationsHandler)
+        $grid->setOperation($operation, $this->handleOperations)
             ->setConfirm('delete', 'Are you sure you want to delete %i items?');
 
         $grid->setExport();

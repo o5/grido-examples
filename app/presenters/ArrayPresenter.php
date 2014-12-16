@@ -2,7 +2,7 @@
 
 namespace App\Presenters;
 
-use Grido\Grid;
+use App\Controls\Grido\Grid;
 use Grido\Components\Filters\Filter;
 
 /**
@@ -61,10 +61,8 @@ final class ArrayPresenter extends Presenter
         $grid->getColumn('last_login')->headerPrototype->class[] = 'center';
         $grid->getColumn('last_login')->headerPrototype->style['width'] = '9%';
 
-        $column = new \App\Controls\Grido\Components\Columns\Boolean($grid, 'ok', 'OK');
-        $column->setSortable()
-            ->headerPrototype->style['width'] ='2%';
-        $grid->getColumn('ok')->headerPrototype->class[] = 'center';
+        $grid->addColumnBoolean('ok', 'OK')
+            ->setSortable();
 
         $grid->addActionHref('edit', 'Upravit')
             ->setIcon('pencil')

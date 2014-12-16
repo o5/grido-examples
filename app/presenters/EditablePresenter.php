@@ -2,7 +2,7 @@
 
 namespace App\Presenters;
 
-use Grido\Grid;
+use App\Controls\Grido\Grid;
 use Nette\Utils\Html;
 
 /**
@@ -45,7 +45,7 @@ final class EditablePresenter extends Presenter
         $grid->addColumnDate('birthday', 'Birthday', \Grido\Components\Columns\Date::FORMAT_TEXT)
             ->setSortable()
             ->setFilterDate()
-                ->setCondition($this->gridBirthdayFilterCondition);
+                ->setCondition($grid->birthdayFilterCondition);
 
         $grid->getColumn('birthday')->cellPrototype->class[] = 'center';
 
@@ -88,7 +88,7 @@ final class EditablePresenter extends Presenter
         });
 
         $operation = array('print' => 'Print', 'delete' => 'Delete');
-        $grid->setOperation($operation, $this->gridOperationsHandler)
+        $grid->setOperation($operation, $this->handleOperations)
             ->setConfirm('delete', 'Are you sure you want to delete %i items?');
 
         $grid->filterRenderType = $this->filterRenderType;
