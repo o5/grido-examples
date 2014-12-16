@@ -1,21 +1,24 @@
 <?php
 
-use Nette\Utils\Html,
-    Grido\Components\Filters\Filter;
+namespace App\Presenters;
+
+use Grido\Grid;
+use Grido\Components\Filters\Filter;
+use Nette\Utils\Html;
 
 final class MultiRenderPresenter extends BasePresenter
 {
-    /** @var DibiConnection @inject */
+    /** @var \DibiConnection @inject */
     public $database;
 
     /**
      * Only columns and operations.
      * @param string $name
-     * @return \Grido\Grid
+     * @return Grid
      */
     private function baseGrid($name)
     {
-        $grid = new Grido\Grid($this, $name);
+        $grid = new Grid($this, $name);
         $grid->translator->lang = 'cs';
         $grid->defaultPerPage = 4;
 
@@ -39,7 +42,7 @@ final class MultiRenderPresenter extends BasePresenter
             ->headerPrototype->class[] = 'center';
         $grid->getColumn('gender')->cellPrototype->class[] = 'center';
 
-        $grid->addColumnDate('birthday', 'Birthday', Grido\Components\Columns\Date::FORMAT_TEXT)
+        $grid->addColumnDate('birthday', 'Birthday', \Grido\Components\Columns\Date::FORMAT_TEXT)
             ->setSortable()
             ->headerPrototype->class[] = 'center';
         $grid->getColumn('birthday')->cellPrototype->class[] = 'center';
@@ -101,10 +104,10 @@ final class MultiRenderPresenter extends BasePresenter
 
     /**
      * Adds actions.
-     * @param Grido\Grid $grid
-     * @return \Grido\Grid
+     * @param Grid $grid
+     * @return Grid
      */
-    private function addActions(Grido\Grid $grid)
+    private function addActions(Grid $grid)
     {
         $grid->addActionHref('edit', 'Edit')
             ->setIcon('pencil');
@@ -120,10 +123,10 @@ final class MultiRenderPresenter extends BasePresenter
 
     /**
      * Adds filters.
-     * @param Grido\Grid $grid
-     * @return \Grido\Grid
+     * @param Grid $grid
+     * @return Grid
      */
-    private function addFilters(Grido\Grid $grid)
+    private function addFilters(Grid $grid)
     {
         $grid->getColumn('firstname')->setFilterText()
             ->setSuggestion();
@@ -230,7 +233,7 @@ final class MultiRenderPresenter extends BasePresenter
     public function renderDefault()
     {
         $this->template->list = array();
-        $methods = $this->getReflection()->getMethods(ReflectionMethod::IS_PROTECTED);
+        $methods = $this->getReflection()->getMethods(\ReflectionMethod::IS_PROTECTED);
         foreach ($methods as $method) {
             if ($method->class != __CLASS__) {
                 break;

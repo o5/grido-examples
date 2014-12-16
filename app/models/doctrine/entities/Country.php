@@ -1,6 +1,6 @@
 <?php
 
-namespace Entities;
+namespace App\Models\Doctrine\Entities;
 
 use Nette\Object;
 use Doctrine\ORM\Mapping as ORM;

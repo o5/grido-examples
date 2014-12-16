@@ -1,13 +1,13 @@
 <?php
 
-namespace Grido\Components\Columns;
+namespace App\Controls\Grido\Components\Columns;
 
 /**
  * Boolean column.
  *
  * @author      Pavel Kryštůfek (http://www.krystufkovi.cz)
  */
-class Boolean extends Text
+class Boolean extends \Grido\Components\Columns\Text
 {
     public function getCellPrototype($row = NULL)
     {

@@ -1,12 +1,14 @@
 <?php
 
-abstract class BasePresenter extends Nette\Application\UI\Presenter
+namespace App\Presenters;
+
+abstract class BasePresenter extends \Nette\Application\UI\Presenter
 {
     /** @var string @persistent */
     public $ajax = 'on';
 
     /** @var string @persistent */
-    public $filterRenderType = Grido\Components\Filters\Filter::RENDER_INNER;
+    public $filterRenderType = \Grido\Components\Filters\Filter::RENDER_INNER;
 
     public function handleCloseTip()
     {
@@ -83,7 +85,7 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
             $template = parent::createTemplate();
             $latte = $template->getLatte();
 
-            $set = new Latte\Macros\MacroSet($latte->getCompiler());
+            $set = new \Latte\Macros\MacroSet($latte->getCompiler());
             $set->addMacro('scache', '?>?<?php echo strtotime(date(\'Y-m-d hh \')); ?>"<?php');
             $latte->addFilter('scache', $set);
 
@@ -91,9 +93,9 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 
         } else {
             $template = parent::createTemplate($class);
-            $latte = new Nette\Latte\Engine;
+            $latte = new \Nette\Latte\Engine;
 
-            $set = new Nette\Latte\Macros\MacroSet($latte->getCompiler());
+            $set = new \Nette\Latte\Macros\MacroSet($latte->getCompiler());
             $set->addMacro('scache', '?>?<?php echo strtotime(date(\'Y-m-d hh \')); ?>"<?php');
             $template->registerFilter($latte);
 

@@ -1,5 +1,8 @@
 <?php
 
+namespace App\Presenters;
+
+use Grido\Grid;
 use Nette\Utils\Html;
 
 /**
@@ -11,12 +14,12 @@ use Nette\Utils\Html;
  */
 final class DibiPresenter extends BasePresenter
 {
-    /** @var DibiConnection @inject */
+    /** @var \DibiConnection @inject */
     public $database;
 
     protected function createComponentGrid($name)
     {
-        $grid = new Grido\Grid($this, $name);
+        $grid = new Grid($this, $name);
 
         $fluent = $this->database->select('u.*, c.title AS country')
             ->from('[user] u')
@@ -36,7 +39,7 @@ final class DibiPresenter extends BasePresenter
             ->setSortable()
             ->cellPrototype->class[] = 'center';
 
-        $grid->addColumnDate('birthday', 'Birthday', Grido\Components\Columns\Date::FORMAT_TEXT)
+        $grid->addColumnDate('birthday', 'Birthday', \Grido\Components\Columns\Date::FORMAT_TEXT)
             ->setSortable()
             ->setFilterDate()
                 ->setCondition($this->gridBirthdayFilterCondition);

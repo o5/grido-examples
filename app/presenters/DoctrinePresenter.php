@@ -1,7 +1,9 @@
 <?php
 
-use Grido\Components\Filters\Filter,
-    Nette\Utils\Html;
+namespace App\Presenters;
+
+use Grido\Grid;
+use Nette\Utils\Html;
 
 /**
  * Doctrine example.
@@ -17,9 +19,9 @@ final class DoctrinePresenter extends BasePresenter
 
     protected function createComponentGrid($name)
     {
-        $grid = new Grido\Grid($this, $name);
+        $grid = new Grid($this, $name);
 
-        $repository = $this->database->getRepository('Entities\User');
+        $repository = $this->database->getRepository('App\Models\Doctrine\Entities\User');
         $model = new \Grido\DataSources\Doctrine(
             $repository->createQueryBuilder('a') // We need to create query builder with inner join.
                 ->addSelect('c')                 // This will produce less SQL queries with prefetch.
@@ -40,7 +42,7 @@ final class DoctrinePresenter extends BasePresenter
             ->setSortable()
             ->cellPrototype->class[] = 'center';
 
-        $grid->addColumnDate('birthday', 'Birthday', Grido\Components\Columns\Date::FORMAT_TEXT)
+        $grid->addColumnDate('birthday', 'Birthday', \Grido\Components\Columns\Date::FORMAT_TEXT)
             ->setSortable()
             ->setFilterDate()
                 ->setCondition($this->gridBirthdayFilterCondition);

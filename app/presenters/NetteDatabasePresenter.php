@@ -1,5 +1,8 @@
 <?php
 
+namespace App\Presenters;
+
+use Grido\Grid;
 use Nette\Utils\Html;
 
 /**
@@ -11,12 +14,12 @@ use Nette\Utils\Html;
  */
 final class NetteDatabasePresenter extends BasePresenter
 {
-    /** @var Nette\Database\Context @inject */
+    /** @var \Nette\Database\Context @inject */
     public $database;
 
     protected function createComponentGrid($name)
     {
-        $grid = new Grido\Grid($this, $name);
+        $grid = new Grid($this, $name);
         $grid->model = $this->database->table('user');
 
         $grid->addColumnText('firstname', 'Firstname')
@@ -32,7 +35,7 @@ final class NetteDatabasePresenter extends BasePresenter
             ->setSortable()
             ->cellPrototype->class[] = 'center';
 
-        $grid->addColumnDate('birthday', 'Birthday', Grido\Components\Columns\Date::FORMAT_TEXT)
+        $grid->addColumnDate('birthday', 'Birthday', \Grido\Components\Columns\Date::FORMAT_TEXT)
             ->setSortable()
             ->setFilterDate()
                 ->setCondition($this->gridBirthdayFilterCondition);

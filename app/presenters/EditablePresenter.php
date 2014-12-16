@@ -1,5 +1,8 @@
 <?php
 
+namespace App\Presenters;
+
+use Grido\Grid;
 use Nette\Utils\Html;
 
 /**
@@ -10,12 +13,12 @@ use Nette\Utils\Html;
  */
 final class EditablePresenter extends BasePresenter
 {
-    /** @var Nette\Database\Context @inject */
+    /** @var \Nette\Database\Context @inject */
     public $database;
 
     protected function createComponentGrid($name)
     {
-        $grid = new Grido\Grid($this, $name);
+        $grid = new Grid($this, $name);
         $grid->model = $this->database->table('user');
 
         $grid->setEditableColumns(function($id, $newValue, $oldValue, $column) {
@@ -35,11 +38,11 @@ final class EditablePresenter extends BasePresenter
 
         $genderList = array('female' => 'female', 'male' => 'male');
         $grid->addColumnText('gender', 'Gender')
-            ->setEditableControl(new Nette\Forms\Controls\SelectBox(NULL, $genderList))
+            ->setEditableControl(new \Nette\Forms\Controls\SelectBox(NULL, $genderList))
             ->setSortable()
             ->cellPrototype->class[] = 'center';
 
-        $grid->addColumnDate('birthday', 'Birthday', Grido\Components\Columns\Date::FORMAT_TEXT)
+        $grid->addColumnDate('birthday', 'Birthday', \Grido\Components\Columns\Date::FORMAT_TEXT)
             ->setSortable()
             ->setFilterDate()
                 ->setCondition($this->gridBirthdayFilterCondition);
@@ -56,7 +59,7 @@ final class EditablePresenter extends BasePresenter
             ->setSortable()
             ->setColumn('cctype') //name of db column
             ->setReplacement(array('MasterCard' => Html::el('b')->setText('MasterCard')))
-            ->setEditableControl(new Nette\Forms\Controls\SelectBox(NULL, $cardList))
+            ->setEditableControl(new \Nette\Forms\Controls\SelectBox(NULL, $cardList))
             ->cellPrototype->class[] = 'center';
 
         $grid->addColumnEmail('emailaddress', 'Email')

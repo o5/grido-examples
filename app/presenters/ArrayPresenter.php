@@ -1,5 +1,8 @@
 <?php
 
+namespace App\Presenters;
+
+use Grido\Grid;
 use Grido\Components\Filters\Filter;
 
 /**
@@ -12,7 +15,7 @@ final class ArrayPresenter extends BasePresenter
 {
     protected function createComponentGrid($name)
     {
-        $grid = new Grido\Grid($this, $name);
+        $grid = new Grid($this, $name);
         $grid->model = $this->getData();
 
         $grid->filterRenderType = Filter::RENDER_OUTER;
@@ -46,7 +49,7 @@ final class ArrayPresenter extends BasePresenter
 
         $grid->addFilterCustom('name', new \Nette\Forms\Controls\TextArea('Jméno nebo příjmení'))
             ->setColumn('firstname')
-            ->setColumn('surname', Grido\Components\Filters\Condition::OPERATOR_OR)
+            ->setColumn('surname', \Grido\Components\Filters\Condition::OPERATOR_OR)
             ->setCondition('LIKE ?')
             ->setFormatValue('%%value%');
 
@@ -58,7 +61,7 @@ final class ArrayPresenter extends BasePresenter
         $grid->getColumn('last_login')->headerPrototype->class[] = 'center';
         $grid->getColumn('last_login')->headerPrototype->style['width'] = '9%';
 
-        $column = new Grido\Components\Columns\Boolean($grid, 'ok', 'OK');
+        $column = new \App\Controls\Grido\Components\Columns\Boolean($grid, 'ok', 'OK');
         $column->setSortable()
             ->headerPrototype->style['width'] ='2%';
         $grid->getColumn('ok')->headerPrototype->class[] = 'center';
@@ -80,10 +83,10 @@ final class ArrayPresenter extends BasePresenter
     /**
      * Grid callback.
      * @param array $item
-     * @param Nette\Utils\Html $el
+     * @param \Nette\Utils\Html $el
      * @return \Nette\Utils\Html
      */
-    public function gridHrefRender(array $item, Nette\Utils\Html $el)
+    public function gridHrefRender(array $item, \Nette\Utils\Html $el)
     {
         if ($item['last_login'] === NULL) {
             $class = str_replace('btn-default ', '', implode(' ', $el->class));
@@ -100,8 +103,8 @@ final class ArrayPresenter extends BasePresenter
      */
     private function getData($cacheKey = 'data')
     {
-        $storage = new Nette\Caching\Storages\FileStorage($this->context->parameters['tempDir']);
-        $cache = new Nette\Caching\Cache($storage, 'example_data');
+        $storage = new \Nette\Caching\Storages\FileStorage($this->context->parameters['tempDir']);
+        $cache = new \Nette\Caching\Cache($storage, 'example_data');
         $data = $cache->load($cacheKey);
 
         if (empty($data)) {
@@ -129,14 +132,14 @@ final class ArrayPresenter extends BasePresenter
 
                 $item['last_login'] = $item['id'] == 4
                     ? NULL
-                    : new Nette\DateTime("NOW - {$d}day {$h}hour {$m}minute {$s}second");
+                    : new \Nette\DateTime("NOW - {$d}day {$h}hour {$m}minute {$s}second");
 
                 $item['allowance'] = rand(10000, 100000) / 10;
                 $item['ok'] = (bool) rand(0, 1);
             }
 
             $cache->save($cacheKey, $data, array(
-                Nette\Caching\Cache::EXPIRE => '+ 60 minutes',
+                \Nette\Caching\Cache::EXPIRE => '+ 60 minutes',
             ));
         }
 
