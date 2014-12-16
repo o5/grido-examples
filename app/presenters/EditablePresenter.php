@@ -11,7 +11,7 @@ use Nette\Utils\Html;
  * @package     Grido
  * @author      Petr Bugyík
  */
-final class EditablePresenter extends BasePresenter
+final class EditablePresenter extends Presenter
 {
     /** @var \Nette\Database\Context @inject */
     public $database;

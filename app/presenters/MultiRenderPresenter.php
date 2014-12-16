@@ -6,7 +6,7 @@ use Grido\Grid;
 use Grido\Components\Filters\Filter;
 use Nette\Utils\Html;
 
-final class MultiRenderPresenter extends BasePresenter
+final class MultiRenderPresenter extends Presenter
 {
     /** @var \DibiConnection @inject */
     public $database;

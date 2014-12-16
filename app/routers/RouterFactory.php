@@ -17,7 +17,7 @@ class RouterFactory
     {
         $router = new RouteList;
 
-        $uri = \App\Presenters\BasePresenter::getExtraPath();
+        $uri = \App\Presenters\Presenter::getExtraPath();
         $router[] = new Route("$uri<filterRenderType>/<presenter>/<action>/<ajax>/", array(
             'filterRenderType' => 'inner',
             'presenter' => 'NetteDatabase',

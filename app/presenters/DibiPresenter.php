@@ -12,7 +12,7 @@ use Nette\Utils\Html;
  * @package     Grido
  * @author      Petr Bugyík
  */
-final class DibiPresenter extends BasePresenter
+final class DibiPresenter extends Presenter
 {
     /** @var \DibiConnection @inject */
     public $database;

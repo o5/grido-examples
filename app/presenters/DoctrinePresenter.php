@@ -12,7 +12,7 @@ use Nette\Utils\Html;
  * @package     Grido
  * @author      Petr Bugyík
  */
-final class DoctrinePresenter extends BasePresenter
+final class DoctrinePresenter extends Presenter
 {
     /** @var \Kdyby\Doctrine\EntityManager @inject */
     public $database;

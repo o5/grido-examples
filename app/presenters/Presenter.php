@@ -2,7 +2,7 @@
 
 namespace App\Presenters;
 
-abstract class BasePresenter extends \Nette\Application\UI\Presenter
+abstract class Presenter extends \Nette\Application\UI\Presenter
 {
     /** @var string @persistent */
     public $ajax = 'on';

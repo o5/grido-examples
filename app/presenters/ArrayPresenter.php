@@ -11,7 +11,7 @@ use Grido\Components\Filters\Filter;
  * @package     Grido
  * @author      Petr Bugyík
  */
-final class ArrayPresenter extends BasePresenter
+final class ArrayPresenter extends Presenter
 {
     protected function createComponentGrid($name)
     {

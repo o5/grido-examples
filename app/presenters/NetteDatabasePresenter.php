@@ -12,7 +12,7 @@ use Nette\Utils\Html;
  * @package     Grido
  * @author      Petr Bugyík
  */
-final class NetteDatabasePresenter extends BasePresenter
+final class NetteDatabasePresenter extends Presenter
 {
     /** @var \Nette\Database\Context @inject */
     public $database;
