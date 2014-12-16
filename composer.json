@@ -17,9 +17,6 @@
             "email": "petr@bugyik.cz"
         }
     ],
-    "config": {
-        "vendor-dir": "libs"
-    },
     "scripts": {
         "post-install-cmd": [
             "chmod -R 0777 temp/ log/ app/models/doctrine"

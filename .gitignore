@@ -1,6 +1,6 @@
 temp/*
 log/*
-libs/*
+vendor/*
 app/models/doctrine/proxies/*
 
 .DS_Store
