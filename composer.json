@@ -4,11 +4,11 @@
     "homepage": "http://grido.bugyik.cz/example/",
     "require": {
         "php": ">=5.3.1",
-        "nette/nette": "~2.1",
-        "dibi/dibi": "~2.1",
+        "nette/nette": "~2.2",
+        "dibi/dibi": "~2.2",
         "o5/grido": "~2.0",
-        "kdyby/doctrine": "~1.1.0",
-        "doctrine/orm": "~2.4.1"
+        "kdyby/doctrine": "~2.0",
+        "doctrine/orm": "2.4.6"
     },
     "license": ["BSD-3", "GPL-2.0", "GPL-3.0"],
     "authors": [
