@@ -17,7 +17,7 @@ class RouterFactory
     {
         $router = new RouteList;
 
-        $uri = \App\Presenters\Presenter::getExtraPath();
+        $uri = self::getExtraPath();
         $router[] = new Route("$uri<filterRenderType>/<presenter>/<action>/<ajax>/", array(
             'filterRenderType' => 'inner',
             'presenter' => 'NetteDatabase',
@@ -26,5 +26,12 @@ class RouterFactory
         ));
 
         return $router;
+    }
+
+    public static function getExtraPath()
+    {
+        return $_SERVER['HTTP_HOST'] === 'grido.bugyik.cz'
+            ? '/example'
+            : NULL;
     }
 }

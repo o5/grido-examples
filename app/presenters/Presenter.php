@@ -81,39 +81,20 @@ abstract class Presenter extends \Nette\Application\UI\Presenter
 
     protected function createTemplate($class = NULL)
     {
-        if (\Nette\Framework::VERSION_ID >= 20200) {
-            $template = parent::createTemplate();
-            $latte = $template->getLatte();
+        $template = parent::createTemplate();
+        $latte = $template->getLatte();
 
-            $set = new \Latte\Macros\MacroSet($latte->getCompiler());
-            $set->addMacro('scache', '?>?<?php echo strtotime(date(\'Y-m-d hh \')); ?>"<?php');
-            $latte->addFilter('scache', $set);
+        $set = new \Latte\Macros\MacroSet($latte->getCompiler());
+        $set->addMacro('scache', '?>?<?php echo strtotime(date(\'Y-m-d hh \')); ?>"<?php');
 
-            return $template;
-
-        } else {
-            $template = parent::createTemplate($class);
-            $latte = new \Nette\Latte\Engine;
-
-            $set = new \Nette\Latte\Macros\MacroSet($latte->getCompiler());
-            $set->addMacro('scache', '?>?<?php echo strtotime(date(\'Y-m-d hh \')); ?>"<?php');
-            $template->registerFilter($latte);
-
-            return $template;
-        }
+        $latte->addFilter('scache', $set);
+        return $template;
     }
 
     public function beforeRender()
     {
-        $baseUri = self::getExtraPath();
+        $baseUri = \App\Routers\RouterFactory::getExtraPath();
         $this->template->baseUri = $baseUri ? $baseUri : $this->template->basePath;
         $this->template->first = $this->context->httpRequest->getCookie('grido-sandbox-first', 1);
-    }
-
-    public static function getExtraPath()
-    {
-        return $_SERVER['HTTP_HOST'] == 'grido.bugyik.cz'
-            ? '/example'
-            : NULL;
     }
 }
