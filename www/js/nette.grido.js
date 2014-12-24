@@ -1,5 +1,5 @@
 /**
- * Nette ajax Grido extension.
+ * Grido extension for nette.ajax.js
  * @author Petr Bugyík
  * @param {jQuery} $
  */

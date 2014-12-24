@@ -3,18 +3,13 @@
  *
  * @author Petr Bugyík
  * @param {jQuery} $
+ * @param {Document} document
  * @param {Window} window
  * @param {Grido} Grido
  * @param {undefined} undefined
- * @depends:
- *      https://rawgithub.com/digitalBush/jquery.maskedinput/master/dist/jquery.maskedinput.js
- *      https://rawgithub.com/Aymkdn/Datepicker-for-Bootstrap/master/bootstrap-datepicker.js
- *      https://rawgithub.com/walmartlabs/typeahead.js/master/dist/typeahead.min.js
- *      https://rawgithub.com/cowboy/jquery-hashchange/master/jquery.ba-hashchange.min.js
- *      https://rawgithub.com/vojtech-dobes/nette.ajax.js/master/nette.ajax.js
  */
 ;
-(function($, window, Grido, undefined) {
+(function($, window, document, Grido, undefined) {
     /*jshint laxbreak: true, expr: true */
     "use strict";
 
@@ -27,14 +22,34 @@
     Grido.Grid.prototype.initDatepicker = function()
     {
         var _this = this;
+        var format = _this.options.datepicker.format.toUpperCase();
         this.$element.on('focus', 'input.date', function() {
-            $.fn.mask === undefined
-                ? console.error('Plugin "jquery.maskedinput.js" is missing!')
-                : $(this).mask(_this.options.datepicker.mask);
+            $(this).daterangepicker(
+            {
+                singleDatePicker: true,
+                showDropdowns: true,
+                format: format,
+                startDate: moment().subtract(29, 'days'),
+                endDate: moment()
+            });
+        });
 
-            $.fn.datepicker === undefined
-                ? console.error('Plugin "bootstrap-datepicker.js" is missing!')
-                : $(this).datepicker({format: _this.options.datepicker.format});
+        this.$element.on('focus', 'input.daterange', function() {
+            $(this).daterangepicker(
+            {
+                format: format,
+                showDropdowns: true,
+                ranges: {
+                 'Today': [moment(), moment()],
+                 'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                 'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                 'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                 'This Month': [moment().startOf('month'), moment().endOf('month')],
+                 'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+              },
+              startDate: moment().subtract(29, 'days'),
+              endDate: moment()
+            });
         });
     };
 
@@ -46,19 +61,35 @@
         }
 
         var _this = this;
-        this.$element.find('input.suggest').each(function() {
-
-            var limit = $(this).data('grido-suggest-limit'),
-                url = $(this).data('grido-suggest-handler'),
+        this.$element.find('input.suggest').each(function()
+        {
+            var url = $(this).data('grido-suggest-handler'),
                 wildcard = $(this).data('grido-suggest-replacement');
 
-            $(this).typeahead({
-                limit: limit,
-                highlight: true,
+            var options = {
+                limit: $(this).data('grido-suggest-limit'),
+                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
                 remote: {
-                    url: url,
-                    wildcard: wildcard
+                    url: url.replace(wildcard, '%QUERY')
                 }
+            };
+
+            if (window.NProgress !== undefined) {
+                options.remote.ajax = {
+                    beforeSend: $.proxy(window.NProgress.start),
+                    complete: $.proxy(window.NProgress.done)
+                };
+            }
+
+            var source = new Bloodhound(options);
+            source.initialize();
+
+            $(this).typeahead(null, {
+                displayKey: function(item) {
+                    return item;
+                },
+                source: source.ttAdapter()
             });
 
             $(this).on('typeahead:selected', function() {
@@ -77,13 +108,9 @@
         });
     };
 
-    Grido.Ajax.prototype.registerHashChangeEvent = function()
+    Grido.Ajax.prototype.onSuccessEvent = function(params, uri)
     {
-        $.fn.hashchange === undefined
-            ? console.error('Plugin "jquery.hashchange.js" is missing!')
-            : $(window).hashchange($.proxy(this.handleHashChangeEvent, this));
-
-        this.handleHashChangeEvent();
+        History.pushState(params, document.title, '?' + uri);
     };
 
     /**
@@ -101,4 +128,4 @@
         }
     };
 
-})(jQuery, window, window.Grido);
+})(jQuery, window, document, window.Grido);

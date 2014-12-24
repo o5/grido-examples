@@ -8,16 +8,17 @@
         <meta name="author" content="Petr Bugyík">
         <meta name="robots" content="{$robots}" n:ifset="$robots">
         <link rel="shortcut icon" href="{$baseUri}/favicon.ico">
-        <link rel="stylesheet" href="{$baseUri}/css/gh-fork-ribbon.css">
+        <link rel="stylesheet" href="{$baseUri}/components/github-fork-ribbon-css/gh-fork-ribbon.css">
         <!--[if IE]>
-        <link rel="stylesheet" href="{$baseUri}/css/gh-fork-ribbon.ie.css{scache}">
+            <link rel="stylesheet" href="{$baseUri}/components/github-fork-ribbon-css/gh-fork-ribbon.ie.css">
         <![endif]-->
-        <link rel="stylesheet" href="{$baseUri}/css/bootstrap.min.css">
-        <link rel="stylesheet" href="{$baseUri}/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{$baseUri}/css/datepicker.css">
-        <link rel="stylesheet" href="{$baseUri}/css/typeahead.css">
+        <link rel="stylesheet" href="{$baseUri}/components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{$baseUri}/components/bootstrap/dist/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{$baseUri}/components/bootstrap-daterangepicker/daterangepicker-bs3.css">
+        <link rel="stylesheet" href="{$baseUri}/components/typeahead.js-bootstrap3.less/typeahead.css">
+        <link rel="stylesheet" href="{$baseUri}/components/grido/client-side/grido.css{scache}">
+        <link rel="stylesheet" href="{$baseUri}/components/nprogress/nprogress.css">
         <link rel="stylesheet" href="{$baseUri}/css/style.css{scache}">
-        <link rel="stylesheet" href="https://rawgithub.com/o5/grido/master/client-side/grido.css">
     </head>
     <body>
         <div id="content">
@@ -112,25 +113,22 @@
             </div>
         </div>
 
+        <script src="{$baseUri}/components/moment/moment.js"></script>
+        <script src="{$baseUri}/components/jquery/dist/jquery.min.js"></script>
+        <script src="{$baseUri}/components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="{$baseUri}/components/bootstrap-daterangepicker/daterangepicker.js"></script>
+        <script src="{$baseUri}/components/nette-forms/src/assets/netteForms.js"></script>
+
         {var ajax = $presenter->getParameter('ajax') == 'on'}
+        <script n:if="$ajax" src="{$baseUri}/components/history.js/scripts/bundled/html4+html5/jquery.history.js"></script>
+        <script n:if="$ajax" src="{$baseUri}/components/typeahead.js/dist/typeahead.bundle.min.js"></script>
+        <script n:if="$ajax" src="{$baseUri}/components/nette.ajax.js/nette.ajax.js"></script>
+        <script n:if="$ajax" src="{$baseUri}/components/nprogress/nprogress.js"></script>
+        <script n:if="$ajax" src="{$baseUri}/js/nette.nprogress.js"></script>
 
-        <script src="{$baseUri}/js/jquery.min.js"></script>
-        <script src="{$baseUri}/js/bootstrap-dropdown.js"></script>
-        <script src="{$baseUri}/js/bootstrap-alert.js"></script>
-        <script src="{$baseUri}/js/netteForms.js"></script>
-
-        <script n:if="$ajax" src="{$baseUri}/js/nette.ajax.js"></script>
-        <script n:if="$ajax" src="{$baseUri}/js/spinner.ajax.js"></script>
-        <script n:if="$ajax" src="{$baseUri}/js/grido.ajax.js{scache}"></script>
-
-        <script src="{$baseUri}/js/jquery.hashchange.min.js"></script>
-        <script src="{$baseUri}/js/jquery.maskedinput.min.js"></script>
-        <script src="{$baseUri}/js/typeahead.min.js{scache}"></script>
-        <script src="{$baseUri}/js/bootstrap-datepicker.js"></script>
-
-        <script src="https://rawgithub.com/o5/grido/master/client-side/grido.js"></script>
+        <script src="{$baseUri}/js/grido.js{scache}"></script>
         <script src="{$baseUri}/js/grido.ext.js{scache}"></script>
-
+        <script n:if="$ajax" src="{$baseUri}/js/nette.grido.js{scache}"></script>
         <script n:if="$ajax"  src="{$baseUri}/js/main.ajax.js{scache}"></script>
         <script n:if="!$ajax" src="{$baseUri}/js/main.js{scache}"></script>
     </body>

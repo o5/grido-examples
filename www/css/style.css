@@ -14,14 +14,6 @@ body {background: #FBFBFB url(../img/bg.jpg) 0 0 repeat}
 
 .hide {display: none}
 
-#ajax-spinner {
-    background: url('../img/spinner.gif') no-repeat scroll 0 0 transparent;
-    height: 16px;
-    width: 16px;
-    float: right;
-    margin: 15px;
-}
-
 .loading,
 .loading * {
     cursor: wait !important;
@@ -72,6 +64,14 @@ body {background: #FBFBFB url(../img/bg.jpg) 0 0 repeat}
 .navbar .container {
     margin-left: 0;
     max-width: 100%;
+}
+
+.navbar-default {
+    border: 1px solid #d4d4d4!important;
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#fff),to(#f2f2f2))!important;
+    background-image: -webkit-linear-gradient(top,#fff,#f2f2f2)!important;
+    background-image: -o-linear-gradient(top,#fff,#f2f2f2)!important;
+    background-image: linear-gradient(to bottom,#fff,#f2f2f2)!important;
 }
 
 th.checker input

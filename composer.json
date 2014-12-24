@@ -19,7 +19,8 @@
     ],
     "scripts": {
         "post-install-cmd": [
-            "chmod -R 0777 temp/ log/ app/models/doctrine"
+            "chmod -R 0777 temp/ log/ app/models/doctrine",
+            "bower up"
         ]
     }
 }
