@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="{$baseUri}/components/bootstrap/dist/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="{$baseUri}/components/bootstrap-daterangepicker/daterangepicker-bs3.css">
         <link rel="stylesheet" href="{$baseUri}/components/typeahead.js-bootstrap3.less/typeahead.css">
-        <link rel="stylesheet" href="{$baseUri}/components/grido/client-side/grido.css{scache}">
+        <link rel="stylesheet" href="{$baseUri}/components/grido/client-side/css/grido.css{scache}">
         <link rel="stylesheet" href="{$baseUri}/components/nprogress/nprogress.css">
         <link rel="stylesheet" href="{$baseUri}/css/style.css{scache}">
     </head>
@@ -126,9 +126,12 @@
         <script n:if="$ajax" src="{$baseUri}/components/nprogress/nprogress.js"></script>
         <script n:if="$ajax" src="{$baseUri}/js/nette.nprogress.js"></script>
 
-        <script src="{$baseUri}/js/grido.js{scache}"></script>
-        <script src="{$baseUri}/js/grido.ext.js{scache}"></script>
-        <script n:if="$ajax" src="{$baseUri}/js/nette.grido.js{scache}"></script>
+        <script src="{$baseUri}/components/grido/client-side/js/grido.js{scache}"></script>
+        <script src="{$baseUri}/components/grido/client-side/js/plugins/grido.datepicker.js{scache}"></script>
+        <script src="{$baseUri}/components/grido/client-side/js/plugins/grido.typeahead.js{scache}"></script>
+        <script n:if="$ajax" src="{$baseUri}/components/grido/client-side/js/plugins/grido.history.js{scache}"></script>
+        <script n:if="$ajax" src="{$baseUri}/components/grido/client-side/js/plugins/grido.nette.ajax.js{scache}"></script>
+
         <script n:if="$ajax"  src="{$baseUri}/js/main.ajax.js{scache}"></script>
         <script n:if="!$ajax" src="{$baseUri}/js/main.js{scache}"></script>
     </body>
