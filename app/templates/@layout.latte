@@ -34,13 +34,13 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li n:class="$presenter->name == 'NetteDatabase' ? 'active'">
-                                    <a n:href="NetteDatabase:">Nette\Database</a>
+                                    <a n:href="NetteDatabase: filterRenderType => Grido\Components\Filters\Filter::RENDER_INNER">Nette\Database</a>
                                 </li>
                                 <li n:class="$presenter->name == 'Dibi' && $presenter->action == 'default' ? 'active'">
-                                    <a n:href="Dibi:">Dibi</a>
+                                    <a n:href="Dibi: filterRenderType => Grido\Components\Filters\Filter::RENDER_INNER">Dibi</a>
                                 </li>
                                 <li n:class="$presenter->name == 'Doctrine' ? 'active'">
-                                    <a n:href="Doctrine:">Doctrine</a>
+                                    <a n:href="Doctrine: filterRenderType => Grido\Components\Filters\Filter::RENDER_INNER">Doctrine</a>
                                 </li>
                                 <li n:class="$presenter->name == 'Array' ? 'active'">
                                     <a n:href="Array: filterRenderType => Grido\Components\Filters\Filter::RENDER_OUTER">Array</a>
