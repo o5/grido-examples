@@ -99,7 +99,7 @@ final class DibiPresenter extends Presenter
                 return "Are you sure you want to delete {$item->firstname} {$item->surname}?";
         });
 
-        $operations = array('print' => 'Print', 'delete' => 'Delete');
+        $operation = array('print' => 'Print', 'delete' => 'Delete');
         $grid->setOperation($operation, $this->handleOperations)
             ->setConfirm('delete', 'Are you sure you want to delete %i items?');
 
