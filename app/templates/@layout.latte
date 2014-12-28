@@ -128,7 +128,7 @@
 
         <script src="{$baseUri}/components/grido/client-side/js/grido.js{scache}"></script>
         <script src="{$baseUri}/components/grido/client-side/js/plugins/grido.datepicker.js{scache}"></script>
-        <script src="{$baseUri}/components/grido/client-side/js/plugins/grido.typeahead.js{scache}"></script>
+        <script n:if="$ajax" src="{$baseUri}/components/grido/client-side/js/plugins/grido.typeahead.js{scache}"></script>
         <script n:if="$ajax" src="{$baseUri}/components/grido/client-side/js/plugins/grido.history.js{scache}"></script>
         <script n:if="$ajax" src="{$baseUri}/components/grido/client-side/js/plugins/grido.nette.ajax.js{scache}"></script>
 
