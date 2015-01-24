@@ -1,3 +1,5 @@
+{var gridoAssetsPath = 'https://cdn.rawgit.com/o5/grido/832081d'}
+{*var gridoAssetsPath = $baseUri*}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -16,8 +18,8 @@
         <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v3.1.1/dist/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="https://cdn.rawgit.com/dangrossman/bootstrap-daterangepicker/v1.3.17/daterangepicker-bs3.css">
         <link rel="stylesheet" href="https://cdn.rawgit.com/hyspace/typeahead.js-bootstrap3.less/v0.2.3/typeahead.css">
-        <link rel="stylesheet" href="https://cdn.rawgit.com/o5/grido/832081d/client-side/css/grido.css">
         <link rel="stylesheet" href="https://cdn.rawgit.com/rstacruz/nprogress/v0.1.6/nprogress.css">
+        <link rel="stylesheet" href="{$gridoAssetsPath}/client-side/css/grido.css">
         <link rel="stylesheet" href="{$baseUri}/css/style.css{scache}">
     </head>
     <body>
@@ -126,11 +128,11 @@
         <script n:if="$ajax" src="https://cdn.rawgit.com/rstacruz/nprogress/v0.1.6/nprogress.js"></script>
         <script n:if="$ajax" src="{$baseUri}/js/nette.nprogress.js"></script>
 
-        <script src="https://cdn.rawgit.com/o5/grido/832081d/client-side/js/grido.js"></script>
-        <script src="https://cdn.rawgit.com/o5/grido/832081d/client-side/js/plugins/grido.datepicker.js{scache}"></script>
-        <script n:if="$ajax" src="https://cdn.rawgit.com/o5/grido/832081d/client-side/js/plugins/grido.typeahead.js{scache}"></script>
-        <script n:if="$ajax" src="https://cdn.rawgit.com/o5/grido/832081d/client-side/js/plugins/grido.history.js{scache}"></script>
-        <script n:if="$ajax" src="https://cdn.rawgit.com/o5/grido/832081d/client-side/js/plugins/grido.nette.ajax.js{scache}"></script>
+        <script src="{$gridoAssetsPath}/client-side/js/grido.js"></script>
+        <script src="{$gridoAssetsPath}/client-side/js/plugins/grido.datepicker.js"></script>
+        <script n:if="$ajax" src="{$gridoAssetsPath}/client-side/js/plugins/grido.typeahead.js"></script>
+        <script n:if="$ajax" src="{$gridoAssetsPath}/client-side/js/plugins/grido.history.js"></script>
+        <script n:if="$ajax" src="{$gridoAssetsPath}/client-side/js/plugins/grido.nette.ajax.js"></script>
 
         <script n:if="$ajax"  src="{$baseUri}/js/main.ajax.js{scache}"></script>
         <script n:if="!$ajax" src="{$baseUri}/js/main.js{scache}"></script>
