@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Grido\Components\Paginator | Grido@2.0.8</title>
+
+	<link rel="stylesheet" href="resources/bootstrap.min.css?08b23951ef4599ca9cbf1f902d0e8290c9653ddd">
+	<link rel="stylesheet" href="resources/style.css?062e9e59e0b8c44fbaaded5b7ffc21f907b78669">
+	<link rel="search" type="application/opensearchdescription+xml" title="Grido@2.0.8" href="/opensearch.xml">
+
+	<script>
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', "UA-39540018-1"]);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</head>
+
+<body>
+	<div id="navigation" class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a href="index.html" class="brand">Grido@2.0.8</a>
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li>
+							<a href="namespace-Grido.Components.html" title="Summary of Grido\Components"><span>Namespace</span></a>
+						</li>
+						<li class="active">
+<span>Class</span>						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+						</li>
+						<li>
+							<a href="deprecated.html" title="List of deprecated elements"><span>Deprecated</span></a>
+						</li>
+						<li>
+							<a href="todo.html" title="Todo list"><span>Todo</span></a>
+						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="-API-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="left">
+	<div id="menu">
+		<form action="http://www.google.com/cse" id="search" class="form-search">
+			<input type="hidden" name="cx" value="000181613663465349732">
+			<input type="hidden" name="ie" value="UTF-8">
+			<input type="text" name="q" class="search-query" placeholder="Search">
+		</form>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+					<li class="active">
+						<a href="namespace-Grido.html">
+							Grido<span></span>
+						</a>
+							<ul>
+					<li class="active">
+						<a href="namespace-Grido.Components.html">
+							Components<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Grido.Components.Actions.html">
+							Actions						</a>
+							</li>
+					<li>
+						<a href="namespace-Grido.Components.Columns.html">
+							Columns						</a>
+							</li>
+					<li>
+						<a href="namespace-Grido.Components.Filters.html">
+							Filters						</a>
+							</li>
+								</ul></li>
+					<li>
+						<a href="namespace-Grido.DataSources.html">
+							DataSources						</a>
+							</li>
+					<li>
+						<a href="namespace-Grido.PropertyAccessors.html">
+							PropertyAccessors						</a>
+							</li>
+					<li>
+						<a href="namespace-Grido.Translations.html">
+							Translations						</a>
+							</li>
+								</ul></li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Grido.Components.Component.html">Component</a></li>
+				<li><a href="class-Grido.Components.Container.html">Container</a></li>
+				<li><a href="class-Grido.Components.Export.html">Export</a></li>
+				<li><a href="class-Grido.Components.Operation.html">Operation</a></li>
+				<li class="active"><a href="class-Grido.Components.Paginator.html">Paginator</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Class Paginator</h1>
+
+
+	<div class="description">
+	<p>Paginating grid.</p>
+	</div>
+
+	<dl class="tree well">
+		<dd style="padding-left:0px">
+Nette\Utils\Paginator
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>Grido\Components\Paginator</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Grido.html">Grido</a>\<a href="namespace-Grido.Components.html">Components</a><br>
+		<b>Package:</b> Grido\Components<br>
+
+				<b>Author:</b>
+				Petr Bugyík<br>
+			<b>Located at</b> <a href="source-class-Grido.Components.Paginator.html#14-118" title="Go to source code">Components/Paginator.php</a>
+		<br>
+	</div>
+
+
+
+		<h2>Methods summary</h2>
+		<table class="summary table table-bordered table-striped methods" id="methods">
+		<tr data-order="setGrid" id="_setGrid">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-Grido.Components.Paginator.html">Grido\Components\Paginator</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_setGrid">#</a>
+			<code><a href="source-class-Grido.Components.Paginator.html#44-52" title="Go to source code">setGrid</a>( <span><code><a href="class-Grido.Grid.html">Grido\Grid</a></code> <var>$grid</var></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$grid</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Grido.Components.Paginator.html">Grido\Components\Paginator</a></code>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getPage" id="_getPage">
+
+			<td class="attributes"><code>
+				 public 
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getPage">#</a>
+			<code><a href="source-class-Grido.Components.Paginator.html#56-66" title="Go to source code">getPage</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getSteps" id="_getSteps">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getSteps">#</a>
+			<code><a href="source-class-Grido.Components.Paginator.html#68-91" title="Go to source code">getSteps</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getCountBegin" id="_getCountBegin">
+
+			<td class="attributes"><code>
+				 public 
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getCountBegin">#</a>
+			<code><a href="source-class-Grido.Components.Paginator.html#93-103" title="Go to source code">getCountBegin</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getCountEnd" id="_getCountEnd">
+
+			<td class="attributes"><code>
+				 public 
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getCountEnd">#</a>
+			<code><a href="source-class-Grido.Components.Paginator.html#105-117" title="Go to source code">getCountEnd</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		</table>
+
+
+
+		<h3>Magic methods summary</h3>
+
+
+
+
+
+
+
+
+		<h2>Properties summary</h2>
+		<table class="summary table table-bordered table-striped properties" id="properties">
+		<tr data-order="page" id="$page">
+			<td class="attributes"><code>
+				protected  
+				integer
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Grido.Components.Paginator.html#29-30" title="Go to source code"><var>$page</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$page" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="steps" id="$steps">
+			<td class="attributes"><code>
+				protected  
+				array
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Grido.Components.Paginator.html#32-33" title="Go to source code"><var>$steps</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$steps" class="anchor">#</a>
+					<code><span class="php-keyword1">array</span>()</code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="countBegin" id="$countBegin">
+			<td class="attributes"><code>
+				protected  
+				integer
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Grido.Components.Paginator.html#35-36" title="Go to source code"><var>$countBegin</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$countBegin" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="countEnd" id="$countEnd">
+			<td class="attributes"><code>
+				protected  
+				integer
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Grido.Components.Paginator.html#38-39" title="Go to source code"><var>$countEnd</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$countEnd" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="grid" id="$grid">
+			<td class="attributes"><code>
+				protected  
+				<code><a href="class-Grido.Grid.html">Grido\Grid</a></code>
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Grido.Components.Paginator.html#41-42" title="Go to source code"><var>$grid</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$grid" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+		</table>
+
+
+
+		<h3>Magic properties</h3>
+		<table class="summary table table-bordered table-striped properties" id="magicProperties">
+		<tr data-order="page" id="m$page">
+			<td class="attributes"><code>
+				public  read-only
+				integer
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Grido.Components.Paginator.html#21" title="Go to source code"><var>$page</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+		</tr>
+		<tr data-order="steps" id="m$steps">
+			<td class="attributes"><code>
+				public  read-only
+				array
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Grido.Components.Paginator.html#22" title="Go to source code"><var>$steps</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+		</tr>
+		<tr data-order="countEnd" id="m$countEnd">
+			<td class="attributes"><code>
+				public  read-only
+				integer
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Grido.Components.Paginator.html#23" title="Go to source code"><var>$countEnd</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+		</tr>
+		<tr data-order="countBegin" id="m$countBegin">
+			<td class="attributes"><code>
+				public  read-only
+				integer
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Grido.Components.Paginator.html#24" title="Go to source code"><var>$countBegin</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+		</tr>
+		<tr data-order="grid" id="m$grid">
+			<td class="attributes"><code>
+				public  write-only
+				<code><a href="class-Grido.Grid.html">Grido\Grid</a></code>
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Grido.Components.Paginator.html#25" title="Go to source code"><var>$grid</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+		</tr>
+		</table>
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		Grido@2.0.8 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

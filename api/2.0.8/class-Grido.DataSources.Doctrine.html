@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Grido\DataSources\Doctrine | Grido@2.0.8</title>
+
+	<link rel="stylesheet" href="resources/bootstrap.min.css?08b23951ef4599ca9cbf1f902d0e8290c9653ddd">
+	<link rel="stylesheet" href="resources/style.css?062e9e59e0b8c44fbaaded5b7ffc21f907b78669">
+	<link rel="search" type="application/opensearchdescription+xml" title="Grido@2.0.8" href="/opensearch.xml">
+
+	<script>
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', "UA-39540018-1"]);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</head>
+
+<body>
+	<div id="navigation" class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a href="index.html" class="brand">Grido@2.0.8</a>
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li>
+							<a href="namespace-Grido.DataSources.html" title="Summary of Grido\DataSources"><span>Namespace</span></a>
+						</li>
+						<li class="active">
+<span>Class</span>						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+						</li>
+						<li>
+							<a href="deprecated.html" title="List of deprecated elements"><span>Deprecated</span></a>
+						</li>
+						<li>
+							<a href="todo.html" title="Todo list"><span>Todo</span></a>
+						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="-API-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="left">
+	<div id="menu">
+		<form action="http://www.google.com/cse" id="search" class="form-search">
+			<input type="hidden" name="cx" value="000181613663465349732">
+			<input type="hidden" name="ie" value="UTF-8">
+			<input type="text" name="q" class="search-query" placeholder="Search">
+		</form>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+					<li class="active">
+						<a href="namespace-Grido.html">
+							Grido<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Grido.Components.html">
+							Components<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Grido.Components.Actions.html">
+							Actions						</a>
+							</li>
+					<li>
+						<a href="namespace-Grido.Components.Columns.html">
+							Columns						</a>
+							</li>
+					<li>
+						<a href="namespace-Grido.Components.Filters.html">
+							Filters						</a>
+							</li>
+								</ul></li>
+					<li class="active">
+						<a href="namespace-Grido.DataSources.html">
+							DataSources						</a>
+							</li>
+					<li>
+						<a href="namespace-Grido.PropertyAccessors.html">
+							PropertyAccessors						</a>
+							</li>
+					<li>
+						<a href="namespace-Grido.Translations.html">
+							Translations						</a>
+							</li>
+								</ul></li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Grido.DataSources.ArraySource.html">ArraySource</a></li>
+				<li><a href="class-Grido.DataSources.DibiFluent.html">DibiFluent</a></li>
+				<li class="active"><a href="class-Grido.DataSources.Doctrine.html">Doctrine</a></li>
+				<li><a href="class-Grido.DataSources.Model.html">Model</a></li>
+				<li><a href="class-Grido.DataSources.NetteDatabase.html">NetteDatabase</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-Grido.DataSources.IDataSource.html">IDataSource</a></li>
+			</ul>
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Class Doctrine</h1>
+
+
+	<div class="description">
+	<p>Doctrine data source.</p>
+	</div>
+
+	<dl class="tree well">
+		<dd style="padding-left:0px">
+Nette\Object
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>Grido\DataSources\Doctrine</span></b>			
+			 implements 
+				<a href="class-Grido.DataSources.IDataSource.html"><span>Grido\DataSources\IDataSource</span></a>
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Grido.html">Grido</a>\<a href="namespace-Grido.DataSources.html">DataSources</a><br>
+		<b>Package:</b> Grido\DataSources<br>
+
+				<b>Author:</b>
+				Martin Jantosovic <a href="&#x6d;&#x61;&#105;&#108;&#x74;&#x6f;&#x3a;&#109;&#97;&#x72;&#x74;&#x69;&#110;&#46;&#x6a;&#x61;&#x6e;&#116;&#111;&#x73;&#x6f;&#x76;&#105;&#99;&#x40;&#x66;&#x72;&#101;&#121;&#x61;&#x2e;&#x73;&#107;">&#109;&#97;&#x72;&#x74;&#x69;&#110;&#46;&#x6a;&#x61;&#x6e;&#116;&#111;&#x73;&#x6f;&#x76;&#105;&#99;&#x40;&#x66;&#x72;&#101;&#121;&#x61;&#x2e;&#x73;&#107;</a><br>
+				<b>Author:</b>
+				Petr Bugyík<br>
+			<b>Located at</b> <a href="source-class-Grido.DataSources.Doctrine.html#18-301" title="Go to source code">DataSources/Doctrine.php</a>
+		<br>
+	</div>
+
+
+
+		<h2>Methods summary</h2>
+		<table class="summary table table-bordered table-striped methods" id="methods">
+		<tr data-order="__construct" id="___construct">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___construct">#</a>
+			<code><a href="source-class-Grido.DataSources.Doctrine.html#52-68" title="Go to source code">__construct</a>( <span>Doctrine\ORM\QueryBuilder <var>$qb</var></span>, <span>array <var>$filterMapping</var> = <span class="php-keyword1">NULL</span></span>, <span>array <var>$sortMapping</var> = <span class="php-keyword1">NULL</span></span> )</code>
+
+			<div class="description short">
+				<p>If $sortMapping is not set and $filterMapping is set,
+$filterMapping will be used also as $sortMapping.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>If $sortMapping is not set and $filterMapping is set,
+$filterMapping will be used also as $sortMapping.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$qb</var></dt>
+						<dd></dd>
+						<dt><var>$filterMapping</var></dt>
+						<dd>Maps columns to the DQL columns</dd>
+						<dt><var>$sortMapping</var></dt>
+						<dd>Maps columns to the DQL columns</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="setUseOutputWalkers" id="_setUseOutputWalkers">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-Grido.DataSources.Doctrine.html">Grido\DataSources\Doctrine</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_setUseOutputWalkers">#</a>
+			<code><a href="source-class-Grido.DataSources.Doctrine.html#70-78" title="Go to source code">setUseOutputWalkers</a>( <span>boolean <var>$useOutputWalkers</var></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$useOutputWalkers</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Grido.DataSources.Doctrine.html">Grido\DataSources\Doctrine</a></code>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="setFetchJoinCollection" id="_setFetchJoinCollection">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-Grido.DataSources.Doctrine.html">Grido\DataSources\Doctrine</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_setFetchJoinCollection">#</a>
+			<code><a href="source-class-Grido.DataSources.Doctrine.html#80-88" title="Go to source code">setFetchJoinCollection</a>( <span>boolean <var>$fetchJoinCollection</var></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$fetchJoinCollection</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Grido.DataSources.Doctrine.html">Grido\DataSources\Doctrine</a></code>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getQuery" id="_getQuery">
+
+			<td class="attributes"><code>
+				 public 
+				Doctrine\ORM\Query
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getQuery">#</a>
+			<code><a href="source-class-Grido.DataSources.Doctrine.html#90-96" title="Go to source code">getQuery</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						Doctrine\ORM\Query
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getQb" id="_getQb">
+
+			<td class="attributes"><code>
+				 public 
+				Doctrine\ORM\QueryBuilder
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getQb">#</a>
+			<code><a href="source-class-Grido.DataSources.Doctrine.html#98-104" title="Go to source code">getQb</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						Doctrine\ORM\QueryBuilder
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getFilterMapping" id="_getFilterMapping">
+
+			<td class="attributes"><code>
+				 public 
+				array|null
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getFilterMapping">#</a>
+			<code><a href="source-class-Grido.DataSources.Doctrine.html#106-112" title="Go to source code">getFilterMapping</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						array|null
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getSortMapping" id="_getSortMapping">
+
+			<td class="attributes"><code>
+				 public 
+				array|null
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getSortMapping">#</a>
+			<code><a href="source-class-Grido.DataSources.Doctrine.html#114-120" title="Go to source code">getSortMapping</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						array|null
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="makeWhere" id="_makeWhere">
+
+			<td class="attributes"><code>
+				 protected 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_makeWhere">#</a>
+			<code><a href="source-class-Grido.DataSources.Doctrine.html#122-160" title="Go to source code">makeWhere</a>( <span><code><a href="class-Grido.Components.Filters.Condition.html">Grido\Components\Filters\Condition</a></code> <var>$condition</var></span>, <span>Doctrine\ORM\QueryBuilder <var>$qb</var> = <span class="php-keyword1">NULL</span></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$condition</var></dt>
+						<dd></dd>
+						<dt><var>$qb</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getRand" id="_getRand">
+
+			<td class="attributes"><code>
+				 protected 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getRand">#</a>
+			<code><a href="source-class-Grido.DataSources.Doctrine.html#162-173" title="Go to source code">getRand</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						string
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getCount" id="_getCount">
+
+			<td class="attributes"><code>
+				 public 
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getCount">#</a>
+			<code><a href="source-class-Grido.DataSources.Doctrine.html#177-186" title="Go to source code">getCount</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Grido.DataSources.IDataSource.html#_getCount">Grido\DataSources\IDataSource::getCount()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getData" id="_getData">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getData">#</a>
+			<code><a href="source-class-Grido.DataSources.Doctrine.html#188-221" title="Go to source code">getData</a>( )</code>
+
+			<div class="description short">
+				<p>It is possible to use query builder with additional columns.
+In this case, only item at index [0] is returned, because
+it should be an entity object.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>It is possible to use query builder with additional columns.
+In this case, only item at index [0] is returned, because
+it should be an entity object.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Grido.DataSources.IDataSource.html#_getData">Grido\DataSources\IDataSource::getData()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="filter" id="_filter">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_filter">#</a>
+			<code><a href="source-class-Grido.DataSources.Doctrine.html#223-232" title="Go to source code">filter</a>( <span>array <var>$conditions</var></span> )</code>
+
+			<div class="description short">
+				<p>Sets filter.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Sets filter.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$conditions</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Grido.DataSources.IDataSource.html#_filter">Grido\DataSources\IDataSource::filter()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="limit" id="_limit">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_limit">#</a>
+			<code><a href="source-class-Grido.DataSources.Doctrine.html#234-243" title="Go to source code">limit</a>( <span>integer <var>$offset</var></span>, <span>integer <var>$limit</var></span> )</code>
+
+			<div class="description short">
+				<p>Sets offset and limit.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Sets offset and limit.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$offset</var></dt>
+						<dd></dd>
+						<dt><var>$limit</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Grido.DataSources.IDataSource.html#_limit">Grido\DataSources\IDataSource::limit()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="sort" id="_sort">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_sort">#</a>
+			<code><a href="source-class-Grido.DataSources.Doctrine.html#245-258" title="Go to source code">sort</a>( <span>array <var>$sorting</var></span> )</code>
+
+			<div class="description short">
+				<p>Sets sorting.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Sets sorting.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$sorting</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Grido.DataSources.IDataSource.html#_sort">Grido\DataSources\IDataSource::sort()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="suggest" id="_suggest">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_suggest">#</a>
+			<code><a href="source-class-Grido.DataSources.Doctrine.html#260-300" title="Go to source code">suggest</a>( <span>mixed <var>$column</var></span>, <span>array <var>$conditions</var></span>, <span>integer <var>$limit</var></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$column</var></dt>
+						<dd></dd>
+						<dt><var>$conditions</var></dt>
+						<dd></dd>
+						<dt><var>$limit</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+					<h4>Throws</h4>
+					<div class="list">
+						InvalidArgumentException
+					</div>
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Grido.DataSources.IDataSource.html#_suggest">Grido\DataSources\IDataSource::suggest()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		</table>
+
+
+
+		<h3>Magic methods summary</h3>
+
+
+
+
+
+
+
+
+		<h2>Properties summary</h2>
+		<table class="summary table table-bordered table-striped properties" id="properties">
+		<tr data-order="qb" id="$qb">
+			<td class="attributes"><code>
+				protected  
+				Doctrine\ORM\QueryBuilder
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Grido.DataSources.Doctrine.html#34-35" title="Go to source code"><var>$qb</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$qb" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="filterMapping" id="$filterMapping">
+			<td class="attributes"><code>
+				protected  
+				array
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Grido.DataSources.Doctrine.html#37-38" title="Go to source code"><var>$filterMapping</var></a>
+
+				<div class="description short">
+					<p>Map column to the query builder</p>
+				</div>
+
+				<div class="description detailed hidden">
+					<p>Map column to the query builder</p>
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$filterMapping" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="sortMapping" id="$sortMapping">
+			<td class="attributes"><code>
+				protected  
+				array
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Grido.DataSources.Doctrine.html#40-41" title="Go to source code"><var>$sortMapping</var></a>
+
+				<div class="description short">
+					<p>Map column to the query builder</p>
+				</div>
+
+				<div class="description detailed hidden">
+					<p>Map column to the query builder</p>
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$sortMapping" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="useOutputWalkers" id="$useOutputWalkers">
+			<td class="attributes"><code>
+				protected  
+				boolean
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Grido.DataSources.Doctrine.html#43-44" title="Go to source code"><var>$useOutputWalkers</var></a>
+
+				<div class="description short">
+					<p>use OutputWalker in Doctrine Paginator</p>
+				</div>
+
+				<div class="description detailed hidden">
+					<p>use OutputWalker in Doctrine Paginator</p>
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$useOutputWalkers" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="fetchJoinCollection" id="$fetchJoinCollection">
+			<td class="attributes"><code>
+				protected  
+				boolean
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Grido.DataSources.Doctrine.html#46-47" title="Go to source code"><var>$fetchJoinCollection</var></a>
+
+				<div class="description short">
+					<p>fetch join collection in Doctrine Paginator</p>
+				</div>
+
+				<div class="description detailed hidden">
+					<p>fetch join collection in Doctrine Paginator</p>
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$fetchJoinCollection" class="anchor">#</a>
+					<code><span class="php-keyword1">TRUE</span></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="rand" id="$rand">
+			<td class="attributes"><code>
+				protected  
+				array
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Grido.DataSources.Doctrine.html#49-50" title="Go to source code"><var>$rand</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$rand" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+		</table>
+
+
+
+		<h3>Magic properties</h3>
+		<table class="summary table table-bordered table-striped properties" id="magicProperties">
+		<tr data-order="qb" id="m$qb">
+			<td class="attributes"><code>
+				public  read-only
+				Doctrine\ORM\QueryBuilder
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Grido.DataSources.Doctrine.html#26" title="Go to source code"><var>$qb</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+		</tr>
+		<tr data-order="filterMapping" id="m$filterMapping">
+			<td class="attributes"><code>
+				public  read-only
+				array
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Grido.DataSources.Doctrine.html#27" title="Go to source code"><var>$filterMapping</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+		</tr>
+		<tr data-order="sortMapping" id="m$sortMapping">
+			<td class="attributes"><code>
+				public  read-only
+				array
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Grido.DataSources.Doctrine.html#28" title="Go to source code"><var>$sortMapping</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+		</tr>
+		<tr data-order="count" id="m$count">
+			<td class="attributes"><code>
+				public  read-only
+				integer
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Grido.DataSources.Doctrine.html#29" title="Go to source code"><var>$count</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+		</tr>
+		<tr data-order="data" id="m$data">
+			<td class="attributes"><code>
+				public  read-only
+				array
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Grido.DataSources.Doctrine.html#30" title="Go to source code"><var>$data</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+		</tr>
+		</table>
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		Grido@2.0.8 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>
