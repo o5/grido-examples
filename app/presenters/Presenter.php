@@ -12,7 +12,7 @@ abstract class Presenter extends \Nette\Application\UI\Presenter
 
     public function handleCloseTip()
     {
-        $this->context->httpResponse->setCookie('grido-sandbox-first', 0, 0);
+        $this->context->httpResponse->setCookie('grido-examples-first', 0, 0);
         $this->redirect('this');
     }
 
@@ -78,6 +78,6 @@ abstract class Presenter extends \Nette\Application\UI\Presenter
     {
         $baseUri = \App\Routers\RouterFactory::getExtraPath();
         $this->template->baseUri = $baseUri ? $baseUri : $this->template->basePath;
-        $this->template->first = $this->context->httpRequest->getCookie('grido-sandbox-first', 1);
+        $this->template->first = $this->context->httpRequest->getCookie('grido-examples-first', 1);
     }
 }

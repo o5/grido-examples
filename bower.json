@@ -1,5 +1,5 @@
 {
-    "name": "grido-sandbox",
+    "name": "grido-examples",
     "dependencies": {
         "jquery": "~1.11",
         "bootstrap": "~3.1",

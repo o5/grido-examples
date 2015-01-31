@@ -1,6 +1,6 @@
 {
-    "name": "o5/grido-sandbox",
-    "description": "Grido sandbox",
+    "name": "o5/grido-examples",
+    "description": "Grido examples",
     "homepage": "http://grido.bugyik.cz/example/",
     "require": {
         "php": ">=5.3.1",
