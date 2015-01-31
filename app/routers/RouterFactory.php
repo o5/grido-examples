@@ -31,7 +31,7 @@ class RouterFactory
     public static function getExtraPath()
     {
         return $_SERVER['HTTP_HOST'] === 'grido.bugyik.cz'
-            ? '/example'
+            ? '/example/'
             : NULL;
     }
 }
