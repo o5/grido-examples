@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Class Grido\Components\Columns\Text | Grido@master</title>
+	<title>Class Grido\Components\Columns\Link | Grido@master</title>
 
 	<link rel="stylesheet" href="resources/bootstrap.min.css?08b23951ef4599ca9cbf1f902d0e8290c9653ddd">
 	<link rel="stylesheet" href="resources/style.css?062e9e59e0b8c44fbaaded5b7ffc21f907b78669">
@@ -117,9 +117,9 @@
 				<li><a href="class-Grido.Components.Columns.Date.html">Date</a></li>
 				<li><a href="class-Grido.Components.Columns.Editable.html">Editable</a></li>
 				<li><a href="class-Grido.Components.Columns.Email.html">Email</a></li>
-				<li><a href="class-Grido.Components.Columns.Link.html">Link</a></li>
+				<li class="active"><a href="class-Grido.Components.Columns.Link.html">Link</a></li>
 				<li><a href="class-Grido.Components.Columns.Number.html">Number</a></li>
-				<li class="active"><a href="class-Grido.Components.Columns.Text.html">Text</a></li>
+				<li><a href="class-Grido.Components.Columns.Text.html">Text</a></li>
 			</ul>
 
 
@@ -135,11 +135,11 @@
 <div id="right">
 	<div id="rightInner">
 <div id="content" class="class">
-	<h1>Class Text</h1>
+	<h1>Class Link</h1>
 
 
 	<div class="description">
-	<p>Text column.</p>
+	<p>Link column.</p>
 	</div>
 
 	<dl class="tree well">
@@ -171,7 +171,14 @@ Nette\Application\UI\PresenterComponent
 		</dd>
 		<dd style="padding-left:120px">
 			<img src="resources/inherit.png" alt="Extended by">
-<b><span>Grido\Components\Columns\Text</span></b>			
+			<a href="class-Grido.Components.Columns.Text.html"><span>Grido\Components\Columns\Text</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:150px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>Grido\Components\Columns\Link</span></b>			
 			
 			
 		</dd>
@@ -181,16 +188,10 @@ Nette\Application\UI\PresenterComponent
 	<div>
 		<h3>Direct known subclasses</h3>
 		<p class="elementList">
-			<code><a href="class-Grido.Components.Columns.Link.html">Grido\Components\Columns\Link</a></code>
-		</p>
-	</div>
-
-	<div>
-		<h3>Indirect known subclasses</h3>
-		<p class="elementList">
 			<code><a href="class-Grido.Components.Columns.Email.html">Grido\Components\Columns\Email</a></code>
 		</p>
 	</div>
+
 
 
 
@@ -204,7 +205,7 @@ Nette\Application\UI\PresenterComponent
 
 				<b>Author:</b>
 				Petr Bugyík<br>
-			<b>Located at</b> <a href="source-class-Grido.Components.Columns.Text.html#14-55" title="Go to source code">Components/Columns/Text.php</a>
+			<b>Located at</b> <a href="source-class-Grido.Components.Columns.Link.html#14-80" title="Go to source code">Components/Columns/Link.php</a>
 		<br>
 	</div>
 
@@ -212,58 +213,18 @@ Nette\Application\UI\PresenterComponent
 
 		<h2>Methods summary</h2>
 		<table class="summary table table-bordered table-striped methods" id="methods">
-		<tr data-order="setTruncate" id="_setTruncate">
-
-			<td class="attributes"><code>
-				 public 
-				<code><a href="class-Grido.Components.Columns.Column.html">Grido\Components\Columns\Column</a></code>
-				
-				</code>
-			</td>
-
-			<td class="name"><div>
-			<a class="anchor" href="#_setTruncate">#</a>
-			<code><a href="source-class-Grido.Components.Columns.Text.html#26-38" title="Go to source code">setTruncate</a>( <span>string <var>$maxLen</var></span>, <span>string <var>$append</var> = <span class="php-quote">&quot;\xE2\x80\xA6&quot;</span></span> )</code>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-
-					<h4>Parameters</h4>
-					<div class="list"><dl>
-						<dt><var>$maxLen</var></dt>
-						<dd>UTF-8 encoding</dd>
-						<dt><var>$append</var></dt>
-						<dd>UTF-8 encoding</dd>
-					</dl></div>
-
-					<h4>Returns</h4>
-					<div class="list">
-						<code><a href="class-Grido.Components.Columns.Column.html">Grido\Components\Columns\Column</a></code>
-					</div>
-
-
-
-
-			</div>
-			</div></td>
-		</tr>
 		<tr data-order="formatValue" id="_formatValue">
 
 			<td class="attributes"><code>
 				 protected 
-				mixed
+				Nette\Utils\Html
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_formatValue">#</a>
-			<code><a href="source-class-Grido.Components.Columns.Text.html#40-54" title="Go to source code">formatValue</a>( <span>mixed <var>$value</var></span> )</code>
+			<code><a href="source-class-Grido.Components.Columns.Link.html#23-30" title="Go to source code">formatValue</a>( <span>mixed <var>$value</var></span> )</code>
 
 			<div class="description short">
 				
@@ -281,19 +242,137 @@ Nette\Application\UI\PresenterComponent
 
 					<h4>Returns</h4>
 					<div class="list">
-						mixed
+						Nette\Utils\Html
 					</div>
 
 
 
 					<h4>Overrides</h4>
-					<div class="list"><code><a href="class-Grido.Components.Columns.Column.html#_formatValue">Grido\Components\Columns\Column::formatValue</a></code></div>
+					<div class="list"><code><a href="class-Grido.Components.Columns.Text.html#_formatValue">Grido\Components\Columns\Text::formatValue</a></code></div>
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="formatHref" id="_formatHref">
+
+			<td class="attributes"><code>
+				 protected 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_formatHref">#</a>
+			<code><a href="source-class-Grido.Components.Columns.Link.html#32-43" title="Go to source code">formatHref</a>( <span>string <var>$value</var></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$value</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						string
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="formatText" id="_formatText">
+
+			<td class="attributes"><code>
+				 protected 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_formatText">#</a>
+			<code><a href="source-class-Grido.Components.Columns.Link.html#45-52" title="Go to source code">formatText</a>( <span>string <var>$value</var></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$value</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						string
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getAnchor" id="_getAnchor">
+
+			<td class="attributes"><code>
+				 protected 
+				Nette\Utils\Html
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getAnchor">#</a>
+			<code><a href="source-class-Grido.Components.Columns.Link.html#54-79" title="Go to source code">getAnchor</a>( <span>mixed <var>$value</var></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$value</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						Nette\Utils\Html
+					</div>
+
+
+
 
 			</div>
 			</div></td>
 		</tr>
 		</table>
 
+		<h3>Methods inherited from <a href="class-Grido.Components.Columns.Text.html#methods">Grido\Components\Columns\Text</a></h3>
+		<p class="elementList">
+			<code><a href="class-Grido.Components.Columns.Text.html#_setTruncate">setTruncate()</a></code>
+		</p>
 		<h3>Methods inherited from <a href="class-Grido.Components.Columns.Editable.html#methods">Grido\Components\Columns\Editable</a></h3>
 		<p class="elementList">
 			<code><a href="class-Grido.Components.Columns.Editable.html#_disableEditable">disableEditable()</a></code>, 
@@ -356,34 +435,11 @@ Nette\Application\UI\PresenterComponent
 
 
 		<h2>Properties summary</h2>
-		<table class="summary table table-bordered table-striped properties" id="properties">
-		<tr data-order="truncate" id="$truncate">
-			<td class="attributes"><code>
-				protected  
-				Closure
-			</code></td>
 
-			<td class="name">
-					<a href="source-class-Grido.Components.Columns.Text.html#23-24" title="Go to source code"><var>$truncate</var></a>
-
-				<div class="description short">
-					
-				</div>
-
-				<div class="description detailed hidden">
-					
-
-				</div>
-			</td>
-			<td class="value">
-				<div>
-					<a href="#$truncate" class="anchor">#</a>
-					<code></code>
-				</div>
-			</td>
-		</tr>
-		</table>
-
+		<h3>Properties inherited from <a href="class-Grido.Components.Columns.Text.html#properties">Grido\Components\Columns\Text</a></h3>
+		<p class="elementList">
+			<code><a href="class-Grido.Components.Columns.Text.html#$truncate"><var>$truncate</var></a></code>
+		</p>
 		<h3>Properties inherited from <a href="class-Grido.Components.Columns.Editable.html#properties">Grido\Components\Columns\Editable</a></h3>
 		<p class="elementList">
 			<code><a href="class-Grido.Components.Columns.Editable.html#$editable"><var>$editable</var></a></code>, 
