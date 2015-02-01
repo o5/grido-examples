@@ -9,5 +9,5 @@ composer create-project o5/grido-examples
 [Project Pages](http://o5.github.io/grido-examples)
 =============
 
-[API](http://o5.github.io/grido-examples/api/)
+[API](http://o5.github.io/grido-examples/api/master)
 =============
