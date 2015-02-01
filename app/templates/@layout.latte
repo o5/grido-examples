@@ -9,7 +9,7 @@
         <meta name="description" content="Grido - DataGrid for Nette Framework">
         <meta name="author" content="Petr Bugyík">
         <meta name="robots" content="{$robots}" n:ifset="$robots">
-        <link rel="shortcut icon" href="{$baseUri}favicon.ico">
+        <link rel="shortcut icon" href="{$baseUri}/favicon.ico">
         <link rel="stylesheet" href="https://cdn.rawgit.com/simonwhitaker/github-fork-ribbon-css/0.1.1/gh-fork-ribbon.css">
         <!--[if IE]>
             <link rel="stylesheet" href="https://cdn.rawgit.com/simonwhitaker/github-fork-ribbon-css/0.1.1/gh-fork-ribbon.ie.css">
@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="https://cdn.rawgit.com/hyspace/typeahead.js-bootstrap3.less/v0.2.3/typeahead.css">
         <link rel="stylesheet" href="https://cdn.rawgit.com/rstacruz/nprogress/v0.1.6/nprogress.css">
         <link rel="stylesheet" href="{$gridoAssetsPath}/client-side/css/grido.css">
-        <link rel="stylesheet" href="{$baseUri}css/style.css{scache}">
+        <link rel="stylesheet" href="{$baseUri}/css/style.css{scache}">
     </head>
     <body>
         <div id="content">
@@ -126,7 +126,7 @@
         <script n:if="$ajax" src="https://cdn.rawgit.com/twitter/typeahead.js/v0.10.5/dist/typeahead.bundle.min.js"></script>
         <script n:if="$ajax" src="https://cdn.rawgit.com/vojtech-dobes/nette.ajax.js/2.0.0/nette.ajax.js"></script>
         <script n:if="$ajax" src="https://cdn.rawgit.com/rstacruz/nprogress/v0.1.6/nprogress.js"></script>
-        <script n:if="$ajax" src="{$baseUri}js/nette.nprogress.js"></script>
+        <script n:if="$ajax" src="{$baseUri}/js/nette.nprogress.js"></script>
 
         <script src="{$gridoAssetsPath}/client-side/js/grido.js"></script>
         <script src="{$gridoAssetsPath}/client-side/js/plugins/grido.datepicker.js"></script>
@@ -134,7 +134,7 @@
         <script n:if="$ajax" src="{$gridoAssetsPath}/client-side/js/plugins/grido.history.js"></script>
         <script n:if="$ajax" src="{$gridoAssetsPath}/client-side/js/plugins/grido.nette.ajax.js"></script>
 
-        <script n:if="$ajax"  src="{$baseUri}js/main.ajax.js{scache}"></script>
-        <script n:if="!$ajax" src="{$baseUri}js/main.js{scache}"></script>
+        <script n:if="$ajax"  src="{$baseUri}/js/main.ajax.js{scache}"></script>
+        <script n:if="!$ajax" src="{$baseUri}/js/main.js{scache}"></script>
     </body>
 </html>
