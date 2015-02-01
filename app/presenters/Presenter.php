@@ -30,7 +30,12 @@ abstract class Presenter extends \Nette\Application\UI\Presenter
             $this->flashMessage('No rows selected.', 'error');
         }
 
-        $this->redirect($operation, array('id' => $id));
+        if ($this->isAjax()) {
+            isset($this['grid']) && $this['grid']->reload();
+            $this->redrawControl('flashes');
+        } else {
+            $this->redirect($operation, array('id' => $id));
+        }
     }
 
     public function actionEdit($id)
