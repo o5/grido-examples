@@ -45,8 +45,8 @@ final class DibiPresenter extends Presenter
                 ->setCondition($grid->birthdayFilterCondition);
         $grid->getColumn('birthday')->cellPrototype->class[] = 'center';
 
-        $baseUri = $this->template->baseUri;
-        $customRender = function($item) use($baseUri) {
+        $customRender = function($item) {
+            $baseUri = $this->getBaseUri();
             $img = Html::el('img')->src("$baseUri/img/flags/$item->country_code.gif");
             return "$img $item->country";
         };

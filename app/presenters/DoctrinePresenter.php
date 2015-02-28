@@ -48,10 +48,10 @@ final class DoctrinePresenter extends Presenter
                 ->setCondition($grid->birthdayFilterCondition);
         $grid->getColumn('birthday')->cellPrototype->class[] = 'center';
 
-        $baseUri = $this->template->baseUri;
         $grid->addColumnText('country', 'Country')
             ->setSortable()
-            ->setCustomRender(function($item) use($baseUri) {
+            ->setCustomRender(function($item) {
+                $baseUri = $this->getBaseUri();
                 $img = Html::el('img')->src("$baseUri/img/flags/$item->country_code.gif");
                 return "$img $item->country";
             })

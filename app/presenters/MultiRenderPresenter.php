@@ -47,10 +47,10 @@ final class MultiRenderPresenter extends Presenter
             ->headerPrototype->class[] = 'center';
         $grid->getColumn('birthday')->cellPrototype->class[] = 'center';
 
-        $baseUri = $this->template->baseUri;
         $grid->addColumnText('country', 'Country')
             ->setSortable()
-            ->setCustomRender(function($item) use($baseUri) {
+            ->setCustomRender(function($item) {
+                $baseUri = $this->getBaseUri();
                 $img = Html::el('img')->src("$baseUri/img/flags/$item->country_code.gif");
                 return "$img $item->country";
             })->headerPrototype->class[] = 'center';

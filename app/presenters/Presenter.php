@@ -81,8 +81,13 @@ abstract class Presenter extends \Nette\Application\UI\Presenter
 
     public function beforeRender()
     {
-        $baseUri = \App\Routers\RouterFactory::getExtraPath();
-        $this->template->baseUri = $baseUri ? $baseUri : $this->template->basePath;
+        $this->template->baseUri = $this->getBaseUri();
         $this->template->first = $this->context->httpRequest->getCookie('grido-examples-first', 1);
+    }
+
+    protected function getBaseUri()
+    {
+        $baseUri = \App\Routers\RouterFactory::getExtraPath();
+        return $baseUri ? $baseUri : $this->template->basePath;
     }
 }
