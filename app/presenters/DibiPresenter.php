@@ -54,7 +54,8 @@ final class DibiPresenter extends Presenter
             ->setSortable()
             ->setCustomRender($customRender)
             ->setFilterText()
-                ->setSuggestion();
+                ->setColumn('c.title')
+                ->setSuggestion('title');
 
         $grid->addColumnText('card', 'Card')
             ->setSortable()
