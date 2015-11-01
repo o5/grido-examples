@@ -35,8 +35,12 @@ nette:
         accessors: true
 
 services:
-    database: \DibiConnection(%database%)
+    dibi:
+        class: \DibiConnection(%database%)
+        setup:
+            - @dibi.panel::register(@dibi)
     router: App\Routers\RouterFactory::createRouter
+    dibi.panel: Dibi\Bridges\Tracy\Panel
 
 doctrine:
     driver: pdo_sqlite
