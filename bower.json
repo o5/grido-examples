@@ -11,6 +11,6 @@
         "nprogress": "~0.1",
         "typeahead.js": "~0.10",
         "typeahead.js-bootstrap3.less": "~0.2",
-        "grido": "git@github.com:o5/grido.git#1a4f1e5"
+        "grido": "git@github.com:o5/grido.git#ef677c3"
     }
 }
