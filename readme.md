@@ -1,4 +1,4 @@
-[Examples](http://grido.bugyik.cz/example/) for [Grido](https://github.com/o5/grido)
+Examples for [Grido](https://github.com/o5/grido)
 =============
 - Install via [Composer](http://getcomposer.org/)!
 
